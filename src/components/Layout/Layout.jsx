@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from 'components/Header/Header';
 
-const SharedLayout = () => {
+const Layout = () => {
   return (
     <>
       <Header />
@@ -13,4 +13,4 @@ const SharedLayout = () => {
   );
 };
 
-export default SharedLayout;
+export { Layout };
