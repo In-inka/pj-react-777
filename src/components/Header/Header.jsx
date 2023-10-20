@@ -10,6 +10,12 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <Navigation>
+        <StyledLink to="/diary">
+          <IconWrapper>
+            <use href={`${sprite}#icon-logo`} />
+          </IconWrapper>
+          Dairy
+        </StyledLink>
         <StyledLink to="/first">
           <IconWrapper>
             <use href={`${sprite}#icon-logo`} />
