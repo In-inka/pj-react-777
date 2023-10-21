@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, ButtonContainer, Form, Input, Label } from './SignUpForm.styled';
 
 const SignUpForm = () => {

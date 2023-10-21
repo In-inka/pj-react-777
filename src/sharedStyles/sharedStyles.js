@@ -2,8 +2,8 @@ export const SharedContainerStyle = `
   padding-left: 20px;
   padding-right: 20px;
 
-  @media screen and (min-width: 320px) {
-    width: 320px;
+  @media screen and (min-width: 375px) {
+    width: 375px;
     margin-left: auto;
     margin-right: auto;
   }
