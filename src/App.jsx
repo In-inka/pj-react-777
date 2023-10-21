@@ -8,12 +8,10 @@ import { Exercises } from './pages/Exercises/Exercises';
 import { SignUp } from './pages/SignUp/SignUp';
 import { SignIn } from './pages/SignIn/SignIn';
 import { Profile } from './pages/Profile/Profile';
-import { GlobalStyle } from './AppGlobalStyled';
 
 function App() {
   return (
     <>
-      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/welcome" element={<Welcome />} />
