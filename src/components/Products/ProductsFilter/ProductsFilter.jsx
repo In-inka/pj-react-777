@@ -14,6 +14,12 @@ import {
   ProductsFilterList,
 } from './ProductsFilter.styled';
 
+const optionsRec = [
+  { value: 'all', label: 'All' },
+  { value: 'recommended', label: 'Recommended ' },
+  { value: 'notRecommended', label: 'Not recommended' },
+];
+
 const categories = [
   'alcoholic drinks',
   'berries',
@@ -36,7 +42,9 @@ const categories = [
   'vegetables and herbs',
 ];
 
+export const ProductsFilter = () => {
 
 return (
 
+)
 };
