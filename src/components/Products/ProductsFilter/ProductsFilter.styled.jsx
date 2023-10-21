@@ -97,3 +97,17 @@ export const ProductsFilterList = styled.ul`
     justify-content: flex-end;
   }
 `;
+
+export const SelectWrapper = styled.div`
+  @media screen and (min-width: 375px) {
+    width: 158px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 173px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 192px;
+  }
+`;
