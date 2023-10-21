@@ -11,6 +11,7 @@ export const ProductsFilterSearch = styled.input`
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.3);
   font-size: 14px;
+
   @media screen and (min-width: 375px) {
     box-sizing: border-box;
     width: 335px;
@@ -59,4 +60,16 @@ export const ProductsBtnSearch = styled.button`
   position: absolute;
   top: calc(50% - 16px / 2);
   right: 14px;
+`;
+
+export const ProductsSvgClose = styled.svg`
+  stroke: #e6533c;
+  width: 18px;
+  height: 18px;
+`;
+
+export const ProductsSvgSearch = styled.svg`
+  stroke: #e6533c;
+  width: 18px;
+  height: 18px;
 `;
