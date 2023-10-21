@@ -1,11 +1,9 @@
-import { Wrapper, Title, SubTitle, AddProduct, ItemWrapper, ItemName, ItemField, WrapMobile, IconWrapper, StyledLink } from "./DayProducts.styled"
+import { Wrapper, Title, SubTitle, AddProduct, ItemWrapper, ItemName, ItemField, WrapMobile, IconWrapper, StyledLink, WrapButton, Button } from "./DayProducts.styled"
 import sprite from "../../assets/sprite.svg"
 
 export const DayProducts = ({children}) => {
     
-    console.log(products);
-    
-    return (
+   return (
       <Wrapper>
         <Title>
           <SubTitle>Products</SubTitle>
@@ -22,18 +20,32 @@ export const DayProducts = ({children}) => {
 }
 
 export const ProductsTable = ({ children }) => {
-    
-    return (
-      <>
-        <ItemProduct>Title</ItemProduct>
-        <ItemProduct>Category</ItemProduct>
-        <WrapMobile>
-          <ItemProduct>Calories</ItemProduct>
-          <ItemProduct>Weight</ItemProduct>
+  // const dispatch = useDispatch();
+  // const visibleContacts = useSelector(selectVisibleContacts);
+
+  return (
+    <>
+      <ItemProduct>Title</ItemProduct>
+      <ItemProduct>Category</ItemProduct>
+      <WrapMobile>
+        <ItemProduct>Calories</ItemProduct>
+        <ItemProduct>Weight</ItemProduct>
+        <WrapButton>
           <ItemProduct>Recommend</ItemProduct>
-        </WrapMobile>
-      </>
-    );
+          <Button
+            onClick={
+              () => console.log(' del btn ')
+              //   () => dispatch(deleteProduct(id))
+            }
+          >
+            <IconWrapper size="20px" color="#E6533C">
+              <use href={`${sprite}#icon-logo`} />
+            </IconWrapper>
+          </Button>
+        </WrapButton>
+      </WrapMobile>
+    </>
+  );
 }
 
 export const ItemProduct = ({ children }) => {

@@ -106,8 +106,8 @@ export const ItemField = styled.div`
 `;
 
 export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '12px'};
-  height: ${(props) => props.size || '12px'};
+  width: ${(props) => props.size || '13px'};
+  height: ${(props) => props.size || '13px'};
   fill: ${(props) => props.color || '#ffffff'};
   display: inline-block;
   margin-left: 9px;
@@ -119,3 +119,17 @@ export const IconWrapper = styled.svg`
    /* padding: 8px 16px; */
    color: rgb(230, 83, 60);
  `;
+
+export const WrapButton = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
+export const Button = styled.button`
+  display: inline-flex;
+  align-items: center;
+  padding: 0; 
+  background: none; 
+  border: none; 
+  cursor: pointer;
+`;
