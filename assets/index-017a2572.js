@@ -99,7 +99,16 @@ Error generating stack: `+o.message+`
   gap: 15px;
 
   font-size: 25px;
-`,m0=()=>L.jsx("div",{className:"container",children:L.jsxs(h0,{children:[L.jsx(Ht,{to:"/welcome",children:"Welcome"}),L.jsx(Ht,{to:"/signup",children:"SignUp"}),L.jsx(Ht,{to:"/signin",children:"SignIn"}),L.jsx(Ht,{to:"/profile",children:"Profile"}),L.jsx(Ht,{to:"/diary",children:"Diary"}),L.jsx(Ht,{to:"/products",children:"Products"}),L.jsx(Ht,{to:"/exercises",children:"Exercises"})]})}),v0=()=>L.jsxs(L.Fragment,{children:[L.jsx(m0,{}),L.jsx(C.Suspense,{fallback:null,children:L.jsx(Xp,{})})]}),g0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Welcome"})}),y0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Diary"})}),w0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"404"})}),S0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Products"})}),k0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Exercises"})}),x0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"SignUp"})}),E0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"SignIn"})}),C0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Profile"})}),P0=Dd`
+`,m0=()=>L.jsx("div",{className:"container",children:L.jsxs(h0,{children:[L.jsx(Ht,{to:"/welcome",children:"Welcome"}),L.jsx(Ht,{to:"/signup",children:"SignUp"}),L.jsx(Ht,{to:"/signin",children:"SignIn"}),L.jsx(Ht,{to:"/profile",children:"Profile"}),L.jsx(Ht,{to:"/diary",children:"Diary"}),L.jsx(Ht,{to:"/products",children:"Products"}),L.jsx(Ht,{to:"/exercises",children:"Exercises"})]})}),v0=()=>L.jsxs(L.Fragment,{children:[L.jsx(m0,{}),L.jsx(C.Suspense,{fallback:null,children:L.jsx(Xp,{})})]}),g0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Welcome"})}),y0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Diary"})}),w0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"404"})}),S0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Products"})}),k0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Exercises"})}),x0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"SignUp"})}),E0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"SignIn"})}),C0=()=>L.jsx("div",{className:"container",children:L.jsx("p",{children:"Profile"})});function P0(){return L.jsx(L.Fragment,{children:L.jsx(Jp,{children:L.jsxs(Ze,{path:"/",element:L.jsx(v0,{}),children:[L.jsx(Ze,{path:"/welcome",element:L.jsx(g0,{})}),L.jsx(Ze,{path:"/signup",element:L.jsx(x0,{})}),L.jsx(Ze,{path:"/signin",element:L.jsx(E0,{})}),L.jsx(Ze,{path:"/profile",element:L.jsx(C0,{})}),L.jsx(Ze,{path:"/diary",element:L.jsx(y0,{})}),L.jsx(Ze,{path:"/products",element:L.jsx(S0,{})}),L.jsx(Ze,{path:"/exercises",element:L.jsx(k0,{})}),L.jsx(Ze,{path:"*",element:L.jsx(w0,{})})]})})})}const _0="/pj-react-777/assets/roboto-v30-latin-regular-f6734f81.woff2",N0="/pj-react-777/assets/roboto-v30-latin-500-b0195382.woff2",R0="/pj-react-777/assets/roboto-v30-latin-700-f5aebdfe.woff2",L0=Dd`
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url(${N0}) format('woff2'),
+       url(${_0}) format('woff2'),
+       url(${R0}) format('woff2');
+       
+}
+`,T0=Dd`
 *,
 *::before,
 *::after {
@@ -146,13 +155,4 @@ html {
   scroll-behavior: smooth;
 }
 
-`;function _0(){return L.jsxs(L.Fragment,{children:[L.jsx(P0,{}),L.jsx(Jp,{children:L.jsxs(Ze,{path:"/",element:L.jsx(v0,{}),children:[L.jsx(Ze,{path:"/welcome",element:L.jsx(g0,{})}),L.jsx(Ze,{path:"/signup",element:L.jsx(x0,{})}),L.jsx(Ze,{path:"/signin",element:L.jsx(E0,{})}),L.jsx(Ze,{path:"/profile",element:L.jsx(C0,{})}),L.jsx(Ze,{path:"/diary",element:L.jsx(y0,{})}),L.jsx(Ze,{path:"/products",element:L.jsx(S0,{})}),L.jsx(Ze,{path:"/exercises",element:L.jsx(k0,{})}),L.jsx(Ze,{path:"*",element:L.jsx(w0,{})})]})})]})}const N0="/pj-react-777/assets/roboto-v30-latin-regular-f6734f81.woff2",R0="/pj-react-777/assets/roboto-v30-latin-500-b0195382.woff2",L0="/pj-react-777/assets/roboto-v30-latin-700-f5aebdfe.woff2",T0=Dd`
-
-@font-face {
-  font-family: 'Roboto Condensed';
-  src: url(${R0}) format('woff2'),
-       url(${N0}) format('woff2'),
-       url(${L0}) format('woff2');
-       
-}
-`;si.createRoot(document.getElementById("root")).render(L.jsx(He.StrictMode,{children:L.jsxs(rh,{basename:"/pj-react-777",children:[L.jsx(T0,{}),L.jsx(_0,{})]})}));
+`;si.createRoot(document.getElementById("root")).render(L.jsx(He.StrictMode,{children:L.jsxs(rh,{basename:"/pj-react-777",children:[L.jsx(L0,{}),L.jsx(T0,{}),L.jsx(P0,{})]})}));
