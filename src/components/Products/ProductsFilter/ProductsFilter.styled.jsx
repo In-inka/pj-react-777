@@ -46,3 +46,17 @@ export const ProductsFilterSearch = styled.input`
     color: #efede8;
   }
 `;
+
+export const ProductsBtnClose = styled.button`
+  background: transparent;
+  position: absolute;
+  top: calc(50% - 16px / 2);
+  right: 40px;
+`;
+
+export const ProductsBtnSearch = styled.button`
+  background: transparent;
+  position: absolute;
+  top: calc(50% - 16px / 2);
+  right: 14px;
+`;
