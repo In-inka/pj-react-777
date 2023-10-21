@@ -111,6 +111,7 @@ export const IconWrapper = styled.svg`
   fill: ${(props) => props.color || '#ffffff'};
   display: inline-block;
   margin-left: 9px;
+  margin-top: 10px;
  `;
 
  export const StyledLink = styled(Link)`
