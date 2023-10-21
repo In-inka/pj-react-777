@@ -3,8 +3,7 @@ import RobotoWoff from './fonts/roboto-v30-latin-regular.woff2';
 import RobotoWoff2 from './fonts/roboto-v30-latin-500.woff2';
 import RobotoWoff3 from './fonts/roboto-v30-latin-700.woff2';
 
-export const FontStyle = createGlobalStyle`
-
+export const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Roboto Condensed';
   src: url(${RobotoWoff2}) format('woff2'),
@@ -12,9 +11,7 @@ export const FontStyle = createGlobalStyle`
        url(${RobotoWoff3}) format('woff2');
        
 }
-`;
 
-export const GlobalStyle = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -22,6 +19,8 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
 }
+
+
 body {
   background-color: #000000;
   font-family: "Roboto", sans-serif;
