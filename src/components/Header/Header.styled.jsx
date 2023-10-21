@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { ContainerStyled } from '../../Styled/SharedStyled/ContainerStyled';
 
 export const Container = styled.nav`
+  ${ContainerStyled}
   margin: 25px;
 
   display: flex;

@@ -3,7 +3,6 @@ import { Layout } from './components/Layout/Layout';
 import { Welcome } from './pages/Welcome/Welcome';
 import { Diary } from './pages/SecondPage/Diary';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
-import { AppWrapper } from './App.styled';
 import { Products } from './pages/Products/Products';
 import { Exercises } from './pages/Exercises/Exercises';
 import { SignUp } from './pages/SignUp/SignUp';
@@ -15,7 +14,7 @@ const test = import.meta.env.VITE_API_TEST;
 function App() {
   console.log(test);
   return (
-    <AppWrapper>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/welcome" element={<Welcome />} />
@@ -29,7 +28,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
-    </AppWrapper>
+    </>
   );
 }
 export default App;
