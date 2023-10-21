@@ -12,7 +12,7 @@ import {
   ProductsSvgSearch,
   SelectWrapper,
   ProductsFilterList,
-} from './ProductsFilter.styles';
+} from './ProductsFilter.styled';
 
 const categories = [
   'alcoholic drinks',
