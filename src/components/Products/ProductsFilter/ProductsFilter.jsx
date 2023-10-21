@@ -43,7 +43,17 @@ const categories = [
 ];
 
 export const ProductsFilter = () => {
+  const dispatch = useDispatch(); 
 
+   const capitalizeFirstLeter = string => {
+    const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
+     return newString;
+  };
+
+
+
+
+  
 return (
 
 )
