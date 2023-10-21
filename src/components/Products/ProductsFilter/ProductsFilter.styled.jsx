@@ -73,3 +73,27 @@ export const ProductsSvgSearch = styled.svg`
   width: 18px;
   height: 18px;
 `;
+
+export const ProductsFilterList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 375px) {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    justify-content: flex-end;
+  }
+`;
