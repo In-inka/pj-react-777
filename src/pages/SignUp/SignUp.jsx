@@ -2,6 +2,9 @@ import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorial
 import { SignUpForm } from '../../components/SignUpForm.jsx/SignUpForm';
 
 const SignUp = () => {
+  
+
+
   return (
     <Container>
       <Title>Sign Up</Title>

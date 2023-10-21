@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
 
 export const Form = styled.form`
-    margin-top: 28px;
+  margin-top: 28px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 32px;
+    width: 364px;
+  }
 `;
 
 export const Input = styled.input`
@@ -17,6 +22,13 @@ export const Input = styled.input`
   line-height: 1.29;
   &:not(:first-of-type) {
     margin-top: 14px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -43,7 +55,14 @@ export const Button = styled.button`
   border: none;
   padding: 12px 40px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: #ef8964;
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 64px;
+    padding: 16px 60px;
+    font-size: 20px;
+    line-height: 1.2;
   }
 `;

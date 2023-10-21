@@ -15,7 +15,7 @@ export const SharedContainerStyle = `
   }
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 96px;
+    padding-right: 96px;
   }
 `;
