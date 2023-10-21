@@ -1,63 +1,106 @@
-import { Wrapper, Title, SubTitle, AddProduct, ItemWrapper, ItemName, ItemField, WrapMobile, IconWrapper, StyledLink, WrapButton, Button } from "./DayProducts.styled"
-import sprite from "../../assets/sprite.svg"
+import {
+  Wrapper,
+  Title,
+  SubTitle,
+  AddProduct,
+  ItemWrapper,
+  ItemName,
+  ItemField,
+  WrapMobile,
+  IconWrapper,
+  StyledLink,
+  WrapButton,
+  Button,
+} from './DayProducts.styled';
+import sprite from '../../assets/sprite.svg';
 
-export const DayProducts = ({children}) => {
-    
-   return (
-      <Wrapper>
-        <Title>
-          <SubTitle>Products</SubTitle>
-          <StyledLink to="/first">
-            <AddProduct>Add Product</AddProduct>
-            <IconWrapper color="#E6533C">
-              <use href={`${sprite}#icon-logo`} />
-            </IconWrapper>
-          </StyledLink>
-        </Title>
-        <ProductsTable>{children}</ProductsTable>
-      </Wrapper>
-    );
-}
+export const DayProducts = ({ children }) => {
+  return (
+    <Wrapper>
+      <Title>
+        <SubTitle>Products</SubTitle>
+        <StyledLink to="/first">
+          <AddProduct>Add Product</AddProduct>
+          <IconWrapper color="#E6533C">
+            <use href={`${sprite}#icon-logo`} />
+          </IconWrapper>
+        </StyledLink>
+      </Title>
+      <ProductsTable>{children}</ProductsTable>
+    </Wrapper>
+  );
+};
 
 export const ProductsTable = ({ children }) => {
   // const dispatch = useDispatch();
   // const visibleContacts = useSelector(selectVisibleContacts);
 
+  const {
+    _id: { $oid },
+    groupBloodNotAllowed,
+  } = products[0];
+  // console.log($oid, ' ', groupBloodNotAllowed[1]);
+
   return (
-    <>
-      <ItemProduct>Title</ItemProduct>
-      <ItemProduct>Category</ItemProduct>
-      <WrapMobile>
-        <ItemProduct>Calories</ItemProduct>
-        <ItemProduct>Weight</ItemProduct>
-        <WrapButton>
-          <ItemProduct>Recommend</ItemProduct>
-          <Button
-            onClick={
-              () => console.log(' del btn ')
-              //   () => dispatch(deleteProduct(id))
-            }
-          >
-            <IconWrapper size="20px" color="#E6533C">
-              <use href={`${sprite}#icon-logo`} />
-            </IconWrapper>
-          </Button>
-        </WrapButton>
-      </WrapMobile>
-    </>
+    <ul>
+      {products.map(
+        ({
+          _id: { $oid },
+          title,
+          category,
+          calories,
+          weight,
+          groupBloodNotAllowed,
+        }) => (
+          <li key={$oid}>
+            <ItemProduct value={title}>Title</ItemProduct>
+            <ItemProduct value={category}>Category</ItemProduct>
+            <WrapMobile>
+              <ItemProduct width="80px" value={calories}>
+                Calories
+              </ItemProduct>
+              <ItemProduct width="80px" value={weight}>
+                Weight
+              </ItemProduct>
+              <WrapButton>
+                <ItemProduct value={groupBloodNotAllowed[1]}>
+                  Recommend
+                </ItemProduct>
+                <Button
+                  onClick={
+                    () => console.log(' del btn ')
+                    //   () => dispatch(deleteProduct(id))
+                  }
+                >
+                  <IconWrapper size="20px" color="#E6533C">
+                    <use href={`${sprite}#icon-logo`} />
+                  </IconWrapper>
+                </Button>
+              </WrapButton>
+            </WrapMobile>
+          </li>
+        ),
+      )}
+    </ul>
   );
-}
+};
 
-export const ItemProduct = ({ children }) => {
-    // console.log(children);
-    return (
-        <ItemWrapper>
-        <ItemName>{children}</ItemName>
-        <ItemField width="auto" height="38px">{children}</ItemField>
-        </ItemWrapper>
-    );
-}
+export const ItemProduct = ({ width, value, children }) => {
+  console.log(children, value, width);
+  let displayValue;
+  if (typeof value === 'boolean') {
+    displayValue = value ? 'true' : 'false';
+  } else displayValue = value;
 
+  return (
+    <ItemWrapper>
+      <ItemName>{children}</ItemName>
+      <ItemField width={width} height="38px">
+        {displayValue}
+      </ItemField>
+    </ItemWrapper>
+  );
+};
 
 let products = [
   {

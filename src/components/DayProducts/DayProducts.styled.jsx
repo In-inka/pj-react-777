@@ -55,6 +55,7 @@ export const AddProduct = styled.p`
 export const WrapMobile = styled.div`
   display: flex;
   gap: 16px;
+  justify-content: space-between;
 
   @media screen and (min-width: 768px) {
   }
@@ -93,7 +94,7 @@ export const ItemField = styled.div`
   padding: 10px 14px;
   font-size: 18px;
   color: rgb(239, 237, 232);
-  width: ${(prop) => prop.width};
+  width: ${(prop) => prop.width || "auto"};
   height: ${(prop) => prop.height};
   border: 1px solid rgb(239, 237, 235, 0.2);
   border-radius: 12px;
