@@ -2,6 +2,7 @@ import Select from 'react-select';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import sprite from '../../../../src/images/sprite.svg';
 import { filterReducer } from '../../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
@@ -49,6 +50,19 @@ export const ProductsFilter = () => {
     const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
     return newString;
   };
+
+  const categoriesList = categories?.map((elem) => ({
+    value: elem,
+    label: capitalizeFirstLeter(elem),
+  }));
+
+  const isMobile = useMediaQuery({ minWidth: 375 });
+  const isTablet = useMediaQuery({ minWidth: 769 });
+  const isDesktop = useMediaQuery({ minWidth: 1440 });
+  let height = '';
+  isMobile ? (height = '46px') : (height = '52px');
+  isTablet ? (height = '52px') : (height = '46px');
+  isDesktop ? (height = '52px') : (height = '46px');
 
   return (
     <ProductsFilterList>
