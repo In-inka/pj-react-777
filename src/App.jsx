@@ -21,7 +21,6 @@ function App() {
           <Route path="/diary" element={<Diary />} />
           <Route path="/products" element={<Products />} />
           <Route path="/exercises" element={<Exercises />} />
-
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

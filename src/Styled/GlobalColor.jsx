@@ -3,6 +3,7 @@ export const glodalColor = {
   background: '#040404',
   secondaryOrange: '#EF8964',
   title: 'rgba(239, 237, 232, 0.3)',
+  titleCards: 'rgba(239, 237, 232, 0.5)',
   textPlaceholder: 'rgba(239, 237, 232, 0.6)',
   secondaryText: '#1C1C1C',
   dashboardTextAccept: 'rgba(239, 237, 232, 0.8)',
