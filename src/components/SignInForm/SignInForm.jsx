@@ -3,11 +3,13 @@ import {
   Button,
   ButtonContainer,
   Error,
-  ErrorContainer,
+  MessageContainer,
   ErrorIcon,
   Form,
   Input,
   Label,
+  SuccessIcon,
+  Success,
 } from './SignInForm.styled';
 import { signInSchema } from '../../schemas/schemas';
 
@@ -34,16 +36,26 @@ const SignInForm = () => {
     validationSchema: signInSchema,
     onSubmit,
   });
+    
 
   const errorRender = (value) => {
     return (
-      <ErrorContainer>
+      <MessageContainer>
         <ErrorIcon />
         <Error>{value}</Error>
-      </ErrorContainer>
+      </MessageContainer>
     );
   };
 
+      const SuccessRender = (value) => {
+        return (
+          <MessageContainer>
+            <SuccessIcon />
+            <Success>Success {value}</Success>
+          </MessageContainer>
+        );
+      };
+    
   return (
     <Form onSubmit={handleSubmit}>
       {errors.name && touched.name && errorRender(errors.name)}
@@ -57,12 +69,14 @@ const SignInForm = () => {
         placeholder="Email"
         onBlur={handleBlur}
         theme={
-          errors.email && touched.email
-            ? { main: '1px solid rgba(216, 0, 39, 1)' }
-            : ''
+          touched.email &&
+          (errors.email
+            ? { main: 'rgba(216, 0, 39, 1)' }
+            : { main: 'rgba(60, 191, 97, 1)' })
         }
       />
-      {errors.email && touched.email && errorRender(errors.email)}
+      {touched.email &&
+        (errors.email ? errorRender(errors.email) : SuccessRender('email'))}
       <Label htmlFor="password">Password</Label>
       <Input
         value={values.password}
@@ -73,12 +87,16 @@ const SignInForm = () => {
         placeholder="Password"
         onBlur={handleBlur}
         theme={
-          errors.password && touched.password
-            ? { main: '1px solid rgba(216, 0, 39, 1)' }
-            : ''
+          touched.password &&
+          (errors.password
+            ? { main: 'rgba(216, 0, 39, 1)' }
+            : { main: 'rgba(60, 191, 97, 1)' })
         }
       />
-      {errors.password && touched.password && errorRender(errors.password)}
+      {touched.password &&
+        (errors.password
+          ? errorRender(errors.password)
+          : SuccessRender('password'))}
       <ButtonContainer>
         <Button disabled={isSubmitting} type="submit">
           Sign Up

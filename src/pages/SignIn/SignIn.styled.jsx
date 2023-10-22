@@ -19,8 +19,7 @@ export const Container = styled.div`
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
-      url(${background_img_mob_x2});
+    background-image:url(${background_img_mob_x2});
   }
 
   @media screen and (min-width: 768px) {

@@ -85,10 +85,10 @@ export const Button = styled.button`
   }
 `;
 
-export const ErrorContainer = styled.div`
+export const MessageContainer = styled.div`
   display: inline-flex;
   margin-top: 4px;
-`
+`;
 
 export const ErrorIcon = styled.div`
 margin-right: 4px;
@@ -100,6 +100,20 @@ margin-right: 4px;
 
 export const Error = styled.p`
   color: rgba(216, 0, 39, 1);
+  font-size: 12px;
+  line-height: 1.5;
+`;
+
+export const SuccessIcon = styled.div`
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(60, 191, 97, 1);
+`;
+
+export const Success = styled.p`
+  color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
 `;

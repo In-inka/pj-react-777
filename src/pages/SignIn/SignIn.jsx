@@ -36,7 +36,7 @@ const SignIn = () => {
       </Text>
       <SignInForm />
       <TextContainer>
-        <TextB>Don't have an account?</TextB>
+        <TextB>Don&#39;t have an account?</TextB>
         <StyledLink to="/signup">Sign Up</StyledLink>
       </TextContainer>
       <FlexContainer>
