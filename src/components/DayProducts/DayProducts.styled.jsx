@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     width: 768px;
     height: 234px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   @media screen and (min-width: 1440px) {
   }
@@ -67,19 +67,28 @@ export const AddProduct = styled.p`
 export const WrapMobile = styled.div`
   display: flex;
   gap: 0;
-  justify-conten  font-size: 14px;t: space-between;
+  justify-contentt: space-between;
 
   @media screen and (min-width: 768px) {
+    align-items: center;
+    flex: 1.8;
+    gap: 8px;
   }
   @media screen and (min-width: 1440px) {
   }
 `;
 
 export const WrapItemProducts = styled.div`
-display: flex;
-flex: 1;
-gap: 16px;
-justify-content: space-between;
+  display: flex;
+  flex: 1;
+  gap: 16px;
+  justify-content: space-between;
+  
+  @media screen and (min-width: 768px) {
+    gap: 8px;
+    flex: 1;
+    
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -88,6 +97,7 @@ export const ItemWrapper = styled.div`
   color: rgb(230, 83, 60);
 
   @media screen and (min-width: 768px) {
+    
   }
   @media screen and (min-width: 1440px) {
   }
@@ -100,6 +110,7 @@ export const ItemName = styled.p`
   margin-bottom: 8px;
 
   @media screen and (min-width: 768px) {
+    display: none;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -107,21 +118,39 @@ export const ItemName = styled.p`
 
 export const ItemField = styled.div`
   /* 320-375 */
-  
+
   display: flex;
   align-items: center;
   margin-bottom: 16px;
   padding: 8px 14px;
   font-size: 16px;
   color: rgb(239, 237, 232);
-  max-width: ${(prop) => prop.width || "100%"};
-  height: ${(prop) => prop.height|| "auto"};
+  max-width: ${(prop) => prop.width || '100%'};
+  height: ${(prop) => prop.height || 'auto'};
   border: 1px solid rgb(239, 237, 235, 0.2);
   border-radius: 12px;
   background-color: rgb(239, 237, 235, 0.05);
 
   @media screen and (min-width: 768px) {
-   
+    margin-bottom: 0;
+    
+  }
+  @media screen and (min-width: 1440px) {
+  }
+`;
+export const NormalText = styled.div`
+    font-size: 14px;
+  @media screen and (min-width: 768px) {
+    display: none;
+   }
+  @media screen and (min-width: 1440px) {
+  }
+`;
+export const SliceText = styled.div`
+    display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    font-size: 16px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -138,12 +167,14 @@ export const IconWrapper = styled.svg`
 
 export const DeleteIconWrapper = styled(IconWrapper)`
   margin-top: 10px;
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
  export const StyledLink = styled(Link)`
    display: flex;
    align-items: baseline;
-   /* padding: 8px 16px; */
    color: rgb(230, 83, 60);
  `;
 
@@ -155,10 +186,14 @@ export const WrapButton = styled.div`
 export const Button = styled.button`
   display: inline-flex;
   align-items: center;
-  padding: 0; 
-  background: none; 
-  border: none; 
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+    height: fit-content;
+  }
 `;
 
 export const TableList = styled.ul`
@@ -189,7 +224,11 @@ export const ListItem = styled.li`
     margin-bottom: 0;
   }
   @media screen and (min-width: 768px) {
-      }
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
 `;
 
 export const Indicator = styled.div`
@@ -208,3 +247,4 @@ export const NotFound = styled.div`
   display: grid;
   place-items: center;
 `;
+
