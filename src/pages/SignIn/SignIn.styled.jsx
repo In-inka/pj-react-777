@@ -6,10 +6,10 @@ import background_img_tab_x2 from '../../img/background/main_bg_tab_x2.jpg';
 import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
-import { SharedContainerStyle } from '../../sharedStyles/sharedStyles';
+import { ContainerStyled } from '../../Styled/ContainerStyled';
 
 export const Container = styled.div`
-  ${SharedContainerStyle}
+  ${ContainerStyled}
   height: 100vh;
   padding-top: 24px;
   background-image: url(${background_img_mob});
