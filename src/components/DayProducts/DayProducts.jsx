@@ -1,6 +1,6 @@
 import {
   Wrapper,
-  Title,
+  TitleMain,
   SubTitle,
   AddProduct,
   TableList,
@@ -17,14 +17,20 @@ import {
   Indicator,
   NotFound,
   NormalText,
-  SliceText,
+  SliceText,  
+  WrapTitleTable,
+  Title,
+  Category,
+  Calories,
+  Weight,
+  Recommend,
 } from './DayProducts.styled';
 import sprite from '../../assets/sprite.svg';
 
 export const DayProducts = ({ children }) => {
   return (
     <Wrapper>
-      <Title>
+      <TitleMain>
         <SubTitle>Products</SubTitle>
         <StyledLink to="/first">
           <AddProduct>Add Product</AddProduct>
@@ -32,7 +38,7 @@ export const DayProducts = ({ children }) => {
             <use href={`${sprite}#icon-logo`} />
           </IconWrapper>
         </StyledLink>
-      </Title>
+      </TitleMain>
       {!products.length ? (
         <EmptyScreen />
       ) : (
@@ -52,6 +58,7 @@ export const ProductsTable = ({ children }) => {
 
   return (
     <>
+      <TableTitle/>
       <TableList>
         {products.map(
           ({
@@ -104,7 +111,6 @@ export const ItemProduct = ({ width, value, children }) => {
     sliceValue = value.slice(0, 18) + '...';
   }
 
-
   return (
     <ItemWrapper>
       <ItemName>{children}</ItemName>
@@ -116,6 +122,18 @@ export const ItemProduct = ({ width, value, children }) => {
     </ItemWrapper>
   );
 };
+
+export const TableTitle = () => {
+  return (
+    <WrapTitleTable>
+      <Title>Title</Title>
+      <Category>Category</Category>
+      <Calories>Calories</Calories>
+      <Weight>Weight</Weight>
+      <Recommend>Recommend</Recommend>
+    </WrapTitleTable>
+  );
+}
 
 export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
 
@@ -164,7 +182,7 @@ const products = !choice
         category: 'vegetables and herbs',
         title: 'Salads Belaya Dacha Delicate root',
         groupBloodNotAllowed: {
-          1: false,
+          1: true,
           2: false,
           3: false,
           4: false,
@@ -209,7 +227,7 @@ const products = !choice
         category: 'meat',
         title: 'Lamb ham',
         groupBloodNotAllowed: {
-          1: false,
+          1: true,
           2: true,
           3: false,
           4: true,

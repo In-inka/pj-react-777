@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   /* 320-375 */
+  box-sizing: border-box;
   padding: 16px;
   padding-right: 8px;
   border: 1px solid rgb(239, 237, 235, 0.2);
@@ -13,19 +14,19 @@ export const Wrapper = styled.div`
   font-size: 12px;
 
   @media screen and (min-width: 375px) {
-
   }
 
   @media screen and (min-width: 768px) {
     width: 768px;
     height: 234px;
-    /* overflow: hidden; */
+    padding-top: 19px;
+    
   }
   @media screen and (min-width: 1440px) {
   }
 `;
 
-export const Title = styled.div`
+export const TitleMain = styled.div`
   /* 320-375 */
   display: flex;
   justify-content: space-between;
@@ -33,7 +34,8 @@ export const Title = styled.div`
   padding-right: 8px;
   
   @media screen and (min-width: 768px) {
-    margin-bottom: 16px;
+    margin-bottom: 19px;
+    
   }
   @media screen and (min-width: 1440px) {
   }
@@ -41,7 +43,7 @@ export const Title = styled.div`
 
 export const SubTitle = styled.p`
   /* 320-375 */
-  /* font-size: 18px; */
+  
   color: rgb(239, 237, 232, 0.5);
   margin: 0;
   font-size: 14px;
@@ -67,12 +69,13 @@ export const AddProduct = styled.p`
 export const WrapMobile = styled.div`
   display: flex;
   gap: 0;
-  justify-contentt: space-between;
+  justify-content: space-between;
 
   @media screen and (min-width: 768px) {
     align-items: center;
     flex: 1.8;
-    gap: 8px;
+    gap: 0px;
+    justify-content: space-between;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -86,14 +89,14 @@ export const WrapItemProducts = styled.div`
   
   @media screen and (min-width: 768px) {
     gap: 8px;
-    flex: 1;
-    
+    flex: 1.1;
+     
   }
 `;
 
 export const ItemWrapper = styled.div`
   /* 320-375 */
-  flex: 1;
+  flex: 1.2;
   color: rgb(230, 83, 60);
 
   @media screen and (min-width: 768px) {
@@ -110,7 +113,7 @@ export const ItemName = styled.p`
   margin-bottom: 8px;
 
   @media screen and (min-width: 768px) {
-    display: none;
+    display: none;    
   }
   @media screen and (min-width: 1440px) {
   }
@@ -133,7 +136,7 @@ export const ItemField = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
-    
+    padding: 10px 14px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -174,13 +177,14 @@ export const DeleteIconWrapper = styled(IconWrapper)`
 
  export const StyledLink = styled(Link)`
    display: flex;
-   align-items: baseline;
+   align-items: center;
    color: rgb(230, 83, 60);
  `;
 
 export const WrapButton = styled.div`
   display: flex;
   flex-wrap: nowrap;
+  
 `;
 
 export const Button = styled.button`
@@ -193,6 +197,7 @@ export const Button = styled.button`
   cursor: pointer;
   @media screen and (min-width: 768px) {
     height: fit-content;
+    
   }
 `;
 
@@ -200,6 +205,7 @@ export const TableList = styled.ul`
   max-height: 752px;
   overflow-y: auto;
   padding-right: 8px;
+  padding-bottom: 16px;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -210,12 +216,12 @@ export const TableList = styled.ul`
   &::-webkit-scrollbar-thumb {
     background: rgb(239, 237, 232, 0.1);
     border-radius: 12px;
-    height: 203px;
+    height: 90px;
   }
 
   @media screen and (min-width: 768px) {
-    
-  }
+    max-height: 126px;
+    }
 `;
 
 export const ListItem = styled.li`
@@ -248,3 +254,35 @@ export const NotFound = styled.div`
   place-items: center;
 `;
 
+export const WrapTitleTable = styled.div`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    font-size: 12px;
+    color: rgb(239, 137, 100);
+    margin-bottom: 10px;
+  }
+`;
+  
+export const Title = styled.div`
+`;
+export const Category = styled.div`
+  @media screen and (min-width: 768px) {
+    margin-left: 190px;
+  }
+`;
+export const Calories = styled.div`
+  @media screen and (min-width: 768px) {
+    margin-left: 165px;
+  }
+`;
+export const Weight = styled.div`
+  @media screen and (min-width: 768px) {
+    margin-left: 50px;
+  }
+`;
+export const Recommend = styled.div`
+  @media screen and (min-width: 768px) {
+    margin-left: 58px;
+  }
+`;
