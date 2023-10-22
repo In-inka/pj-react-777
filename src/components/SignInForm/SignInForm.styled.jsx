@@ -84,10 +84,10 @@ export const Button = styled.button`
 export const ErrorContainer = styled.div`
   display: inline-flex;
   margin-top: 4px;
-`
+`;
 
 export const ErrorIcon = styled.div`
-margin-right: 4px;
+  margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;

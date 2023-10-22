@@ -1,12 +1,18 @@
-import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorialContainer, PlayIcon, TextContainerB, VideoTutorialTextA, VideoTutorialTextB, FlexContainer, FlexContainerB, CalorieContainer, RunIcon, TextContainerC, CalorieTextA, CalorieTextB } from './SignUp.styled';
+import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorialContainer, PlayIcon, TextContainerB, VideoTutorialTextA, VideoTutorialTextB, FlexContainer, FlexContainerB, CalorieContainer, RunIcon, TextContainerC, CalorieTextA, CalorieTextB, LogoContainer, BarbellIcon, LogoText } from './SignUp.styled';
 import { SignUpForm } from '../../components/SignUpForm.jsx/SignUpForm';
 
+
+
 const SignUp = () => {
-  
+
 
 
   return (
     <Container>
+      <LogoContainer>
+        <BarbellIcon />
+        <LogoText>PowerPulse</LogoText>
+      </LogoContainer>
       <Title>Sign Up</Title>
       <Text>
         Thank you for your interest in our platform. To complete the

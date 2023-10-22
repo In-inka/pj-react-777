@@ -8,50 +8,44 @@ import {
   Form,
   Input,
   Label,
-} from './SignUpForm.styled';
-import { signUpSchema } from '../../schemas/schemas';
+} from './SignInForm.styled';
+import { signInSchema } from '../../schemas/schemas';
 
-const onSubmit = async(values, actions) => {
+const onSubmit = async (values, actions) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   console.log(values);
   actions.resetForm();
-}
+};
 
-const SignUpForm = () => {
-  const { values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit } = useFormik({
+const SignInForm = () => {
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useFormik({
     initialValues: {
-      name: '',
       email: '',
       password: '',
     },
-    validationSchema: signUpSchema,
+    validationSchema: signInSchema,
     onSubmit,
   });
 
   const errorRender = (value) => {
-    return <ErrorContainer> <ErrorIcon />
-      <Error>{value}</Error>
-    </ErrorContainer>
+    return (
+      <ErrorContainer>
+        <ErrorIcon />
+        <Error>{value}</Error>
+      </ErrorContainer>
+    );
   };
-
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Label htmlFor="name">Name</Label>
-      <Input
-        value={values.name}
-        onChange={handleChange}
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Name"
-        onBlur={handleBlur}
-        theme={
-          errors.name && touched.name
-            ? { main: '1px solid rgba(216, 0, 39, 1)' }
-            : ''
-        }
-      />
       {errors.name && touched.name && errorRender(errors.name)}
       <Label htmlFor="email">Email</Label>
       <Input
@@ -86,11 +80,12 @@ const SignUpForm = () => {
       />
       {errors.password && touched.password && errorRender(errors.password)}
       <ButtonContainer>
-        <Button
-        disabled={isSubmitting} type='submit'>Sign Up</Button>
+        <Button disabled={isSubmitting} type="submit">
+          Sign Up
+        </Button>
       </ButtonContainer>
     </Form>
   );
 };
 
-export { SignUpForm };
+export { SignInForm };
