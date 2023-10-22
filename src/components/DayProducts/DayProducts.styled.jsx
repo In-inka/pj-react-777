@@ -121,6 +121,7 @@ export const ItemField = styled.div`
   background-color: rgb(239, 237, 235, 0.05);
 
   @media screen and (min-width: 768px) {
+   
   }
   @media screen and (min-width: 1440px) {
   }
@@ -166,25 +167,29 @@ export const TableList = styled.ul`
   padding-right: 8px;
 
   &::-webkit-scrollbar {
-    width: 6px; 
+    width: 6px;
   }
-
   &::-webkit-scrollbar-track {
-    background: none; 
+    background: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgb(239, 237, 232, 0.1);
+    border-radius: 12px;
+    height: 203px;
   }
 
-  &::-webkit-scrollbar-thumb {
-    background: rgb(239, 237, 232, 0.1); 
-    border-radius: 12px; 
-    height: 203px;
+  @media screen and (min-width: 768px) {
+    
   }
 `;
 
 export const ListItem = styled.li`
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
   &:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
+  @media screen and (min-width: 768px) {
+      }
 `;
 
 export const Indicator = styled.div`

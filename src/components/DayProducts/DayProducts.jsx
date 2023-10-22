@@ -41,6 +41,8 @@ export const DayProducts = ({ children }) => {
 };
 
 export const ProductsTable = ({ children }) => {
+
+  
   // const dispatch = useDispatch();
   // const visibleContacts = useSelector(selectVisibleContacts);
 
