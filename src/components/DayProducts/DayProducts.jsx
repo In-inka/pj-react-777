@@ -3,6 +3,8 @@ import {
   Title,
   SubTitle,
   AddProduct,
+  TableList,
+  ListItem,
   ItemWrapper,
   ItemName,
   ItemField,
@@ -10,8 +12,9 @@ import {
   IconWrapper,
   DeleteIconWrapper,
   StyledLink,
-  WrapButton,
+  WrapItemProducts,
   Button,
+  Indicator,
 } from './DayProducts.styled';
 import sprite from '../../assets/sprite.svg';
 
@@ -41,7 +44,7 @@ export const ProductsTable = ({ children }) => {
   // console.log($oid, ' ', groupBloodNotAllowed[1]);
 
   return (
-    <ul>
+    <TableList>
       {products.map(
         ({
           _id: { $oid },
@@ -51,50 +54,47 @@ export const ProductsTable = ({ children }) => {
           weight,
           groupBloodNotAllowed,
         }) => (
-          <li key={$oid}>
+          <ListItem key={$oid}>
             <ItemProduct value={title}>Title</ItemProduct>
             <ItemProduct value={category}>Category</ItemProduct>
             <WrapMobile>
-              <ItemProduct width="80px" value={calories}>
-                Calories
-              </ItemProduct>
-              <ItemProduct width="80px" value={weight}>
-                Weight
-              </ItemProduct>
-              <WrapButton>
+              <WrapItemProducts>
+                <ItemProduct value={calories}>Calories</ItemProduct>
+                <ItemProduct value={weight}>Weight</ItemProduct>
                 <ItemProduct value={groupBloodNotAllowed[1]}>
                   Recommend
                 </ItemProduct>
-                <Button
-                  onClick={
-                    () => console.log(' del btn ')
-                    //   () => dispatch(deleteProduct(id))
-                  }
-                >
-                  <DeleteIconWrapper size="20px" color="#EF8964">
-                    <use href={`${sprite}#icon-logo`} />
-                  </DeleteIconWrapper>
-                </Button>
-              </WrapButton>
+              </WrapItemProducts>
+              <Button
+                onClick={
+                  () => console.log(' del btn ')
+                  //   () => dispatch(deleteProduct(id))
+                }
+              >
+                <DeleteIconWrapper size="20px" color="#EF8964">
+                  <use href={`${sprite}#icon-logo`} />
+                </DeleteIconWrapper>
+              </Button>
             </WrapMobile>
-          </li>
+          </ListItem>
         ),
       )}
-    </ul>
+    </TableList>
   );
 };
 
 export const ItemProduct = ({ width, value, children }) => {
   console.log(children, value, width);
   let displayValue = value;
-  if (typeof value === 'boolean') {
-    displayValue = value ? 'true' : 'false';
-  } 
-
+  const valueIsBoolean = typeof value === 'boolean';
+  if (valueIsBoolean) {
+    displayValue = value ? 'Yes' : 'No';
+  }
   return (
     <ItemWrapper>
       <ItemName>{children}</ItemName>
       <ItemField width={width} height="38px">
+        {valueIsBoolean && <Indicator value={value} />}
         {displayValue}
       </ItemField>
     </ItemWrapper>
