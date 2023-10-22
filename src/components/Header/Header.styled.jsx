@@ -9,4 +9,7 @@ export const Container = styled.nav`
   gap: 15px;
 
   font-size: 25px;
+    @media screen and (min-width: 1440px) {
+    position: absolute;
+    }
 `;
