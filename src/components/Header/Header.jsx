@@ -3,7 +3,7 @@ import { Container } from './Header.styled';
 
 const Header = () => {
   return (
-    <div className="container">
+    <>
       <Container>
         <NavLink to="/welcome">Welcome</NavLink>
         <NavLink to="/signup">SignUp</NavLink>
@@ -13,7 +13,7 @@ const Header = () => {
         <NavLink to="/products">Products</NavLink>
         <NavLink to="/exercises">Exercises</NavLink>
       </Container>
-    </div>
+    </>
   );
 };
 
