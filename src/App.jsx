@@ -8,6 +8,9 @@ import { Exercises } from './pages/Exercises/Exercises';
 import { SignUp } from './pages/SignUp/SignUp';
 import { SignIn } from './pages/SignIn/SignIn';
 import { Profile } from './pages/Profile/Profile';
+import { BodyParts } from './components/ExercisesCategories/BodyParts/BodyParts';
+import { Muscles } from './components/ExercisesCategories/Muscles/Muscles';
+import { Equipment } from './components/ExercisesCategories/Equipment/Equipment';
 
 function App() {
   return (
@@ -20,7 +23,11 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/diary" element={<Diary />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/exercises" element={<Exercises />} />
+          <Route path="/exercises" element={<Exercises />} >
+            <Route path='bodyParts' element={<BodyParts />} />
+            <Route path='muscles' element={<Muscles />} />
+            <Route path='equipment' element={<Equipment />} />
+          </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
