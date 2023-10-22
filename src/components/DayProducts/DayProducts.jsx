@@ -98,7 +98,7 @@ export const ItemProduct = ({ width, value, children }) => {
   return (
     <ItemWrapper>
       <ItemName>{children}</ItemName>
-      <ItemField width={width} height="38px">
+      <ItemField width={width} >
         {valueIsBoolean && <Indicator value={value} />}
         {displayValue}
       </ItemField>
@@ -106,55 +106,117 @@ export const ItemProduct = ({ width, value, children }) => {
   );
 };
 
-export const EmptyScreen = () => (<NotFound>Not found products</NotFound>);
+export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
 
-let products = [];
+let choice = true;
+// let choice = false;
 
-
-// let products = [
-//   {
-//     _id: {
-//       $oid: '5d51694902b2373622ff5773',
-//     },
-//     weight: 100,
-//     calories: 340,
-//     category: 'dairy',
-//     title: 'Danbo cheese',
-//     groupBloodNotAllowed: {
-//       1: true,
-//       2: true,
-//       3: false,
-//       4: false,
-//     },
-//   },
-//   {
-//     _id: {
-//       $oid: '5d51694902b2373622ff5b7f',
-//     },
-//     weight: 100,
-//     calories: 112,
-//     category: 'fish',
-//     title: 'marlin',
-//     groupBloodNotAllowed: {
-//       1: false,
-//       2: false,
-//       3: false,
-//       4: false,
-//     },
-//   },
-//   {
-//     _id: {
-//       $oid: '5d51694902b2373622ff5e13',
-//     },
-//     weight: 100,
-//     calories: 17,
-//     category: 'vegetables and herbs',
-//     title: 'Salads Belaya Dacha Delicate root',
-//     groupBloodNotAllowed: {
-//       1: false,
-//       2: false,
-//       3: false,
-//       4: false,
-//     },
-//   },
-// ];
+const products = !choice
+  ? []
+  : [
+      {
+        _id: {
+          $oid: '5d51694902b2373622ff5773',
+        },
+        weight: 100,
+        calories: 340,
+        category: 'dairy',
+        title: 'Danbo cheese',
+        groupBloodNotAllowed: {
+          1: true,
+          2: true,
+          3: false,
+          4: false,
+        },
+      },
+      {
+        _id: {
+          $oid: '5d51694902b2373622ff5b7f',
+        },
+        weight: 100,
+        calories: 112,
+        category: 'fish',
+        title: 'marlin',
+        groupBloodNotAllowed: {
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+        },
+      },
+      {
+        _id: {
+          $oid: '5d51694902b2373622ff5e13',
+        },
+        weight: 100,
+        calories: 17,
+        category: 'vegetables and herbs',
+        title: 'Salads Belaya Dacha Delicate root',
+        groupBloodNotAllowed: {
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+        },
+      },
+      {
+        _id: {
+          $oid: '5d51694902b2373622ff5b6f',
+        },
+        weight: 100,
+        calories: 160,
+        category: 'fish',
+        title: 'Cold smoked bream',
+        groupBloodNotAllowed: {
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+        },
+      },
+      {
+        _id: {
+          $oid: '5d51694902b2373622ff5b8d',
+        },
+        weight: 100,
+        calories: 281,
+        category: 'fish',
+        title: 'Pollock in batter',
+        groupBloodNotAllowed: {
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+        },
+      },
+      {
+        _id: {
+          $oid: '5d51694902b2373622ff590d',
+        },
+        weight: 100,
+        calories: 232,
+        category: 'meat',
+        title: 'Lamb ham',
+        groupBloodNotAllowed: {
+          1: false,
+          2: true,
+          3: false,
+          4: true,
+        },
+      },
+      {
+        _id: {
+          $oid: '5d51694902b2373622ff5f16',
+        },
+        weight: 100,
+        calories: 38,
+        category: 'soft drinks',
+        title: 'Pepsi',
+        groupBloodNotAllowed: {
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+        },
+      },
+    ];

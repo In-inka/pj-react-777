@@ -10,11 +10,16 @@ export const Wrapper = styled.div`
   background-color: rgb(239, 237, 235, 0.05);
   /* max-height: 824px; */
   width: 375px;
+  font-size: 12px;
 
   @media screen and (min-width: 375px) {
+
   }
 
   @media screen and (min-width: 768px) {
+    width: 768px;
+    height: 234px;
+    overflow: hidden;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -26,17 +31,20 @@ export const Title = styled.div`
   justify-content: space-between;
   margin-bottom: 22px;
   padding-right: 8px;
-
+  
   @media screen and (min-width: 768px) {
+    margin-bottom: 16px;
   }
   @media screen and (min-width: 1440px) {
   }
 `;
 
-export const SubTitle = styled.div`
+export const SubTitle = styled.p`
   /* 320-375 */
-  font-size: 18px;
+  /* font-size: 18px; */
   color: rgb(239, 237, 232, 0.5);
+  margin: 0;
+  font-size: 14px;
 
   @media screen and (min-width: 768px) {
   }
@@ -46,8 +54,9 @@ export const SubTitle = styled.div`
 
 export const AddProduct = styled.p`
   /* 320-375 */
-  font-size: 18px;
+  font-size: 14px;
   color: rgb(230, 83, 60);
+  margin: 0;
 
   @media screen and (min-width: 768px) {
   }
@@ -58,7 +67,7 @@ export const AddProduct = styled.p`
 export const WrapMobile = styled.div`
   display: flex;
   gap: 0;
-  justify-content: space-between;
+  justify-conten  font-size: 14px;t: space-between;
 
   @media screen and (min-width: 768px) {
   }
@@ -76,7 +85,6 @@ justify-content: space-between;
 export const ItemWrapper = styled.div`
   /* 320-375 */
   flex: 1;
-  font-size: 18px;
   color: rgb(230, 83, 60);
 
   @media screen and (min-width: 768px) {
@@ -87,7 +95,7 @@ export const ItemWrapper = styled.div`
 
 export const ItemName = styled.p`
   /* 320-375 */
-  font-size: 18px;
+  font-size: 12px;
   color: rgb(239, 137, 100);
   margin-bottom: 8px;
 
@@ -103,11 +111,11 @@ export const ItemField = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-  padding: 10px 14px;
-  font-size: 18px;
+  padding: 8px 14px;
+  font-size: 16px;
   color: rgb(239, 237, 232);
   max-width: ${(prop) => prop.width || "100%"};
-  height: ${(prop) => prop.height};
+  height: ${(prop) => prop.height|| "auto"};
   border: 1px solid rgb(239, 237, 235, 0.2);
   border-radius: 12px;
   background-color: rgb(239, 237, 235, 0.05);
