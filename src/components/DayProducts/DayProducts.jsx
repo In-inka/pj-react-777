@@ -8,6 +8,7 @@ import {
   ItemField,
   WrapMobile,
   IconWrapper,
+  DeleteIconWrapper,
   StyledLink,
   WrapButton,
   Button,
@@ -35,10 +36,8 @@ export const ProductsTable = ({ children }) => {
   // const dispatch = useDispatch();
   // const visibleContacts = useSelector(selectVisibleContacts);
 
-  const {
-    _id: { $oid },
-    groupBloodNotAllowed,
-  } = products[0];
+  // const { _id: { $oid } } = products;
+  // const {groupBloodNotAllowed} = products[0];
   // console.log($oid, ' ', groupBloodNotAllowed[1]);
 
   return (
@@ -72,9 +71,9 @@ export const ProductsTable = ({ children }) => {
                     //   () => dispatch(deleteProduct(id))
                   }
                 >
-                  <IconWrapper size="20px" color="#E6533C">
+                  <DeleteIconWrapper size="20px" color="#EF8964">
                     <use href={`${sprite}#icon-logo`} />
-                  </IconWrapper>
+                  </DeleteIconWrapper>
                 </Button>
               </WrapButton>
             </WrapMobile>
@@ -87,10 +86,10 @@ export const ProductsTable = ({ children }) => {
 
 export const ItemProduct = ({ width, value, children }) => {
   console.log(children, value, width);
-  let displayValue;
+  let displayValue = value;
   if (typeof value === 'boolean') {
     displayValue = value ? 'true' : 'false';
-  } else displayValue = value;
+  } 
 
   return (
     <ItemWrapper>

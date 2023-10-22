@@ -106,14 +106,30 @@ export const ItemField = styled.div`
   }
 `;
 
+
 export const IconWrapper = styled.svg`
   width: ${(props) => props.size || '13px'};
   height: ${(props) => props.size || '13px'};
+  /* margin-top: ${(props) => props.margintop || '0'}; */
   fill: ${(props) => props.color || '#ffffff'};
   display: inline-block;
   margin-left: 9px;
+`;
+
+export const DeleteIconWrapper = styled(IconWrapper)`
   margin-top: 10px;
- `;
+`;
+
+
+
+// export const IconWrapper = styled.svg.attrs((props) => ({
+//   width: props.size || '13px',
+//   height: props.size || '13px',
+//   marginTop: props.marginTop || '0',
+//   fill: props.color || '#ffffff',}))`
+//   display: inline-block;
+//   margin-left: 9px;
+// `;
 
  export const StyledLink = styled(Link)`
    display: flex;
