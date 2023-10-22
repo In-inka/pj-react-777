@@ -186,3 +186,12 @@ export const Indicator = styled.div`
   border-radius: 50%;
   background-color: ${(props) => (props.value ? "#419B09" : "#E9101D" )};
 `;
+
+export const NotFound = styled.div`
+  height: 335px;
+  width: 100%;
+  color: rgb(239,237,232,0.5);
+  font-size: 14;
+  display: grid;
+  place-items: center;
+`;
