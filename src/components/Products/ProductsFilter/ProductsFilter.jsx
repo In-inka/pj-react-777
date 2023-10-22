@@ -69,6 +69,41 @@ export const ProductsFilter = () => {
   const [category, setCategory] = useState('');
   const [recommended, setRecommended] = useState(optionsRec[0]);
 
+  const onChangeSearch = (event) => {
+    const text = event.target.value;
+    setHiddenBtnClose(text.length > 0);
+    setSearch(text);
+    dispatch(
+      filterReducer({
+        search: text,
+        category: category.value,
+        recommended: recommended.value,
+      }),
+    );
+  };
+
+  const onCategoriesChange = (event) => {
+    setCategory(event);
+    dispatch(
+      filterReducer({
+        category: event.value,
+        search,
+        recommended: recommended.value,
+      }),
+    );
+  };
+
+  const onRecomendedChange = (event) => {
+    setRecommended(event);
+    dispatch(
+      filterReducer({
+        recommended: event.value,
+        search,
+        category: category.value,
+      }),
+    );
+  };
+
   return (
     <ProductsFilterList>
       <li>
