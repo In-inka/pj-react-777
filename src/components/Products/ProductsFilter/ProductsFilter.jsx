@@ -64,6 +64,11 @@ export const ProductsFilter = () => {
   isTablet ? (height = '52px') : (height = '46px');
   isDesktop ? (height = '52px') : (height = '46px');
 
+  const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('');
+  const [recommended, setRecommended] = useState(optionsRec[0]);
+
   return (
     <ProductsFilterList>
       <li>
