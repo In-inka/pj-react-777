@@ -12,8 +12,7 @@ export const Container = styled.div`
   ${SharedContainerStyle}
   height: 100vh;
   padding-top: 24px;
-  background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
-    url(${background_img_mob});
+  background-image: url(${background_img_mob});
   background-repeat: no-repeat;
   background-position: 77px 241px;
   background-size: 298px;
@@ -26,8 +25,7 @@ export const Container = styled.div`
 
   @media screen and (min-width: 768px) {
     padding-top: 32px;
-    background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
-      url(${background_img_tab});
+    background-image: url(${background_img_tab});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -36,8 +34,7 @@ export const Container = styled.div`
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
-      url(${background_img_tab_x2});
+    background-image: url(${background_img_tab_x2});
   }
 
   @media screen and (min-width: 1440px) {
@@ -46,15 +43,13 @@ export const Container = styled.div`
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: linear-gradient(rgba(4, 4, 4, 0), rgba(4, 4, 4, 0)),
-      url(${background_img_desktop});
+    background-image: url(${background_img_desktop});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
-      url(${background_img_desktop_x2});
+    background-image: url(${background_img_desktop_x2});
   }
 `;
 
@@ -71,7 +66,8 @@ export const BarbellIcon = styled.div`
 `;
 
 export const LogoText = styled.p`
-  font-size: 12;
+  font-size: 12px;
+  line-height: 1;
   font-weight: bold;
 `;
 
@@ -85,7 +81,7 @@ export const Title = styled.h1`
     font-size: 32px;
     line-height: 1.38;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     margin-top: 151px;
   }
 `;
@@ -129,9 +125,9 @@ export const FlexContainer = styled.div`
   /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 95px;
+  padding-top: 117px;
   @media screen and (min-width: 768px) {
-    padding-top: 39px;
+    padding-top: 134px;
     justify-content: left;
     padding-left: 299px;
   }

@@ -32,12 +32,11 @@ const SignIn = () => {
       </LogoContainer>
       <Title>Sign In</Title>
       <Text>
-        Thank you for your interest in our platform. To complete the
-        registration process, please provide us with the following information.
+        Welcome! Please enter your credentials to login to the platform:
       </Text>
       <SignInForm />
       <TextContainer>
-        <TextB>Already have account?</TextB>
+        <TextB>Don't have an account?</TextB>
         <StyledLink to="/signup">Sign Up</StyledLink>
       </TextContainer>
       <FlexContainer>

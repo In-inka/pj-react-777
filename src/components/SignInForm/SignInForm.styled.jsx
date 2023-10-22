@@ -15,13 +15,15 @@ export const Input = styled.input`
   color: #efede8;
   width: 100%;
   background-color: inherit;
-  border: ${(props) => props.theme.main};
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${(props) => props.theme.main};
   border-radius: 12px;
-  padding: 14px;
+  padding: 13px;
   font-size: 14px;
   line-height: 1.29;
   &:not(:first-of-type) {
-    margin-top: 14px;
+    margin-top: 18px;
   }
   &:hover,
   &:focus {
@@ -38,7 +40,7 @@ export const Input = styled.input`
 
 Input.defaultProps = {
   theme: {
-    main: '1px solid rgba(239, 237, 232, 0.3)',
+    main: 'rgba(239, 237, 232, 0.3)',
   },
 };
 
@@ -53,10 +55,14 @@ export const Label = styled.label`
   clip: rect(0 0 0 0);
 `;
 
-export const ButtonContainer = styled.div``;
+export const ButtonContainer = styled.div`
+  padding-top: 28px;
+  @media screen and (min-width: 768px) {
+    padding-top: 64px;
+  }
+`;
 
 export const Button = styled.button`
-  margin-top: 28px;
   font-size: 16px;
   line-height: 1.17;
   background-color: #e6533c;
@@ -74,7 +80,6 @@ export const Button = styled.button`
     color: #efede899;
   }
   @media screen and (min-width: 768px) {
-    margin-top: 64px;
     padding: 16px 60px;
     font-size: 20px;
     line-height: 1.2;

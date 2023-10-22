@@ -47,9 +47,7 @@ const SignUpForm = () => {
         placeholder="Name"
         onBlur={handleBlur}
         theme={
-          errors.name && touched.name
-            ? { main: '1px solid rgba(216, 0, 39, 1)' }
-            : ''
+          errors.name && touched.name ? { main: ' rgba(216, 0, 39, 1)' } : ''
         }
       />
       {errors.name && touched.name && errorRender(errors.name)}
@@ -63,9 +61,7 @@ const SignUpForm = () => {
         placeholder="Email"
         onBlur={handleBlur}
         theme={
-          errors.email && touched.email
-            ? { main: '1px solid rgba(216, 0, 39, 1)' }
-            : ''
+          errors.email && touched.email ? { main: ' rgba(216, 0, 39, 1)' } : ''
         }
       />
       {errors.email && touched.email && errorRender(errors.email)}
@@ -80,14 +76,15 @@ const SignUpForm = () => {
         onBlur={handleBlur}
         theme={
           errors.password && touched.password
-            ? { main: '1px solid rgba(216, 0, 39, 1)' }
+            ? { main: ' rgba(216, 0, 39, 1)' }
             : ''
         }
       />
       {errors.password && touched.password && errorRender(errors.password)}
       <ButtonContainer>
-        <Button
-        disabled={isSubmitting} type='submit'>Sign Up</Button>
+        <Button disabled={isSubmitting} type="submit">
+          Sign Up
+        </Button>
       </ButtonContainer>
     </Form>
   );
