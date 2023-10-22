@@ -2,7 +2,7 @@ import Select from 'react-select';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
+import { filterReducer } from '../../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
   ProductsFilterSearch,
