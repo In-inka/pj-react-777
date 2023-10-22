@@ -11,7 +11,7 @@ import { SharedContainerStyle } from '../../sharedStyles/sharedStyles';
 export const Container = styled.div`
   ${SharedContainerStyle}
   height: 100vh;
-  padding-top:24px;
+  padding-top: 24px;
   background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
     url(${background_img_mob});
   background-repeat: no-repeat;
@@ -29,7 +29,8 @@ export const Container = styled.div`
     background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
       url(${background_img_tab});
     background-repeat: no-repeat;
-    background-position: left 331px top 82px;
+    background-position: 331px 131px;
+    background-size: 437px;
   }
 
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
@@ -41,7 +42,8 @@ export const Container = styled.div`
 
   @media screen and (min-width: 1440px) {
     background-repeat: no-repeat;
-    background-position: left 770px top 0;
+    background-position: 770px 0;
+    background-size: 670px;
     height: 800px;
     position: relative;
     background-image: linear-gradient(rgba(4, 4, 4, 0), rgba(4, 4, 4, 0)),
@@ -64,14 +66,14 @@ export const LogoContainer = styled.div`
 export const BarbellIcon = styled.div`
   width: 36px;
   height: 13px;
-  background-color: #E6533C;
+  background-color: #e6533c;
   margin-right: 8px;
 `;
 
 export const LogoText = styled.p`
   font-size: 12;
   font-weight: bold;
-`
+`;
 
 export const Title = styled.h1`
   margin-top: 90px;
@@ -88,7 +90,6 @@ export const Title = styled.h1`
   }
 `;
 
-
 export const Text = styled.p`
   font-size: 14px;
   line-height: 1.29;
@@ -103,7 +104,6 @@ export const Text = styled.p`
   }
 `;
 
-
 export const TextContainer = styled.div`
   display: flex;
   font-size: 12px;
@@ -116,9 +116,7 @@ export const TextContainer = styled.div`
 
 export const TextB = styled.p`
   color: rgba(239, 237, 232, 0.3);
-
 `;
-
 
 export const StyledLink = styled(Link)`
   margin-left: 4px;
@@ -157,8 +155,7 @@ export const VideoTutorialContainer = styled.div`
   }
 `;
 
-export const TextContainerB = styled.div`
-`
+export const TextContainerB = styled.div``;
 
 export const VideoTutorialTextA = styled.p`
   font-size: 16px;
@@ -195,7 +192,6 @@ export const PlayIcon = styled.div`
     margin-right: 12px;
   }
 `;
-
 
 export const FlexContainerB = styled.div`
   display: flex;

@@ -29,7 +29,8 @@ export const Container = styled.div`
     background-image: linear-gradient(rgba(4, 4, 4, 1), rgba(4, 4, 4, 0)),
       url(${background_img_tab});
     background-repeat: no-repeat;
-    background-position: left 331px top 82px;
+    background-position: 331px 131px;
+    background-size: 437px;
   }
 
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
@@ -41,7 +42,8 @@ export const Container = styled.div`
 
   @media screen and (min-width: 1440px) {
     background-repeat: no-repeat;
-    background-position: left 770px top 0;
+    background-position: 770px 0;
+    background-size: 670px;
     height: 800px;
     position: relative;
     background-image: linear-gradient(rgba(4, 4, 4, 0), rgba(4, 4, 4, 0)),
@@ -127,7 +129,7 @@ export const FlexContainer = styled.div`
   /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 95px;
   @media screen and (min-width: 768px) {
     padding-top: 39px;
     justify-content: left;
