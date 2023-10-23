@@ -35,7 +35,6 @@ import {
 //   }
 // `;
 
-
 const DiaryProducts = ({ children }) => {
   return (
     <Container>
