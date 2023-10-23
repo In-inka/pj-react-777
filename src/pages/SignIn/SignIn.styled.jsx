@@ -10,7 +10,7 @@ import { ContainerStyled } from '../../Styled/ContainerStyled';
 
 export const Container = styled.div`
   ${ContainerStyled}
-  padding-top: 24px;
+  padding-top: 127px;
   padding-bottom: 40px;
   background-image: url(${background_img_mob});
   background-repeat: no-repeat;
@@ -23,7 +23,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    padding-top: 32px;
+    padding-top: 189px;
     padding-bottom: 48px;
     background-image: url(${background_img_tab});
     background-repeat: no-repeat;
@@ -38,6 +38,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
+    padding-top: 200px;
     padding-bottom: 210px;
     background-repeat: no-repeat;
     background-position: 770px 0;
@@ -54,36 +55,13 @@ export const Container = styled.div`
   }
 `;
 
-export const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const BarbellIcon = styled.div`
-  width: 36px;
-  height: 13px;
-  background-color: #e6533c;
-  margin-right: 8px;
-`;
-
-export const LogoText = styled.p`
-  font-size: 12px;
-  line-height: 1;
-  font-weight: bold;
-`;
-
 export const Title = styled.h1`
-  margin-top: 90px;
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
   line-height: 1.17;
   @media screen and (min-width: 768px) {
-    margin-top: 140px;
     font-size: 32px;
     line-height: 1.38;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-top: 151px;
   }
 `;
 
@@ -128,7 +106,7 @@ export const FlexContainer = styled.div`
   align-items: center;
   padding-top: 117px;
   @media screen and (min-width: 768px) {
-    padding-top: 134px;
+    padding-top: 135px;
     justify-content: left;
     padding-left: 299px;
   }

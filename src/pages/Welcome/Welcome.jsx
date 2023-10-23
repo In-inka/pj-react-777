@@ -13,9 +13,6 @@ import {
   TextContainerC,
   CalorieTextA,
   CalorieTextB,
-  LogoContainer,
-  BarbellIcon,
-  LogoText,
   ButtonContainer,
   ButtonYellow,
   ButtonBlack,
@@ -24,10 +21,6 @@ import {
 const Welcome = () => {
   return (
     <Container>
-      <LogoContainer>
-        <BarbellIcon />
-        <LogoText>PowerPulse</LogoText>
-      </LogoContainer>
       <Title>Transforming your body shape with Power Pulse</Title>
       <ButtonContainer>
         <ButtonYellow to="/signup">Sign Up</ButtonYellow>

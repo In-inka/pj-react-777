@@ -99,7 +99,7 @@ const SignInForm = () => {
           : SuccessRender('password'))}
       <ButtonContainer>
         <Button disabled={isSubmitting} type="submit">
-          Sign Up
+          Sign In
         </Button>
       </ButtonContainer>
     </Form>
