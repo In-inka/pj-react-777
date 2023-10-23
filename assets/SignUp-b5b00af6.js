@@ -1,22 +1,22 @@
-import{L as h,j as e}from"./index-12612324.js";import{n as i}from"./emotion-styled.browser.esm-97a80d50.js";import{b as u,a as b,u as f,s as w}from"./schemas-20c0bd75.js";import{b as j,a as k,c as v,d as y}from"./main_bg_desktop-e9b36866.js";import{C as z}from"./ContainerStyled-7dc4dca2.js";const C=i.div`
-  ${z}
+import{L as h,j as e}from"./index-8a32f95b.js";import{n as i,C as u}from"./ContainerStyled-1a06ef1a.js";import{b,a as f,u as w,s as j}from"./schemas-cd5ef9c1.js";import{b as k,a as v,c as y,d as z}from"./main_bg_desktop-e9b36866.js";const C=i.div`
+  ${u}
   padding-top: 24px;
   padding-bottom: 40px;
-  background-image: url(${u});
+  background-image: url(${b});
   background-repeat: no-repeat;
   background-position: 77px 241px;
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${b});
+    background-image: url(${f});
   }
 
   @media screen and (min-width: 768px) {
     height: inherit;
     padding-top: 32px;
     padding-bottom: 48px;
-    background-image: url(${j});
+    background-image: url(${k});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -25,7 +25,7 @@ import{L as h,j as e}from"./index-12612324.js";import{n as i}from"./emotion-styl
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${k});
+    background-image: url(${v});
   }
 
   @media screen and (min-width: 1440px) {
@@ -35,13 +35,13 @@ import{L as h,j as e}from"./index-12612324.js";import{n as i}from"./emotion-styl
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: url(${v});
+    background-image: url(${y});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${y});
+    background-image: url(${z});
   }
 `,S=i.div`
   display: flex;
@@ -302,4 +302,4 @@ margin-right: 4px;
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,Z=async(t,n)=>{await new Promise(o=>setTimeout(o,1e3)),console.log(t),n.resetForm()},ee=()=>{const{values:t,errors:n,touched:o,isSubmitting:m,handleChange:a,handleBlur:d,handleSubmit:g}=f({initialValues:{name:"",email:"",password:""},validationSchema:w,onSubmit:Z}),p=x=>e.jsxs(l,{children:[" ",e.jsx(Q,{}),e.jsx(W,{children:x})]}),s=x=>e.jsxs(l,{children:[e.jsx(X,{}),e.jsxs(Y,{children:["Success ",x]})]});return e.jsxs(J,{onSubmit:g,children:[e.jsx(c,{htmlFor:"name",children:"Name"}),e.jsx(r,{value:t.name,onChange:a,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:d,theme:o.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.name&&(n.name?p(n.name):s("name"))," ",e.jsx(c,{htmlFor:"email",children:"Email"}),e.jsx(r,{value:t.email,onChange:a,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:d,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?p(n.email):s("email"))," ",e.jsx(c,{htmlFor:"password",children:"Password"}),e.jsx(r,{value:t.password,onChange:a,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:d,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?p(n.password):s("password"))," ",e.jsx(K,{children:e.jsx(O,{disabled:m,type:"submit",children:"Sign Up"})})]})},ae=()=>e.jsxs(C,{children:[e.jsxs(S,{children:[e.jsx(T,{}),e.jsx(_,{children:"PowerPulse"})]}),e.jsx(B,{children:"Sign Up"}),e.jsx(F,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ee,{}),e.jsxs($,{children:[e.jsx(I,{children:"Already have account?"}),e.jsx(P,{to:"/signin",children:"Sign In"})]}),e.jsx(L,{children:e.jsxs(E,{children:[e.jsx(A,{}),e.jsxs(U,{children:[e.jsx(V,{children:"350+"}),e.jsx(R,{children:"Video tutorial"})]})]})}),e.jsx(N,{children:e.jsxs(M,{children:[e.jsx(H,{}),e.jsxs(q,{children:[e.jsx(D,{children:"500"}),e.jsx(G,{children:"cal"})]})]})})]});export{ae as default};
+`,Z=async(t,n)=>{await new Promise(o=>setTimeout(o,1e3)),console.log(t),n.resetForm()},ee=()=>{const{values:t,errors:n,touched:o,isSubmitting:m,handleChange:a,handleBlur:d,handleSubmit:g}=w({initialValues:{name:"",email:"",password:""},validationSchema:j,onSubmit:Z}),p=x=>e.jsxs(l,{children:[" ",e.jsx(Q,{}),e.jsx(W,{children:x})]}),s=x=>e.jsxs(l,{children:[e.jsx(X,{}),e.jsxs(Y,{children:["Success ",x]})]});return e.jsxs(J,{onSubmit:g,children:[e.jsx(c,{htmlFor:"name",children:"Name"}),e.jsx(r,{value:t.name,onChange:a,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:d,theme:o.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.name&&(n.name?p(n.name):s("name"))," ",e.jsx(c,{htmlFor:"email",children:"Email"}),e.jsx(r,{value:t.email,onChange:a,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:d,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?p(n.email):s("email"))," ",e.jsx(c,{htmlFor:"password",children:"Password"}),e.jsx(r,{value:t.password,onChange:a,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:d,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?p(n.password):s("password"))," ",e.jsx(K,{children:e.jsx(O,{disabled:m,type:"submit",children:"Sign Up"})})]})},re=()=>e.jsxs(C,{children:[e.jsxs(S,{children:[e.jsx(T,{}),e.jsx(_,{children:"PowerPulse"})]}),e.jsx(B,{children:"Sign Up"}),e.jsx(F,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ee,{}),e.jsxs($,{children:[e.jsx(I,{children:"Already have account?"}),e.jsx(P,{to:"/signin",children:"Sign In"})]}),e.jsx(L,{children:e.jsxs(E,{children:[e.jsx(A,{}),e.jsxs(U,{children:[e.jsx(V,{children:"350+"}),e.jsx(R,{children:"Video tutorial"})]})]})}),e.jsx(N,{children:e.jsxs(M,{children:[e.jsx(H,{}),e.jsxs(q,{children:[e.jsx(D,{children:"500"}),e.jsx(G,{children:"cal"})]})]})})]});export{re as default};

@@ -1,5 +1,5 @@
-import{L as e,j as i}from"./index-12612324.js";import{n}from"./emotion-styled.browser.esm-97a80d50.js";import{b as o,a as d,c as t,d as r}from"./main_bg_desktop-e9b36866.js";import{C as a}from"./ContainerStyled-7dc4dca2.js";const p="/pj-react-777/assets/main_bg_mob_welcome_x2-dd403410.jpg",x="/pj-react-777/assets/main_bg_mob_welcome-8f07bae4.jpg",s=n.div`
-  ${a}
+import{L as e,j as i}from"./index-8a32f95b.js";import{n,C as o}from"./ContainerStyled-1a06ef1a.js";import{b as d,a as t,c as r,d as a}from"./main_bg_desktop-e9b36866.js";const p="/pj-react-777/assets/main_bg_mob_welcome_x2-dd403410.jpg",x="/pj-react-777/assets/main_bg_mob_welcome-8f07bae4.jpg",s=n.div`
+  ${o}
   padding-top: 24px;
   padding-bottom: 40px;
   background-image: url(${x});
@@ -16,7 +16,7 @@ import{L as e,j as i}from"./index-12612324.js";import{n}from"./emotion-styled.br
     height: inherit;
     padding-top: 32px;
     padding-bottom: 48px;
-    background-image: url(${o});
+    background-image: url(${d});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -25,7 +25,7 @@ import{L as e,j as i}from"./index-12612324.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${d});
+    background-image: url(${t});
   }
 
   @media screen and (min-width: 1440px) {
@@ -35,13 +35,13 @@ import{L as e,j as i}from"./index-12612324.js";import{n}from"./emotion-styled.br
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: url(${t});
+    background-image: url(${r});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${r});
+    background-image: url(${a});
   }
 `,c=n.div`
   display: flex;
@@ -237,4 +237,4 @@ import{L as e,j as i}from"./index-12612324.js";import{n}from"./emotion-styled.br
     height: 24px;
     margin-bottom: 12px;
   }
-`,V=()=>i.jsxs(s,{children:[i.jsxs(c,{children:[i.jsx(l,{}),i.jsx(g,{children:"PowerPulse"})]}),i.jsx(m,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(h,{children:[i.jsx(b,{to:"/signup",children:"Sign Up"}),i.jsx(u,{to:"/signin",children:"Sign In"})]}),i.jsx(f,{children:i.jsxs(w,{children:[i.jsx(z,{}),i.jsxs(k,{children:[i.jsx(j,{children:"350+"}),i.jsx(_,{children:"Video tutorial"})]})]})}),i.jsx(y,{children:i.jsxs(v,{children:[i.jsx($,{}),i.jsxs(C,{children:[i.jsx(T,{children:"500"}),i.jsx(B,{children:"cal"})]})]})})]});export{V as default};
+`,S=()=>i.jsxs(s,{children:[i.jsxs(c,{children:[i.jsx(l,{}),i.jsx(g,{children:"PowerPulse"})]}),i.jsx(m,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(h,{children:[i.jsx(b,{to:"/signup",children:"Sign Up"}),i.jsx(u,{to:"/signin",children:"Sign In"})]}),i.jsx(f,{children:i.jsxs(w,{children:[i.jsx(z,{}),i.jsxs(k,{children:[i.jsx(j,{children:"350+"}),i.jsx(_,{children:"Video tutorial"})]})]})}),i.jsx(y,{children:i.jsxs(v,{children:[i.jsx($,{}),i.jsxs(C,{children:[i.jsx(T,{children:"500"}),i.jsx(B,{children:"cal"})]})]})})]});export{S as default};
