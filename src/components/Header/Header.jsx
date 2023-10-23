@@ -5,7 +5,6 @@ const Header = () => {
   return (
     <>
       <Container>
-        hello
         <NavLink to="/signup">SignUp</NavLink>
         <NavLink to="/signin">SignIn</NavLink>
         <NavLink to="/profile">Profile</NavLink>
