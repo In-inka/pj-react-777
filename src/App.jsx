@@ -21,7 +21,6 @@ const Equipment = lazy(() =>
 );
 
 function App() {
-  // console.log(test);
   return (
     <>
       <Routes>
