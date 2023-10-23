@@ -1,16 +1,24 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './components/Layout/Layout';
-import { Welcome } from './pages/Welcome/Welcome';
-import { Diary } from './pages/SecondPage/Diary';
-import { ErrorPage } from './pages/ErrorPage/ErrorPage';
-import { Products } from './pages/Products/Products';
-import { Exercises } from './pages/Exercises/Exercises';
-import { SignUp } from './pages/SignUp/SignUp';
-import { SignIn } from './pages/SignIn/SignIn';
-import { Profile } from './pages/Profile/Profile';
-import { BodyParts } from './components/ExercisesCategories/BodyParts/BodyParts';
-import { Muscles } from './components/ExercisesCategories/Muscles/Muscles';
-import { Equipment } from './components/ExercisesCategories/Equipment/Equipment';
+import { lazy } from 'react';
+
+const Layout = lazy(() => import('./components/Layout/Layout'));
+const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
+const Diary = lazy(() => import('./pages/SecondPage/Diary'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
+const Products = lazy(() => import('./pages/Products/Products'));
+const Exercises = lazy(() => import('./pages/Exercises/Exercises.jsx'));
+const SignUp = lazy(() => import('./pages/SignUp/SignUp'));
+const SignIn = lazy(() => import('./pages/SignIn/SignIn'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
+const BodyParts = lazy(() =>
+  import('./components/ExercisesCategories/BodyParts/BodyParts.jsx'),
+);
+const Muscles = lazy(() =>
+  import('./components/ExercisesCategories/Muscles/Muscles.jsx'),
+);
+const Equipment = lazy(() =>
+  import('./components/ExercisesCategories/Equipment/Equipment.jsx'),
+);
 
 function App() {
   // console.log(test);

@@ -1,3 +1,4 @@
+
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch'
 import { DiaryProducts } from '../../components/DiaryProducts/DiaryProducts'
 import { DiaryExercises } from '../../components/DiaryExercises/DiaryExercises'
@@ -7,6 +8,7 @@ const Diary = () => {
     <div className="container">
       <p>Diary</p>
       <DaySwitch />
+
       <div style={{ paddingLeft: '50px', paddingTop: '50px'}}>
         <DiaryProducts></DiaryProducts>
         <div style={{marginBottom: '50px'}}></div>
@@ -16,4 +18,4 @@ const Diary = () => {
   );
 };
 
-export { Diary };
+export default Diary;
