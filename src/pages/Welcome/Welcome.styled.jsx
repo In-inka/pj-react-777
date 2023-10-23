@@ -107,7 +107,7 @@ export const ButtonYellow = styled(Link)`
   border-radius: 12px;
   border: none;
   padding: 12px 40px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     background-color: #ef8964;
@@ -132,7 +132,7 @@ export const ButtonBlack = styled(Link)`
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.3);
   padding: 11px 39px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     border-color: rgba(230, 83, 60, 1);
