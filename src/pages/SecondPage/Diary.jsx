@@ -1,11 +1,11 @@
-import {DaySwitch} from '../../components/DaySwitch/DaySwitch'
+import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 const Diary = () => {
   return (
     <div className="container">
       <p>Diary</p>
-      <DaySwitch/>
+      <DaySwitch />
     </div>
   );
 };
 
-export { Diary };
+export default Diary;
