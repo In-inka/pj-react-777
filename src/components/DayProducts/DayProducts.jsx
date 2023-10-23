@@ -1,5 +1,5 @@
 import {
-  Wrapper,
+  Container,
   TitleMain,
   SubTitle,
   AddProduct,
@@ -29,7 +29,7 @@ import sprite from '../../assets/sprite.svg';
 
 export const DayProducts = ({ children }) => {
   return (
-    <Wrapper>
+    <Container>
       <TitleMain>
         <SubTitle>Products</SubTitle>
         <StyledLink to="/first">
@@ -44,7 +44,7 @@ export const DayProducts = ({ children }) => {
       ) : (
         <ProductsTable>{children}</ProductsTable>
       )}
-    </Wrapper>
+    </Container>
   );
 };
 

@@ -1,26 +1,25 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   /* 320-375 */
   box-sizing: border-box;
+  max-height: 824px;
+  width: 335px;
   padding: 16px;
   padding-right: 8px;
   border: 1px solid rgb(239, 237, 235, 0.2);
   border-radius: 12px;
   background-color: rgb(239, 237, 235, 0.05);
-  /* max-height: 824px; */
-  width: 375px;
   font-size: 12px;
 
   @media screen and (min-width: 375px) {
   }
 
   @media screen and (min-width: 768px) {
-    width: 768px;
+    width: 704px;
     height: 234px;
     padding-top: 19px;
-    
   }
   @media screen and (min-width: 1440px) {
   }
@@ -89,7 +88,7 @@ export const WrapItemProducts = styled.div`
   
   @media screen and (min-width: 768px) {
     gap: 8px;
-    flex: 1.1;
+    flex: 1.0;
      
   }
 `;
@@ -136,7 +135,7 @@ export const ItemField = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
-    padding: 10px 14px;
+    padding: 8px 14px;
   }
   @media screen and (min-width: 1440px) {
   }
@@ -268,21 +267,21 @@ export const Title = styled.div`
 `;
 export const Category = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 190px;
+    margin-left: 175px;
   }
 `;
 export const Calories = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 165px;
+    margin-left: 145px;
   }
 `;
 export const Weight = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 50px;
+    margin-left: 43px;
   }
 `;
 export const Recommend = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 58px;
+    margin-left: 46px;
   }
 `;
