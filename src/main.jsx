@@ -5,8 +5,7 @@ import App from './App.jsx';
 import { GlobalStyle } from './GlobalStyle.jsx';
 import { ThemeProvider } from 'styled-components';
 import { glodalColor } from './Styled/GlobalColor.jsx';
-
-//import './index.css';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
