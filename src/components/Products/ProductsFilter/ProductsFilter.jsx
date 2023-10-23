@@ -2,7 +2,7 @@ import Select from 'react-select';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import sprite from '../../../../src/images/sprite.svg';
+import sprite from '../../../../src/img/sprite.svg';
 import { filterReducer } from '../../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
@@ -102,6 +102,18 @@ export const ProductsFilter = () => {
         category: category.value,
       }),
     );
+  };
+
+  const delTextInput = () => {
+    setSearch('');
+    dispatch(
+      filterReducer({
+        search: '',
+        category: category.value,
+        recommended: recommended.value,
+      }),
+    );
+    setHiddenBtnClose(false);
   };
 
   return (
