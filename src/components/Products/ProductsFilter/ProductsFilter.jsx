@@ -75,6 +75,18 @@ export const ProductsFilter = () => {
     }),
   };
 
+   option: (provided, { isFocused, isSelected }) => ({
+      ...provided,
+
+      backgroundColor: isSelected
+        ? 'rgba(28, 28, 28, 1)'
+        : isFocused
+        ? 'rgba(28, 28, 28, 1)'
+        : 'rgba(28, 28, 28, 1)', //active option and hover background
+      color: isSelected ? '#E6533C' : '#EFEDE8', //text color of the active option in the list
+      padding: '14px',
+    }),
+
   const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
