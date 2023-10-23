@@ -1,54 +1,54 @@
 import {
-  Container,
-  TitleMain,
-  SubTitle,
-  AddProduct,
-  TableList,
-  ListItem,
-  ItemWrapper,
-  ItemName,
-  ItemField,
-  WrapMobile,
-  IconWrapper,
-  DeleteIconWrapper,
-  StyledLink,
-  WrapItemProducts,
-  Button,
-  Indicator,
-  NotFound,
-  NormalText,
-  SliceText,  
-  WrapTitleTable,
-  Title,
-  Category,
-  Calories,
-  Weight,
-  Recommend,
-} from './DayProducts.styled';
+  ContainerEx,
+  TitleMainEx,
+  SubTitleEx,
+  AddProductEx,
+  TableListEx,
+  ListItemEx,
+  ItemWrapperEx,
+  ItemNameEx,
+  ItemFieldEx,
+  WrapMobileEx,
+  IconWrapperEx,
+  DeleteIconWrapperEx,
+  StyledLinkEx,
+  WrapItemProductsEx,
+  ButtonEx,
+  IndicatorEx,
+  NotFoundEx,
+  NormalTextEx,
+  SliceTextEx,
+  WrapTitleTableEx,
+  TitleEx,
+  CategoryEx,
+  CaloriesEx,
+  WeightEx,
+  RecommendEx,
+} from './DiaryExercises.styled';
 import sprite from '../../assets/sprite.svg';
 
-export const DayProducts = ({ children }) => {
+export const DiaryExercises = ({ children }) => {
   return (
-    <Container>
-      <TitleMain>
-        <SubTitle>Products</SubTitle>
-        <StyledLink to="/first">
-          <AddProduct>Add Product</AddProduct>
-          <IconWrapper color="#E6533C">
+    <ContainerEx>
+      <TitleMainEx>
+        <SubTitleEx>Products</SubTitleEx>
+        <StyledLinkEx to="/first">
+          <AddProductEx>Add Product</AddProductEx>
+          <IconWrapperEx color="#E6533C">
             <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-        </StyledLink>
-      </TitleMain>
+          </IconWrapperEx>
+        </StyledLinkEx>
+      </TitleMainEx>
       {!products.length ? (
-        <EmptyScreen />
+        <EmptyScreenEx />
       ) : (
-        <ProductsTable>{children}</ProductsTable>
+        <ExercisesTable>{children}</ExercisesTable>
       )}
-    </Container>
+    </ContainerEx>
   );
 };
-
-export const ProductsTable = ({ children }) => {
+// exercises;
+export const ExercisesTable = ({ children }) => {
   // const dispatch = useDispatch();
   // const visibleContacts = useSelector(selectVisibleContacts);
 
@@ -58,8 +58,8 @@ export const ProductsTable = ({ children }) => {
 
   return (
     <>
-      <TableTitle/>
-      <TableList>
+      <TableTitleEx/>
+      <TableListEx>
         {products.map(
           ({
             _id: { $oid },
@@ -69,73 +69,73 @@ export const ProductsTable = ({ children }) => {
             weight,
             groupBloodNotAllowed,
           }) => (
-            <ListItem key={$oid}>
-              <ItemProduct value={title}>Title</ItemProduct>
-              <ItemProduct value={category}>Category</ItemProduct>
-              <WrapMobile>
-                <WrapItemProducts>
-                  <ItemProduct value={calories}>Calories</ItemProduct>
-                  <ItemProduct value={weight}>Weight</ItemProduct>
-                  <ItemProduct value={groupBloodNotAllowed[1]}>
+            <ListItemEx key={$oid}>
+              <ItemProductEx value={title}>Title</ItemProductEx>
+              <ItemProductEx value={category}>Category</ItemProductEx>
+              <WrapMobileEx>
+                <WrapItemProductsEx>
+                  <ItemProductEx value={calories}>Calories</ItemProductEx>
+                  <ItemProductEx value={weight}>Weight</ItemProductEx>
+                  <ItemProductEx value={groupBloodNotAllowed[1]}>
                     Recommend
-                  </ItemProduct>
-                </WrapItemProducts>
-                <Button
+                  </ItemProductEx>
+                </WrapItemProductsEx>
+                <ButtonEx
                   onClick={
                     () => console.log(' del btn ')
                     //   () => dispatch(deleteProduct(id))
                   }
                 >
-                  <DeleteIconWrapper size="20px" color="#EF8964">
+                  <DeleteIconWrapperEx size="20px" color="#EF8964">
                     <use href={`${sprite}#icon-logo`} />
-                  </DeleteIconWrapper>
-                </Button>
-              </WrapMobile>
-            </ListItem>
+                  </DeleteIconWrapperEx>
+                </ButtonEx>
+              </WrapMobileEx>
+            </ListItemEx>
           ),
         )}
-      </TableList>
+      </TableListEx>
     </>
   );
 };
 
-export const ItemProduct = ({ width, value, children }) => {
+export const ItemProductEx = ({ width, value, children }) => {
   console.log(children, value, width);
   let displayValue = value;
   const valueIsBoolean = typeof value === 'boolean';
   if (valueIsBoolean) {
     displayValue = value ? 'Yes' : 'No';
   }
-  let sliceValue = displayValue;;
+  let sliceValue = displayValue;
   if (value.length > 18) {
     sliceValue = value.slice(0, 18) + '...';
   }
 
   return (
-    <ItemWrapper name={children}>
-      <ItemName>{children}</ItemName>
-      <ItemField width={width}>
-        {valueIsBoolean && <Indicator value={value} />}
-        <NormalText>{displayValue}</NormalText>
-        <SliceText>{sliceValue}</SliceText>
-      </ItemField>
-    </ItemWrapper>
+    <ItemWrapperEx name={children}>
+      <ItemNameEx>{children}</ItemNameEx>
+      <ItemFieldEx width={width}>
+        {valueIsBoolean && <IndicatorEx value={value} />}
+        <NormalTextEx>{displayValue}</NormalTextEx>
+        <SliceTextEx>{sliceValue}</SliceTextEx>
+      </ItemFieldEx>
+    </ItemWrapperEx>
   );
 };
 
-export const TableTitle = () => {
+export const TableTitleEx = () => {
   return (
-    <WrapTitleTable>
-      <Title>Title</Title>
-      <Category>Category</Category>
-      <Calories>Calories</Calories>
-      <Weight>Weight</Weight>
-      <Recommend>Recommend</Recommend>
-    </WrapTitleTable>
+    <WrapTitleTableEx>
+      <TitleEx>Title</TitleEx>
+      <CategoryEx>Category</CategoryEx>
+      <CaloriesEx>Calories</CaloriesEx>
+      <WeightEx>Weight</WeightEx>
+      <RecommendEx>Recommend</RecommendEx>
+    </WrapTitleTableEx>
   );
 }
 
-export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
+export const EmptyScreenEx = () => <NotFoundEx>Not found products</NotFoundEx>;
 
 let choice = true;
 // let choice = false;
