@@ -1,6 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { productListThunk } from './operationsProducts';
 
+export const productSlice = createSlice({
+  name: 'products',
+  initialState: {
+    categories: [],
+    list: [],
+    isLoading: false,
+    filter: {
+      search: '',
+      category: '',
+      recomended: '',
+    },
+  },
+});
+
 function ListFulfilled(state, { payload }) {
   state.list = payload;
   state.isLoading = false;
