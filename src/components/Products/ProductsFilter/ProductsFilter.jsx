@@ -64,6 +64,17 @@ export const ProductsFilter = () => {
   isTablet ? (height = '52px') : (height = '46px');
   isDesktop ? (height = '52px') : (height = '46px');
 
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      backgroundColor: 'trasparent', //window background
+      height: height,
+      appearance: 'none', //removing default appearance
+      WebkitAppearance: 'none',
+      MozAppearance: 'none',
+    }),
+  };
+
   const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
