@@ -74,7 +74,7 @@ export const WrapMobileEx = styled.div`
 
   @media screen and (min-width: 768px) {
     align-items: center;
-    flex: 1.8;
+    flex: 2.2;
     gap: 0px;
     justify-content: space-between;
   }
@@ -91,22 +91,38 @@ export const WrapItemProductsEx = styled.div`
   @media screen and (min-width: 768px) {
     gap: 8px;
     flex: 1;
+    
   }
 `;
 
 export const ItemWrapperEx = styled.div`
   /* 320-375 */
-  flex: 1.2;
+  flex: 1;
   color: rgb(230, 83, 60);
 
   @media screen and (min-width: 768px) {
-    flex: ${(props) => (props.name === 'Title' ? 1.3 : 1.2)};
+    /* flex: 1; */
+    /* flex: ${(props) => (props.name === 'Target' ? 1.3 : 1)}; */
+    flex: ${(props) => {
+      switch (props.name) {
+        case 'Time':
+          return 0.65;
+        case 'Burned Calories':
+          return 0.8;
+      }
+    }};
   }
   @media screen and (min-width: 1440px) {
+    flex: ${(props) => {
+      switch (props.name) {
+        case 'Body Part':
+          return 0.8;
+      }
+    }};
   }
 `;
 
-export const ItemNameEx = styled.p`
+export const ItemNameEx = styled.div`
   /* 320-375 */
   font-size: 12px;
   color: rgb(239, 137, 100);
@@ -123,6 +139,7 @@ export const ItemFieldEx = styled.div`
   /* 320-375 */
 
   display: flex;
+  
   align-items: center;
   margin-bottom: 16px;
   padding: 8px 14px;
@@ -135,6 +152,7 @@ export const ItemFieldEx = styled.div`
   background-color: rgb(239, 237, 235, 0.05);
 
   @media screen and (min-width: 768px) {
+    flex:1;
     margin-bottom: 0;
     padding: 8px 14px;
   }
@@ -142,7 +160,9 @@ export const ItemFieldEx = styled.div`
   }
 `;
 export const NormalTextEx = styled.div`
+  display: flex;
   font-size: 14px;
+
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -150,14 +170,40 @@ export const NormalTextEx = styled.div`
   }
 `;
 export const SliceTextEx = styled.div`
-  display: none;
+   display: none;
+   font-size: 16px;
   @media screen and (min-width: 768px) {
     display: flex;
-    font-size: 16px;
+    /* display: none;
+    font-size: 16px; */
   }
   @media screen and (min-width: 1440px) {
   }
 `;
+
+export const NormalTextNameEx = styled.div`
+  font-size: 12px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: none;
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    /* display: none; */
+  }
+`;
+export const SliceTextNameEx = styled.div`
+  font-size: 11px;
+  @media screen and (min-width: 768px) {
+    /* display: flex; */
+    display: flex;
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
+`;
+
 
 
 export const IconWrapperEx = styled.svg`
@@ -270,36 +316,47 @@ export const WrapTitleTableEx = styled.div`
   }
 `;
   
-export const TitleEx = styled.div``;
-export const CategoryEx = styled.div`
+export const BodyEx = styled.div``;
+
+export const EquipmentEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 182px;
+    margin-left: 80px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 220px;
+    margin-left: 80px;
   }
 `;
-export const CaloriesEx = styled.div`
+
+export const NameEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 145px;
+    margin-left: 75px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 176px;
+    margin-left: 100px;
   }
 `;
-export const WeightEx = styled.div`
+export const TargetEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 37px;
+    margin-left: 100px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 55px;
+    margin-left: 130px;
   }
 `;
-export const RecommendEx = styled.div`
+export const BurnedEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 46px;
+    margin-left: 60px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 65px;
+    margin-left: 95px;
   }
 `;
+export const TimeEx = styled.div`
+  @media screen and (min-width: 768px) {
+    margin-left: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 15px;
+  }
+`;
+

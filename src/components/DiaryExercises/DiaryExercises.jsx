@@ -17,13 +17,18 @@ import {
   IndicatorEx,
   NotFoundEx,
   NormalTextEx,
+  NormalTextNameEx,
   SliceTextEx,
+  SliceTextNameEx,
   WrapTitleTableEx,
-  TitleEx,
-  CategoryEx,
-  CaloriesEx,
-  WeightEx,
-  RecommendEx,
+  BodyEx,
+  EquipmentEx,
+  NameEx,
+  TargetEx,
+  BurnedEx,
+  TimeEx,
+  
+
 } from './DiaryExercises.styled';
 import sprite from '../../assets/sprite.svg';
 
@@ -31,15 +36,15 @@ export const DiaryExercises = ({ children }) => {
   return (
     <ContainerEx>
       <TitleMainEx>
-        <SubTitleEx>Products</SubTitleEx>
+        <SubTitleEx>Execrcises</SubTitleEx>
         <StyledLinkEx to="/first">
-          <AddProductEx>Add Product</AddProductEx>
+          <AddProductEx>Add exercise</AddProductEx>
           <IconWrapperEx color="#E6533C">
             <use href={`${sprite}#icon-logo`} />
           </IconWrapperEx>
         </StyledLinkEx>
       </TitleMainEx>
-      {!products.length ? (
+      {!exercises.length ? (
         <EmptyScreenEx />
       ) : (
         <ExercisesTable>{children}</ExercisesTable>
@@ -58,28 +63,34 @@ export const ExercisesTable = ({ children }) => {
 
   return (
     <>
-      <TableTitleEx/>
+      <TableTitleEx />
       <TableListEx>
-        {products.map(
+        {exercises.map(
           ({
             _id: { $oid },
-            title,
-            category,
-            calories,
-            weight,
-            groupBloodNotAllowed,
+            bodyPart,
+            equipment,
+            name,
+            target,
+            burnedCalories,
+            time,
           }) => (
             <ListItemEx key={$oid}>
-              <ItemProductEx value={title}>Title</ItemProductEx>
-              <ItemProductEx value={category}>Category</ItemProductEx>
+              
+                <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
+                <ItemProductEx value={equipment}>Equipment</ItemProductEx>
+                <ItemProductEx value={name}>name</ItemProductEx>
+              
+
               <WrapMobileEx>
                 <WrapItemProductsEx>
-                  <ItemProductEx value={calories}>Calories</ItemProductEx>
-                  <ItemProductEx value={weight}>Weight</ItemProductEx>
-                  <ItemProductEx value={groupBloodNotAllowed[1]}>
-                    Recommend
+                  <ItemProductEx value={target}>Target</ItemProductEx>
+                  <ItemProductEx value={burnedCalories}>
+                    Burned Calories
                   </ItemProductEx>
+                  <ItemProductEx value={time}>Time</ItemProductEx>
                 </WrapItemProductsEx>
+
                 <ButtonEx
                   onClick={
                     () => console.log(' del btn ')
@@ -100,22 +111,27 @@ export const ExercisesTable = ({ children }) => {
 };
 
 export const ItemProductEx = ({ width, value, children }) => {
-  console.log(children, value, width);
+  // console.log(children, value, width);
   let displayValue = value;
-  const valueIsBoolean = typeof value === 'boolean';
-  if (valueIsBoolean) {
-    displayValue = value ? 'Yes' : 'No';
-  }
   let sliceValue = displayValue;
-  if (value.length > 18) {
-    sliceValue = value.slice(0, 18) + '...';
+  if (value.length > 10) {
+    sliceValue = value.slice(0, 10) + '...';
   }
 
+  let displayChild = children;
+  let sliceChild = displayChild;
+  if (children.length > 10) {
+    sliceChild = children.slice(0, 10) + '...';    
+  }
+ 
   return (
     <ItemWrapperEx name={children}>
-      <ItemNameEx>{children}</ItemNameEx>
-      <ItemFieldEx width={width}>
-        {valueIsBoolean && <IndicatorEx value={value} />}
+      <ItemNameEx>
+        <NormalTextNameEx>{displayChild}</NormalTextNameEx>
+        <SliceTextNameEx>{sliceChild}</SliceTextNameEx>
+      </ItemNameEx>
+
+      <ItemFieldEx width={width} name={children}>
         <NormalTextEx>{displayValue}</NormalTextEx>
         <SliceTextEx>{sliceValue}</SliceTextEx>
       </ItemFieldEx>
@@ -126,126 +142,119 @@ export const ItemProductEx = ({ width, value, children }) => {
 export const TableTitleEx = () => {
   return (
     <WrapTitleTableEx>
-      <TitleEx>Title</TitleEx>
-      <CategoryEx>Category</CategoryEx>
-      <CaloriesEx>Calories</CaloriesEx>
-      <WeightEx>Weight</WeightEx>
-      <RecommendEx>Recommend</RecommendEx>
+      <BodyEx>Body Part</BodyEx>
+      <EquipmentEx>Equipment</EquipmentEx>
+      <NameEx>Name</NameEx>
+      <TargetEx>Target</TargetEx>
+      <BurnedEx>Burned Calories</BurnedEx>
+      <TimeEx>Time</TimeEx>
     </WrapTitleTableEx>
   );
 }
 
 export const EmptyScreenEx = () => <NotFoundEx>Not found products</NotFoundEx>;
 
+
 let choice = true;
 // let choice = false;
 
-const products = !choice
+const exercises = !choice
   ? []
   : [
       {
         _id: {
-          $oid: '5d51694902b2373622ff5773',
+          $oid: '64f2458d6f67bc34bae4f7f7',
         },
-        weight: 100,
-        calories: 340,
-        category: 'dairy',
-        title: 'Danbo cheese',
-        groupBloodNotAllowed: {
-          1: true,
-          2: true,
-          3: false,
-          4: false,
-        },
+        bodyPart: 'chest',
+        equipment: 'leverage machine',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0009.gif',
+        name: 'assisted chest dip (kneeling)',
+        target: 'pectorals',
+        burnedCalories: 329,
+        time: 3,
       },
       {
         _id: {
-          $oid: '5d51694902b2373622ff5b7f',
+          $oid: '64f2458d6f67bc34bae4f801',
         },
-        weight: 100,
-        calories: 112,
-        category: 'fish',
-        title: 'marlin',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
+        bodyPart: 'upper arms',
+        equipment: 'leverage machine',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0019.gif',
+        name: 'assisted triceps dip (kneeling)',
+        target: 'triceps',
+        burnedCalories: 233,
+        time: 3,
       },
       {
         _id: {
-          $oid: '5d51694902b2373622ff5e13',
+          $oid: '64f2458d6f67bc34bae4f813',
         },
-        weight: 100,
-        calories: 17,
-        category: 'vegetables and herbs',
-        title: 'Salads Belaya Dacha Delicate root',
-        groupBloodNotAllowed: {
-          1: true,
-          2: false,
-          3: false,
-          4: false,
-        },
+        bodyPart: 'upper arms',
+        equipment: 'barbell',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0038.gif',
+        name: 'barbell drag curl',
+        target: 'biceps',
+        burnedCalories: 84,
+        time: 3,
       },
       {
         _id: {
-          $oid: '5d51694902b2373622ff5b6f',
+          $oid: '64f2458d6f67bc34bae4f7f4',
         },
-        weight: 100,
-        calories: 160,
-        category: 'fish',
-        title: 'Cold smoked bream',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
+        bodyPart: 'waist',
+        equipment: 'body weight',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0003.gif',
+        name: 'air bike',
+        target: 'abs',
+        burnedCalories: 312,
+        time: 3,
       },
       {
         _id: {
-          $oid: '5d51694902b2373622ff5b8d',
+          $oid: '64f2458d6f67bc34bae4f819',
         },
-        weight: 100,
-        calories: 281,
-        category: 'fish',
-        title: 'Pollock in batter',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
+        bodyPart: 'upper legs',
+        equipment: 'barbell',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0044.gif',
+        name: 'barbell good morning',
+        target: 'hamstrings',
+        burnedCalories: 335,
+        time: 3,
       },
       {
         _id: {
-          $oid: '5d51694902b2373622ff590d',
+          $oid: '64f2458d6f67bc34bae4f7fe',
         },
-        weight: 100,
-        calories: 232,
-        category: 'meat',
-        title: 'Lamb ham',
-        groupBloodNotAllowed: {
-          1: true,
-          2: true,
-          3: false,
-          4: true,
-        },
+        bodyPart: 'upper legs',
+        equipment: 'assisted',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0016.gif',
+        name: 'assisted prone hamstring',
+        target: 'hamstrings',
+        burnedCalories: 316,
+        time: 3,
       },
       {
         _id: {
-          $oid: '5d51694902b2373622ff5f16',
+          $oid: '64f2458d6f67bc34bae4f809',
         },
-        weight: 100,
-        calories: 38,
-        category: 'soft drinks',
-        title: 'Pepsi',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
+        bodyPart: 'upper legs',
+        equipment: 'barbell',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0028.gif',
+        name: 'barbell clean and press',
+        target: 'quads',
+        burnedCalories: 272,
+        time: 3,
+      },
+      {
+        _id: {
+          $oid: '64f2458d6f67bc34bae4f80e',
         },
+        bodyPart: 'chest',
+        equipment: 'barbell',
+        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0033.gif',
+        name: 'barbell decline bench press',
+        target: 'pectorals',
+        burnedCalories: 129,
+        time: 3,
       },
     ];
