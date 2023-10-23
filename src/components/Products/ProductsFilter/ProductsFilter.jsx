@@ -85,6 +85,15 @@ export const ProductsFilter = () => {
         : 'rgba(28, 28, 28, 1)', //active option and hover background
       color: isSelected ? '#E6533C' : '#EFEDE8', //text color of the active option in the list
       padding: '14px',
+  }),
+     
+     menu: provided => ({
+      ...provided,
+      backgroundColor: 'rgba(28, 28, 28, 1)', //background for the list
+    }),
+    singleValue: provided => ({
+      ...provided,
+      color: '#EFEDE8', //text color of the active selector in the window
     }),
 
   const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
