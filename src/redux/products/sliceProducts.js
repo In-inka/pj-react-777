@@ -13,6 +13,16 @@ export const productSlice = createSlice({
       recomended: '',
     },
   },
+  reducers: {
+    setFilter: (state, { payload }) => {
+      state.filter = payload;
+    },
+  },
+  extraReducers: (builder) =>
+    builder
+      .addCase(productListThunk.pending, pending)
+      .addCase(productListThunk.fulfilled, ListFulfilled)
+      .addCase(productListThunk.rejected, rejected),
 });
 
 function ListFulfilled(state, { payload }) {
