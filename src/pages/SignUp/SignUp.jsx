@@ -1,12 +1,7 @@
 import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorialContainer, PlayIcon, TextContainerB, VideoTutorialTextA, VideoTutorialTextB, FlexContainer, FlexContainerB, CalorieContainer, RunIcon, TextContainerC, CalorieTextA, CalorieTextB, } from './SignUp.styled';
 import { SignUpForm } from '../../components/SignUpForm.jsx/SignUpForm';
 
-
-
 const SignUp = () => {
-
-
-
   return (
     <Container>
       <Title>Sign Up</Title>
@@ -41,4 +36,4 @@ const SignUp = () => {
   );
 };
 
-export { SignUp };
+export default SignUp;

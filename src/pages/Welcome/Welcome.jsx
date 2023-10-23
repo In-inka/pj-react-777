@@ -48,4 +48,4 @@ const Welcome = () => {
   );
 };
 
-export { Welcome };
+export default Welcome;
