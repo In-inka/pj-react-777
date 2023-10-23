@@ -112,7 +112,7 @@ export const ItemProduct = ({ width, value, children }) => {
   }
 
   return (
-    <ItemWrapper>
+    <ItemWrapper name={children}>
       <ItemName>{children}</ItemName>
       <ItemField width={width}>
         {valueIsBoolean && <Indicator value={value} />}

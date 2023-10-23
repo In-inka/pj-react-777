@@ -22,6 +22,8 @@ export const Container = styled.div`
     padding-top: 19px;
   }
   @media screen and (min-width: 1440px) {
+    width: 826px;
+    height: 234px;
   }
 `;
 
@@ -32,9 +34,9 @@ export const TitleMain = styled.div`
   margin-bottom: 22px;
   padding-right: 8px;
   
+  
   @media screen and (min-width: 768px) {
-    margin-bottom: 19px;
-    
+        
   }
   @media screen and (min-width: 1440px) {
   }
@@ -99,7 +101,7 @@ export const ItemWrapper = styled.div`
   color: rgb(230, 83, 60);
 
   @media screen and (min-width: 768px) {
-    
+    flex: ${(props)=>props.name==="Title" ? 1.3 : 1.2};
   }
   @media screen and (min-width: 1440px) {
   }
@@ -138,6 +140,7 @@ export const ItemField = styled.div`
     padding: 8px 14px;
   }
   @media screen and (min-width: 1440px) {
+    
   }
 `;
 export const NormalText = styled.div`
@@ -201,11 +204,14 @@ export const Button = styled.button`
 `;
 
 export const TableList = styled.ul`
-  max-height: 752px;
+  
+  box-sizing: border-box;
+
+  max-height: 755px;
   overflow-y: auto;
   padding-right: 8px;
   padding-bottom: 16px;
-
+  
   &::-webkit-scrollbar {
     width: 6px;
   }
@@ -219,8 +225,11 @@ export const TableList = styled.ul`
   }
 
   @media screen and (min-width: 768px) {
-    max-height: 126px;
-    }
+    max-height: 130px;
+    
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const ListItem = styled.li`
@@ -233,6 +242,8 @@ export const ListItem = styled.li`
     flex-wrap: nowrap;
     gap: 8px;
     margin-bottom: 8px;
+  }
+  @media screen and (min-width: 1440px) {
   }
 `;
 
@@ -259,7 +270,13 @@ export const WrapTitleTable = styled.div`
     display: flex;
     font-size: 12px;
     color: rgb(239, 137, 100);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+
+    
+    
+  }
+  @media screen and (min-width: 1440px) {
+    
   }
 `;
   
@@ -269,19 +286,31 @@ export const Category = styled.div`
   @media screen and (min-width: 768px) {
     margin-left: 175px;
   }
+  @media screen and (min-width: 1440px) {
+    margin-left: 210px;
+  }
 `;
 export const Calories = styled.div`
   @media screen and (min-width: 768px) {
     margin-left: 145px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 178px;
   }
 `;
 export const Weight = styled.div`
   @media screen and (min-width: 768px) {
     margin-left: 43px;
   }
+  @media screen and (min-width: 1440px) {
+    margin-left: 60px;
+  }
 `;
 export const Recommend = styled.div`
   @media screen and (min-width: 768px) {
     margin-left: 46px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 63px;
   }
 `;
