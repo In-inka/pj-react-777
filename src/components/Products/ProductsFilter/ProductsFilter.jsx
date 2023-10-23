@@ -73,9 +73,8 @@ export const ProductsFilter = () => {
       WebkitAppearance: 'none',
       MozAppearance: 'none',
     }),
-  };
 
-   option: (provided, { isFocused, isSelected }) => ({
+    option: (provided, { isFocused, isSelected }) => ({
       ...provided,
       backgroundColor: isSelected
         ? 'rgba(28, 28, 28, 1)'
@@ -84,31 +83,31 @@ export const ProductsFilter = () => {
         : 'rgba(28, 28, 28, 1)', //active option and hover background
       color: isSelected ? '#E6533C' : '#EFEDE8', //text color of the active option in the list
       padding: '14px',
-  }),
-     
-     menu: provided => ({
+    }),
+
+    menu: (provided) => ({
       ...provided,
       backgroundColor: 'rgba(28, 28, 28, 1)', //background for the list
     }),
-    singleValue: provided => ({
+    singleValue: (provided) => ({
       ...provided,
       color: '#EFEDE8', //text color of the active selector in the window
-  }),
-      indicatorSeparator: provided => ({
+    }),
+    indicatorSeparator: (provided) => ({
       ...provided,
       backgroundColor: 'transparent', //divider color
     }),
-    dropdownIndicator: provided => ({
+    dropdownIndicator: (provided) => ({
       ...provided,
       color: '#EFEDE8',
-  }),
-      container: provided => ({
+    }),
+    container: (provided) => ({
       ...provided,
       border: '1px solid rgba(239, 237, 232, 0.30)',
       borderRadius: '12px',
       outline: 'none',
-  }),
-        menuList: base => ({
+    }),
+    menuList: (base) => ({
       ...base,
       borderRadius: '12px', //border when scrolling
 
@@ -116,8 +115,8 @@ export const ProductsFilter = () => {
         display: 'none',
       },
       overflowY: 'scroll',
-  }),
-     };
+    }),
+  };
 
   const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
   const [search, setSearch] = useState('');
