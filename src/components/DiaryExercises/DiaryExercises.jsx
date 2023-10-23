@@ -9,8 +9,6 @@ import {
   ItemNameEx,
   ItemFieldEx,
   WrapMobileEx,
-  IconWrapperEx,
-  DeleteIconWrapperEx,
   StyledLinkEx,
   WrapItemProductsEx,
   ButtonEx,
@@ -28,7 +26,7 @@ import {
   TimeEx,
   BurnedExTablet,
 } from './DiaryExercises.styled';
-import sprite from '../../assets/sprite.svg';
+// import sprite from '../../assets/sprite.svg';
 
 export const DiaryExercises = ({ children }) => {
   return (
@@ -37,9 +35,17 @@ export const DiaryExercises = ({ children }) => {
         <SubTitleEx>Execrcises</SubTitleEx>
         <StyledLinkEx to="/first">
           <AddProductEx>Add exercise</AddProductEx>
-          <IconWrapperEx color="#E6533C">
+          <div
+            style={{
+              marginLeft: '10px',
+              width: '10px',
+              height: '10px',
+              backgroundColor: '#E6533C',
+            }}
+          ></div>
+          {/* <IconWrapperEx color="#E6533C">
             <use href={`${sprite}#icon-logo`} />
-          </IconWrapperEx>
+          </IconWrapperEx> */}
         </StyledLinkEx>
       </TitleMainEx>
       {!exercises.length ? (
@@ -74,11 +80,9 @@ export const ExercisesTable = () => {
             time,
           }) => (
             <ListItemEx key={$oid}>
-              
-                <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
-                <ItemProductEx value={equipment}>Equipment</ItemProductEx>
-                <ItemProductEx value={name}>name</ItemProductEx>
-              
+              <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
+              <ItemProductEx value={equipment}>Equipment</ItemProductEx>
+              <ItemProductEx value={name}>name</ItemProductEx>
 
               <WrapMobileEx>
                 <WrapItemProductsEx>
@@ -95,9 +99,17 @@ export const ExercisesTable = () => {
                     //   () => dispatch(deleteProduct(id))
                   }
                 >
-                  <DeleteIconWrapperEx size="20px" color="#EF8964">
+                  <div
+                    style={{
+                      marginLeft: '10px',
+                      width: '20px',
+                      height: '20px',
+                      backgroundColor: '#EF8964',
+                    }}
+                  ></div>
+                  {/* <DeleteIconWrapperEx size="20px" color="#EF8964">
                     <use href={`${sprite}#icon-logo`} />
-                  </DeleteIconWrapperEx>
+                  </DeleteIconWrapperEx> */}
                 </ButtonEx>
               </WrapMobileEx>
             </ListItemEx>

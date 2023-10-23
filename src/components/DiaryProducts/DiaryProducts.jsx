@@ -1,3 +1,4 @@
+// import styled from 'styled-components';
 import {
   Container,
   TitleMain,
@@ -9,8 +10,8 @@ import {
   ItemName,
   ItemField,
   WrapMobile,
-  IconWrapper,
-  DeleteIconWrapper,
+  // IconWrapper,
+  // DeleteIconWrapper,
   StyledLink,
   WrapItemProducts,
   Button,
@@ -25,18 +26,37 @@ import {
   Weight,
   Recommend,
 } from './DiaryProducts.styled';
-import sprite from '../../assets/sprite.svg';
+// import sprite from '../../assets/sprite.svg';
 
-export const DiaryProducts = ({ children }) => {
+// const Icon = styled.svg`
+//   &orange {
+//     fill: ${({ theme }) => theme.secondaryOrange};
+//     stroke: ${({ theme }) => theme.withe};
+//   }
+// `;
+
+
+const DiaryProducts = ({ children }) => {
   return (
     <Container>
       <TitleMain>
         <SubTitle>Products</SubTitle>
-        <StyledLink to="/first">
-          <AddProduct>Add Product</AddProduct>
-          <IconWrapper color="#E6533C">
+        <StyledLink to="/products">
+          <AddProduct>Add product</AddProduct>
+          <div
+            style={{
+              marginLeft: '10px',
+              width: '10px',
+              height: '10px',
+              backgroundColor: '#E6533C',
+            }}
+          ></div>
+          {/* <Icon width={24} height={24} className='orange'>
+              <use xlinkHref={'/symbol-defs.svg#icon-exclamation_mark'} />
+            </Icon> */}
+          {/* <IconWrapper color="#E6533C">
             <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
+          </IconWrapper> */}
         </StyledLink>
       </TitleMain>
       {!products.length ? (
@@ -48,7 +68,7 @@ export const DiaryProducts = ({ children }) => {
   );
 };
 
-export const ProductsTable = ({ children }) => {
+export const ProductsTable = () => {
   // const dispatch = useDispatch();
   // const visibleContacts = useSelector(selectVisibleContacts);
 
@@ -58,7 +78,7 @@ export const ProductsTable = ({ children }) => {
 
   return (
     <>
-      <TableTitle/>
+      <TableTitle />
       <TableList>
         {products.map(
           ({
@@ -86,9 +106,17 @@ export const ProductsTable = ({ children }) => {
                     //   () => dispatch(deleteProduct(id))
                   }
                 >
-                  <DeleteIconWrapper size="20px" color="#EF8964">
+                  <div
+                    style={{
+                      marginLeft: '10px',
+                      width: '20px',
+                      height: '20px',
+                      backgroundColor: '#EF8964',
+                    }}
+                  ></div>
+                  {/* <DeleteIconWrapper size="20px" color="#EF8964">
                     <use href={`${sprite}#icon-logo`} />
-                  </DeleteIconWrapper>
+                  </DeleteIconWrapper> */}
                 </Button>
               </WrapMobile>
             </ListItem>
@@ -100,7 +128,7 @@ export const ProductsTable = ({ children }) => {
 };
 
 export const ItemProduct = ({ width, value, children }) => {
-  console.log(children, value, width);
+  // console.log(children, value, width);
   let displayValue = value;
   const valueIsBoolean = typeof value === 'boolean';
   if (valueIsBoolean) {
@@ -137,6 +165,7 @@ export const TableTitle = () => {
 
 export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
 
+// тестовый массив объектов
 let choice = true;
 // let choice = false;
 
@@ -249,3 +278,5 @@ const products = !choice
         },
       },
     ];
+
+    export {DiaryProducts};
