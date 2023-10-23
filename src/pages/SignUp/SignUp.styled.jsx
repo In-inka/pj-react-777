@@ -10,8 +10,8 @@ import { ContainerStyled } from '../../Styled/ContainerStyled';
 
 export const Container = styled.div`
   ${ContainerStyled}
-  height: 100vh;
   padding-top: 24px;
+  padding-bottom: 40px;
   background-image: url(${background_img_mob});
   background-repeat: no-repeat;
   background-position: 77px 241px;
@@ -19,12 +19,14 @@ export const Container = styled.div`
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image:url(${background_img_mob_x2});
+    background-image: url(${background_img_mob_x2});
   }
 
   @media screen and (min-width: 768px) {
+    height: inherit;
     padding-top: 32px;
-    background-image:url(${background_img_tab});
+    padding-bottom: 48px;
+    background-image: url(${background_img_tab});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -37,6 +39,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
+    padding-bottom: 114px;
     background-repeat: no-repeat;
     background-position: 770px 0;
     background-size: 670px;

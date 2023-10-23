@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import background_img_mob_x2 from '../../img/background/main_bg_mob_x2.jpg';
-import background_img_mob from '../../img/background/main_bg_mob.jpg';
+import background_img_mob_x2 from '../../img/background/main_bg_mob_welcome_x2.jpg';
+import background_img_mob from '../../img/background/main_bg_mob_welcome.jpg';
 import background_img_tab_x2 from '../../img/background/main_bg_tab_x2.jpg';
 import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
@@ -23,6 +23,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    height: inherit;
     padding-top: 32px;
     padding-bottom: 48px;
     background-image: url(${background_img_tab});
@@ -75,50 +76,75 @@ export const LogoText = styled.p`
 export const Title = styled.h1`
   margin-top: 90px;
   color: rgba(239, 237, 232, 1);
-  font-size: 24px;
-  line-height: 1.17;
+  font-size: 38px;
+  line-height: 1.05;
+  font-weight: 500;
   @media screen and (min-width: 768px) {
     margin-top: 140px;
-    font-size: 32px;
-    line-height: 1.38;
+    font-size: 70px;
+    line-height: 1.11;
   }
   @media screen and (min-width: 1440px) {
     margin-top: 151px;
+    width: 598px;
   }
 `;
 
-export const Text = styled.p`
-  font-size: 14px;
-  line-height: 1.29;
-  color: rgba(239, 237, 232, 0.3);
-  margin-top: 14px;
-
+export const ButtonContainer = styled.div`
+  margin-top: 40px;
   @media screen and (min-width: 768px) {
-    width: 496px;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 16px;
+    margin-top: 64px;
   }
 `;
 
-export const TextContainer = styled.div`
-  display: flex;
-  font-size: 12px;
-  line-height: 1.5;
-  padding-top: 12px;
-  @media screen and (min-width: 768px) {
-    padding-left: 15px;
-  }
-`;
-
-export const TextB = styled.p`
-  color: rgba(239, 237, 232, 0.3);
-`;
-
-export const StyledLink = styled(Link)`
-  margin-left: 4px;
+export const ButtonYellow = styled(Link)`
+  display: inline-block;
+  margin-right: 14px;
+  font-size: 16px;
+  line-height: 1.17;
+  background-color: #e6533c;
   color: #efede8;
-  text-decoration: underline;
+  border-radius: 12px;
+  border: none;
+  padding: 12px 40px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: #ef8964;
+  }
+  &:disabled {
+    background-color: #e6533c;
+    color: #efede899;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 16px 60px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+`;
+
+export const ButtonBlack = styled(Link)`
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.17;
+  background-color: inherit;
+  color: #efede8;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  padding: 11px 39px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border-color: rgba(230, 83, 60, 1);
+  }
+  &:disabled {
+    border-color: rgba(230, 83, 60, 1);
+  }
+  @media screen and (min-width: 768px) {
+    padding: 16px 60px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
 `;
 
 export const FlexContainer = styled.div`
@@ -126,9 +152,9 @@ export const FlexContainer = styled.div`
   /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 117px;
+  padding-top: 230px;
   @media screen and (min-width: 768px) {
-    padding-top: 134px;
+    padding-top: 169px;
     justify-content: left;
     padding-left: 299px;
   }
