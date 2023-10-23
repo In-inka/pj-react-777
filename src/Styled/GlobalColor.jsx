@@ -1,5 +1,7 @@
 export const glodalColor = {
   acceptColor: '#E6533C',
+  withe: '#EFEDE8',
+  grey: 'rgba(239, 237, 232, 0.1)',
   background: '#040404',
   secondaryOrange: '#EF8964',
   title: 'rgba(239, 237, 232, 0.3)',
