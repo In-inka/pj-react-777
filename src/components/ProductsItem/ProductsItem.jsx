@@ -14,7 +14,7 @@ import {
   IconRunning,
 } from './ProductsItem.styled';
 
-const cutStringLength = (str, maxLength = 26) => {
+const cutStringLength = (str, maxLength = 24) => {
   if (str.length > maxLength) {
     const lastSpaceIndex = str.lastIndexOf(' ', maxLength);
 
@@ -64,9 +64,7 @@ const ProductsItem = ({ product }) => {
         </ProductsItemInfo>
         <ProductsItemInfo>
           <SpanGrey>Category: </SpanGrey>
-          {product.category === 'vegetables and herbs'
-            ? product.category.substring(0, 10) + '...'
-            : product.category}
+          {cutStringLength(product.category, 13)}
         </ProductsItemInfo>
         <ProductsItemInfo>
           <SpanGrey>Weight: </SpanGrey>

@@ -7,9 +7,6 @@ export const ProductsItemContainer = styled.div`
   border-radius: 12px;
   border: 1px solid ${glodalColor.bgCards};
   background: rgba(239, 237, 232, 0.05);
-  overflow: hidden; /* Обрезать все, что не влазит */
-  white-space: nowrap; /* Запрет переноса текста на новую строку */
-  text-overflow: ellipsis;
 
   @media screen and (min-width: 768px) {
     width: 335px;
