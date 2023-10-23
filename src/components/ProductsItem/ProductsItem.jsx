@@ -19,13 +19,17 @@ const cutStringLength = (str, maxLength = 26) => {
     const lastSpaceIndex = str.lastIndexOf(' ', maxLength);
 
     if (lastSpaceIndex !== -1) {
-      return str.substring(0, lastSpaceIndex) + '...';
+      return capitalizeFirstLetter(str.substring(0, lastSpaceIndex)) + '...';
     }
 
-    return str.substring(0, maxLength) + '...';
+    return capitalizeFirstLetter(str.substring(0, maxLength)) + '...';
   }
-  return str;
+  return capitalizeFirstLetter(str);
 };
+
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 const ProductsItem = ({ product }) => {
   return (
