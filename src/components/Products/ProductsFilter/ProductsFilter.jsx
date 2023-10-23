@@ -77,7 +77,6 @@ export const ProductsFilter = () => {
 
    option: (provided, { isFocused, isSelected }) => ({
       ...provided,
-
       backgroundColor: isSelected
         ? 'rgba(28, 28, 28, 1)'
         : isFocused
@@ -108,7 +107,17 @@ export const ProductsFilter = () => {
       border: '1px solid rgba(239, 237, 232, 0.30)',
       borderRadius: '12px',
       outline: 'none',
-    }),
+  }),
+        menuList: base => ({
+      ...base,
+      borderRadius: '12px', //border when scrolling
+
+      '::-webkit-scrollbar': {
+        display: 'none',
+      },
+      overflowY: 'scroll',
+  }),
+     };
 
   const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
   const [search, setSearch] = useState('');
