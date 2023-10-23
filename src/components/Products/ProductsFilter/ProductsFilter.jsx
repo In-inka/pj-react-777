@@ -94,6 +94,20 @@ export const ProductsFilter = () => {
     singleValue: provided => ({
       ...provided,
       color: '#EFEDE8', //text color of the active selector in the window
+  }),
+      indicatorSeparator: provided => ({
+      ...provided,
+      backgroundColor: 'transparent', //divider color
+    }),
+    dropdownIndicator: provided => ({
+      ...provided,
+      color: '#EFEDE8',
+  }),
+      container: provided => ({
+      ...provided,
+      border: '1px solid rgba(239, 237, 232, 0.30)',
+      borderRadius: '12px',
+      outline: 'none',
     }),
 
   const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
