@@ -84,3 +84,7 @@ export const AddButton = styled.button`
   font-weight: 400;
   line-height: 1.5;
 `;
+
+export const SpanGrey = styled.span`
+  color: rgba(239, 237, 232, 0.4);
+`;

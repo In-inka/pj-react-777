@@ -10,6 +10,7 @@ import {
   CircleRec,
   RecommendedText,
   AddButton,
+  SpanGrey
 } from './ProductsItem.styled';
 
 const ProductsItem = ({ product }) => {
@@ -30,15 +31,15 @@ const ProductsItem = ({ product }) => {
       <ProductsItemTitle>{product.title}</ProductsItemTitle>
       <ProductsItemInfoContainer>
         <ProductsItemInfo>
-          <span>Calories: </span>
+          <SpanGrey>Calories: </SpanGrey>
           {product.calories}
         </ProductsItemInfo>
         <ProductsItemInfo>
-          <span>Category: </span>
+          <SpanGrey>Category: </SpanGrey>
           {product.category}
         </ProductsItemInfo>
         <ProductsItemInfo>
-          <span>Weight: </span>
+          <SpanGrey>Weight: </SpanGrey>
           {product.weight}
         </ProductsItemInfo>
       </ProductsItemInfoContainer>
