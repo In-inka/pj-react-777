@@ -28,6 +28,7 @@ import {
 } from './DiaryProducts.styled';
 // import sprite from '../../assets/sprite.svg';
 
+
 // const Icon = styled.svg`
 //   &orange {
 //     fill: ${({ theme }) => theme.secondaryOrange};
