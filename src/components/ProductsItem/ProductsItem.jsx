@@ -14,9 +14,15 @@ import {
   IconRunning,
 } from './ProductsItem.styled';
 
-const cutStringLength = (str) => {
-  if (str.length > 26) {
-    return str.substring(0, 26) + '...';
+const cutStringLength = (str, maxLength = 26) => {
+  if (str.length > maxLength) {
+    const lastSpaceIndex = str.lastIndexOf(' ', maxLength);
+
+    if (lastSpaceIndex !== -1) {
+      return str.substring(0, lastSpaceIndex) + '...';
+    }
+
+    return str.substring(0, maxLength) + '...';
   }
   return str;
 };
@@ -54,7 +60,9 @@ const ProductsItem = ({ product }) => {
         </ProductsItemInfo>
         <ProductsItemInfo>
           <SpanGrey>Category: </SpanGrey>
-          {product.category}
+          {product.category === 'vegetables and herbs'
+            ? product.category.substring(0, 10) + '...'
+            : product.category}
         </ProductsItemInfo>
         <ProductsItemInfo>
           <SpanGrey>Weight: </SpanGrey>
