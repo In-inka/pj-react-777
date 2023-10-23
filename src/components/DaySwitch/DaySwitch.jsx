@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { addDays, subDays } from 'date-fns';
@@ -14,7 +14,6 @@ import sprite from '../../sprite/sprite.svg';
 
 const DaySwitch = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const dateFormat = 'dd MMM yyyy';
   const numericMonthFormat = 'dd MM yyyy';
 
   const datepickerRef = useRef(null);

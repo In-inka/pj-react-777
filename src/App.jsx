@@ -17,16 +17,16 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/diary" element={<Diary />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/exercises" element={<Exercises />} >
-            <Route path='bodyParts' element={<BodyParts />} />
-            <Route path='muscles' element={<Muscles />} />
-            <Route path='equipment' element={<Equipment />} />
+          <Route index element={<Welcome />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="diary" element={<Diary />} />
+          <Route path="products" element={<Products />} />
+          <Route path="exercises" element={<Exercises />}>
+            <Route path="bodyParts" element={<BodyParts />} />
+            <Route path="muscles" element={<Muscles />} />
+            <Route path="equipment" element={<Equipment />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>
