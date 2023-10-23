@@ -284,10 +284,10 @@ export const Title = styled.div`
 `;
 export const Category = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 175px;
+    margin-left: 182px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 210px;
+    margin-left: 220px;
   }
 `;
 export const Calories = styled.div`
@@ -295,15 +295,15 @@ export const Calories = styled.div`
     margin-left: 145px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 178px;
+    margin-left: 176px;
   }
 `;
 export const Weight = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 43px;
+    margin-left: 37px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 60px;
+    margin-left: 55px;
   }
 `;
 export const Recommend = styled.div`
@@ -311,6 +311,6 @@ export const Recommend = styled.div`
     margin-left: 46px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 63px;
+    margin-left: 65px;
   }
 `;
