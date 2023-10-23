@@ -1,9 +1,5 @@
-import React from 'react'
-
 const BodyParts = () => {
-  return (
-    <div>BodyParts</div>
-  )
-}
+  return <div>BodyParts</div>;
+};
 
-export {BodyParts}
+export default BodyParts;
