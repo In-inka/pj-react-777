@@ -106,9 +106,12 @@ export const ItemWrapperEx = styled.div`
     flex: ${(props) => {
       switch (props.name) {
         case 'Time':
-          return 0.65;
+          return 0.55;
         case 'Burned Calories':
           return 0.8;
+        case 'Name':
+          return 0.8;
+          
       }
     }};
   }
@@ -192,6 +195,7 @@ export const NormalTextNameEx = styled.div`
     /* display: none; */
   }
 `;
+
 export const SliceTextNameEx = styled.div`
   font-size: 11px;
   @media screen and (min-width: 768px) {
@@ -204,8 +208,6 @@ export const SliceTextNameEx = styled.div`
   }
 `;
 
-
-
 export const IconWrapperEx = styled.svg`
   width: ${(props) => props.size || '13px'};
   height: ${(props) => props.size || '13px'};
@@ -215,7 +217,7 @@ export const IconWrapperEx = styled.svg`
 `;
 
 export const DeleteIconWrapperEx = styled(IconWrapperEx)`
-  margin-top: 10px;
+  margin-top: 8px;
   @media screen and (min-width: 768px) {
     margin-top: 0;
   }
@@ -345,18 +347,31 @@ export const TargetEx = styled.div`
 `;
 export const BurnedEx = styled.div`
   @media screen and (min-width: 768px) {
+    display: none;
     margin-left: 60px;
   }
   @media screen and (min-width: 1440px) {
+    display: flex;
+    margin-left: 95px;
+  }
+`;
+export const BurnedExTablet = styled.div`
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-left: 67px;
+  }
+  @media screen and (min-width: 1440px) {
+    display: none;
     margin-left: 95px;
   }
 `;
 export const TimeEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 20px;
+    margin-left: 5px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 15px;
+    margin-left: 22px;
   }
 `;
 

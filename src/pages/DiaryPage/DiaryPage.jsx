@@ -1,5 +1,4 @@
-import { DiaryProducts } from "../../components/DiaryProducts/DiaryProducts";
-// import { DiaryExercise } from "../../components/DiaryExercises/DiaryExercises"
+
 import { DiaryExercises } from "../../components/DiaryExercises/DiaryExercises";
 import { Container } from './DiaryPage.styled';
 

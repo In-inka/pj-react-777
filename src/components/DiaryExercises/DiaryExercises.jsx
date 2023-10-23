@@ -14,7 +14,6 @@ import {
   StyledLinkEx,
   WrapItemProductsEx,
   ButtonEx,
-  IndicatorEx,
   NotFoundEx,
   NormalTextEx,
   NormalTextNameEx,
@@ -27,8 +26,7 @@ import {
   TargetEx,
   BurnedEx,
   TimeEx,
-  
-
+  BurnedExTablet,
 } from './DiaryExercises.styled';
 import sprite from '../../assets/sprite.svg';
 
@@ -53,7 +51,7 @@ export const DiaryExercises = ({ children }) => {
   );
 };
 // exercises;
-export const ExercisesTable = ({ children }) => {
+export const ExercisesTable = () => {
   // const dispatch = useDispatch();
   // const visibleContacts = useSelector(selectVisibleContacts);
 
@@ -122,12 +120,12 @@ export const ItemProductEx = ({ width, value, children }) => {
   let sliceChild = displayChild;
   if (children.length > 10) {
     sliceChild = children.slice(0, 10) + '...';    
-  }
+  }  
  
   return (
     <ItemWrapperEx name={children}>
       <ItemNameEx>
-        <NormalTextNameEx>{displayChild}</NormalTextNameEx>
+        <NormalTextNameEx>{displayChild}</NormalTextNameEx> 
         <SliceTextNameEx>{sliceChild}</SliceTextNameEx>
       </ItemNameEx>
 
@@ -146,6 +144,7 @@ export const TableTitleEx = () => {
       <EquipmentEx>Equipment</EquipmentEx>
       <NameEx>Name</NameEx>
       <TargetEx>Target</TargetEx>
+      <BurnedExTablet>Burned Calor...</BurnedExTablet>
       <BurnedEx>Burned Calories</BurnedEx>
       <TimeEx>Time</TimeEx>
     </WrapTitleTableEx>
