@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.nav`
   ${ContainerStyled}
@@ -10,3 +11,10 @@ export const Container = styled.nav`
   transform: translate(-50%, -0%);
   background-color: transparent;
 `;
+
+export const LogoContainer = styled.div`
+`
+
+export const Logo = styled(Link)`
+  
+`
