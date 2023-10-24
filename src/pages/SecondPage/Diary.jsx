@@ -2,6 +2,7 @@
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch'
 import { DiaryProducts } from '../../components/DiaryProducts/DiaryProducts'
 import { DiaryExercises } from '../../components/DiaryExercises/DiaryExercises'
+import { DayDashboard } from '../../components/DayDashboard/DayDashboard'
 
 const Diary = () => {
   return (
@@ -9,9 +10,15 @@ const Diary = () => {
       <p>Diary</p>
       <DaySwitch />
 
-      <div style={{ paddingLeft: '50px', paddingTop: '50px'}}>
+      <div style={{ paddingLeft: '50px', paddingTop: '50px' }}>
+        <DayDashboard></DayDashboard>
+      </div>
+
+      <div style={{ paddingLeft: '50px', paddingTop: '50px' }}>
         <DiaryProducts></DiaryProducts>
-        <div style={{marginBottom: '50px'}}></div>
+      </div>
+
+      <div style={{ paddingLeft: '50px', paddingTop: '50px' }}>
         <DiaryExercises></DiaryExercises>
       </div>
     </div>
