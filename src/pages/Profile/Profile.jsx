@@ -1,8 +1,14 @@
+import ProfileSettingsForm from "../../components/ProfileSettingsForm/ProfileSettingsForm";
+import { TitlePage } from "../../components/TitlePage/TitlePage";
+import { ContainerProfilePage } from "./Profile-style";
+
 const Profile = () => {
   return (
-    <div className="container">
-      <p>Profile</p>
-    </div>
+    
+    <ContainerProfilePage>
+      <TitlePage text={'Profile Settings'}/>
+      <ProfileSettingsForm/>
+    </ContainerProfilePage>
   );
 };
 
