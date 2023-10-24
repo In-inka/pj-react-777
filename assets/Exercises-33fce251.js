@@ -1,4 +1,4 @@
-import{N as n,c as r,u as a,j as e,s as i,r as c,O as x}from"./index-9e9f6f05.js";import{n as o,C as p}from"./ContainerStyled-1c23b0d7.js";import{T as l}from"./TitlePage-b6931cfd.js";const d=o.div`
+import{N as n,c as r,u as a,j as e,s as i,r as c,O as x}from"./index-be173e49.js";import{n as o,C as p}from"./ContainerStyled-010a4f24.js";import{T as l}from"./TitlePage-01a4b631.js";const d=o.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
