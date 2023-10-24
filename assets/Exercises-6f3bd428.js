@@ -1,10 +1,10 @@
-import{N as r,c as a,u as c,j as e,s as i,r as x,O as l}from"./index-c59b8109.js";import{n,C as d}from"./ContainerStyled-57427a96.js";const p=n.div`
+import{N as n,c as r,u as a,j as e,s as i,r as c,O as x}from"./index-f9b0720a.js";import{n as o,C as p}from"./ContainerStyled-15a4d6dd.js";import{T as l}from"./TitlePage-df54d329.js";const d=o.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
         gap: 32px;
     }
-`,s=n(r)`
+`,s=o(n)`
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0em;
@@ -19,7 +19,7 @@ import{N as r,c as a,u as c,j as e,s as i,r as x,O as l}from"./index-c59b8109.js
             height: 4px;
             bottom: -4px;
             content: ' ';
-            background-color: ${a.secondaryOrange};
+            background-color: ${r.secondaryOrange};
             border-radius: 2px;
         }
     }
@@ -32,8 +32,8 @@ import{N as r,c as a,u as c,j as e,s as i,r as x,O as l}from"./index-c59b8109.js
 
 
 
-`,m=()=>{const t=c();return e.jsxs(p,{children:[e.jsx(s,{to:"bodyParts",state:{from:t},children:"Body parts"}),e.jsx(s,{to:"muscles",state:{from:t},children:"Muscles"}),e.jsx(s,{to:"equipment",state:{from:t},children:"Equipment"})]})},g=({text:t,className:o})=>e.jsx("h1",{className:o,children:t}),h=i.div`
-    ${d}
+`,m=()=>{const t=a();return e.jsxs(d,{children:[e.jsx(s,{to:"bodyParts",state:{from:t},children:"Body parts"}),e.jsx(s,{to:"muscles",state:{from:t},children:"Muscles"}),e.jsx(s,{to:"equipment",state:{from:t},children:"Equipment"})]})},g=i.div`
+    ${p}
     `,u=i.div`
 display: flex;
 justify-content: center;
@@ -49,4 +49,4 @@ margin-top: 40px;
     margin-top: 72px;
 }
 
-`,b=()=>e.jsxs(h,{children:[e.jsxs(u,{children:[e.jsx(g,{text:"Exercises"}),e.jsx(m,{})]}),e.jsx(x.Suspense,{children:e.jsx(l,{})})]});export{b as default};
+`,b=()=>e.jsxs(g,{children:[e.jsxs(u,{children:[e.jsx(l,{text:"Exercises"}),e.jsx(m,{})]}),e.jsx(c.Suspense,{children:e.jsx(x,{})})]});export{b as default};

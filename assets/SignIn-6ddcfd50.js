@@ -1,4 +1,4 @@
-import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./ContainerStyled-57427a96.js";import{b,a as f,u as w,s as j}from"./schemas-460d8db4.js";import{b as k,a as v,c as y,d as z}from"./main_bg_desktop-e9b36866.js";const C=i.div`
+import{L as h,j as i}from"./index-f9b0720a.js";import{n as e,C as u}from"./ContainerStyled-15a4d6dd.js";import{b,a as f}from"./main_bg_mob-adb912f5.js";import{b as w,a as j,c as k,d as v}from"./main_bg_desktop-e9b36866.js";import{u as y,a as z}from"./schemas-f601a465.js";const C=e.div`
   ${u}
   padding-top: 24px;
   padding-bottom: 40px;
@@ -13,10 +13,9 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
   }
 
   @media screen and (min-width: 768px) {
-    height: inherit;
     padding-top: 32px;
     padding-bottom: 48px;
-    background-image: url(${k});
+    background-image: url(${w});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -25,37 +24,37 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${v});
+    background-image: url(${j});
   }
 
   @media screen and (min-width: 1440px) {
-    padding-bottom: 114px;
+    padding-bottom: 210px;
     background-repeat: no-repeat;
     background-position: 770px 0;
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: url(${y});
+    background-image: url(${k});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${z});
+    background-image: url(${v});
   }
-`,S=i.div`
+`,S=e.div`
   display: flex;
   align-items: center;
-`,T=i.div`
+`,T=e.div`
   width: 36px;
   height: 13px;
   background-color: #e6533c;
   margin-right: 8px;
-`,_=i.p`
+`,_=e.p`
   font-size: 12px;
   line-height: 1;
   font-weight: bold;
-`,B=i.h1`
+`,B=e.h1`
   margin-top: 90px;
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
@@ -68,7 +67,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
   @media screen and (min-width: 1440px) {
     margin-top: 151px;
   }
-`,F=i.p`
+`,I=e.p`
   font-size: 14px;
   line-height: 1.29;
   color: rgba(239, 237, 232, 0.3);
@@ -80,7 +79,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     line-height: 1.5;
     margin-top: 16px;
   }
-`,$=i.div`
+`,F=e.div`
   display: flex;
   font-size: 12px;
   line-height: 1.5;
@@ -88,20 +87,20 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
   @media screen and (min-width: 768px) {
     padding-left: 15px;
   }
-`,I=i.p`
+`,P=e.p`
   color: rgba(239, 237, 232, 0.3);
-`,P=i(h)`
+`,$=e(h)`
   margin-left: 4px;
   color: #efede8;
   text-decoration: underline;
-`,L=i.div`
+`,L=e.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 117px;
   @media screen and (min-width: 768px) {
-    padding-top: 39px;
+    padding-top: 134px;
     justify-content: left;
     padding-left: 299px;
   }
@@ -111,7 +110,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     left: 770px;
     top: 384px;
   }
-`,E=i.div`
+`,E=e.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +120,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,U=i.div``,V=i.p`
+`,V=e.div``,R=e.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -129,7 +128,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     font-size: 24px;
     line-height: 1;
   }
-`,R=i.p`
+`,A=e.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -139,7 +138,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     font-size: 16px;
     line-height: 1.5;
   }
-`,A=i.div`
+`,U=e.div`
   display: block;
   width: 30px;
   height: 30px;
@@ -151,7 +150,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     height: 40px;
     margin-right: 12px;
   }
-`,N=i.div`
+`,D=e.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -165,7 +164,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     top: 519px;
     left: 1228px;
   }
-`,M=i.div`
+`,M=e.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -174,11 +173,11 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,q=i.div`
+`,W=e.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,D=i.p`
+`,q=e.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -189,7 +188,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     font-size: 48px;
     line-height: 1.04;
   }
-`,G=i.p`
+`,G=e.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -198,7 +197,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     font-size: 16px;
     line-height: 1.5;
   }
-`,H=i.div`
+`,H=e.div`
   display: block;
   width: 20px;
   height: 20px;
@@ -210,14 +209,14 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     height: 24px;
     margin-bottom: 12px;
   }
-`,J=i.form`
+`,J=e.form`
   margin-top: 28px;
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
     width: 364px;
   }
-`,r=i.input`
+`,a=e.input`
   outline: 0;
   outline-offset: 0;
   color: #efede8;
@@ -244,7 +243,7 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
       margin-top: 20px;
     }
   }
-`;r.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const c=i.label`
+`;a.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const c=e.label`
   margin: -1px;
   padding: 0;
   position: absolute;
@@ -253,11 +252,12 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
-`,K=i.div`
+`,K=e.div`
   padding-top: 28px;
-    @media screen and (min-width: 768px) {
-    padding-top: 64px;}
-`,O=i.button`
+  @media screen and (min-width: 768px) {
+    padding-top: 64px;
+  }
+`,N=e.button`
   font-size: 16px;
   line-height: 1.17;
   background-color: #e6533c;
@@ -279,27 +279,27 @@ import{L as h,j as e}from"./index-c59b8109.js";import{n as i,C as u}from"./Conta
     font-size: 20px;
     line-height: 1.2;
   }
-`,l=i.div`
+`,l=e.div`
   display: inline-flex;
   margin-top: 4px;
-`,Q=i.div`
-margin-right: 4px;
+`,O=e.div`
+  margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(216, 0, 39, 1);
-`,W=i.p`
+`,Q=e.p`
   color: rgba(216, 0, 39, 1);
   font-size: 12px;
   line-height: 1.5;
-`,X=i.div`
+`,X=e.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(60, 191, 97, 1);
-`,Y=i.p`
+`,Y=e.p`
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,Z=async(t,n)=>{await new Promise(o=>setTimeout(o,1e3)),console.log(t),n.resetForm()},ee=()=>{const{values:t,errors:n,touched:o,isSubmitting:m,handleChange:a,handleBlur:d,handleSubmit:g}=w({initialValues:{name:"",email:"",password:""},validationSchema:j,onSubmit:Z}),p=x=>e.jsxs(l,{children:[" ",e.jsx(Q,{}),e.jsx(W,{children:x})]}),s=x=>e.jsxs(l,{children:[e.jsx(X,{}),e.jsxs(Y,{children:["Success ",x]})]});return e.jsxs(J,{onSubmit:g,children:[e.jsx(c,{htmlFor:"name",children:"Name"}),e.jsx(r,{value:t.name,onChange:a,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:d,theme:o.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.name&&(n.name?p(n.name):s("name"))," ",e.jsx(c,{htmlFor:"email",children:"Email"}),e.jsx(r,{value:t.email,onChange:a,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:d,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?p(n.email):s("email"))," ",e.jsx(c,{htmlFor:"password",children:"Password"}),e.jsx(r,{value:t.password,onChange:a,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:d,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?p(n.password):s("password"))," ",e.jsx(K,{children:e.jsx(O,{disabled:m,type:"submit",children:"Sign Up"})})]})},re=()=>e.jsxs(C,{children:[e.jsxs(S,{children:[e.jsx(T,{}),e.jsx(_,{children:"PowerPulse"})]}),e.jsx(B,{children:"Sign Up"}),e.jsx(F,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ee,{}),e.jsxs($,{children:[e.jsx(I,{children:"Already have account?"}),e.jsx(P,{to:"/signin",children:"Sign In"})]}),e.jsx(L,{children:e.jsxs(E,{children:[e.jsx(A,{}),e.jsxs(U,{children:[e.jsx(V,{children:"350+"}),e.jsx(R,{children:"Video tutorial"})]})]})}),e.jsx(N,{children:e.jsxs(M,{children:[e.jsx(H,{}),e.jsxs(q,{children:[e.jsx(D,{children:"500"}),e.jsx(G,{children:"cal"})]})]})})]});export{re as default};
+`,Z=async(t,n)=>{await new Promise(o=>setTimeout(o,1e3)),console.log(t),n.resetForm()},ii=()=>{const{values:t,errors:n,touched:o,isSubmitting:g,handleChange:p,handleBlur:s,handleSubmit:m}=y({initialValues:{email:"",password:""},validationSchema:z,onSubmit:Z}),r=d=>i.jsxs(l,{children:[i.jsx(O,{}),i.jsx(Q,{children:d})]}),x=d=>i.jsxs(l,{children:[i.jsx(X,{}),i.jsxs(Y,{children:["Success ",d]})]});return i.jsxs(J,{onSubmit:m,children:[n.name&&o.name&&r(n.name),i.jsx(c,{htmlFor:"email",children:"Email"}),i.jsx(a,{value:t.email,onChange:p,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:s,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?r(n.email):x("email")),i.jsx(c,{htmlFor:"password",children:"Password"}),i.jsx(a,{value:t.password,onChange:p,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:s,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?r(n.password):x("password")),i.jsx(K,{children:i.jsx(N,{disabled:g,type:"submit",children:"Sign Up"})})]})},di=()=>i.jsxs(C,{children:[i.jsxs(S,{children:[i.jsx(T,{}),i.jsx(_,{children:"PowerPulse"})]}),i.jsx(B,{children:"Sign In"}),i.jsx(I,{children:"Welcome! Please enter your credentials to login to the platform:"}),i.jsx(ii,{}),i.jsxs(F,{children:[i.jsx(P,{children:"Don't have an account?"}),i.jsx($,{to:"/signup",children:"Sign Up"})]}),i.jsx(L,{children:i.jsxs(E,{children:[i.jsx(U,{}),i.jsxs(V,{children:[i.jsx(R,{children:"350+"}),i.jsx(A,{children:"Video tutorial"})]})]})}),i.jsx(D,{children:i.jsxs(M,{children:[i.jsx(H,{}),i.jsxs(W,{children:[i.jsx(q,{children:"500"}),i.jsx(G,{children:"cal"})]})]})})]});export{di as default};
