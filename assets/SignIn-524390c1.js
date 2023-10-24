@@ -1,4 +1,4 @@
-import{L as h,j as i}from"./index-f9b0720a.js";import{n as e,C as u}from"./ContainerStyled-15a4d6dd.js";import{b,a as f}from"./main_bg_mob-adb912f5.js";import{b as w,a as j,c as k,d as v}from"./main_bg_desktop-e9b36866.js";import{u as y,a as z}from"./schemas-f601a465.js";const C=e.div`
+import{L as h,j as i}from"./index-91b8a62e.js";import{n as e,C as u}from"./ContainerStyled-266bd0cd.js";import{b,a as f}from"./main_bg_mob-adb912f5.js";import{b as w,a as j,c as k,d as v}from"./main_bg_desktop-e9b36866.js";import{u as y,a as z}from"./schemas-da03f90e.js";const C=e.div`
   ${u}
   padding-top: 24px;
   padding-bottom: 40px;
