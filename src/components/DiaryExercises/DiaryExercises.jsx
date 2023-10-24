@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   ContainerEx,
   TitleMainEx,
@@ -26,7 +27,13 @@ import {
   TimeEx,
   BurnedExTablet,
 } from './DiaryExercises.styled';
-// import sprite from '../../assets/sprite.svg';
+
+const Icon = styled.svg`
+  &orange {
+    fill: ${({ theme }) => theme.secondaryOrange};
+    stroke: ${({ theme }) => theme.withe};
+  }
+`;
 
 export const DiaryExercises = ({ children }) => {
   return (
@@ -35,18 +42,10 @@ export const DiaryExercises = ({ children }) => {
         <SubTitleEx>Execrcises</SubTitleEx>
         <StyledLinkEx to="/first">
           <AddProductEx>Add exercise</AddProductEx>
-          <div
-            style={{
-              marginLeft: '10px',
-              width: '10px',
-              height: '10px',
-              backgroundColor: '#E6533C',
-            }}
-          ></div>
-          {/* <IconWrapperEx color="#E6533C">
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapperEx> */}
-        </StyledLinkEx>
+          <Icon width={16} height={16} stroke="#E6533C">
+            <use xlinkHref={'/symbol-defs.svg#icon-start'} />
+          </Icon>
+         </StyledLinkEx>
       </TitleMainEx>
       {!exercises.length ? (
         <EmptyScreenEx />
@@ -131,13 +130,13 @@ export const ItemProductEx = ({ width, value, children }) => {
   let displayChild = children;
   let sliceChild = displayChild;
   if (children.length > 10) {
-    sliceChild = children.slice(0, 10) + '...';    
-  }  
- 
+    sliceChild = children.slice(0, 10) + '...';
+  }
+
   return (
     <ItemWrapperEx name={children}>
       <ItemNameEx>
-        <NormalTextNameEx>{displayChild}</NormalTextNameEx> 
+        <NormalTextNameEx>{displayChild}</NormalTextNameEx>
         <SliceTextNameEx>{sliceChild}</SliceTextNameEx>
       </ItemNameEx>
 
@@ -161,10 +160,9 @@ export const TableTitleEx = () => {
       <TimeEx>Time</TimeEx>
     </WrapTitleTableEx>
   );
-}
+};
 
 export const EmptyScreenEx = () => <NotFoundEx>Not found products</NotFoundEx>;
-
 
 let choice = true;
 // let choice = false;

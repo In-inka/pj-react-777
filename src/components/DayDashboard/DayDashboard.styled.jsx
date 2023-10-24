@@ -31,7 +31,7 @@ export const ContentContainerCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-${(props) => {
+  ${(props) => {
     // console.log(props.title);
     switch (true) {
       case props.title === 'The rest of the calories' && props.value === -100:
@@ -54,11 +54,8 @@ ${(props) => {
         return `            
             background-color: rgb(239,237,232, 0.05);          
         `;
-    };    
-}   
-    
-    
-  }
+    }
+  }}
   @media screen and (min-width: 375px) {
   }
   @media screen and (min-width: 768px) {
@@ -70,7 +67,6 @@ ${(props) => {
 export const WrapperTitleCard = styled.div`
   display: flex;
   align-items: center;
-  /* margin-bottom: 30px; */
 
   @media screen and (min-width: 768px) {
   }
@@ -79,10 +75,11 @@ export const WrapperTitleCard = styled.div`
 `;
 
 export const TitleTextCard = styled.p`
+  margin-left: 8px;
   font-size: 12px;
   white-space: ${(props) =>
     props.children === 'The rest of the calories' ? 'normal' : 'nowrap'};
-  
+
   ${(props) => {
     // console.log(props.title);
     switch (true) {
@@ -94,8 +91,7 @@ export const TitleTextCard = styled.p`
       default:
         return `color: rgb(239, 237, 232, 0.4)`;
     }
-}}
-  
+  }}
 `;
 
 export const ValueTextCard = styled.p`
