@@ -6,11 +6,11 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Suspense fallback={null}>
+      <Suspense fallback={null}>        
         <Outlet />
       </Suspense>
     </>
   );
 };
 
-export { Layout };
+export default Layout;

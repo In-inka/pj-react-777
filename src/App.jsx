@@ -1,35 +1,45 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './components/Layout/Layout';
-import { Welcome } from './pages/Welcome/Welcome';
-import { Diary } from './pages/SecondPage/Diary';
-import { ErrorPage } from './pages/ErrorPage/ErrorPage';
-import { AppWrapper } from './App.styled';
-import { Products } from './pages/Products/Products';
-import { Exercises } from './pages/Exercises/Exercises';
-import { SignUp } from './pages/SignUp/SignUp';
-import { SignIn } from './pages/SignIn/SignIn';
-import { Profile } from './pages/Profile/Profile';
+import { lazy } from 'react';
 
-const test = import.meta.env.VITE_API_TEST;
+const Layout = lazy(() => import('./components/Layout/Layout'));
+const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
+const Diary = lazy(() => import('./pages/SecondPage/Diary'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
+const Products = lazy(() => import('./pages/Products/Products'));
+const Exercises = lazy(() => import('./pages/Exercises/Exercises.jsx'));
+const SignUp = lazy(() => import('./pages/SignUp/SignUp'));
+const SignIn = lazy(() => import('./pages/SignIn/SignIn'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
+const BodyParts = lazy(() =>
+  import('./components/ExercisesCategories/BodyParts/BodyParts.jsx'),
+);
+const Muscles = lazy(() =>
+  import('./components/ExercisesCategories/Muscles/Muscles.jsx'),
+);
+const Equipment = lazy(() =>
+  import('./components/ExercisesCategories/Equipment/Equipment.jsx'),
+);
 
 function App() {
-  console.log(test);
   return (
-    <AppWrapper>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/diary" element={<Diary />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/exercises" element={<Exercises />} />
-
+          <Route index element={<Welcome />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="diary" element={<Diary />} />
+          <Route path="products" element={<Products />} />
+          <Route path="exercises" element={<Exercises />}>
+            <Route path="bodyParts" element={<BodyParts />} />
+            <Route path="muscles" element={<Muscles />} />
+            <Route path="equipment" element={<Equipment />} />
+          </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
-    </AppWrapper>
+    </>
   );
 }
 export default App;
