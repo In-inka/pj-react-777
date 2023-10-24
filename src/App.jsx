@@ -2,6 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import PublicRoute from './components/Route/PublicRoute';
 import PrivateRoute from './components/Route/PrivateRoute';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import authSelectors from './redux/auth/auth-selectors'
+import authOperations from './redux/auth/operations'
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
@@ -23,8 +27,15 @@ const Equipment = lazy(() =>
 );
 
 function App() {
+  const dispatch = useDispatch();
+  const fetchCurrentUser = useSelector(authSelectors.getIsFetchingCurrentUser);
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
+
   return (
-    <>
+    !fetchCurrentUser && (
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -112,8 +123,7 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
-      </Suspense>
-    </>
+      </Suspense>)
   );
 }
 export default App;

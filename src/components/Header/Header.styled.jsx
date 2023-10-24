@@ -136,7 +136,7 @@ export const LogoutIcon = styled.div`
   pointer-events: none;
 `;
 
-export const ButtonBlack = styled(Link)`
+export const Button = styled(Link)`
   display: none;
   @media screen and (min-width: 1440px) {
     display: inline-block;
@@ -161,7 +161,7 @@ export const ButtonBlack = styled(Link)`
   }
 `;
 
-export const ButtonYellow = styled(Link)`
+export const ButtonActive = styled(Link)`
   display: none;
   @media screen and (min-width: 1440px) {
     margin-left: 16px;

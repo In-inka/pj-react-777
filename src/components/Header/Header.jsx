@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
   BarbellIcon,
-  ButtonBlack,
-  ButtonYellow,
+  Button,
   Container,
   PrivetRotesContainer,
   LogoContainer,
@@ -43,9 +42,9 @@ const Header = () => {
         </LogoContainer>
         {isLoggedIn && (
           <PrivetRotesContainer>
-            <ButtonBlack to="/diary">Diary</ButtonBlack>
-            <ButtonBlack to="/products">Products</ButtonBlack>
-            <ButtonYellow to="/exercises">Exercises</ButtonYellow>
+            <Button to="/diary">Diary</Button>
+            <Button to="/products">Products</Button>
+            <Button to="/exercises">Exercises</Button>
             <SettingsIcon />
             <UserIconContainer to="/profile">
               <UserIcon />
