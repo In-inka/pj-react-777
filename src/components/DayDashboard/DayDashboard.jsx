@@ -2,27 +2,53 @@ import { Container, ContentContainerCard, WrapperTitleCard, ValueTextCard, Title
 
 
 const DayDashboard = () => {
+  const calorieIntake = 2200;
+  const normOfSports = 110;
+  const caloriesConsumed = 707;
+  const caloriesBurned = 855;
+  const restOfCalories = -100;
+  // const restOfCalories = 1493;
+  const restOfSports = 30;
+  // const restOfSports = 85;
 
-    const calorieIntake = 2200;
-    const normOfSports = 110;
-
-    return (
-      <Container>
-        <Card value={calorieIntake}>Daily calorie intake</Card>
-        <Card value={normOfSports}>Daily norm of sports</Card>
-      </Container>
-    );
+  return (
+    <Container>
+      <Card value={calorieIntake}>Daily calorie intake</Card>
+      <Card value={normOfSports}>Daily norm of sports</Card>
+      <Card value={caloriesConsumed}>Calories consumed</Card>
+      <Card value={caloriesBurned}>Calories burned</Card>
+      <Card value={restOfCalories}>The rest of the calories</Card>
+      <Card value={restOfSports}>The rest of sports</Card>
+    </Container>
+  );
 }
 
 const Card = ({ value, children }) => {
-let icon = '';    
+        let icon = '';
+    let min = ''; 
+    let plus = '';
+    if (children === 'The rest of sports' && value === 30) plus = '+';
     switch (children) {
-        case 'Daily calorie intake':
-            icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />
-            break;
-        case 'Daily norm of sports':
-            icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />
-            break;
+      case 'Daily calorie intake':
+        icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />;
+        break;
+      case 'Daily norm of sports':
+        icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />;
+        min = ' min';
+        break;
+      case 'Calories consumed':
+        icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />;
+        break;
+      case 'Calories burned':
+        icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />;
+        break;
+      case 'The rest of the calories':
+        icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />;
+        break;
+      case 'The rest of sports':
+        icon = <TestIcon w="20px" h="20px" c="#EF8964" mr="8px" />;
+        min = ' min';
+        break;
     }
     return (
       <ContentContainerCard value={value} title={children}>
@@ -30,7 +56,7 @@ let icon = '';
           {icon}
           <TitleTextCard>{children}</TitleTextCard>
         </WrapperTitleCard>
-        <ValueTextCard>{value}</ValueTextCard>
+            <ValueTextCard>{plus}{value}{min}</ValueTextCard>
       </ContentContainerCard>
     );
 }
