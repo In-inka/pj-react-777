@@ -12,14 +12,17 @@ import {
   Success,
 } from './SignInForm.styled';
 import { signInSchema } from '../../schemas/schemas';
-
-const onSubmit = async (values, actions) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  console.log(values);
-  actions.resetForm();
-};
+import { useDispatch } from 'react-redux';
+import authOperations from '../../redux/auth/operations';
 
 const SignInForm = () => {
+        const dispatch = useDispatch();
+
+        const onSubmit = (values, actions) => {
+          dispatch(authOperations.logIn(values));
+          actions.resetForm();
+  };
+  
   const {
     values,
     errors,

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
 import { Link, NavLink } from 'react-router-dom';
 
+
 export const Container = styled.nav`
   ${ContainerStyled}
   display: flex;
@@ -12,23 +13,35 @@ export const Container = styled.nav`
   left: 50%;
   transform: translate(-50%, -0%);
   background-color: transparent;
+    border-bottom: ${(props) => props.theme.border};
 `;
 
-export const LogoContainer = styled(NavLink)`
-  display: flex;
-  align-items: center;
-`;
+Container.defaultProps = {
+  theme: {
+    border: "none",
+  },
+};
 
-export const FlexContainer = styled.div`
+export const PrivetRotesContainer = styled.div`
+margin-left: auto;
   display: flex;
   align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  @media screen and (min-width: 768px) {
-    padding-top: 34px;
-    padding-bottom: 33px;
+  justify-content: flex-end;
+  @media screen and (min-width: 1440px) {
+    margin-left: auto;
   }
-`;
+  `;
+  
+  export const LogoContainer = styled(NavLink)`
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    @media screen and (min-width: 768px) {
+      padding-top: 34px;
+      padding-bottom: 33px;
+    }
+  `;
 
 export const BarbellIcon = styled.div`
   width: 36px;
@@ -51,11 +64,15 @@ export const FlexContainerB = styled.div`
 `;
 
 export const SettingsIcon = styled.div`
-  margin-left: auto;
   width: 24px;
   height: 24px;
   border: 3px solid rgba(239, 237, 232, 0.3);
   border-radius: 50%;
+  @media screen and (min-width: 1440px) {
+    width: 28px;
+    height: 28px;
+    margin-left: 32px;
+  }
 `;
 
 export const UserIconContainer = styled(NavLink)`
@@ -70,6 +87,8 @@ export const UserIcon = styled.div`
   border-radius: 50%;
   @media screen and (min-width: 768px) {
     margin-left: 16px;
+    width: 46px;
+    height: 46px;
   }
 `;
 
@@ -99,7 +118,7 @@ export const LogoutContainer = styled.div`
 export const LogoutButton = styled.button`
     border: none;
     color: #efede8;
-    font-weight: 16px;
+    font-size: 16px;
     line-height: 1.5;
     display: block;
     background-color: transparent;
@@ -120,7 +139,6 @@ export const LogoutIcon = styled.div`
 export const ButtonBlack = styled(Link)`
   display: none;
   @media screen and (min-width: 1440px) {
-    margin-left: 16px;
     display: inline-block;
     font-size: 16px;
     line-height: 1.5;
@@ -137,10 +155,10 @@ export const ButtonBlack = styled(Link)`
     &:disabled {
       border-color: rgba(230, 83, 60, 1);
     }
-      &:first-of-type {
-        margin-left: 516px;
-      }
+    &:not(:first-of-type) {
+      margin-left: 16px;
     }
+  }
 `;
 
 export const ButtonYellow = styled(Link)`
