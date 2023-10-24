@@ -18,6 +18,9 @@ export const ProductsItemContainer = styled.div`
 `;
 
 export const ProductsItemTitle = styled.h3`
+  display: flex;
+  gap: 16px;
+  align-items: center;
   margin-bottom: 8px;
   font-size: 20px;
   font-style: normal;
@@ -93,6 +96,9 @@ export const RecommendedText = styled.p`
 `;
 
 export const AddButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background-color: transparent;
   border: none;
   color: #e6533c;
@@ -104,4 +110,11 @@ export const AddButton = styled.button`
 
 export const SpanGrey = styled.span`
   color: rgba(239, 237, 232, 0.4);
+`;
+
+export const IconRunning = styled.svg`
+  fill: rgba(239, 237, 232, 1);
+  border-radius: 50px;
+  background-color: rgba(239, 160, 130, 1);
+  padding: 3px 4px;
 `;
