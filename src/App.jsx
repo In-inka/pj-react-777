@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
+import PrivateRouter from './guards/PrivateRouter';
+import PublicRouter from './guards/PublicRouter';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
@@ -25,15 +27,86 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Welcome />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="signin" element={<SignIn />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="diary" element={<Diary />} />
-          <Route path="products" element={<Products />} />
-          <Route path="exercises" element={<Exercises />}>
-            <Route path="bodyParts" element={<BodyParts />} />
-            <Route path="muscles" element={<Muscles />} />
+          <Route
+            index
+            element={
+              <PublicRouter>
+                <Welcome />
+              </PublicRouter>
+            }
+          />
+          <Route
+            path="signup"
+            element={
+              <PublicRouter>
+                <SignUp />
+              </PublicRouter>
+            }
+          />
+          <Route
+            path="signin"
+            element={
+              <PublicRouter>
+                <SignIn />
+              </PublicRouter>
+            }
+          />
+          <Route
+            path="profile"
+            element={
+              <PrivateRouter>
+                <Profile />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="diary"
+            element={
+              <PrivateRouter>
+                <Diary />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="products"
+            element={
+              <PrivateRouter>
+                <Products />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="exercises"
+            element={
+              <PrivateRouter>
+                <Exercises />
+              </PrivateRouter>
+            }
+          >
+            <Route
+              path="bodyParts"
+              element={
+                <PrivateRouter>
+                  <BodyParts />
+                </PrivateRouter>
+              }
+            />
+            <Route
+              path="muscles"
+              element={
+                <PrivateRouter>
+                  <Muscles />
+                </PrivateRouter>
+              }
+            />
+            <Route
+              path="equipment"
+              element={
+                <PrivateRouter>
+                  <Equipment />
+                </PrivateRouter>
+              }
+            />
             <Route path="equipment" element={<Equipment />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
