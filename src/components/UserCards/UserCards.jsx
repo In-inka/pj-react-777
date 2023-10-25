@@ -16,6 +16,7 @@ import {
 } from './UserCards.styled';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/operations';
+import sprite from '../../sprite/sprite.svg';
 
 const UserCards = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const UserCards = () => {
       <PositionCards>
         <Cards>
           <svg width={61} height={62}>
-            <use xlinkHref="/symbol-defs.svg#icon-user" />
+            <use href={`${sprite}#icon-user`}></use>
           </svg>
           <div>
             <input
