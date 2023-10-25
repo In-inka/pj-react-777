@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { Links, BoxLinksCategories } from './ExercisesCategories-style';
+import { Links, BoxLinksCategories } from './ExercisesCategories.styled';
 
 const ExercisesCategories = () => {
   const location = useLocation();
