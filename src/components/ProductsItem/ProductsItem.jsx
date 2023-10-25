@@ -46,14 +46,14 @@ const ProductsItem = ({ product }) => {
           <AddButton>
             Add
             <svg width={16} height={16} style={{ stroke: '#E6533C' }}>
-              <use xlinkHref={'/symbol-defs.svg#icon-arrow'} />
+              <use xlinkHref={'src/img/sprite.svg#icon-arrow-right'} />
             </svg>
           </AddButton>
         </div>
       </ProductsItemFunctional>
       <ProductsItemTitle>
         <IconRunning width={24} height={24}>
-          <use xlinkHref={'/symbol-defs.svg#icon-running'} />
+          <use xlinkHref={'src/img/sprite.svg#icon-running-stick-figure'} />
         </IconRunning>
         {cutStringLength(product.title)}
       </ProductsItemTitle>
