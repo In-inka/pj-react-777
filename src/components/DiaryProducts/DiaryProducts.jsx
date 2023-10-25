@@ -1,4 +1,4 @@
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import {
   Container,
   TitleMain,
@@ -29,12 +29,12 @@ import {
 // import sprite from '../../assets/sprite.svg';
 
 
-// const Icon = styled.svg`
-//   &orange {
-//     fill: ${({ theme }) => theme.secondaryOrange};
-//     stroke: ${({ theme }) => theme.withe};
-//   }
-// `;
+const Icon = styled.svg`
+  &orange {
+    fill: ${({ theme }) => theme.secondaryOrange};
+    stroke: ${({ theme }) => theme.withe};
+  }
+`;
 
 const DiaryProducts = ({ children }) => {
   return (
@@ -43,20 +43,9 @@ const DiaryProducts = ({ children }) => {
         <SubTitle>Products</SubTitle>
         <StyledLink to="/products">
           <AddProduct>Add product</AddProduct>
-          <div
-            style={{
-              marginLeft: '10px',
-              width: '10px',
-              height: '10px',
-              backgroundColor: '#E6533C',
-            }}
-          ></div>
-          {/* <Icon width={24} height={24} className='orange'>
-              <use xlinkHref={'/symbol-defs.svg#icon-exclamation_mark'} />
-            </Icon> */}
-          {/* <IconWrapper color="#E6533C">
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper> */}
+          <Icon width={16} height={16} stroke="#E6533C">
+            <use xlinkHref={'/symbol-defs.svg#icon-start'} />
+          </Icon>
         </StyledLink>
       </TitleMain>
       {!products.length ? (

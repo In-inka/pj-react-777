@@ -60,6 +60,7 @@ export const AddProductEx = styled.p`
   font-size: 14px;
   color: rgb(230, 83, 60);
   margin: 0;
+  margin-right: 10px;
 
   @media screen and (min-width: 768px) {
   }
