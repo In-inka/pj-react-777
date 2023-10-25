@@ -2,8 +2,8 @@ import Select from 'react-select';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import sprite from '../../../../src/img/sprite.svg';
-import { filterReducer } from '../../../redux/products/sliceProducts';
+// import sprite from '../../img/sprite.svg';
+import { filterReducer } from '../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
   ProductsFilterSearch,
@@ -183,12 +183,14 @@ export const ProductsFilter = () => {
           />
           <ProductsBtnClose onClick={delTextInput} type="button">
             <ProductsSvgClose>
-              <use href={sprite + '#icon-x'}></use>
+              {/* <use href={sprite + '#icon-search'}></use> */}
+              <use href={'#icon-search'}></use>
             </ProductsSvgClose>
           </ProductsBtnClose>
           <ProductsBtnSearch type="button">
             <ProductsSvgSearch>
-              <use href={sprite + '#icon-search'}></use>
+              <use href={'#icon-search'}></use>
+              {/* <use href={sprite + '#icon-search'}></use> */}
             </ProductsSvgSearch>
           </ProductsBtnSearch>
         </ProductsFilterLabel>
