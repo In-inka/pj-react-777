@@ -1,4 +1,4 @@
-import{s as i,e as a,j as e}from"./index-89d1075b.js";import{u as v,p as w}from"./schemas-ea760167.js";import{a as C}from"./SignUpForm.styled-e5ddc2e8.js";import{T as k}from"./TitlePage-15971a16.js";import{C as S}from"./ContainerStyled-7dc4dca2.js";import"./emotion-styled.browser.esm-fac7664a.js";i.form`
+import{s as i,e as a,j as e}from"./index-1e493299.js";import{u as v,p as w}from"./schemas-67a80810.js";import{a as C}from"./SignUpForm.styled-21053f64.js";import{T as k}from"./TitlePage-abb020ad.js";import{C as S}from"./ContainerStyled-7dc4dca2.js";import"./emotion-styled.browser.esm-ed3ccf76.js";i.form`
     padding-top: 18px;
     padding-bottom: 66px;
 `;const B=i.div`
