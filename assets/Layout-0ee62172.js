@@ -1,5 +1,5 @@
-import{s as n,N as i,L as r,u as c,a as l,b as p,j as e,o as x,r as g,O as h}from"./index-f3cd1053.js";import{C as b}from"./ContainerStyled-7dc4dca2.js";const s=n.nav`
-  ${b}
+import{s as n,N as i,L as r,u as c,j as e,o as l,r as p,O as x}from"./index-298259a3.js";import{C as g}from"./ContainerStyled-7dc4dca2.js";import{u as h}from"./useDispatch-fa6c3604.js";const s=n.nav`
+  ${g}
   display: flex;
   position: absolute;
   z-index: 999;
@@ -9,7 +9,7 @@ import{s as n,N as i,L as r,u as c,a as l,b as p,j as e,o as x,r as g,O as h}fro
   transform: translate(-50%, -0%);
   background-color: transparent;
     border-bottom: ${o=>o.theme.border};
-`;s.defaultProps={theme:{border:"none"}};const m=n.div`
+`;s.defaultProps={theme:{border:"none"}};const u=n.div`
 margin-left: auto;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@ margin-left: auto;
   @media screen and (min-width: 1440px) {
     margin-left: auto;
   }
-  `,u=n(i)`
+  `,m=n(i)`
     display: flex;
     align-items: center;
     padding-top: 24px;
@@ -26,12 +26,12 @@ margin-left: auto;
       padding-top: 34px;
       padding-bottom: 33px;
     }
-  `,f=n.div`
+  `,b=n.div`
   width: 36px;
   height: 13px;
   background-color: #e6533c;
   margin-right: 8px;
-`,j=n.p`
+`,f=n.p`
   font-size: 12px;
   line-height: 1;
   font-weight: bold;
@@ -40,7 +40,7 @@ margin-left: auto;
   display: inline-flex;
   align-items: center;
   justify-content: end;
-`;const y=n.div`
+`;const j=n.div`
   width: 24px;
   height: 24px;
   border: 3px solid rgba(239, 237, 232, 0.3);
@@ -50,9 +50,9 @@ margin-left: auto;
     height: 28px;
     margin-left: 32px;
   }
-`,k=n(i)`
+`,y=n(i)`
 
-`,w=n.div`
+`,k=n.div`
   margin-left: 14px;
   width: 37px;
   height: 37px;
@@ -63,7 +63,7 @@ margin-left: auto;
     width: 46px;
     height: 46px;
   }
-`,v=n.button`
+`,w=n.button`
   margin-left: 14px;
   width: 24px;
   height: 24px;
@@ -74,14 +74,14 @@ margin-left: auto;
   @media screen and (min-width: 1440px) {
     display: none;
   }
-`,L=n.div`
+`,v=n.div`
   display: none;
   @media screen and (min-width: 1440px) {
     margin-left: 16px;
     display: block;
     position: relative;
   }
-`,C=n.button`
+`,L=n.button`
     border: none;
     color: #efede8;
     font-size: 16px;
@@ -144,4 +144,4 @@ margin-left: auto;
       color: #efede899;
     }
   }
-`;const z=()=>{const o=c(l.getIsLoggedIn),d=p(),a=()=>{d(x.logOut())};return e.jsx(e.Fragment,{children:e.jsxs(s,{theme:o&&{border:"1px solid rgba(239, 237, 232, 0.2)"},children:[e.jsxs(u,{to:"/",children:[e.jsx(f,{}),e.jsx(j,{children:"PowerPulse"})]}),o&&e.jsxs(m,{children:[e.jsx(t,{to:"/diary",children:"Diary"}),e.jsx(t,{to:"/products",children:"Products"}),e.jsx(t,{to:"/exercises",children:"Exercises"}),e.jsx(y,{}),e.jsx(k,{to:"/profile",children:e.jsx(w,{})}),e.jsx(v,{type:"button"}),e.jsxs(L,{children:[e.jsx(C,{type:"button",onClick:a,children:"Logout"}),e.jsx(I,{})]})]})]})})},B=()=>e.jsxs(e.Fragment,{children:[e.jsx(z,{}),e.jsx(g.Suspense,{fallback:null,children:e.jsx(h,{})})]});export{B as default};
+`;const C=o=>o.auth.isLoggedIn,z=o=>o.auth.user.name,P=o=>o.auth.isFetchingCurrentUser,S={getIsLoggedIn:C,getUserName:z,getIsFetchingCurrentUser:P},U=()=>{const o=c(S.getIsLoggedIn),d=h(),a=()=>{d(l.logOut())};return e.jsx(e.Fragment,{children:e.jsxs(s,{theme:o&&{border:"1px solid rgba(239, 237, 232, 0.2)"},children:[e.jsxs(m,{to:"/",children:[e.jsx(b,{}),e.jsx(f,{children:"PowerPulse"})]}),o&&e.jsxs(u,{children:[e.jsx(t,{to:"/diary",children:"Diary"}),e.jsx(t,{to:"/products",children:"Products"}),e.jsx(t,{to:"/exercises",children:"Exercises"}),e.jsx(j,{}),e.jsx(y,{to:"/profile",children:e.jsx(k,{})}),e.jsx(w,{type:"button"}),e.jsxs(v,{children:[e.jsx(L,{type:"button",onClick:a,children:"Logout"}),e.jsx(I,{})]})]})]})})},N=()=>e.jsxs(e.Fragment,{children:[e.jsx(U,{}),e.jsx(p.Suspense,{fallback:null,children:e.jsx(x,{})})]});export{N as default};

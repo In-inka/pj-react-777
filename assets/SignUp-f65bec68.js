@@ -1,22 +1,22 @@
-import{L as f,b as w,j as e,o as j}from"./index-f3cd1053.js";import{n as i}from"./emotion-styled.browser.esm-7e217900.js";import{b as k,a as y}from"./main_bg_mob-adb912f5.js";import{b as v,a as C,c as S,d as z}from"./main_bg_desktop-e9b36866.js";import{C as T}from"./ContainerStyled-7dc4dca2.js";import{u as _,s as B}from"./schemas-f1a5c5ff.js";import{F,L as x,I as l,B as I,a as $,M as c,E,b as L,S as U,c as V}from"./SignUpForm.styled-706e449e.js";const R=i.div`
-  ${T}
+import{L as f,j as e,o as w}from"./index-298259a3.js";import{n as i}from"./emotion-styled.browser.esm-1309588a.js";import{b as j,a as k}from"./main_bg_mob-adb912f5.js";import{b as y,a as v,c as C,d as S}from"./main_bg_desktop-e9b36866.js";import{C as z}from"./ContainerStyled-7dc4dca2.js";import{u as T,s as _}from"./schemas-5c7e8065.js";import{F as B,L as x,I as l,B as F,a as I,M as m,E as $,b as E,S as L,c as U}from"./SignUpForm.styled-b793e617.js";import{u as V}from"./useDispatch-fa6c3604.js";const R=i.div`
+  ${z}
   padding-top: 127px;
   padding-bottom: 40px;
-  background-image: url(${k});
+  background-image: url(${j});
   background-repeat: no-repeat;
   background-position: 77px 241px;
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${y});
+    background-image: url(${k});
   }
 
   @media screen and (min-width: 768px) {
     height: inherit;
     padding-top: 189px;
     padding-bottom: 48px;
-    background-image: url(${v});
+    background-image: url(${y});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -25,7 +25,7 @@ import{L as f,b as w,j as e,o as j}from"./index-f3cd1053.js";import{n as i}from"
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${C});
+    background-image: url(${v});
   }
 
   @media screen and (min-width: 1440px) {
@@ -36,13 +36,13 @@ import{L as f,b as w,j as e,o as j}from"./index-f3cd1053.js";import{n as i}from"
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: url(${S});
+    background-image: url(${C});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${z});
+    background-image: url(${S});
   }
 `,A=i.h1`
   color: rgba(239, 237, 232, 1);
@@ -194,4 +194,4 @@ import{L as f,b as w,j as e,o as j}from"./index-f3cd1053.js";import{n as i}from"
     height: 24px;
     margin-bottom: 12px;
   }
-`,ie=()=>{const m=w(),h=(t,b)=>{m(j.register(t)),b.resetForm()},{values:o,errors:n,touched:a,isSubmitting:g,handleChange:d,handleBlur:r,handleSubmit:u}=_({initialValues:{name:"",email:"",password:""},validationSchema:B,onSubmit:h}),s=t=>e.jsxs(c,{children:[" ",e.jsx(E,{}),e.jsx(L,{children:t})]}),p=t=>e.jsxs(c,{children:[e.jsx(U,{}),e.jsxs(V,{children:["Success ",t]})]});return e.jsxs(F,{onSubmit:u,children:[e.jsx(x,{htmlFor:"name",children:"Name"}),e.jsx(l,{value:o.name,onChange:d,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:r,theme:a.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.name&&(n.name?s(n.name):p("name"))," ",e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(l,{value:o.email,onChange:d,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:r,theme:a.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.email&&(n.email?s(n.email):p("email"))," ",e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(l,{value:o.password,onChange:d,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:r,theme:a.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.password&&(n.password?s(n.password):p("password"))," ",e.jsx(I,{children:e.jsx($,{disabled:g,type:"submit",children:"Sign Up"})})]})},pe=()=>e.jsxs(R,{children:[e.jsx(A,{children:"Sign Up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ie,{}),e.jsxs(M,{children:[e.jsx(N,{children:"Already have account?"}),e.jsx(D,{to:"/signin",children:"Sign In"})]}),e.jsx(q,{children:e.jsxs(G,{children:[e.jsx(O,{}),e.jsxs(H,{children:[e.jsx(J,{children:"350+"}),e.jsx(K,{children:"Video tutorial"})]})]})}),e.jsx(Q,{children:e.jsxs(W,{children:[e.jsx(ee,{}),e.jsxs(X,{children:[e.jsx(Y,{children:"500"}),e.jsx(Z,{children:"cal"})]})]})})]});export{pe as default};
+`,ie=()=>{const c=V(),h=(t,b)=>{c(w.register(t)),b.resetForm()},{values:o,errors:n,touched:a,isSubmitting:g,handleChange:r,handleBlur:d,handleSubmit:u}=T({initialValues:{name:"",email:"",password:""},validationSchema:_,onSubmit:h}),s=t=>e.jsxs(m,{children:[" ",e.jsx($,{}),e.jsx(E,{children:t})]}),p=t=>e.jsxs(m,{children:[e.jsx(L,{}),e.jsxs(U,{children:["Success ",t]})]});return e.jsxs(B,{onSubmit:u,children:[e.jsx(x,{htmlFor:"name",children:"Name"}),e.jsx(l,{value:o.name,onChange:r,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:d,theme:a.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.name&&(n.name?s(n.name):p("name"))," ",e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(l,{value:o.email,onChange:r,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:d,theme:a.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.email&&(n.email?s(n.email):p("email"))," ",e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(l,{value:o.password,onChange:r,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:d,theme:a.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.password&&(n.password?s(n.password):p("password"))," ",e.jsx(F,{children:e.jsx(I,{disabled:g,type:"submit",children:"Sign Up"})})]})},xe=()=>e.jsxs(R,{children:[e.jsx(A,{children:"Sign Up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ie,{}),e.jsxs(M,{children:[e.jsx(N,{children:"Already have account?"}),e.jsx(D,{to:"/signin",children:"Sign In"})]}),e.jsx(q,{children:e.jsxs(G,{children:[e.jsx(O,{}),e.jsxs(H,{children:[e.jsx(J,{children:"350+"}),e.jsx(K,{children:"Video tutorial"})]})]})}),e.jsx(Q,{children:e.jsxs(W,{children:[e.jsx(ee,{}),e.jsxs(X,{children:[e.jsx(Y,{children:"500"}),e.jsx(Z,{children:"cal"})]})]})})]});export{xe as default};

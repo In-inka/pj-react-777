@@ -1,4 +1,4 @@
-import{N as n,h as r,i as a,j as e,s as i,r as c,O as x}from"./index-f3cd1053.js";import{n as o}from"./emotion-styled.browser.esm-7e217900.js";import{T as p}from"./TitlePage-4a4a49a4.js";import{C as l}from"./ContainerStyled-7dc4dca2.js";const d=o.div`
+import{N as n,e as r,f as a,j as e,s as i,r as c,O as x}from"./index-298259a3.js";import{n as o}from"./emotion-styled.browser.esm-1309588a.js";import{T as p}from"./TitlePage-1b147208.js";import{C as l}from"./ContainerStyled-7dc4dca2.js";const d=o.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
@@ -34,7 +34,7 @@ import{N as n,h as r,i as a,j as e,s as i,r as c,O as x}from"./index-f3cd1053.js
 
 `,m=()=>{const t=a();return e.jsxs(d,{children:[e.jsx(s,{to:"bodyParts",state:{from:t},children:"Body parts"}),e.jsx(s,{to:"muscles",state:{from:t},children:"Muscles"}),e.jsx(s,{to:"equipment",state:{from:t},children:"Equipment"})]})},g=i.div`
     ${l}
-    `,h=i.div`
+    `,f=i.div`
 display: flex;
 justify-content: center;
 flex-direction: column;
@@ -49,4 +49,4 @@ margin-top: 40px;
     margin-top: 72px;
 }
 
-`,y=()=>e.jsxs(g,{children:[e.jsxs(h,{children:[e.jsx(p,{text:"Exercises"}),e.jsx(m,{})]}),e.jsx(c.Suspense,{children:e.jsx(x,{})})]});export{y as default};
+`,y=()=>e.jsxs(g,{children:[e.jsxs(f,{children:[e.jsx(p,{text:"Exercises"}),e.jsx(m,{})]}),e.jsx(c.Suspense,{children:e.jsx(x,{})})]});export{y as default};
