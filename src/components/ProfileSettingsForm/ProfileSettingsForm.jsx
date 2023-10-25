@@ -1,17 +1,54 @@
 // import { Formik } from 'formik';
-import React from 'react';
-import { BloodRadio, BoxBasicInfo, BoxHeightWeightBirthday, BoxItemInputs, BoxLabelMarket, BoxRadio, BoxRadioSex, ContainerBloodSex, ContainerItemInputs, ContainerRadio, ContainerRadioActive, EmailProfile,  IconRadio,  InputProfile,  InputRadio,  InputSex,  LabelProfile, LabelProfileRadio, RadioButton, RadioCheckmark, RadioContainer, RadioLabel, RadioLabelActive, RadioWrapper   } from './ProfileSettingsForm-style';
+import React, { useRef, useState } from 'react';
+import { BloodRadio, 
+    BoxBasicInfo, 
+    BoxHeightWeightBirthday, 
+    BoxInputData, 
+    BoxItemInputs, 
+    BoxLabelMarket, 
+    BoxRadio, 
+    BoxRadioSex, 
+    ContainerBloodSex, 
+    ContainerItemInputs, 
+    ContainerRadio, 
+    ContainerRadioActive, 
+    DateInput, 
+    EmailProfile,  
+    FormProfile,  
+    IconRadio,  
+    InputProfile,  
+    InputRadio,  
+    InputSex,  
+    LabelProfile,
+    LabelProfileRadio, 
+    RadioButton,
+    RadioCheckmark,
+    RadioContainer, 
+    RadioLabel, 
+    RadioLabelActive, 
+    RadioWrapper   } from './ProfileSettingsForm.styled';
 // import { Button } from '../SignUpForm.jsx/SignUpForm.styled';
 import { useFormik } from 'formik';
 import { Button } from '../SignUpForm.jsx/SignUpForm.styled';
 import { profileSettingsSchema } from '../../schemas/schemas';
-
+import { DaySwitch } from '../DaySwitch/DaySwitch';
+import "react-datepicker/dist/react-datepicker.css";
+// import ReactDatePicker from 'react-datepicker';
+import DatePicker from "react-datepicker";
+import { CustomDatePickerInput, StyledCalendarContainer, StyledIcon } from '../DaySwitch/DaySwitch.styled';
 
 
 
 
 const ProfileSettingsForm = () => {
    
+    const [startDate, setStartDate] = useState(new Date());
+    const numericMonthFormat = 'dd.MM.yyyy';
+  
+    const datepickerRef = useRef(null);
+  
+    // console.log('startDate', startDate)
+    // console.log('startDate', datepickerRef)
     const {handleChange, handleSubmit, values, isSubmitting} = useFormik({
         initialValues: {
             name: "", 
@@ -26,19 +63,29 @@ const ProfileSettingsForm = () => {
         isSubmitting: profileSettingsSchema,
         onSubmit: async(values, actions) => {
             await  new Promise((resolve) => setTimeout(resolve, 1000));
-            console.log('data', values)
+            // console.log('data', values)
             alert(JSON.stringify(values, null, 2));
             actions.resetForm();
         },
 
     })
 
+    const validBirthday = (date)=>{
+        const newDate= new Date()
+        const validDate =  newDate.getFullYear() - date.getFullYear()
+        const stringDate = validDate 
+        
+        // console.log('validDate', stringDate)
+    }
+
+    validBirthday(startDate)
+
 
     return (
 		
 		<div>
 
-            <form onSubmit={handleSubmit}>
+            <FormProfile onSubmit={handleSubmit}>
                 <LabelProfile htmlFor='name'>
                     Basic info
                 </LabelProfile>
@@ -96,12 +143,26 @@ const ProfileSettingsForm = () => {
                             />
                         </BoxItemInputs>
                         <BoxItemInputs>
-                            <InputProfile 
+                            {/* <DaySwitch/> */}
+                            <StyledCalendarContainer>
+
+                                <BoxInputData>
+                                <DatePicker
+                                    selected={startDate}
+                                    onChange={(date) => setStartDate(date)}
+                                    dateFormat={numericMonthFormat}
+                                    customInput={<CustomDatePickerInput />}
+                                    ref={datepickerRef}
+                                />
+                                    </BoxInputData>
+                                </StyledCalendarContainer>
+                            {/* <InputProfile 
                                 name="birthday" 
-                                type="data" 
+                                type="date" 
                                 onChange={handleChange} 
                                 value={values.birthday}
-                            />
+                                />
+                                {(data)=>(console.log('data', data))} */}
                         </BoxItemInputs>
                     </ContainerItemInputs>
                 </BoxHeightWeightBirthday>
@@ -252,7 +313,7 @@ const ProfileSettingsForm = () => {
                 </ContainerRadioActive>
                 
                     <Button disabled={isSubmitting} type="submit" >Save</Button>
-            </form>
+            </FormProfile>
                 
         </div>
 

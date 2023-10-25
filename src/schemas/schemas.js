@@ -36,13 +36,7 @@ export const profileSettingsSchema = yup.object().shape({
   desiredWeight: yup.number()
     .min(35, 'Too little weight')
     .required('Required'),
-  birthday: yup.date()
-    .required('Birthday is required')
-    .test('is-adult', 'You must be 18 or older', function (value) {
-      console.log('first', value)
-      
-      // ось  тут ти матимеш поточну обрану дату народження та зможеш сформувати поточну дату. треба буде вирахувати різницю і скільки ця різниця містить повних років
-    }),
+  birthday: yup.date().max(new Date(Date.now() - 18 * 365 * 24 * 60 * 60 * 1000)).required(),
   blood: yup.number()
     .oneOf([1,2,3,4])
     .required('Required'),
