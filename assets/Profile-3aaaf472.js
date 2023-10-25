@@ -1,4 +1,4 @@
-import{s as i,c as a,j as e}from"./index-be173e49.js";import{u as v,p as w}from"./schemas-02648c22.js";import{a as C}from"./SignUpForm.styled-b8006944.js";import{T as k}from"./TitlePage-01a4b631.js";import{C as S}from"./ContainerStyled-010a4f24.js";i.form`
+import{s as i,h as a,j as e}from"./index-f3cd1053.js";import{u as v,p as w}from"./schemas-f1a5c5ff.js";import{a as C}from"./SignUpForm.styled-706e449e.js";import{T as k}from"./TitlePage-4a4a49a4.js";import{C as S}from"./ContainerStyled-7dc4dca2.js";import"./emotion-styled.browser.esm-7e217900.js";i.form`
     padding-top: 18px;
     padding-bottom: 66px;
 `;const B=i.div`
@@ -256,4 +256,4 @@ gap: 8px;
     ${S}
     padding-top: 40px;
     padding-bottom: 66px;
-`,V=()=>e.jsxs(I,{children:[e.jsx(k,{text:"Profile Settings"}),e.jsx(F,{})]});export{V as default};
+`,D=()=>e.jsxs(I,{children:[e.jsx(k,{text:"Profile Settings"}),e.jsx(F,{})]});export{D as default};

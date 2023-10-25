@@ -1,22 +1,22 @@
-import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerStyled-010a4f24.js";import{b as d,a as t,c as r,d as a}from"./main_bg_desktop-e9b36866.js";const p="/pj-react-777/assets/main_bg_mob_welcome_x2-dd403410.jpg",x="/pj-react-777/assets/main_bg_mob_welcome-8f07bae4.jpg",s=n.div`
-  ${o}
-  padding-top: 24px;
+import{L as f,b as w,j as e,o as j}from"./index-f3cd1053.js";import{n as i}from"./emotion-styled.browser.esm-7e217900.js";import{b as k,a as y}from"./main_bg_mob-adb912f5.js";import{b as v,a as C,c as S,d as z}from"./main_bg_desktop-e9b36866.js";import{C as T}from"./ContainerStyled-7dc4dca2.js";import{u as _,s as B}from"./schemas-f1a5c5ff.js";import{F,L as x,I as l,B as I,a as $,M as c,E,b as L,S as U,c as V}from"./SignUpForm.styled-706e449e.js";const R=i.div`
+  ${T}
+  padding-top: 127px;
   padding-bottom: 40px;
-  background-image: url(${x});
+  background-image: url(${k});
   background-repeat: no-repeat;
   background-position: 77px 241px;
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${p});
+    background-image: url(${y});
   }
 
   @media screen and (min-width: 768px) {
     height: inherit;
-    padding-top: 32px;
+    padding-top: 189px;
     padding-bottom: 48px;
-    background-image: url(${d});
+    background-image: url(${v});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -25,110 +25,67 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${t});
+    background-image: url(${C});
   }
 
   @media screen and (min-width: 1440px) {
-    padding-bottom: 210px;
+    padding-top: 200px;
+    padding-bottom: 114px;
     background-repeat: no-repeat;
     background-position: 770px 0;
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: url(${r});
+    background-image: url(${S});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${a});
+    background-image: url(${z});
   }
-`,c=n.div`
-  display: flex;
-  align-items: center;
-`,l=n.div`
-  width: 36px;
-  height: 13px;
-  background-color: #e6533c;
-  margin-right: 8px;
-`,g=n.p`
-  font-size: 12px;
-  line-height: 1;
-  font-weight: bold;
-`,m=n.h1`
-  margin-top: 90px;
+`,A=i.h1`
   color: rgba(239, 237, 232, 1);
-  font-size: 38px;
-  line-height: 1.05;
-  font-weight: 500;
-  @media screen and (min-width: 768px) {
-    margin-top: 140px;
-    font-size: 70px;
-    line-height: 1.11;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-top: 151px;
-    width: 598px;
-  }
-`,h=n.div`
-  margin-top: 40px;
-  @media screen and (min-width: 768px) {
-    margin-top: 64px;
-  }
-`,b=n(e)`
-  display: inline-block;
-  margin-right: 14px;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.17;
-  background-color: #e6533c;
-  color: #efede8;
-  border-radius: 12px;
-  border: none;
-  padding: 12px 40px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    background-color: #ef8964;
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
   @media screen and (min-width: 768px) {
-    padding: 16px 60px;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 32px;
+    line-height: 1.38;
   }
-`,u=n(e)`
-  display: inline-block;
-  font-size: 16px;
-  line-height: 1.17;
-  background-color: inherit;
-  color: #efede8;
-  border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.3);
-  padding: 11px 39px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    border-color: rgba(230, 83, 60, 1);
-  }
-  &:disabled {
-    border-color: rgba(230, 83, 60, 1);
-  }
+`,P=i.p`
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(239, 237, 232, 0.3);
+  margin-top: 14px;
+
   @media screen and (min-width: 768px) {
-    padding: 16px 60px;
-    font-size: 20px;
-    line-height: 1.2;
+    width: 496px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 16px;
   }
-`,f=n.div`
+`,M=i.div`
+  display: flex;
+  font-size: 12px;
+  line-height: 1.5;
+  padding-top: 12px;
+  @media screen and (min-width: 768px) {
+    padding-left: 15px;
+  }
+`,N=i.p`
+  color: rgba(239, 237, 232, 0.3);
+`,D=i(f)`
+  margin-left: 4px;
+  color: #efede8;
+  text-decoration: underline;
+`,q=i.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 230px;
+  padding-top: 35px;
   @media screen and (min-width: 768px) {
-    padding-top: 169px;
+    padding-top: 39px;
     justify-content: left;
     padding-left: 299px;
   }
@@ -138,7 +95,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     left: 770px;
     top: 384px;
   }
-`,w=n.div`
+`,G=i.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -148,7 +105,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,k=n.div``,j=n.p`
+`,H=i.div``,J=i.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -156,7 +113,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     font-size: 24px;
     line-height: 1;
   }
-`,_=n.p`
+`,K=i.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -166,7 +123,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     font-size: 16px;
     line-height: 1.5;
   }
-`,z=n.div`
+`,O=i.div`
   display: block;
   width: 30px;
   height: 30px;
@@ -178,7 +135,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     height: 40px;
     margin-right: 12px;
   }
-`,y=n.div`
+`,Q=i.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -192,7 +149,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     top: 519px;
     left: 1228px;
   }
-`,v=n.div`
+`,W=i.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -201,11 +158,11 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,C=n.div`
+`,X=i.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,T=n.p`
+`,Y=i.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -216,7 +173,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     font-size: 48px;
     line-height: 1.04;
   }
-`,B=n.p`
+`,Z=i.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -225,7 +182,7 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     font-size: 16px;
     line-height: 1.5;
   }
-`,$=n.div`
+`,ee=i.div`
   display: block;
   width: 20px;
   height: 20px;
@@ -237,4 +194,4 @@ import{L as e,j as i}from"./index-be173e49.js";import{n,C as o}from"./ContainerS
     height: 24px;
     margin-bottom: 12px;
   }
-`,S=()=>i.jsxs(s,{children:[i.jsxs(c,{children:[i.jsx(l,{}),i.jsx(g,{children:"PowerPulse"})]}),i.jsx(m,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(h,{children:[i.jsx(b,{to:"/signup",children:"Sign Up"}),i.jsx(u,{to:"/signin",children:"Sign In"})]}),i.jsx(f,{children:i.jsxs(w,{children:[i.jsx(z,{}),i.jsxs(k,{children:[i.jsx(j,{children:"350+"}),i.jsx(_,{children:"Video tutorial"})]})]})}),i.jsx(y,{children:i.jsxs(v,{children:[i.jsx($,{}),i.jsxs(C,{children:[i.jsx(T,{children:"500"}),i.jsx(B,{children:"cal"})]})]})})]});export{S as default};
+`,ie=()=>{const m=w(),h=(t,b)=>{m(j.register(t)),b.resetForm()},{values:o,errors:n,touched:a,isSubmitting:g,handleChange:d,handleBlur:r,handleSubmit:u}=_({initialValues:{name:"",email:"",password:""},validationSchema:B,onSubmit:h}),s=t=>e.jsxs(c,{children:[" ",e.jsx(E,{}),e.jsx(L,{children:t})]}),p=t=>e.jsxs(c,{children:[e.jsx(U,{}),e.jsxs(V,{children:["Success ",t]})]});return e.jsxs(F,{onSubmit:u,children:[e.jsx(x,{htmlFor:"name",children:"Name"}),e.jsx(l,{value:o.name,onChange:d,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:r,theme:a.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.name&&(n.name?s(n.name):p("name"))," ",e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(l,{value:o.email,onChange:d,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:r,theme:a.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.email&&(n.email?s(n.email):p("email"))," ",e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(l,{value:o.password,onChange:d,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:r,theme:a.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.password&&(n.password?s(n.password):p("password"))," ",e.jsx(I,{children:e.jsx($,{disabled:g,type:"submit",children:"Sign Up"})})]})},pe=()=>e.jsxs(R,{children:[e.jsx(A,{children:"Sign Up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ie,{}),e.jsxs(M,{children:[e.jsx(N,{children:"Already have account?"}),e.jsx(D,{to:"/signin",children:"Sign In"})]}),e.jsx(q,{children:e.jsxs(G,{children:[e.jsx(O,{}),e.jsxs(H,{children:[e.jsx(J,{children:"350+"}),e.jsx(K,{children:"Video tutorial"})]})]})}),e.jsx(Q,{children:e.jsxs(W,{children:[e.jsx(ee,{}),e.jsxs(X,{children:[e.jsx(Y,{children:"500"}),e.jsx(Z,{children:"cal"})]})]})})]});export{pe as default};
