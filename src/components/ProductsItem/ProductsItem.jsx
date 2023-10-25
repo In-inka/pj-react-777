@@ -14,6 +14,8 @@ import {
   IconRunning,
 } from './ProductsItem.styled';
 
+import sprite from '../../sprite/sprite.svg';
+
 const cutStringLength = (str, maxLength = 24) => {
   if (str.length > maxLength) {
     const lastSpaceIndex = str.lastIndexOf(' ', maxLength);
@@ -46,14 +48,14 @@ const ProductsItem = ({ product }) => {
           <AddButton>
             Add
             <svg width={16} height={16} style={{ stroke: '#E6533C' }}>
-              <use xlinkHref={'src/img/sprite.svg#icon-arrow-right'} />
+              <use href={`${sprite}#icon-start`}></use>
             </svg>
           </AddButton>
         </div>
       </ProductsItemFunctional>
       <ProductsItemTitle>
         <IconRunning width={24} height={24}>
-          <use xlinkHref={'src/img/sprite.svg#icon-running-stick-figure'} />
+          <use href={`${sprite}#icon-running`}></use>
         </IconRunning>
         {cutStringLength(product.title)}
       </ProductsItemTitle>

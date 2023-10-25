@@ -7,10 +7,11 @@ import {
   TitleTextCard,
 } from './DayDashboard.styled';
 
+import sprite from '../../sprite/sprite.svg';
+
 const Icon = styled.svg`
-  &orange {
+  &.orange {
     fill: ${({ theme }) => theme.secondaryOrange};
-    stroke: ${({ theme }) => theme.withe};
   }
 `;
 
@@ -45,44 +46,44 @@ const Card = ({ value, children }) => {
   switch (children) {
     case 'Daily calorie intake':
       icon = (
-        <Icon width={20} height={20} fill="#EF8964">
-          <use xlinkHref={'/symbol-defs.svg#icon-fluent_food'} />
+        <Icon width={20} height={20} className="orange">
+          <use href={`${sprite}#icon-fluent_food`}></use>
         </Icon>
       );
       break;
     case 'Daily norm of sports':
       icon = (
-        <Icon width={20} height={20} fill="#EF8964">
-          <use xlinkHref={'/symbol-defs.svg#icon-dumbbell'} />
+        <Icon width={20} height={20} className="orange">
+          <use href={`${sprite}#icon-dumbbell`}></use>
         </Icon>
       );
       min = ' min';
       break;
     case 'Calories consumed':
       icon = (
-        <Icon width={20} height={20} fill="#EF8964">
-          <use xlinkHref={'/symbol-defs.svg#icon-apple'} />
+        <Icon width={20} height={20} className="orange">
+          <use href={`${sprite}#icon-apple`}></use>
         </Icon>
       );
       break;
     case 'Calories burned':
       icon = (
-        <Icon width={20} height={20} fill="#EF8964">
-          <use xlinkHref={'/symbol-defs.svg#icon-calories'} />
+        <Icon width={20} height={20} className="orange">
+          <use href={`${sprite}#icon-calories`}></use>
         </Icon>
       );
       break;
     case 'The rest of the calories':
       icon = (
-        <Icon width={20} height={20} fill="#EF8964">
-          <use xlinkHref={'/symbol-defs.svg#icon-bubble'} />
+        <Icon width={20} height={20} className="orange">
+          <use href={`${sprite}#icon-bubble`}></use>
         </Icon>
       );
       break;
     case 'The rest of sports':
       icon = (
-        <Icon width={20} height={20} fill="#EF8964">
-          <use xlinkHref={'/symbol-defs.svg#icon-running'} />
+        <Icon width={20} height={20} className="orange">
+          <use href={`${sprite}#icon-running`}></use>
         </Icon>
       );
       min = ' min';

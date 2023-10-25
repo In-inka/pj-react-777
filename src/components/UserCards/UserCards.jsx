@@ -16,6 +16,7 @@ import {
 } from './UserCards.styled';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/operations';
+import sprite from '../../sprite/sprite.svg';
 
 const UserCards = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const UserCards = () => {
       <PositionCards>
         <Cards>
           <svg width={61} height={62}>
-            <use xlinkHref="/symbol-defs.svg#icon-user" />
+            <use href={`${sprite}#icon-user`}></use>
           </svg>
           <div>
             <input
@@ -44,7 +45,7 @@ const UserCards = () => {
             />{' '}
             <Post onClick={handleUploadButtonClick}>
               <svg width={24} height={24} fill="#E6533C">
-                <use xlinkHref="/symbol-defs.svg#icon-check_mark" />
+                <use href={`${sprite}#icon-check_mark`}></use>
               </svg>
             </Post>
           </div>
@@ -58,7 +59,7 @@ const UserCards = () => {
         <Statistic>
           <Title>
             <svg width={20} height={20} fill="#EF8964">
-              <use xlinkHref="/symbol-defs.svg#icon-fluent_food" />
+              <use href={`${sprite}#icon-fluent_food`}></use>
             </svg>
             <p>Daily calorie intake</p>
           </Title>
@@ -68,7 +69,7 @@ const UserCards = () => {
           <Title>
             {' '}
             <svg width={20} height={20} fill="#EF8964">
-              <use xlinkHref="/symbol-defs.svg#icon-dumbbell" />
+              <use href={`${sprite}#icon-dumbbell`}></use>
             </svg>
             <p>Daily norm of sports</p>
           </Title>
@@ -79,7 +80,7 @@ const UserCards = () => {
         <div>
           {' '}
           <svg width={24} height={24} fill="#EF8964">
-            <use xlinkHref="/symbol-defs.svg#icon-exclamation-mark" />
+            <use href={`${sprite}#icon-exclamation-mark`}></use>
           </svg>
         </div>
         <p>
@@ -90,7 +91,7 @@ const UserCards = () => {
       <LogoutButton type="button" onClick={onHandleClick}>
         Logout{' '}
         <svg width={24} height={24} stroke="#EF8964">
-          <use xlinkHref="/symbol-defs.svg#icon-logout" />
+          <use href={`${sprite}#icon-logout`}></use>
         </svg>
       </LogoutButton>
     </ConteinerCards>

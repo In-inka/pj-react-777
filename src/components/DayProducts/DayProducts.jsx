@@ -18,33 +18,31 @@ import {
   Indicator,
   NotFound,
   NormalText,
-  SliceText,  
+  SliceText,
   WrapTitleTable,
   Title,
   Category,
   Calories,
   Weight,
   Recommend,
-} from './DiaryProducts.styled';
-// import sprite from '../../assets/sprite.svg';
-
+} from './DayProducts.styled';
+import sprite from '../../sprite/sprite.svg';
 
 const Icon = styled.svg`
-  &orange {
-    fill: ${({ theme }) => theme.secondaryOrange};
-    stroke: ${({ theme }) => theme.withe};
+  &.orange {
+    stroke: ${({ theme }) => theme.acceptColor};
   }
 `;
 
-const DiaryProducts = ({ children }) => {
+const DayProducts = ({ children }) => {
   return (
     <Container>
       <TitleMain>
         <SubTitle>Products</SubTitle>
         <StyledLink to="/products">
           <AddProduct>Add product</AddProduct>
-          <Icon width={16} height={16} stroke="#E6533C">
-            <use xlinkHref={'/symbol-defs.svg#icon-start'} />
+          <Icon width={16} height={16} className="orange">
+            <use href={`${sprite}#icon-start`}></use>
           </Icon>
         </StyledLink>
       </TitleMain>
@@ -123,7 +121,7 @@ export const ItemProduct = ({ width, value, children }) => {
   if (valueIsBoolean) {
     displayValue = value ? 'Yes' : 'No';
   }
-  let sliceValue = displayValue;;
+  let sliceValue = displayValue;
   if (value.length > 18) {
     sliceValue = value.slice(0, 18) + '...';
   }
@@ -150,7 +148,7 @@ export const TableTitle = () => {
       <Recommend>Recommend</Recommend>
     </WrapTitleTable>
   );
-}
+};
 
 export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
 
@@ -268,4 +266,4 @@ const products = !choice
       },
     ];
 
-    export {DiaryProducts};
+export { DayProducts };
