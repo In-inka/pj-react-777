@@ -32,10 +32,6 @@ const DayDashboard = () => {
       <Card value={caloriesBurned}>Calories burned</Card>
       <Card value={restOfCalories}>The rest of the calories</Card>
       <Card value={restOfSports}>The rest of sports</Card>
-
-      <Icon width={20} height={20} stroke="#EF8964">
-        <use xlinkHref={'/symbol-defs.svg#icon-check_mark'} />
-      </Icon>
     </Container>
   );
 };

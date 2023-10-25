@@ -14,13 +14,13 @@ export const Container = styled.div`
   @media screen and (min-width: 375px) {
   }
   @media screen and (min-width: 768px) {
+    max-width: 593px;
   }
   @media screen and (min-width: 1440px) {
   }
 `;
 
 export const ContentContainerCard = styled.div`
-  width: 157px;
   height: 96px;
   padding: 14px;
   border: 1px solid rgb(239, 237, 232, 0.2);
@@ -30,6 +30,37 @@ export const ContentContainerCard = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+  &:nth-child(odd) {
+    width: 157px;
+  }
+  &:nth-child(even) {
+    width: 165px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    width: 187px;
+    height: 116px;
+    padding: 18px;
+    order: ${(props) => {
+      switch (props.title) {
+        case 'Daily calorie intake':
+          return 0;
+        case 'Daily norm of sports':
+          return 3;
+        case 'Calories consumed':
+          return 1;
+        case 'Calories burned':
+          return 4;
+        case 'The rest of the calories':
+          return 2;
+        case 'The rest of sports':
+          return 5;
+      }
+    }};
+  }
+  @media screen and (min-width: 1440px) {
+
+  }
 
   ${(props) => {
     // console.log(props.title);
@@ -56,12 +87,6 @@ export const ContentContainerCard = styled.div`
         `;
     }
   }}
-  @media screen and (min-width: 375px) {
-  }
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1440px) {
-  }
 `;
 
 export const WrapperTitleCard = styled.div`
@@ -76,9 +101,18 @@ export const WrapperTitleCard = styled.div`
 
 export const TitleTextCard = styled.p`
   margin-left: 8px;
+  font-weight: 400;
   font-size: 12px;
+  line-height: 16px;
   white-space: ${(props) =>
     props.children === 'The rest of the calories' ? 'normal' : 'nowrap'};
+
+  @media screen and (min-width: 768px) {
+    line-height: 18px;
+  }
+  @media screen and (min-width: 1440px) {
+
+  }
 
   ${(props) => {
     // console.log(props.title);
@@ -95,11 +129,14 @@ export const TitleTextCard = styled.p`
 `;
 
 export const ValueTextCard = styled.p`
+  font-weight: 700;
   font-size: 18px;
-  font-weight: bold;
+  line-height: 20px;
   color: #efede8;
 
   @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
   }
   @media screen and (min-width: 1440px) {
   }
