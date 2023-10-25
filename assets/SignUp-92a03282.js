@@ -1,22 +1,22 @@
-import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.browser.esm-330bf3c6.js";import{b as d,a as o,c as t,d as r}from"./main_bg_desktop-e9b36866.js";import{C as a}from"./ContainerStyled-7dc4dca2.js";const p="/pj-react-777/assets/main_bg_mob_welcome_x2-dd403410.jpg",x="/pj-react-777/assets/main_bg_mob_welcome-8f07bae4.jpg",s=n.div`
-  ${a}
+import{L as f,j as e,o as w}from"./index-fa567eb6.js";import{n as i}from"./emotion-styled.browser.esm-24eadcda.js";import{b as j,a as k}from"./main_bg_mob-adb912f5.js";import{b as y,a as v,c as C,d as S}from"./main_bg_desktop-e9b36866.js";import{C as z}from"./ContainerStyled-7dc4dca2.js";import{u as T,s as _}from"./schemas-011fd7bf.js";import{F as B,L as x,I as l,B as F,a as I,M as m,E as $,b as E,S as L,c as U}from"./SignUpForm.styled-5994d618.js";import{u as V}from"./useDispatch-e236dd6d.js";const R=i.div`
+  ${z}
   padding-top: 127px;
   padding-bottom: 40px;
-  background-image: url(${x});
+  background-image: url(${j});
   background-repeat: no-repeat;
   background-position: 77px 241px;
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${p});
+    background-image: url(${k});
   }
 
   @media screen and (min-width: 768px) {
     height: inherit;
     padding-top: 189px;
     padding-bottom: 48px;
-    background-image: url(${d});
+    background-image: url(${y});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -25,96 +25,67 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${o});
+    background-image: url(${v});
   }
 
   @media screen and (min-width: 1440px) {
     padding-top: 200px;
-    padding-bottom: 210px;
+    padding-bottom: 114px;
     background-repeat: no-repeat;
     background-position: 770px 0;
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: url(${t});
+    background-image: url(${C});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${r});
+    background-image: url(${S});
   }
-`,c=n.h1`
+`,A=i.h1`
   color: rgba(239, 237, 232, 1);
-  font-size: 38px;
-  line-height: 1.05;
-  font-weight: 500;
-  @media screen and (min-width: 768px) {
-    font-size: 70px;
-    line-height: 1.11;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 598px;
-  }
-`,l=n.div`
-  margin-top: 40px;
-  @media screen and (min-width: 768px) {
-    margin-top: 64px;
-  }
-`,g=n(e)`
-  display: inline-block;
-  margin-right: 14px;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.17;
-  background-color: #e6533c;
-  color: #efede8;
-  border-radius: 12px;
-  border: none;
-  padding: 12px 40px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    background-color: #ef8964;
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
   @media screen and (min-width: 768px) {
-    padding: 16px 60px;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 32px;
+    line-height: 1.38;
   }
-`,m=n(e)`
-  display: inline-block;
-  font-size: 16px;
-  line-height: 1.17;
-  background-color: inherit;
-  color: #efede8;
-  border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.3);
-  padding: 11px 39px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    border-color: rgba(230, 83, 60, 1);
-  }
-  &:disabled {
-    border-color: rgba(230, 83, 60, 1);
-  }
+`,P=i.p`
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(239, 237, 232, 0.3);
+  margin-top: 14px;
+
   @media screen and (min-width: 768px) {
-    padding: 16px 60px;
-    font-size: 20px;
-    line-height: 1.2;
+    width: 496px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 16px;
   }
-`,h=n.div`
+`,M=i.div`
+  display: flex;
+  font-size: 12px;
+  line-height: 1.5;
+  padding-top: 12px;
+  @media screen and (min-width: 768px) {
+    padding-left: 15px;
+  }
+`,N=i.p`
+  color: rgba(239, 237, 232, 0.3);
+`,D=i(f)`
+  margin-left: 4px;
+  color: #efede8;
+  text-decoration: underline;
+`,q=i.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 232px;
+  padding-top: 35px;
   @media screen and (min-width: 768px) {
-    padding-top: 170px;
+    padding-top: 39px;
     justify-content: left;
     padding-left: 299px;
   }
@@ -124,7 +95,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     left: 770px;
     top: 384px;
   }
-`,b=n.div`
+`,G=i.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +105,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,u=n.div``,f=n.p`
+`,H=i.div``,J=i.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -142,7 +113,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     font-size: 24px;
     line-height: 1;
   }
-`,w=n.p`
+`,K=i.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -152,7 +123,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     font-size: 16px;
     line-height: 1.5;
   }
-`,k=n.div`
+`,O=i.div`
   display: block;
   width: 30px;
   height: 30px;
@@ -164,7 +135,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     height: 40px;
     margin-right: 12px;
   }
-`,j=n.div`
+`,Q=i.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -178,7 +149,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     top: 519px;
     left: 1228px;
   }
-`,_=n.div`
+`,W=i.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -187,11 +158,11 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,z=n.div`
+`,X=i.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,y=n.p`
+`,Y=i.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -202,7 +173,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     font-size: 48px;
     line-height: 1.04;
   }
-`,v=n.p`
+`,Z=i.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -211,7 +182,7 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     font-size: 16px;
     line-height: 1.5;
   }
-`,C=n.div`
+`,ee=i.div`
   display: block;
   width: 20px;
   height: 20px;
@@ -223,4 +194,4 @@ import{L as e,j as i}from"./index-1efe6d70.js";import{n}from"./emotion-styled.br
     height: 24px;
     margin-bottom: 12px;
   }
-`,V=()=>i.jsxs(s,{children:[i.jsx(c,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(g,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"})]}),i.jsx(h,{children:i.jsxs(b,{children:[i.jsx(k,{}),i.jsxs(u,{children:[i.jsx(f,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(j,{children:i.jsxs(_,{children:[i.jsx(C,{}),i.jsxs(z,{children:[i.jsx(y,{children:"500"}),i.jsx(v,{children:"cal"})]})]})})]});export{V as default};
+`,ie=()=>{const c=V(),h=(t,b)=>{c(w.register(t)),b.resetForm()},{values:o,errors:n,touched:a,isSubmitting:g,handleChange:r,handleBlur:d,handleSubmit:u}=T({initialValues:{name:"",email:"",password:""},validationSchema:_,onSubmit:h}),s=t=>e.jsxs(m,{children:[" ",e.jsx($,{}),e.jsx(E,{children:t})]}),p=t=>e.jsxs(m,{children:[e.jsx(L,{}),e.jsxs(U,{children:["Success ",t]})]});return e.jsxs(B,{onSubmit:u,children:[e.jsx(x,{htmlFor:"name",children:"Name"}),e.jsx(l,{value:o.name,onChange:r,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:d,theme:a.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.name&&(n.name?s(n.name):p("name"))," ",e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(l,{value:o.email,onChange:r,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:d,theme:a.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.email&&(n.email?s(n.email):p("email"))," ",e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(l,{value:o.password,onChange:r,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:d,theme:a.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.password&&(n.password?s(n.password):p("password"))," ",e.jsx(F,{children:e.jsx(I,{disabled:g,type:"submit",children:"Sign Up"})})]})},xe=()=>e.jsxs(R,{children:[e.jsx(A,{children:"Sign Up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ie,{}),e.jsxs(M,{children:[e.jsx(N,{children:"Already have account?"}),e.jsx(D,{to:"/signin",children:"Sign In"})]}),e.jsx(q,{children:e.jsxs(G,{children:[e.jsx(O,{}),e.jsxs(H,{children:[e.jsx(J,{children:"350+"}),e.jsx(K,{children:"Video tutorial"})]})]})}),e.jsx(Q,{children:e.jsxs(W,{children:[e.jsx(ee,{}),e.jsxs(X,{children:[e.jsx(Y,{children:"500"}),e.jsx(Z,{children:"cal"})]})]})})]});export{xe as default};
