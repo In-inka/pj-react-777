@@ -46,7 +46,7 @@ export const ProductsItemInfo = styled.p`
   text-transform: capitalize;
 `;
 
-export const ProductsItemFunctional = styled.div`
+export const ProductsItemFunctional = styled.li`
   margin-bottom: 35px;
   display: flex;
   align-items: center;

@@ -1,10 +1,10 @@
 import { ProductsList } from '../../components/ProductsList/ProductsList';
-import { Container } from './Products.styled';
+import { Container, ProductsTitle } from './Products.styled';
 
 const Products = () => {
   return (
     <Container>
-      <p>Products</p>
+      <ProductsTitle>Products</ProductsTitle>
       <ProductsList />
     </Container>
   );
