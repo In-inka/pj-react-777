@@ -1,27 +1,27 @@
-
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch'
-import { DiaryProducts } from '../../components/DiaryProducts/DiaryProducts'
-import { DiaryExercises } from '../../components/DiaryExercises/DiaryExercises'
+import { DayProducts } from '../../components/DayProducts/DayProducts'
+import { DayExercises } from '../../components/DayExercises/DayExercises'
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard'
+import { Container, PageTitleText, WrapTitle, InfoText } from './Diary.styled' 
 
 const Diary = () => {
   return (
-    <div className="container">
-      <p>Diary</p>
-      <DaySwitch />
+    <Container>
+      <WrapTitle>
+        <PageTitleText>Dairy</PageTitleText>
+        <DaySwitch />
+      </WrapTitle>
 
-      <div style={{ paddingLeft: '50px', paddingTop: '50px' }}>
-        <DayDashboard></DayDashboard>
-      </div>
+      <DayDashboard />
+      <InfoText>
+        Record all your meals in a calorie diary every day. This will help me be
+        aware of my nutrition and make me responsible for my choices.
+      </InfoText>
 
-      <div style={{ paddingLeft: '50px', paddingTop: '50px' }}>
-        <DiaryProducts></DiaryProducts>
-      </div>
+      <DayProducts></DayProducts>
 
-      <div style={{ paddingLeft: '50px', paddingTop: '50px' }}>
-        <DiaryExercises></DiaryExercises>
-      </div>
-    </div>
+      <DayExercises></DayExercises>
+    </Container>
   );
 };
 
