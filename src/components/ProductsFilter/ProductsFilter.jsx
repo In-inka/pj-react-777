@@ -2,8 +2,8 @@ import Select from 'react-select';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import sprite from '../../../../src/img/sprite.svg';
-import { filterReducer } from '../../../redux/products/sliceProducts';
+import sprite from 'src/img/sprite.svg';
+import { filterReducer } from 'src/redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
   ProductsFilterSearch,
