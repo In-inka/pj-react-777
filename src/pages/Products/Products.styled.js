@@ -66,3 +66,18 @@ export const ProductsFunc = styled.div`
     align-items: center;
   }
 `;
+
+export const ProductsFilterText = styled.span`
+  display: none;
+
+  @media screen and (min-width: 1440px) {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(239, 237, 232, 0.5);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: end;
+  }
+`;

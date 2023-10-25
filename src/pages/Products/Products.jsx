@@ -1,10 +1,16 @@
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
-import { Container, ProductsTitle, ProductsFunc } from './Products.styled';
+import {
+  Container,
+  ProductsTitle,
+  ProductsFunc,
+  ProductsFilterText,
+} from './Products.styled';
 
 const Products = () => {
   return (
     <Container>
+      <ProductsFilterText>Filters</ProductsFilterText>
       <ProductsFunc>
         <ProductsTitle>Products</ProductsTitle>
         <ProductsFilter />
