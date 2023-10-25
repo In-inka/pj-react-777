@@ -33,7 +33,7 @@ export const DiaryExercises = ({ children }) => {
     <ContainerEx>
       <TitleMainEx>
         <SubTitleEx>Execrcises</SubTitleEx>
-        <StyledLinkEx to="/first">
+        <StyledLinkEx to="/exercises">
           <AddProductEx>Add exercise</AddProductEx>
           <div
             style={{
@@ -131,13 +131,13 @@ export const ItemProductEx = ({ width, value, children }) => {
   let displayChild = children;
   let sliceChild = displayChild;
   if (children.length > 10) {
-    sliceChild = children.slice(0, 10) + '...';    
-  }  
- 
+    sliceChild = children.slice(0, 10) + '...';
+  }
+
   return (
     <ItemWrapperEx name={children}>
       <ItemNameEx>
-        <NormalTextNameEx>{displayChild}</NormalTextNameEx> 
+        <NormalTextNameEx>{displayChild}</NormalTextNameEx>
         <SliceTextNameEx>{sliceChild}</SliceTextNameEx>
       </ItemNameEx>
 
@@ -161,10 +161,9 @@ export const TableTitleEx = () => {
       <TimeEx>Time</TimeEx>
     </WrapTitleTableEx>
   );
-}
+};
 
 export const EmptyScreenEx = () => <NotFoundEx>Not found products</NotFoundEx>;
-
 
 let choice = true;
 // let choice = false;
