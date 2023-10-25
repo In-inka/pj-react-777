@@ -17,7 +17,8 @@ const Icon = styled.svg`
 const DayDashboard = () => {
   const calorieIntake = 2200;
   const normOfSports = 110;
-  const caloriesConsumed = 707;
+  const caloriesConsumed = 2300;
+  // const caloriesConsumed = 707;
   const caloriesBurned = 855;
   const restOfCalories = -100;
   // const restOfCalories = 1493;

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* background-color: #013624; */
-
   display: flex;
   max-width: 335px;
   justify-content: space-between;
@@ -17,6 +15,8 @@ export const Container = styled.div`
     max-width: 593px;
   }
   @media screen and (min-width: 1440px) {
+    max-width: 390px;
+    gap: 16px 16px;
   }
 `;
 
@@ -30,13 +30,14 @@ export const ContentContainerCard = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  &:nth-child(odd) {
-    width: 157px;
+  @media screen and (max-width: 767px) {
+    &:nth-child(odd) {
+      width: 157px;
+    }
+    &:nth-child(even) {
+      width: 165px;
+    }
   }
-  &:nth-child(even) {
-    width: 165px;
-  }
-  
   @media screen and (min-width: 768px) {
     width: 187px;
     height: 116px;
@@ -59,7 +60,7 @@ export const ContentContainerCard = styled.div`
     }};
   }
   @media screen and (min-width: 1440px) {
-
+    order: 0;
   }
 
   ${(props) => {
