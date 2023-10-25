@@ -26,7 +26,7 @@ import {
   BurnedEx,
   TimeEx,
   BurnedExTablet,
-} from './DiaryExercises.styled';
+} from './DayExercises.styled';
 
 const Icon = styled.svg`
   &orange {
@@ -35,7 +35,7 @@ const Icon = styled.svg`
   }
 `;
 
-export const DiaryExercises = ({ children }) => {
+export const DayExercises = ({ children }) => {
   return (
     <ContainerEx>
       <TitleMainEx>

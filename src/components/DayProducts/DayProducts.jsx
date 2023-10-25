@@ -25,7 +25,7 @@ import {
   Calories,
   Weight,
   Recommend,
-} from './DiaryProducts.styled';
+} from './DayProducts.styled';
 // import sprite from '../../assets/sprite.svg';
 
 
@@ -36,7 +36,7 @@ const Icon = styled.svg`
   }
 `;
 
-const DiaryProducts = ({ children }) => {
+const DayProducts = ({ children }) => {
   return (
     <Container>
       <TitleMain>
@@ -268,4 +268,4 @@ const products = !choice
       },
     ];
 
-    export {DiaryProducts};
+    export {DayProducts};

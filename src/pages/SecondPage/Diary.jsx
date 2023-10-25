@@ -1,6 +1,6 @@
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch'
-import { DiaryProducts } from '../../components/DiaryProducts/DiaryProducts'
-import { DiaryExercises } from '../../components/DiaryExercises/DiaryExercises'
+import { DayProducts } from '../../components/DayProducts/DayProducts'
+import { DayExercises } from '../../components/DayExercises/DayExercises'
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard'
 import { Container, PageTitleText, WrapTitle, InfoText } from './Diary.styled' 
 
@@ -18,9 +18,9 @@ const Diary = () => {
         aware of my nutrition and make me responsible for my choices.
       </InfoText>
 
-      <DiaryProducts></DiaryProducts>
+      <DayProducts></DayProducts>
 
-      <DiaryExercises></DiaryExercises>
+      <DayExercises></DayExercises>
     </Container>
   );
 };
