@@ -5,7 +5,15 @@ import { glodalColor } from "../../Styled/GlobalColor";
 
 export const FormProfile = styled.form`
     padding-top: 18px;
-    padding-bottom: 66px;
+    
+@media screen and (min-width: 768px) {
+    padding-top: 38px;
+        
+}
+@media screen and (min-width: 1440px) {
+    padding-top: 32px;
+        
+}
 `
 
 export const BoxBasicInfo = styled.div`
@@ -38,7 +46,11 @@ width: 100%;
 
 `
 
-export const BoxInputData = styled.div`
+export const BoxInputData = styled.label`
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    
     color: #efede8;
     width: 100%;
     height: 100%;
@@ -56,13 +68,19 @@ export const BoxInputData = styled.div`
     }
 
     &:active{
-        background-color: inherit;
+        /* background-color: inherit; */
     }
     @media screen and (min-width: 768px) {
         font-size: 16px;
         line-height: 1.5;
       
     }
+`
+
+
+export const BoxIconCalendar = styled.span`
+    display: flex;
+    align-items: center;
 `
 
 
@@ -223,9 +241,10 @@ export const RadioWrapper = styled.div`
 `
 
 export const RadioButton = styled.label`
+    position: relative;
+    /* margin-left: 32px; */
     display: flex;
     align-items: center;
-    gap:9px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     
@@ -235,14 +254,16 @@ export const RadioButton = styled.label`
 
 
 export const RadioCheckmark = styled.span`
+
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
   width: 16px;
   height: 16px;
   border: 2px solid rgba(99, 99, 102, 1);
   border-radius: 50%;
+
   &::before{
       content: "";
       position: absolute;
@@ -261,6 +282,7 @@ export const RadioCheckmark = styled.span`
     &::before{
         width: 10px;
         height: 10px;
+        margin: auto;
     }
 
 }
@@ -271,8 +293,12 @@ export const RadioCheckmark = styled.span`
 export const InputSex = styled.input`
       display: none;
     &:checked + ${RadioCheckmark}{
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
         border-color: ${glodalColor.bgSecondary};
         &::before{
+
             background-color: ${glodalColor.bgSecondary};
             transform: translate(-50%, -50%) scale(1);
         }
@@ -281,7 +307,8 @@ export const InputSex = styled.input`
 
 
 export const RadioLabel = styled.span`
-
+    position: relative;
+    margin-left: 32px;
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0em;
@@ -302,12 +329,11 @@ export const BoxLabelMarket = styled.div`
     width: 100%;
     display: flex;
     gap: 9px;
-    justify-content: center;
-    align-items: center;
-`
+    `
 
 
 export const RadioLabelActive = styled.span`
+    margin-left: 32px;
     display: block;
     width: 260px;
     font-size: 14px;
@@ -315,8 +341,31 @@ export const RadioLabelActive = styled.span`
     letter-spacing: 0em;
     text-align: left;
     color: ${glodalColor.withe};
-@media screen and (min-width: 768px) {
-    width: 100%;
-}
+    @media screen and (min-width: 768px) {
+        width: 100%;
+    }
+    
+    `
+
+
+
+
+// =========CALENDAR=============
+
+
+export const  DateInput = styled.input`
+    background-color: rgba(0,0,0,1);
+    /* width: 100px; */
+    border: none;
+    color: ${glodalColor.withe}; 
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0em;
+    text-align: left;
 
 `
+
+
+// =========/CALENDAR=============
