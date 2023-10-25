@@ -1,4 +1,4 @@
-import{N as n,d as r,u as a,j as e,s as i,r as c,O as x}from"./index-8667406c.js";import{n as o}from"./emotion-styled.browser.esm-615184c2.js";import{T as p}from"./TitlePage-4426ce64.js";import{C as d}from"./ContainerStyled-7dc4dca2.js";const l=o.div`
+import{N as n,g as r,u as a,j as e,s as i,r as c,O as x}from"./index-3ec71271.js";import{n as o}from"./emotion-styled.browser.esm-202c38fe.js";import{T as p}from"./TitlePage-59f3e98e.js";import{C as l}from"./ContainerStyled-7dc4dca2.js";const d=o.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
@@ -32,8 +32,8 @@ import{N as n,d as r,u as a,j as e,s as i,r as c,O as x}from"./index-8667406c.js
 
 
 
-`,m=()=>{const t=a();return e.jsxs(l,{children:[e.jsx(s,{to:"bodyParts",state:{from:t},children:"Body parts"}),e.jsx(s,{to:"muscles",state:{from:t},children:"Muscles"}),e.jsx(s,{to:"equipment",state:{from:t},children:"Equipment"})]})},g=i.div`
-    ${d}
+`,m=()=>{const t=a();return e.jsxs(d,{children:[e.jsx(s,{to:"bodyParts",state:{from:t},children:"Body parts"}),e.jsx(s,{to:"muscles",state:{from:t},children:"Muscles"}),e.jsx(s,{to:"equipment",state:{from:t},children:"Equipment"})]})},g=i.div`
+    ${l}
     `,u=i.div`
 display: flex;
 justify-content: center;
