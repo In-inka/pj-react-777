@@ -8,15 +8,18 @@ export const Container = styled.div`
   ${ContainerStyled}
   margin-top: 61px;
   padding-top: 40px;
+  padding-bottom: 80px;
 
   @media screen and (min-width: 768px) {
     margin-top: 84px;
     padding-top: 72px;
+    padding-bottom: 48px;
   }
 
   @media screen and (min-width: 1440px) {
     margin-top: 81px;
     padding-top: 42px;
+    padding-bottom: 81px;
     background-repeat: no-repeat;
     background-position: top right;
     height: 807px;
@@ -42,5 +45,39 @@ export const ProductsTitle = styled.h2`
     margin-bottom: 32px;
     font-size: 32px;
     line-height: 1.38;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 0px;
+  }
+`;
+
+export const ProductsFunc = styled.div`
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 28px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const ProductsFilterText = styled.span`
+  display: none;
+
+  @media screen and (min-width: 1440px) {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(239, 237, 232, 0.5);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: end;
   }
 `;
