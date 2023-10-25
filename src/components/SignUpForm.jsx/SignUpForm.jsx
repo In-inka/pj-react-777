@@ -12,14 +12,19 @@ import {
   Success,
 } from './SignUpForm.styled';
 import { signUpSchema } from '../../schemas/schemas';
+import { useDispatch } from 'react-redux';
+import authOperations from '../../redux/auth/operations';
 
-const onSubmit = async(values, actions) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  console.log(values);
-  actions.resetForm();
-}
 
 const SignUpForm = () => {
+      const dispatch = useDispatch();
+
+  const onSubmit = (values, actions) => {
+    dispatch(authOperations.register(values));   
+    actions.resetForm();
+  };
+  
+  
   const { values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit } = useFormik({
     initialValues: {
       name: '',

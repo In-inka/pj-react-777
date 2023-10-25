@@ -1,16 +1,63 @@
-import { NavLink } from 'react-router-dom';
-import { Container } from './Header.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  BarbellIcon,
+  Button,
+  Container,
+  PrivetRotesContainer,
+  LogoContainer,
+  LogoText,
+  LogoutButton,
+  LogoutContainer,
+  LogoutIcon,
+  MenuIcon,
+  SettingsIcon,
+  UserIcon,
+  UserIconContainer,
+} from './Header.styled';
+import authSelectors from '../../redux/auth/auth-selectors';
+import authOperations from '../../redux/auth/operations';
 
 const Header = () => {
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+    const dispatch = useDispatch();
+
+  
+  
+  const onHandleClick = () => {
+    dispatch(authOperations.logOut());
+  };
+
   return (
     <>
-      <Container>
-        <NavLink to="/signup">SignUp</NavLink>
-        <NavLink to="/signin">SignIn</NavLink>
-        <NavLink to="/profile">Profile</NavLink>
-        <NavLink to="/diary">Diary</NavLink>
-        <NavLink to="/products">Products</NavLink>
-        <NavLink to="/exercises">Exercises</NavLink>
+      <Container
+        theme={
+          isLoggedIn && {
+            border: '1px solid rgba(239, 237, 232, 0.2)',
+          }
+        }
+      >
+        <LogoContainer to="/">
+          <BarbellIcon />
+          <LogoText>PowerPulse</LogoText>
+        </LogoContainer>
+        {isLoggedIn && (
+          <PrivetRotesContainer>
+            <Button to="/diary">Diary</Button>
+            <Button to="/products">Products</Button>
+            <Button to="/exercises">Exercises</Button>
+            <SettingsIcon />
+            <UserIconContainer to="/profile">
+              <UserIcon />
+            </UserIconContainer>
+            <MenuIcon type="button" />
+            <LogoutContainer>
+              <LogoutButton type="button" onClick={onHandleClick}>
+                Logout
+              </LogoutButton>
+              <LogoutIcon />
+            </LogoutContainer>
+          </PrivetRotesContainer>
+        )}
       </Container>
     </>
   );

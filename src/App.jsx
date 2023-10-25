@@ -1,7 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
-import PrivateRouter from './guards/PrivateRouter';
-import PublicRouter from './guards/PublicRouter';
+import { Suspense, lazy } from 'react';
+import PublicRoute from './components/Route/PublicRoute';
+import PrivateRoute from './components/Route/PrivateRoute';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import authSelectors from './redux/auth/auth-selectors'
+import authOperations from './redux/auth/operations'
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
@@ -23,96 +27,103 @@ const Equipment = lazy(() =>
 );
 
 function App() {
+  const dispatch = useDispatch();
+  const fetchCurrentUser = useSelector(authSelectors.getIsFetchingCurrentUser);
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route
-            index
-            element={
-              <PublicRouter>
-                <Welcome />
-              </PublicRouter>
-            }
-          />
-          <Route
-            path="signup"
-            element={
-              <PublicRouter>
-                <SignUp />
-              </PublicRouter>
-            }
-          />
-          <Route
-            path="signin"
-            element={
-              <PublicRouter>
-                <SignIn />
-              </PublicRouter>
-            }
-          />
-          <Route
-            path="profile"
-            element={
-              <PrivateRouter>
-                <Profile />
-              </PrivateRouter>
-            }
-          />
-          <Route
-            path="diary"
-            element={
-              <PrivateRouter>
-                <Diary />
-              </PrivateRouter>
-            }
-          />
-          <Route
-            path="products"
-            element={
-              <PrivateRouter>
-                <Products />
-              </PrivateRouter>
-            }
-          />
-          <Route
-            path="exercises"
-            element={
-              <PrivateRouter>
-                <Exercises />
-              </PrivateRouter>
-            }
-          >
+    !fetchCurrentUser && (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
             <Route
-              path="bodyParts"
+              index
               element={
-                <PrivateRouter>
-                  <BodyParts />
-                </PrivateRouter>
+                <PublicRoute>
+                  <Welcome />
+                </PublicRoute>
               }
             />
             <Route
-              path="muscles"
+              path="signup"
               element={
-                <PrivateRouter>
-                  <Muscles />
-                </PrivateRouter>
+                <PublicRoute>
+                  <SignUp />
+                </PublicRoute>
               }
             />
             <Route
-              path="equipment"
+              path="signin"
               element={
-                <PrivateRouter>
-                  <Equipment />
-                </PrivateRouter>
+                <PublicRoute>
+                  <SignIn />
+                </PublicRoute>
               }
             />
-            <Route path="equipment" element={<Equipment />} />
+            <Route
+              path="profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="diary"
+              element={
+                <PrivateRoute>
+                  <Diary />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="products"
+              element={
+                <PrivateRoute>
+                  <Products />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="exercises"
+              element={
+                <PrivateRoute>
+                  <Exercises />
+                </PrivateRoute>
+              }
+            >
+              <Route
+                path="bodyParts"
+                element={
+                  <PrivateRoute>
+                    <BodyParts />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="muscles"
+                element={
+                  <PrivateRoute>
+                    <Muscles />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="equipment"
+                element={
+                  <PrivateRoute>
+                    <Equipment />
+                  </PrivateRoute>
+                }
+              />
+            </Route>
+            <Route path="*" element={<ErrorPage />} />
           </Route>
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
-      </Routes>
-    </>
+        </Routes>
+      </Suspense>)
   );
 }
 export default App;

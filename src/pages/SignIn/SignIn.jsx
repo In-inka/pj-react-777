@@ -17,19 +17,12 @@ import {
   TextContainerC,
   CalorieTextA,
   CalorieTextB,
-  LogoContainer,
-  BarbellIcon,
-  LogoText,
 } from './SignIn.styled';
 import { SignInForm } from '../../components/SignInForm/SignInForm';
 
 const SignIn = () => {
   return (
     <Container>
-      <LogoContainer>
-        <BarbellIcon />
-        <LogoText>PowerPulse</LogoText>
-      </LogoContainer>
       <Title>Sign In</Title>
       <Text>
         Welcome! Please enter your credentials to login to the platform:
