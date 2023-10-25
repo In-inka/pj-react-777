@@ -14,15 +14,15 @@ import {
   UserIcon,
   UserIconContainer,
 } from './Header.styled';
-import authSelectors from '../../redux/auth/auth-selectors';
+//import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/operations';
 
 const Header = () => {
-  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-    const dispatch = useDispatch();
+  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const dispatch = useDispatch();
 
-  
-  
+  const isLoggedIn = true;
+
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
   };
