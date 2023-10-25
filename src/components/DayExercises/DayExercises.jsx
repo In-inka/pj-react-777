@@ -28,10 +28,11 @@ import {
   BurnedExTablet,
 } from './DayExercises.styled';
 
+import sprite from '../../sprite/sprite.svg';
+
 const Icon = styled.svg`
-  &orange {
-    fill: ${({ theme }) => theme.secondaryOrange};
-    stroke: ${({ theme }) => theme.withe};
+  &.orange {
+    stroke: ${({ theme }) => theme.acceptColor};
   }
 `;
 
@@ -42,10 +43,10 @@ export const DayExercises = ({ children }) => {
         <SubTitleEx>Execrcises</SubTitleEx>
         <StyledLinkEx to="/exercises">
           <AddProductEx>Add exercise</AddProductEx>
-          <Icon width={16} height={16} stroke="#E6533C">
-            <use xlinkHref={'/symbol-defs.svg#icon-start'} />
+          <Icon width={16} height={16} className="orange">
+            <use href={`${sprite}#icon-start`}></use>
           </Icon>
-         </StyledLinkEx>
+        </StyledLinkEx>
       </TitleMainEx>
       {!exercises.length ? (
         <EmptyScreenEx />
