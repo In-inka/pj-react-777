@@ -1,4 +1,4 @@
-import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";import{D as $,S as z,t as I,C as D,a as P,s as B,b as N,c as S,d as _}from"./sprite-f7e4b240.js";import{n as u}from"./emotion-styled.browser.esm-78505bc8.js";import{C as O}from"./ContainerStyled-7dc4dca2.js";import"./createClass-abcdffe1.js";var v={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},y=c.createContext&&c.createContext(v),o=globalThis&&globalThis.__assign||function(){return o=Object.assign||function(i){for(var r,t=1,a=arguments.length;t<a;t++){r=arguments[t];for(var s in r)Object.prototype.hasOwnProperty.call(r,s)&&(i[s]=r[s])}return i},o.apply(this,arguments)},L=globalThis&&globalThis.__rest||function(i,r){var t={};for(var a in i)Object.prototype.hasOwnProperty.call(i,a)&&r.indexOf(a)<0&&(t[a]=i[a]);if(i!=null&&typeof Object.getOwnPropertySymbols=="function")for(var s=0,a=Object.getOwnPropertySymbols(i);s<a.length;s++)r.indexOf(a[s])<0&&Object.prototype.propertyIsEnumerable.call(i,a[s])&&(t[a[s]]=i[a[s]]);return t};function k(i){return i&&i.map(function(r,t){return c.createElement(r.tag,o({key:t},r.attr),k(r.child))})}function C(i){return function(r){return c.createElement(F,o({attr:o({},i.attr)},r),k(i.child))}}function F(i){var r=function(t){var a=i.attr,s=i.size,d=i.title,p=L(i,["attr","size","title"]),b=s||t.size||"1em",g;return t.className&&(g=t.className),i.className&&(g=(g?g+" ":"")+i.className),c.createElement("svg",o({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},t.attr,a,p,{className:g,style:o(o({color:i.color||t.color},t.style),i.style),height:b,width:b,xmlns:"http://www.w3.org/2000/svg"}),d&&c.createElement("title",null,d),i.children)};return y!==void 0?c.createElement(y.Consumer,null,function(t){return r(t)}):r(v)}function W(i){return C({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z"}}]})(i)}function A(i){return C({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"}}]})(i)}const q=()=>{const[i,r]=w.useState(new Date),t="dd MM yyyy",a=w.useRef(null),s=()=>{a.current&&a.current.setOpen(!0)};return e.jsxs($,{children:[e.jsxs(z,{children:[e.jsx(I,{selected:i,onChange:d=>r(d),dateFormat:t,customInput:e.jsx(D,{}),ref:a}),e.jsx(P,{onClick:s,children:e.jsx("use",{href:`${B}#icon-calendar`})})]}),e.jsxs(N,{children:[e.jsx(W,{onClick:()=>r(S(i,1)),style:{cursor:"pointer",fontSize:"16px",color:"grey"}}),e.jsx(A,{onClick:()=>r(_(i,1)),style:{cursor:"pointer",fontSize:"16px",color:"white"}})]})]})},M=n.div`
+import{R as p,r as y,j as e,s as n,L as v,g as c}from"./index-1efe6d70.js";import{D as z,S as N,t as I,C as D,a as P,s as o,b as B,c as S,d as _}from"./sprite-676bc38b.js";import{n as b}from"./emotion-styled.browser.esm-330bf3c6.js";import{C as O}from"./ContainerStyled-7dc4dca2.js";import"./createClass-515919fc.js";var C={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},j=p.createContext&&p.createContext(C),l=globalThis&&globalThis.__assign||function(){return l=Object.assign||function(i){for(var r,t=1,a=arguments.length;t<a;t++){r=arguments[t];for(var s in r)Object.prototype.hasOwnProperty.call(r,s)&&(i[s]=r[s])}return i},l.apply(this,arguments)},L=globalThis&&globalThis.__rest||function(i,r){var t={};for(var a in i)Object.prototype.hasOwnProperty.call(i,a)&&r.indexOf(a)<0&&(t[a]=i[a]);if(i!=null&&typeof Object.getOwnPropertySymbols=="function")for(var s=0,a=Object.getOwnPropertySymbols(i);s<a.length;s++)r.indexOf(a[s])<0&&Object.prototype.propertyIsEnumerable.call(i,a[s])&&(t[a[s]]=i[a[s]]);return t};function k(i){return i&&i.map(function(r,t){return p.createElement(r.tag,l({key:t},r.attr),k(r.child))})}function T(i){return function(r){return p.createElement(W,l({attr:l({},i.attr)},r),k(i.child))}}function W(i){var r=function(t){var a=i.attr,s=i.size,d=i.title,x=L(i,["attr","size","title"]),w=s||t.size||"1em",f;return t.className&&(f=t.className),i.className&&(f=(f?f+" ":"")+i.className),p.createElement("svg",l({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},t.attr,a,x,{className:f,style:l(l({color:i.color||t.color},t.style),i.style),height:w,width:w,xmlns:"http://www.w3.org/2000/svg"}),d&&p.createElement("title",null,d),i.children)};return j!==void 0?p.createElement(j.Consumer,null,function(t){return r(t)}):r(C)}function A(i){return T({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z"}}]})(i)}function q(i){return T({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"}}]})(i)}const F=()=>{const[i,r]=y.useState(new Date),t="dd MM yyyy",a=y.useRef(null),s=()=>{a.current&&a.current.setOpen(!0)};return e.jsxs(z,{children:[e.jsxs(N,{children:[e.jsx(I,{selected:i,onChange:d=>r(d),dateFormat:t,customInput:e.jsx(D,{}),ref:a}),e.jsx(P,{onClick:s,children:e.jsx("use",{href:`${o}#icon-calendar`})})]}),e.jsxs(B,{children:[e.jsx(A,{onClick:()=>r(S(i,1)),style:{cursor:"pointer",fontSize:"16px",color:"grey"}}),e.jsx(q,{onClick:()=>r(_(i,1)),style:{cursor:"pointer",fontSize:"16px",color:"white"}})]})]})},M=n.div`
   /* 320-375 */
   box-sizing: border-box;
   max-height: 824px;
@@ -35,7 +35,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,H=n.p`
+`,U=n.p`
   /* 320-375 */
   
   color: rgb(239, 237, 232, 0.5);
@@ -46,7 +46,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,U=n.p`
+`,V=n.p`
   /* 320-375 */
   font-size: 14px;
   color: rgb(230, 83, 60);
@@ -57,7 +57,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,V=n.div`
+`,G=n.div`
   display: flex;
   gap: 0;
   justify-content: space-between;
@@ -70,7 +70,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,G=n.div`
+`,Y=n.div`
   display: flex;
   flex: 1;
   gap: 16px;
@@ -81,7 +81,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
     flex: 1.0;
      
   }
-`,Y=n.div`
+`,H=n.div`
   /* 320-375 */
   flex: 1.2;
   color: rgb(230, 83, 60);
@@ -150,7 +150,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   @media screen and (min-width: 768px) {
     margin-top: 0;
   }
-`;const ee=n(j)`
+`;const ee=n(v)`
    display: flex;
    align-items: center;
    color: rgb(230, 83, 60);
@@ -267,11 +267,10 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
     margin-left: 65px;
   }
 `,xe=n.svg`
-  &orange {
-    fill: ${({theme:i})=>i.secondaryOrange};
-    stroke: ${({theme:i})=>i.withe};
+  &.orange {
+    stroke: ${({theme:i})=>i.acceptColor};
   }
-`,me=({children:i})=>e.jsxs(M,{children:[e.jsxs(R,{children:[e.jsx(H,{children:"Products"}),e.jsxs(ee,{to:"/products",children:[e.jsx(U,{children:"Add product"}),e.jsx(xe,{width:16,height:16,stroke:"#E6533C",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-start"})})]})]}),T.length?e.jsx(he,{children:i}):e.jsx(fe,{})]}),he=()=>e.jsxs(e.Fragment,{children:[e.jsx(ge,{}),e.jsx(ne,{children:T.map(({_id:{$oid:i},title:r,category:t,calories:a,weight:s,groupBloodNotAllowed:d})=>e.jsxs(te,{children:[e.jsx(f,{value:r,children:"Title"}),e.jsx(f,{value:t,children:"Category"}),e.jsxs(V,{children:[e.jsxs(G,{children:[e.jsx(f,{value:a,children:"Calories"}),e.jsx(f,{value:s,children:"Weight"}),e.jsx(f,{value:d[1],children:"Recommend"})]}),e.jsx(ie,{onClick:()=>console.log(" del btn "),children:e.jsx("div",{style:{marginLeft:"10px",width:"20px",height:"20px",backgroundColor:"#EF8964"}})})]})]},i))})]}),f=({width:i,value:r,children:t})=>{let a=r;const s=typeof r=="boolean";s&&(a=r?"Yes":"No");let d=a;return r.length>18&&(d=r.slice(0,18)+"..."),e.jsxs(Y,{name:t,children:[e.jsx(J,{children:t}),e.jsxs(K,{width:i,children:[s&&e.jsx(re,{value:r}),e.jsx(Q,{children:a}),e.jsx(X,{children:d})]})]})},ge=()=>e.jsxs(se,{children:[e.jsx(de,{children:"Title"}),e.jsx(oe,{children:"Category"}),e.jsx(le,{children:"Calories"}),e.jsx(ce,{children:"Weight"}),e.jsx(pe,{children:"Recommend"})]}),fe=()=>e.jsx(ae,{children:"Not found products"}),T=[{_id:{$oid:"5d51694902b2373622ff5773"},weight:100,calories:340,category:"dairy",title:"Danbo cheese",groupBloodNotAllowed:{1:!0,2:!0,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5b7f"},weight:100,calories:112,category:"fish",title:"marlin",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5e13"},weight:100,calories:17,category:"vegetables and herbs",title:"Salads Belaya Dacha Delicate root",groupBloodNotAllowed:{1:!0,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5b6f"},weight:100,calories:160,category:"fish",title:"Cold smoked bream",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5b8d"},weight:100,calories:281,category:"fish",title:"Pollock in batter",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff590d"},weight:100,calories:232,category:"meat",title:"Lamb ham",groupBloodNotAllowed:{1:!0,2:!0,3:!1,4:!0}},{_id:{$oid:"5d51694902b2373622ff5f16"},weight:100,calories:38,category:"soft drinks",title:"Pepsi",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}}],ue=n.div`
+`,me=({children:i})=>e.jsxs(M,{children:[e.jsxs(R,{children:[e.jsx(U,{children:"Products"}),e.jsxs(ee,{to:"/products",children:[e.jsx(V,{children:"Add product"}),e.jsx(xe,{width:16,height:16,className:"orange",children:e.jsx("use",{href:`${o}#icon-start`})})]})]}),$.length?e.jsx(he,{children:i}):e.jsx(fe,{})]}),he=()=>e.jsxs(e.Fragment,{children:[e.jsx(ge,{}),e.jsx(ne,{children:$.map(({_id:{$oid:i},title:r,category:t,calories:a,weight:s,groupBloodNotAllowed:d})=>e.jsxs(te,{children:[e.jsx(u,{value:r,children:"Title"}),e.jsx(u,{value:t,children:"Category"}),e.jsxs(G,{children:[e.jsxs(Y,{children:[e.jsx(u,{value:a,children:"Calories"}),e.jsx(u,{value:s,children:"Weight"}),e.jsx(u,{value:d[1],children:"Recommend"})]}),e.jsx(ie,{onClick:()=>console.log(" del btn "),children:e.jsx("div",{style:{marginLeft:"10px",width:"20px",height:"20px",backgroundColor:"#EF8964"}})})]})]},i))})]}),u=({width:i,value:r,children:t})=>{let a=r;const s=typeof r=="boolean";s&&(a=r?"Yes":"No");let d=a;return r.length>18&&(d=r.slice(0,18)+"..."),e.jsxs(H,{name:t,children:[e.jsx(J,{children:t}),e.jsxs(K,{width:i,children:[s&&e.jsx(re,{value:r}),e.jsx(Q,{children:a}),e.jsx(X,{children:d})]})]})},ge=()=>e.jsxs(se,{children:[e.jsx(de,{children:"Title"}),e.jsx(oe,{children:"Category"}),e.jsx(le,{children:"Calories"}),e.jsx(ce,{children:"Weight"}),e.jsx(pe,{children:"Recommend"})]}),fe=()=>e.jsx(ae,{children:"Not found products"}),$=[{_id:{$oid:"5d51694902b2373622ff5773"},weight:100,calories:340,category:"dairy",title:"Danbo cheese",groupBloodNotAllowed:{1:!0,2:!0,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5b7f"},weight:100,calories:112,category:"fish",title:"marlin",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5e13"},weight:100,calories:17,category:"vegetables and herbs",title:"Salads Belaya Dacha Delicate root",groupBloodNotAllowed:{1:!0,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5b6f"},weight:100,calories:160,category:"fish",title:"Cold smoked bream",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff5b8d"},weight:100,calories:281,category:"fish",title:"Pollock in batter",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}},{_id:{$oid:"5d51694902b2373622ff590d"},weight:100,calories:232,category:"meat",title:"Lamb ham",groupBloodNotAllowed:{1:!0,2:!0,3:!1,4:!0}},{_id:{$oid:"5d51694902b2373622ff5f16"},weight:100,calories:38,category:"soft drinks",title:"Pepsi",groupBloodNotAllowed:{1:!1,2:!1,3:!1,4:!1}}],ue=n.div`
   /* 320-375 */
   box-sizing: border-box;
   max-height: 824px;
@@ -354,7 +353,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
     flex: 1;
     
   }
-`,ke=n.div`
+`,Ce=n.div`
   /* 320-375 */
   flex: 1;
   color: rgb(230, 83, 60);
@@ -367,7 +366,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   @media screen and (min-width: 1440px) {
     flex: ${i=>{switch(i.name){case"Body Part":return .8}}};
   }
-`,Ce=n.div`
+`,ke=n.div`
   /* 320-375 */
   font-size: 12px;
   color: rgb(239, 137, 100);
@@ -401,7 +400,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,Ee=n.div`
+`,$e=n.div`
   display: flex;
   font-size: 14px;
 
@@ -410,7 +409,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,$e=n.div`
+`,Ee=n.div`
    display: none;
    font-size: 16px;
   @media screen and (min-width: 768px) {
@@ -430,7 +429,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   @media screen and (min-width: 1440px) {
     /* display: none; */
   }
-`,Ie=n.div`
+`,Ne=n.div`
   font-size: 11px;
   @media screen and (min-width: 768px) {
     /* display: flex; */
@@ -440,25 +439,25 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   @media screen and (min-width: 1440px) {
     display: none;
   }
-`,De=n.svg`
+`,Ie=n.svg`
   width: ${i=>i.size||"13px"};
   height: ${i=>i.size||"13px"};
   fill: ${i=>i.color||"#ffffff"};
   display: inline-block;
   margin-left: 9px;
-`;n(De)`
+`;n(Ie)`
   margin-top: 8px;
   @media screen and (min-width: 768px) {
     margin-top: 0;
   }
-`;const Pe=n(j)`
+`;const De=n(v)`
    display: flex;
    align-items: center;
    color: rgb(230, 83, 60);
  `;n.div`
   display: flex;
   flex-wrap: nowrap;
-`;const Be=n.button`
+`;const Pe=n.button`
   display: inline-flex;
   align-items: center;
   padding: 0;
@@ -469,7 +468,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   @media screen and (min-width: 768px) {
     height: fit-content;
   }
-`,Ne=n.ul`
+`,Be=n.ul`
   box-sizing: border-box;
 
   max-height: 755px;
@@ -530,28 +529,28 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,Le=n.div``,Fe=n.div`
+`,Le=n.div``,We=n.div`
   @media screen and (min-width: 768px) {
     margin-left: 80px;
   }
   @media screen and (min-width: 1440px) {
     margin-left: 80px;
   }
-`,We=n.div`
+`,Ae=n.div`
   @media screen and (min-width: 768px) {
     margin-left: 75px;
   }
   @media screen and (min-width: 1440px) {
     margin-left: 100px;
   }
-`,Ae=n.div`
+`,qe=n.div`
   @media screen and (min-width: 768px) {
     margin-left: 100px;
   }
   @media screen and (min-width: 1440px) {
     margin-left: 130px;
   }
-`,qe=n.div`
+`,Fe=n.div`
   @media screen and (min-width: 768px) {
     display: none;
     margin-left: 60px;
@@ -577,12 +576,11 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   @media screen and (min-width: 1440px) {
     margin-left: 22px;
   }
-`,He=n.svg`
-  &orange {
-    fill: ${({theme:i})=>i.secondaryOrange};
-    stroke: ${({theme:i})=>i.withe};
+`,Ue=n.svg`
+  &.orange {
+    stroke: ${({theme:i})=>i.acceptColor};
   }
-`,Ue=({children:i})=>e.jsxs(ue,{children:[e.jsxs(be,{children:[e.jsx(we,{children:"Execrcises"}),e.jsxs(Pe,{to:"/exercises",children:[e.jsx(ye,{children:"Add exercise"}),e.jsx(He,{width:16,height:16,stroke:"#E6533C",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-start"})})]})]}),E.length?e.jsx(Ve,{children:i}):e.jsx(Ye,{})]}),Ve=()=>e.jsxs(e.Fragment,{children:[e.jsx(Ge,{}),e.jsx(Ne,{children:E.map(({_id:{$oid:i},bodyPart:r,equipment:t,name:a,target:s,burnedCalories:d,time:p})=>e.jsxs(Se,{children:[e.jsx(x,{value:r,children:"Body Part"}),e.jsx(x,{value:t,children:"Equipment"}),e.jsx(x,{value:a,children:"name"}),e.jsxs(je,{children:[e.jsxs(ve,{children:[e.jsx(x,{value:s,children:"Target"}),e.jsx(x,{value:d,children:"Burned Calories"}),e.jsx(x,{value:p,children:"Time"})]}),e.jsx(Be,{onClick:()=>console.log(" del btn "),children:e.jsx("div",{style:{marginLeft:"10px",width:"20px",height:"20px",backgroundColor:"#EF8964"}})})]})]},i))})]}),x=({width:i,value:r,children:t})=>{let a=r,s=a;r.length>10&&(s=r.slice(0,10)+"...");let d=t,p=d;return t.length>10&&(p=t.slice(0,10)+"..."),e.jsxs(ke,{name:t,children:[e.jsxs(Ce,{children:[e.jsx(ze,{children:d}),e.jsx(Ie,{children:p})]}),e.jsxs(Te,{width:i,name:t,children:[e.jsx(Ee,{children:a}),e.jsx($e,{children:s})]})]})},Ge=()=>e.jsxs(Oe,{children:[e.jsx(Le,{children:"Body Part"}),e.jsx(Fe,{children:"Equipment"}),e.jsx(We,{children:"Name"}),e.jsx(Ae,{children:"Target"}),e.jsx(Me,{children:"Burned Calor..."}),e.jsx(qe,{children:"Burned Calories"}),e.jsx(Re,{children:"Time"})]}),Ye=()=>e.jsx(_e,{children:"Not found products"}),E=[{_id:{$oid:"64f2458d6f67bc34bae4f7f7"},bodyPart:"chest",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0009.gif",name:"assisted chest dip (kneeling)",target:"pectorals",burnedCalories:329,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f801"},bodyPart:"upper arms",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0019.gif",name:"assisted triceps dip (kneeling)",target:"triceps",burnedCalories:233,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f813"},bodyPart:"upper arms",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0038.gif",name:"barbell drag curl",target:"biceps",burnedCalories:84,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f7f4"},bodyPart:"waist",equipment:"body weight",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0003.gif",name:"air bike",target:"abs",burnedCalories:312,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f819"},bodyPart:"upper legs",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0044.gif",name:"barbell good morning",target:"hamstrings",burnedCalories:335,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f7fe"},bodyPart:"upper legs",equipment:"assisted",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0016.gif",name:"assisted prone hamstring",target:"hamstrings",burnedCalories:316,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f809"},bodyPart:"upper legs",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0028.gif",name:"barbell clean and press",target:"quads",burnedCalories:272,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f80e"},bodyPart:"chest",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0033.gif",name:"barbell decline bench press",target:"pectorals",burnedCalories:129,time:3}],Je=n.div`
+`,Ve=({children:i})=>e.jsxs(ue,{children:[e.jsxs(be,{children:[e.jsx(we,{children:"Execrcises"}),e.jsxs(De,{to:"/exercises",children:[e.jsx(ye,{children:"Add exercise"}),e.jsx(Ue,{width:16,height:16,className:"orange",children:e.jsx("use",{href:`${o}#icon-start`})})]})]}),E.length?e.jsx(Ge,{children:i}):e.jsx(He,{})]}),Ge=()=>e.jsxs(e.Fragment,{children:[e.jsx(Ye,{}),e.jsx(Be,{children:E.map(({_id:{$oid:i},bodyPart:r,equipment:t,name:a,target:s,burnedCalories:d,time:x})=>e.jsxs(Se,{children:[e.jsx(m,{value:r,children:"Body Part"}),e.jsx(m,{value:t,children:"Equipment"}),e.jsx(m,{value:a,children:"name"}),e.jsxs(je,{children:[e.jsxs(ve,{children:[e.jsx(m,{value:s,children:"Target"}),e.jsx(m,{value:d,children:"Burned Calories"}),e.jsx(m,{value:x,children:"Time"})]}),e.jsx(Pe,{onClick:()=>console.log(" del btn "),children:e.jsx("div",{style:{marginLeft:"10px",width:"20px",height:"20px",backgroundColor:"#EF8964"}})})]})]},i))})]}),m=({width:i,value:r,children:t})=>{let a=r,s=a;r.length>10&&(s=r.slice(0,10)+"...");let d=t,x=d;return t.length>10&&(x=t.slice(0,10)+"..."),e.jsxs(Ce,{name:t,children:[e.jsxs(ke,{children:[e.jsx(ze,{children:d}),e.jsx(Ne,{children:x})]}),e.jsxs(Te,{width:i,name:t,children:[e.jsx($e,{children:a}),e.jsx(Ee,{children:s})]})]})},Ye=()=>e.jsxs(Oe,{children:[e.jsx(Le,{children:"Body Part"}),e.jsx(We,{children:"Equipment"}),e.jsx(Ae,{children:"Name"}),e.jsx(qe,{children:"Target"}),e.jsx(Me,{children:"Burned Calor..."}),e.jsx(Fe,{children:"Burned Calories"}),e.jsx(Re,{children:"Time"})]}),He=()=>e.jsx(_e,{children:"Not found products"}),E=[{_id:{$oid:"64f2458d6f67bc34bae4f7f7"},bodyPart:"chest",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0009.gif",name:"assisted chest dip (kneeling)",target:"pectorals",burnedCalories:329,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f801"},bodyPart:"upper arms",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0019.gif",name:"assisted triceps dip (kneeling)",target:"triceps",burnedCalories:233,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f813"},bodyPart:"upper arms",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0038.gif",name:"barbell drag curl",target:"biceps",burnedCalories:84,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f7f4"},bodyPart:"waist",equipment:"body weight",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0003.gif",name:"air bike",target:"abs",burnedCalories:312,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f819"},bodyPart:"upper legs",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0044.gif",name:"barbell good morning",target:"hamstrings",burnedCalories:335,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f7fe"},bodyPart:"upper legs",equipment:"assisted",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0016.gif",name:"assisted prone hamstring",target:"hamstrings",burnedCalories:316,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f809"},bodyPart:"upper legs",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0028.gif",name:"barbell clean and press",target:"quads",burnedCalories:272,time:3},{_id:{$oid:"64f2458d6f67bc34bae4f80e"},bodyPart:"chest",equipment:"barbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0033.gif",name:"barbell decline bench press",target:"pectorals",burnedCalories:129,time:3}],Je=n.div`
   display: flex;
   max-width: 335px;
   justify-content: space-between;
@@ -603,7 +601,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
 `,Ke=n.div`
   height: 96px;
   padding: 14px;
-  border: 1px solid ${l.bgCards};
+  border: 1px solid ${c.bgCards};
   border-radius: 12px;
 
   display: flex;
@@ -629,11 +627,11 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
 
   ${i=>{switch(!0){case(i.title==="The rest of the calories"&&i.value===-100):return`
-          border-color: ${l.red};          
+          border-color: ${c.red};          
         `;case(i.title==="The rest of sports"&&i.value===30):return`
-          border-color:${l.green};          
+          border-color:${c.green};          
         `}switch(!0){case(i.title==="Daily calorie intake"||i.title==="Daily norm of sports"):return`
-          background-color: ${l.acceptColor};          
+          background-color: ${c.acceptColor};          
         `;default:return`            
             background-color: rgb(239,237,232, 0.05);          
         `}}}
@@ -660,7 +658,7 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
 
   ${i=>{switch(!0){case(i.children==="Daily calorie intake"||i.children==="Daily norm of sports"):return`
-          color: ${l.dashboardTextAccept}
+          color: ${c.dashboardTextAccept}
         `;default:return"color: rgb(239, 237, 232, 0.4)"}}}
 `,Ze=n.p`
   font-weight: 700;
@@ -674,12 +672,11 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,m=n.svg`
-  &orange {
+`,h=n.svg`
+  &.orange {
     fill: ${({theme:i})=>i.secondaryOrange};
-    stroke: ${({theme:i})=>i.withe};
   }
-`,ei=()=>e.jsxs(Je,{children:[e.jsx(h,{value:2200,children:"Daily calorie intake"}),e.jsx(h,{value:110,children:"Daily norm of sports"}),e.jsx(h,{value:2300,children:"Calories consumed"}),e.jsx(h,{value:855,children:"Calories burned"}),e.jsx(h,{value:-100,children:"The rest of the calories"}),e.jsx(h,{value:30,children:"The rest of sports"})]}),h=({value:i,children:r})=>{let t="",a="",s="";switch(r==="The rest of sports"&&i===30&&(s="+"),r){case"Daily calorie intake":t=e.jsx(m,{width:20,height:20,fill:"#EF8964",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-fluent_food"})});break;case"Daily norm of sports":t=e.jsx(m,{width:20,height:20,fill:"#EF8964",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-dumbbell"})}),a=" min";break;case"Calories consumed":t=e.jsx(m,{width:20,height:20,fill:"#EF8964",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-apple"})});break;case"Calories burned":t=e.jsx(m,{width:20,height:20,fill:"#EF8964",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-calories"})});break;case"The rest of the calories":t=e.jsx(m,{width:20,height:20,fill:"#EF8964",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-bubble"})});break;case"The rest of sports":t=e.jsx(m,{width:20,height:20,fill:"#EF8964",children:e.jsx("use",{xlinkHref:"/symbol-defs.svg#icon-running"})}),a=" min";break}return e.jsxs(Ke,{value:i,title:r,children:[e.jsxs(Qe,{children:[t,e.jsx(Xe,{children:r})]}),e.jsxs(Ze,{children:[s,i,a]})]})},ii=u.div`
+`,ei=()=>e.jsxs(Je,{children:[e.jsx(g,{value:2200,children:"Daily calorie intake"}),e.jsx(g,{value:110,children:"Daily norm of sports"}),e.jsx(g,{value:2300,children:"Calories consumed"}),e.jsx(g,{value:855,children:"Calories burned"}),e.jsx(g,{value:-100,children:"The rest of the calories"}),e.jsx(g,{value:30,children:"The rest of sports"})]}),g=({value:i,children:r})=>{let t="",a="",s="";switch(r==="The rest of sports"&&i===30&&(s="+"),r){case"Daily calorie intake":t=e.jsx(h,{width:20,height:20,className:"orange",children:e.jsx("use",{href:`${o}#icon-fluent_food`})});break;case"Daily norm of sports":t=e.jsx(h,{width:20,height:20,className:"orange",children:e.jsx("use",{href:`${o}#icon-dumbbell`})}),a=" min";break;case"Calories consumed":t=e.jsx(h,{width:20,height:20,className:"orange",children:e.jsx("use",{href:`${o}#icon-apple`})});break;case"Calories burned":t=e.jsx(h,{width:20,height:20,className:"orange",children:e.jsx("use",{href:`${o}#icon-calories`})});break;case"The rest of the calories":t=e.jsx(h,{width:20,height:20,className:"orange",children:e.jsx("use",{href:`${o}#icon-bubble`})});break;case"The rest of sports":t=e.jsx(h,{width:20,height:20,className:"orange",children:e.jsx("use",{href:`${o}#icon-running`})}),a=" min";break}return e.jsxs(Ke,{value:i,title:r,children:[e.jsxs(Qe,{children:[t,e.jsx(Xe,{children:r})]}),e.jsxs(Ze,{children:[s,i,a]})]})},ii=b.div`
   ${O}
   margin-top: 61px;
   padding-top: 40px;
@@ -693,12 +690,12 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   }
   @media screen and (min-width: 1440px) {
   }
-`,ni=u.h2`
+`,ni=b.h2`
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.17;
-  color: ${l.withe};
+  color: ${c.withe};
 
   /* @media screen and (min-width: 768px) {
     margin-bottom: 32px;
@@ -709,15 +706,15 @@ import{R as c,r as w,j as e,s as n,L as j,g as l}from"./index-f8655fff.js";impor
   @media screen and (min-width: 1440px) {
     margin-bottom: 0px;
   } */
-`,ti=u.div`
+`,ti=b.div`
 display: flex;
 justify-content: space-between;
 margin-bottom: 40px;
-`,ri=u.p`
+`,ri=b.p`
   margin-top: 20px;
   margin-bottom: 40px;
   font-size: 14px;
   font-style: normal ;
   line-height: 18px;
-  color: ${l.title};
-`,ci=()=>e.jsxs(ii,{children:[e.jsxs(ti,{children:[e.jsx(ni,{children:"Dairy"}),e.jsx(q,{})]}),e.jsx(ei,{}),e.jsx(ri,{children:"Record all your meals in a calorie diary every day. This will help me be aware of my nutrition and make me responsible for my choices."}),e.jsx(me,{}),e.jsx(Ue,{})]});export{ci as default};
+  color: ${c.title};
+`,ci=()=>e.jsxs(ii,{children:[e.jsxs(ti,{children:[e.jsx(ni,{children:"Dairy"}),e.jsx(F,{})]}),e.jsx(ei,{}),e.jsx(ri,{children:"Record all your meals in a calorie diary every day. This will help me be aware of my nutrition and make me responsible for my choices."}),e.jsx(me,{}),e.jsx(Ve,{})]});export{ci as default};
