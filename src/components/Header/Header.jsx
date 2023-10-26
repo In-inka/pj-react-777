@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  BarbellIcon,
   Button,
   Container,
   PrivetRotesContainer,
@@ -12,16 +11,17 @@ import {
   MenuIcon,
   SettingsIcon,
   UserIcon,
-  UserIconContainer,
+  SettingsIconContainer,
 } from './Header.styled';
-//import authSelectors from '../../redux/auth/auth-selectors';
+import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/operations';
+import { LogoIcon } from '../icons/LogoIcon';
 
 const Header = () => {
-  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   const dispatch = useDispatch();
 
-  const isLoggedIn = true;
+  // const isLoggedIn = true;
 
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
@@ -37,7 +37,7 @@ const Header = () => {
         }
       >
         <LogoContainer to="/">
-          <BarbellIcon />
+          <LogoIcon />
           <LogoText>PowerPulse</LogoText>
         </LogoContainer>
         {isLoggedIn && (
@@ -45,10 +45,10 @@ const Header = () => {
             <Button to="/diary">Diary</Button>
             <Button to="/products">Products</Button>
             <Button to="/exercises">Exercises</Button>
-            <SettingsIcon />
-            <UserIconContainer to="/profile">
-              <UserIcon />
-            </UserIconContainer>
+            <SettingsIconContainer to="/profile">
+              <SettingsIcon />
+            </SettingsIconContainer>
+            <UserIcon />
             <MenuIcon type="button" />
             <LogoutContainer>
               <LogoutButton type="button" onClick={onHandleClick}>
