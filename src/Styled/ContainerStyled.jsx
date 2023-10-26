@@ -1,5 +1,4 @@
 export const ContainerStyled = `
- width: 320px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
@@ -7,8 +6,6 @@ export const ContainerStyled = `
 
   @media screen and (min-width: 375px) {
     width: 375px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   @media screen and (min-width: 768px) {
@@ -18,7 +15,7 @@ export const ContainerStyled = `
   }
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    padding-left: 95px;
-    padding-right: 95px;
+    padding-left: 96px;
+    padding-right: 96px;
   }
 `;

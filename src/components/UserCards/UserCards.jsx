@@ -2,8 +2,10 @@ import { useRef } from 'react';
 import {
   Attention,
   Cards,
-  ConteinerCards,
+  ContainerCards,
   DataStatistic,
+  Icon,
+  IconUser,
   Info,
   LogoutButton,
   Name,
@@ -30,12 +32,10 @@ const UserCards = () => {
     dispatch(authOperations.logOut());
   };
   return (
-    <ConteinerCards>
+    <ContainerCards>
       <PositionCards>
         <Cards>
-          <svg width={61} height={62}>
-            <use href={`${sprite}#icon-user`}></use>
-          </svg>
+          <IconUser href="#" />
           <div>
             <input
               type="file"
@@ -44,9 +44,9 @@ const UserCards = () => {
               ref={fileInputRef}
             />{' '}
             <Post onClick={handleUploadButtonClick}>
-              <svg width={24} height={24} fill="#E6533C">
+              <Icon width={24} height={24} className="lightOrange user">
                 <use href={`${sprite}#icon-check_mark`}></use>
-              </svg>
+              </Icon>
             </Post>
           </div>
         </Cards>
@@ -58,9 +58,9 @@ const UserCards = () => {
       <Info>
         <Statistic>
           <Title>
-            <svg width={20} height={20} fill="#EF8964">
+            <Icon width={20} height={20} className="orange">
               <use href={`${sprite}#icon-fluent_food`}></use>
-            </svg>
+            </Icon>
             <p>Daily calorie intake</p>
           </Title>
           <DataStatistic>0</DataStatistic>
@@ -68,9 +68,9 @@ const UserCards = () => {
         <Statistic>
           <Title>
             {' '}
-            <svg width={20} height={20} fill="#EF8964">
+            <Icon width={20} height={20} className="orange">
               <use href={`${sprite}#icon-dumbbell`}></use>
-            </svg>
+            </Icon>
             <p>Daily norm of sports</p>
           </Title>
           <DataStatistic>0 min</DataStatistic>
@@ -79,9 +79,9 @@ const UserCards = () => {
       <Attention>
         <div>
           {' '}
-          <svg width={24} height={24} fill="#EF8964">
+          <Icon width={24} height={24} className="orange">
             <use href={`${sprite}#icon-exclamation-mark`}></use>
-          </svg>
+          </Icon>
         </div>
         <p>
           We understand that each individual is unique, so the entire approach
@@ -90,11 +90,11 @@ const UserCards = () => {
       </Attention>
       <LogoutButton type="button" onClick={onHandleClick}>
         Logout{' '}
-        <svg width={24} height={24} stroke="#EF8964">
+        <Icon width={24} height={24} className="stroke">
           <use href={`${sprite}#icon-logout`}></use>
-        </svg>
+        </Icon>
       </LogoutButton>
-    </ConteinerCards>
+    </ContainerCards>
   );
 };
 
