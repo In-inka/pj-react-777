@@ -43,14 +43,8 @@ margin-left: auto;
     }
   `;
 
-export const BarbellIcon = styled.div`
-  width: 36px;
-  height: 13px;
-  background-color: #e6533c;
-  margin-right: 8px;
-`;
-
 export const LogoText = styled.p`
+  margin-left: 8px;
   font-size: 12px;
   line-height: 1;
   font-weight: bold;

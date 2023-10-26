@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  BarbellIcon,
   Button,
   Container,
   PrivetRotesContainer,
@@ -16,6 +15,7 @@ import {
 } from './Header.styled';
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/operations';
+import { LogoIcon } from '../icons/LogoIcon';
 
 const Header = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -37,7 +37,7 @@ const Header = () => {
         }
       >
         <LogoContainer to="/">
-          <BarbellIcon />
+          <LogoIcon />
           <LogoText>PowerPulse</LogoText>
         </LogoContainer>
         {isLoggedIn && (

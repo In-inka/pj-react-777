@@ -13,6 +13,7 @@ import authSlice from './auth/auth-slice';
 import storage from 'redux-persist/lib/storage';
 import { userMetricsReducer } from './userMetrics/userMetricsSlice';
 import { exercisesSliceReducer } from './exercises/exercisesSlice';
+import { productsReducer } from './products/sliceProducts';
 
 const authPersistConfig = {
   key: 'auth',
@@ -25,6 +26,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authSlice),
     metrics: userMetricsReducer,
     exercises: exercisesSliceReducer,
+    products: productsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

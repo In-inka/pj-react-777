@@ -10,7 +10,7 @@ export const productSlice = createSlice({
     filter: {
       search: '',
       category: '',
-      recomended: '',
+      recommended: '',
     },
   },
   reducers: {
