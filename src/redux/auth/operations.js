@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { toast } from 'react-hot-toast';
 
 axios.defaults.baseURL = 'https://power-pulse-rh13.onrender.com/api';
 
@@ -19,7 +18,7 @@ const register = createAsyncThunk('/users/register', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-     toast.error('Ooops');
+      console.log(error.message);
     }
 })
 
@@ -29,7 +28,7 @@ const logIn = createAsyncThunk('/users/logIn', async credentials => {
         token.set(data.token);
         return data;
     } catch (error) {
-      toast.error('Ooops');
+    console.log(error.message);
     }
 });
 
@@ -38,7 +37,7 @@ const logOut = createAsyncThunk('/users/logOut', async credentials => {
       await axios.post('/users/logout', credentials);
       token.unset();
   } catch (error) {
-      toast.error('Ooops');
+    console.log(error.message);
   }
 });
 
@@ -50,14 +49,13 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) =>
     return thunkAPI.rejectWithValue();
   }
   token.set(persistedToken);
-try {
+  try {
     const { data } = await axios.get('/users');
     return data;
-} catch (error) {
-      toast.error('Ooops');
-}
-
-})
+  } catch (error) {
+    console.log(error.message);
+  }
+});
 
 const operations = {
   register,

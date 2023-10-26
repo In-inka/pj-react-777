@@ -75,7 +75,7 @@ export const SettingsIcon = styled.div`
   }
 `;
 
-export const UserIconContainer = styled(NavLink)`
+export const SettingsIconContainer = styled(NavLink)`
 
 `;
 
