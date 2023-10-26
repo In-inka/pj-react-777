@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
 import { Link, NavLink } from 'react-router-dom';
-
+import { glodalColor } from '../../Styled/GlobalColor';
 
 export const Container = styled.nav`
   ${ContainerStyled}
@@ -13,42 +13,42 @@ export const Container = styled.nav`
   left: 50%;
   transform: translate(-50%, -0%);
   background-color: transparent;
-    border-bottom: ${(props) => props.theme.border};
+  border-bottom: ${(props) => props.theme.border};
 `;
 
 Container.defaultProps = {
   theme: {
-    border: "none",
+    border: 'none',
   },
 };
 
 export const PrivetRotesContainer = styled.div`
-margin-left: auto;
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   @media screen and (min-width: 1440px) {
     margin-left: auto;
   }
-  `;
-  
-  export const LogoContainer = styled(NavLink)`
-    display: flex;
-    align-items: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    @media screen and (min-width: 768px) {
-      padding-top: 34px;
-      padding-bottom: 33px;
-    }
-  `;
+`;
+
+export const LogoContainer = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    padding-top: 34px;
+    padding-bottom: 33px;
+  }
+`;
 
 export const LogoText = styled.p`
   margin-left: 8px;
   font-size: 12px;
   line-height: 1;
   font-weight: bold;
-  color: #efede8;
+  color: ${glodalColor.withe};
 `;
 
 export const FlexContainerB = styled.div`
@@ -57,27 +57,25 @@ export const FlexContainerB = styled.div`
   justify-content: end;
 `;
 
-export const SettingsIcon = styled.div`
+export const SettingsIcon = styled.svg`
   width: 24px;
   height: 24px;
-  border: 3px solid rgba(239, 237, 232, 0.3);
-  border-radius: 50%;
   @media screen and (min-width: 1440px) {
-    width: 28px;
-    height: 28px;
-    margin-left: 32px;
+    &.set {
+      width: 28px;
+      height: 28px;
+      margin-left: 32px;
+    }
   }
 `;
 
-export const SettingsIconContainer = styled(NavLink)`
-
-`;
+export const SettingsIconContainer = styled(NavLink)``;
 
 export const UserIcon = styled.div`
   margin-left: 14px;
   width: 37px;
   height: 37px;
-  border: 3px solid #e6533c;
+  border: 3px solid ${glodalColor.acceptColor};
   border-radius: 50%;
   @media screen and (min-width: 768px) {
     margin-left: 16px;
@@ -90,7 +88,7 @@ export const MenuIcon = styled.button`
   margin-left: 14px;
   width: 24px;
   height: 24px;
-  border: 3px solid #e6533c;
+  border: 3px solid ${glodalColor.acceptColor};
   @media screen and (min-width: 768px) {
     margin-left: 16px;
   }
@@ -98,7 +96,6 @@ export const MenuIcon = styled.button`
     display: none;
   }
 `;
-
 
 export const LogoutContainer = styled.div`
   display: none;
@@ -110,24 +107,24 @@ export const LogoutContainer = styled.div`
 `;
 
 export const LogoutButton = styled.button`
-    border: none;
-    color: #efede8;
-    font-size: 16px;
-    line-height: 1.5;
-    display: block;
-    background-color: transparent;
-    padding-right: 28px;
+  border: none;
+  color: ${glodalColor.withe};
+  font-size: 16px;
+  line-height: 1.5;
+  display: block;
+  background-color: transparent;
+  padding-right: 28px;
 `;
 
-export const LogoutIcon = styled.div`
+export const LogoutIcon = styled.svg`
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translate(-0%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #e6533c;
+  transform: translate(-0%, -50%);
   pointer-events: none;
+  stroke: ${glodalColor.acceptColor};
 `;
 
 export const Button = styled(Link)`
@@ -137,9 +134,9 @@ export const Button = styled(Link)`
     font-size: 16px;
     line-height: 1.5;
     background-color: inherit;
-    color: #efede8;
+    color: ${glodalColor.withe};
     border-radius: 12px;
-    border: 1px solid rgba(239, 237, 232, 0.3);
+    border: 1px solid ${glodalColor.title};
     padding: 10px 27px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover,
@@ -161,8 +158,8 @@ export const ButtonActive = styled(Link)`
     margin-left: 16px;
     display: inline-block;
     margin-right: 14px;
-    background-color: #e6533c;
-    color: #efede8;
+    background-color: ${glodalColor.acceptColor};
+    color: ${glodalColor.withe};
     border-radius: 12px;
     border: none;
     padding: 10px 27px;
@@ -171,10 +168,10 @@ export const ButtonActive = styled(Link)`
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover,
     &:focus {
-      background-color: #ef8964;
+      background-color: ${glodalColor.secondaryOrange};
     }
     &:disabled {
-      background-color: #e6533c;
+      background-color: ${glodalColor.acceptColor};
       color: #efede899;
     }
   }
