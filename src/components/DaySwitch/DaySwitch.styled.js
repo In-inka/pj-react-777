@@ -12,7 +12,8 @@ export const CustomDatePickerInput = styled.input`
   border: none;
   color: ${glodalColor.withe};
   font-weight: ${(props) => (props.$textWeight ? props.$textWeight : "normal")}; 
-  font-size: ${(props) => (props.$textSize ? props.$textSize + `px`: "16px")};
+  font-size: ${(props) => (props.$textSize ? props.$textSize + `px` : "16px")};
+  line-height: ${(props) => (props.$textHeight ? props.$textHeight + `px` : "24px")};
   outline: none;
   cursor: pointer;
 `;
@@ -58,7 +59,7 @@ position: relative;
 export const StyledIcon = styled.svg`
   width: 20px;
   height: 20px;
-  stroke: ${props=>props.stroke || "white"}
+  stroke: ${props=>props.stroke || "white"};
   cursor: pointer;
   position: absolute; 
   top: 0; 
@@ -73,7 +74,10 @@ export const StyledIcon = styled.svg`
 `;
 
 export const StyledArrow = styled.div`
-margin-left: 40px;`
+display: flex;
+margin-left: 40px;
+
+`
 
 
 

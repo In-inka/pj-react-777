@@ -11,10 +11,11 @@ import {
   StyledArrow,
 } from './DaySwitch.styled';
 import sprite from '../../sprite/sprite.svg';
+import { glodalColor } from '../../Styled/GlobalColor';
 
 const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow }) => {
   const [startDate, setStartDate] = useState(new Date());
-  const numericMonthFormat = 'dd MM yyyy';
+  const numericMonthFormat = 'dd/MM/yyyy';
 
   const datepickerRef = useRef(null);
 
@@ -49,7 +50,7 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow }) => {
           style={{
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
-            color: 'grey',
+            color: glodalColor.bgCards,
           }}
         />
         <IoIosArrowForward
@@ -57,7 +58,7 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow }) => {
           style={{
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
-            color: 'white',
+            color: glodalColor.withe,
           }}
         />
       </StyledArrow>
