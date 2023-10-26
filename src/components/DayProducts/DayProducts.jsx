@@ -11,7 +11,7 @@ import {
   ItemField,
   WrapMobile,
   // IconWrapper,
-  // DeleteIconWrapper,
+  DeleteIconWrapper,
   StyledLink,
   WrapItemProducts,
   Button,
@@ -27,6 +27,7 @@ import {
   Recommend,
 } from './DayProducts.styled';
 import sprite from '../../sprite/sprite.svg';
+import { glodalColor } from '../../Styled/GlobalColor';
 
 const Icon = styled.svg`
   &.orange {
@@ -41,7 +42,12 @@ const DayProducts = ({ children }) => {
         <SubTitle>Products</SubTitle>
         <StyledLink to="/products">
           <AddProduct>Add product</AddProduct>
-          <Icon width={16} height={16} className="orange">
+          <Icon
+            width={16}
+            height={16}
+            // className="orange"
+            fill="#EF8964"
+          >
             <use href={`${sprite}#icon-start`}></use>
           </Icon>
         </StyledLink>
@@ -93,17 +99,11 @@ export const ProductsTable = () => {
                     //   () => dispatch(deleteProduct(id))
                   }
                 >
-                  <div
-                    style={{
-                      marginLeft: '10px',
-                      width: '20px',
-                      height: '20px',
-                      backgroundColor: '#EF8964',
-                    }}
-                  ></div>
-                  {/* <DeleteIconWrapper size="20px" color="#EF8964">
-                    <use href={`${sprite}#icon-logo`} />
-                  </DeleteIconWrapper> */}
+                  <DeleteIconWrapper>
+                    <Icon width={20} height={20} className="orange">
+                      <use href={`${sprite}#icon-trash`}></use>
+                    </Icon>
+                  </DeleteIconWrapper>
                 </Button>
               </WrapMobile>
             </ListItem>

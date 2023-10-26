@@ -26,6 +26,7 @@ import {
   BurnedEx,
   TimeEx,
   BurnedExTablet,
+  DeleteIconWrapper,
 } from './DayExercises.styled';
 
 import sprite from '../../sprite/sprite.svg';
@@ -99,17 +100,11 @@ export const ExercisesTable = () => {
                     //   () => dispatch(deleteProduct(id))
                   }
                 >
-                  <div
-                    style={{
-                      marginLeft: '10px',
-                      width: '20px',
-                      height: '20px',
-                      backgroundColor: '#EF8964',
-                    }}
-                  ></div>
-                  {/* <DeleteIconWrapperEx size="20px" color="#EF8964">
-                    <use href={`${sprite}#icon-logo`} />
-                  </DeleteIconWrapperEx> */}
+                  <DeleteIconWrapper>
+                    <Icon width={20} height={20} className="orange">
+                      <use href={`${sprite}#icon-trash`}></use>
+                    </Icon>
+                  </DeleteIconWrapper>
                 </ButtonEx>
               </WrapMobileEx>
             </ListItemEx>

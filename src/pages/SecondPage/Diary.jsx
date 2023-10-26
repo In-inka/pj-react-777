@@ -29,7 +29,6 @@ const Diary = () => {
         <PageTitleText>Diary</PageTitleText>
         <DaySwitch />
       </WrapTitle>
-
       <WrapMainBlock>
         <WrapDashBoard>
           <DayDashboard />
@@ -42,7 +41,6 @@ const Diary = () => {
             </InfoText>
           </WrapInfoText>
         </WrapDashBoard>
-
         <WrapTableBlock>
           <DayProducts />
           <DayExercises />
