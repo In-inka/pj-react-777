@@ -17,40 +17,44 @@ import {
   TextContainerC,
   CalorieTextA,
   CalorieTextB,
+  Section,
 } from './SignIn.styled';
 import { SignInForm } from '../../components/SignInForm/SignInForm';
 
 const SignIn = () => {
   return (
-    <Container>
-      <Title>Sign In</Title>
-      <Text>
-        Welcome! Please enter your credentials to login to the platform:
-      </Text>
-      <SignInForm />
-      <TextContainer>
-        <TextB>Don&#39;t have an account?</TextB>
-        <StyledLink to="/signup">Sign Up</StyledLink>
-      </TextContainer>
-      <FlexContainer>
-        <VideoTutorialContainer>
-          <PlayIcon />
-          <TextContainerB>
-            <VideoTutorialTextA>350+</VideoTutorialTextA>
-            <VideoTutorialTextB>Video tutorial</VideoTutorialTextB>
-          </TextContainerB>
-        </VideoTutorialContainer>
-      </FlexContainer>
-      <FlexContainerB>
-        <CalorieContainer>
-          <RunIcon />
-          <TextContainerC>
-            <CalorieTextA>500</CalorieTextA>
-            <CalorieTextB>cal</CalorieTextB>
-          </TextContainerC>
-        </CalorieContainer>
-      </FlexContainerB>
-    </Container>
+    <Section>
+      {' '}
+      <Container>
+        <Title>Sign In</Title>
+        <Text>
+          Welcome! Please enter your credentials to login to the platform:
+        </Text>
+        <SignInForm />
+        <TextContainer>
+          <TextB>Don&#39;t have an account?</TextB>
+          <StyledLink to="/signup">Sign Up</StyledLink>
+        </TextContainer>
+        <FlexContainer>
+          <VideoTutorialContainer>
+            <PlayIcon />
+            <TextContainerB>
+              <VideoTutorialTextA>350+</VideoTutorialTextA>
+              <VideoTutorialTextB>Video tutorial</VideoTutorialTextB>
+            </TextContainerB>
+          </VideoTutorialContainer>
+        </FlexContainer>
+        <FlexContainerB>
+          <CalorieContainer>
+            <RunIcon />
+            <TextContainerC>
+              <CalorieTextA>500</CalorieTextA>
+              <CalorieTextB>cal</CalorieTextB>
+            </TextContainerC>
+          </CalorieContainer>
+        </FlexContainerB>
+      </Container>
+    </Section>
   );
 };
 

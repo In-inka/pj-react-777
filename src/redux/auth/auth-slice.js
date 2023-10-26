@@ -1,10 +1,29 @@
+import { handleFulfilledCurrentUser, handleFulfilledLogin, handleFulfilledLogout, handleFulfilledMetricData, handleFulfilledRegister, handlePending, handlePendingCurrentUser, handleRejectedCurrentUser } from '../../components/services/services';
 import authOperations from './operations';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+
+
+const STATUS = {
+  PENDING: 'pending',
+  REJECTED: 'rejected',
+  FULFILLED: 'fulfilled',
+};
 
 const initialState = {
   user: { name: null, email: null },
+  bodyParams: {
+    height: null,
+    currentWeight: null,
+    desiredWeight: null,
+    birthday: null,
+    blood: null,
+    sex: null,
+    levelActivity:null,
+  },
+  avatarUrl:null,
   token: null,
   isLoggedIn: false,
+  isLoading:false,
   isFetchingCurrentUser: false,
   error: '',
 };
@@ -12,35 +31,37 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  extraReducers: {
-    [authOperations.register.fulfilled](state, { payload }) {
-      state.user = payload.user;
-      state.token = payload.token;
-      state.isLoggedIn = true;
-    },
-    [authOperations.logIn.fulfilled](state, { payload }) {
-      state.user = payload.user;
-      state.token = payload.token;
-      state.isLoggedIn = true;
-    },
-    [authOperations.logOut.fulfilled](state) {
-      state.user = { name: null, email: null };
-      state.token = null;
-      state.isLoggedIn = false;
-    },
-    [authOperations.fetchCurrentUser.pending](state) {
-      state.isFetchingCurrentUser = true;
-    },
-    [authOperations.fetchCurrentUser.fulfilled](state, { payload }) {
-      state.user = payload;
-      state.isLoggedIn = true;
-      state.isFetchingCurrentUser = false;
-    },
-    [authOperations.fetchCurrentUser.rejected](state, { payload }) {
-      state.isFetchingCurrentUser = false;
-      state.error = payload;
-    },
-  },
+  extraReducers: builder => {
+    builder
+      .addCase(authOperations.register.fulfilled, handleFulfilledRegister)
+      .addCase(authOperations.logIn.fulfilled, handleFulfilledLogin)
+      .addCase(authOperations.logOut.fulfilled, handleFulfilledLogout)
+      .addCase(
+        authOperations.updateUserMetricsData.fulfilled,
+        handleFulfilledMetricData,
+      )
+      .addCase(
+        authOperations.fetchCurrentUser.fulfilled,
+        handleFulfilledCurrentUser,
+      )
+      .addCase(
+        authOperations.fetchCurrentUser.pending,
+        handlePendingCurrentUser,
+      )
+      .addCase(
+        authOperations.fetchCurrentUser.rejected,
+        handleRejectedCurrentUser,
+      )
+      .addMatcher(
+        isAnyOf(
+          authOperations.register[STATUS.PENDING],
+          authOperations.logIn[STATUS.PENDING],
+          authOperations.logOut[STATUS.PENDING],
+          authOperations.updateUserMetricsData[STATUS.PENDING],
+        ),
+        handlePending,
+      );
+  }
 });
 
 export default authSlice.reducer;
