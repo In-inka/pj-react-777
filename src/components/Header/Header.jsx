@@ -21,11 +21,11 @@ import { useEffect, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 const Header = () => {
-  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dispatch = useDispatch();
 
-  const isLoggedIn = true;
+  // const isLoggedIn = true;
 
   useEffect(() => {
     if (isMenuOpen) {
