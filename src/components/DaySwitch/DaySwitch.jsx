@@ -12,7 +12,7 @@ import {
 } from './DaySwitch.styled';
 import sprite from '../../sprite/sprite.svg';
 
-const DaySwitch = () => {
+const DaySwitch = ({textSize=18, iconColor="white"}) => {
   const [startDate, setStartDate] = useState(new Date());
   const numericMonthFormat = 'dd MM yyyy';
 
@@ -31,10 +31,10 @@ const DaySwitch = () => {
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           dateFormat={numericMonthFormat}
-          customInput={<CustomDatePickerInput />}
+          customInput={<CustomDatePickerInput $textsize={textSize} />}
           ref={datepickerRef}
         />
-        <StyledIcon onClick={toggleDatePicker}>
+        <StyledIcon onClick={toggleDatePicker} stroke={iconColor}>
           <use href={`${sprite}#icon-calendar`}></use>
         </StyledIcon>
       </StyledCalendarContainer>

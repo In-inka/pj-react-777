@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { glodalColor } from '../../Styled/GlobalColor';
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
+
 
 import {
   Container,
@@ -27,7 +29,7 @@ const Diary = () => {
     <Container>
       <WrapTitle>
         <PageTitleText>Diary</PageTitleText>
-        <DaySwitch />
+        <DaySwitch iconColor={glodalColor.secondaryOrange}/>
       </WrapTitle>
       <WrapMainBlock>
         <WrapDashBoard>
