@@ -16,15 +16,47 @@ import {
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/operations';
 import { LogoIcon } from '../icons/LogoIcon';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import { useEffect, useState } from 'react';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 const Header = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dispatch = useDispatch();
 
   // const isLoggedIn = true;
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      disableBodyScroll(document.body);
+    } else {
+      enableBodyScroll(document.body);
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1440px)');
+    const closeMenuOnWideScreens = (e) => {
+      if (e.matches) {
+        setIsMenuOpen(false);
+        enableBodyScroll(document.body);
+      }
+    };
+
+    mediaQuery.addEventListener('change', closeMenuOnWideScreens);
+
+    return () => {
+      mediaQuery.removeEventListener('change', closeMenuOnWideScreens);
+    };
+  }, []);
+
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
+  };
+
+  const toggleClickMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -49,7 +81,7 @@ const Header = () => {
               <SettingsIcon />
             </SettingsIconContainer>
             <UserIcon />
-            <MenuIcon type="button" />
+            <MenuIcon type="button" onClick={toggleClickMenu} />
             <LogoutContainer>
               <LogoutButton type="button" onClick={onHandleClick}>
                 Logout
@@ -59,6 +91,12 @@ const Header = () => {
           </PrivetRotesContainer>
         )}
       </Container>
+      {isLoggedIn && isMenuOpen && (
+        <MobileMenu
+          toggleClickMenu={toggleClickMenu}
+          onHandleClick={onHandleClick}
+        />
+      )}
     </>
   );
 };

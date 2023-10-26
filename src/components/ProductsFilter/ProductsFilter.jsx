@@ -82,11 +82,16 @@ export const ProductsFilter = () => {
         ? 'rgba(28, 28, 28, 1)'
         : 'rgba(28, 28, 28, 1)', //active option and hover background
       color: isSelected ? '#E6533C' : '#EFEDE8', //text color of the active option in the list
-      padding: '14px',
+      marginBottom: '8px',
+
+      '&:last-child': {
+        marginBottom: '0',
+      },
     }),
 
     menu: (provided) => ({
       ...provided,
+      borderRadius: '12px',
       backgroundColor: 'rgba(28, 28, 28, 1)', //background for the list
     }),
     singleValue: (provided) => ({
@@ -109,12 +114,19 @@ export const ProductsFilter = () => {
     }),
     menuList: (base) => ({
       ...base,
-      borderRadius: '12px', //border when scrolling
+      margin: '14px 7px',
 
       '::-webkit-scrollbar': {
-        display: 'none',
+        width: '8px',
       },
-      overflowY: 'scroll',
+      '::-webkit-scrollbar-track': {
+        background: 'transparent',
+      },
+      '::-webkit-scrollbar-thumb': {
+        backgroundColor: 'rgba(239, 237, 232, 0.10)',
+        borderRadius: '12px',
+      },
+      overflowY: 'auto',
     }),
   };
 
@@ -197,6 +209,7 @@ export const ProductsFilter = () => {
         <SelectWrapper>
           <Select
             styles={customStyles}
+            isSearchable={false}
             value={category}
             onChange={onCategoriesChange}
             placeholder="Categories"
@@ -222,6 +235,7 @@ export const ProductsFilter = () => {
         <SelectWrapper>
           <Select
             styles={customStyles}
+            isSearchable={false}
             onChange={onRecomendedChange}
             value={recommended}
             theme={(theme) => ({
