@@ -15,6 +15,7 @@ import {
   WrapTableBlock,
   WrapMainBlock,
   WrapDashBoard,
+  WrapDaySwitcher,
 } from './Diary.styled';
 
 import sprite from '../../sprite/sprite.svg';
@@ -29,7 +30,9 @@ const Diary = () => {
     <Container>
       <WrapTitle>
         <PageTitleText>Diary</PageTitleText>
-        <DaySwitch iconColor={glodalColor.secondaryOrange}/>
+        <WrapDaySwitcher>
+          <DaySwitch iconColor={glodalColor.secondaryOrange} />
+        </WrapDaySwitcher>
       </WrapTitle>
       <WrapMainBlock>
         <WrapDashBoard>

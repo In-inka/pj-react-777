@@ -32,6 +32,15 @@ export const PageTitleText = styled.h2`
   }
 `;
 
+export const WrapDaySwitcher = styled.div`
+  display: flex;
+  
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+  }
+`;
+
+
 export const WrapTitle = styled.div`
   display: flex;
   justify-content: space-between;
