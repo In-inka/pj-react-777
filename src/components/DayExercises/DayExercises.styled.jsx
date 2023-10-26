@@ -209,16 +209,17 @@ export const SliceTextNameEx = styled.div`
   }
 `;
 
-export const IconWrapperEx = styled.svg`
-  width: ${(props) => props.size || '13px'};
-  height: ${(props) => props.size || '13px'};
-  fill: ${(props) => props.color || '#ffffff'};
-  display: inline-block;
-  margin-left: 9px;
-`;
+// export const IconWrapperEx = styled.svg`
+//   width: ${(props) => props.size || '13px'};
+//   height: ${(props) => props.size || '13px'};
+//   fill: ${(props) => props.color || '#ffffff'};
+//   display: inline-block;
+//   margin-left: 9px;
+// `;
 
-export const DeleteIconWrapperEx = styled(IconWrapperEx)`
-  margin-top: 8px;
+export const DeleteIconWrapper = styled.div`
+  margin-top: 10px;
+  margin-left: 9px;
   @media screen and (min-width: 768px) {
     margin-top: 0;
   }

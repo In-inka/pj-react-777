@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { glodalColor } from '../../Styled/GlobalColor';
 
 export const DaySwitchContainer = styled.div`
   display: flex;
@@ -9,9 +10,9 @@ export const CustomDatePickerInput = styled.input`
   background: transparent;
   width: 100px;
   border: none;
-  color: white; 
-  font-weight: bold; 
-  font-size: 18px; 
+  color: ${glodalColor.withe};
+  font-weight: bold;
+  font-size: ${(props)=>(props.$textsize+`px` || `18px`)};
   outline: none;
   cursor: pointer;
 `;
@@ -55,8 +56,9 @@ position: relative;
 `;
 
 export const StyledIcon = styled.svg`
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  stroke: ${props=>props.stroke || "white"}
   cursor: pointer;
   position: absolute; 
   top: 0; 

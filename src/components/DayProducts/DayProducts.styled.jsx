@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { glodalColor } from '../../Styled/GlobalColor';
 
 export const Container = styled.div`
   /* 320-375 */
@@ -162,7 +163,6 @@ export const SliceText = styled.div`
   }
 `;
 
-
 export const IconWrapper = styled.svg`
   width: ${(props) => props.size || '13px'};
   height: ${(props) => props.size || '13px'};
@@ -171,8 +171,16 @@ export const IconWrapper = styled.svg`
   margin-left: 9px;
 `;
 
-export const DeleteIconWrapper = styled(IconWrapper)`
+// export const DeleteIconWrapper = styled(IconWrapper)`
+//   margin-top: 10px;
+//   @media screen and (min-width: 768px) {
+//     margin-top: 0;
+//   }
+// `;
+
+export const DeleteIconWrapper = styled.div`
   margin-top: 10px;
+  margin-left: 9px;
   @media screen and (min-width: 768px) {
     margin-top: 0;
   }
