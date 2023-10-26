@@ -39,7 +39,17 @@ export const WrapDaySwitcher = styled.div`
     align-items: flex-start;
   }
 `;
-
+export const MobileDaySwitch = styled.div`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }  
+`;
+export const NotMobileDaySwitch = styled.div`
+  display: none;
+  @media screen and (min-width: 768px) {
+  display: flex;
+  }
+`;
 
 export const WrapTitle = styled.div`
   display: flex;

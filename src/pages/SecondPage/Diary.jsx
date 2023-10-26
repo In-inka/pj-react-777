@@ -5,7 +5,6 @@ import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
 
-
 import {
   Container,
   PageTitleText,
@@ -16,6 +15,8 @@ import {
   WrapMainBlock,
   WrapDashBoard,
   WrapDaySwitcher,
+  MobileDaySwitch,
+  NotMobileDaySwitch,
 } from './Diary.styled';
 
 import sprite from '../../sprite/sprite.svg';
@@ -31,7 +32,22 @@ const Diary = () => {
       <WrapTitle>
         <PageTitleText>Diary</PageTitleText>
         <WrapDaySwitcher>
-          <DaySwitch iconColor={glodalColor.secondaryOrange} />
+          <MobileDaySwitch>
+            <DaySwitch
+              textSize={18}
+              textWeight={'bold'}
+              sizeArrow={18}
+              iconColor={glodalColor.secondaryOrange}
+            />
+          </MobileDaySwitch>
+          <NotMobileDaySwitch>
+            <DaySwitch
+              textSize={24}
+              textWeight={'bold'}
+              sizeArrow={18}
+              iconColor={glodalColor.secondaryOrange}
+            />
+          </NotMobileDaySwitch>
         </WrapDaySwitcher>
       </WrapTitle>
       <WrapMainBlock>

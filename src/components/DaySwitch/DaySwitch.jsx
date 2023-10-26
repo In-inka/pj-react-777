@@ -12,7 +12,7 @@ import {
 } from './DaySwitch.styled';
 import sprite from '../../sprite/sprite.svg';
 
-const DaySwitch = ({textSize=18, iconColor="white"}) => {
+const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow }) => {
   const [startDate, setStartDate] = useState(new Date());
   const numericMonthFormat = 'dd MM yyyy';
 
@@ -31,7 +31,12 @@ const DaySwitch = ({textSize=18, iconColor="white"}) => {
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           dateFormat={numericMonthFormat}
-          customInput={<CustomDatePickerInput $textsize={textSize} />}
+          customInput={
+            <CustomDatePickerInput
+              $textSize={textSize}
+              $textWeight={textWeight}
+            />
+          }
           ref={datepickerRef}
         />
         <StyledIcon onClick={toggleDatePicker} stroke={iconColor}>
@@ -41,11 +46,19 @@ const DaySwitch = ({textSize=18, iconColor="white"}) => {
       <StyledArrow>
         <IoIosArrowBack
           onClick={() => setStartDate(subDays(startDate, 1))}
-          style={{ cursor: 'pointer', fontSize: '16px', color: 'grey' }}
+          style={{
+            cursor: 'pointer',
+            fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
+            color: 'grey',
+          }}
         />
         <IoIosArrowForward
           onClick={() => setStartDate(addDays(startDate, 1))}
-          style={{ cursor: 'pointer', fontSize: '16px', color: 'white' }}
+          style={{
+            cursor: 'pointer',
+            fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
+            color: 'white',
+          }}
         />
       </StyledArrow>
     </DaySwitchContainer>

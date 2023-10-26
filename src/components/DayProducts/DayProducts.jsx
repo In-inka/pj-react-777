@@ -45,8 +45,7 @@ const DayProducts = ({ children }) => {
           <Icon
             width={16}
             height={16}
-            // className="orange"
-            fill="#EF8964"
+            className="orange"            
           >
             <use href={`${sprite}#icon-start`}></use>
           </Icon>

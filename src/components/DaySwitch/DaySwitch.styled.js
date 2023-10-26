@@ -11,8 +11,8 @@ export const CustomDatePickerInput = styled.input`
   width: 100px;
   border: none;
   color: ${glodalColor.withe};
-  font-weight: bold;
-  font-size: ${(props)=>(props.$textsize+`px` || `18px`)};
+  font-weight: ${(props) => (props.$textWeight ? props.$textWeight : "normal")}; 
+  font-size: ${(props) => (props.$textSize ? props.$textSize + `px`: "16px")};
   outline: none;
   cursor: pointer;
 `;
