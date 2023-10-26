@@ -30,10 +30,6 @@ export const PageTitleText = styled.h2`
     display: flex;
     align-items: end;
   }
-  /*
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 0px;
-  } */
 `;
 
 export const WrapTitle = styled.div`
@@ -78,7 +74,7 @@ export const WrapInfoText = styled.div`
 
 export const WrapDashBoard = styled.div`
   @media screen and (min-width: 768px) {
-    order: 1;
+    order: 1;    
   }
 `;
 
@@ -89,7 +85,11 @@ export const WrapTableBlock = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 62px;
-    gap: 32px;    
+    gap: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 826px;
+    margin: 0;
   }
 `;
 
@@ -97,5 +97,8 @@ export const WrapMainBlock = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
+  }
+  @media screen and (min-width: 1440px) {
+   column-gap: 32px;
   }
 `;
