@@ -1,21 +1,21 @@
-import{L as f,j as i,o as w}from"./index-87b8429a.js";import{n as e}from"./emotion-styled.browser.esm-ca420e0f.js";import{b as k,a as j}from"./main_bg_mob-adb912f5.js";import{b as v,a as y,c as z,d as C}from"./main_bg_desktop-e9b36866.js";import{C as S}from"./ContainerStyled-bb0b3bf9.js";import{u as _,a as T}from"./schemas-96d2c2b4.js";import{u as I}from"./useDispatch-2c0928a3.js";const B=e.div`
-  ${S}
+import{L as f,b as w,j as i,o as k}from"./index-0b81db89.js";import{n as e}from"./emotion-styled.browser.esm-3d6fe93b.js";import{b as j,a as v}from"./main_bg_mob-adb912f5.js";import{b as y,a as z,c as C,d as S}from"./main_bg_desktop-e9b36866.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{u as T,a as I}from"./schemas-762aadbe.js";const B=e.div`
+  ${_}
   padding-top: 127px;
   padding-bottom: 40px;
-  background-image: url(${k});
+  background-image: url(${j});
   background-repeat: no-repeat;
   background-position: 77px 241px;
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${j});
+    background-image: url(${v});
   }
 
   @media screen and (min-width: 768px) {
     padding-top: 189px;
     padding-bottom: 48px;
-    background-image: url(${v});
+    background-image: url(${y});
     background-repeat: no-repeat;
     background-position: 331px 131px;
     background-size: 437px;
@@ -24,7 +24,7 @@ import{L as f,j as i,o as w}from"./index-87b8429a.js";import{n as e}from"./emoti
   @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 768px) and (min-resolution: 192dpi),
     screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${y});
+    background-image: url(${z});
   }
 
   @media screen and (min-width: 1440px) {
@@ -35,13 +35,13 @@ import{L as f,j as i,o as w}from"./index-87b8429a.js";import{n as e}from"./emoti
     background-size: 670px;
     height: 800px;
     position: relative;
-    background-image: url(${z});
+    background-image: url(${C});
   }
 
   @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
     screen and (min-width: 1440px) and (min-resolution: 192dpi),
     screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${C});
+    background-image: url(${S});
   }
 `,F=e.h1`
   color: rgba(239, 237, 232, 1);
@@ -286,4 +286,4 @@ import{L as f,j as i,o as w}from"./index-87b8429a.js";import{n as e}from"./emoti
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,ei=()=>{const d=I(),g=(t,b)=>{d(w.logIn(t)),b.resetForm()},{values:p,errors:n,touched:o,isSubmitting:h,handleChange:s,handleBlur:x,handleSubmit:u}=_({initialValues:{email:"",password:""},validationSchema:T,onSubmit:g}),r=t=>i.jsxs(m,{children:[i.jsx(X,{}),i.jsx(Y,{children:t})]}),c=t=>i.jsxs(m,{children:[i.jsx(Z,{}),i.jsxs(ii,{children:["Success ",t]})]});return i.jsxs(N,{onSubmit:u,children:[n.name&&o.name&&r(n.name),i.jsx(l,{htmlFor:"email",children:"Email"}),i.jsx(a,{value:p.email,onChange:s,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:x,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?r(n.email):c("email")),i.jsx(l,{htmlFor:"password",children:"Password"}),i.jsx(a,{value:p.password,onChange:s,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:x,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?r(n.password):c("password")),i.jsx(O,{children:i.jsx(Q,{disabled:h,type:"submit",children:"Sign In"})})]})},si=()=>i.jsxs(B,{children:[i.jsx(F,{children:"Sign In"}),i.jsx($,{children:"Welcome! Please enter your credentials to login to the platform:"}),i.jsx(ei,{}),i.jsxs(E,{children:[i.jsx(P,{children:"Don't have an account?"}),i.jsx(V,{to:"/signup",children:"Sign Up"})]}),i.jsx(L,{children:i.jsxs(R,{children:[i.jsx(U,{}),i.jsxs(A,{children:[i.jsx(D,{children:"350+"}),i.jsx(M,{children:"Video tutorial"})]})]})}),i.jsx(W,{children:i.jsxs(q,{children:[i.jsx(K,{}),i.jsxs(G,{children:[i.jsx(H,{children:"500"}),i.jsx(J,{children:"cal"})]})]})})]});export{si as default};
+`,ei=()=>{const d=w(),g=(t,b)=>{d(k.logIn(t)),b.resetForm()},{values:p,errors:n,touched:o,isSubmitting:h,handleChange:s,handleBlur:x,handleSubmit:u}=T({initialValues:{email:"",password:""},validationSchema:I,onSubmit:g}),r=t=>i.jsxs(m,{children:[i.jsx(X,{}),i.jsx(Y,{children:t})]}),c=t=>i.jsxs(m,{children:[i.jsx(Z,{}),i.jsxs(ii,{children:["Success ",t]})]});return i.jsxs(N,{onSubmit:u,children:[n.name&&o.name&&r(n.name),i.jsx(l,{htmlFor:"email",children:"Email"}),i.jsx(a,{value:p.email,onChange:s,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:x,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?r(n.email):c("email")),i.jsx(l,{htmlFor:"password",children:"Password"}),i.jsx(a,{value:p.password,onChange:s,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:x,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?r(n.password):c("password")),i.jsx(O,{children:i.jsx(Q,{disabled:h,type:"submit",children:"Sign In"})})]})},pi=()=>i.jsxs(B,{children:[i.jsx(F,{children:"Sign In"}),i.jsx($,{children:"Welcome! Please enter your credentials to login to the platform:"}),i.jsx(ei,{}),i.jsxs(E,{children:[i.jsx(P,{children:"Don't have an account?"}),i.jsx(V,{to:"/signup",children:"Sign Up"})]}),i.jsx(L,{children:i.jsxs(R,{children:[i.jsx(U,{}),i.jsxs(A,{children:[i.jsx(D,{children:"350+"}),i.jsx(M,{children:"Video tutorial"})]})]})}),i.jsx(W,{children:i.jsxs(q,{children:[i.jsx(K,{}),i.jsxs(G,{children:[i.jsx(H,{children:"500"}),i.jsx(J,{children:"cal"})]})]})})]});export{pi as default};
