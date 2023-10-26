@@ -130,14 +130,14 @@ export const ProductsFilter = () => {
     }),
   };
 
-  const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
+  // const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
   const [recommended, setRecommended] = useState(optionsRec[0]);
 
   const onChangeSearch = (event) => {
     const text = event.target.value;
-    setHiddenBtnClose(text.length > 0);
+    // setHiddenBtnClose(text.length > 0);
     setSearch(text);
     dispatch(
       filterReducer({
@@ -179,7 +179,7 @@ export const ProductsFilter = () => {
         recommended: recommended.value,
       }),
     );
-    setHiddenBtnClose(false);
+    // setHiddenBtnClose(false);
   };
 
   return (
