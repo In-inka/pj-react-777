@@ -85,7 +85,7 @@ export const ProductsFilter = () => {
       marginBottom: '8px',
 
       '&:last-child': {
-        marginBottom: '0', // Убираем марджин у последней опции
+        marginBottom: '0',
       },
     }),
 
