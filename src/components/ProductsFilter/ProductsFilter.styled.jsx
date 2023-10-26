@@ -53,6 +53,7 @@ export const ProductsBtnClose = styled.button`
   position: absolute;
   top: calc(50% - 16px / 2);
   right: 40px;
+  border: none;
 `;
 
 export const ProductsBtnSearch = styled.button`
@@ -60,6 +61,7 @@ export const ProductsBtnSearch = styled.button`
   position: absolute;
   top: calc(50% - 16px / 2);
   right: 14px;
+  border: none;
 `;
 
 export const ProductsSvgClose = styled.svg`
@@ -69,7 +71,7 @@ export const ProductsSvgClose = styled.svg`
 `;
 
 export const ProductsSvgSearch = styled.svg`
-  stroke: #e6533c;
+  stroke: #fff;
   width: 18px;
   height: 18px;
 `;
