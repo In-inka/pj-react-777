@@ -36,6 +36,7 @@ const Diary = () => {
             <DaySwitch
               textSize={18}
               textWeight={'bold'}
+              textHeight={20}
               sizeArrow={18}
               iconColor={glodalColor.secondaryOrange}
             />
@@ -44,6 +45,7 @@ const Diary = () => {
             <DaySwitch
               textSize={24}
               textWeight={'bold'}
+              textHeight={32}
               sizeArrow={18}
               iconColor={glodalColor.secondaryOrange}
             />

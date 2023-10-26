@@ -54,11 +54,13 @@ export const NotMobileDaySwitch = styled.div`
 export const WrapTitle = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     height: 64px;
     margin-bottom: 32px;
+    align-items: normal;
   }
 `;
 

@@ -16,6 +16,9 @@ export const CustomDatePickerInput = styled.input`
   line-height: ${(props) => (props.$textHeight ? props.$textHeight + `px` : "24px")};
   outline: none;
   cursor: pointer;
+    @media screen and (min-width: 768px) {
+    width: 120px;
+  }
 `;
 
 export const StyledCalendarContainer = styled.div`
@@ -64,18 +67,25 @@ export const StyledIcon = styled.svg`
   position: absolute; 
   top: 0; 
   left: 100px;
-  
-
   &:hover {
     use {
       fill: #EF8964;
     }
   }
+  @media screen and (min-width: 768px) {
+    width: 24px;
+    height: 24px;   
+    top: 4px; 
+    left: 130px;
+  }  
 `;
 
 export const StyledArrow = styled.div`
 display: flex;
-margin-left: 40px;
+margin-left: 48px;
+ @media screen and (min-width: 768px) {
+    margin-left: 72px;
+  }
 
 `
 

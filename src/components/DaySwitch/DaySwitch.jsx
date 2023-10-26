@@ -13,7 +13,7 @@ import {
 import sprite from '../../sprite/sprite.svg';
 import { glodalColor } from '../../Styled/GlobalColor';
 
-const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow }) => {
+const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) => {
   const [startDate, setStartDate] = useState(new Date());
   const numericMonthFormat = 'dd/MM/yyyy';
 
@@ -36,6 +36,7 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow }) => {
             <CustomDatePickerInput
               $textSize={textSize}
               $textWeight={textWeight}
+              $textHeight={textHeight}
             />
           }
           ref={datepickerRef}
