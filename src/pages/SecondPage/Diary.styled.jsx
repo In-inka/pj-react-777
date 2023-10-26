@@ -43,10 +43,15 @@ margin-bottom: 40px;
 `;
 
 export const InfoText = styled.p`
+  margin-left: 8px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 18px;
+  color: ${glodalColor.title};  
+`;
+
+export const WrapInfoText = styled.div`
+  display: flex;
   margin-top: 20px;
   margin-bottom: 40px;
-  font-size: 14px;
-  font-style: normal ;
-  line-height: 18px;
-  color: ${glodalColor.title};
-`;
+  `;
