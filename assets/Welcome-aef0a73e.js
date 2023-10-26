@@ -1,4 +1,4 @@
-import{L as e,j as i}from"./index-b9cc7787.js";import{n}from"./emotion-styled.browser.esm-6ba80182.js";import{b as d,a as o,c as t,d as r}from"./main_bg_desktop-e9b36866.js";import{C as a}from"./ContainerStyled-bb0b3bf9.js";const p="/pj-react-777/assets/main_bg_mob_welcome_x2-dd403410.jpg",x="/pj-react-777/assets/main_bg_mob_welcome-8f07bae4.jpg",s=n.div`
+import{L as e,j as i}from"./index-8bfb38a3.js";import{n}from"./emotion-styled.browser.esm-fbd32160.js";import{b as d,a as o,c as t,d as r}from"./main_bg_desktop-e9b36866.js";import{C as a}from"./ContainerStyled-bb0b3bf9.js";const p="/pj-react-777/assets/main_bg_mob_welcome_x2-dd403410.jpg",x="/pj-react-777/assets/main_bg_mob_welcome-8f07bae4.jpg",s=n.div`
   ${a}
   padding-top: 127px;
   padding-bottom: 40px;
