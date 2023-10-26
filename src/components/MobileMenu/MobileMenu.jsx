@@ -19,10 +19,10 @@ const MobileMenu = ({ onHandleClick, toggleClickMenu }) => {
             <use href={`${sprite}#icon-x`}></use>
           </IconCross>
         </CrossButton>
-        <MobileMenuLinks className="menu-items">
-          <StyledLink href="/diary">Diary</StyledLink>
-          <StyledLink href="/products">Products</StyledLink>
-          <StyledLink href="/exercises">Exercises</StyledLink>
+        <MobileMenuLinks>
+          <StyledLink onClick={toggleClickMenu} to="/diary">Diary</StyledLink>
+          <StyledLink onClick={toggleClickMenu} to="/products">Products</StyledLink>
+          <StyledLink onClick={toggleClickMenu} to="/exercises">Exercises</StyledLink>
         </MobileMenuLinks>
         <MobileLogoutButton type="button" onClick={onHandleClick}>
           Logout
