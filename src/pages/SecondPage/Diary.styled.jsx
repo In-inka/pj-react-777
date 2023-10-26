@@ -8,8 +8,6 @@ export const Container = styled.div`
   padding-top: 40px;
   padding-bottom: 80px;
 
-  /* background-color: #482c01; */
-
   @media screen and (min-width: 375px) {
   }
   @media screen and (min-width: 768px) {
