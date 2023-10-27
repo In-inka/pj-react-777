@@ -79,5 +79,9 @@
 <symbol id="icon-trash" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M12 4h8M13.333 14v6.667M18.667 14v6.667M4 8h24M25.333 8l-0.934 14.026c-0.141 2.104-0.211 3.157-0.666 3.955-0.405 0.703-0.997 1.258-1.708 1.609l-0.023 0.010c-0.826 0.4-1.88 0.4-3.989 0.4h-4.026c-2.109 0-3.163 0-3.989-0.4-0.734-0.361-1.326-0.917-1.721-1.6l-0.010-0.019c-0.454-0.8-0.525-1.851-0.666-3.955l-0.934-14.026"></path>
 </symbol>
+<symbol id="icon-close" viewBox="0 0 32 32">
+<path fill="none" stroke="#efede8" style="stroke: var(--color1, #efede8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M24 8l-16 16"></path>
+<path fill="none" stroke="#efede8" style="stroke: var(--color1, #efede8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M8 8l16 16"></path>
+</symbol>
 </defs>
 </svg>
