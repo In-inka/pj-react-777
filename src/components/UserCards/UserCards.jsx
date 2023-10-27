@@ -5,7 +5,6 @@ import {
   ContainerCards,
   DataStatistic,
   Icon,
-  IconUser,
   Info,
   LogoutButton,
   Name,
@@ -14,16 +13,42 @@ import {
   Statistic,
   Title,
   User,
+  UserAvatar,
   UserName,
 } from './UserCards.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import authOperations from '../../redux/auth/operations';
 import sprite from '../../sprite/sprite.svg';
+import authSelectors from '../../redux/auth/auth-selectors';
+//import operations from '../../redux/auth/operations';
 
 const UserCards = () => {
+  const userName = useSelector(authSelectors.getUserName);
+  const avatar = useSelector(authSelectors.getUserAvatar);
   const dispatch = useDispatch();
   const fileInputRef = useRef(null);
 
+  /*   const handleUpdateAvatar = (newAvatar) => {
+    dispatch(
+      operations.updateUserMetricsData({
+        avatarUrl: newAvatar,
+      }),
+    );
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      handleUpdateAvatar(reader.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+*/
   const handleUploadButtonClick = () => {
     fileInputRef.current.click();
   };
@@ -35,16 +60,23 @@ const UserCards = () => {
     <ContainerCards>
       <PositionCards>
         <Cards>
-          <IconUser href="#" />
+          {avatar ? (
+            <UserAvatar src={avatar} alt="Avatar" />
+          ) : (
+            <Icon width={61} height={62} className="user">
+              <use href={`${sprite}#icon-user`}></use>
+            </Icon>
+          )}
           <div>
             <input
               className="hidden"
               type="file"
               accept="image/*"
               ref={fileInputRef}
+              //            onChange={handleFileChange}
             />{' '}
             <Post onClick={handleUploadButtonClick}>
-              <Icon width={24} height={24} className="lightOrange user">
+              <Icon width={24} height={24} className="lightOrange mark">
                 <use href={`${sprite}#icon-check_mark`}></use>
               </Icon>
             </Post>
@@ -52,7 +84,7 @@ const UserCards = () => {
         </Cards>
       </PositionCards>
       <UserName>
-        <Name>Anna Rybachok</Name>
+        <Name>{userName}</Name>
         <User>User</User>
       </UserName>
       <Info>
