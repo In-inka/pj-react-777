@@ -19,6 +19,8 @@ import { LogoIcon } from '../icons/LogoIcon';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { useEffect, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import sprite from '../../sprite/sprite.svg';
+import { Icon } from '../UserCards/UserCards.styled';
 
 const Header = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -78,7 +80,9 @@ const Header = () => {
             <Button to="/products">Products</Button>
             <Button to="/exercises">Exercises</Button>
             <SettingsIconContainer to="/profile">
-              <SettingsIcon />
+              <SettingsIcon className="set">
+                <use href={`${sprite}#icon-settings`}></use>
+              </SettingsIcon>
             </SettingsIconContainer>
             <UserIcon />
             <MenuIcon type="button" onClick={toggleClickMenu} />
@@ -86,7 +90,9 @@ const Header = () => {
               <LogoutButton type="button" onClick={onHandleClick}>
                 Logout
               </LogoutButton>
-              <LogoutIcon />
+              <LogoutIcon>
+                <use href={`${sprite}#icon-logout`}></use>
+              </LogoutIcon>
             </LogoutContainer>
           </PrivetRotesContainer>
         )}

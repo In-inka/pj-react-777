@@ -7,6 +7,11 @@ export const ContainerCards = styled.div`
   flex-direction: column;
   justify-content:center;
   align-items: center;
+   @media screen and (min-width: 1440px) {
+    border-left: 1px solid ${glodalColor.bgCards};
+    padding-left:49px;
+  }
+
 `;
 
 export const PositionCards = styled.div`
@@ -24,18 +29,15 @@ export const PositionCards = styled.div`
 
 export const IconUser = styled.img`
   max-width: 100%;
-  width: 61px;
-  height: 62px;
+  width: 90px;
+  height: 90px;
   @media screen and (min-width: 768px) {
-    width: 102px;
-    height: 102px;
+    width: 150px;
+    height: 150px;
   }
 `;
 
 export const Cards = styled.div`
-  max-width: 90px;
-  min-height: 90px;
-
   overflow: hidden;
 
   display: flex;
@@ -45,11 +47,6 @@ export const Cards = styled.div`
   border: 1px solid ${glodalColor.acceptColor};
   border-radius: 50%;
   background-color: transparent;
-
-  @media screen and (min-width: 768px) {
-    max-width: 150px;
-    min-height: 150px;
-  }
 `;
 
 export const Post = styled.button`
@@ -85,7 +82,6 @@ export const Name = styled.h3`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 8px;
-    padding-top: 32px;
     font-size: 24px;
     line-height: 1.16;
   }

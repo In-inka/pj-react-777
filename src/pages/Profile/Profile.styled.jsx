@@ -9,4 +9,16 @@ export const ContainerProfilePage = styled.div`
     padding-top: 156px;
     padding-bottom: 54px;
   }
+  @media (min-width: 1440px) {
+    padding-top: 156px;
+    padding-bottom: 54px;
+  }
+`;
+
+export const FlexContainer = styled.div`
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 26px;
+  }
 `;

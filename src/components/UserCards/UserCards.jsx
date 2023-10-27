@@ -38,9 +38,9 @@ const UserCards = () => {
           <IconUser href="#" />
           <div>
             <input
+              className="hidden"
               type="file"
               accept="image/*"
-              style={{ display: 'none' }}
               ref={fileInputRef}
             />{' '}
             <Post onClick={handleUploadButtonClick}>
