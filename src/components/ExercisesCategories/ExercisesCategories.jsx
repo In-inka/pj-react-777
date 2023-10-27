@@ -7,13 +7,13 @@ const ExercisesCategories = () => {
 
   return (
     <BoxLinksCategories>
-      <Links to={`bodyParts`} >
+      <Links to={`bodyParts`} state={{from: location}}>
         Body parts
       </Links>
-      <Links to={`muscles`} >
+      <Links to={`muscles`} state={{from: location}}>
         Muscles
       </Links>
-      <Links to={`equipment`} >
+      <Links to={`equipment`} state={{from: location}}>
         Equipment
       </Links>
     </BoxLinksCategories>

@@ -16,9 +16,10 @@ const loading = useSelector(exercisesSelectors.getIsLoading)
 const error =  useSelector(exercisesSelectors.getIsError)
   
 console.log('data', data)
+console.log('loading', loading)
   return (
     <div>
-      <ExercisesList exercises={data}/>
+      {data && <ExercisesList exercises={data}/>}
     </div>
 )
 };

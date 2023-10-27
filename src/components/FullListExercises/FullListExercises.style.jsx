@@ -157,4 +157,3 @@ export const DynamicContentInfoExercises = styled.p`
 }  */
 `
 
-
