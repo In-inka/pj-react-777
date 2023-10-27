@@ -1,49 +1,80 @@
-import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"./emotion-styled.browser.esm-6d0e720e.js";import{b as j,a as v}from"./main_bg_mob-adb912f5.js";import{b as y,a as z,c as C,d as S}from"./main_bg_desktop-e9b36866.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{u as T,a as I}from"./schemas-7f394871.js";const B=e.div`
-  ${_}
+import{L as f,b as w,j as e,o as k}from"./index-950763d0.js";import{n}from"./emotion-styled.browser.esm-008e131d.js";import{b as j,a as v,c as z,d as y,e as C,f as S}from"./main_bg_desktop-e1ac3f6f.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{u as T,a as I}from"./schemas-31feebee.js";const B=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
-  background-image: url(${j});
+  background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
+    linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+    url(${j});
   background-repeat: no-repeat;
-  background-position: 77px 241px;
+  background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${v});
+    background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${v});
+    background-repeat: no-repeat;
+    background-position: calc(50% + 38.5px) calc(50% + 120.5px);
+    background-size: 298px;
   }
 
   @media screen and (min-width: 768px) {
+    background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${z});
+    background-position: calc(50% + 165.5px) calc(50% + 65.5px);
+    background-repeat: no-repeat;
+    background-size: 437px;
     padding-top: 189px;
     padding-bottom: 48px;
-    background-image: url(${y});
-    background-repeat: no-repeat;
-    background-position: 331px 131px;
-    background-size: 437px;
-  }
 
-  @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
-    screen and (min-width: 768px) and (min-resolution: 192dpi),
-    screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${z});
-  }
+    @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+      screen and (min-width: 768px) and (min-resolution: 192dpi),
+      screen and (min-width: 768px) and (min-resolution: 2dppx) {
+      background: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+        url(${y});
+      background-position: calc(50% + 165.5px) calc(50% + 65.5px);
+      background-repeat: no-repeat;
+      background-size: 437px;
+    }
 
-  @media screen and (min-width: 1440px) {
-    padding-top: 200px;
-    padding-bottom: 210px;
-    background-repeat: no-repeat;
-    background-position: 770px 0;
-    background-size: 670px;
-    height: 800px;
-    position: relative;
-    background-image: url(${C});
-  }
+    @media screen and (min-width: 1440px) {
+      background: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${C});
+      padding-top: 200px;
+      padding-bottom: 210px;
+      background-repeat: no-repeat;
+      background-position: calc(50% + 385px) 50%;
+      background-size: 670px;
+    }
 
-  @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
-    screen and (min-width: 1440px) and (min-resolution: 192dpi),
-    screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${S});
+    @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
+      screen and (min-width: 1440px) and (min-resolution: 192dpi),
+      screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+      background: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${S});
+      background-repeat: no-repeat;
+      background-position: calc(50% + 335px) calc(50% + 65.5px);
+      background-size: 670px;
+    }
   }
-`,F=e.h1`
+`,F=n.div`
+  ${_}
+  position: relative;
+`,$=n.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
   line-height: 1.17;
@@ -51,7 +82,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     font-size: 32px;
     line-height: 1.38;
   }
-`,$=e.p`
+`,E=n.p`
   font-size: 14px;
   line-height: 1.29;
   color: rgba(239, 237, 232, 0.3);
@@ -63,7 +94,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     line-height: 1.5;
     margin-top: 16px;
   }
-`,E=e.div`
+`,P=n.div`
   display: flex;
   font-size: 12px;
   line-height: 1.5;
@@ -71,13 +102,13 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
   @media screen and (min-width: 768px) {
     padding-left: 15px;
   }
-`,P=e.p`
+`,V=n.p`
   color: rgba(239, 237, 232, 0.3);
-`,V=e(f)`
+`,L=n(f)`
   margin-left: 4px;
   color: #efede8;
   text-decoration: underline;
-`,L=e.div`
+`,R=n.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
@@ -92,9 +123,9 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     padding: 0px;
     position: absolute;
     left: 770px;
-    top: 384px;
+    top: 184px;
   }
-`,R=e.div`
+`,A=n.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -104,7 +135,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,A=e.div``,D=e.p`
+`,D=n.div``,M=n.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -112,7 +143,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     font-size: 24px;
     line-height: 1;
   }
-`,M=e.p`
+`,U=n.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -122,7 +153,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     font-size: 16px;
     line-height: 1.5;
   }
-`,U=e.div`
+`,W=n.div`
   display: block;
   width: 30px;
   height: 30px;
@@ -134,7 +165,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     height: 40px;
     margin-right: 12px;
   }
-`,W=e.div`
+`,q=n.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -145,10 +176,10 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
   @media screen and (min-width: 1440px) {
     padding-top: 0px;
     position: absolute;
-    top: 519px;
+    top: 319px;
     left: 1228px;
   }
-`,q=e.div`
+`,G=n.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -157,11 +188,11 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,G=e.div`
+`,H=n.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,H=e.p`
+`,J=n.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -172,7 +203,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     font-size: 48px;
     line-height: 1.04;
   }
-`,J=e.p`
+`,K=n.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -181,7 +212,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     font-size: 16px;
     line-height: 1.5;
   }
-`,K=e.div`
+`,N=n.div`
   display: block;
   width: 20px;
   height: 20px;
@@ -193,14 +224,14 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     height: 24px;
     margin-bottom: 12px;
   }
-`,N=e.form`
+`,O=n.form`
   margin-top: 28px;
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
     width: 364px;
   }
-`,a=e.input`
+`,t=n.input`
   outline: 0;
   outline-offset: 0;
   color: #efede8;
@@ -208,7 +239,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
   background-color: inherit;
   border-width: 1px;
   border-style: solid;
-  border-color: ${d=>d.theme.main};
+  border-color: ${a=>a.theme.main};
   border-radius: 12px;
   padding: 13px;
   font-size: 14px;
@@ -227,7 +258,7 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
       margin-top: 20px;
     }
   }
-`;a.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const l=e.label`
+`;t.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const x=n.label`
   margin: -1px;
   padding: 0;
   position: absolute;
@@ -236,12 +267,12 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
-`,O=e.div`
+`,Q=n.div`
   padding-top: 28px;
   @media screen and (min-width: 768px) {
     padding-top: 64px;
   }
-`,Q=e.button`
+`,X=n.button`
   font-size: 16px;
   line-height: 1.17;
   background-color: #e6533c;
@@ -263,27 +294,27 @@ import{L as f,b as w,j as i,o as k}from"./index-42eecfdf.js";import{n as e}from"
     font-size: 20px;
     line-height: 1.2;
   }
-`,m=e.div`
+`,g=n.div`
   display: inline-flex;
   margin-top: 4px;
-`,X=e.div`
+`,Y=n.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(216, 0, 39, 1);
-`,Y=e.p`
+`,Z=n.p`
   color: rgba(216, 0, 39, 1);
   font-size: 12px;
   line-height: 1.5;
-`,Z=e.div`
+`,ee=n.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(60, 191, 97, 1);
-`,ii=e.p`
+`,ne=n.p`
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,ei=()=>{const d=w(),g=(t,b)=>{d(k.logIn(t)),b.resetForm()},{values:p,errors:n,touched:o,isSubmitting:h,handleChange:s,handleBlur:x,handleSubmit:u}=T({initialValues:{email:"",password:""},validationSchema:I,onSubmit:g}),r=t=>i.jsxs(m,{children:[i.jsx(X,{}),i.jsx(Y,{children:t})]}),c=t=>i.jsxs(m,{children:[i.jsx(Z,{}),i.jsxs(ii,{children:["Success ",t]})]});return i.jsxs(N,{onSubmit:u,children:[n.name&&o.name&&r(n.name),i.jsx(l,{htmlFor:"email",children:"Email"}),i.jsx(a,{value:p.email,onChange:s,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:x,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?r(n.email):c("email")),i.jsx(l,{htmlFor:"password",children:"Password"}),i.jsx(a,{value:p.password,onChange:s,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:x,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?r(n.password):c("password")),i.jsx(O,{children:i.jsx(Q,{disabled:h,type:"submit",children:"Sign In"})})]})},pi=()=>i.jsxs(B,{children:[i.jsx(F,{children:"Sign In"}),i.jsx($,{children:"Welcome! Please enter your credentials to login to the platform:"}),i.jsx(ei,{}),i.jsxs(E,{children:[i.jsx(P,{children:"Don't have an account?"}),i.jsx(V,{to:"/signup",children:"Sign Up"})]}),i.jsx(L,{children:i.jsxs(R,{children:[i.jsx(U,{}),i.jsxs(A,{children:[i.jsx(D,{children:"350+"}),i.jsx(M,{children:"Video tutorial"})]})]})}),i.jsx(W,{children:i.jsxs(q,{children:[i.jsx(K,{}),i.jsxs(G,{children:[i.jsx(H,{children:"500"}),i.jsx(J,{children:"cal"})]})]})})]});export{pi as default};
+`,ie=()=>{const a=w(),m=(r,b)=>{a(k.logIn(r)),b.resetForm()},{values:p,errors:i,touched:o,isSubmitting:h,handleChange:s,handleBlur:c,handleSubmit:u}=T({initialValues:{email:"",password:""},validationSchema:I,onSubmit:m}),d=r=>e.jsxs(g,{children:[e.jsx(Y,{}),e.jsx(Z,{children:r})]}),l=r=>e.jsxs(g,{children:[e.jsx(ee,{}),e.jsxs(ne,{children:["Success ",r]})]});return e.jsxs(O,{onSubmit:u,children:[i.name&&o.name&&d(i.name),e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(t,{value:p.email,onChange:s,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:c,theme:o.email&&(i.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(i.email?d(i.email):l("email")),e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(t,{value:p.password,onChange:s,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:c,theme:o.password&&(i.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(i.password?d(i.password):l("password")),e.jsx(Q,{children:e.jsx(X,{disabled:h,type:"submit",children:"Sign In"})})]})},pe=()=>e.jsxs(B,{children:[" ",e.jsxs(F,{children:[e.jsx($,{children:"Sign In"}),e.jsx(E,{children:"Welcome! Please enter your credentials to login to the platform:"}),e.jsx(ie,{}),e.jsxs(P,{children:[e.jsx(V,{children:"Don't have an account?"}),e.jsx(L,{to:"/signup",children:"Sign Up"})]}),e.jsx(R,{children:e.jsxs(A,{children:[e.jsx(W,{}),e.jsxs(D,{children:[e.jsx(M,{children:"350+"}),e.jsx(U,{children:"Video tutorial"})]})]})}),e.jsx(q,{children:e.jsxs(G,{children:[e.jsx(N,{}),e.jsxs(H,{children:[e.jsx(J,{children:"500"}),e.jsx(K,{children:"cal"})]})]})})]})]});export{pe as default};

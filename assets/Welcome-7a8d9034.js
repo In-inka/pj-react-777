@@ -1,50 +1,83 @@
-import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.browser.esm-6d0e720e.js";import{b as d,a as o,c as t,d as r}from"./main_bg_desktop-e9b36866.js";import{C as a}from"./ContainerStyled-bb0b3bf9.js";const p="/pj-react-777/assets/main_bg_mob_welcome_x2-dd403410.jpg",x="/pj-react-777/assets/main_bg_mob_welcome-8f07bae4.jpg",s=n.div`
-  ${a}
+import{L as e,j as i}from"./index-950763d0.js";import{n}from"./emotion-styled.browser.esm-008e131d.js";import{b as d,a as o,c as a,d as r,e as t,f as p}from"./main_bg_desktop-e1ac3f6f.js";import{C as c}from"./ContainerStyled-bb0b3bf9.js";const x=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
-  background-image: url(${x});
+  background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
+    linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+    url(${d});
   background-repeat: no-repeat;
-  background-position: 77px 241px;
+  background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${p});
+    background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${o});
+    background-repeat: no-repeat;
+    background-position: calc(50% + 38.5px) calc(50% + 120.5px);
+    background-size: 298px;
   }
 
   @media screen and (min-width: 768px) {
-    height: inherit;
+    background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${a});
+    background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     padding-top: 189px;
     padding-bottom: 48px;
-    background-image: url(${d});
     background-repeat: no-repeat;
-    background-position: 331px 131px;
     background-size: 437px;
-  }
 
-  @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
-    screen and (min-width: 768px) and (min-resolution: 192dpi),
-    screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${o});
-  }
+    @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+      screen and (min-width: 768px) and (min-resolution: 192dpi),
+      screen and (min-width: 768px) and (min-resolution: 2dppx) {
+      background: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+        url(${r});
+      background-position: calc(50% + 165.5px) calc(50% + 65.5px);
+      background-position: calc(50% + 165.5px) calc(50% + 65.5px);
+      padding-top: 189px;
+      padding-bottom: 48px;
+      background-repeat: no-repeat;
+      background-size: 437px;
+    }
 
-  @media screen and (min-width: 1440px) {
-    padding-top: 200px;
-    padding-bottom: 210px;
-    background-repeat: no-repeat;
-    background-position: 770px 0;
-    background-size: 670px;
-    height: 800px;
-    position: relative;
-    background-image: url(${t});
-  }
+    @media screen and (min-width: 1440px) {
+      background: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${t});
+      padding-top: 200px;
+      padding-bottom: 246px;
+      background-repeat: no-repeat;
+      background-position: calc(50% + 385px) 50%;
+      background-size: 670px;
+    }
 
-  @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
-    screen and (min-width: 1440px) and (min-resolution: 192dpi),
-    screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${r});
+    @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
+      screen and (min-width: 1440px) and (min-resolution: 192dpi),
+      screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+      background: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${p});
+      background-repeat: no-repeat;
+      background-position: calc(50% + 335px) calc(50% + 65.5px);
+      background-size: 670px;
+    }
   }
-`,c=n.h1`
+`,s=n.div`
+  ${c}
+  position: relative;
+`,g=n.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 38px;
   line-height: 1.05;
@@ -61,7 +94,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     margin-top: 64px;
   }
-`,g=n(e)`
+`,m=n(e)`
   display: inline-block;
   margin-right: 14px;
   font-size: 16px;
@@ -85,7 +118,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     font-size: 20px;
     line-height: 1.2;
   }
-`,m=n(e)`
+`,h=n(e)`
   display: inline-block;
   font-size: 16px;
   line-height: 1.17;
@@ -107,7 +140,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     font-size: 20px;
     line-height: 1.2;
   }
-`,h=n.div`
+`,b=n.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
@@ -122,9 +155,9 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     padding: 0px;
     position: absolute;
     left: 770px;
-    top: 384px;
+    top: 184px;
   }
-`,b=n.div`
+`,u=n.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +167,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,u=n.div``,f=n.p`
+`,f=n.div``,k=n.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -152,7 +185,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     font-size: 16px;
     line-height: 1.5;
   }
-`,k=n.div`
+`,j=n.div`
   display: block;
   width: 30px;
   height: 30px;
@@ -164,7 +197,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     height: 40px;
     margin-right: 12px;
   }
-`,j=n.div`
+`,z=n.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -175,10 +208,10 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 1440px) {
     padding-top: 0px;
     position: absolute;
-    top: 519px;
+    top: 319px;
     left: 1228px;
   }
-`,_=n.div`
+`,y=n.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -187,11 +220,11 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,z=n.div`
+`,v=n.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,y=n.p`
+`,_=n.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -202,7 +235,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     font-size: 48px;
     line-height: 1.04;
   }
-`,v=n.p`
+`,C=n.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -211,7 +244,7 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     font-size: 16px;
     line-height: 1.5;
   }
-`,C=n.div`
+`,T=n.div`
   display: block;
   width: 20px;
   height: 20px;
@@ -223,4 +256,4 @@ import{L as e,j as i}from"./index-42eecfdf.js";import{n}from"./emotion-styled.br
     height: 24px;
     margin-bottom: 12px;
   }
-`,V=()=>i.jsxs(s,{children:[i.jsx(c,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(g,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"})]}),i.jsx(h,{children:i.jsxs(b,{children:[i.jsx(k,{}),i.jsxs(u,{children:[i.jsx(f,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(j,{children:i.jsxs(_,{children:[i.jsx(C,{}),i.jsxs(z,{children:[i.jsx(y,{children:"500"}),i.jsx(v,{children:"cal"})]})]})})]});export{V as default};
+`,I=()=>i.jsx(x,{children:i.jsxs(s,{children:[i.jsx(g,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(m,{to:"/signup",children:"Sign Up"}),i.jsx(h,{to:"/signin",children:"Sign In"})]}),i.jsx(b,{children:i.jsxs(u,{children:[i.jsx(j,{}),i.jsxs(f,{children:[i.jsx(k,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(z,{children:i.jsxs(y,{children:[i.jsx(T,{}),i.jsxs(v,{children:[i.jsx(_,{children:"500"}),i.jsx(C,{children:"cal"})]})]})})]})});export{I as default};

@@ -1,4 +1,4 @@
-import{s as t,g as i}from"./index-42eecfdf.js";const e=t.h2`
+import{s as t,g as i}from"./index-950763d0.js";const e=t.h2`
   margin-bottom: 40px;
 
   font-size: 24px;
