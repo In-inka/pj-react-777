@@ -13,10 +13,12 @@ import { debounce } from 'lodash';
 import { useRef } from 'react';
 
 const MobileMenu = ({ onHandleClick, toggleClickMenu }) => {
-  const isClosedRef = useRef();
+  const isClosedBackdrop = useRef();
+  const isClosedMenu = useRef();
 
   const handleCloseClick = () => {
-    isClosedRef.current.classList.add('is-closed');
+    isClosedBackdrop.current.classList.add('is-closed');
+    isClosedMenu.current.classList.add('is-closed');
 
     const debouncedClose = debounce(() => {
       toggleClickMenu();
@@ -30,8 +32,8 @@ const MobileMenu = ({ onHandleClick, toggleClickMenu }) => {
   };
 
   return (
-    <MobileMenuContainer onClick={handleCloseClick}>
-      <Container ref={isClosedRef}>
+    <MobileMenuContainer ref={isClosedBackdrop} onClick={handleCloseClick}>
+      <Container ref={isClosedMenu}>
         <CrossButton className="close-menu-button" onClick={handleCloseClick}>
           <IconCross>
             <use href={`${sprite}#icon-x`}></use>

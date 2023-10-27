@@ -19,6 +19,25 @@ const translateOut = keyframes`
   }
 `;
 
+const BackdropIn = keyframes`
+  from {
+    background-color: transparent;
+    
+  }
+  to {
+    background-color: rgba(4, 4, 4, 0.4);
+  }
+`;
+
+const BackdropOut = keyframes`
+  from {
+    background-color: rgba(4, 4, 4, 0.4);
+  }
+  to {
+    background-color: transparent;
+  }
+`;
+
 export const MobileMenuContainer = styled.div`
   position: fixed;
   width: 100vw;
@@ -27,6 +46,12 @@ export const MobileMenuContainer = styled.div`
   top: 0;
   left: 0;
   background-color: rgba(4, 4, 4, 0.4);
+
+  animation: ${BackdropIn} 0.3s ease-in-out forwards;
+
+  &.is-closed {
+    animation: ${BackdropOut} 0.3s ease-in-out forwards;
+  }
 `;
 
 export const Container = styled.div`
