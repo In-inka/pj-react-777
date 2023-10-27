@@ -13,14 +13,14 @@ import {
 } from './SignUpForm.styled';
 import { signUpSchema } from '../../schemas/schemas';
 import { useDispatch } from 'react-redux';
-import authOperations from '../../redux/auth/operations';
+import operations from '../../redux/auth/operations';
 
 
 const SignUpForm = () => {
       const dispatch = useDispatch();
 
   const onSubmit = (values, actions) => {
-    dispatch(authOperations.register(values));   
+    dispatch(operations.register(values));   
     actions.resetForm();
   };
   

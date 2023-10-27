@@ -1,59 +1,94 @@
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import background_img_mob_x2 from '../../img/background/main_bg_mob_welcome_x2.jpg';
-import background_img_mob from '../../img/background/main_bg_mob_welcome.jpg';
+import background_img_mob_x2 from '../../img/background/main_bg_mob_x2.jpg';
+import background_img_mob from '../../img/background/main_bg_mob.jpg';
 import background_img_tab_x2 from '../../img/background/main_bg_tab_x2.jpg';
 import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
 
-export const Container = styled.div`
-  ${ContainerStyled}
+export const Section = styled.section`
   padding-top: 127px;
   padding-bottom: 40px;
-  background-image: url(${background_img_mob});
+  background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
+    linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+    url(${background_img_mob});
   background-repeat: no-repeat;
-  background-position: 77px 241px;
+  background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
-    background-image: url(${background_img_mob_x2});
+    background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${background_img_mob_x2});
+    background-repeat: no-repeat;
+    background-position: calc(50% + 38.5px) calc(50% + 120.5px);
+    background-size: 298px;
   }
 
   @media screen and (min-width: 768px) {
-    height: inherit;
+    background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${background_img_tab});
+    background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     padding-top: 189px;
     padding-bottom: 48px;
-    background-image: url(${background_img_tab});
     background-repeat: no-repeat;
-    background-position: 331px 131px;
     background-size: 437px;
-  }
 
-  @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
-    screen and (min-width: 768px) and (min-resolution: 192dpi),
-    screen and (min-width: 768px) and (min-resolution: 2dppx) {
-    background-image: url(${background_img_tab_x2});
-  }
+    @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+      screen and (min-width: 768px) and (min-resolution: 192dpi),
+      screen and (min-width: 768px) and (min-resolution: 2dppx) {
+      background: linear-gradient(
+          170deg,
+          #040404 3.66%,
+          rgba(4, 4, 4, 0) 19.15%
+        ),
+        linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+        url(${background_img_tab_x2});
+      background-position: calc(50% + 165.5px) calc(50% + 65.5px);
+      background-position: calc(50% + 165.5px) calc(50% + 65.5px);
+      padding-top: 189px;
+      padding-bottom: 48px;
+      background-repeat: no-repeat;
+      background-size: 437px;
+    }
 
-  @media screen and (min-width: 1440px) {
-    padding-top: 200px;
-    padding-bottom: 210px;
-    background-repeat: no-repeat;
-    background-position: 770px 0;
-    background-size: 670px;
-    height: 800px;
-    position: relative;
-    background-image: url(${background_img_desktop});
-  }
+    @media screen and (min-width: 1440px) {
+      background: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${background_img_desktop});
+      padding-top: 200px;
+      padding-bottom: 246px;
+      background-repeat: no-repeat;
+      background-position: calc(50% + 385px) 50%;
+      background-size: 670px;
+    }
 
-  @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
-    screen and (min-width: 1440px) and (min-resolution: 192dpi),
-    screen and (min-width: 1440px) and (min-resolution: 2dppx) {
-    background-image: url(${background_img_desktop_x2});
+    @media screen and (min-width: 1440px) and (min-device-pixel-ratio: 2),
+      screen and (min-width: 1440px) and (min-resolution: 192dpi),
+      screen and (min-width: 1440px) and (min-resolution: 2dppx) {
+      background: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${background_img_desktop_x2});
+      background-repeat: no-repeat;
+      background-position: calc(50% + 335px) calc(50% + 65.5px);
+      background-size: 670px;
+    }
   }
+`;
+
+export const Container = styled.div`
+  ${ContainerStyled}
+  position: relative;
 `;
 
 export const Title = styled.h1`
@@ -142,7 +177,7 @@ export const FlexContainer = styled.div`
     padding: 0px;
     position: absolute;
     left: 770px;
-    top: 384px;
+    top: 184px;
   }
 `;
 
@@ -207,7 +242,7 @@ export const FlexContainerB = styled.div`
   @media screen and (min-width: 1440px) {
     padding-top: 0px;
     position: absolute;
-    top: 519px;
+    top: 319px;
     left: 1228px;
   }
 `;

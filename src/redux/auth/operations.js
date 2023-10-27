@@ -57,11 +57,24 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) =>
   }
 });
 
+const updateUserMetricsData = createAsyncThunk(
+  '/userMetric',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.patch('/users/dailyMetrics', credentials);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+);
+
 const operations = {
   register,
   logIn,
   logOut,
   fetchCurrentUser,
+  updateUserMetricsData,
 };
 
 export default operations;
