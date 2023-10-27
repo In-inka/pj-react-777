@@ -9,20 +9,44 @@ import {
   IconLogout,
 } from './MobileMenu.styled';
 import sprite from '../../sprite/sprite.svg';
+import { debounce } from 'lodash';
+import { useRef } from 'react';
 
 const MobileMenu = ({ onHandleClick, toggleClickMenu }) => {
+  const isClosedRef = useRef();
+
+  const handleCloseClick = () => {
+    isClosedRef.current.classList.add('is-closed');
+
+    const debouncedClose = debounce(() => {
+      toggleClickMenu();
+    }, 400);
+
+    debouncedClose();
+
+    return () => {
+      debouncedClose.cancel();
+    };
+  };
+
   return (
-    <MobileMenuContainer>
-      <Container>
-        <CrossButton className="close-menu-button" onClick={toggleClickMenu}>
+    <MobileMenuContainer onClick={handleCloseClick}>
+      <Container ref={isClosedRef}>
+        <CrossButton className="close-menu-button" onClick={handleCloseClick}>
           <IconCross>
             <use href={`${sprite}#icon-x`}></use>
           </IconCross>
         </CrossButton>
         <MobileMenuLinks>
-          <StyledLink onClick={toggleClickMenu} to="/diary">Diary</StyledLink>
-          <StyledLink onClick={toggleClickMenu} to="/products">Products</StyledLink>
-          <StyledLink onClick={toggleClickMenu} to="/exercises">Exercises</StyledLink>
+          <StyledLink onClick={toggleClickMenu} to="/diary">
+            Diary
+          </StyledLink>
+          <StyledLink onClick={toggleClickMenu} to="/products">
+            Products
+          </StyledLink>
+          <StyledLink onClick={toggleClickMenu} to="/exercises">
+            Exercises
+          </StyledLink>
         </MobileMenuLinks>
         <MobileLogoutButton type="button" onClick={onHandleClick}>
           Logout
