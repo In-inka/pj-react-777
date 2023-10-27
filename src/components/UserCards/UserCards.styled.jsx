@@ -27,7 +27,7 @@ export const PositionCards = styled.div`
   }
 `;
 
-export const IconUser = styled.img`
+export const UserAvatar = styled.img`
   max-width: 100%;
   width: 90px;
   height: 90px;
@@ -47,6 +47,12 @@ export const Cards = styled.div`
   border: 1px solid ${glodalColor.acceptColor};
   border-radius: 50%;
   background-color: transparent;
+  width: 90px;
+  height: 90px;
+  @media screen and (min-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 export const Post = styled.button`
@@ -208,6 +214,12 @@ export const Icon = styled.svg`
   }
   @media screen and (min-width: 768px) {
     &.user {
+      width: 102px;
+      height: 102px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &.mark {
       width: 32px;
       height: 32px;
     }
