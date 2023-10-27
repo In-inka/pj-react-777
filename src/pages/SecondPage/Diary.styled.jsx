@@ -8,8 +8,6 @@ export const Container = styled.div`
   padding-top: 40px;
   padding-bottom: 80px;
 
-  /* background-color: #482c01; */
-
   @media screen and (min-width: 375px) {
   }
   @media screen and (min-width: 768px) {
@@ -39,16 +37,28 @@ export const WrapDaySwitcher = styled.div`
     align-items: flex-start;
   }
 `;
-
+export const MobileDaySwitch = styled.div`
+  @media screen and (min-width: 768px) {
+    display: none;
+  }  
+`;
+export const NotMobileDaySwitch = styled.div`
+  display: none;
+  @media screen and (min-width: 768px) {
+  display: flex;
+  }
+`;
 
 export const WrapTitle = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     height: 64px;
     margin-bottom: 32px;
+    align-items: normal;
   }
 `;
 
