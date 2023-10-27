@@ -1,4 +1,4 @@
-import{s as t,g as i}from"./index-90916772.js";const n=t.div`
+import{s as t,g as i}from"./index-0d3c859b.js";const n=t.div`
   $ContainerStyled
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     width: 150px;
     height: 150px;
   }
-`;t.img`
+`,o=t.img`
   max-width: 100%;
   width: 90px;
   height: 90px;
@@ -28,7 +28,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     width: 150px;
     height: 150px;
   }
-`;const o=t.div`
+`,d=t.div`
   overflow: hidden;
 
   display: flex;
@@ -44,7 +44,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     width: 150px;
     height: 150px;
   }
-`,d=t.button`
+`,p=t.button`
   position: absolute;
   bottom: -12px;
   left: 34px;
@@ -56,7 +56,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
 
   background-color: transparent;
   border: none;
-`,p=t.div`
+`,r=t.div`
   padding-top: 32px;
 
   text-align: center;
@@ -64,7 +64,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
   @media screen and (min-width: 768px) {
     padding-top: 32px;
   }
-`,r=t.h3`
+`,s=t.h3`
   margin-bottom: 4px;
 
   font-size: 18px;
@@ -76,7 +76,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     font-size: 24px;
     line-height: 1.16;
   }
-`,s=t.p`
+`,x=t.p`
   margin-bottom: 40px;
 
   font-size: 18px;
@@ -88,7 +88,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     font-size: 14px;
     line-height: 1.28;
   }
-`,x=t.div`
+`,h=t.div`
   margin-bottom: 40px;
 
   display: flex;
@@ -100,7 +100,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     margin-bottom: 32px;
     gap: 16px;
   }
-`,h=t.div`
+`,c=t.div`
   width: 168px;
   min-height: 96px;
   padding: 14px;
@@ -132,14 +132,14 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     font-weight: 700;
     line-height: 1.33;
   }
-`,c=t.div`
+`,g=t.div`
   display: flex;
   gap: 6px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,g=t.div`
+`,l=t.div`
   margin-bottom: 41px;
   max-width: 335px;
 
@@ -158,7 +158,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     font-size: 16px;
     line-height: 1.5;
   }
-`,l=t.button`
+`,w=t.button`
   margin-bottom: 18px;
   margin-left: auto;
 
@@ -179,7 +179,7 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
     font-size: 16px;
     line-height: 1.5;
   }
-`,w=t.svg`
+`,f=t.svg`
   &.orange {
     fill: ${i.secondaryOrange};
   }
@@ -202,4 +202,4 @@ import{s as t,g as i}from"./index-90916772.js";const n=t.div`
   &.stroke {
     stroke: ${i.secondaryOrange};
   }
-`;export{g as A,n as C,m as D,w as I,l as L,r as N,a as P,h as S,c as T,p as U,o as a,d as b,s as c,x as d};
+`;export{l as A,n as C,m as D,f as I,w as L,s as N,a as P,c as S,g as T,o as U,d as a,p as b,r as c,x as d,h as e};

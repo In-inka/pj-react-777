@@ -1,0 +1,1 @@
+import{b as o,r as i,l as c,u as s,j as r}from"./index-0d3c859b.js";import{E as x}from"./ExercisesList-95ffd603.js";import{e}from"./exercisesSelectors-192ff74d.js";const E=()=>{const t=o();i.useEffect(()=>{t(c.getExercisesByBodyParts())},[]);const a=s(e.getExercisesData);return s(e.getIsLoading),s(e.getIsError),r.jsx("div",{children:r.jsx(x,{exercises:a})})};export{E as default};
