@@ -78,7 +78,7 @@ const Header = () => {
           <PrivetRotesContainer>
             <Button to="/diary">Diary</Button>
             <Button to="/products">Products</Button>
-            <Button to="/exercises">Exercises</Button>
+            <Button to="/exercises/bodyParts">Exercises</Button>
             <SettingsIconContainer to="/profile">
               <SettingsIcon className="set">
                 <use href={`${sprite}#icon-settings`}></use>

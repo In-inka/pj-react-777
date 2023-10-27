@@ -4,6 +4,7 @@ import { ContainerStyled } from "../../Styled/ContainerStyled";
 
 export const ContainerExercisesPage = styled.div`
     ${ContainerStyled}
+    padding-top: 101px;
     `
 
 export const BoxTitlePage = styled.div`
@@ -12,7 +13,7 @@ justify-content: center;
 flex-direction: column;
 gap: 20px;
 margin-bottom: 40px;
-margin-top: 40px;
+/* margin-top: 40px; */
 @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;

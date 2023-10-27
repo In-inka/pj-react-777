@@ -17,3 +17,5 @@ export const glodalColor = {
   outlineSuccessful: '#3CBF61',
   outlineWarning: '#E9101D',
 };
+
+
