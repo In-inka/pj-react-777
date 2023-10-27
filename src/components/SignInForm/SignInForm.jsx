@@ -13,13 +13,13 @@ import {
 } from './SignInForm.styled';
 import { signInSchema } from '../../schemas/schemas';
 import { useDispatch } from 'react-redux';
-import authOperations from '../../redux/auth/operations';
+import operations from '../../redux/auth/operations';
 
 const SignInForm = () => {
         const dispatch = useDispatch();
 
         const onSubmit = (values, actions) => {
-          dispatch(authOperations.logIn(values));
+          dispatch(operations.logIn(values));
           actions.resetForm();
   };
   

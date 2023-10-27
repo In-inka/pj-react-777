@@ -10,22 +10,25 @@ const STATUS = {
 };
 
 const initialState = {
-  user: { name: null, email: null },
-  bodyParams: {
-    height: null,
-    currentWeight: null,
-    desiredWeight: null,
-    birthday: null,
-    blood: null,
-    sex: null,
-    levelActivity:null,
+  user: {
+    name: null,
+    email: null,
+    avatarUrl: null,
+    bodyParams: {
+      height: null,
+      currentWeight: null,
+      desiredWeight: null,
+      birthday: null,
+      blood: null,
+      sex: null,
+      levelActivity: null,
+    },
   },
-  avatarUrl:null,
-  token: null,
   isLoggedIn: false,
-  isLoading:false,
+  isLoading: false,
   isFetchingCurrentUser: false,
   error: '',
+  token: null,
 };
 
 const authSlice = createSlice({
