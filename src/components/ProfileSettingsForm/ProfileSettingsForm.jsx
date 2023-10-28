@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
+
 import {
   BloodRadio,
   BoxBasicInfo,
@@ -32,6 +33,7 @@ import {
   StyledCalendarContainer,
 } from '../DaySwitch/DaySwitch.styled';
 import * as yup from 'yup';
+import format from 'date-fns/format';
 
 const schema = yup.object().shape({
   name: yup.string().required('Name is required'),
@@ -73,37 +75,39 @@ const schema = yup.object().shape({
 });
 
 const ProfileSettingsForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  /*   const [startDate, setStartDate] = useState(new Date());*/
 
-  const numericMonthFormat = 'dd.MM.yyyy';
+  const [selectedDate, setSelectedDate] = useState(Date.now());
+  //const date = format(selectedDate, 'dd-MM-yyyy');
 
-  const datepickerRef = useRef(null);
-
-  // console.log('startDate', startDate)
-  // console.log('startDate', datepickerRef)
   const formik = useFormik({
     initialValues: {
       name: '',
       height: '',
       currentWeight: '',
       desiredWeight: '',
-      birthday: '',
+      birthday: selectedDate,
       blood: '',
       sex: '',
       levelActivity: '',
     },
+    validationSchema: schema,
     onSubmit: async (values, actions) => {
+      /*       if (Object.keys(formik.errors).length > 0) {
+        console.error('Форма містить помилки:', formik.errors);
+      } */
+
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log('data', values);
       actions.resetForm();
     },
   });
 
-  const validBirthday = (date) => {
+  /*   const validBirthday = (date) => {
     const newDate = new Date();
     const validDate = newDate.getFullYear() - date.getFullYear();
     console.log('validDate', validDate);
-  };
+  }; */
 
   return (
     <div>
@@ -158,15 +162,29 @@ const ProfileSettingsForm = () => {
               />
             </BoxItemInputs>
             <BoxItemInputs>
-              {/* <DaySwitch/> */}
               <StyledCalendarContainer>
                 <BoxInputData>
-                  <DatePicker
+                  {/*                   <DatePicker
                     selected={startDate}
                     onChange={(date) => validBirthday(date)}
                     dateFormat={numericMonthFormat}
                     customInput={<CustomDatePickerInput />}
                     ref={datepickerRef}
+                  /> */}
+
+                  <DatePicker
+                    selected={selectedDate}
+                    onChange={(date) => {
+                      setSelectedDate(date);
+                      formik.setFieldValue(
+                        'birthday',
+                        format(date, 'yyyy-MM-dd'),
+                      );
+                    }}
+                    customInput={<CustomDatePickerInput />}
+                    dateFormat={'yyyy-MM-dd'}
+                    calendarStartDay={1}
+                    formatWeekDay={(day) => day.substr(0, 1)}
                   />
                 </BoxInputData>
               </StyledCalendarContainer>
@@ -337,8 +355,12 @@ const ProfileSettingsForm = () => {
           </RadioWrapper>
           {/* </RadioContainer> */}
         </ContainerRadioActive>
-        <Button type="submit" text={'Save'} />
+        {/*   <Button type="submit" text={'Save'} /> */}
+        <Button type={'submit'} text={'Save'} />
       </FormProfile>
+      {/*       {Object.keys(formik.errors).length > 0 ? (
+        <div style={{ color: 'red' }}>{formik.errors.value}</div>
+      ) : null} */}
     </div>
   );
 };

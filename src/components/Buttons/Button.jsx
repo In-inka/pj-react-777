@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Btn = styled.button`
   font-size: 16px;
@@ -24,9 +24,6 @@ const Btn = styled.button`
   }
 `;
 
-
-export const Button = ({text}) => {
-    return <Btn>
-        {text}
-    </Btn>
-}
+export const Button = ({ text, type }) => {
+  return <Btn type={type}>{text}</Btn>;
+};

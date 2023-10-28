@@ -9,13 +9,13 @@ export const PrimaryButton = ({ text, onClick, width, height }) => {
   };
 
   return (
-    <button className='primaryButton' style={buttonStyle} onClick={onClick}>
+    <button className="primaryButton" style={buttonStyle} onClick={onClick}>
       {text}
     </button>
   );
 };
 
-export const SecondaryButton = ({ text, onClick, width, height}) => {
+export const SecondaryButton = ({ text, onClick, width, height }) => {
   const buttonStyle = {
     color: '#EFEDE8',
     backgroundColor: 'transparent',
@@ -26,7 +26,7 @@ export const SecondaryButton = ({ text, onClick, width, height}) => {
   };
 
   return (
-    <button className='secondaryButton' style={buttonStyle} onClick={onClick}>
+    <button className="secondaryButton" style={buttonStyle} onClick={onClick}>
       {text}
     </button>
   );
