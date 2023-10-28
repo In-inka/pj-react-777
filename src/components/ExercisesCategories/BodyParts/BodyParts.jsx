@@ -8,22 +8,25 @@ import { useEffect } from "react";
 
 
 
-const BodyParts = () => {
+const BodyParts = ({categoryName}) => {
   const dispatch = useDispatch();
   
   useEffect(()=>{
     dispatch(exercisesOperations.getExercisesByBodyParts())
-  },[])
+  },[dispatch])
 
 const data = useSelector(exercisesSelectors.getExercisesData)
 const loading = useSelector(exercisesSelectors.getIsLoading)
 const error =  useSelector(exercisesSelectors.getIsError)
-  
+// console.log('categoryName', categoryName)  
+
 // console.log('data', data)
+
+// console.log('error', error)
 
 return (
     <div>
-      <ExercisesList exercises={data}/>
+      { data && <ExercisesList exercises={data}/>}
     </div>
 )
 };
