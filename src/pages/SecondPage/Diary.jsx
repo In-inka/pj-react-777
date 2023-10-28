@@ -20,6 +20,7 @@ import {
 } from './Diary.styled';
 
 import sprite from '../../sprite/sprite.svg';
+import { useEffect, useState } from 'react';
 const Icon = styled.svg`
   &.orange {
     fill: ${({ theme }) => theme.secondaryOrange};
@@ -27,6 +28,18 @@ const Icon = styled.svg`
 `;
 
 const Diary = () => {
+  const [date, setDate] = useState(new Date());
+  
+  const handlerDate = (sData) => {
+    // console.log('handler : ', sData);
+    setDate(date);
+  };
+
+  // useEffect(() => {
+  //   console.log("useEffect:  ", date)
+  // }, [date])
+    // console.log('Diary  ', date);
+
   return (
     <Container>
       <WrapTitle>
@@ -34,6 +47,7 @@ const Diary = () => {
         <WrapDaySwitcher>
           <MobileDaySwitch>
             <DaySwitch
+              selectDate={handlerDate}
               textSize={18}
               textWeight={'bold'}
               textHeight={20}

@@ -267,10 +267,19 @@ export const Indicator = styled.div`
 export const NotFound = styled.div`
   height: 335px;
   width: 100%;
-  color: rgb(239,237,232,0.5);
+  padding-top: 125px;
+  color: ${glodalColor.title};
   font-size: 14;
-  display: grid;
-  place-items: center;
+  font-weight: normal; 
+  line-height: 18px; 
+  text-align: center;  
+  
+  @media screen and (min-width: 768px) {
+  height: auto;
+  padding-top: 55px;
+  font-size: 16;
+  line-height: 24px; 
+  }
 `;
 
 export const WrapTitleTable = styled.div`

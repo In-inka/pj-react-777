@@ -158,7 +158,7 @@ export const TableTitleEx = () => {
   );
 };
 
-export const EmptyScreenEx = () => <NotFoundEx>Not found products</NotFoundEx>;
+export const EmptyScreenEx = () => <NotFoundEx>Not found exercises</NotFoundEx>;
 
 let choice = true;
 // let choice = false;

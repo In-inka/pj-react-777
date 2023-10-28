@@ -13,15 +13,31 @@ import {
 import sprite from '../../sprite/sprite.svg';
 import { glodalColor } from '../../Styled/GlobalColor';
 
-const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) => {
+const DaySwitch = ({
+  textSize,
+  textWeight,
+  iconColor,
+  sizeArrow,
+  textHeight,
+  selectDate,
+}) => {
   const [startDate, setStartDate] = useState(new Date());
   const numericMonthFormat = 'dd/MM/yyyy';
-
   const datepickerRef = useRef(null);
 
+  if (selectDate) {
+    selectDate(startDate);
+      }
+
+  const handler = (date)=> {
+            setStartDate(date);
+            // console.log(document.activeElement);
+            // document.activeElement.blur();
+  }
+  
   const toggleDatePicker = () => {
     if (datepickerRef.current) {
-      datepickerRef.current.setOpen(true);
+      datepickerRef.current.setOpen(true);      
     }
   };
 
@@ -30,7 +46,7 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) =
       <StyledCalendarContainer>
         <DatePicker
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={handler}
           dateFormat={numericMonthFormat}
           customInput={
             <CustomDatePickerInput
@@ -40,6 +56,7 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) =
             />
           }
           ref={datepickerRef}
+          shouldCloseOnSelect={true}
         />
         <StyledIcon onClick={toggleDatePicker} stroke={iconColor}>
           <use href={`${sprite}#icon-calendar`}></use>
@@ -52,6 +69,7 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) =
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
             color: glodalColor.bgCards,
+            userSelect: 'none',
           }}
         />
         <IoIosArrowForward
@@ -60,6 +78,7 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) =
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
             color: glodalColor.withe,
+            userSelect: 'none',
           }}
         />
       </StyledArrow>
