@@ -23,7 +23,7 @@ import {
 } from './ProfileSettingsForm.styled';
 // import { Button } from '../SignUpForm.jsx/SignUpForm.styled';
 import { useFormik } from 'formik';
-import { Button } from '../SignUpForm.jsx/SignUpForm.styled';
+import { Button } from '../Buttons/Button';
 import 'react-datepicker/dist/react-datepicker.css';
 // import ReactDatePicker from 'react-datepicker';
 import DatePicker from 'react-datepicker';
@@ -337,7 +337,7 @@ const ProfileSettingsForm = () => {
           </RadioWrapper>
           {/* </RadioContainer> */}
         </ContainerRadioActive>
-        <Button type="submit">Save</Button>
+        <Button type="submit" text={'Save'} />
       </FormProfile>
     </div>
   );
