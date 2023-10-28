@@ -1,36 +1,31 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense,  } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import ExercisesCategories from '../../components/ExercisesCategories/ExercisesCategories';
-import { TitlePage } from '../../components/TitlePage/TitlePage';
 import { BoxTitlePage, ContainerExercisesPage } from './Exercises-style';
 import BoxBtnBack from '../../components/BoxBtnBack/BoxBtnBack';
 import TitlePageExercises from '../../components/ExercisesCategories/TitlePageExercises/TitlePageExercises';
 import FullListExercises from '../../components/FullListExercises/FullListExercises';
 
-const Exercises = () => {
-  const [nameExercises, setNameExercises ] = useState('')
-  const location = useLocation()
 
-  const filterNameExercises = location.state
+
+
+const Exercises = () => {
+  const location = useLocation()
 
   const path = location.pathname
 
+  
+  const categoryExercises = localStorage.getItem("CategoryName")
+  
+  console.log('categoryExercises', categoryExercises)
 
   const handleTitle = (value)=> {
-    if (value === '/exercises'){
-      if (location.state.from) {
-
-        const name = filterNameExercises.from.nameExercises
-        useEffect(()=>{
-          setNameExercises(name)
-
-        },[])
-        return (`${name}`)
-        
-      }
-      return
+  
+   if  (value === '/exercises'){
+  
+      return `${categoryExercises}`
   }
-  else if  (value === '/exercises/bodyParts'){
+   if  (value === '/exercises/bodyParts'){
       return "Body Parts"
   }
   else if (value === '/exercises/muscles'){
@@ -45,21 +40,23 @@ const Exercises = () => {
 }
 
 
-  console.log('path', location.pathname )
-  // console.log('name', nameExercises )
+// console.log('nameExercises', nameExercises)
 
   return (
-    <ContainerExercisesPage>
-      { path === '/exercises' && <BoxBtnBack/> }
-      <BoxTitlePage>
-      <TitlePageExercises text={handleTitle(path)} />
-        <ExercisesCategories />
-      </BoxTitlePage>
-      {path === '/exercises' && <FullListExercises filter={nameExercises}/>}
-      <Suspense>
-        <Outlet />
-      </Suspense>
-    </ContainerExercisesPage>
+    // <CategoryExercisesContext.Provider value={{ func:(value)=> }}>
+      <ContainerExercisesPage>
+        { path === '/exercises' && <BoxBtnBack/> }
+        <BoxTitlePage>
+        <TitlePageExercises text={handleTitle(path)} />
+          <ExercisesCategories />
+        </BoxTitlePage>
+      
+      {path === '/exercises' && <FullListExercises filter={categoryExercises}/>}
+        <Suspense>
+          <Outlet  />
+        </Suspense>
+      </ContainerExercisesPage>
+    // </CategoryExercisesContext.Provider>
   );
 };
 

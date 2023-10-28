@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ContainerStyled } from '../../Styled/ContainerStyled';
 
 const translateIn = keyframes`
   from {
@@ -11,14 +10,14 @@ const translateIn = keyframes`
   }
 `;
 
-// const translateOut = keyframes`
-//   from {
-//     transform: translateX(0);
-//   }
-//   to {
-//     transform: translateX(100%);
-//   }
-// `;
+const translateOut = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+`;
 
 export const MobileMenuContainer = styled.div`
   position: fixed;
@@ -27,19 +26,29 @@ export const MobileMenuContainer = styled.div`
   z-index: 1000;
   top: 0;
   left: 0;
-  background-color: #e6533c;
-  animation: ${translateIn} 0.3s ease-in-out forwards;
+  background-color: rgba(4, 4, 4, 0.4);
 `;
 
 export const Container = styled.div`
-  ${ContainerStyled}
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  background-color: #e6533c;
+
+  animation: ${translateIn} 0.3s ease-in-out forwards;
+
+  &.is-closed {
+    animation: ${translateOut} 0.3s ease-in-out forwards;
+  }
 
   @media screen and (min-width: 768px) {
+    width: 350px;
     padding: 32px;
   }
 `;

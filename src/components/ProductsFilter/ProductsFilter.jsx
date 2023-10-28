@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import sprite from '../../sprite/sprite.svg';
-import { filterReducer } from 'src/redux/products/sliceProducts';
+import { filterReducer } from '../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
   ProductsFilterSearch,
@@ -130,14 +130,12 @@ export const ProductsFilter = () => {
     }),
   };
 
-  // const [hiddenBtnClose, setHiddenBtnClose] = useState(false);
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
   const [recommended, setRecommended] = useState(optionsRec[0]);
 
   const onChangeSearch = (event) => {
     const text = event.target.value;
-    // setHiddenBtnClose(text.length > 0);
     setSearch(text);
     dispatch(
       filterReducer({
@@ -179,7 +177,6 @@ export const ProductsFilter = () => {
         recommended: recommended.value,
       }),
     );
-    // setHiddenBtnClose(false);
   };
 
   return (
