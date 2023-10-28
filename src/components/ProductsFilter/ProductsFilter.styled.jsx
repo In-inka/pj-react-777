@@ -71,7 +71,7 @@ export const ProductsSvgClose = styled.svg`
 `;
 
 export const ProductsSvgSearch = styled.svg`
-  stroke: #fff;
+  stroke: #efede8;
   width: 18px;
   height: 18px;
 `;
