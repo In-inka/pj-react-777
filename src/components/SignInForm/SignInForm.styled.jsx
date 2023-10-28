@@ -56,6 +56,7 @@ export const Label = styled.label`
 `;
 
 export const ButtonContainer = styled.div`
+  position: relative;
   padding-top: 28px;
   @media screen and (min-width: 768px) {
     padding-top: 64px;

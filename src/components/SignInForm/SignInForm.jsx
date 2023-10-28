@@ -12,15 +12,18 @@ import {
   Success,
 } from './SignInForm.styled';
 import { signInSchema } from '../../schemas/schemas';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import operations from '../../redux/auth/operations';
+import Loader from '../Loader/Loader';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const SignInForm = () => {
-        const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const isLoading = useSelector(authSelectors.getIsLoading);
 
-        const onSubmit = (values, actions) => {
-          dispatch(operations.logIn(values));
-          actions.resetForm();
+  const onSubmit = (values, actions) => {
+  dispatch(operations.logIn(values));
+    actions.resetForm();
   };
   
   const {
@@ -101,9 +104,9 @@ const SignInForm = () => {
           ? errorRender(errors.password)
           : SuccessRender('password'))}
       <ButtonContainer>
-        <Button disabled={isSubmitting} type="submit">
+        {isLoading ? <Loader /> : <Button disabled={isSubmitting} type="submit">
           Sign In
-        </Button>
+        </Button>}
       </ButtonContainer>
     </Form>
   );

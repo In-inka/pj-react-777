@@ -12,12 +12,17 @@ import {
   Success,
 } from './SignUpForm.styled';
 import { signUpSchema } from '../../schemas/schemas';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import operations from '../../redux/auth/operations';
+import authSelectors from '../../redux/auth/auth-selectors';
+import Loader from '../Loader/Loader';
 
 
 const SignUpForm = () => {
-      const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+    const isLoading = useSelector(authSelectors.getIsLoading);
+
 
   const onSubmit = (values, actions) => {
     dispatch(operations.register(values));   
@@ -70,9 +75,7 @@ const SignUpForm = () => {
         }
       />
       {touched.name &&
-        (errors.name
-          ? errorRender(errors.name)
-          : SuccessRender('name'))}{' '}
+        (errors.name ? errorRender(errors.name) : SuccessRender('name'))}{' '}
       <Label htmlFor="email">Email</Label>
       <Input
         value={values.email}
@@ -114,9 +117,13 @@ const SignUpForm = () => {
           ? errorRender(errors.password)
           : SuccessRender('password'))}{' '}
       <ButtonContainer>
-        <Button disabled={isSubmitting} type="submit">
-          Sign Up
-        </Button>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <Button disabled={isSubmitting} type="submit">
+            Sign Up
+          </Button>
+        )}
       </ButtonContainer>
     </Form>
   );
