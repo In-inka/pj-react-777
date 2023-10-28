@@ -1,4 +1,4 @@
-import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emotion-styled.browser.esm-f67802b8.js";import{b as j,a as v,c as z,d as y,e as C,f as S}from"./main_bg_desktop-e1ac3f6f.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{u as T,a as I}from"./schemas-ac6d3209.js";const B=n.section`
+import{L as f,d as w,j as e,o as k}from"./index-3319d2b1.js";import{n}from"./emotion-styled.browser.esm-c66986e0.js";import{b as j,a as y,c as v,d as C,e as S,f as z}from"./main_bg_desktop-e1ac3f6f.js";import{C as T}from"./ContainerStyled-bb0b3bf9.js";import{u as _}from"./index.esm-632ac4be.js";import{F as B,L as c,I as l,B as F,a as I,M as x,E as $,b as E,S as L,c as U}from"./SignUpForm.styled-9b738256.js";import{s as V}from"./schemas-391c71a6.js";const R=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
@@ -12,7 +12,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     screen and (min-resolution: 2dppx) {
     background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${v});
+      url(${y});
     background-repeat: no-repeat;
     background-position: calc(50% + 38.5px) calc(50% + 120.5px);
     background-size: 298px;
@@ -21,12 +21,12 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
   @media screen and (min-width: 768px) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${z});
+      url(${v});
+      padding-bottom: 48px;
+      padding-top: 189px;
     background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     background-repeat: no-repeat;
     background-size: 437px;
-    padding-top: 189px;
-    padding-bottom: 48px;
 
     @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
       screen and (min-width: 768px) and (min-resolution: 192dpi),
@@ -37,7 +37,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${y});
+        url(${C});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-repeat: no-repeat;
       background-size: 437px;
@@ -49,9 +49,9 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${C});
+        url(${S});
       padding-top: 200px;
-      padding-bottom: 210px;
+      padding-bottom: 114px;
       background-repeat: no-repeat;
       background-position: calc(50% + 385px) 50%;
       background-size: 670px;
@@ -65,16 +65,16 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${S});
+        url(${z});
       background-repeat: no-repeat;
       background-position: calc(50% + 335px) calc(50% + 65.5px);
       background-size: 670px;
     }
   }
-`,F=n.div`
-  ${_}
+`,A=n.div`
+  ${T}
   position: relative;
-`,$=n.h1`
+`,P=n.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
   line-height: 1.17;
@@ -82,7 +82,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     font-size: 32px;
     line-height: 1.38;
   }
-`,E=n.p`
+`,M=n.p`
   font-size: 14px;
   line-height: 1.29;
   color: rgba(239, 237, 232, 0.3);
@@ -94,7 +94,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     line-height: 1.5;
     margin-top: 16px;
   }
-`,P=n.div`
+`,N=n.div`
   display: flex;
   font-size: 12px;
   line-height: 1.5;
@@ -102,20 +102,20 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
   @media screen and (min-width: 768px) {
     padding-left: 15px;
   }
-`,V=n.p`
+`,D=n.p`
   color: rgba(239, 237, 232, 0.3);
-`,L=n(f)`
+`,q=n(f)`
   margin-left: 4px;
   color: #efede8;
   text-decoration: underline;
-`,R=n.div`
+`,G=n.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 117px;
+  padding-top: 35px;
   @media screen and (min-width: 768px) {
-    padding-top: 135px;
+    padding-top: 39px;
     justify-content: left;
     padding-left: 299px;
   }
@@ -125,7 +125,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     left: 770px;
     top: 184px;
   }
-`,A=n.div`
+`,H=n.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +135,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,D=n.div``,M=n.p`
+`,J=n.div``,K=n.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -143,7 +143,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     font-size: 24px;
     line-height: 1;
   }
-`,U=n.p`
+`,O=n.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -153,7 +153,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     font-size: 16px;
     line-height: 1.5;
   }
-`,W=n.div`
+`,Q=n.div`
   display: block;
   width: 30px;
   height: 30px;
@@ -165,7 +165,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     height: 40px;
     margin-right: 12px;
   }
-`,q=n.div`
+`,W=n.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -179,7 +179,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     top: 319px;
     left: 1228px;
   }
-`,G=n.div`
+`,X=n.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -188,11 +188,11 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,H=n.div`
+`,Y=n.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,J=n.p`
+`,Z=n.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -203,7 +203,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     font-size: 48px;
     line-height: 1.04;
   }
-`,K=n.p`
+`,ee=n.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -212,7 +212,7 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     font-size: 16px;
     line-height: 1.5;
   }
-`,N=n.div`
+`,ne=n.div`
   display: block;
   width: 20px;
   height: 20px;
@@ -224,97 +224,4 @@ import{L as f,d as w,j as e,o as k}from"./index-1151a808.js";import{n}from"./emo
     height: 24px;
     margin-bottom: 12px;
   }
-`,O=n.form`
-  margin-top: 28px;
-
-  @media screen and (min-width: 768px) {
-    margin-top: 32px;
-    width: 364px;
-  }
-`,t=n.input`
-  outline: 0;
-  outline-offset: 0;
-  color: #efede8;
-  width: 100%;
-  background-color: inherit;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${a=>a.theme.main};
-  border-radius: 12px;
-  padding: 13px;
-  font-size: 14px;
-  line-height: 1.29;
-  &:not(:first-of-type) {
-    margin-top: 18px;
-  }
-  &:hover,
-  &:focus {
-    border-color: rgba(230, 83, 60, 1);
-  }
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 1.5;
-    &:not(:first-of-type) {
-      margin-top: 20px;
-    }
-  }
-`;t.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const x=n.label`
-  margin: -1px;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-`,Q=n.div`
-  padding-top: 28px;
-  @media screen and (min-width: 768px) {
-    padding-top: 64px;
-  }
-`,X=n.button`
-  font-size: 16px;
-  line-height: 1.17;
-  background-color: #e6533c;
-  color: #efede8;
-  border-radius: 12px;
-  border: none;
-  padding: 12px 40px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    background-color: #ef8964;
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 16px 60px;
-    font-size: 20px;
-    line-height: 1.2;
-  }
-`,g=n.div`
-  display: inline-flex;
-  margin-top: 4px;
-`,Y=n.div`
-  margin-right: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: rgba(216, 0, 39, 1);
-`,Z=n.p`
-  color: rgba(216, 0, 39, 1);
-  font-size: 12px;
-  line-height: 1.5;
-`,ee=n.div`
-  margin-right: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: rgba(60, 191, 97, 1);
-`,ne=n.p`
-  color: rgba(60, 191, 97, 1);
-  font-size: 12px;
-  line-height: 1.5;
-`,ie=()=>{const a=w(),m=(r,b)=>{a(k.logIn(r)),b.resetForm()},{values:p,errors:i,touched:o,isSubmitting:h,handleChange:s,handleBlur:c,handleSubmit:u}=T({initialValues:{email:"",password:""},validationSchema:I,onSubmit:m}),d=r=>e.jsxs(g,{children:[e.jsx(Y,{}),e.jsx(Z,{children:r})]}),l=r=>e.jsxs(g,{children:[e.jsx(ee,{}),e.jsxs(ne,{children:["Success ",r]})]});return e.jsxs(O,{onSubmit:u,children:[i.name&&o.name&&d(i.name),e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(t,{value:p.email,onChange:s,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:c,theme:o.email&&(i.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(i.email?d(i.email):l("email")),e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(t,{value:p.password,onChange:s,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:c,theme:o.password&&(i.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(i.password?d(i.password):l("password")),e.jsx(Q,{children:e.jsx(X,{disabled:h,type:"submit",children:"Sign In"})})]})},pe=()=>e.jsxs(B,{children:[" ",e.jsxs(F,{children:[e.jsx($,{children:"Sign In"}),e.jsx(E,{children:"Welcome! Please enter your credentials to login to the platform:"}),e.jsx(ie,{}),e.jsxs(P,{children:[e.jsx(V,{children:"Don't have an account?"}),e.jsx(L,{to:"/signup",children:"Sign Up"})]}),e.jsx(R,{children:e.jsxs(A,{children:[e.jsx(W,{}),e.jsxs(D,{children:[e.jsx(M,{children:"350+"}),e.jsx(U,{children:"Video tutorial"})]})]})}),e.jsx(q,{children:e.jsxs(G,{children:[e.jsx(N,{}),e.jsxs(H,{children:[e.jsx(J,{children:"500"}),e.jsx(K,{children:"cal"})]})]})})]})]});export{pe as default};
+`,ie=()=>{const g=w(),m=(r,b)=>{g(k.register(r)),b.resetForm()},{values:d,errors:i,touched:a,isSubmitting:h,handleChange:o,handleBlur:t,handleSubmit:u}=_({initialValues:{name:"",email:"",password:""},validationSchema:V,onSubmit:m}),s=r=>e.jsxs(x,{children:[" ",e.jsx($,{}),e.jsx(E,{children:r})]}),p=r=>e.jsxs(x,{children:[e.jsx(L,{}),e.jsxs(U,{children:["Success ",r]})]});return e.jsxs(B,{onSubmit:u,children:[e.jsx(c,{htmlFor:"name",children:"Name"}),e.jsx(l,{value:d.name,onChange:o,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:t,theme:a.name&&(i.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.name&&(i.name?s(i.name):p("name"))," ",e.jsx(c,{htmlFor:"email",children:"Email"}),e.jsx(l,{value:d.email,onChange:o,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:t,theme:a.email&&(i.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.email&&(i.email?s(i.email):p("email"))," ",e.jsx(c,{htmlFor:"password",children:"Password"}),e.jsx(l,{value:d.password,onChange:o,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:t,theme:a.password&&(i.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),a.password&&(i.password?s(i.password):p("password"))," ",e.jsx(F,{children:e.jsx(I,{disabled:h,type:"submit",children:"Sign Up"})})]})},ce=()=>e.jsx(R,{children:e.jsxs(A,{children:[e.jsx(P,{children:"Sign Up"}),e.jsx(M,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ie,{}),e.jsxs(N,{children:[e.jsx(D,{children:"Already have account?"}),e.jsx(q,{to:"/signin",children:"Sign In"})]}),e.jsx(G,{children:e.jsxs(H,{children:[e.jsx(Q,{}),e.jsxs(J,{children:[e.jsx(K,{children:"350+"}),e.jsx(O,{children:"Video tutorial"})]})]})}),e.jsx(W,{children:e.jsxs(X,{children:[e.jsx(ne,{}),e.jsxs(Y,{children:[e.jsx(Z,{children:"500"}),e.jsx(ee,{children:"cal"})]})]})})]})});export{ce as default};
