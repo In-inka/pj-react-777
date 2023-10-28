@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import sprite from '../../sprite/sprite.svg';
-import { filterReducer } from 'src/redux/products/sliceProducts';
+import { filterReducer } from '../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
   ProductsFilterSearch,
