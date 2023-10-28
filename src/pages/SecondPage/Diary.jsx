@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 import { glodalColor } from '../../Styled/GlobalColor';
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
@@ -29,6 +30,8 @@ const Icon = styled.svg`
 
 const Diary = () => {
   const [date, setDate] = useState(new Date());
+
+  
   
   const handlerDate = (sData) => {
     // console.log('handler : ', sData);

@@ -152,8 +152,8 @@ export const TableTitle = () => {
 export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
 
 // тестовый массив объектов
-// let choice = true;
-let choice = false;
+let choice = true;
+// let choice = false;
 
 const products = !choice
   ? []
