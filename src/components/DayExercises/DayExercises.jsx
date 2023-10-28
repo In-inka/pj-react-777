@@ -160,8 +160,8 @@ export const TableTitleEx = () => {
 
 export const EmptyScreenEx = () => <NotFoundEx>Not found exercises</NotFoundEx>;
 
-let choice = true;
-// let choice = false;
+// let choice = true;
+let choice = false;
 
 const exercises = !choice
   ? []
