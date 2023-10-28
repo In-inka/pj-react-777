@@ -26,7 +26,6 @@ function Loader({cls}) {
         strokeWidth="5"
         animationDuration="0.75"
         width="100%"
-        height="100%"
         visible={true}
         borderColor="#E6533C"
         barColor="#EFEDE8"
