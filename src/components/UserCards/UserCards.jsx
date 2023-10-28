@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import {
   Attention,
   Cards,
@@ -19,39 +19,32 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from '../../redux/auth/operations';
 import sprite from '../../sprite/sprite.svg';
+import { useFilePicker } from 'use-file-picker';
+import {
+  FileAmountLimitValidator,
+  FileTypeValidator,
+} from 'use-file-picker/validators';
 import authSelectors from '../../redux/auth/auth-selectors';
-//import operations from '../../redux/auth/operations';
 
 const UserCards = () => {
   const userName = useSelector(authSelectors.getUserName);
-  const avatar = useSelector(authSelectors.getUserAvatar);
+  const [avatar, setAvatar] = useState(null);
   const dispatch = useDispatch();
-  const fileInputRef = useRef(null);
-
-  /*   const handleUpdateAvatar = (newAvatar) => {
-    dispatch(
-      operations.updateUserMetricsData({
-        avatarUrl: newAvatar,
-      }),
-    );
-  };
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      handleUpdateAvatar(reader.result);
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  };
-*/
-  const handleUploadButtonClick = () => {
-    fileInputRef.current.click();
-  };
+  const { openFilePicker } = useFilePicker({
+    readAs: 'DataURL',
+    accept: 'image/*',
+    multiple: true,
+    validators: [
+      new FileAmountLimitValidator({ max: 1 }),
+      new FileTypeValidator(['jpg']),
+    ],
+    onFilesSuccessfullySelected: ({ filesContent }) => {
+      const selectedFile = filesContent[0].content;
+      setAvatar(selectedFile);
+      const formData = new FormData();
+      formData.append('avatar', selectedFile);
+    },
+  });
 
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
@@ -68,14 +61,7 @@ const UserCards = () => {
             </Icon>
           )}
           <div>
-            <input
-              className="hidden"
-              type="file"
-              accept="image/*"
-              ref={fileInputRef}
-              //            onChange={handleFileChange}
-            />{' '}
-            <Post onClick={handleUploadButtonClick}>
+            <Post onClick={() => openFilePicker()}>
               <Icon width={24} height={24} className="lightOrange mark">
                 <use href={`${sprite}#icon-check_mark`}></use>
               </Icon>
