@@ -23,39 +23,52 @@ export const CustomDatePickerInput = styled.input`
 
 export const StyledCalendarContainer = styled.div`
 position: relative;
-  .react-datepicker {
+.react-datepicker {
  background: #EF8964;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); 
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); 
   }
 
-  .react-datepicker__current-month {
-    color: white ; 
- 
+.react-datepicker__current-month {
+color: white ; 
+ }
+
+.react-datepicker__day {
+color: white;
+ }
+
+.react-datepicker__day-name {
+color: white;
+    }
+
+.react-datepicker__time {
+color: white;
+}
+  
+.react-datepicker__triangle {
+  visibility: hidden;
+  }
+  
+.react-datepicker__header {
+background-color: #EF8964; 
+}
+
+.react-datepicker__input-container input {
+  caret-color: transparent; 
+  pointer-events: auto; 
+  cursor: pointer; 
+}
+
+.react-datepicker__day--selected {
+color: white;
+background-color:black;
+border-radius:50%;
   }
 
-  .react-datepicker__day {
+  .react-datepicker__day:hover {
     color: white;
- 
-  }
-
-  .react-datepicker__day-name {
-    color: white;
-    
-  }
-
- 
-
-  .react-datepicker__time {
-    color: white;
-    
-   
-  }
-  .react-datepicker__triangle {
-    visibility: hidden;
-  }
-  .react-datepicker__header {
-    background-color: #EF8964; 
+    background-color:black;
+    border-radius:50%;
   }
 `;
 
@@ -88,7 +101,6 @@ margin-left: 48px;
   }
 
 `
-
 
 
 
