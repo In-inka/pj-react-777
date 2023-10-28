@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import sprite from '../../sprite/sprite.svg';
+import { getProductsList } from '../../redux/products/operationsProducts';
 import { filterReducer } from '../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
@@ -79,8 +80,8 @@ export const ProductsFilter = () => {
       backgroundColor: isSelected
         ? 'rgba(28, 28, 28, 1)'
         : isFocused
-        ? 'rgba(28, 28, 28, 1)'
-        : 'rgba(28, 28, 28, 1)', //active option and hover background
+          ? 'rgba(28, 28, 28, 1)'
+          : 'rgba(28, 28, 28, 1)', //active option and hover background
       color: isSelected ? '#E6533C' : '#EFEDE8', //text color of the active option in the list
       marginBottom: '8px',
 
@@ -141,31 +142,33 @@ export const ProductsFilter = () => {
       filterReducer({
         search: text,
         category: category.value,
-        recommended: recommended.value,
-      }),
+        recommended: recommended.value
+      })
     );
   };
 
   const onCategoriesChange = (event) => {
-    setCategory(event);
-    dispatch(
+    setCategory(event)
+    const { payload } = dispatch(
       filterReducer({
-        category: event.value,
         search,
-        recommended: recommended.value,
-      }),
+        category: event.value,
+        recommended: recommended.value
+      })
     );
+    dispatch(getProductsList(payload))
   };
 
   const onRecomendedChange = (event) => {
     setRecommended(event);
-    dispatch(
+    const { payload } = dispatch(
       filterReducer({
-        recommended: event.value,
         search,
         category: category.value,
-      }),
+        recommended: event.value
+      })
     );
+    dispatch(getProductsList(payload))
   };
 
   const delTextInput = () => {
@@ -174,10 +177,20 @@ export const ProductsFilter = () => {
       filterReducer({
         search: '',
         category: category.value,
-        recommended: recommended.value,
-      }),
+        recommended: recommended.value
+      })
     );
   };
+
+  const onSubmit = () => {
+    const { payload } = dispatch(
+      filterReducer({
+        search,
+        category: category.value,
+        recommended: recommended.value
+      }));
+    dispatch(getProductsList(payload))
+  }
 
   return (
     <ProductsFilterList>
@@ -190,12 +203,13 @@ export const ProductsFilter = () => {
             type="text"
             placeholder="Search"
           />
-          <ProductsBtnClose onClick={delTextInput} type="button">
+          {search && <ProductsBtnClose onClick={delTextInput} type="button">
             <ProductsSvgClose>
               <use href={`${sprite}#icon-x`}></use>
             </ProductsSvgClose>
           </ProductsBtnClose>
-          <ProductsBtnSearch type="button">
+          }
+          <ProductsBtnSearch onClick={onSubmit} type="button">
             <ProductsSvgSearch>
               <use href={`${sprite}#icon-search`}></use>
             </ProductsSvgSearch>
