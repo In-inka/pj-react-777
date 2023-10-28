@@ -7,6 +7,7 @@ import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 
 import Loading from '../Loading/Loading';
 
+
 const FullListExercises = ({filter}) => {
     const dispatch = useDispatch();
 
@@ -21,15 +22,15 @@ useEffect(()=>{
   const loading = useSelector(exercisesSelectors.getIsLoading)
   const error =  useSelector(exercisesSelectors.getIsError)
     
-  console.log('data', data)
 
 
-const filterArry = data.filter((el)=>{ return el.bodyPart === filter})
 
-console.log('filterArry', filterArry)
+const filterArry = data.filter((el)=>{ return el.bodyPart === filter || el.target === filter || el.equipment === filter})
+
 
   return (
     <ContainerFullExercises>
+        
         {loading && <Loading/>}
         {filterArry && filterArry.map((item)=>{
             return(
