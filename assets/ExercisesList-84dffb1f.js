@@ -1,4 +1,4 @@
-import{s as t,g as l,k as x,j as i,L as p}from"./index-55a0c92b.js";const g=t.div`
+import{s as i,g as x,k as p,j as t,L as g}from"./index-9105a374.js";const h=i.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -13,7 +13,7 @@ import{s as t,g as l,k as x,j as i,L as p}from"./index-55a0c92b.js";const g=t.di
     column-gap: 16px;
 }
 
-`,m=t.div`
+`,m=i.div`
     background-image: linear-gradient(0deg, rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)),
     linear-gradient(0deg, rgba(239, 237, 232, 0.2), rgba(239, 237, 232, 0.2));
     position: relative;
@@ -33,29 +33,29 @@ import{s as t,g as l,k as x,j as i,L as p}from"./index-55a0c92b.js";const g=t.di
 @media screen and (min-width: 1140px){
     width: 236px;
 }
-`,h=t.img`
+`,f=i.img`
     position: absolute;
     z-index: -1;
     /* width: 100%;
     height: 100%; */
 
-`,f=t.div`
+`,u=i.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2px;
-`,u=t.h3`
+`,w=i.h3`
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0px;
     text-align: center;
     font-weight: 400;
     text-transform: capitalize;
-    color: ${l.withe};
-    `,w=t.p`
+    color: ${x.withe};
+    `,j=i.p`
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0px;
     color: rgba(239, 237, 232, 0.4);
-`,b=({exercises:o})=>{const s=o,r=x(),c=async e=>{const d=e.currentTarget.id,a=s.filter(n=>n._id===d).map(n=>n.name).join();return r.nameExercises=a,a};return i.jsx("div",{className:"swiper",children:i.jsx(g,{children:s.map(e=>i.jsx(p,{to:"/exercises",state:{from:r},children:i.jsxs(m,{id:e._id,onClick:c,children:[i.jsx(h,{src:e.imgURL,alt:e.name}),i.jsxs(f,{children:[i.jsx(u,{children:e.name}),i.jsx(w,{children:e.filter})]})]})},e._id))})})};export{b as E};
+`,y=({exercises:o})=>{const a=p(),n=o;console.log("first");const c=async e=>{const r=e.currentTarget;if(r){const l=r.id,d=n.filter(s=>s._id===l).map(s=>s.name).join();localStorage.setItem("CategoryName",d)}};return t.jsx(h,{children:n&&n.map(e=>t.jsx(g,{to:"/exercises",state:{from:a},children:t.jsxs(m,{id:e._id,onClick:c,children:[t.jsx(f,{src:e.imgURL,alt:e.name}),t.jsxs(u,{children:[t.jsx(w,{children:e.name}),t.jsx(j,{children:e.filter})]})]})},e._id))})};export{y as E};

@@ -1,4 +1,4 @@
-import{L as f,d as w,j as e,o as k}from"./index-55a0c92b.js";import{n as i}from"./emotion-styled.browser.esm-3b58e33d.js";import{b as j,a as v,c as z,d as y,e as C,f as S}from"./main_bg_desktop-e1ac3f6f.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{u as T}from"./index.esm-9074caed.js";import{a as I}from"./schemas-60a751a1.js";const B=i.section`
+import{L as f,d as w,j as e,o as k}from"./index-9105a374.js";import{n as i}from"./emotion-styled.browser.esm-668a3a34.js";import{b as j,a as v,c as z,d as y,e as C,f as S}from"./main_bg_desktop-e1ac3f6f.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{u as T}from"./index.esm-481201d0.js";import{a as I}from"./schemas-326ce079.js";const B=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
