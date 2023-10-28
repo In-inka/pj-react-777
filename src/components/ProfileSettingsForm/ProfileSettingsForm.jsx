@@ -34,6 +34,8 @@ import {
 } from '../DaySwitch/DaySwitch.styled';
 import * as yup from 'yup';
 import format from 'date-fns/format';
+import operations from '../../redux/auth/operations';
+import { useDispatch } from 'react-redux';
 
 const schema = yup.object().shape({
   name: yup.string().required('Name is required'),
@@ -76,6 +78,7 @@ const schema = yup.object().shape({
 
 const ProfileSettingsForm = () => {
   /*   const [startDate, setStartDate] = useState(new Date());*/
+  const dispatch = useDispatch();
 
   const [selectedDate, setSelectedDate] = useState(Date.now());
   //const date = format(selectedDate, 'dd-MM-yyyy');
@@ -98,6 +101,7 @@ const ProfileSettingsForm = () => {
       } */
 
       await new Promise((resolve) => setTimeout(resolve, 1000));
+      dispatch(operations.updateUserMetricsData(values));
       console.log('data', values);
       actions.resetForm();
     },
