@@ -1,6 +1,5 @@
 import { useFormik } from 'formik';
 import {
-  Button,
   ButtonContainer,
   Error,
   MessageContainer,
@@ -16,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import operations from '../../redux/auth/operations';
 import Loader from '../Loader/Loader';
 import authSelectors from '../../redux/auth/auth-selectors';
+import { Button } from '../Buttons/Button';
 
 const SignInForm = () => {
   const dispatch = useDispatch();
@@ -104,9 +104,10 @@ const SignInForm = () => {
           ? errorRender(errors.password)
           : SuccessRender('password'))}
       <ButtonContainer>
-        {isLoading ? <Loader /> : <Button disabled={isSubmitting} type="submit">
-          Sign In
-        </Button>}
+        {isLoading ? (
+          <Loader cls={'yellowBtn'} />
+        ) : (
+          <Button disabled={isSubmitting} type="submit" text={"Sign In"}/>        )}
       </ButtonContainer>
     </Form>
   );

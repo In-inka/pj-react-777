@@ -29,7 +29,7 @@ import { BloodRadio,
     RadioWrapper   } from './ProfileSettingsForm.styled';
 // import { Button } from '../SignUpForm.jsx/SignUpForm.styled';
 import { useFormik } from 'formik';
-import { Button } from '../SignUpForm.jsx/SignUpForm.styled';
+import { Button } from '../Buttons/Button';
 import { profileSettingsSchema } from '../../schemas/schemas';
 import { DaySwitch } from '../DaySwitch/DaySwitch';
 import "react-datepicker/dist/react-datepicker.css";
@@ -312,7 +312,7 @@ const ProfileSettingsForm = () => {
                         {/* </RadioContainer> */}
                 </ContainerRadioActive>
                 
-                    <Button disabled={isSubmitting} type="submit" >Save</Button>
+                <Button disabled={isSubmitting} type="submit" text={"Save"} />
             </FormProfile>
                 
         </div>

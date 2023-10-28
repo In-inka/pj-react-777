@@ -5,26 +5,31 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 43px;
-  width: 130px;
-  background-color: #e6533c;
   border-radius: 12px;
   border: none;
-  @media screen and (min-width: 768px) {
-    height: 56px;
-    width: 183px;
+  &.yellowBtn {
+    background-color: #e6533c;
+    height: 43px;
+    width: 130px;
+    @media screen and (min-width: 768px) {
+      height: 56px;
+      width: 183px;
+    }
   }
 `;
 
-function Loader() {
+function Loader({cls}) {
   return (
-    <Container>
+    <Container className={cls}>
       <ProgressBar
         strokeColor="grey"
         strokeWidth="5"
         animationDuration="0.75"
         width="100%"
+        height="100%"
         visible={true}
+        borderColor="#E6533C"
+        barColor="#EFEDE8"
       />
     </Container>
   );

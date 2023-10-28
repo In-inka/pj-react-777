@@ -1,6 +1,5 @@
 import { useFormik } from 'formik';
 import {
-  Button,
   ButtonContainer,
   Error,
   MessageContainer,
@@ -16,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import operations from '../../redux/auth/operations';
 import authSelectors from '../../redux/auth/auth-selectors';
 import Loader from '../Loader/Loader';
+import { Button } from '../Buttons/Button';
 
 
 const SignUpForm = () => {
@@ -118,11 +118,9 @@ const SignUpForm = () => {
           : SuccessRender('password'))}{' '}
       <ButtonContainer>
         {isLoading ? (
-          <Loader />
+          <Loader cls={'yellowBtn'} />
         ) : (
-          <Button disabled={isSubmitting} type="submit">
-            Sign Up
-          </Button>
+          <Button disabled={isSubmitting} type="submit" text={'Sign In'} />
         )}
       </ButtonContainer>
     </Form>
