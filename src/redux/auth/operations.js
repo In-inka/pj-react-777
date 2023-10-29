@@ -27,13 +27,26 @@ const register = createAsyncThunk(
 
 const logIn = createAsyncThunk('/users/logIn', async credentials => {
     try {
-        const {data} = await axios.post('/users/login', credentials);
+      const { data } = await axios.post('/users/login', credentials);
+      console.log(data.token);
         token.set(data.token);
         return data;
     } catch (error) {
     console.log(error.message);
     }
 });
+
+const updateUserAvatar = createAsyncThunk(
+  '/users/changeData',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.patch('/users/changedata', credentials);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+);
 
 const logOut = createAsyncThunk('/users/logOut', async credentials => {
   try {
@@ -54,6 +67,7 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) =>
   token.set(persistedToken);
   try {
     const { data } = await axios.get('/users');
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);
@@ -64,7 +78,7 @@ const updateUserMetricsData = createAsyncThunk(
   '/userMetric',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.patch('/users/dailyMetrics', credentials);
+      const { data } = await axios.patch('/users/dailymetrics', credentials);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -78,6 +92,7 @@ const operations = {
   logOut,
   fetchCurrentUser,
   updateUserMetricsData,
+  updateUserAvatar,
 };
 
 export default operations;

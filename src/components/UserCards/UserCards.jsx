@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Attention,
   Cards,
@@ -25,6 +25,7 @@ import {
   FileTypeValidator,
 } from 'use-file-picker/validators';
 import authSelectors from '../../redux/auth/auth-selectors';
+import operations from '../../redux/auth/operations';
 
 const UserCards = () => {
   const userName = useSelector(authSelectors.getUserName);
@@ -45,6 +46,10 @@ const UserCards = () => {
       formData.append('avatar', selectedFile);
     },
   });
+  
+  useEffect(() => {
+    dispatch(operations.updateUserAvatar(avatar))
+  }, [avatar, dispatch]);
 
   const onHandleClick = () => {
     dispatch(authOperations.logOut());

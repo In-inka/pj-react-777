@@ -1,4 +1,4 @@
-import { handleFulfilledCurrentUser, handleFulfilledLogin, handleFulfilledLogout, handleFulfilledMetricData, handleFulfilledRegister, handlePending, handlePendingCurrentUser, handleRejected, handleRejectedCurrentUser } from '../../components/services/services';
+import { handleFulfilledAvatarUpdate, handleFulfilledCurrentUser, handleFulfilledLogin, handleFulfilledLogout, handleFulfilledMetricData, handleFulfilledRegister, handlePending, handlePendingCurrentUser, handleRejected, handleRejectedCurrentUser } from '../../components/services/services';
 import authOperations from './operations';
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 
@@ -28,7 +28,7 @@ const initialState = {
   isLoading: false,
   isFetchingCurrentUser: false,
   error: '',
-  token: null,
+  token: "",
 };
 
 const authSlice = createSlice({
@@ -48,6 +48,10 @@ const authSlice = createSlice({
         handleFulfilledCurrentUser,
       )
       .addCase(
+        authOperations.updateUserAvatar.fulfilled,
+        handleFulfilledAvatarUpdate,
+      )
+      .addCase(
         authOperations.fetchCurrentUser.pending,
         handlePendingCurrentUser,
       )
@@ -60,6 +64,7 @@ const authSlice = createSlice({
           authOperations.register[STATUS.PENDING],
           authOperations.logIn[STATUS.PENDING],
           authOperations.logOut[STATUS.PENDING],
+          authOperations.updateUserAvatar[STATUS.PENDING],
           authOperations.updateUserMetricsData[STATUS.PENDING],
         ),
         handlePending,
@@ -69,10 +74,11 @@ const authSlice = createSlice({
           authOperations.register[STATUS.REJECTED],
           authOperations.logIn[STATUS.REJECTED],
           authOperations.logOut[STATUS.REJECTED],
+          authOperations.updateUserAvatar[STATUS.REJECTED],
           authOperations.updateUserMetricsData[STATUS.REJECTED],
         ),
         handleRejected,
-      );;
+      );
   }
 });
 
