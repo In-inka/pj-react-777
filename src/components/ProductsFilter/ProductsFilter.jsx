@@ -50,7 +50,7 @@ export const ProductsFilter = ({ submit }) => {
 
   const categoriesList = categories?.map((elem) => ({
     value: elem,
-    label: elem ? capitalizeFirstLeter(elem) : 'Categories',
+    label: elem ? capitalizeFirstLeter(elem) : 'All',
   }));
 
   const isMobile = useMediaQuery({ minWidth: 375 });
@@ -66,6 +66,7 @@ export const ProductsFilter = ({ submit }) => {
       ...provided,
       backgroundColor: 'trasparent', //window background
       height: height,
+      borderStyle: 'none',
       appearance: 'none', //removing default appearance
       WebkitAppearance: 'none',
       MozAppearance: 'none',
@@ -136,7 +137,7 @@ export const ProductsFilter = ({ submit }) => {
     const text = event.target.value;
     setSearchParams({
       search: text,
-      category: category || "categories",
+      category: category || "all",
       recommended: recommended || 'all'
     })
   };
@@ -144,7 +145,7 @@ export const ProductsFilter = ({ submit }) => {
   const onCategoriesChange = async (event) => {
     setSearchParams({
       search,
-      category: event.value || 'categories',
+      category: event.value || 'all',
       recommended: recommended || "all"
     })
     submit({
@@ -157,7 +158,7 @@ export const ProductsFilter = ({ submit }) => {
   const onRecomendedChange = (event) => {
     setSearchParams({
       search,
-      category: category || 'categories',
+      category: category || 'all',
       recommended: event.value || 'all'
     })
     submit({
@@ -170,7 +171,7 @@ export const ProductsFilter = ({ submit }) => {
   const delTextInput = () => {
     setSearchParams({
       search: '',
-      category: category || 'categories',
+      category: category || 'all',
       recommended: recommended || "all"
     })
   };
@@ -212,7 +213,6 @@ export const ProductsFilter = ({ submit }) => {
           <Select
             styles={customStyles}
             isSearchable={false}
-            value={capitalizeFirstLeter(category)}
             onChange={onCategoriesChange}
             placeholder="Categories"
             options={categoriesList || []}
@@ -239,7 +239,6 @@ export const ProductsFilter = ({ submit }) => {
             styles={customStyles}
             isSearchable={false}
             onChange={onRecomendedChange}
-            value={capitalizeFirstLeter(recommended)}
             theme={(theme) => ({
               ...theme,
 

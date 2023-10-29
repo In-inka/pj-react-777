@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -18,10 +18,10 @@ const Products = () => {
   const isLoading = useSelector(selectIsLoadingProduct);
   const [searchParams] = useSearchParams({});
   const dispatch = useDispatch();
-  const fetching = async (filterParams) => {
+  const fetching = useCallback(async (filterParams) => {
     try {
       if (filterParams) {
-        if (filterParams.category === "categories") {
+        if (filterParams.category === "all") {
           filterParams.category = ""
         }
         if (filterParams.recommended === "all") {
@@ -37,28 +37,29 @@ const Products = () => {
     } catch (error) {
       console.log(error);
     }
-  }
-    useEffect(() => {
-      const props = Object.fromEntries(searchParams.entries());
-      if (Object.values(props).some(value => value !== '')) {
-        fetching(props);
-      } else {
-        fetching()
-      }
-    }, []);
+  }, [dispatch])
 
-    return (
-      <Container>
-        <ProductsFilterText>Filters</ProductsFilterText>
-        <ProductsFunc>
-          <ProductsTitle>Products</ProductsTitle>
-          <ProductsFilter submit={fetching} />
-        </ProductsFunc>
-        {!isLoading && products !== null ?
-          (<ProductsList products={products} />) :
-          (<Loader cls={'yellowBtn'} />)}
-      </Container>
-    );
-  };
+  useEffect(() => {
+    const props = Object.fromEntries(searchParams.entries());
+    if (Object.values(props).some(value => value !== '')) {
+      fetching(props);
+    } else {
+      fetching()
+    }
+  }, []);
 
-  export default Products;
+  return (
+    <Container>
+      <ProductsFilterText>Filters</ProductsFilterText>
+      <ProductsFunc>
+        <ProductsTitle>Products</ProductsTitle>
+        <ProductsFilter submit={fetching} />
+      </ProductsFunc>
+      {!isLoading && products !== null ?
+        (<ProductsList products={products} />) :
+        (<Loader cls={'yellowBtn'} />)}
+    </Container>
+  );
+};
+
+export default Products;
