@@ -65,10 +65,8 @@ export const DayExercises = () => {
 // exercises;
 export const ExercisesTable = ({ exercises }) => {
    
-  console.log('exercises : ', exercises);
-  
-
-   // burnedCalories,
+  // console.log('exercises : ', exercises);
+  // burnedCalories,
   //   exerciseId: { bodyPart, equipment, name, target,
   //     // _id
   //   },

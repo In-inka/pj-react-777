@@ -8,6 +8,9 @@ import {
 } from './DayDashboard.styled';
 
 import sprite from '../../sprite/sprite.svg';
+import { useSelector } from 'react-redux';
+import diarySelectors from '../../redux/diary/diarySelectors';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const Icon = styled.svg`
   &.orange {
@@ -16,19 +19,36 @@ const Icon = styled.svg`
 `;
 
 const DayDashboard = () => {
-  const calorieIntake = 2200;
+  
+  const caloriesIntake = 2200;
   const normOfSports = 110;
-  const caloriesConsumed = 2300;
+
+  const caloriesIntake1 = useSelector(authSelectors.getUserMetricData);
+
+  console.log('calorInt1 : ', caloriesIntake1);
+
+
+  const caloriesConsumed = useSelector(
+    diarySelectors.getDiary,
+  ).consumedCalories;
+  const caloriesBurned = useSelector(diarySelectors.getDiary).burnedCalories;
+
+  
+  // const caloriesConsumed = 2300;
   // const caloriesConsumed = 707;
-  const caloriesBurned = 855;
-  const restOfCalories = -100;
-  // const restOfCalories = 1493;
+  
+  // const caloriesBurned = 855;
+
+// console.log('calBurned : ', caloriesBurned);
+
+  const restOfCalories = caloriesIntake - caloriesConsumed;
+  // const restOfCalories = -10;
   const restOfSports = 30;
   // const restOfSports = 85;
 
   return (
     <Container>
-      <Card value={calorieIntake}>Daily calorie intake</Card>
+      <Card value={caloriesIntake}>Daily calorie intake</Card>
       <Card value={normOfSports}>Daily norm of sports</Card>
       <Card value={caloriesConsumed}>Calories consumed</Card>
       <Card value={caloriesBurned}>Calories burned</Card>

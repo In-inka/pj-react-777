@@ -71,7 +71,7 @@ export const ContentContainerCard = styled.div`
   ${(props) => {
     // console.log(props.title);
     switch (true) {
-      case props.title === 'The rest of the calories' && props.value === -100:
+      case props.title === 'The rest of the calories' && props.value < 0:
         return `
           border-color: ${glodalColor.red};          
         `;
