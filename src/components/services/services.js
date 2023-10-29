@@ -28,7 +28,7 @@ export const handleFulfilledLogout = (state) => {
       state.user.email = null;
     state.user.avatarUrl = null;
   state.user.bodyParams = bodyParamsReset;
-      state.token = null;
+      state.token = "";
       state.isLoggedIn = false;
       state.isLoading = false;
 };
@@ -48,6 +48,11 @@ export const handleFulfilledMetricData = (state, { payload }) => {
     state.user.bodyParams = payload.ResponseBody.bodyParams;
       state.isLoading = false;
 };
+
+export const handleFulfilledAvatarUpdate = (state) => {
+  state.isLoading = false;
+};
+
 
 export const handlePendingCurrentUser = (state) => {
       state.isFetchingCurrentUser = true;
@@ -86,7 +91,21 @@ export const handleFulfilledDeleteExercise = (state, { payload }) => {
   );
 };
 
+export const handleFulfilledFilterExercisesBody = (state, { payload }) => {
+  state.filter.body.push(payload);
+  state.isLoading = false;
+};
 
+
+export const handleFulfilledFilterExercisesEquipment = (state, { payload }) => {
+  state.filter.equipment.push(payload);
+  state.isLoading = false;
+};
+
+export const handleFulfilledFilterExercisesMuscles = (state, { payload }) => {
+  state.filter.muscles.push(payload);
+  state.isLoading = false;
+};
 
 export const handleFulfilled = (state, { payload }) => {
   state.data = payload;
