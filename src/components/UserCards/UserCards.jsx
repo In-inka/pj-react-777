@@ -43,12 +43,14 @@ const UserCards = () => {
       const selectedFile = filesContent[0].content;
       setAvatar(selectedFile);
       const formData = new FormData();
-      formData.append('avatar', selectedFile);
+      formData.append(selectedFile);
     },
   });
   
   useEffect(() => {
-    dispatch(operations.updateUserAvatar(avatar))
+    if (avatar) {
+          dispatch(operations.updateUserAvatar(avatar));
+    }
   }, [avatar, dispatch]);
 
   const onHandleClick = () => {

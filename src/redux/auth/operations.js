@@ -25,15 +25,14 @@ const register = createAsyncThunk(
   },
 );
 
-const logIn = createAsyncThunk('/users/logIn', async credentials => {
-    try {
-      const { data } = await axios.post('/users/login', credentials);
-      console.log(data.token);
-        token.set(data.token);
-        return data;
-    } catch (error) {
-    console.log(error.message);
-    }
+const logIn = createAsyncThunk('/users/logIn', async (credentials, thunkAPI) => {
+  try {
+    const { data } = await axios.post('/users/login', credentials);
+    token.set(data.token);
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
 });
 
 const updateUserAvatar = createAsyncThunk(
@@ -48,14 +47,17 @@ const updateUserAvatar = createAsyncThunk(
   },
 );
 
-const logOut = createAsyncThunk('/users/logOut', async credentials => {
-  try {
+const logOut = createAsyncThunk(
+  '/users/logOut',
+  async (credentials, thunkAPI) => {
+    try {
       await axios.post('/users/logout', credentials);
       token.unset();
-  } catch (error) {
-    console.log(error.message);
-  }
-});
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+);
 
 
 const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
@@ -67,7 +69,6 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) =>
   token.set(persistedToken);
   try {
     const { data } = await axios.get('/users');
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);
