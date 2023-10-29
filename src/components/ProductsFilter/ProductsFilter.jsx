@@ -44,9 +44,8 @@ const categories = [
   'vegetables and herbs',
 ];
 
-export const ProductsFilter = () => {
+export const ProductsFilter = ({ filtered }) => {
   const dispatch = useDispatch();
-
   const capitalizeFirstLeter = (string) => {
     const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
     return newString;
@@ -135,6 +134,12 @@ export const ProductsFilter = () => {
   const [category, setCategory] = useState('');
   const [recommended, setRecommended] = useState(optionsRec[0]);
 
+  const fetchData = async (updatedFilter) => {
+    const { payload: filter } = await dispatch(filterReducer(updatedFilter));
+    const res = await dispatch(getProductsList(filter))
+    filtered(res.payload)
+  }
+
   const onChangeSearch = (event) => {
     const text = event.target.value;
     setSearch(text);
@@ -147,28 +152,23 @@ export const ProductsFilter = () => {
     );
   };
 
-  const onCategoriesChange = (event) => {
+  const onCategoriesChange = async (event) => {
     setCategory(event)
-    const { payload } = dispatch(
-      filterReducer({
-        search,
-        category: event.value,
-        recommended: recommended.value
-      })
-    );
-    dispatch(getProductsList(payload))
+    fetchData({
+      search,
+      category: event.value,
+      recommended: recommended.value
+    })
   };
 
   const onRecomendedChange = (event) => {
     setRecommended(event);
-    const { payload } = dispatch(
-      filterReducer({
-        search,
-        category: category.value,
-        recommended: event.value
-      })
-    );
-    dispatch(getProductsList(payload))
+    fetchData({
+      search,
+      category: category.value,
+      recommended: event.value
+
+    })
   };
 
   const delTextInput = () => {
@@ -183,13 +183,11 @@ export const ProductsFilter = () => {
   };
 
   const onSubmit = () => {
-    const { payload } = dispatch(
-      filterReducer({
+      fetchData({
         search,
         category: category.value,
         recommended: recommended.value
-      }));
-    dispatch(getProductsList(payload))
+      })
   }
 
   return (
