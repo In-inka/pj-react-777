@@ -27,8 +27,7 @@ import {
   Recommend,
 } from './DayProducts.styled';
 import sprite from '../../sprite/sprite.svg';
-import { glodalColor } from '../../Styled/GlobalColor';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
 
 
@@ -39,12 +38,7 @@ const Icon = styled.svg`
 `;
 
 const DayProducts = ({ children }) => {
-  const dispatch = useDispatch();  
-  const isLoading = useSelector(diarySelectors.getIsLoading);
   const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
-
-    console.log("visibleProducts : ",visibleProducts);
-
 
   return (
     <Container>
@@ -67,24 +61,7 @@ const DayProducts = ({ children }) => {
 };
 
 export const ProductsTable = ({ products }) => {
-  
-  
-  console.log("products : ", products)
 
-  const {
-    _id,
-    calories,
-    amount,
-    recommend,
-    productId: { category, title }
-  } = products[0];
-
-  console.log("oid: ",_id);
-  console.log("title: ",title);
-  console.log("category: ",category);
-  console.log("calories: ",calories);
-  console.log("weight: ",amount);
-  console.log('recommend: ', recommend);
   
   return (
     <>

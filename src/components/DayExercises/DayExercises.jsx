@@ -28,8 +28,9 @@ import {
   BurnedExTablet,
   DeleteIconWrapper,
 } from './DayExercises.styled';
-
 import sprite from '../../sprite/sprite.svg';
+import { useSelector } from 'react-redux';
+import diarySelectors from '../../redux/diary/diarySelectors';
 
 const Icon = styled.svg`
   &.orange {
@@ -37,7 +38,11 @@ const Icon = styled.svg`
   }
 `;
 
-export const DayExercises = ({ children }) => {
+export const DayExercises = () => {
+   const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
+
+  console.log('visibleExercises : ', visibleExercises);
+  
   return (
     <ContainerEx>
       <TitleMainEx>
@@ -49,22 +54,27 @@ export const DayExercises = ({ children }) => {
           </Icon>
         </StyledLinkEx>
       </TitleMainEx>
-      {!exercises.length ? (
+      {!visibleExercises.length ? (
         <EmptyScreenEx />
       ) : (
-        <ExercisesTable>{children}</ExercisesTable>
+        <ExercisesTable exercises={visibleExercises}/>
       )}
     </ContainerEx>
   );
 };
 // exercises;
-export const ExercisesTable = () => {
-  // const dispatch = useDispatch();
-  // const visibleContacts = useSelector(selectVisibleContacts);
+export const ExercisesTable = ({ exercises }) => {
+   
+  console.log('exercises : ', exercises);
+  
 
-  // const { _id: { $oid } } = products;
-  // const {groupBloodNotAllowed} = products[0];
-  // console.log($oid, ' ', groupBloodNotAllowed[1]);
+   // burnedCalories,
+  //   exerciseId: { bodyPart, equipment, name, target,
+  //     // _id
+  //   },
+  //   owner,
+  //   time,
+  //   _id
 
   return (
     <>
@@ -72,15 +82,15 @@ export const ExercisesTable = () => {
       <TableListEx>
         {exercises.map(
           ({
-            _id: { $oid },
-            bodyPart,
-            equipment,
-            name,
-            target,
             burnedCalories,
-            time,
+            exerciseId: { bodyPart, equipment, name, target,
+              // _id
+               },
+              //  owner,
+               time,
+               _id
           }) => (
-            <ListItemEx key={$oid}>
+            <ListItemEx key={_id}>
               <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
               <ItemProductEx value={equipment}>Equipment</ItemProductEx>
               <ItemProductEx value={name}>name</ItemProductEx>
