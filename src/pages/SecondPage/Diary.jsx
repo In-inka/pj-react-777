@@ -21,9 +21,10 @@ import {
   MobileDaySwitch,
   NotMobileDaySwitch,
 } from './Diary.styled';
-
 import sprite from '../../sprite/sprite.svg';
 import { useEffect, useState } from 'react';
+import authSelectors from '../../redux/auth/auth-selectors';
+import authOperations from '../../redux/auth/operations';
 const Icon = styled.svg`
   &.orange {
     fill: ${({ theme }) => theme.secondaryOrange};
@@ -40,24 +41,27 @@ function formatDate(date) {
 const Diary = () => {
   const [date, setDate] = useState(formatDate(new Date()));
   const dispatch = useDispatch();
+   
+ 
+  useEffect(() => {
+    // console.log('effect: ', date);
+    dispatch(diaryOperations.getDiary(`?date=` + date)); 
+  }, [dispatch, date]);
+ 
 
   const handlerDate = (dataFromDaySwitch) => {
-    console.log('handler : ', dataFromDaySwitch);
+    // console.log('handler : ', dataFromDaySwitch);
 
     const newDate = dataFromDaySwitch
       ? formatDate(dataFromDaySwitch)
       : formatDate(date);
-    console.log('formatingDate : ', newDate);
+    // console.log('formatingDate : ', newDate);
 
-    setDate(newDate);
+    // setDate(newDate);
 
     // return newDate;
   };
 
-  useEffect(() => {
-    console.log("effect: ", date);
-    dispatch(diaryOperations.getDiary(`?date=`+date));
-   }, [dispatch,date]);
 
   
 

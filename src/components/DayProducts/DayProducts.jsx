@@ -29,6 +29,7 @@ import {
 import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
+import diaryOperations from '../../redux/diary/diaryOperations';
 
 
 const Icon = styled.svg`
@@ -38,7 +39,6 @@ const Icon = styled.svg`
 `;
 
 const DayProducts = () => {
-  const dispatch = useDispatch();
   const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
 
   return (
@@ -62,7 +62,7 @@ const DayProducts = () => {
 };
 
 export const ProductsTable = ({ products }) => {
-
+const dispatch = useDispatch();
   
   return (
     <>
@@ -74,32 +74,35 @@ export const ProductsTable = ({ products }) => {
             calories,
             amount,
             recommend,
+            date,
             productId: { category, title },
-          }) => (
-            <ListItem key={_id}>
-              <ItemProduct value={title}>Title</ItemProduct>
-              <ItemProduct value={category}>Category</ItemProduct>
-              <WrapMobile>
-                <WrapItemProducts>
-                  <ItemProduct value={calories}>Calories</ItemProduct>
-                  <ItemProduct value={amount}>Weight</ItemProduct>
-                  <ItemProduct value={recommend}>Recommend</ItemProduct>
-                </WrapItemProducts>
-                <Button
-                  onClick={
-                    () => console.log(' del btn ')
-                    //   () => dispatch(deleteProduct(id))
-                  }
-                >
-                  <DeleteIconWrapper>
-                    <Icon width={20} height={20} className="orange">
-                      <use href={`${sprite}#icon-trash`}></use>
-                    </Icon>
-                  </DeleteIconWrapper>
-                </Button>
-              </WrapMobile>
-            </ListItem>
-          ),
+          }) => {
+              return (
+                <ListItem key={_id}>
+                  <ItemProduct value={title}>Title</ItemProduct>
+                  <ItemProduct value={category}>Category</ItemProduct>
+                  <WrapMobile>
+                    <WrapItemProducts>
+                      <ItemProduct value={calories}>Calories</ItemProduct>
+                      <ItemProduct value={amount}>Weight</ItemProduct>
+                      <ItemProduct value={recommend}>Recommend</ItemProduct>
+                    </WrapItemProducts>
+                    <Button
+                      onClick={() => {
+                        // console.log("Del Product : ", _id,"   ",date);
+                        dispatch(diaryOperations.deleteDiaryProduct({productId: _id, date}))
+                      }}
+                    >
+                      <DeleteIconWrapper>
+                        <Icon width={20} height={20} className="orange">
+                          <use href={`${sprite}#icon-trash`}></use>
+                        </Icon>
+                      </DeleteIconWrapper>
+                    </Button>
+                  </WrapMobile>
+                </ListItem>
+              );
+            },
         )}
       </TableList>
     </>

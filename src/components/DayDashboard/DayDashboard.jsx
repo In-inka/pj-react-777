@@ -100,6 +100,7 @@ const Card = ({ value, children }) => {
       min = ' min';
       break;
   }
+  if (!value) value = 0;
   return (
     <ContentContainerCard value={value} title={children}>
       <WrapperTitleCard>

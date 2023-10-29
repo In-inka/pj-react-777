@@ -26,6 +26,7 @@ const deleteDiaryProduct = createAsyncThunk(
   '/diary/deleteProduct',
   async (credentials) => {
     try {
+      console.log(" deleteDiaryProd : ", credentials)
       const { data } = await axios.delete('/diary/deleteproduct', credentials);
       return data;
     } catch (error) {
