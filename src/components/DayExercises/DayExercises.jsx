@@ -29,7 +29,7 @@ import {
   DeleteIconWrapper,
 } from './DayExercises.styled';
 import sprite from '../../sprite/sprite.svg';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
 
 const Icon = styled.svg`
@@ -39,10 +39,11 @@ const Icon = styled.svg`
 `;
 
 export const DayExercises = () => {
-   const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
 
-  console.log('visibleExercises : ', visibleExercises);
   
+
+  const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
+
   return (
     <ContainerEx>
       <TitleMainEx>

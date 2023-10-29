@@ -20,26 +20,17 @@ const Icon = styled.svg`
 
 const DayDashboard = () => {
   
-  const caloriesIntake = 2200;
-  const normOfSports = 110;
-
-  const caloriesIntake1 = useSelector(authSelectors.getUserMetricData);
-
-  console.log('calorInt1 : ', caloriesIntake1);
-
+  const caloriesIntake = useSelector(
+    authSelectors.getUserMetricData,
+  ).dailyIntakeCalories;
+  const normOfSports = useSelector(
+    authSelectors.getUserMetricData,
+  ).dailyNormOfSport;
 
   const caloriesConsumed = useSelector(
     diarySelectors.getDiary,
   ).consumedCalories;
   const caloriesBurned = useSelector(diarySelectors.getDiary).burnedCalories;
-
-  
-  // const caloriesConsumed = 2300;
-  // const caloriesConsumed = 707;
-  
-  // const caloriesBurned = 855;
-
-// console.log('calBurned : ', caloriesBurned);
 
   const restOfCalories = caloriesIntake - caloriesConsumed;
   // const restOfCalories = -10;
@@ -126,20 +117,3 @@ const Card = ({ value, children }) => {
 
 export { DayDashboard };
 
-export const TestIcon = ({ w, h, c, mr }) => {
-  return (
-    <div
-      style={{
-        // marginLeft: {ml},
-
-        minWidth: w,
-        maxWidth: w,
-        minHeight: h,
-        maxHeight: h,
-        backgroundColor: c,
-        marginRight: mr,
-        borderWidth: 0,
-      }}
-    ></div>
-  );
-};

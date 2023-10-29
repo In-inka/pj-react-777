@@ -27,7 +27,7 @@ import {
   Recommend,
 } from './DayProducts.styled';
 import sprite from '../../sprite/sprite.svg';
-import {useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
 
 
@@ -37,7 +37,8 @@ const Icon = styled.svg`
   }
 `;
 
-const DayProducts = ({ children }) => {
+const DayProducts = () => {
+  const dispatch = useDispatch();
   const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
 
   return (
@@ -142,119 +143,5 @@ export const TableTitle = () => {
 };
 
 export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
-
-// тестовый массив объектов
-let choice = true;
-// let choice = false;
-
-const products = !choice
-  ? []
-  : [
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5773',
-        },
-        weight: 100,
-        calories: 340,
-        category: 'dairy',
-        title: 'Danbo cheese',
-        groupBloodNotAllowed: {
-          1: true,
-          2: true,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5b7f',
-        },
-        weight: 100,
-        calories: 112,
-        category: 'fish',
-        title: 'marlin',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5e13',
-        },
-        weight: 100,
-        calories: 17,
-        category: 'vegetables and herbs',
-        title: 'Salads Belaya Dacha Delicate root',
-        groupBloodNotAllowed: {
-          1: true,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5b6f',
-        },
-        weight: 100,
-        calories: 160,
-        category: 'fish',
-        title: 'Cold smoked bream',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5b8d',
-        },
-        weight: 100,
-        calories: 281,
-        category: 'fish',
-        title: 'Pollock in batter',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff590d',
-        },
-        weight: 100,
-        calories: 232,
-        category: 'meat',
-        title: 'Lamb ham',
-        groupBloodNotAllowed: {
-          1: true,
-          2: true,
-          3: false,
-          4: true,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5f16',
-        },
-        weight: 100,
-        calories: 38,
-        category: 'soft drinks',
-        title: 'Pepsi',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-    ];
 
 export { DayProducts };
