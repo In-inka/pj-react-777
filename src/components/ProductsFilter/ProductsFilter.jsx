@@ -1,10 +1,6 @@
 import Select from 'react-select';
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import sprite from '../../sprite/sprite.svg';
-import { getProductsList } from '../../redux/products/operationsProducts';
-import { filterReducer } from '../../redux/products/sliceProducts';
 import {
   ProductsFilterLabel,
   ProductsFilterSearch,
@@ -15,14 +11,16 @@ import {
   SelectWrapper,
   ProductsFilterList,
 } from './ProductsFilter.styled';
+import { useSearchParams } from 'react-router-dom';
 
 const optionsRec = [
-  { value: 'all', label: 'All' },
-  { value: 'recommended', label: 'Recommended ' },
-  { value: 'notRecommended', label: 'Not recommended' },
+  { value: '', label: 'All' },
+  { value: 'true', label: 'Recommended ' },
+  { value: 'false', label: 'Not recommended' },
 ];
 
 const categories = [
+  '',
   'alcoholic drinks',
   'berries',
   'cereals',
@@ -44,8 +42,7 @@ const categories = [
   'vegetables and herbs',
 ];
 
-export const ProductsFilter = ({ filtered }) => {
-  const dispatch = useDispatch();
+export const ProductsFilter = ({ submit }) => {
   const capitalizeFirstLeter = (string) => {
     const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
     return newString;
@@ -53,7 +50,7 @@ export const ProductsFilter = ({ filtered }) => {
 
   const categoriesList = categories?.map((elem) => ({
     value: elem,
-    label: capitalizeFirstLeter(elem),
+    label: elem ? capitalizeFirstLeter(elem) : 'Categories',
   }));
 
   const isMobile = useMediaQuery({ minWidth: 375 });
@@ -130,64 +127,60 @@ export const ProductsFilter = ({ filtered }) => {
     }),
   };
 
-  const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('');
-  const [recommended, setRecommended] = useState(optionsRec[0]);
-
-  const fetchData = async (updatedFilter) => {
-    const { payload: filter } = await dispatch(filterReducer(updatedFilter));
-    const res = await dispatch(getProductsList(filter))
-    filtered(res.payload)
-  }
+  const [searchParams, setSearchParams] = useSearchParams({});
+  const search = searchParams.get('search') ?? '';
+  const category = searchParams.get('category') ?? '';
+  const recommended = searchParams.get('recommended') ?? '';
 
   const onChangeSearch = (event) => {
     const text = event.target.value;
-    setSearch(text);
-    dispatch(
-      filterReducer({
-        search: text,
-        category: category.value,
-        recommended: recommended.value
-      })
-    );
+    setSearchParams({
+      search: text,
+      category: category || "categories",
+      recommended: recommended || 'all'
+    })
   };
 
   const onCategoriesChange = async (event) => {
-    setCategory(event)
-    fetchData({
+    setSearchParams({
+      search,
+      category: event.value || 'categories',
+      recommended: recommended || "all"
+    })
+    submit({
       search,
       category: event.value,
-      recommended: recommended.value
+      recommended: recommended
     })
   };
 
   const onRecomendedChange = (event) => {
-    setRecommended(event);
-    fetchData({
+    setSearchParams({
       search,
-      category: category.value,
+      category: category || 'categories',
+      recommended: event.value || 'all'
+    })
+    submit({
+      search,
+      category: category,
       recommended: event.value
-
     })
   };
 
   const delTextInput = () => {
-    setSearch('');
-    dispatch(
-      filterReducer({
-        search: '',
-        category: category.value,
-        recommended: recommended.value
-      })
-    );
+    setSearchParams({
+      search: '',
+      category: category || 'categories',
+      recommended: recommended || "all"
+    })
   };
 
   const onSubmit = () => {
-      fetchData({
-        search,
-        category: category.value,
-        recommended: recommended.value
-      })
+    submit({
+      search,
+      category: category,
+      recommended: recommended
+    })
   }
 
   return (
@@ -219,7 +212,7 @@ export const ProductsFilter = ({ filtered }) => {
           <Select
             styles={customStyles}
             isSearchable={false}
-            value={category}
+            value={capitalizeFirstLeter(category)}
             onChange={onCategoriesChange}
             placeholder="Categories"
             options={categoriesList || []}
@@ -246,7 +239,7 @@ export const ProductsFilter = ({ filtered }) => {
             styles={customStyles}
             isSearchable={false}
             onChange={onRecomendedChange}
-            value={recommended}
+            value={capitalizeFirstLeter(recommended)}
             theme={(theme) => ({
               ...theme,
 
