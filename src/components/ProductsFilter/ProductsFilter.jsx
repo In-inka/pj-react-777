@@ -184,6 +184,12 @@ export const ProductsFilter = ({ submit }) => {
     })
   }
 
+  const onEnter = (event) => {
+    if (event.key === "Enter") {
+      onSubmit()
+    }
+  }
+
   return (
     <ProductsFilterList>
       <li>
@@ -191,6 +197,7 @@ export const ProductsFilter = ({ submit }) => {
           <ProductsFilterSearch
             value={search}
             onChange={onChangeSearch}
+            onKeyUp={onEnter}
             name="productSearch"
             type="text"
             placeholder="Search"
