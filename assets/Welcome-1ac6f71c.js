@@ -1,4 +1,4 @@
-import{L as e,j as i}from"./index-f44b395a.js";import{n}from"./emotion-styled.browser.esm-ad36edd3.js";import{b as d,a as o,c as a,d as r,e as t,f as p}from"./main_bg_desktop-e1ac3f6f.js";import{C as c}from"./ContainerStyled-bb0b3bf9.js";const x=n.section`
+import{L as e,j as i}from"./index-0422af53.js";import{n}from"./emotion-styled.browser.esm-3a256837.js";import{b as d,a as o,c as r,d as a}from"./main_bg_tab-c8ca51e2.js";import{b as t,a as p}from"./main_bg_desktop-12717d49.js";import{C as c}from"./ContainerStyled-bb0b3bf9.js";const x=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
@@ -21,7 +21,7 @@ import{L as e,j as i}from"./index-f44b395a.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${a});
+      url(${r});
     background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     padding-top: 189px;
     padding-bottom: 48px;
@@ -37,7 +37,7 @@ import{L as e,j as i}from"./index-f44b395a.js";import{n}from"./emotion-styled.br
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${r});
+        url(${a});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       padding-top: 189px;
@@ -256,4 +256,4 @@ import{L as e,j as i}from"./index-f44b395a.js";import{n}from"./emotion-styled.br
     height: 24px;
     margin-bottom: 12px;
   }
-`,I=()=>i.jsx(x,{children:i.jsxs(s,{children:[i.jsx(g,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(m,{to:"/signup",children:"Sign Up"}),i.jsx(h,{to:"/signin",children:"Sign In"})]}),i.jsx(b,{children:i.jsxs(u,{children:[i.jsx(j,{}),i.jsxs(f,{children:[i.jsx(k,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(z,{children:i.jsxs(y,{children:[i.jsx(T,{}),i.jsxs(v,{children:[i.jsx(_,{children:"500"}),i.jsx(C,{children:"cal"})]})]})})]})});export{I as default};
+`,P=()=>i.jsx(x,{children:i.jsxs(s,{children:[i.jsx(g,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(m,{to:"/signup",children:"Sign Up"}),i.jsx(h,{to:"/signin",children:"Sign In"})]}),i.jsx(b,{children:i.jsxs(u,{children:[i.jsx(j,{}),i.jsxs(f,{children:[i.jsx(k,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(z,{children:i.jsxs(y,{children:[i.jsx(T,{}),i.jsxs(v,{children:[i.jsx(_,{children:"500"}),i.jsx(C,{children:"cal"})]})]})})]})});export{P as default};

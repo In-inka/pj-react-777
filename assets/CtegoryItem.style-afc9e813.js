@@ -1,21 +1,24 @@
-import{s as i,g as x,k as p,j as t,L as g}from"./index-f44b395a.js";const h=i.div`
+import{s as t,g as p,L as g,k as h,j as i}from"./index-0422af53.js";const m=t.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-bottom: 80px;
+    width: 100%;
     @media screen and (min-width: 768px){
     flex-direction: row;
     flex-wrap: wrap;
-        
-    /* justify-content: center; */
     align-items: center;
     row-gap: 32px;
     column-gap: 16px;
 }
+`,a=t.div`
 
-`,m=i.div`
-    background-image: linear-gradient(0deg, rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)),
+    background-color: rgba(0,0,0,0);
+
+    background: linear-gradient(0deg, rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)),
     linear-gradient(0deg, rgba(239, 237, 232, 0.2), rgba(239, 237, 232, 0.2));
+
+
     position: relative;
     display: block;
     width: 100%;
@@ -26,36 +29,44 @@ import{s as i,g as x,k as p,j as t,L as g}from"./index-f44b395a.js";const h=i.di
     justify-content: center;
     align-items: center;
     overflow: hidden;
+@media screen and (min-width: 375px){
+    width: 335px;
+}
 @media screen and (min-width: 768px){
     width: 224px;
     height: 206px;
 }
-@media screen and (min-width: 1140px){
+@media screen and (min-width: 1440px){
     width: 236px;
 }
-`,f=i.img`
+`,f=t(g)`
+    width: 100%;
+`,w=t.img`
     position: absolute;
-    z-index: -1;
-    /* width: 100%;
-    height: 100%; */
-
-`,u=i.div`
+    z-index:-1;
+`,u=t.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2px;
-`,w=i.h3`
+`,b=t.h3`
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0px;
     text-align: center;
     font-weight: 400;
     text-transform: capitalize;
-    color: ${x.withe};
-    `,j=i.p`
+    color: ${p.withe};
+    `,j=t.p`
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0px;
     color: rgba(239, 237, 232, 0.4);
-`,y=({exercises:o})=>{const a=p(),n=o;console.log("first");const c=async e=>{const r=e.currentTarget;if(r){const l=r.id,d=n.filter(s=>s._id===l).map(s=>s.name).join();localStorage.setItem("CategoryName",d)}};return t.jsx(h,{children:n&&n.map(e=>t.jsx(g,{to:"/exercises",state:{from:a},children:t.jsxs(m,{id:e._id,onClick:c,children:[t.jsx(f,{src:e.imgURL,alt:e.name}),t.jsxs(u,{children:[t.jsx(w,{children:e.name}),t.jsx(j,{children:e.filter})]})]})},e._id))})};export{y as E};
+`,E=({exercises:o})=>{const c=h(),n=o,d=async e=>{const s=e.currentTarget;if(s){const l=s.id,x=n.filter(r=>r._id===l).map(r=>r.name).join();localStorage.setItem("CategoryName",x)}};return i.jsx(m,{children:n&&n.map(e=>i.jsx(a,{children:i.jsx(f,{to:"/exercises",state:{from:c},children:i.jsxs(a,{id:e._id,onClick:d,children:[i.jsx(w,{src:e.imgURL,alt:e.name}),i.jsxs(u,{children:[i.jsx(b,{children:e.name}),i.jsx(j,{children:e.filter})]})]})})},e._id))})},k=t.div`
+   display: flex;
+   height: auto;
+   height: 100%;
+   position: relative;
+
+`;export{k as B,E};
