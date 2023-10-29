@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import exercisesOperations from "../../../redux/exercises/exercisesOperations";
-import exercisesSelectors from "../../../redux/exercises/exercisesSelectors";
-import ExercisesList from "../ExercisesList/ExercisesList";
+import exercisesOperations from "../../../../redux/exercises/exercisesOperations";
+import exercisesSelectors from "../../../../redux/exercises/exercisesSelectors";
+import ExercisesList from "../../ExercisesList/ExercisesList";
+import Loading from "../../../Loading/Loading";
+import { BoxCategoryItem } from "../CtegoryItem.style";
 
 const Equipment = () => {
   const dispatch = useDispatch();
@@ -15,11 +17,11 @@ const data = useSelector(exercisesSelectors.getExercisesData)
 const loading = useSelector(exercisesSelectors.getIsLoading)
 const error =  useSelector(exercisesSelectors.getIsError)
   
-// console.log('data', data)
   return (
-    <div>
-      { data && <ExercisesList exercises={data}/>}
-    </div>
+    <BoxCategoryItem>
+      {loading && <Loading/>}
+      { !loading && data && <ExercisesList exercises={data}/>}
+    </BoxCategoryItem>
 )
 };
 

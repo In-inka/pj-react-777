@@ -1,7 +1,7 @@
 import { Suspense,  } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import ExercisesCategories from '../../components/ExercisesCategories/ExercisesCategories';
-import { BoxTitlePage, ContainerExercisesPage } from './Exercises-style';
+import { BgkPhoto, BoxTitlePage, ContainerExercisesPage,} from './Exercises.styled';
 import BoxBtnBack from '../../components/BoxBtnBack/BoxBtnBack';
 import TitlePageExercises from '../../components/ExercisesCategories/TitlePageExercises/TitlePageExercises';
 import FullListExercises from '../../components/FullListExercises/FullListExercises';
@@ -17,7 +17,7 @@ const Exercises = () => {
   
   const categoryExercises = localStorage.getItem("CategoryName")
   
-  console.log('categoryExercises', categoryExercises)
+
 
   const handleTitle = (value)=> {
   
@@ -39,11 +39,9 @@ const Exercises = () => {
   }
 }
 
-
-// console.log('nameExercises', nameExercises)
-
   return (
-    // <CategoryExercisesContext.Provider value={{ func:(value)=> }}>
+ 
+    
       <ContainerExercisesPage>
         { path === '/exercises' && <BoxBtnBack/> }
         <BoxTitlePage>
@@ -55,8 +53,10 @@ const Exercises = () => {
         <Suspense>
           <Outlet  />
         </Suspense>
-      </ContainerExercisesPage>
-    // </CategoryExercisesContext.Provider>
+     { path === '/exercises' &&  <BgkPhoto/>}
+        
+  </ContainerExercisesPage>
+
   );
 };
 

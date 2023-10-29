@@ -14,27 +14,53 @@ export const ContainerFullExercises = styled.div`
     flex-wrap: wrap;
     row-gap: 32px;
     column-gap: 16px;
+    overflow-y: auto;
+   
+    height: 726px;
+&::-webkit-scrollbar {
+  width: 8px;
+}
 
+
+/* Track */
+&::-webkit-scrollbar-track {
+  background-color: rgba(239, 237, 232, 0.1);
+
+  border-radius: 10px;
+}
+ 
+/* Handle */
+&::-webkit-scrollbar-thumb {
+  background: #EF8964; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+&::-webkit-scrollbar-thumb:hover {
+  background-color: #ec7246; 
+}
 
 }  
+
+@media screen and (min-width: 1440px){
+    width: 850px;
+    height: 487px;
+}
+
+
 `
 
 
 
 
 export const ListFullExercises = styled.div`
-
-    /* width: 335px; */
     position: relative;
-    /* height: 141px; */
     border-radius: 12px;
     border: 1px;
-    /* gap: 32px; */
     padding: 16px;
     border: 1px solid #EFEDE833;
-    background-color: rgba(0,0,0,0);
-    background: linear-gradient(0deg, rgba(239, 237, 232, 0.2), rgba(239, 237, 232, 0.2)),
-linear-gradient(0deg, rgba(239, 237, 232, 0.05), rgba(239, 237, 232, 0.05));
+    background-color: rgba(239, 237, 232, 0.05);
+    
 @media screen and (min-width: 375px){
     width: 335px;
 }  
@@ -124,9 +150,7 @@ export const ContainerInfoExercises = styled.div`
     flex-wrap: wrap;
     column-gap: 16px;
     row-gap: 4px;
-/* @media screen and (min-width: 375px){
-    gap: 16px;
-}  */
+
 
 `
 
@@ -141,9 +165,7 @@ export const StaticContentInfoExercises = styled.p`
     letter-spacing: 0px;
     text-align: left;
     color: rgba(239, 237, 232, 0.4);
-/* @media screen and (min-width: 375px){
-    font-size: 12px;
-}  */
+
 `
 
 export const DynamicContentInfoExercises = styled.p`
@@ -151,9 +173,8 @@ export const DynamicContentInfoExercises = styled.p`
     line-height: 1.5;
     letter-spacing: 0px;
     text-align: left;
+    text-transform: capitalize;
     color: ${glodalColor.withe};
-/* @media screen and (min-width: 375px){
-    font-size: 12px;
-}  */
+
 `
 
