@@ -21,8 +21,8 @@ const SignInForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(authSelectors.getIsLoading);
 
-  const onSubmit = (values, actions) => {
-  dispatch(operations.logIn(values));
+  const onSubmit = async (values, actions) => {
+    dispatch(operations.logIn(values));
     actions.resetForm();
   };
   

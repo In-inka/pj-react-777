@@ -1,11 +1,16 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import exercisesOperations from './exercisesOperations';
-import { handleFulfilled, handlePending, handleRejected } from '../../components/services/services';
+import { handleFulfilled, handleFulfilledFilterExercisesBody, handleFulfilledFilterExercisesEquipment, handleFulfilledFilterExercisesMuscles, handlePending, handleRejected } from '../../components/services/services';
 
 const initialState = {
-    data: [],
-    isLoading: false,
-    error:"",
+  data: [],
+  filter: {
+    body: [],
+    equipment: [],
+    muscles:[],
+  },
+  isLoading: false,
+  error: '',
 };
 
 const STATUS = {
@@ -19,6 +24,22 @@ export const exercisesSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
+      .addCase(
+        exercisesOperations.getExercises[STATUS.FULFILLED],
+        handleFulfilled,
+      )
+      .addCase(
+        exercisesOperations.getExercisesByBodyParts[STATUS.FULFILLED],
+        handleFulfilledFilterExercisesBody,
+      )
+      .addCase(
+        exercisesOperations.getExercisesByEquipment[STATUS.FULFILLED],
+        handleFulfilledFilterExercisesEquipment,
+      )
+      .addCase(
+        exercisesOperations.getExercisesByMuscles[STATUS.FULFILLED],
+        handleFulfilledFilterExercisesMuscles,
+      )
       .addMatcher(
         isAnyOf(
           exercisesOperations.getExercises[STATUS.PENDING],
@@ -36,15 +57,6 @@ export const exercisesSlice = createSlice({
           exercisesOperations.getExercisesByMuscles[STATUS.REJECTED],
         ),
         handleRejected,
-      )
-      .addMatcher(
-        isAnyOf(
-          exercisesOperations.getExercises[STATUS.FULFILLED],
-          exercisesOperations.getExercisesByBodyParts[STATUS.FULFILLED],
-          exercisesOperations.getExercisesByEquipment[STATUS.FULFILLED],
-          exercisesOperations.getExercisesByMuscles[STATUS.FULFILLED],
-        ),
-        handleFulfilled,
       );
   },
 });
