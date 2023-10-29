@@ -30,9 +30,9 @@ const DaySwitch = ({
       }
 
   const handler = (date)=> {
-            setStartDate(date);
-            // console.log(document.activeElement);
-            // document.activeElement.blur();
+    setStartDate(date);   
+    // console.log(selectDate);
+    // selectDate(date);
   }
   
   const toggleDatePicker = () => {

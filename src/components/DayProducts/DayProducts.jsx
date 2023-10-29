@@ -28,6 +28,9 @@ import {
 } from './DayProducts.styled';
 import sprite from '../../sprite/sprite.svg';
 import { glodalColor } from '../../Styled/GlobalColor';
+import { useDispatch, useSelector } from 'react-redux';
+import diarySelectors from '../../redux/diary/diarySelectors';
+
 
 const Icon = styled.svg`
   &.orange {
@@ -36,61 +39,73 @@ const Icon = styled.svg`
 `;
 
 const DayProducts = ({ children }) => {
+  const dispatch = useDispatch();  
+  const isLoading = useSelector(diarySelectors.getIsLoading);
+  const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
+
+    console.log("visibleProducts : ",visibleProducts);
+
+
   return (
     <Container>
       <TitleMain>
         <SubTitle>Products</SubTitle>
         <StyledLink to="/products">
           <AddProduct>Add product</AddProduct>
-          <Icon
-            width={16}
-            height={16}
-            className="orange"            
-          >
+          <Icon width={16} height={16} className="orange">
             <use href={`${sprite}#icon-start`}></use>
           </Icon>
         </StyledLink>
       </TitleMain>
-      {!products.length ? (
+      {!visibleProducts.length ? (
         <EmptyScreen />
       ) : (
-        <ProductsTable>{children}</ProductsTable>
+        <ProductsTable products={visibleProducts}/>
       )}
     </Container>
   );
 };
 
-export const ProductsTable = () => {
-  // const dispatch = useDispatch();
-  // const visibleContacts = useSelector(selectVisibleContacts);
+export const ProductsTable = ({ products }) => {
+  
+  
+  console.log("products : ", products)
 
-  // const { _id: { $oid } } = products;
-  // const {groupBloodNotAllowed} = products[0];
-  // console.log($oid, ' ', groupBloodNotAllowed[1]);
+  const {
+    _id,
+    calories,
+    amount,
+    recommend,
+    productId: { category, title }
+  } = products[0];
 
+  console.log("oid: ",_id);
+  console.log("title: ",title);
+  console.log("category: ",category);
+  console.log("calories: ",calories);
+  console.log("weight: ",amount);
+  console.log('recommend: ', recommend);
+  
   return (
     <>
       <TableTitle />
       <TableList>
         {products.map(
           ({
-            _id: { $oid },
-            title,
-            category,
+            _id,
             calories,
-            weight,
-            groupBloodNotAllowed,
+            amount,
+            recommend,
+            productId: { category, title },
           }) => (
-            <ListItem key={$oid}>
+            <ListItem key={_id}>
               <ItemProduct value={title}>Title</ItemProduct>
               <ItemProduct value={category}>Category</ItemProduct>
               <WrapMobile>
                 <WrapItemProducts>
                   <ItemProduct value={calories}>Calories</ItemProduct>
-                  <ItemProduct value={weight}>Weight</ItemProduct>
-                  <ItemProduct value={groupBloodNotAllowed[1]}>
-                    Recommend
-                  </ItemProduct>
+                  <ItemProduct value={amount}>Weight</ItemProduct>
+                  <ItemProduct value={recommend}>Recommend</ItemProduct>
                 </WrapItemProducts>
                 <Button
                   onClick={

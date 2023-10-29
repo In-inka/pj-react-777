@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
+import diaryOperations from '../../redux/diary/diaryOperations';
 import { glodalColor } from '../../Styled/GlobalColor';
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
+import DatePicker from 'react-datepicker';
 
 import {
   Container,
@@ -28,20 +30,36 @@ const Icon = styled.svg`
   }
 `;
 
-const Diary = () => {
-  const [date, setDate] = useState(new Date());
+function formatDate(date) {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
 
-  
-  
-  const handlerDate = (sData) => {
-    // console.log('handler : ', sData);
-    setDate(date);
+const Diary = () => {
+  const [date, setDate] = useState(formatDate(new Date()));
+  const dispatch = useDispatch();
+
+  const handlerDate = (dataFromDaySwitch) => {
+    console.log('handler : ', dataFromDaySwitch);
+
+    const newDate = dataFromDaySwitch
+      ? formatDate(dataFromDaySwitch)
+      : formatDate(date);
+    console.log('formatingDate : ', newDate);
+
+    setDate(newDate);
+
+    // return newDate;
   };
 
-  // useEffect(() => {
-  //   console.log("useEffect:  ", date)
-  // }, [date])
-    // console.log('Diary  ', date);
+  useEffect(() => {
+    console.log("effect: ", date);
+    dispatch(diaryOperations.getDiary(`?date=`+date));
+   }, [dispatch,date]);
+
+  
 
   return (
     <Container>
