@@ -34,6 +34,29 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+/* Track */
+*::-webkit-scrollbar-track {
+  
+  background-color: rgba(239, 237, 232, 0.1);
+  border-radius: 10px;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(239, 237, 232, 0.4);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #ec7246; 
+}
+
 body {
   background-color: #000000;
   font-family: "Roboto", sans-serif;

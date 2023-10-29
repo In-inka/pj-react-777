@@ -16,14 +16,11 @@ const Exercises = lazy(() => import('./pages/Exercises/Exercises.jsx'));
 const SignUp = lazy(() => import('./pages/SignUp/SignUp'));
 const SignIn = lazy(() => import('./pages/SignIn/SignIn'));
 const Profile = lazy(() => import('./pages/Profile/Profile'));
-const BodyParts = lazy(() =>
-  import('./components/ExercisesCategories/BodyParts/BodyParts.jsx'),
+const BodyParts = lazy(() => import('./components/ExercisesCategories/CategoryItem/BodyParts/BodyParts.jsx'),
 );
-const Muscles = lazy(() =>
-  import('./components/ExercisesCategories/Muscles/Muscles.jsx'),
+const Muscles = lazy(() => import('./components/ExercisesCategories/CategoryItem/Muscles/Muscles.jsx'),
 );
-const Equipment = lazy(() =>
-  import('./components/ExercisesCategories/Equipment/Equipment.jsx'),
+const Equipment = lazy(() => import('./components/ExercisesCategories/CategoryItem/Equipment/Equipment.jsx'),
 );
 
 function App() {

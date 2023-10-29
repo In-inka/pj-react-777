@@ -1,46 +1,32 @@
 import styled from "styled-components";
 import { glodalColor } from "../../../Styled/GlobalColor";
+import { Link } from "react-router-dom";
 
-// export const BoxSwiper = styled.Swiper`
-// /* display: flex; */
-//   width: 100%;
-//   height: 100%;
-//   margin-left: auto;
-//   margin-right: auto;
-    
-// `
-// export const ItemSwiperSlide = styled.SwiperSlide`
-//   text-align: center;
-//   font-size: 18px;
-//   background: #fff;
-//   height: calc((100% - 30px) / 2) !important;
 
-//   /* Center slide text vertically */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `
 
-export const ListExercises = styled.div`
+export const  ContainerExercises = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-bottom: 80px;
+    width: 100%;
     @media screen and (min-width: 768px){
     flex-direction: row;
     flex-wrap: wrap;
-        
-    /* justify-content: center; */
     align-items: center;
     row-gap: 32px;
     column-gap: 16px;
 }
-
 `
 
 export const ItemExercises = styled.div`
-    background-image: linear-gradient(0deg, rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)),
+
+    background-color: rgba(0,0,0,0);
+
+    background: linear-gradient(0deg, rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)),
     linear-gradient(0deg, rgba(239, 237, 232, 0.2), rgba(239, 237, 232, 0.2));
+
+
     position: relative;
     display: block;
     width: 100%;
@@ -51,21 +37,26 @@ export const ItemExercises = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+@media screen and (min-width: 375px){
+    width: 335px;
+}
 @media screen and (min-width: 768px){
     width: 224px;
     height: 206px;
 }
-@media screen and (min-width: 1140px){
+@media screen and (min-width: 1440px){
     width: 236px;
 }
 `
 
+export const LinkItem = styled(Link)`
+    width: 100%;
+`
+
+
 export const Img = styled.img`
     position: absolute;
-    z-index: -1;
-    /* width: 100%;
-    height: 100%; */
-
+    z-index:-1;
 `
 
 
@@ -93,3 +84,11 @@ export const CategoryExercises = styled.p`
     letter-spacing: 0px;
     color: rgba(239, 237, 232, 0.4);
 `
+
+
+// ===============SWIPER===============
+
+
+
+
+// ===============/SWIPER===============
