@@ -1,4 +1,4 @@
-import{L as w,d as k,u as j,b as y,j as e,o as v}from"./index-2fc245cc.js";import{n as i}from"./emotion-styled.browser.esm-f761d87f.js";import{b as z,a as S,c as C,d as T}from"./main_bg_tab-c8ca51e2.js";import{b as _,a as B}from"./main_bg_desktop-12717d49.js";import{C as F}from"./ContainerStyled-bb0b3bf9.js";import{u as I,B as L}from"./Button-1c200803.js";import{L as $,s as E}from"./Loader-156cb60a.js";import"./Hourglass-4e4731f9.js";const V=i.section`
+import{L as w,d as k,u as j,b as y,j as e,o as v}from"./index-41e0d81c.js";import{n as i}from"./emotion-styled.browser.esm-2d348711.js";import{b as z,a as S,c as C,d as T}from"./main_bg_tab-c8ca51e2.js";import{b as _,a as B}from"./main_bg_desktop-12717d49.js";import{C as F}from"./ContainerStyled-bb0b3bf9.js";import{u as I,B as L}from"./Button-721e13ce.js";import{L as $,s as E}from"./Loader-f603b283.js";import"./Hourglass-c2468abc.js";const V=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
