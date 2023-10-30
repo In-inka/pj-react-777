@@ -40,10 +40,9 @@ function formatDate(date) {
 
 const Diary = () => {
   const [date, setDate] = useState(formatDate(new Date()));
-  // const [date, setDate] = useState('29/10/2023');
+  // const [date, setDate] = useState('2/10/2023');
 
   const dispatch = useDispatch();
-
   console.log('Diary: ', date);
 
   useEffect(() => {
@@ -79,6 +78,7 @@ const Diary = () => {
           </MobileDaySwitch>
           <NotMobileDaySwitch>
             <DaySwitch
+              selectDate={handlerDate}
               textSize={24}
               textWeight={'bold'}
               textHeight={32}

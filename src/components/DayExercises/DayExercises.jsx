@@ -105,10 +105,10 @@ const dispatch = useDispatch();
 
                 <ButtonEx
                   onClick={() => {
-                    console.log(' Del Exercise : ', {
-                      exerciseId: _id,
-                      date,
-                    });
+                    // console.log(' Del Exercise : ', {
+                    //   exerciseId: _id,
+                    //   date,
+                    // });
                     dispatch(
                       diaryOperations.deleteDiaryExercise({
                         exerciseId: _id,

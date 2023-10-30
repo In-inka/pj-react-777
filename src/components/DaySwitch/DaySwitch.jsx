@@ -31,7 +31,7 @@ const DaySwitch = ({
 
   const handler = (date)=> {
     setStartDate(date);   
-    console.log(selectDate);
+    // console.log(selectDate);
     // selectDate(date);
   }
   

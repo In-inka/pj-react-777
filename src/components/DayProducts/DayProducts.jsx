@@ -88,7 +88,7 @@ const dispatch = useDispatch();
                     </WrapItemProducts>
                     <Button
                       onClick={() => {
-                        console.log("Del Product : ",{productId: _id, date});
+                        // console.log("Del Product : ",{productId: _id, date});
                         dispatch(diaryOperations.deleteDiaryProduct({productId: _id, date}))
                       }}
                     >
