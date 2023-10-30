@@ -21,10 +21,7 @@ export const  ContainerExercises = styled.div`
 
 export const ItemExercises = styled.div`
 
-    background-color: rgba(0,0,0,0);
-
-    background: linear-gradient(0deg, rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)),
-    linear-gradient(0deg, rgba(239, 237, 232, 0.2), rgba(239, 237, 232, 0.2));
+    background-color: rgb(4, 4, 4,0.30);
 
 
     position: relative;

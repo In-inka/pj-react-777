@@ -11,15 +11,15 @@ import {
 } from '../../components/services/services';
 
 const initialState = {
-  data: {
-    eatenProducts: [],
-    doneExercises: [],
-    consumedCalories: 0,
-    burnedCalories: 0,
-    sportTime: 0,
-  },
-  isLoading: false,
-  error: '',
+    data: {
+    eatenProducts:[],
+    doneExercises:[],
+    consumedCalories:0,
+    burnedCalories:0,
+    sportTime:0,
+        },
+    isLoading: false,
+    error:"",
 };
 
 const STATUS = {

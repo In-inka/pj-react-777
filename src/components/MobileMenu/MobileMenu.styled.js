@@ -40,6 +40,7 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 20px;
   background-color: #e6533c;
+  overflow-y: auto;
 
   animation: ${translateIn} 0.3s ease-in-out forwards;
 

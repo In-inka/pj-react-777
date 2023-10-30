@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { productListThunk } from './operationsProducts';
+import { getProductsList } from './operationsProducts';
 
 export const productSlice = createSlice({
   name: 'products',
@@ -20,9 +20,9 @@ export const productSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(productListThunk.pending, pending)
-      .addCase(productListThunk.fulfilled, ListFulfilled)
-      .addCase(productListThunk.rejected, rejected),
+      .addCase(getProductsList.pending, pending)
+      .addCase(getProductsList.fulfilled, ListFulfilled)
+      .addCase(getProductsList.rejected, rejected),
 });
 
 function ListFulfilled(state, { payload }) {

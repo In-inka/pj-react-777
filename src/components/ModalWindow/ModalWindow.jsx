@@ -7,7 +7,7 @@ export const ModalWindow = (props) => {
   const handleClose = () => {
     setIsOpen(false);
   };
-
+// console.log('isOpen', isOpen)
   const handleEscape = useCallback((e) => {
     if (e.key === 'Escape') {
       handleClose();

@@ -17,12 +17,12 @@ export const ProductsContainer = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    height: 635px;
-    overflow-y: scroll;
+    height: 636px;
+    overflow-y: auto;
   }
 
   @media screen and (min-width: 1440px) {
     width: 850px;
-    height: 492px;
+    height: 493px;
   }
 `;
