@@ -15,6 +15,8 @@ const initialState = {
     email: null,
     avatarUrl: null,
     bodyParams: {
+      dailyIntakeCalories:null,
+      dailyNormOfSport:null,
       height: null,
       currentWeight: null,
       desiredWeight: null,
