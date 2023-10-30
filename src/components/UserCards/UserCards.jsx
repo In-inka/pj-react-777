@@ -28,8 +28,6 @@ const UserCards = () => {
   const avatar = useSelector(authSelectors.getUserAvatar);
   const dispatch = useDispatch();
 
-  //const [avatar, setAvatar] = useState();
-
   const handleChangePhoto = async (event) => {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
@@ -41,18 +39,6 @@ const UserCards = () => {
       dispatch(authOperations.fetchCurrentUser());
     }
   };
-
-  /*   const handleFileInput = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      const filesContent = [{ content: e.target.result }];
-      handleChangePhoto(filesContent);
-    };
-
-    reader.readAsDataURL(file);
-  }; */
 
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
