@@ -1,0 +1,1 @@
+const s=e=>e.exercises.data,t=e=>e.exercises.filter.body,r=e=>e.exercises.filter.equipment,i=e=>e.exercises.filter.muscles,c=e=>e.exercises.isLoading,o=e=>e.exercises.error,n={getExercisesData:s,getIsLoading:c,getIsError:o,getFilterBody:t,getFilterEquioment:r,getFilterMuscles:i};export{n as e};
