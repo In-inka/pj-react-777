@@ -52,9 +52,7 @@ const deleteDiaryExercise = createAsyncThunk(
   '/diary/deleteExercise',
   async (credentials) => {
     try {
-      const { data } = await axios.delete('/diary/deleteexercise', {
-        data: credentials,
-      });
+      const { data } = await axios.delete('/diary/deleteexercise', {data:credentials,});
       return data;
     } catch (error) {
       console.log(error.message);

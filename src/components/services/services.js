@@ -17,10 +17,13 @@ export const handleFulfilledRegister = (state, { payload }) => {
 };
 
 export const handleFulfilledLogin = (state, { payload }) => {
-      state.user.email = payload.user.email;
-      state.token = payload.token;
-      state.isLoggedIn = true;
-      state.isLoading = false;
+  state.user.email = payload.user.email;
+  state.user.name = payload.user.name;
+  state.user.avatarUrl = payload.user.avatarUrl;
+  state.user.bodyParams = payload.user.bodyParams;
+  state.token = payload.token;
+  state.isLoggedIn = true;
+  state.isLoading = false;
 };
 
 export const handleFulfilledLogout = (state) => {
@@ -87,7 +90,7 @@ export const handleFulfilledAddExercise = (state, { payload }) => {
 
 export const handleFulfilledDeleteExercise = (state, { payload }) => {
   state.exercises = state.exercises.filter(
-    (el) => el.productId !== payload.productId,
+    (el) => el.exerciseId !== payload.exerciseId,
   );
 };
 
