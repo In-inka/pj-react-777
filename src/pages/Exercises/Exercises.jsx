@@ -9,6 +9,7 @@ import { ModalWindow } from '../../components/ModalWindow/ModalWindow';
 import ExercisesModal from '../../components/ExercisesModal/ExercisesModal';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import { useSelector } from 'react-redux';
+import { ErrorPage } from '../ErrorPage/ErrorPage';
 
 
 
@@ -26,8 +27,14 @@ const [nameCurrentTarget, setNameCurrentTarget] = useState('')
 
 
 const data = useSelector(exercisesSelectors.getExercisesData)
+const error = useSelector(exercisesSelectors.getIsError)
+
+
+
+
 const handleOpenWindow = (even)=> {
   const targetId = even.currentTarget.id
+  
   const targetName =  data.filter((el)=>{
     return el._id === targetId
   })
@@ -91,8 +98,8 @@ return
 
 
   return (
- 
     <BoxBackgroundPhoto className={backgroundPhoto(path)}>
+      {error && <ErrorPage/>}
       <ContainerExercisesPage >
         { path === '/exercises' && <BoxBtnBack/> }
         <BoxTitlePage>
