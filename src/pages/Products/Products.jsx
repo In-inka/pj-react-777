@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -9,30 +9,20 @@ import {
 } from './Products.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsList } from '../../redux/products/operationsProducts';
-import { selectIsLoadingProduct } from '../../redux/products/selectorsProducts';
+import { selectFilter, selectIsLoadingProduct, selectProductsList } from '../../redux/products/selectorsProducts';
 import Loader from "../../components/Loader/Loader"
-import { useSearchParams } from 'react-router-dom';
 
 const Products = () => {
-  const [products, setProducts] = useState(null);
   const isLoading = useSelector(selectIsLoadingProduct);
-  const [searchParams] = useSearchParams({});
   const dispatch = useDispatch();
+  const products = useSelector(selectProductsList)
+  const filter = useSelector(selectFilter)
   const fetching = useCallback(async (filterParams) => {
     try {
       if (filterParams) {
-        if (filterParams.category === "all") {
-          filterParams.category = ""
-        }
-        if (filterParams.recommended === "all") {
-          filterParams.recommended = ""
-        }
-        const { payload } = await dispatch(getProductsList(filterParams));
-        setProducts(payload);
+        await dispatch(getProductsList(filterParams));
       } else {
-        const { payload } = await dispatch(getProductsList());
-        setProducts(payload);
-
+        await dispatch(getProductsList());
       }
     } catch (error) {
       console.log(error);
@@ -40,13 +30,10 @@ const Products = () => {
   }, [dispatch])
 
   useEffect(() => {
-    const props = Object.fromEntries(searchParams.entries());
-    if (Object.values(props).some(value => value !== '')) {
-      fetching(props);
-    } else {
+    if (filter.search === '' && filter.category === '' && filter.recommended === '') {
       fetching()
     }
-  }, []);
+  }, [fetching, filter]);
 
   return (
     <Container>
