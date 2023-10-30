@@ -15,7 +15,8 @@ import Loader from "../../components/Loader/Loader"
 const Products = () => {
   const isLoading = useSelector(selectIsLoadingProduct);
   const dispatch = useDispatch();
-  const products = useSelector(selectProductsList)
+  const products = useSelector(selectProductsList);
+  const cuttedProductsList = products.slice(0, 100); // тимчасове рішення
   const fetching = useCallback( (filterParams) => {
     try {
       if (filterParams) {
@@ -42,8 +43,8 @@ const Products = () => {
         <ProductsTitle>Products</ProductsTitle>
         <ProductsFilter submit={fetching} />
       </ProductsFunc>
-      {!isLoading && products !== null ?
-        (<ProductsList products={products} />) :
+      {!isLoading && cuttedProductsList !== null ?
+        (<ProductsList products={cuttedProductsList} />) :
         (<Loader cls={'yellowBtn'} />)}
     </Container>
   );
