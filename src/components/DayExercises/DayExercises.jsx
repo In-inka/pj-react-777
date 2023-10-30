@@ -19,6 +19,7 @@ import {
   SliceTextEx,
   SliceTextNameEx,
   WrapTitleTableEx,
+  WrapMainBlockEx,
   BodyEx,
   EquipmentEx,
   NameEx,
@@ -31,6 +32,8 @@ import {
 import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
+import diaryOperations from '../../redux/diary/diaryOperations';
+import { WrapMainBlock } from '../../pages/SecondPage/Diary.styled';
 
 const Icon = styled.svg`
   &.orange {
@@ -39,10 +42,7 @@ const Icon = styled.svg`
 `;
 
 export const DayExercises = () => {
-
-  
-
-  const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
+const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
 
   return (
     <ContainerEx>
@@ -65,15 +65,7 @@ export const DayExercises = () => {
 };
 // exercises;
 export const ExercisesTable = ({ exercises }) => {
-   
-  // console.log('exercises : ', exercises);
-  // burnedCalories,
-  //   exerciseId: { bodyPart, equipment, name, target,
-  //     // _id
-  //   },
-  //   owner,
-  //   time,
-  //   _id
+const dispatch = useDispatch();
 
   return (
     <>
@@ -82,17 +74,25 @@ export const ExercisesTable = ({ exercises }) => {
         {exercises.map(
           ({
             burnedCalories,
-            exerciseId: { bodyPart, equipment, name, target,
+            date,
+            exerciseId: {
+              bodyPart,
+              equipment,
+              name,
+              target,
               // _id
-               },
-              //  owner,
-               time,
-               _id
+            },
+            //  owner,
+            time,
+            _id,
           }) => (
             <ListItemEx key={_id}>
-              <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
-              <ItemProductEx value={equipment}>Equipment</ItemProductEx>
-              <ItemProductEx value={name}>name</ItemProductEx>
+              
+              <WrapMainBlockEx>
+                <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
+                <ItemProductEx value={equipment}>Equipment</ItemProductEx>
+                <ItemProductEx value={name}>name</ItemProductEx>
+              </WrapMainBlockEx>
 
               <WrapMobileEx>
                 <WrapItemProductsEx>
@@ -104,10 +104,18 @@ export const ExercisesTable = ({ exercises }) => {
                 </WrapItemProductsEx>
 
                 <ButtonEx
-                  onClick={
-                    () => console.log(' del btn ')
-                    //   () => dispatch(deleteProduct(id))
-                  }
+                  onClick={() => {
+                    console.log(' Del Exercise : ', {
+                      exerciseId: _id,
+                      date,
+                    });
+                    dispatch(
+                      diaryOperations.deleteDiaryExercise({
+                        exerciseId: _id,
+                        date,
+                      }),
+                    );
+                  }}
                 >
                   <DeleteIconWrapper>
                     <Icon width={20} height={20} className="orange">
@@ -169,106 +177,3 @@ export const TableTitleEx = () => {
 
 export const EmptyScreenEx = () => <NotFoundEx>Not found exercises</NotFoundEx>;
 
-let choice = true;
-// let choice = false;
-
-const exercises = !choice
-  ? []
-  : [
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f7f7',
-        },
-        bodyPart: 'chest',
-        equipment: 'leverage machine',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0009.gif',
-        name: 'assisted chest dip (kneeling)',
-        target: 'pectorals',
-        burnedCalories: 329,
-        time: 3,
-      },
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f801',
-        },
-        bodyPart: 'upper arms',
-        equipment: 'leverage machine',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0019.gif',
-        name: 'assisted triceps dip (kneeling)',
-        target: 'triceps',
-        burnedCalories: 233,
-        time: 3,
-      },
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f813',
-        },
-        bodyPart: 'upper arms',
-        equipment: 'barbell',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0038.gif',
-        name: 'barbell drag curl',
-        target: 'biceps',
-        burnedCalories: 84,
-        time: 3,
-      },
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f7f4',
-        },
-        bodyPart: 'waist',
-        equipment: 'body weight',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0003.gif',
-        name: 'air bike',
-        target: 'abs',
-        burnedCalories: 312,
-        time: 3,
-      },
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f819',
-        },
-        bodyPart: 'upper legs',
-        equipment: 'barbell',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0044.gif',
-        name: 'barbell good morning',
-        target: 'hamstrings',
-        burnedCalories: 335,
-        time: 3,
-      },
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f7fe',
-        },
-        bodyPart: 'upper legs',
-        equipment: 'assisted',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0016.gif',
-        name: 'assisted prone hamstring',
-        target: 'hamstrings',
-        burnedCalories: 316,
-        time: 3,
-      },
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f809',
-        },
-        bodyPart: 'upper legs',
-        equipment: 'barbell',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0028.gif',
-        name: 'barbell clean and press',
-        target: 'quads',
-        burnedCalories: 272,
-        time: 3,
-      },
-      {
-        _id: {
-          $oid: '64f2458d6f67bc34bae4f80e',
-        },
-        bodyPart: 'chest',
-        equipment: 'barbell',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0033.gif',
-        name: 'barbell decline bench press',
-        target: 'pectorals',
-        burnedCalories: 129,
-        time: 3,
-      },
-    ];

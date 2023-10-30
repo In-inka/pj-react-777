@@ -31,7 +31,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
 import diaryOperations from '../../redux/diary/diaryOperations';
 
-
 const Icon = styled.svg`
   &.orange {
     stroke: ${({ theme }) => theme.acceptColor};
@@ -89,7 +88,7 @@ const dispatch = useDispatch();
                     </WrapItemProducts>
                     <Button
                       onClick={() => {
-                        // console.log("Del Product : ", _id,"   ",date);
+                        console.log("Del Product : ",{productId: _id, date});
                         dispatch(diaryOperations.deleteDiaryProduct({productId: _id, date}))
                       }}
                     >

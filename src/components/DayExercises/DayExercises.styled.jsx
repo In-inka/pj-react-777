@@ -68,6 +68,9 @@ export const AddProductEx = styled.p`
   @media screen and (min-width: 1440px) {
   }
 `;
+export const WrapMainBlockEx=styled.div`
+  display: flex;
+`;
 
 export const WrapMobileEx = styled.div`
   display: flex;
