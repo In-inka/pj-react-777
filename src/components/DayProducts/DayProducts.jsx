@@ -27,7 +27,9 @@ import {
   Recommend,
 } from './DayProducts.styled';
 import sprite from '../../sprite/sprite.svg';
-import { glodalColor } from '../../Styled/GlobalColor';
+import { useDispatch, useSelector } from 'react-redux';
+import diarySelectors from '../../redux/diary/diarySelectors';
+import diaryOperations from '../../redux/diary/diaryOperations';
 
 const Icon = styled.svg`
   &.orange {
@@ -35,78 +37,71 @@ const Icon = styled.svg`
   }
 `;
 
-const DayProducts = ({ children }) => {
+const DayProducts = () => {
+  const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
+
   return (
     <Container>
       <TitleMain>
         <SubTitle>Products</SubTitle>
         <StyledLink to="/products">
           <AddProduct>Add product</AddProduct>
-          <Icon
-            width={16}
-            height={16}
-            className="orange"            
-          >
+          <Icon width={16} height={16} className="orange">
             <use href={`${sprite}#icon-start`}></use>
           </Icon>
         </StyledLink>
       </TitleMain>
-      {!products.length ? (
+      {!visibleProducts.length ? (
         <EmptyScreen />
       ) : (
-        <ProductsTable>{children}</ProductsTable>
+        <ProductsTable products={visibleProducts}/>
       )}
     </Container>
   );
 };
 
-export const ProductsTable = () => {
-  // const dispatch = useDispatch();
-  // const visibleContacts = useSelector(selectVisibleContacts);
-
-  // const { _id: { $oid } } = products;
-  // const {groupBloodNotAllowed} = products[0];
-  // console.log($oid, ' ', groupBloodNotAllowed[1]);
-
+export const ProductsTable = ({ products }) => {
+const dispatch = useDispatch();
+  
   return (
     <>
       <TableTitle />
       <TableList>
         {products.map(
           ({
-            _id: { $oid },
-            title,
-            category,
+            _id,
             calories,
-            weight,
-            groupBloodNotAllowed,
-          }) => (
-            <ListItem key={$oid}>
-              <ItemProduct value={title}>Title</ItemProduct>
-              <ItemProduct value={category}>Category</ItemProduct>
-              <WrapMobile>
-                <WrapItemProducts>
-                  <ItemProduct value={calories}>Calories</ItemProduct>
-                  <ItemProduct value={weight}>Weight</ItemProduct>
-                  <ItemProduct value={groupBloodNotAllowed[1]}>
-                    Recommend
-                  </ItemProduct>
-                </WrapItemProducts>
-                <Button
-                  onClick={
-                    () => console.log(' del btn ')
-                    //   () => dispatch(deleteProduct(id))
-                  }
-                >
-                  <DeleteIconWrapper>
-                    <Icon width={20} height={20} className="orange">
-                      <use href={`${sprite}#icon-trash`}></use>
-                    </Icon>
-                  </DeleteIconWrapper>
-                </Button>
-              </WrapMobile>
-            </ListItem>
-          ),
+            amount,
+            recommend,
+            date,
+            productId: { category, title },
+          }) => {
+              return (
+                <ListItem key={_id}>
+                  <ItemProduct value={title}>Title</ItemProduct>
+                  <ItemProduct value={category}>Category</ItemProduct>
+                  <WrapMobile>
+                    <WrapItemProducts>
+                      <ItemProduct value={calories}>Calories</ItemProduct>
+                      <ItemProduct value={amount}>Weight</ItemProduct>
+                      <ItemProduct value={recommend}>Recommend</ItemProduct>
+                    </WrapItemProducts>
+                    <Button
+                      onClick={() => {
+                        // console.log("Del Product : ",{productId: _id, date});
+                        dispatch(diaryOperations.deleteDiaryProduct({productId: _id, date}))
+                      }}
+                    >
+                      <DeleteIconWrapper>
+                        <Icon width={20} height={20} className="orange">
+                          <use href={`${sprite}#icon-trash`}></use>
+                        </Icon>
+                      </DeleteIconWrapper>
+                    </Button>
+                  </WrapMobile>
+                </ListItem>
+              );
+            },
         )}
       </TableList>
     </>
@@ -150,119 +145,5 @@ export const TableTitle = () => {
 };
 
 export const EmptyScreen = () => <NotFound>Not found products</NotFound>;
-
-// тестовый массив объектов
-let choice = true;
-// let choice = false;
-
-const products = !choice
-  ? []
-  : [
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5773',
-        },
-        weight: 100,
-        calories: 340,
-        category: 'dairy',
-        title: 'Danbo cheese',
-        groupBloodNotAllowed: {
-          1: true,
-          2: true,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5b7f',
-        },
-        weight: 100,
-        calories: 112,
-        category: 'fish',
-        title: 'marlin',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5e13',
-        },
-        weight: 100,
-        calories: 17,
-        category: 'vegetables and herbs',
-        title: 'Salads Belaya Dacha Delicate root',
-        groupBloodNotAllowed: {
-          1: true,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5b6f',
-        },
-        weight: 100,
-        calories: 160,
-        category: 'fish',
-        title: 'Cold smoked bream',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5b8d',
-        },
-        weight: 100,
-        calories: 281,
-        category: 'fish',
-        title: 'Pollock in batter',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff590d',
-        },
-        weight: 100,
-        calories: 232,
-        category: 'meat',
-        title: 'Lamb ham',
-        groupBloodNotAllowed: {
-          1: true,
-          2: true,
-          3: false,
-          4: true,
-        },
-      },
-      {
-        _id: {
-          $oid: '5d51694902b2373622ff5f16',
-        },
-        weight: 100,
-        calories: 38,
-        category: 'soft drinks',
-        title: 'Pepsi',
-        groupBloodNotAllowed: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-        },
-      },
-    ];
 
 export { DayProducts };

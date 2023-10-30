@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Container,
   Title,
@@ -27,6 +28,7 @@ const Welcome = () => {
         <ButtonContainer>
           <ButtonYellow to="/signup">Sign Up</ButtonYellow>
           <ButtonBlack to="/signin">Sign In</ButtonBlack>
+          <Link to="https://power-pulse-rh13.onrender.com/api/users/googleAuth">Google-auth</Link>
         </ButtonContainer>
         <FlexContainer>
           <VideoTutorialContainer>

@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import diaryOperations from '../../redux/diary/diaryOperations';
 import { glodalColor } from '../../Styled/GlobalColor';
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
+import DatePicker from 'react-datepicker';
 
 import {
   Container,
@@ -18,15 +21,37 @@ import {
   MobileDaySwitch,
   NotMobileDaySwitch,
 } from './Diary.styled';
-
 import sprite from '../../sprite/sprite.svg';
+import { useEffect, useState } from 'react';
+import diarySelectors from "../../redux/diary/diarySelectors"
+
 const Icon = styled.svg`
   &.orange {
     fill: ${({ theme }) => theme.secondaryOrange};
   }
 `;
 
+function formatDate(date) {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
 const Diary = () => {
+  const [date, setDate] = useState(new Date());
+  const dispatch = useDispatch();
+  const handlerDate = (date) => { setDate(date); };
+
+const diary = useSelector(diarySelectors.getDiary);
+const { eatenProducts, doneExercises } = diary;
+  
+  useEffect(() => {
+    dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
+  }, [dispatch, date, eatenProducts.length, doneExercises.length]);
+  
+  // const minDate = new Date('15/10/2023');
+  // if (date < minDate) setDate(minDate);
   return (
     <Container>
       <WrapTitle>
@@ -34,6 +59,8 @@ const Diary = () => {
         <WrapDaySwitcher>
           <MobileDaySwitch>
             <DaySwitch
+              currentDate={date}
+              handlerDate={handlerDate}
               textSize={18}
               textWeight={'bold'}
               textHeight={20}
@@ -43,6 +70,8 @@ const Diary = () => {
           </MobileDaySwitch>
           <NotMobileDaySwitch>
             <DaySwitch
+              currentDate={date}
+              handlerDate={handlerDate}
               textSize={24}
               textWeight={'bold'}
               textHeight={32}
@@ -52,7 +81,7 @@ const Diary = () => {
           </NotMobileDaySwitch>
         </WrapDaySwitcher>
       </WrapTitle>
-      <WrapMainBlock>
+      <WrapMainBlock>   
         <WrapDashBoard>
           <DayDashboard />
           <WrapInfoText>
