@@ -7,7 +7,7 @@ export const Container = styled.nav`
   ${ContainerStyled}
   display: flex;
   position: absolute;
-  z-index: 999;
+  z-index: 10;
   align-items: center;
   top: 0;
   left: 50%;
