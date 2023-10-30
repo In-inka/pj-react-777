@@ -30,14 +30,14 @@ const UserCards = () => {
 
   //const [avatar, setAvatar] = useState();
 
-  const handleChangePhoto = (event) => {
+  const handleChangePhoto = async (event) => {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
       const formData = new FormData();
       formData.append('avatar', selectedFile);
 
       console.log(formData);
-      dispatch(operations.updateUserAvatar(formData));
+      await dispatch(operations.updateUserAvatar(formData));
       dispatch(authOperations.fetchCurrentUser());
     }
   };

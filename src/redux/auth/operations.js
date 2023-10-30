@@ -36,6 +36,12 @@ const logIn = createAsyncThunk('/users/logIn', async (credentials) => {
   }
 });
 
+/* const config = {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+}; */
+
 const config = {
   headers: {
     'Content-Type': 'multipart/form-data',
@@ -48,7 +54,7 @@ const updateUserAvatar = createAsyncThunk(
     try {
       const { data } = await axios.patch(
         '/users/changedata',
-        { avatar: credentials },
+        credentials,
         config,
       );
       return data;
