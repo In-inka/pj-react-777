@@ -6,24 +6,24 @@ export const messageNotification = (code) => {
         toast.error('Already exist!');
         break;
       case 400:
-        toast.warning('Bad Request!');
+        toast.error('Bad Request!');
         break;
       case 401:
-        toast.warning('Unauthorized!');
+        toast.error('Unauthorized!');
         break;
 
       case 403:
-        toast.warning('Forbidden!');
+        toast.error('Forbidden!');
         break;
 
       case 404:
-        toast.warning('Paige not found!');
+        toast.error('Paige not found!');
         break;
       case 408:
-        toast.warning('Request Timeout!');
+        toast.error('Request Timeout!');
         break;
         default:
-            toast.warning('Oops something went wrong!');
+            toast.error('Oops something went wrong!');
         break;
     }
 }
