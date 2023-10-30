@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import {
   ProductsItemContainer,
   ProductsItemTitle,
@@ -7,14 +8,14 @@ import {
   ProductsItemDiet,
   ProductsItemDietPar,
   ProductsItemRecommendedContainer,
-  CircleRec,
+  Circle,
   RecommendedText,
   AddButton,
   SpanGrey,
   IconRunning,
 } from './ProductsItem.styled';
-
 import sprite from '../../sprite/sprite.svg';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const cutStringLength = (str, maxLength = 24) => {
   if (str.length > maxLength) {
@@ -34,6 +35,8 @@ function capitalizeFirstLetter(str) {
 }
 
 const ProductsItem = ({ product }) => {
+  const bloodGroup = useSelector(authSelectors.getUserMetricData).blood;
+
   return (
     <ProductsItemContainer>
       <ProductsItemFunctional>
@@ -42,8 +45,17 @@ const ProductsItem = ({ product }) => {
         </ProductsItemDiet>
         <div style={{ display: 'flex' }}>
           <ProductsItemRecommendedContainer>
-            <CircleRec />
-            <RecommendedText>Recommended</RecommendedText>
+            {product.groupBloodNotAllowed[bloodGroup] ? (
+              <>
+                <Circle style={{ backgroundColor: '#419B09' }} />
+                <RecommendedText>Recommended</RecommendedText>
+              </>
+            ) : (
+              <>
+                <Circle style={{ backgroundColor: '#E9101D' }} />
+                <RecommendedText>Not recommended</RecommendedText>
+              </>
+            )}
           </ProductsItemRecommendedContainer>
           <AddButton>
             Add

@@ -10,10 +10,12 @@ export const ProductsItemContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 335px;
+    height: 135px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 405px;
+    height: 143px;
   }
 `;
 
@@ -80,11 +82,10 @@ export const ProductsItemRecommendedContainer = styled.div`
   align-items: center;
 `;
 
-export const CircleRec = styled.div`
+export const Circle = styled.div`
   width: 14px;
   height: 14px;
   border-radius: 10px;
-  background: #419b09;
 `;
 
 export const RecommendedText = styled.p`

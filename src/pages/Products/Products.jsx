@@ -10,7 +10,8 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsList } from '../../redux/products/operationsProducts';
 import { selectIsLoadingProduct, selectProductsList } from '../../redux/products/selectorsProducts';
-import Loader from "../../components/Loader/Loader"
+import Loading from '../../components/Loading/Loading';
+import { productSlice } from '../../redux/products/sliceProducts';
 
 const Products = () => {
   const isLoading = useSelector(selectIsLoadingProduct);
@@ -29,8 +30,7 @@ const Products = () => {
   }, [dispatch])
 
   useEffect(() => {
-    console.log(localStorage.getItem("persist:products"))
-    if (!localStorage.getItem("persist:products")) {
+    if (localStorage.getItem("persist:products").filter === productSlice.getInitialState().filter) {
       fetching()
     }
   }, [fetching]);
@@ -44,7 +44,7 @@ const Products = () => {
       </ProductsFunc>
       {!isLoading && products !== null ?
         (<ProductsList products={products} />) :
-        (<Loader cls={'yellowBtn'} />)}
+        (<Loading />)}
     </Container>
   );
 };

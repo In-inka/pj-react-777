@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import {
   BloodRadio,
   BoxBasicInfo,
@@ -22,96 +20,62 @@ import {
   RadioLabelActive,
   RadioWrapper,
 } from './ProfileSettingsForm.styled';
-// import { Button } from '../SignUpForm.jsx/SignUpForm.styled';
 import { useFormik } from 'formik';
 import { Button } from '../Buttons/Button';
 import 'react-datepicker/dist/react-datepicker.css';
-// import ReactDatePicker from 'react-datepicker';
 import DatePicker from 'react-datepicker';
 import {
   CustomDatePickerInput,
   StyledCalendarContainer,
 } from '../DaySwitch/DaySwitch.styled';
-import * as yup from 'yup';
-import format from 'date-fns/format';
+//import format from 'date-fns/format';
 import operations from '../../redux/auth/operations';
-import { useDispatch } from 'react-redux';
-
-const schema = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  height: yup
-    .number()
-    .min(150, 'Height must be at least 150 cm')
-    .required('Height is required'),
-  currentWeight: yup
-    .number()
-    .min(35, 'Weight must be at least 35 kg')
-    .required('Current weight is required'),
-  desiredWeight: yup
-    .number()
-    .min(35, 'Weight must be at least 35 kg')
-    .required('Desired weight is required'),
-  birthday: yup
-    .date()
-    .max(
-      new Date(
-        new Date().getFullYear() - 18,
-        new Date().getMonth(),
-        new Date().getDate(),
-      ),
-      'Must be at least 18 years old',
-    )
-    .required('Birthday is required'),
-  blood: yup
-    .number()
-    .oneOf([1, 2, 3, 4], 'Invalid blood type')
-    .required('Blood type is required'),
-  sex: yup
-    .string()
-    .oneOf(['male', 'female'], 'Invalid gender')
-    .required('Gender is required'),
-  levelActivity: yup
-    .number()
-    .oneOf([1, 2, 3, 4, 5], 'Invalid activity level')
-    .required('Activity level is required'),
-});
+import { useDispatch, useSelector } from 'react-redux';
+import { schema } from './schema/Schema';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const ProfileSettingsForm = () => {
-  /*   const [startDate, setStartDate] = useState(new Date());*/
   const dispatch = useDispatch();
+  const userName = useSelector(authSelectors.getUserName);
+  const email = useSelector(authSelectors.getUserEmail);
+  const {
+    height,
+    currentWeight,
+    desiredWeight,
+    blood,
+    sex,
+    levelActivity,
+    birthday,
+  } = useSelector(authSelectors.getUserMetricData);
 
-  const [selectedDate, setSelectedDate] = useState(Date.now());
-  //const date = format(selectedDate, 'dd-MM-yyyy');
+  function formatDateString(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  const formattedDate = formatDateString(birthday);
+  console.log(formattedDate); // Виведе '2000-10-30'
 
   const formik = useFormik({
     initialValues: {
-      name: '',
-      height: '',
-      currentWeight: '',
-      desiredWeight: '',
-      birthday: selectedDate,
-      blood: '',
-      sex: '',
-      levelActivity: '',
+      name: userName || '',
+      height: height || '',
+      currentWeight: currentWeight || '',
+      desiredWeight: desiredWeight || '',
+      birthday: formattedDate || '',
+      blood: blood,
+      sex: sex || '',
+      levelActivity: levelActivity,
     },
     validationSchema: schema,
-    onSubmit: async (values, actions) => {
-      /*       if (Object.keys(formik.errors).length > 0) {
-        console.error('Форма містить помилки:', formik.errors);
-      } */
-
+    onSubmit: async (values) => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       dispatch(operations.updateUserMetricsData(values));
-      console.log('data', values);
-      actions.resetForm();
     },
   });
-
-  /*   const validBirthday = (date) => {
-    const newDate = new Date();
-    const validDate = newDate.getFullYear() - date.getFullYear();
-    console.log('validDate', validDate);
-  }; */
 
   return (
     <div>
@@ -125,7 +89,7 @@ const ProfileSettingsForm = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
           />
-          <EmailProfile>example@example.com</EmailProfile>
+          <EmailProfile>{email}</EmailProfile>
         </BoxBasicInfo>
         <BoxHeightWeightBirthday>
           <ContainerItemInputs>
@@ -168,22 +132,13 @@ const ProfileSettingsForm = () => {
             <BoxItemInputs>
               <StyledCalendarContainer>
                 <BoxInputData>
-                  {/*                   <DatePicker
-                    selected={startDate}
-                    onChange={(date) => validBirthday(date)}
-                    dateFormat={numericMonthFormat}
-                    customInput={<CustomDatePickerInput />}
-                    ref={datepickerRef}
-                  /> */}
-
                   <DatePicker
-                    selected={selectedDate}
+                    selected={
+                      birthday ? new Date(formik.values.birthday) : Date.now()
+                    }
                     onChange={(date) => {
                       setSelectedDate(date);
-                      formik.setFieldValue(
-                        'birthday',
-                        format(date, 'yyyy-MM-dd'),
-                      );
+                      formik.setFieldValue('birthday', formatDateString(date));
                     }}
                     customInput={<CustomDatePickerInput />}
                     dateFormat={'yyyy-MM-dd'}
@@ -192,13 +147,6 @@ const ProfileSettingsForm = () => {
                   />
                 </BoxInputData>
               </StyledCalendarContainer>
-              {/* <InputProfile 
-                                name="birthday" 
-                                type="date" 
-                                onChange={handleChange} 
-                                value={values.birthday}
-                                />
-                                {(data)=>(console.log('data', data))} */}
             </BoxItemInputs>
           </ContainerItemInputs>
         </BoxHeightWeightBirthday>
@@ -208,10 +156,13 @@ const ProfileSettingsForm = () => {
             <RadioWrapper>
               <RadioButton>
                 <InputSex
+                  checked={formik.values.blood === 1}
                   name="blood"
                   type="radio"
-                  onChange={formik.handleChange}
-                  value="1"
+                  onChange={() => {
+                    formik.setFieldValue('blood', 1);
+                  }}
+                  value={1}
                 />
                 <RadioCheckmark></RadioCheckmark>
                 <RadioLabel>1</RadioLabel>
@@ -220,10 +171,13 @@ const ProfileSettingsForm = () => {
             <RadioWrapper>
               <RadioButton>
                 <InputSex
+                  checked={formik.values.blood === 2}
                   name="blood"
                   type="radio"
-                  onChange={formik.handleChange}
-                  value="2"
+                  onChange={() => {
+                    formik.setFieldValue('blood', 2);
+                  }}
+                  value={2}
                 />
                 <RadioCheckmark></RadioCheckmark>
                 <RadioLabel>2</RadioLabel>
@@ -232,10 +186,13 @@ const ProfileSettingsForm = () => {
             <RadioWrapper>
               <RadioButton>
                 <InputSex
+                  checked={formik.values.blood === 3}
                   name="blood"
                   type="radio"
-                  onChange={formik.handleChange}
-                  value="3"
+                  onChange={() => {
+                    formik.setFieldValue('blood', 3);
+                  }}
+                  value={3}
                 />
                 <RadioCheckmark></RadioCheckmark>
                 <RadioLabel>3</RadioLabel>
@@ -244,10 +201,13 @@ const ProfileSettingsForm = () => {
             <RadioWrapper>
               <RadioButton>
                 <InputSex
+                  checked={formik.values.blood === 4}
                   name="blood"
                   type="radio"
-                  onChange={formik.handleChange}
-                  value="4"
+                  onChange={() => {
+                    formik.setFieldValue('blood', 4);
+                  }}
+                  value={4}
                 />
                 <RadioCheckmark></RadioCheckmark>
                 <RadioLabel>4</RadioLabel>
@@ -259,9 +219,12 @@ const ProfileSettingsForm = () => {
               <RadioWrapper>
                 <RadioButton>
                   <InputSex
+                    checked={formik.values.sex === 'male'}
                     name="sex"
                     type="radio"
-                    onChange={formik.handleChange}
+                    onChange={() => {
+                      formik.setFieldValue('sex', 'male');
+                    }}
                     value="male"
                   />
                   <RadioCheckmark></RadioCheckmark>
@@ -271,9 +234,12 @@ const ProfileSettingsForm = () => {
               <RadioWrapper>
                 <RadioButton>
                   <InputSex
+                    checked={formik.values.sex === 'female'}
                     name="sex"
                     type="radio"
-                    onChange={formik.handleChange}
+                    onChange={() => {
+                      formik.setFieldValue('sex', 'female');
+                    }}
                     value="female"
                   />
                   <RadioCheckmark></RadioCheckmark>
@@ -287,12 +253,16 @@ const ProfileSettingsForm = () => {
         <ContainerRadioActive>
           {/* <RadioContainer> */}
           <RadioWrapper>
-            <RadioButton>
+            <RadioButton htmlFor="levelActivity1">
               <InputSex
+                id="levelActivity1"
+                checked={formik.values.levelActivity === 1}
                 name="levelActivity"
                 type="radio"
-                onChange={formik.handleChange}
-                value="1"
+                onChange={() => {
+                  formik.setFieldValue('levelActivity', 1);
+                }}
+                value={1}
               />
               <RadioCheckmark></RadioCheckmark>
               <RadioLabelActive>
@@ -301,12 +271,16 @@ const ProfileSettingsForm = () => {
             </RadioButton>
           </RadioWrapper>
           <RadioWrapper>
-            <RadioButton>
+            <RadioButton htmlFor="levelActivity2">
               <InputSex
+                id="levelActivity2"
+                checked={formik.values.levelActivity === 2}
                 name="levelActivity"
                 type="radio"
-                onChange={formik.handleChange}
-                value="2"
+                onChange={() => {
+                  formik.setFieldValue('levelActivity', 2);
+                }}
+                value={2}
               />
               <RadioCheckmark></RadioCheckmark>
               <RadioLabelActive>
@@ -315,12 +289,16 @@ const ProfileSettingsForm = () => {
             </RadioButton>
           </RadioWrapper>
           <RadioWrapper>
-            <RadioButton>
+            <RadioButton htmlFor="levelActivity3">
               <InputSex
+                id="levelActivity3"
+                checked={formik.values.levelActivity === 3}
                 name="levelActivity"
                 type="radio"
-                onChange={formik.handleChange}
-                value="3"
+                onChange={() => {
+                  formik.setFieldValue('levelActivity', 3);
+                }}
+                value={3}
               />
               <RadioCheckmark></RadioCheckmark>
               <RadioLabelActive>
@@ -329,12 +307,16 @@ const ProfileSettingsForm = () => {
             </RadioButton>
           </RadioWrapper>
           <RadioWrapper>
-            <RadioButton>
+            <RadioButton htmlFor="levelActivity4">
               <InputSex
+                id="levelActivity4"
+                checked={formik.values.levelActivity === 4}
                 name="levelActivity"
                 type="radio"
-                onChange={formik.handleChange}
-                value="4"
+                onChange={() => {
+                  formik.setFieldValue('levelActivity', 4);
+                }}
+                value={4}
               />
               <RadioCheckmark></RadioCheckmark>
               <RadioLabelActive>
@@ -343,12 +325,16 @@ const ProfileSettingsForm = () => {
             </RadioButton>
           </RadioWrapper>
           <RadioWrapper>
-            <RadioButton>
+            <RadioButton htmlFor="levelActivity5">
               <InputSex
+                id="levelActivity5"
+                checked={formik.values.levelActivity === 5}
                 name="levelActivity"
                 type="radio"
-                onChange={formik.handleChange}
-                value="5"
+                onChange={() => {
+                  formik.setFieldValue('levelActivity', 5);
+                }}
+                value={5}
               />
               <RadioCheckmark></RadioCheckmark>
               <RadioLabelActive>
@@ -360,11 +346,8 @@ const ProfileSettingsForm = () => {
           {/* </RadioContainer> */}
         </ContainerRadioActive>
         {/*   <Button type="submit" text={'Save'} /> */}
-        <Button type={'submit'} text={'Save'} />
+        <Button tp={'submit'} text={'Save'} />
       </FormProfile>
-      {/*       {Object.keys(formik.errors).length > 0 ? (
-        <div style={{ color: 'red' }}>{formik.errors.value}</div>
-      ) : null} */}
     </div>
   );
 };
