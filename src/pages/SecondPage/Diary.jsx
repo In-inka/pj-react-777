@@ -23,8 +23,7 @@ import {
 } from './Diary.styled';
 import sprite from '../../sprite/sprite.svg';
 import { useEffect, useState } from 'react';
-import authSelectors from '../../redux/auth/auth-selectors';
-import authOperations from '../../redux/auth/operations';
+
 const Icon = styled.svg`
   &.orange {
     fill: ${({ theme }) => theme.secondaryOrange};
@@ -39,28 +38,16 @@ function formatDate(date) {
 }
 
 const Diary = () => {
-  const [date, setDate] = useState(formatDate(new Date()));
-  // const [date, setDate] = useState('2/10/2023');
-
+  const [date, setDate] = useState(new Date());
   const dispatch = useDispatch();
-  console.log('Diary: ', date);
-
+  const handlerDate = (date) => {setDate(date);};
+  
   useEffect(() => {
-    console.log('Diary Effect: ', date);
-    dispatch(diaryOperations.getDiary(`?date=` + date));
+    dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
   }, [dispatch, date]);
-
-  const handlerDate = (dataFromDaySwitch) => {
-    // console.log('handler : ', dataFromDaySwitch);
-    const newDate = dataFromDaySwitch
-      ? formatDate(dataFromDaySwitch)
-      : formatDate(date);
-    console.log('Handler FormatingDate : ', newDate);
-    // setDate(newDate);
-
-    // return newDate;
-  };
-
+  
+  const minDate = new Date('15/10/2023');
+  if (date < minDate) setDate(minDate);
   return (
     <Container>
       <WrapTitle>
@@ -68,7 +55,8 @@ const Diary = () => {
         <WrapDaySwitcher>
           <MobileDaySwitch>
             <DaySwitch
-              selectDate={handlerDate}
+              currentDate={date}
+              handlerDate={handlerDate}
               textSize={18}
               textWeight={'bold'}
               textHeight={20}
@@ -78,7 +66,8 @@ const Diary = () => {
           </MobileDaySwitch>
           <NotMobileDaySwitch>
             <DaySwitch
-              selectDate={handlerDate}
+              currentDate={date}
+              handlerDate={handlerDate}
               textSize={24}
               textWeight={'bold'}
               textHeight={32}

@@ -19,25 +19,19 @@ const DaySwitch = ({
   iconColor,
   sizeArrow,
   textHeight,
-  selectDate,
+  handlerDate,
+  currentDate,
 }) => {
-  const [startDate, setStartDate] = useState(new Date());
   const numericMonthFormat = 'dd/MM/yyyy';
   const datepickerRef = useRef(null);
 
-  if (selectDate) {
-    selectDate(startDate);
-      }
-
-  const handler = (date)=> {
-    setStartDate(date);   
-    // console.log(selectDate);
-    // selectDate(date);
-  }
+  const handler = (evt) => {
+    handlerDate(evt);
+  };
   
   const toggleDatePicker = () => {
     if (datepickerRef.current) {
-      datepickerRef.current.setOpen(true);      
+      datepickerRef.current.setOpen(true);
     }
   };
 
@@ -45,12 +39,12 @@ const DaySwitch = ({
     <DaySwitchContainer>
       <StyledCalendarContainer>
         <DatePicker
-          selected={startDate}
+          selected={currentDate}
           onChange={handler}
           dateFormat={numericMonthFormat}
           customInput={
             <CustomDatePickerInput
-              onChange={ev=>console.log(ev)}
+              onChange={(ev) => console.log(ev)}
               $textSize={textSize}
               $textWeight={textWeight}
               $textHeight={textHeight}
@@ -65,7 +59,9 @@ const DaySwitch = ({
       </StyledCalendarContainer>
       <StyledArrow>
         <IoIosArrowBack
-          onClick={() => { setStartDate(subDays(startDate, 1)); console.log(startDate); }}
+          onClick={() => {
+            handler(subDays(currentDate, 1));
+          }}
           style={{
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
@@ -74,7 +70,9 @@ const DaySwitch = ({
           }}
         />
         <IoIosArrowForward
-          onClick={() => setStartDate(addDays(startDate, 1))}
+          onClick={() => {
+            handler(addDays(currentDate, 1));
+          }}
           style={{
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
