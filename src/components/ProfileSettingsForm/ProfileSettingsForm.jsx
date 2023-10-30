@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import {
   BloodRadio,
   BoxBasicInfo,
@@ -49,8 +47,6 @@ const ProfileSettingsForm = () => {
     levelActivity,
     birthday,
   } = useSelector(authSelectors.getUserMetricData);
-
-  const [selectedDate, setSelectedDate] = useState(Date.now());
 
   function formatDateString(dateString) {
     const date = new Date(dateString);
