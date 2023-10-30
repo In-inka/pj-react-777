@@ -23,6 +23,7 @@ import {
 } from './Diary.styled';
 import sprite from '../../sprite/sprite.svg';
 import { useEffect, useState } from 'react';
+import diarySelectors from "../../redux/diary/diarySelectors"
 
 const Icon = styled.svg`
   &.orange {
@@ -40,14 +41,17 @@ function formatDate(date) {
 const Diary = () => {
   const [date, setDate] = useState(new Date());
   const dispatch = useDispatch();
-  const handlerDate = (date) => {setDate(date);};
+  const handlerDate = (date) => { setDate(date); };
+
+const diary = useSelector(diarySelectors.getDiary);
+const { eatenProducts, doneExercises } = diary;
   
   useEffect(() => {
     dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
-  }, [dispatch, date]);
+  }, [dispatch, date, eatenProducts.length, doneExercises.length]);
   
-  const minDate = new Date('15/10/2023');
-  if (date < minDate) setDate(minDate);
+  // const minDate = new Date('15/10/2023');
+  // if (date < minDate) setDate(minDate);
   return (
     <Container>
       <WrapTitle>
