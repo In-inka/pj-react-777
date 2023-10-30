@@ -20,7 +20,7 @@ export const handleFulfilledLogin = (state, { payload }) => {
   state.user.email = payload.user.email;
   state.user.name = payload.user.name;
   state.user.avatarUrl = payload.user.avatarUrl;
-  state.user.bodyParams = payload.user.bodyParams;
+  state.user.bodyParams = { ...state.user.bodyParams, ...payload.user.bodyParams };
   state.token = payload.token;
   state.isLoggedIn = true;
   state.isLoading = false;
@@ -40,16 +40,18 @@ export const handleFulfilledCurrentUser = (state, { payload }) => {
   state.user.name = payload.ResponseBody.name;
   state.user.avatarUrl = payload.ResponseBody.avatarUrl;
   state.user.email = payload.ResponseBody.email;
-  state.user.bodyParams = payload.ResponseBody.bodyParams;
+  state.user.bodyParams = {
+    ...state.user.bodyParams, ...payload.ResponseBody.bodyParams,
+  };
   state.isLoggedIn = true;
   state.isFetchingCurrentUser = false;
   state.isLoading = false;
 };
 
 export const handleFulfilledMetricData = (state, { payload }) => {
-  state.user.name = payload.ResponseBody.name;
-    state.user.bodyParams = payload.ResponseBody.bodyParams;
-      state.isLoading = false;
+  state.user.name = payload.data.name;
+  state.user.bodyParams = {...state.user.bodyParams,...payload.data.bodyParams};
+  state.isLoading = false;
 };
 
 export const handleFulfilledAvatarUpdate = (state) => {
@@ -111,7 +113,7 @@ export const handleFulfilledFilterExercisesMuscles = (state, { payload }) => {
 };
 
 export const handleFulfilled = (state, { payload }) => {
-  state.data = payload;
+  state.data = {...state.data, ...payload};
   state.isLoading = false;
 };
 
