@@ -1,5 +1,6 @@
-import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorialContainer, PlayIcon, TextContainerB, VideoTutorialTextA, VideoTutorialTextB, FlexContainer, FlexContainerB, CalorieContainer, RunIcon, TextContainerC, CalorieTextA, CalorieTextB, Section, } from './SignUp.styled';
+import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorialContainer, PlayIcon, TextContainerB, VideoTutorialTextA, VideoTutorialTextB, FlexContainer, FlexContainerB, CalorieContainer, RunIcon, TextContainerC, CalorieTextA, CalorieTextB, Section, PlayIconContainer, RunIconContainer, } from './SignUp.styled';
 import { SignUpForm } from '../../components/SignUpForm.jsx/SignUpForm';
+import sprite from '../../sprite/sprite.svg';
 
 const SignUp = () => {
   return (
@@ -18,7 +19,11 @@ const SignUp = () => {
         </TextContainer>
         <FlexContainer>
           <VideoTutorialContainer>
-            <PlayIcon />
+            <PlayIconContainer>
+              <PlayIcon className="setPlay">
+                <use href={`${sprite}#icon-Polygon`}></use>
+              </PlayIcon>
+            </PlayIconContainer>
             <TextContainerB>
               <VideoTutorialTextA>350+</VideoTutorialTextA>
               <VideoTutorialTextB>Video tutorial</VideoTutorialTextB>
@@ -27,7 +32,11 @@ const SignUp = () => {
         </FlexContainer>
         <FlexContainerB>
           <CalorieContainer>
-            <RunIcon />
+            <RunIconContainer>
+              <RunIcon className="setRun">
+                <use href={`${sprite}#icon-running`}></use>
+              </RunIcon>
+            </RunIconContainer>
             <TextContainerC>
               <CalorieTextA>500</CalorieTextA>
               <CalorieTextB>cal</CalorieTextB>

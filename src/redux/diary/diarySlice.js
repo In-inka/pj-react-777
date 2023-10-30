@@ -3,15 +3,15 @@ import diaryOperations from './diaryOperations';
 import { handleFulfilled, handleFulfilledAddExercise, handleFulfilledAddProduct, handleFulfilledDeleteExercise, handleFulfilledDeleteProduct, handlePending, handleRejected } from '../../components/services/services';
 
 const initialState = {
-    data: {
+  data: {
     eatenProducts:[],
     doneExercises:[],
     consumedCalories:0,
     burnedCalories:0,
     sportTime:0,
-        },
-    isLoading: false,
-    error:"",
+  },
+  isLoading: false,
+  error:"",
 };
 
 const STATUS = {
