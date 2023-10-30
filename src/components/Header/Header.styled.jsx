@@ -149,6 +149,9 @@ export const Button = styled(Link)`
     &:not(:first-of-type) {
       margin-left: 16px;
     }
+    &:active {
+      background-color: ${glodalColor.secondaryOrange};
+    }
   }
 `;
 

@@ -18,13 +18,17 @@ const BodyParts = () => {
   },[dispatch])
 
 const loading = useSelector(exercisesSelectors.getIsLoading)
-const data = useSelector(exercisesSelectors.getExercisesData)
+const data  = useSelector(exercisesSelectors.getFilterBody)
 const error =  useSelector(exercisesSelectors.getIsError)
+
+// console.log('data', data)
+
 
 return (
     <BoxCategoryItem>
       {loading && <Loading />}
-      { !loading && data && <ExercisesList exercises={data}/>}
+
+      { !loading && data && <ExercisesList exercises={data[0]}/>}
     </BoxCategoryItem>
 )
 };

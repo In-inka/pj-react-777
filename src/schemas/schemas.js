@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-const emailRegular = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+const emailRegular = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const emailErrorMessage = "Please enter a valid email";
 
 export const signUpSchema = yup.object().shape({

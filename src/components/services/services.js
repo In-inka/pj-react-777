@@ -17,10 +17,13 @@ export const handleFulfilledRegister = (state, { payload }) => {
 };
 
 export const handleFulfilledLogin = (state, { payload }) => {
-      state.user.email = payload.user.email;
-      state.token = payload.token;
-      state.isLoggedIn = true;
-      state.isLoading = false;
+  state.user.email = payload.user.email;
+  state.user.name = payload.user.name;
+  state.user.avatarUrl = payload.user.avatarUrl;
+  state.user.bodyParams = { ...state.user.bodyParams, ...payload.user.bodyParams };
+  state.token = payload.token;
+  state.isLoggedIn = true;
+  state.isLoading = false;
 };
 
 export const handleFulfilledLogout = (state) => {
@@ -37,16 +40,18 @@ export const handleFulfilledCurrentUser = (state, { payload }) => {
   state.user.name = payload.ResponseBody.name;
   state.user.avatarUrl = payload.ResponseBody.avatarUrl;
   state.user.email = payload.ResponseBody.email;
-  state.user.bodyParams = payload.ResponseBody.bodyParams;
+  state.user.bodyParams = {
+    ...state.user.bodyParams, ...payload.ResponseBody.bodyParams,
+  };
   state.isLoggedIn = true;
   state.isFetchingCurrentUser = false;
   state.isLoading = false;
 };
 
 export const handleFulfilledMetricData = (state, { payload }) => {
-  state.user.name = payload.ResponseBody.name;
-    state.user.bodyParams = payload.ResponseBody.bodyParams;
-      state.isLoading = false;
+  state.user.name = payload.data.name;
+  state.user.bodyParams = {...state.user.bodyParams,...payload.data.bodyParams};
+  state.isLoading = false;
 };
 
 export const handleFulfilledAvatarUpdate = (state) => {
@@ -66,28 +71,28 @@ export const handleRejectedCurrentUser = (state) => {
 
 //--------------------------DIARY
 export const handleFulfilledGet = (state, { payload }) => {
-  state.diary.data = payload;
+  state.diary.data = { ...state.diary.data, ...payload };
   state.isLoading = false;
 };
 
 export const handleFulfilledAddProduct = (state, { payload }) => {
-  state.products.push(payload);
+  state.data.eatenProducts.push(payload);
   state.isLoading = false;
 };
 export const handleFulfilledDeleteProduct = (state, { payload }) => {
-  state.products = state.products.filter(
-    (el) => el.productId !== payload.productId,
+  state.data.eatenProducts = state.data.eatenProducts.filter(
+    (el) => el._id !== payload._id,
   );
 };
 
 export const handleFulfilledAddExercise = (state, { payload }) => {
-  state.exercises.push(payload);
+  state.data.doneExercises.push(payload);
     state.isLoading = false;
 };
 
 export const handleFulfilledDeleteExercise = (state, { payload }) => {
-  state.exercises = state.exercises.filter(
-    (el) => el.productId !== payload.productId,
+  state.data.doneExercises = state.data.doneExercises.filter(
+    (el) => el._id !== payload._id,
   );
 };
 
@@ -108,7 +113,7 @@ export const handleFulfilledFilterExercisesMuscles = (state, { payload }) => {
 };
 
 export const handleFulfilled = (state, { payload }) => {
-  state.data = payload;
+  state.data = {...state.data, ...payload};
   state.isLoading = false;
 };
 

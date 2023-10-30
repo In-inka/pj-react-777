@@ -16,6 +16,5 @@ export const glodalColor = {
   red: '#E9101D',
   outlineSuccessful: '#3CBF61',
   outlineWarning: '#E9101D',
+  itemTitleExercises: 'rgba(239, 237, 232, 0.4)'
 };
-
-
