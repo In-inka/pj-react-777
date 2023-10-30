@@ -6,7 +6,7 @@ const ProductsList = ({ products }) => {
     <ProductsContainer>
       {products?.length > 0 ?
         products.map((product) => {
-          return <ProductsItem key={product.id} product={product} />;
+          return <ProductsItem key={product._id} product={product} />;
         }) : <h1>No products</h1>}
     </ProductsContainer>
   );

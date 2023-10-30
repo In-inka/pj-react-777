@@ -14,13 +14,13 @@ import {
 import { useSearchParams } from 'react-router-dom';
 
 const optionsRec = [
-  { value: '', label: 'All' },
+  { value: 'all', label: 'All' },
   { value: 'true', label: 'Recommended ' },
   { value: 'false', label: 'Not recommended' },
 ];
 
 const categories = [
-  '',
+  'all',
   'alcoholic drinks',
   'berries',
   'cereals',
@@ -50,7 +50,7 @@ export const ProductsFilter = ({ submit }) => {
 
   const categoriesList = categories?.map((elem) => ({
     value: elem,
-    label: elem ? capitalizeFirstLeter(elem) : 'All',
+    label: capitalizeFirstLeter(elem),
   }));
 
   const isMobile = useMediaQuery({ minWidth: 375 });
@@ -221,6 +221,7 @@ export const ProductsFilter = ({ submit }) => {
             styles={customStyles}
             isSearchable={false}
             onChange={onCategoriesChange}
+            value={categoriesList.find((item) => item.value === category)}
             placeholder="Categories"
             options={categoriesList || []}
             theme={(theme) => ({
@@ -245,6 +246,7 @@ export const ProductsFilter = ({ submit }) => {
           <Select
             styles={customStyles}
             isSearchable={false}
+            value={optionsRec.find((item) => item.value === recommended)}
             onChange={onRecomendedChange}
             theme={(theme) => ({
               ...theme,
