@@ -91,7 +91,7 @@ const dispatch = useDispatch();
               <WrapMainBlockEx>
                 <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
                 <ItemProductEx value={equipment}>Equipment</ItemProductEx>
-                <ItemProductEx value={name}>name</ItemProductEx>
+                <ItemProductEx value={name}>Name</ItemProductEx>
               </WrapMainBlockEx>
 
               <WrapMobileEx>
