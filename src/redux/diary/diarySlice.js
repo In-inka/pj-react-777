@@ -10,8 +10,6 @@ const initialState = {
     burnedCalories:0,
     sportTime:0,
         },
-    products:[],
-    exercises:[],
     isLoading: false,
     error:"",
 };

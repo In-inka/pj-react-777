@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {
   Attention,
   Cards,
@@ -19,41 +18,46 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import authOperations from '../../redux/auth/operations';
 import sprite from '../../sprite/sprite.svg';
-import { useFilePicker } from 'use-file-picker';
-import {
-  FileAmountLimitValidator,
-  FileTypeValidator,
-} from 'use-file-picker/validators';
 import authSelectors from '../../redux/auth/auth-selectors';
+import { useRef } from 'react';
 import operations from '../../redux/auth/operations';
 
 const UserCards = () => {
+  const fileInputRef = useRef(null);
   const userName = useSelector(authSelectors.getUserName);
-  const [avatar, setAvatar] = useState(null);
+  const avatar = useSelector(authSelectors.getUserAvatar);
   const dispatch = useDispatch();
-  const { openFilePicker } = useFilePicker({
-    readAs: 'DataURL',
-    accept: 'image/*',
-    multiple: true,
-    validators: [
-      new FileAmountLimitValidator({ max: 1 }),
-      new FileTypeValidator(['jpg']),
-    ],
-    onFilesSuccessfullySelected: ({ filesContent }) => {
-      const selectedFile = filesContent[0].content;
-      setAvatar(selectedFile);
+
+  //const [avatar, setAvatar] = useState();
+
+  const handleChangePhoto = async (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
       const formData = new FormData();
       formData.append('avatar', selectedFile);
-    },
-  });
-  
-  useEffect(() => {
-    dispatch(operations.updateUserAvatar(avatar))
-  }, [avatar, dispatch]);
+
+      console.log(formData);
+      await dispatch(operations.updateUserAvatar(formData));
+      dispatch(authOperations.fetchCurrentUser());
+    }
+  };
+
+  /*   const handleFileInput = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      const filesContent = [{ content: e.target.result }];
+      handleChangePhoto(filesContent);
+    };
+
+    reader.readAsDataURL(file);
+  }; */
 
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
   };
+
   return (
     <ContainerCards>
       <PositionCards>
@@ -65,14 +69,22 @@ const UserCards = () => {
               <use href={`${sprite}#icon-user`}></use>
             </Icon>
           )}
-          <div>
-            <Post onClick={() => openFilePicker()}>
-              <Icon width={24} height={24} className="lightOrange mark">
-                <use href={`${sprite}#icon-check_mark`}></use>
-              </Icon>
-            </Post>
-          </div>
         </Cards>
+        <div>
+          <input
+            type="file"
+            accept="image/*"
+            style={{ display: 'none' }}
+            ref={fileInputRef}
+            onChange={handleChangePhoto}
+          />
+          <Post onClick={() => fileInputRef.current.click()}>
+            {' '}
+            <Icon width={24} height={24} className="lightOrange mark">
+              <use href={`${sprite}#icon-check_mark`}></use>
+            </Icon>
+          </Post>
+        </div>
       </PositionCards>
       <UserName>
         <Name>{userName}</Name>
