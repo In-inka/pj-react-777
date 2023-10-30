@@ -19,7 +19,6 @@ const Icon = styled.svg`
 `;
 
 const DayDashboard = () => {
-  
   const caloriesIntake = useSelector(
     authSelectors.getUserMetricData,
   ).dailyIntakeCalories;
@@ -34,8 +33,15 @@ const DayDashboard = () => {
 
   const restOfCalories = caloriesIntake - caloriesConsumed;
   // const restOfCalories = -10;
-  const restOfSports = 30;
-  // const restOfSports = 85;
+  
+  const arrayOfExercises = useSelector(diarySelectors.getDiary).doneExercises;  
+  const restOfSports =
+    normOfSports -
+    arrayOfExercises.reduce(
+      (acc, currentValue) => acc + currentValue['burnedCalories'],
+      0,
+    );
+  
 
   return (
     <Container>
@@ -117,4 +123,3 @@ const Card = ({ value, children }) => {
 };
 
 export { DayDashboard };
-

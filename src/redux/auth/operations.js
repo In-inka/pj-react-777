@@ -28,8 +28,7 @@ const register = createAsyncThunk(
 const logIn = createAsyncThunk('/users/logIn', async credentials => {
     try {
       const { data } = await axios.post('/users/login', credentials);
-      console.log(data.token);
-        token.set(data.token);
+          token.set(data.token);
         return data;
     } catch (error) {
     console.log(error.message);
@@ -67,7 +66,6 @@ const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) =>
   token.set(persistedToken);
   try {
     const { data } = await axios.get('/users');
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error.message);

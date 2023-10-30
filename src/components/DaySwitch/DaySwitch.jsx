@@ -31,7 +31,7 @@ const DaySwitch = ({
 
   const handler = (date)=> {
     setStartDate(date);   
-    // console.log(selectDate);
+    console.log(selectDate);
     // selectDate(date);
   }
   
@@ -50,6 +50,7 @@ const DaySwitch = ({
           dateFormat={numericMonthFormat}
           customInput={
             <CustomDatePickerInput
+              onChange={ev=>console.log(ev)}
               $textSize={textSize}
               $textWeight={textWeight}
               $textHeight={textHeight}
@@ -64,7 +65,7 @@ const DaySwitch = ({
       </StyledCalendarContainer>
       <StyledArrow>
         <IoIosArrowBack
-          onClick={() => setStartDate(subDays(startDate, 1))}
+          onClick={() => { setStartDate(subDays(startDate, 1)); console.log(startDate); }}
           style={{
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,

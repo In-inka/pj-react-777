@@ -42,15 +42,13 @@ const Diary = () => {
   const [date, setDate] = useState(formatDate(new Date()));
   const dispatch = useDispatch();
    
- 
-  useEffect(() => {
-    // console.log('effect: ', date);
+   useEffect(() => {
+    console.log('effect: ', date);
     dispatch(diaryOperations.getDiary(`?date=` + date)); 
   }, [dispatch, date]);
  
-
   const handlerDate = (dataFromDaySwitch) => {
-    // console.log('handler : ', dataFromDaySwitch);
+    console.log('handler : ', dataFromDaySwitch);
 
     const newDate = dataFromDaySwitch
       ? formatDate(dataFromDaySwitch)
