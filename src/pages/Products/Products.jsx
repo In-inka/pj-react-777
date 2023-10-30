@@ -9,20 +9,19 @@ import {
 } from './Products.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsList } from '../../redux/products/operationsProducts';
-import { selectFilter, selectIsLoadingProduct, selectProductsList } from '../../redux/products/selectorsProducts';
+import { selectIsLoadingProduct, selectProductsList } from '../../redux/products/selectorsProducts';
 import Loader from "../../components/Loader/Loader"
 
 const Products = () => {
   const isLoading = useSelector(selectIsLoadingProduct);
   const dispatch = useDispatch();
   const products = useSelector(selectProductsList)
-  const filter = useSelector(selectFilter)
-  const fetching = useCallback(async (filterParams) => {
+  const fetching = useCallback( (filterParams) => {
     try {
       if (filterParams) {
-        await dispatch(getProductsList(filterParams));
+         dispatch(getProductsList(filterParams));
       } else {
-        await dispatch(getProductsList());
+         dispatch(getProductsList());
       }
     } catch (error) {
       console.log(error);
@@ -30,10 +29,11 @@ const Products = () => {
   }, [dispatch])
 
   useEffect(() => {
-    if (filter.search === '' && filter.category === '' && filter.recommended === '') {
+    console.log(localStorage.getItem("persist:products"))
+    if (!localStorage.getItem("persist:products")) {
       fetching()
     }
-  }, [fetching, filter]);
+  }, [fetching]);
 
   return (
     <Container>

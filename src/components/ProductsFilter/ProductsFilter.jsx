@@ -139,10 +139,10 @@ export const ProductsFilter = ({ submit }) => {
   const [recommended, setRecommended] = useState(filter.recommended)
   const dispatch = useDispatch()
 
-  const onChangeSearch = (event) => {
+  const onChangeSearch =  (event) => {
     const text = event.target.value;
     setSearch(text)
-    dispatch(filterReducer({
+     dispatch(filterReducer({
       search: text,
       category,
       recommended
@@ -154,14 +154,14 @@ export const ProductsFilter = ({ submit }) => {
     })
   };
 
-  const onCategoriesChange = async (event) => {
+  const onCategoriesChange =  (event) => {
     setCategory(event.value)
-    setSearchParams({
+     setSearchParams({
       search,
       category: event.value || 'all',
       recommended: recommended || "all"
     })
-    dispatch(filterReducer({
+     dispatch(filterReducer({
       search,
       category: event.value,
       recommended
@@ -173,14 +173,14 @@ export const ProductsFilter = ({ submit }) => {
     })
   };
 
-  const onRecomendedChange = (event) => {
+  const onRecomendedChange =  (event) => {
     setSearchParams({
       search,
       category: category || 'all',
       recommended: event.value || 'all'
     })
     setRecommended(event.value)
-    dispatch(filterReducer({
+     dispatch(filterReducer({
       search,
       category,
       recommended: event.value
@@ -192,9 +192,9 @@ export const ProductsFilter = ({ submit }) => {
     })
   };
 
-  const delTextInput = () => {
+  const delTextInput =  () => {
     setSearch('')
-    dispatch(filterReducer({
+     dispatch(filterReducer({
       search: '',
       category,
       recommended
