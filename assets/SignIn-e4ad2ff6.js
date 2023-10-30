@@ -1,4 +1,4 @@
-import{L as w,d as k,u as j,b as v,j as e,o as y}from"./index-fd33f401.js";import{n as i}from"./emotion-styled.browser.esm-190b0436.js";import{b as z,a as S,c as C,d as _}from"./main_bg_tab-c8ca51e2.js";import{b as T,a as B}from"./main_bg_desktop-12717d49.js";import{C as I}from"./ContainerStyled-bb0b3bf9.js";import{u as F,B as L}from"./Button-2df2188f.js";import{a as $}from"./schemas-28ae4330.js";import{L as E}from"./Loader-49c35c54.js";import"./Hourglass-0a6b9da6.js";const P=i.section`
+import{L as w,d as k,u as j,b as v,j as e,o as y}from"./index-f8a31573.js";import{n as i}from"./emotion-styled.browser.esm-f4ab8ecd.js";import{b as z,a as S,c as C,d as _}from"./main_bg_tab-c8ca51e2.js";import{b as T,a as B}from"./main_bg_desktop-12717d49.js";import{C as I}from"./ContainerStyled-bb0b3bf9.js";import{u as F,B as L}from"./Button-23af4b1e.js";import{a as $}from"./schemas-d98c9d68.js";import{L as E}from"./Loader-d5da460e.js";import"./Hourglass-a7aba679.js";const P=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
