@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import authSelectors from './redux/auth/auth-selectors';
 import authOperations from './redux/auth/operations';
+import { GoogleAuth } from './pages/GoogleAuth/GoogleAuth';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
@@ -60,6 +61,15 @@ function App() {
                 </PublicRoute>
               }
             />
+            <Route
+              path="googleAuth"
+              element={
+                <PublicRoute>
+                  <GoogleAuth />
+                </PublicRoute>              
+            }>
+
+            </Route>
             <Route
               path="profile"
               element={
