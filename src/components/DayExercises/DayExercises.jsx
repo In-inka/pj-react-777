@@ -33,7 +33,6 @@ import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
 import diaryOperations from '../../redux/diary/diaryOperations';
-import { WrapMainBlock } from '../../pages/SecondPage/Diary.styled';
 
 const Icon = styled.svg`
   &.orange {

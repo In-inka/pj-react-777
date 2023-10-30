@@ -1,3 +1,9 @@
+import React from 'react';
+import { useFormik } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import {
   BloodRadio,
   BoxBasicInfo,
@@ -20,19 +26,15 @@ import {
   RadioLabelActive,
   RadioWrapper,
 } from './ProfileSettingsForm.styled';
-import { useFormik } from 'formik';
-import { Button } from '../Buttons/Button';
-import 'react-datepicker/dist/react-datepicker.css';
-import DatePicker from 'react-datepicker';
 import {
   CustomDatePickerInput,
   StyledCalendarContainer,
 } from '../DaySwitch/DaySwitch.styled';
-//import format from 'date-fns/format';
+import { Button } from '../Buttons/Button';
 import operations from '../../redux/auth/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { schema } from './schema/Schema';
 import authSelectors from '../../redux/auth/auth-selectors';
+import { schema } from './schema/Schema';
 
 const ProfileSettingsForm = () => {
   const dispatch = useDispatch();
@@ -57,7 +59,6 @@ const ProfileSettingsForm = () => {
   }
 
   const formattedDate = formatDateString(birthday);
-  console.log(formattedDate); // Виведе '2000-10-30'
 
   const formik = useFormik({
     initialValues: {
@@ -72,8 +73,16 @@ const ProfileSettingsForm = () => {
     },
     validationSchema: schema,
     onSubmit: async (values) => {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      dispatch(operations.updateUserMetricsData(values));
+      try {
+        await schema.validate(values, { abortEarly: false });
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        dispatch(operations.updateUserMetricsData(values));
+        toast.success('Profile updated successfully');
+      } catch (error) {
+        error.inner.forEach((err) => {
+          toast.error(err.message);
+        });
+      }
     },
   });
 
@@ -137,7 +146,6 @@ const ProfileSettingsForm = () => {
                       birthday ? new Date(formik.values.birthday) : Date.now()
                     }
                     onChange={(date) => {
-                      setSelectedDate(date);
                       formik.setFieldValue('birthday', formatDateString(date));
                     }}
                     customInput={<CustomDatePickerInput />}
@@ -251,7 +259,6 @@ const ProfileSettingsForm = () => {
         </ContainerBloodSex>
 
         <ContainerRadioActive>
-          {/* <RadioContainer> */}
           <RadioWrapper>
             <RadioButton htmlFor="levelActivity1">
               <InputSex
@@ -343,11 +350,10 @@ const ProfileSettingsForm = () => {
               </RadioLabelActive>
             </RadioButton>
           </RadioWrapper>
-          {/* </RadioContainer> */}
         </ContainerRadioActive>
-        {/*   <Button type="submit" text={'Save'} /> */}
         <Button tp={'submit'} text={'Save'} />
       </FormProfile>
+      <ToastContainer />
     </div>
   );
 };
