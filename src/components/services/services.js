@@ -71,28 +71,28 @@ export const handleRejectedCurrentUser = (state) => {
 
 //--------------------------DIARY
 export const handleFulfilledGet = (state, { payload }) => {
-  state.diary.data = payload;
+  state.diary.data = { ...state.diary.data, ...payload };
   state.isLoading = false;
 };
 
 export const handleFulfilledAddProduct = (state, { payload }) => {
-  state.products.push(payload);
+  state.data.eatenProducts.push(payload);
   state.isLoading = false;
 };
 export const handleFulfilledDeleteProduct = (state, { payload }) => {
-  state.products = state.products.filter(
-    (el) => el.productId !== payload.productId,
+  state.data.eatenProducts = state.data.eatenProducts.filter(
+    (el) => el._id !== payload._id,
   );
 };
 
 export const handleFulfilledAddExercise = (state, { payload }) => {
-  state.exercises.push(payload);
+  state.data.doneExercises.push(payload);
     state.isLoading = false;
 };
 
 export const handleFulfilledDeleteExercise = (state, { payload }) => {
-  state.exercises = state.exercises.filter(
-    (el) => el.exerciseId !== payload.exerciseId,
+  state.data.doneExercises = state.data.doneExercises.filter(
+    (el) => el._id !== payload._id,
   );
 };
 

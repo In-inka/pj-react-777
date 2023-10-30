@@ -100,6 +100,7 @@ const ProfileSettingsForm = () => {
         console.error('Форма містить помилки:', formik.errors);
       } */
 
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       dispatch(operations.updateUserMetricsData(values));
       console.log('data', values);
       actions.resetForm();
@@ -359,7 +360,7 @@ const ProfileSettingsForm = () => {
           {/* </RadioContainer> */}
         </ContainerRadioActive>
         {/*   <Button type="submit" text={'Save'} /> */}
-        <Button tp={'submit'} text={'Save'} />
+        <Button type={'submit'} text={'Save'} />
       </FormProfile>
       {/*       {Object.keys(formik.errors).length > 0 ? (
         <div style={{ color: 'red' }}>{formik.errors.value}</div>
