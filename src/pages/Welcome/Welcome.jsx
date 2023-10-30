@@ -1,3 +1,4 @@
+
 import {
   Container,
   Title,
@@ -31,6 +32,7 @@ const Welcome = () => {
         <ButtonContainer>
           <ButtonYellow to="/signup">Sign Up</ButtonYellow>
           <ButtonBlack to="/signin">Sign In</ButtonBlack>
+
         </ButtonContainer>
         <FlexContainer>
           <VideoTutorialContainer>

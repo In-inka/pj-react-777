@@ -13,12 +13,22 @@ import {
 import sprite from '../../sprite/sprite.svg';
 import { glodalColor } from '../../Styled/GlobalColor';
 
-const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) => {
-  const [startDate, setStartDate] = useState(new Date());
+const DaySwitch = ({
+  textSize,
+  textWeight,
+  iconColor,
+  sizeArrow,
+  textHeight,
+  handlerDate,
+  currentDate,
+}) => {
   const numericMonthFormat = 'dd/MM/yyyy';
-
   const datepickerRef = useRef(null);
 
+  const handler = (evt) => {
+    handlerDate(evt);
+  };
+  
   const toggleDatePicker = () => {
     if (datepickerRef.current) {
       datepickerRef.current.setOpen(true);
@@ -29,17 +39,19 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) =
     <DaySwitchContainer>
       <StyledCalendarContainer>
         <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          selected={currentDate}
+          onChange={handler}
           dateFormat={numericMonthFormat}
           customInput={
             <CustomDatePickerInput
+              onChange={(ev) => console.log(ev)}
               $textSize={textSize}
               $textWeight={textWeight}
               $textHeight={textHeight}
             />
           }
           ref={datepickerRef}
+          shouldCloseOnSelect={true}
         />
         <StyledIcon onClick={toggleDatePicker} stroke={iconColor}>
           <use href={`${sprite}#icon-calendar`}></use>
@@ -47,19 +59,25 @@ const DaySwitch = ({ textSize, textWeight, iconColor, sizeArrow, textHeight }) =
       </StyledCalendarContainer>
       <StyledArrow>
         <IoIosArrowBack
-          onClick={() => setStartDate(subDays(startDate, 1))}
+          onClick={() => {
+            handler(subDays(currentDate, 1));
+          }}
           style={{
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
             color: glodalColor.bgCards,
+            userSelect: 'none',
           }}
         />
         <IoIosArrowForward
-          onClick={() => setStartDate(addDays(startDate, 1))}
+          onClick={() => {
+            handler(addDays(currentDate, 1));
+          }}
           style={{
             cursor: 'pointer',
             fontSize: sizeArrow ? `${sizeArrow}px` : `16px`,
             color: glodalColor.withe,
+            userSelect: 'none',
           }}
         />
       </StyledArrow>

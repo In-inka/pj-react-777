@@ -1,12 +1,17 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Form = styled.form`
   margin-top: 28px;
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
-    width: 364px;
+    width: 404px;
   }
+`;
+
+export const InputsContainer = styled.div`
+  padding-right: 40px;
 `;
 
 export const Input = styled.input`
@@ -59,6 +64,45 @@ export const ButtonContainer = styled.div`
   padding-top: 28px;
     @media screen and (min-width: 768px) {
     padding-top: 64px;}
+`;
+
+export const GoogleSignLink = styled(Link)`
+  margin-left: 14px;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.17;
+  background-color: inherit;
+  color: #efede8;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  padding: 11px 45px 11px 39px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border-color: rgba(230, 83, 60, 1);
+  }
+  &:disabled {
+    border-color: rgba(230, 83, 60, 1);
+  }
+  @media screen and (min-width: 768px) {
+    padding: 16px 68px 16px 60px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+`;
+export const GoogleIcon = styled.svg`
+  position: absolute;
+  right: 19px;
+  width: 20px;
+  height: 20px;
+  @media screen and (min-width: 768px) {
+    &.setG {
+      right: 32px;
+      width: 28px;
+      height: 28px;
+    }
+  }
 `;
 
 export const MessageContainer = styled.div`

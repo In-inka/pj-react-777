@@ -101,7 +101,6 @@ export const Title = styled.h1`
 
 export const TitleLine = styled.svg`
   fill: ${glodalColor.acceptColor};
-  /* background-color: ${glodalColor.background}; */
   stroke-width: 2px;
   width: 98px;
   height: 35px;
@@ -148,7 +147,6 @@ export const StyledLink = styled(Link)`
 
 export const FlexContainer = styled.div`
   display: flex;
-  /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
   padding-top: 117px;
