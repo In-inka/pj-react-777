@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -9,30 +9,19 @@ import {
 } from './Products.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsList } from '../../redux/products/operationsProducts';
-import { selectIsLoadingProduct } from '../../redux/products/selectorsProducts';
+import { selectIsLoadingProduct, selectProductsList } from '../../redux/products/selectorsProducts';
 import Loader from "../../components/Loader/Loader"
-import { useSearchParams } from 'react-router-dom';
 
 const Products = () => {
-  const [products, setProducts] = useState(null);
   const isLoading = useSelector(selectIsLoadingProduct);
-  const [searchParams] = useSearchParams({});
   const dispatch = useDispatch();
-  const fetching = useCallback(async (filterParams) => {
+  const products = useSelector(selectProductsList)
+  const fetching = useCallback( (filterParams) => {
     try {
       if (filterParams) {
-        if (filterParams.category === "all") {
-          filterParams.category = ""
-        }
-        if (filterParams.recommended === "all") {
-          filterParams.recommended = ""
-        }
-        const { payload } = await dispatch(getProductsList(filterParams));
-        setProducts(payload);
+         dispatch(getProductsList(filterParams));
       } else {
-        const { payload } = await dispatch(getProductsList());
-        setProducts(payload);
-
+         dispatch(getProductsList());
       }
     } catch (error) {
       console.log(error);
@@ -40,13 +29,11 @@ const Products = () => {
   }, [dispatch])
 
   useEffect(() => {
-    const props = Object.fromEntries(searchParams.entries());
-    if (Object.values(props).some(value => value !== '')) {
-      fetching(props);
-    } else {
+    console.log(localStorage.getItem("persist:products"))
+    if (!localStorage.getItem("persist:products")) {
       fetching()
     }
-  }, []);
+  }, [fetching]);
 
   return (
     <Container>

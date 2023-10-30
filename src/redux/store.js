@@ -14,6 +14,8 @@ import storage from 'redux-persist/lib/storage';
 import { exercisesSliceReducer } from './exercises/exercisesSlice';
 import { productsReducer } from './products/sliceProducts';
 import { diarySliceReducer } from './diary/diarySlice';
+import msgpack from 'msgpack-lite';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 const authPersistConfig = {
   key: 'auth',
@@ -21,11 +23,28 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+const productsPersistConfig = {
+  key: 'products',
+  storage,
+  whitelist: ['filter', 'list'],
+  transforms: [
+    {
+      in: (state) => {
+        return msgpack.encode(state);
+      },
+      out: (state) => {
+        return msgpack.decode(state);
+      },
+    },
+  ],
+  stateReconciler: autoMergeLevel2,
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice),
     exercises: exercisesSliceReducer,
-    products: productsReducer,
+    products: persistReducer(productsPersistConfig, productsReducer) ,
     diary: diarySliceReducer,
   },
   middleware: (getDefaultMiddleware) =>

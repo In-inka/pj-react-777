@@ -12,15 +12,19 @@ import {
   ProductsFilterList,
 } from './ProductsFilter.styled';
 import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterReducer } from '../../redux/products/sliceProducts';
+import { selectFilter } from '../../redux/products/selectorsProducts';
 
 const optionsRec = [
-  { value: 'all', label: 'All' },
+  { value: '', label: 'All' },
   { value: 'true', label: 'Recommended ' },
   { value: 'false', label: 'Not recommended' },
 ];
 
 const categories = [
-  'all',
+  '',
   'alcoholic drinks',
   'berries',
   'cereals',
@@ -50,7 +54,7 @@ export const ProductsFilter = ({ submit }) => {
 
   const categoriesList = categories?.map((elem) => ({
     value: elem,
-    label: capitalizeFirstLeter(elem),
+    label: capitalizeFirstLeter(elem) || 'All',
   }));
 
   const isMobile = useMediaQuery({ minWidth: 375 });
@@ -129,12 +133,20 @@ export const ProductsFilter = ({ submit }) => {
   };
 
   const [searchParams, setSearchParams] = useSearchParams({});
-  const search = searchParams.get('search') ?? '';
-  const category = searchParams.get('category') ?? '';
-  const recommended = searchParams.get('recommended') ?? '';
+  const filter = useSelector(selectFilter)
+  const [search, setSearch] = useState(filter.search)
+  const [category, setCategory] = useState(filter.category)
+  const [recommended, setRecommended] = useState(filter.recommended)
+  const dispatch = useDispatch()
 
-  const onChangeSearch = (event) => {
+  const onChangeSearch =  (event) => {
     const text = event.target.value;
+    setSearch(text)
+     dispatch(filterReducer({
+      search: text,
+      category,
+      recommended
+    }))
     setSearchParams({
       search: text,
       category: category || "all",
@@ -142,33 +154,51 @@ export const ProductsFilter = ({ submit }) => {
     })
   };
 
-  const onCategoriesChange = async (event) => {
-    setSearchParams({
+  const onCategoriesChange =  (event) => {
+    setCategory(event.value)
+     setSearchParams({
       search,
       category: event.value || 'all',
       recommended: recommended || "all"
     })
+     dispatch(filterReducer({
+      search,
+      category: event.value,
+      recommended
+    }))
     submit({
       search,
       category: event.value,
-      recommended: recommended
+      recommended
     })
   };
 
-  const onRecomendedChange = (event) => {
+  const onRecomendedChange =  (event) => {
     setSearchParams({
       search,
       category: category || 'all',
       recommended: event.value || 'all'
     })
+    setRecommended(event.value)
+     dispatch(filterReducer({
+      search,
+      category,
+      recommended: event.value
+    }))
     submit({
       search,
-      category: category,
+      category,
       recommended: event.value
     })
   };
 
-  const delTextInput = () => {
+  const delTextInput =  () => {
+    setSearch('')
+     dispatch(filterReducer({
+      search: '',
+      category,
+      recommended
+    }))
     setSearchParams({
       search: '',
       category: category || 'all',
