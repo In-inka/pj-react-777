@@ -1,4 +1,4 @@
-import{s as a,j as i}from"./index-18acc384.js";import{T as r}from"./Hourglass-2ec6e71a.js";const t=a.div`
+import{s as a,j as i}from"./index-6fc70aa1.js";import{T as r}from"./Hourglass-e00d2e3a.js";const t=a.div`
     display: block;
     margin-top: 50px;
     margin-left: auto;

@@ -1,15 +1,15 @@
-import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
-  $ContainerStyled
+import{s as i,g as t}from"./index-6fc70aa1.js";const n=i.div`
+  $ContainerStyled;
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
    @media screen and (min-width: 1440px) {
-    border-left: 1px solid ${i.bgCards};
+    border-left: 1px solid ${t.bgCards};
     padding-left:49px;
   }
 
-`,a=t.div`
+`,a=i.div`
   margin: 0 auto;
 
   position: relative;
@@ -20,22 +20,22 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
     width: 150px;
     height: 150px;
   }
-`,o=t.img`
+`,o=i.img`
   max-width: 100%;
-  width: 90px;
-  height: 90px;
+  min-width: 90px;
+  min-height: 90px;
   @media screen and (min-width: 768px) {
-    width: 150px;
-    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
   }
-`,d=t.div`
+`,d=i.div`
   overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border: 1px solid ${i.acceptColor};
+  border: 1px solid ${t.acceptColor};
   border-radius: 50%;
   background-color: transparent;
   width: 90px;
@@ -44,7 +44,7 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
     width: 150px;
     height: 150px;
   }
-`,p=t.button`
+`,p=i.button`
   position: absolute;
   bottom: -12px;
   left: 34px;
@@ -56,7 +56,7 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
 
   background-color: transparent;
   border: none;
-`,r=t.div`
+`,r=i.div`
   padding-top: 32px;
 
   text-align: center;
@@ -64,31 +64,31 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
   @media screen and (min-width: 768px) {
     padding-top: 32px;
   }
-`,s=t.h3`
+`,s=i.h3`
   margin-bottom: 4px;
 
   font-size: 18px;
   line-height: 1.11;
-  color: ${i.withe};
+  color: ${t.withe};
 
   @media screen and (min-width: 768px) {
     margin-bottom: 8px;
     font-size: 24px;
     line-height: 1.16;
   }
-`,x=t.p`
+`,x=i.p`
   margin-bottom: 40px;
 
   font-size: 18px;
   line-height: 1.28;
-  color: ${i.titleCards};
+  color: ${t.titleCards};
 
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
     font-size: 14px;
     line-height: 1.28;
   }
-`,h=t.div`
+`,h=i.div`
   margin-bottom: 40px;
 
   display: flex;
@@ -100,7 +100,7 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
     margin-bottom: 32px;
     gap: 16px;
   }
-`,c=t.div`
+`,m=i.div`
   width: 168px;
   min-height: 96px;
   padding: 14px;
@@ -110,36 +110,36 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
   gap: 28px;
 
   border-radius: 12px;
-  border: 1px solid ${i.bgCards};
+  border: 1px solid ${t.bgCards};
 
-  background-color: ${i.acceptColor};
+  background-color: ${t.acceptColor};
   font-size: 12px;
   line-height: 1.33;
-  color: ${i.dashboardTextAccept};
+  color: ${t.dashboardTextAccept};
 
   @media screen and (min-width: 768px) {
     width: 214px;
     min-height: 108px;
     padding: 14px 18px;
   }
-`,m=t.p`
+`,c=i.p`
   font-size: 18px;
   font-weight: 700;
   line-height: 1.11;
-  color: ${i.withe};
+  color: ${t.withe};
   @media screen and (min-width: 768px) {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.33;
   }
-`,g=t.div`
+`,g=i.div`
   display: flex;
   gap: 6px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,l=t.div`
+`,l=i.div`
   margin-bottom: 41px;
   max-width: 335px;
 
@@ -149,7 +149,7 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
   font-size: 14px;
   line-height: 1.28;
 
-  color: ${i.title};
+  color: ${t.title};
 
   @media screen and (min-width: 768px) {
     margin: 0 auto 32px auto;
@@ -158,7 +158,7 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
     font-size: 16px;
     line-height: 1.5;
   }
-`,w=t.button`
+`,w=i.button`
   margin-bottom: 18px;
   margin-left: auto;
 
@@ -166,7 +166,7 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
   align-items: center;
   gap: 8px;
 
-  color: ${i.withe};
+  color: ${t.withe};
 
   background-color: transparent;
   border: none;
@@ -179,9 +179,9 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
     font-size: 16px;
     line-height: 1.5;
   }
-`,f=t.svg`
+`,f=i.svg`
   &.orange {
-    fill: ${i.secondaryOrange};
+    fill: ${t.secondaryOrange};
   }
   @media screen and (min-width: 768px) {
     &.user {
@@ -197,9 +197,9 @@ import{s as t,g as i}from"./index-18acc384.js";const n=t.div`
   }
 
   &.lightOrange {
-    fill: ${i.secondaryOrange};
+    fill: ${t.secondaryOrange};
   }
   &.stroke {
-    stroke: ${i.secondaryOrange};
+    stroke: ${t.secondaryOrange};
   }
-`;export{l as A,n as C,m as D,f as I,w as L,s as N,a as P,c as S,g as T,o as U,d as a,p as b,r as c,x as d,h as e};
+`;export{l as A,n as C,c as D,f as I,w as L,s as N,a as P,m as S,g as T,o as U,d as a,p as b,r as c,x as d,h as e};
