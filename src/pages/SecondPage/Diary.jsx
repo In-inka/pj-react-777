@@ -40,28 +40,27 @@ function formatDate(date) {
 
 const Diary = () => {
   const [date, setDate] = useState(formatDate(new Date()));
-  const dispatch = useDispatch();
-   
-   useEffect(() => {
-    console.log('effect: ', date);
-    dispatch(diaryOperations.getDiary(`?date=` + date)); 
-  }, [dispatch, date]);
- 
-  const handlerDate = (dataFromDaySwitch) => {
-    console.log('handler : ', dataFromDaySwitch);
+  // const [date, setDate] = useState('29/10/2023');
 
+  const dispatch = useDispatch();
+
+  console.log('Diary: ', date);
+
+  useEffect(() => {
+    console.log('Diary Effect: ', date);
+    dispatch(diaryOperations.getDiary(`?date=` + date));
+  }, [dispatch, date]);
+
+  const handlerDate = (dataFromDaySwitch) => {
+    // console.log('handler : ', dataFromDaySwitch);
     const newDate = dataFromDaySwitch
       ? formatDate(dataFromDaySwitch)
       : formatDate(date);
-    // console.log('formatingDate : ', newDate);
-
+    console.log('Handler FormatingDate : ', newDate);
     // setDate(newDate);
 
     // return newDate;
   };
-
-
-  
 
   return (
     <Container>
