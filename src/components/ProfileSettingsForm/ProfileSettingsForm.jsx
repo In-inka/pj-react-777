@@ -1,7 +1,4 @@
-import React from 'react';
 import { useFormik } from 'formik';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import {
@@ -73,16 +70,8 @@ const ProfileSettingsForm = () => {
     },
     validationSchema: schema,
     onSubmit: async (values) => {
-      try {
-        await schema.validate(values, { abortEarly: false });
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        dispatch(operations.updateUserMetricsData(values));
-        toast.success('Profile updated successfully');
-      } catch (error) {
-        error.inner.forEach((err) => {
-          toast.error(err.message);
-        });
-      }
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      dispatch(operations.updateUserMetricsData(values));
     },
   });
 
@@ -353,7 +342,6 @@ const ProfileSettingsForm = () => {
         </ContainerRadioActive>
         <Button tp={'submit'} text={'Save'} />
       </FormProfile>
-      <ToastContainer />
     </div>
   );
 };
