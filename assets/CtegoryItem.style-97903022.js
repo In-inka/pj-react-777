@@ -1,4 +1,4 @@
-import{s as t,g as p,L as g,k as h,j as i}from"./index-1accc189.js";const m=t.div`
+import{s as i,g as p,L as h,k as g,j as t}from"./index-2b08d0cc.js";const m=i.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -11,12 +11,9 @@ import{s as t,g as p,L as g,k as h,j as i}from"./index-1accc189.js";const m=t.di
     row-gap: 32px;
     column-gap: 16px;
 }
-`,a=t.div`
+`,r=i.div`
 
-    background-color: rgba(0,0,0,0);
-
-    background: linear-gradient(0deg, rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)),
-    linear-gradient(0deg, rgba(239, 237, 232, 0.2), rgba(239, 237, 232, 0.2));
+    background-color: rgb(4, 4, 4,0.30);
 
 
     position: relative;
@@ -39,18 +36,18 @@ import{s as t,g as p,L as g,k as h,j as i}from"./index-1accc189.js";const m=t.di
 @media screen and (min-width: 1440px){
     width: 236px;
 }
-`,f=t(g)`
+`,f=i(h)`
     width: 100%;
-`,w=t.img`
+`,w=i.img`
     position: absolute;
     z-index:-1;
-`,u=t.div`
+`,u=i.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2px;
-`,b=t.h3`
+`,j=i.h3`
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0px;
@@ -58,15 +55,15 @@ import{s as t,g as p,L as g,k as h,j as i}from"./index-1accc189.js";const m=t.di
     font-weight: 400;
     text-transform: capitalize;
     color: ${p.withe};
-    `,j=t.p`
+    `,y=i.p`
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0px;
     color: rgba(239, 237, 232, 0.4);
-`,E=({exercises:o})=>{const c=h(),n=o,d=async e=>{const s=e.currentTarget;if(s){const l=s.id,x=n.filter(r=>r._id===l).map(r=>r.name).join();localStorage.setItem("CategoryName",x)}};return i.jsx(m,{children:n&&n.map(e=>i.jsx(a,{children:i.jsx(f,{to:"/exercises",state:{from:c},children:i.jsxs(a,{id:e._id,onClick:d,children:[i.jsx(w,{src:e.imgURL,alt:e.name}),i.jsxs(u,{children:[i.jsx(b,{children:e.name}),i.jsx(j,{children:e.filter})]})]})})},e._id))})},k=t.div`
+`,b=({exercises:a})=>{const c=g(),n=a,d=async e=>{const o=e.currentTarget;if(o){const l=o.id,x=n.filter(s=>s._id===l).map(s=>s.name).join();localStorage.setItem("CategoryName",x)}};return t.jsx(m,{children:n&&n.map(e=>t.jsx(r,{children:t.jsx(f,{to:"/exercises",state:{from:c},children:t.jsxs(r,{id:e._id,onClick:d,children:[t.jsx(w,{src:e.imgURL,alt:e.name}),t.jsxs(u,{children:[t.jsx(j,{children:e.name}),t.jsx(y,{children:e.filter})]})]})})},e._id))})},v=i.div`
    display: flex;
    height: auto;
    height: 100%;
    position: relative;
 
-`;export{k as B,E};
+`;export{v as B,b as E};
