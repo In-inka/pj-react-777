@@ -8,10 +8,13 @@ import {
   LogoutButton,
   LogoutContainer,
   LogoutIcon,
-  MenuIcon,
+  MenuIconButton,
   SettingsIcon,
-  UserIcon,
   SettingsIconContainer,
+  UserAvatarContainer,
+  UserAvatar,
+  UserIcon,
+  MenuIcon,
 } from './Header.styled';
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/operations';
@@ -20,14 +23,12 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 import { useEffect, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import sprite from '../../sprite/sprite.svg';
-import { Icon } from '../UserCards/UserCards.styled';
 
 const Header = () => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  const avatarLink = useSelector(authSelectors.getUserAvatar);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dispatch = useDispatch();
-
-  // const isLoggedIn = true;
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -84,8 +85,20 @@ const Header = () => {
                 <use href={`${sprite}#icon-settings`}></use>
               </SettingsIcon>
             </SettingsIconContainer>
-            <UserIcon />
-            <MenuIcon type="button" onClick={toggleClickMenu} />
+            <UserAvatarContainer>
+              {avatarLink ? (
+                <UserAvatar src={avatarLink} alt="user avatar" />
+              ) : (
+                <UserIcon className="setUser">
+                  <use href={`${sprite}#icon-user`}></use>
+                </UserIcon>
+              )}
+            </UserAvatarContainer>
+            <MenuIconButton type="button" onClick={toggleClickMenu}>
+              <MenuIcon className="setMenu">
+                <use href={`${sprite}#icon-menu`}></use>
+              </MenuIcon>
+            </MenuIconButton>
             <LogoutContainer>
               <LogoutButton type="button" onClick={onHandleClick}>
                 Logout

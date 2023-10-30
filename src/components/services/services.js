@@ -69,8 +69,8 @@ export const handleRejectedCurrentUser = (state) => {
 };
 
 //--------------------------DIARY
-export const handleFulfilledGet = (state, { payload }) => {
-  state.diary.data = { ...state.diary.data, ...payload };
+export const handleFulfilled = (state, { payload }) => {
+  state.data = payload;
   state.isLoading = false;
 };
 
@@ -110,16 +110,11 @@ export const handleFulfilledFilterExercisesMuscles = (state, { payload }) => {
   state.isLoading = false;
 };
 
-export const handleFulfilled = (state, { payload }) => {
-  state.data = {...state.data, ...payload};
-  state.isLoading = false;
-};
 
 export const handlePending = (state) => {
   state.isLoading = true;
 };
 
-export const handleRejected = (state, { payload }) => {
+export const handleRejected = (state) => {
   state.isLoading = false;
-  state.error = payload;
 };
