@@ -1,4 +1,4 @@
-import{L as e,j as i}from"./index-8f8ae8db.js";import{n}from"./emotion-styled.browser.esm-09739fd3.js";import{b as d,a as o,c as r,d as a}from"./main_bg_tab-c8ca51e2.js";import{b as t,a as p}from"./main_bg_desktop-12717d49.js";import{C as c}from"./ContainerStyled-bb0b3bf9.js";const x=n.section`
+import{L as e,j as i}from"./index-ffaa81a0.js";import{n}from"./emotion-styled.browser.esm-09d05156.js";import{b as d,a as o,c as r,d as a}from"./main_bg_tab-c8ca51e2.js";import{b as t,a as p}from"./main_bg_desktop-12717d49.js";import{C as c}from"./ContainerStyled-bb0b3bf9.js";const x=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
@@ -94,7 +94,7 @@ import{L as e,j as i}from"./index-8f8ae8db.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     margin-top: 64px;
   }
-`,m=n(e)`
+`,h=n(e)`
   display: inline-block;
   margin-right: 14px;
   font-size: 16px;
@@ -118,7 +118,7 @@ import{L as e,j as i}from"./index-8f8ae8db.js";import{n}from"./emotion-styled.br
     font-size: 20px;
     line-height: 1.2;
   }
-`,h=n(e)`
+`,m=n(e)`
   display: inline-block;
   font-size: 16px;
   line-height: 1.17;
@@ -256,4 +256,4 @@ import{L as e,j as i}from"./index-8f8ae8db.js";import{n}from"./emotion-styled.br
     height: 24px;
     margin-bottom: 12px;
   }
-`,P=()=>i.jsx(x,{children:i.jsxs(s,{children:[i.jsx(g,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(m,{to:"/signup",children:"Sign Up"}),i.jsx(h,{to:"/signin",children:"Sign In"})]}),i.jsx(b,{children:i.jsxs(u,{children:[i.jsx(j,{}),i.jsxs(f,{children:[i.jsx(k,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(z,{children:i.jsxs(y,{children:[i.jsx(T,{}),i.jsxs(v,{children:[i.jsx(_,{children:"500"}),i.jsx(C,{children:"cal"})]})]})})]})});export{P as default};
+`,I=()=>i.jsx(x,{children:i.jsxs(s,{children:[i.jsx(g,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(h,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"}),i.jsx(e,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:"Google-auth"})]}),i.jsx(b,{children:i.jsxs(u,{children:[i.jsx(j,{}),i.jsxs(f,{children:[i.jsx(k,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(z,{children:i.jsxs(y,{children:[i.jsx(T,{}),i.jsxs(v,{children:[i.jsx(_,{children:"500"}),i.jsx(C,{children:"cal"})]})]})})]})});export{I as default};

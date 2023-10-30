@@ -1,4 +1,4 @@
-import{s as o,j as r}from"./index-8f8ae8db.js";import{P as t}from"./Hourglass-ad8fce8e.js";const i=o.div`
+import{s as o,j as r}from"./index-ffaa81a0.js";import{P as t}from"./Hourglass-2cd000a6.js";const i=o.div`
   display: flex;
   justify-content: center;
   align-items: center;
