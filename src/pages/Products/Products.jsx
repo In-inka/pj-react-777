@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useState } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -6,16 +7,57 @@ import {
   ProductsFunc,
   ProductsFilterText,
 } from './Products.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProductsList } from '../../redux/products/operationsProducts';
+import { selectIsLoadingProduct } from '../../redux/products/selectorsProducts';
+import Loader from "../../components/Loader/Loader"
+import { useSearchParams } from 'react-router-dom';
 
 const Products = () => {
+  const [products, setProducts] = useState(null);
+  const isLoading = useSelector(selectIsLoadingProduct);
+  const [searchParams] = useSearchParams({});
+  const dispatch = useDispatch();
+  const fetching = useCallback(async (filterParams) => {
+    try {
+      if (filterParams) {
+        if (filterParams.category === "all") {
+          filterParams.category = ""
+        }
+        if (filterParams.recommended === "all") {
+          filterParams.recommended = ""
+        }
+        const { payload } = await dispatch(getProductsList(filterParams));
+        setProducts(payload);
+      } else {
+        const { payload } = await dispatch(getProductsList());
+        setProducts(payload);
+
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, [dispatch])
+
+  useEffect(() => {
+    const props = Object.fromEntries(searchParams.entries());
+    if (Object.values(props).some(value => value !== '')) {
+      fetching(props);
+    } else {
+      fetching()
+    }
+  }, []);
+
   return (
     <Container>
       <ProductsFilterText>Filters</ProductsFilterText>
       <ProductsFunc>
         <ProductsTitle>Products</ProductsTitle>
-        <ProductsFilter />
+        <ProductsFilter submit={fetching} />
       </ProductsFunc>
-      <ProductsList />
+      {!isLoading && products !== null ?
+        (<ProductsList products={products} />) :
+        (<Loader cls={'yellowBtn'} />)}
     </Container>
   );
 };
