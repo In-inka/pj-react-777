@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import {
   Container,
   Title,
@@ -18,7 +18,11 @@ import {
   ButtonYellow,
   ButtonBlack,
   Section,
+  PlayIconContainer,
+  RunIconContainer,
 } from './Welcome.styled';
+import sprite from '../../sprite/sprite.svg';
+
 
 const Welcome = () => {
   return (
@@ -28,11 +32,15 @@ const Welcome = () => {
         <ButtonContainer>
           <ButtonYellow to="/signup">Sign Up</ButtonYellow>
           <ButtonBlack to="/signin">Sign In</ButtonBlack>
-          <Link to="https://power-pulse-rh13.onrender.com/api/users/googleAuth">Google-auth</Link>
+
         </ButtonContainer>
         <FlexContainer>
           <VideoTutorialContainer>
-            <PlayIcon />
+            <PlayIconContainer>
+              <PlayIcon className="setPlay">
+                <use href={`${sprite}#icon-Polygon`}></use>
+              </PlayIcon>
+            </PlayIconContainer>
             <TextContainerB>
               <VideoTutorialTextA>350+</VideoTutorialTextA>
               <VideoTutorialTextB>Video tutorial</VideoTutorialTextB>
@@ -41,7 +49,11 @@ const Welcome = () => {
         </FlexContainer>
         <FlexContainerB>
           <CalorieContainer>
-            <RunIcon />
+            <RunIconContainer>
+              <RunIcon className="setRun">
+                <use href={`${sprite}#icon-running`}></use>
+              </RunIcon>
+            </RunIconContainer>
             <TextContainerC>
               <CalorieTextA>500</CalorieTextA>
               <CalorieTextB>cal</CalorieTextB>

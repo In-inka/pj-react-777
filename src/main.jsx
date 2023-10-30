@@ -9,18 +9,21 @@ import './index.css';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/pj-react-777">
-          <ThemeProvider theme={glodalColor}>
-            <GlobalStyle />
-            <App />
-          </ThemeProvider>
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
-  /* </React.StrictMode>, */
+  <React.StrictMode>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter basename="/pj-react-777">
+        <ThemeProvider theme={glodalColor}>
+          <GlobalStyle />
+          <App />
+          <ToastContainer theme="colored" position="top-center" />
+        </ThemeProvider>
+      </BrowserRouter>
+    </PersistGate>
+  </Provider>
+  </React.StrictMode >
 );
