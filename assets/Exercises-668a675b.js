@@ -1,4 +1,4 @@
-import{N as S,g as n,n as B,j as e,s as t,d as L,r as l,q as O,u as m,O as N}from"./index-6fc70aa1.js";import{n as v}from"./emotion-styled.browser.esm-c202538f.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{b as D,a as q}from"./main_bg_desktop-12717d49.js";import{s as x}from"./sprite-11fda8a3.js";import{e as b}from"./exercisesSelectors-80adadd9.js";import{L as F}from"./Loading-df8bddee.js";import"./Hourglass-e00d2e3a.js";const M=v.div`
+import{N as S,g as n,n as B,j as e,s as t,d as L,r as l,q as O,u as m,O as N}from"./index-1a0f3b56.js";import{n as v}from"./emotion-styled.browser.esm-0936bb26.js";import{C as _}from"./ContainerStyled-bb0b3bf9.js";import{b as D,a as q}from"./main_bg_desktop-12717d49.js";import{s as x}from"./sprite-ef10f825.js";import{e as b}from"./exercisesSelectors-80adadd9.js";import{L as F}from"./Loading-6b30e0cb.js";import"./Hourglass-63277ca3.js";const M=v.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
