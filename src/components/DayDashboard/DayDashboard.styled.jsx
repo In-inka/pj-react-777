@@ -75,7 +75,7 @@ export const ContentContainerCard = styled.div`
         return `
           border-color: ${glodalColor.red};          
         `;
-      case props.title === 'The rest of sports' && props.value === 30:
+      case props.title === 'The rest of sports' && props.value < 0:
         return `
           border-color:${glodalColor.green};          
         `;

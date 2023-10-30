@@ -1,19 +1,25 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import diaryOperations from './diaryOperations';
-import { handleFulfilled, handleFulfilledAddExercise, handleFulfilledAddProduct, handleFulfilledDeleteExercise, handleFulfilledDeleteProduct, handlePending, handleRejected } from '../../components/services/services';
+import {
+  handleFulfilled,
+  handleFulfilledAddExercise,
+  handleFulfilledAddProduct,
+  handleFulfilledDeleteExercise,
+  handleFulfilledDeleteProduct,
+  handlePending,
+  handleRejected,
+} from '../../components/services/services';
 
 const initialState = {
-    data: {
-    eatenProducts:[],
-    doneExercises:[],
-    consumedCalories:0,
-    burnedCalories:0,
-    sportTime:0,
-        },
-    products:[],
-    exercises:[],
-    isLoading: false,
-    error:"",
+  data: {
+    eatenProducts: [],
+    doneExercises: [],
+    consumedCalories: 0,
+    burnedCalories: 0,
+    sportTime: 0,
+  },
+  isLoading: false,
+  error: '',
 };
 
 const STATUS = {
