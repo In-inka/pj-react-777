@@ -6,13 +6,46 @@ import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 
 export const ContainerExercisesPage = styled.div`
     ${ContainerStyled}
-    overflow: hidden;
     padding-top: 101px;
     padding-bottom: 80px;
-    position: relative;
     
-    
+    `
+export const BoxBackgroundPhoto = styled.div`
+@media screen and (min-width: 1440px) {
+    display: block;
+    &.backgroundPhoto{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+
+                background: linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                    url(${background_img_desktop});
+                background-repeat: no-repeat;
+                background-position: top 185px left 963px;
+                background-size: 670px 902px ;
+                
+                
+                @media screen and (min-device-pixel-ratio: 2),
+                screen and (min-resolution: 192dpi),
+                screen and (min-resolution: 2dppx) {
+                    background: linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                    url(${background_img_desktop_x2});
+                    
+                    background-repeat: no-repeat;
+                    background-position: top 185px left 963px;
+                    background-size: 670px 902px ;
+                    
+            }
+
+        }  
+    }
+
+
 `
+
+
+
 
 export const BoxTitlePage = styled.div`
 display: flex;
@@ -47,28 +80,3 @@ export const PictureBck = styled.picture`
     }
 `
 
-
-
-export const BgkPhoto = styled.div`
-    display: none;
-    
-    @media screen and (min-width: 1440px) {
-        display: block;
-        position: absolute;
-        top: 185px;
-        left: 963px;
-        width: 487px;
-        height: 920px;
-        z-index: -1;
-        background: linear-gradient(80deg,#040404 -2.45%,rgba(4, 4, 4, 0) 68.17%),url(${background_img_desktop});
-        background-repeat: no-repeat;
-        background-size: 670px;
-        @media screen and (min-device-pixel-ratio: 2),
-        screen and (min-resolution: 192dpi),
-        screen and (min-resolution: 2dppx) {    
-            background: linear-gradient(80deg,#040404 -2.45%,rgba(4, 4, 4, 0) 68.17%),url(${background_img_desktop_x2});
-            background-repeat: no-repeat;
-            background-size: contain;
-    }
-}
-`

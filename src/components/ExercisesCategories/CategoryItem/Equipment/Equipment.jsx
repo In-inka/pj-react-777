@@ -13,14 +13,14 @@ const Equipment = () => {
     dispatch(exercisesOperations.getExercisesByEquipment())
   },[dispatch])
 
-const data = useSelector(exercisesSelectors.getExercisesData)
+const data = useSelector(exercisesSelectors.getFilterEquioment)
 const loading = useSelector(exercisesSelectors.getIsLoading)
 const error =  useSelector(exercisesSelectors.getIsError)
   
   return (
     <BoxCategoryItem>
       {loading && <Loading/>}
-      { !loading && data && <ExercisesList exercises={data}/>}
+      { !loading && data && <ExercisesList exercises={data[0]}/>}
     </BoxCategoryItem>
 )
 };

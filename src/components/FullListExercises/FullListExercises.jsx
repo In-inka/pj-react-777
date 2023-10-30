@@ -8,7 +8,7 @@ import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import Loading from '../Loading/Loading';
 
 
-const FullListExercises = ({filter}) => {
+const FullListExercises = ({filter, openWindow}) => {
     const dispatch = useDispatch();
 
 
@@ -32,11 +32,11 @@ const filterArry = data.filter((el)=>{ return el.bodyPart === filter || el.targe
     <ContainerFullExercises>
         
         {loading && <Loading/>}
-        {filterArry && filterArry.map((item)=>{
+        {!loading && filterArry && filterArry.map((item)=>{
             return(
         <ListFullExercises key={item._id}>
             <BoxWorkout>WORKOUT</BoxWorkout>
-            <BtnStart type='button' >
+            <BtnStart id={item._id} type='button' onClick={openWindow}>
                 <BoxIconStart>
                     <TextStart>Start</TextStart>
                     <IconStart>
