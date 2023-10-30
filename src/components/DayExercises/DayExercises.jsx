@@ -42,13 +42,13 @@ const Icon = styled.svg`
 `;
 
 export const DayExercises = () => {
-const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
+  const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
 
   return (
     <ContainerEx>
       <TitleMainEx>
         <SubTitleEx>Execrcises</SubTitleEx>
-        <StyledLinkEx to="/exercises">
+        <StyledLinkEx to="/exercises/bodyParts">
           <AddProductEx>Add exercise</AddProductEx>
           <Icon width={16} height={16} className="orange">
             <use href={`${sprite}#icon-start`}></use>
@@ -58,14 +58,14 @@ const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
       {!visibleExercises.length ? (
         <EmptyScreenEx />
       ) : (
-        <ExercisesTable exercises={visibleExercises}/>
+        <ExercisesTable exercises={visibleExercises} />
       )}
     </ContainerEx>
   );
 };
 // exercises;
 export const ExercisesTable = ({ exercises }) => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -87,7 +87,6 @@ const dispatch = useDispatch();
             _id,
           }) => (
             <ListItemEx key={_id}>
-              
               <WrapMainBlockEx>
                 <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
                 <ItemProductEx value={equipment}>Equipment</ItemProductEx>
@@ -176,4 +175,3 @@ export const TableTitleEx = () => {
 };
 
 export const EmptyScreenEx = () => <NotFoundEx>Not found exercises</NotFoundEx>;
-
