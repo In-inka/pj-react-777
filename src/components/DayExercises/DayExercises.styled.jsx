@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { glodalColor } from '../../Styled/GlobalColor';
 
 export const ContainerEx = styled.div`
   /* 320-375 */
@@ -67,6 +68,17 @@ export const AddProductEx = styled.p`
   @media screen and (min-width: 1440px) {
   }
 `;
+export const WrapMainBlockEx = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex: 1.4;
+    column-gap: 8px;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1440px) {
+    flex: 1.3;
+  }
+`;
 
 export const WrapMobileEx = styled.div`
   display: flex;
@@ -75,7 +87,7 @@ export const WrapMobileEx = styled.div`
 
   @media screen and (min-width: 768px) {
     align-items: center;
-    flex: 2.2;
+    flex: 1;
     gap: 0px;
     justify-content: space-between;
   }
@@ -106,23 +118,42 @@ export const ItemWrapperEx = styled.div`
     /* flex: ${(props) => (props.name === 'Target' ? 1.3 : 1)}; */
     flex: ${(props) => {
       switch (props.name) {
-        case 'Time':
-          return 0.55;
-        case 'Burned Calories':
-          return 0.8;
-        case 'Name':
-          return 0.8;
-          
-      }
-    }};
-  }
-  @media screen and (min-width: 1440px) {
-    flex: ${(props) => {
-      switch (props.name) {
         case 'Body Part':
+          return 0.3;
+        case 'Equipment':
+          return 0.4;
+        case 'Name':
+          return 0.35;
+
+        case 'Target':
           return 0.8;
+        case 'Burned Calories':
+          return 0.5;
+        case 'Time':
+          return 0.4;
       }
     }};
+    @media screen and (min-width: 1440px) {
+       flex: ${(props) => {
+         switch (props.name) {
+           case 'Body Part':
+             return 0.3;
+           case 'Equipment':
+             return 0.4;
+           case 'Name':
+             return 0.35;
+
+           case 'Target':
+             return 0.6;
+           case 'Burned Calories':
+             return 0.5;
+           case 'Time':
+             return 0.4;
+         }
+       }}
+
+
+    };
   }
 `;
 
@@ -208,15 +239,6 @@ export const SliceTextNameEx = styled.div`
     display: none;
   }
 `;
-
-// export const IconWrapperEx = styled.svg`
-//   width: ${(props) => props.size || '13px'};
-//   height: ${(props) => props.size || '13px'};
-//   fill: ${(props) => props.color || '#ffffff'};
-//   display: inline-block;
-//   margin-left: 9px;
-// `;
-
 export const DeleteIconWrapper = styled.div`
   margin-top: 10px;
   margin-left: 9px;
@@ -302,10 +324,19 @@ export const IndicatorEx = styled.div`
 export const NotFoundEx = styled.div`
   height: 335px;
   width: 100%;
-  color: rgb(239, 237, 232, 0.5);
+  padding-top: 125px;
+  color: ${glodalColor.title};
   font-size: 14;
-  display: grid;
-  place-items: center;
+  font-weight: normal; 
+  line-height: 18px; 
+  text-align: center;  
+  
+  @media screen and (min-width: 768px) {
+  height: auto;
+  padding-top: 55px;
+  font-size: 16;
+  line-height: 24px; 
+  }
 `;
 
 export const WrapTitleTableEx = styled.div`
@@ -324,7 +355,7 @@ export const BodyEx = styled.div``;
 
 export const EquipmentEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 80px;
+    margin-left: 65px;
   }
   @media screen and (min-width: 1440px) {
     margin-left: 80px;
@@ -333,10 +364,10 @@ export const EquipmentEx = styled.div`
 
 export const NameEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 75px;
+    margin-left: 90px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 100px;
+    margin-left: 112px;
   }
 `;
 export const TargetEx = styled.div`
@@ -344,13 +375,13 @@ export const TargetEx = styled.div`
     margin-left: 100px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 130px;
+    margin-left: 115px;
   }
 `;
 export const BurnedEx = styled.div`
   @media screen and (min-width: 768px) {
     display: none;
-    margin-left: 60px;
+    margin-left: 62px;
   }
   @media screen and (min-width: 1440px) {
     display: flex;
@@ -370,10 +401,10 @@ export const BurnedExTablet = styled.div`
 `;
 export const TimeEx = styled.div`
   @media screen and (min-width: 768px) {
-    margin-left: 5px;
+    margin-left: 3px;
   }
   @media screen and (min-width: 1440px) {
-    margin-left: 22px;
+    margin-left: 18px;
   }
 `;
 

@@ -28,7 +28,7 @@ const register = createAsyncThunk(
 const logIn = createAsyncThunk('/users/logIn', async (credentials) => {
   try {
     const { data } = await axios.post('/users/login', credentials);
-    console.log(data.token);
+    
     token.set(data.token);
     return data;
   } catch (error) {
@@ -98,7 +98,6 @@ const fetchCurrentUser = createAsyncThunk(
     token.set(persistedToken);
     try {
       const { data } = await axios.get('/users');
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error.message);

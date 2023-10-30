@@ -31,6 +31,10 @@ export const ContentContainerCard = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 374px) {
+    min-width: 118px;
+    max-width: 157px;
+  }
   @media screen and (max-width: 767px) {
     &:nth-child(odd) {
       width: 157px;
@@ -67,11 +71,11 @@ export const ContentContainerCard = styled.div`
   ${(props) => {
     // console.log(props.title);
     switch (true) {
-      case props.title === 'The rest of the calories' && props.value === -100:
+      case props.title === 'The rest of the calories' && props.value < 0:
         return `
           border-color: ${glodalColor.red};          
         `;
-      case props.title === 'The rest of sports' && props.value === 30:
+      case props.title === 'The rest of sports' && props.value < 0:
         return `
           border-color:${glodalColor.green};          
         `;
@@ -106,8 +110,10 @@ export const TitleTextCard = styled.p`
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  white-space: ${(props) =>
+  @media screen and (min-width: 375px) {
+    white-space: ${(props) =>
     props.children === 'The rest of the calories' ? 'normal' : 'nowrap'};
+  }
 
   @media screen and (min-width: 768px) {
     line-height: 18px;

@@ -1,6 +1,14 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import diaryOperations from './diaryOperations';
-import { handleFulfilled, handleFulfilledAddExercise, handleFulfilledAddProduct, handleFulfilledDeleteExercise, handleFulfilledDeleteProduct, handlePending, handleRejected } from '../../components/services/services';
+import {
+  handleFulfilled,
+  handleFulfilledAddExercise,
+  handleFulfilledAddProduct,
+  handleFulfilledDeleteExercise,
+  handleFulfilledDeleteProduct,
+  handlePending,
+  handleRejected,
+} from '../../components/services/services';
 
 const initialState = {
     data: {
