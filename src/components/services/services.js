@@ -113,7 +113,7 @@ export const handleFulfilledFilterExercisesMuscles = (state, { payload }) => {
 };
 
 export const handleFulfilled = (state, { payload }) => {
-  state.data = {...state.data, ...payload};
+  state.data = payload;
   state.isLoading = false;
 };
 
