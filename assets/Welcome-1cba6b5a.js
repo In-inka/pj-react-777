@@ -1,9 +1,9 @@
-import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.browser.esm-0936bb26.js";import{b as d,a as o,c as r,d as a}from"./main_bg_tab-c8ca51e2.js";import{b as t,a as p}from"./main_bg_desktop-12717d49.js";import{C as c}from"./ContainerStyled-bb0b3bf9.js";const x=n.section`
+import{L as d,g as t,j as i}from"./index-8a37cdc9.js";import{n}from"./emotion-styled.browser.esm-46971216.js";import{b as o,a,c as r,d as p}from"./main_bg_tab-c8ca51e2.js";import{b as c,a as x}from"./main_bg_desktop-12717d49.js";import{C as s,s as e}from"./sprite-de03b32f.js";const l=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
     linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-    url(${d});
+    url(${o});
   background-repeat: no-repeat;
   background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
@@ -12,7 +12,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     screen and (min-resolution: 2dppx) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${o});
+      url(${a});
     background-repeat: no-repeat;
     background-position: calc(50% + 38.5px) calc(50% + 120.5px);
     background-size: 298px;
@@ -37,7 +37,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${a});
+        url(${p});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       padding-top: 189px;
@@ -52,7 +52,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${t});
+        url(${c});
       padding-top: 200px;
       padding-bottom: 246px;
       background-repeat: no-repeat;
@@ -68,16 +68,16 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${p});
+        url(${x});
       background-repeat: no-repeat;
       background-position: calc(50% + 335px) calc(50% + 65.5px);
       background-size: 670px;
     }
   }
-`,s=n.div`
-  ${c}
+`,g=n.div`
+  ${s}
   position: relative;
-`,g=n.h1`
+`,h=n.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 38px;
   line-height: 1.05;
@@ -89,12 +89,12 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 1440px) {
     width: 598px;
   }
-`,l=n.div`
+`,m=n.div`
   margin-top: 40px;
   @media screen and (min-width: 768px) {
     margin-top: 64px;
   }
-`,h=n(e)`
+`,b=n(d)`
   display: inline-block;
   margin-right: 14px;
   font-size: 16px;
@@ -118,7 +118,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     font-size: 20px;
     line-height: 1.2;
   }
-`,m=n(e)`
+`,u=n(d)`
   display: inline-block;
   font-size: 16px;
   line-height: 1.17;
@@ -140,7 +140,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     font-size: 20px;
     line-height: 1.2;
   }
-`,b=n.div`
+`,f=n.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
@@ -157,7 +157,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     left: 770px;
     top: 184px;
   }
-`,u=n.div`
+`,w=n.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -167,7 +167,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,f=n.div``,k=n.p`
+`,k=n.div``,j=n.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -175,7 +175,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     font-size: 24px;
     line-height: 1;
   }
-`,w=n.p`
+`,y=n.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -185,8 +185,22 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     font-size: 16px;
     line-height: 1.5;
   }
-`,j=n.div`
-  display: block;
+`,z=n.svg`
+  fill: ${t.withe};
+  padding-left: 3px;
+  width: 12px;
+  height: 12px;
+  @media screen and (min-width: 768px) {
+    &.setPlay {
+      padding-left: 5px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+`,v=n.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
   border-radius: 50px;
@@ -197,7 +211,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     height: 40px;
     margin-right: 12px;
   }
-`,z=n.div`
+`,C=n.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -211,7 +225,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     top: 319px;
     left: 1228px;
   }
-`,y=n.div`
+`,_=n.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -220,11 +234,11 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,v=n.div`
+`,T=n.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,_=n.p`
+`,$=n.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -235,7 +249,7 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     font-size: 48px;
     line-height: 1.04;
   }
-`,C=n.p`
+`,B=n.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -244,8 +258,21 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     font-size: 16px;
     line-height: 1.5;
   }
-`,T=n.div`
-  display: block;
+`,P=n.svg`
+  fill: ${t.withe};
+  width: 12px;
+  height: 12px;
+  @media screen and (min-width: 768px) {
+    &.setRun {
+      padding-left: 2px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+`,I=n.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
   height: 20px;
   border-radius: 50px;
@@ -256,4 +283,4 @@ import{L as e,j as i}from"./index-1a0f3b56.js";import{n}from"./emotion-styled.br
     height: 24px;
     margin-bottom: 12px;
   }
-`,I=()=>i.jsx(x,{children:i.jsxs(s,{children:[i.jsx(g,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(l,{children:[i.jsx(h,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"}),i.jsx(e,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:"Google-auth"})]}),i.jsx(b,{children:i.jsxs(u,{children:[i.jsx(j,{}),i.jsxs(f,{children:[i.jsx(k,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]})}),i.jsx(z,{children:i.jsxs(y,{children:[i.jsx(T,{}),i.jsxs(v,{children:[i.jsx(_,{children:"500"}),i.jsx(C,{children:"cal"})]})]})})]})});export{I as default};
+`,L=()=>i.jsx(l,{children:i.jsxs(g,{children:[i.jsx(h,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(m,{children:[i.jsx(b,{to:"/signup",children:"Sign Up"}),i.jsx(u,{to:"/signin",children:"Sign In"})]}),i.jsx(f,{children:i.jsxs(w,{children:[i.jsx(v,{children:i.jsx(z,{className:"setPlay",children:i.jsx("use",{href:`${e}#icon-Polygon`})})}),i.jsxs(k,{children:[i.jsx(j,{children:"350+"}),i.jsx(y,{children:"Video tutorial"})]})]})}),i.jsx(C,{children:i.jsxs(_,{children:[i.jsx(I,{children:i.jsx(P,{className:"setRun",children:i.jsx("use",{href:`${e}#icon-running`})})}),i.jsxs(T,{children:[i.jsx($,{children:"500"}),i.jsx(B,{children:"cal"})]})]})})]})});export{L as default};
