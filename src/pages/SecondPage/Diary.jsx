@@ -81,7 +81,7 @@ const { eatenProducts, doneExercises } = diary;
           </NotMobileDaySwitch>
         </WrapDaySwitcher>
       </WrapTitle>
-      <WrapMainBlock>
+      <WrapMainBlock>   
         <WrapDashBoard>
           <DayDashboard />
           <WrapInfoText>
