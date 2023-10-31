@@ -6,7 +6,7 @@ import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 
 import {
   Container,
@@ -23,7 +23,8 @@ import {
 } from './Diary.styled';
 import sprite from '../../sprite/sprite.svg';
 import { useEffect, useState } from 'react';
-import diarySelectors from "../../redux/diary/diarySelectors"
+import diarySelectors from '../../redux/diary/diarySelectors';
+import Timer from '../../components/Timer/Timer';
 
 const Icon = styled.svg`
   &.orange {
@@ -38,18 +39,22 @@ function formatDate(date) {
   return `${day}/${month}/${year}`;
 }
 
-const Diary = () => {
+const Diary = ({ duration }) => {
+  const [dinamicBurnCal, setDinamicBurnCal] = useState(0);
+
   const [date, setDate] = useState(new Date());
   const dispatch = useDispatch();
-  const handlerDate = (date) => { setDate(date); };
+  const handlerDate = (date) => {
+    setDate(date);
+  };
 
-const diary = useSelector(diarySelectors.getDiary);
-const { eatenProducts, doneExercises } = diary;
-  
+  const diary = useSelector(diarySelectors.getDiary);
+  const { eatenProducts, doneExercises } = diary;
+
   useEffect(() => {
     dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
   }, [dispatch, date, eatenProducts.length, doneExercises.length]);
-  
+
   // const minDate = new Date('15/10/2023');
   // if (date < minDate) setDate(minDate);
   return (
@@ -81,7 +86,7 @@ const { eatenProducts, doneExercises } = diary;
           </NotMobileDaySwitch>
         </WrapDaySwitcher>
       </WrapTitle>
-      <WrapMainBlock>   
+      <WrapMainBlock>
         <WrapDashBoard>
           <DayDashboard />
           <WrapInfoText>
@@ -98,6 +103,12 @@ const { eatenProducts, doneExercises } = diary;
           <DayExercises />
         </WrapTableBlock>
       </WrapMainBlock>
+
+      <Timer
+        setDinamicBurnCal={setDinamicBurnCal}
+        dinamicBurnCal={dinamicBurnCal}
+        duration={duration}
+      />
     </Container>
   );
 };

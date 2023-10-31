@@ -39,11 +39,6 @@ const ExercisesModal = ({ data, onClose }) => {
           </BoxGif>
           <BoxTimer>
             <TextTime>Time</TextTime>
-            <Timer
-              setDinamicBurnCal={setDinamicBurnCal}
-              dinamicBurnCal={dinamicBurnCal}
-              setDinamicTime={setDinamicTime}
-            />
             <ButtonPause type="button">
               <IconPause>
                 <use href={`${sprite}#icon-pause`}></use>
