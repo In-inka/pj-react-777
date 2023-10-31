@@ -24,7 +24,6 @@ import {
 import sprite from '../../sprite/sprite.svg';
 import { useEffect, useState } from 'react';
 import diarySelectors from '../../redux/diary/diarySelectors';
-import Timer from '../../components/Timer/Timer';
 
 const Icon = styled.svg`
   &.orange {
@@ -39,9 +38,7 @@ function formatDate(date) {
   return `${day}/${month}/${year}`;
 }
 
-const Diary = ({ duration }) => {
-  const [dinamicBurnCal, setDinamicBurnCal] = useState(0);
-
+const Diary = () => {
   const [date, setDate] = useState(new Date());
   const dispatch = useDispatch();
   const handlerDate = (date) => {
@@ -103,12 +100,6 @@ const Diary = ({ duration }) => {
           <DayExercises />
         </WrapTableBlock>
       </WrapMainBlock>
-
-      <Timer
-        setDinamicBurnCal={setDinamicBurnCal}
-        dinamicBurnCal={dinamicBurnCal}
-        duration={duration}
-      />
     </Container>
   );
 };

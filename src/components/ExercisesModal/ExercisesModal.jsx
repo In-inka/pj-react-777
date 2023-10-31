@@ -19,9 +19,12 @@ import {
   Number,
   TextTime,
 } from './ExercisesModal.styled';
+import { useState } from 'react';
 import sprite from '../../sprite/sprite.svg';
+import Timer from '../Timer/Timer';
 
-const ExercisesModal = ({ data, onClose }) => {
+const ExercisesModal = ({ data, onClose, duration }) => {
+  const [dinamicBurnCal, setDinamicBurnCal] = useState(0);
   const exercises = data;
 
   // console.log('data', data)
@@ -39,14 +42,20 @@ const ExercisesModal = ({ data, onClose }) => {
           </BoxGif>
           <BoxTimer>
             <TextTime>Time</TextTime>
-            <ButtonPause type="button">
+
+            <Timer
+              setDinamicBurnCal={setDinamicBurnCal}
+              dinamicBurnCal={dinamicBurnCal}
+              duration={duration}
+            />
+            {/* <ButtonPause type="button">
               <IconPause>
                 <use href={`${sprite}#icon-pause`}></use>
               </IconPause>
             </ButtonPause>
             <BurnedCalories>
               Burned calories: <Number>{exercises.burnedCalories}</Number>
-            </BurnedCalories>
+            </BurnedCalories> */}
           </BoxTimer>
         </BoxGifTimer>
         <BoxContentExercises>
