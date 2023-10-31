@@ -22,14 +22,14 @@ import {
   TextIcon,
 } from './Welcome.styled';
 import sprite from '../../sprite/sprite.svg';
-import { useDispatch } from 'react-redux';
-import getStatistics from '../../redux/statistics/statisticsOperations';
+/* import { useDispatch } from 'react-redux';
+import getStatistics from '../../redux/statistics/statisticsOperations'; */
 
 const Welcome = () => {
-  const dispatch = useDispatch();
+  /*   const dispatch = useDispatch();
   const onHandleClick = () => {
     dispatch(getStatistics());
-  };
+  }; */
 
   return (
     <Section>

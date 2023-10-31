@@ -59,6 +59,7 @@ const ProfileSettingsForm = () => {
   }
 
   const formattedDate = formatDateString(birthday);
+  const dateNow = formatDateString(Date.now);
 
   const formik = useFormik({
     initialValues: {
@@ -66,7 +67,7 @@ const ProfileSettingsForm = () => {
       height: height || '',
       currentWeight: currentWeight || '',
       desiredWeight: desiredWeight || '',
-      birthday: formattedDate || '',
+      birthday: formattedDate || dateNow,
       blood: blood,
       sex: sex || '',
       levelActivity: levelActivity,
@@ -77,7 +78,7 @@ const ProfileSettingsForm = () => {
       try {
         await schema.validate(values, { abortEarly: false });
         await dispatch(operations.updateUserMetricsData(values));
-        toast.success('Дані успішно оновлено!');
+        toast.success('Success!');
       } catch (error) {
         const errorMessage = error.response
           ? error.response.data

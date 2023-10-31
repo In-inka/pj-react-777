@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 import { glodalColor } from '../../Styled/GlobalColor';
+import { ContainerStyled } from '../../Styled/ContainerStyled';
 
 export const ContainerCards = styled.div`
-  $ContainerStyled;
+  ${ContainerStyled};
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-   @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1440px) {
     border-left: 1px solid ${glodalColor.bgCards};
-    padding-left:49px;
+    padding-left: 49px;
   }
-
 `;
 
 export const PositionCards = styled.div`
@@ -28,13 +28,8 @@ export const PositionCards = styled.div`
 `;
 
 export const UserAvatar = styled.img`
-  max-width: 100%;
-  min-width: 90px;
-  min-height: 90px;
-  @media screen and (min-width: 768px) {
-    min-width: 150px;
-    min-height: 150px;
-  }
+  width: 100%;
+  height: 100%;
 `;
 
 export const Cards = styled.div`
@@ -44,7 +39,7 @@ export const Cards = styled.div`
   justify-content: center;
   align-items: center;
 
-  border: 1px solid ${glodalColor.acceptColor};
+  border: 2px solid ${glodalColor.acceptColor};
   border-radius: 50%;
   background-color: transparent;
   width: 90px;
@@ -95,7 +90,7 @@ export const Name = styled.h3`
 export const User = styled.p`
   margin-bottom: 40px;
 
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.28;
   color: ${glodalColor.titleCards};
 
