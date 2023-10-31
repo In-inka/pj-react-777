@@ -98,51 +98,7 @@ export const GifExercises = styled.img`
 `;
 
 // ============/GIF=============
-// ============TIMER=============
 
-export const BoxTimer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-export const TextTime = styled.p`
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0px;
-  text-align: left;
-  color: ${glodalColor.itemTitleExercises};
-`;
-
-export const BurnedCalories = styled.p`
-  font-size: 14px;
-  line-height: 1.2;
-  color: ${glodalColor.title};
-`;
-
-export const ButtonPause = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  outline: none;
-  width: 32px;
-  height: 32px;
-`;
-
-export const IconPause = styled.svg`
-  width: 24px;
-  height: 24px;
-  fill: ${glodalColor.acceptColor};
-`;
-
-export const Number = styled.span`
-  color: ${glodalColor.acceptColor};
-`;
-
-// ============/TIMER=============
 // ============CONTENT=============
 
 export const BoxContentExercises = styled.div`
