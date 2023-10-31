@@ -1,4 +1,4 @@
-import{s as $,g as an,N as $i,L as Ro,j as I,c as To,a as ct,r as ht,u as So,b as Io,d as Rp,o as Tp,O as Ep}from"./index-eae40e7a.js";import{C as Op,s as we}from"./sprite-a1a77e0a.js";const Eo=$.nav`
+import{s as $,g as an,N as $i,L as Ro,j as I,c as To,a as ct,r as ht,u as So,b as Io,d as Rp,o as Tp,O as Ep}from"./index-a7113e43.js";import{C as Op,s as we}from"./sprite-79228a2d.js";const Eo=$.nav`
   ${Op}
   display: flex;
   position: absolute;
@@ -53,7 +53,7 @@ import{s as $,g as an,N as $i,L as Ro,j as I,c as To,a as ct,r as ht,u as So,b a
   margin-left: 14px;
   width: 37px;
   height: 37px;
-  border: 1px solid ${an.acceptColor};
+  border: 2px solid ${an.acceptColor};
   border-radius: 50%;
   overflow: hidden;
   @media screen and (min-width: 768px) {
@@ -71,7 +71,8 @@ import{s as $,g as an,N as $i,L as Ro,j as I,c as To,a as ct,r as ht,u as So,b a
     }
   }
 `,Np=$.img`
-  background-size: cover;
+  width: 100%;
+  height: 100%;
 `,$p=$.button`
   background-color: ${an.background};
   border: none;
