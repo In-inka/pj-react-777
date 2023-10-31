@@ -33,6 +33,7 @@ import operations from '../../redux/auth/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { schema } from './schema/Schema';
 import authSelectors from '../../redux/auth/auth-selectors';
+import Timer from '../Timer/Timer';
 
 const ProfileSettingsForm = () => {
   const dispatch = useDispatch();
