@@ -9,11 +9,11 @@ const bodyParamsReset = {
 };
 //-----------------------AUTH
 export const handleFulfilledRegister = (state, { payload }) => {
-      state.user.email = payload.email;
-      state.user.name = payload.name;
-      state.token = payload.token;
-      state.isLoggedIn = true;
-      state.isLoading = false;
+  state.user.email = payload.email;
+  state.user.name = payload.name;
+  state.token = payload.token;
+  state.isLoggedIn = true;
+  state.isLoading = false;
 };
 
 export const handleFulfilledLogin = (state, { payload }) => {
@@ -27,13 +27,13 @@ export const handleFulfilledLogin = (state, { payload }) => {
 };
 
 export const handleFulfilledLogout = (state) => {
-      state.user.name = null;
-      state.user.email = null;
-    state.user.avatarUrl = null;
+  state.user.name = null;
+  state.user.email = null;
+  state.user.avatarUrl = null;
   state.user.bodyParams = bodyParamsReset;
-      state.token = "";
-      state.isLoggedIn = false;
-      state.isLoading = false;
+  state.token = '';
+  state.isLoggedIn = false;
+  state.isLoading = false;
 };
 
 export const handleFulfilledCurrentUser = (state, { payload }) => {
@@ -58,10 +58,9 @@ export const handleFulfilledAvatarUpdate = (state) => {
   state.isLoading = false;
 };
 
-
 export const handlePendingCurrentUser = (state) => {
-      state.isFetchingCurrentUser = true;
-      state.isLoading = true;
+  state.isFetchingCurrentUser = true;
+  state.isLoading = true;
 };
 
 export const handleRejectedCurrentUser = (state) => {
@@ -100,7 +99,6 @@ export const handleFulfilledFilterExercisesBody = (state, { payload }) => {
   state.filter.body.push(payload);
   state.isLoading = false;
 };
-
 
 export const handleFulfilledFilterExercisesEquipment = (state, { payload }) => {
   state.filter.equipment.push(payload);
