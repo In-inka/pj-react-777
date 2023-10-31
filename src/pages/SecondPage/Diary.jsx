@@ -6,8 +6,8 @@ import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
-// import DatePicker from 'react-datepicker';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
   PageTitleText,
@@ -23,7 +23,8 @@ import {
 } from './Diary.styled';
 import sprite from '../../sprite/sprite.svg';
 import { useEffect, useState } from 'react';
-import diarySelectors from "../../redux/diary/diarySelectors"
+import diarySelectors from '../../redux/diary/diarySelectors';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const Icon = styled.svg`
   &.orange {
@@ -38,32 +39,44 @@ function formatDate(date) {
   return `${day}/${month}/${year}`;
 }
 
+const notify = () => {
+  toast.warn('the date must be greater than your birthday', { theme: 'dark' });
+};
+
 const Diary = () => {
   const [date, setDate] = useState(new Date());
-  const [dayOfBirthday, setDayOfBirthday] = useState('20/10/2023')
-
   const dispatch = useDispatch();
-  const handlerDate = (date) => { setDate(date); };
+  const dayOfBirthday = new Date(
+    useSelector(authSelectors.getUserMetricData).birthday
+  );
+  // const dayOfBirthday = new Date(2023, 9, 28);
+  // console.log(dayOfBirthday);
 
-const diary = useSelector(diarySelectors.getDiary);
-const { eatenProducts, doneExercises } = diary;
-  
+  const handlerDate = (date) => {
+    if (date < dayOfBirthday) {
+      notify();
+      setDate(dayOfBirthday);
+    } else setDate(date);
+  };
+
+  const diary = useSelector(diarySelectors.getDiary);
+  const { eatenProducts, doneExercises } = diary;
+
   useEffect(() => {
     dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
   }, [dispatch, date, eatenProducts.length, doneExercises.length]);
-  
-  // const startDate = new Date('01/10/2023');
-  // const endDate = new Date("15/10/2023");
-     
+
   return (
     <Container>
       <WrapTitle>
+        <ToastContainer />
         <PageTitleText>Diary</PageTitleText>
         <WrapDaySwitcher>
           <MobileDaySwitch>
             <DaySwitch
               currentDate={date}
               handlerDate={handlerDate}
+              birthdayDate={dayOfBirthday}
               textSize={18}
               textWeight={'bold'}
               textHeight={20}
@@ -73,15 +86,6 @@ const { eatenProducts, doneExercises } = diary;
           </MobileDaySwitch>
           <NotMobileDaySwitch>
             <DaySwitch
-              // selected={startDate}
-              // minDate={new Date()}
-              // maxDate={(new Date()).setMonth(date.getMonth() + 5)}
-              // startDate={startDate}
-              // endDate={endDate}
-              // selectsRange
-              // inline
-              // showDisabledMonthNavigation
-
               currentDate={date}
               handlerDate={handlerDate}
               textSize={24}

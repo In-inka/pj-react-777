@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { addDays, subDays } from 'date-fns';
@@ -21,7 +21,7 @@ const DaySwitch = ({
   textHeight,
   handlerDate,
   currentDate,
-  // birthdayDate,
+  birthdayDate,
 }) => {
   const numericMonthFormat = 'dd/MM/yyyy';
   const datepickerRef = useRef(null);
@@ -36,23 +36,18 @@ const DaySwitch = ({
     }
   };
 
-  //  const startDate = new Date('01/10/2023');
-  //  const endDate = new Date('15/10/2023');
-
-  const birthdayDate = new Date(2023, 9, 28);
-
   return (
     <DaySwitchContainer>
       <StyledCalendarContainer>
         <DatePicker
           // selected={startDate}
-          // minDate={new Date()}
-          // maxDate={new Date().setMonth((new Date()).getMonth() + 5)}
-          // startDate={startDate}
-          // endDate={endDate}
-          // selectsRange
+          // minDate={new Date(2023,9,28)}
+          // maxDate={new Date()}
+          // // startDate={startDate}
+          // // endDate={endDate}
+          //  selectsRange
           // inline
-          // showDisabledMonthNavigation
+          //  showDisabledMonthNavigation
 
           selected={currentDate}
           onChange={handler}
@@ -76,18 +71,7 @@ const DaySwitch = ({
       <StyledArrow>
         <IoIosArrowBack
           onClick={() => {
-            {
-              
-              
-             
-             
-              if (currentDate <= birthdayDate) {                
-                 currentDate = addDays(birthdayDate,1);
-                 console.log('cur: ', currentDate, 'birth: ', birthdayDate);
-                };
-              console.log("!!!!!!!!!!!!!!!!!!!!!   ", currentDate, "   ",);
-              handler(subDays(currentDate, 1));
-            }
+            handler(subDays(currentDate, 1));
           }}
           style={{
             cursor: 'pointer',
