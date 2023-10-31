@@ -20,15 +20,14 @@ export const TextIcon = styled.div`
     content: '';
     position: absolute;
     left: -10px;
-    top: 5px;
+    top: 3px;
 
     background-image: url('/src/img/background/line.svg');
     background-size: cover;
-    width: 95px;
+    width: 98px;
     height: 35px;
     @media screen and (min-width: 768px) {
       left: -20px;
-      top: 7px;
       width: 185px;
       height: 67px;
     }
