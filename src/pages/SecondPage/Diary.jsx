@@ -40,6 +40,8 @@ function formatDate(date) {
 
 const Diary = () => {
   const [date, setDate] = useState(new Date());
+  const [dayOfBirthday, setDayOfBirthday] = useState('20/10/2023')
+
   const dispatch = useDispatch();
   const handlerDate = (date) => { setDate(date); };
 
@@ -50,11 +52,9 @@ const { eatenProducts, doneExercises } = diary;
     dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
   }, [dispatch, date, eatenProducts.length, doneExercises.length]);
   
-  const startDate = new Date('01/10/2023');
-  const endDate = new Date("15/10/2023");
+  // const startDate = new Date('01/10/2023');
+  // const endDate = new Date("15/10/2023");
      
-  
-  
   return (
     <Container>
       <WrapTitle>
@@ -73,14 +73,14 @@ const { eatenProducts, doneExercises } = diary;
           </MobileDaySwitch>
           <NotMobileDaySwitch>
             <DaySwitch
-              selected={startDate}
-              minDate={new Date()}
-              maxDate={(new Date()).setMonth(date.getMonth() + 5)}
-              startDate={startDate}
-              endDate={endDate}
-              selectsRange
-              inline
-              showDisabledMonthNavigation
+              // selected={startDate}
+              // minDate={new Date()}
+              // maxDate={(new Date()).setMonth(date.getMonth() + 5)}
+              // startDate={startDate}
+              // endDate={endDate}
+              // selectsRange
+              // inline
+              // showDisabledMonthNavigation
 
               currentDate={date}
               handlerDate={handlerDate}

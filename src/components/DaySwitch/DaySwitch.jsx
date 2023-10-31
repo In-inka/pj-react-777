@@ -21,6 +21,7 @@ const DaySwitch = ({
   textHeight,
   handlerDate,
   currentDate,
+  // birthdayDate,
 }) => {
   const numericMonthFormat = 'dd/MM/yyyy';
   const datepickerRef = useRef(null);
@@ -28,35 +29,38 @@ const DaySwitch = ({
   const handler = (evt) => {
     handlerDate(evt);
   };
-  
+
   const toggleDatePicker = () => {
     if (datepickerRef.current) {
       datepickerRef.current.setOpen(true);
     }
   };
 
+  //  const startDate = new Date('01/10/2023');
+  //  const endDate = new Date('15/10/2023');
 
- const startDate = new Date('01/10/2023');
- const endDate = new Date('15/10/2023');
+  const birthdayDate = new Date(2023, 9, 28);
 
   return (
     <DaySwitchContainer>
       <StyledCalendarContainer>
         <DatePicker
           // selected={startDate}
-          minDate={new Date()}
-          maxDate={new Date().setMonth((new Date()).getMonth() + 5)}
-          startDate={startDate}
-          endDate={endDate}
-          selectsRange
-          inline
-          showDisabledMonthNavigation
+          // minDate={new Date()}
+          // maxDate={new Date().setMonth((new Date()).getMonth() + 5)}
+          // startDate={startDate}
+          // endDate={endDate}
+          // selectsRange
+          // inline
+          // showDisabledMonthNavigation
+
           selected={currentDate}
           onChange={handler}
           dateFormat={numericMonthFormat}
+          minDate={birthdayDate}
+          // showDisabledMonthNavigation
           customInput={
             <CustomDatePickerInput
-              onChange={(ev) => console.log(ev)}
               $textSize={textSize}
               $textWeight={textWeight}
               $textHeight={textHeight}
@@ -72,7 +76,18 @@ const DaySwitch = ({
       <StyledArrow>
         <IoIosArrowBack
           onClick={() => {
-            handler(subDays(currentDate, 1));
+            {
+              
+              
+             
+             
+              if (currentDate <= birthdayDate) {                
+                 currentDate = addDays(birthdayDate,1);
+                 console.log('cur: ', currentDate, 'birth: ', birthdayDate);
+                };
+              console.log("!!!!!!!!!!!!!!!!!!!!!   ", currentDate, "   ",);
+              handler(subDays(currentDate, 1));
+            }
           }}
           style={{
             cursor: 'pointer',
