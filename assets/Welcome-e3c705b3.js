@@ -1,4 +1,4 @@
-import{L as d,g as t,d as r,j as i,e as p}from"./index-837f1c35.js";import{n}from"./emotion-styled.browser.esm-5c742298.js";import{b as c,a as s,c as x,d as l,e as g,f as h}from"./main_bg_desktop-e1ac3f6f.js";import{C as m,s as e}from"./sprite-3b9c37cd.js";const b=n.div`
+import{L as d,g as t,d as r,j as i,e as p}from"./index-24c8b81b.js";import{n}from"./emotion-styled.browser.esm-eb1ed21c.js";import{b as c,a as s,c as x,d as l,e as g,f as h}from"./main_bg_desktop-e1ac3f6f.js";import{C as m,s as e}from"./sprite-b3da6cf1.js";const b=n.div`
   &.text-container {
     position: relative;
     display: inline-block;
@@ -9,15 +9,14 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-837f1c35.js";import{n}fro
     content: '';
     position: absolute;
     left: -10px;
-    top: 5px;
+    top: 3px;
 
     background-image: url('/src/img/background/line.svg');
     background-size: cover;
-    width: 95px;
+    width: 98px;
     height: 35px;
     @media screen and (min-width: 768px) {
       left: -20px;
-      top: 7px;
       width: 185px;
       height: 67px;
     }
