@@ -60,7 +60,7 @@ const ExercisesList = ({ exercises }) => {
                   slidesPerGroup: 3,
                   slidesPerColumn: 3,
                   grid:{
-                    fill: 'row',
+                    fill: 'column',
                     rows: 3,
                   }
                 },
@@ -68,7 +68,7 @@ const ExercisesList = ({ exercises }) => {
                   slidesPerView: 5,
                   slidesPerGroup: 5,
                   grid:{
-                   fill: 'column',
+                   fill: 'row',
                   rows: 2,
                  }
                },

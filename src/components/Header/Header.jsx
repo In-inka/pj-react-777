@@ -57,6 +57,7 @@ const Header = () => {
   const onHandleClick = () => {
     localStorage.removeItem('PowerPulsDate');
     dispatch(authOperations.logOut());
+    
   };
 
   const toggleClickMenu = () => {
