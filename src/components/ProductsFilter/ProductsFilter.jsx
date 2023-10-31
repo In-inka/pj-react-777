@@ -12,7 +12,7 @@ import {
   ProductsFilterList,
 } from './ProductsFilter.styled';
 import { useSearchParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterReducer } from '../../redux/products/sliceProducts';
 import { selectFilter } from '../../redux/products/selectorsProducts';
@@ -46,7 +46,7 @@ const categories = [
   'vegetables and herbs',
 ];
 
-export const ProductsFilter = ({ handleSearch }) => {
+export const ProductsFilter = ({ submit }) => {
   const capitalizeFirstLeter = (string) => {
     const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
     return newString;
@@ -81,8 +81,8 @@ export const ProductsFilter = ({ handleSearch }) => {
       backgroundColor: isSelected
         ? 'rgba(28, 28, 28, 1)'
         : isFocused
-        ? 'rgba(28, 28, 28, 1)'
-        : 'rgba(28, 28, 28, 1)', //active option and hover background
+          ? 'rgba(28, 28, 28, 1)'
+          : 'rgba(28, 28, 28, 1)', //active option and hover background
       color: isSelected ? '#E6533C' : '#EFEDE8', //text color of the active option in the list
       marginBottom: '8px',
 
@@ -133,110 +133,92 @@ export const ProductsFilter = ({ handleSearch }) => {
   };
 
   const [searchParams, setSearchParams] = useSearchParams({});
-  const filter = useSelector(selectFilter);
-  const [search, setSearch] = useState(filter.search);
-  const [category, setCategory] = useState(filter.category);
-  const [recommended, setRecommended] = useState(filter.recommended);
+  const filter = useSelector(selectFilter)
+  const [search, setSearch] = useState(filter.search)
+  const [category, setCategory] = useState(filter.category)
+  const [recommended, setRecommended] = useState(filter.recommended)
+  const dispatch = useDispatch()
 
-  const dispatch = useDispatch();
-
-  const onHandleSubmit = (e) => {
-    console.log(e);
-    // setSearch(e);
-  }
-
-  useEffect(() => {
-    handleSearch({search, category, recommended});
-  }, [category, recommended, search]);
-
-  const onChangeSearch = (event) => {
+  const onChangeSearch =  (event) => {
     const text = event.target.value;
-    setSearch(text);
-    dispatch(
-      filterReducer({
-        search: text,
-        category,
-        recommended,
-      }),
-    );
+    setSearch(text)
+     dispatch(filterReducer({
+      search: text,
+      category,
+      recommended
+    }))
     setSearchParams({
       search: text,
-      category: category || 'all',
-      recommended: recommended || 'all',
-    });
+      category: category || "all",
+      recommended: recommended || 'all'
+    })
   };
 
-  const onCategoriesChange = (event) => {
-    setCategory(event.value);
-    setSearchParams({
+  const onCategoriesChange =  (event) => {
+    setCategory(event.value)
+     setSearchParams({
       search,
       category: event.value || 'all',
-      recommended: recommended || 'all',
-    });
-    dispatch(
-      filterReducer({
-        search,
-        category: event.value,
-        recommended,
-      }),
-    );
-    setSearchParams({
+      recommended: recommended || "all"
+    })
+     dispatch(filterReducer({
       search,
       category: event.value,
-      recommended,
-    });
+      recommended
+    }))
+    submit({
+      search,
+      category: event.value,
+      recommended
+    })
   };
 
-  const onRecomendedChange = (event) => {
+  const onRecomendedChange =  (event) => {
     setSearchParams({
       search,
       category: category || 'all',
-      recommended: event.value || 'all',
-    });
-    setRecommended(event.value);
-    dispatch(
-      filterReducer({
-        search,
-        category,
-        recommended: event.value,
-      }),
-    );
-    setSearchParams({
+      recommended: event.value || 'all'
+    })
+    setRecommended(event.value)
+     dispatch(filterReducer({
       search,
       category,
-      recommended: event.value,
-    });
+      recommended: event.value
+    }))
+    submit({
+      search,
+      category,
+      recommended: event.value
+    })
   };
 
-  const delTextInput = () => {
-    setSearch('');
-    dispatch(
-      filterReducer({
-        search: '',
-        category,
-        recommended,
-      }),
-    );
+  const delTextInput =  () => {
+    setSearch('')
+     dispatch(filterReducer({
+      search: '',
+      category,
+      recommended
+    }))
     setSearchParams({
       search: '',
       category: category || 'all',
-      recommended: recommended || 'all',
-    });
+      recommended: recommended || "all"
+    })
   };
 
   const onSubmit = () => {
-    setSearchParams({
+    submit({
       search,
       category: category,
-      recommended: recommended,
-    });
-  };
+      recommended: recommended
+    })
+  }
 
   const onEnter = (event) => {
-    if (event.key === 'Enter') {
-      onSubmit();
+    if (event.key === "Enter") {
+      onSubmit()
     }
-  };
+  }
 
   return (
     <ProductsFilterList>
@@ -250,13 +232,12 @@ export const ProductsFilter = ({ handleSearch }) => {
             type="text"
             placeholder="Search"
           />
-          {search && (
-            <ProductsBtnClose onClick={delTextInput} type="button">
-              <ProductsSvgClose>
-                <use href={`${sprite}#icon-x`}></use>
-              </ProductsSvgClose>
-            </ProductsBtnClose>
-          )}
+          {search && <ProductsBtnClose onClick={delTextInput} type="button">
+            <ProductsSvgClose>
+              <use href={`${sprite}#icon-x`}></use>
+            </ProductsSvgClose>
+          </ProductsBtnClose>
+          }
           <ProductsBtnSearch onClick={onSubmit} type="button">
             <ProductsSvgSearch>
               <use href={`${sprite}#icon-search`}></use>

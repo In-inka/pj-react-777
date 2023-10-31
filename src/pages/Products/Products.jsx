@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -19,44 +19,61 @@ import ReactPaginate from 'react-paginate';
 
 const Products = () => {
   const [page, setPage] = useState(1);
-  const [filterParams, setFilterParams] = useState({})
   const isLoading = useSelector(selectIsLoadingProduct);
+  const dispatch = useDispatch();
   const products = useSelector(selectProductsList);
   const limitPage = products.limit;
   const totalPage = Math.ceil(products.total / limitPage);
-  
-  const dispatch = useDispatch();
-  
-  const innerRef = useRef();
-
-  
-  const getPageNumber = () => {
-   setPage(); 
-  }
-
-  const handleSearch = ({ search, category, recommended }) => {
-    setFilterParams({ search, category, recommended });
-    setPage(1);
-  };
+  const fetching = useCallback(
+    (filterParams, page, limit) => {
+      try {
+        if (filterParams) {
+          dispatch(getProductsList({ filterParams, page, limit }));
+        } else {
+          dispatch(getProductsList({ filterParams: {}, page, limit }));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [dispatch],
+  );
 
   useEffect(() => {
-      dispatch(getProductsList({ filterParams, page}));
+    if (
+      localStorage.getItem('persist:products').filter ===
+      productSlice.getInitialState().filter
+    ) {
+      fetching();
+    }
+  }, [fetching]);
 
-  }, [dispatch, filterParams, page]);
+  const handlePageClick = (event) => {
+    setPage(event.selected);
+    console.log(localStorage.getItem('persist:products').filter);
+    fetching({}, page, limitPage);
+  };
 
   return (
     <Container>
       <ProductsFilterText>Filters</ProductsFilterText>
       <ProductsFunc>
         <ProductsTitle>Products</ProductsTitle>
-        <ProductsFilter handleSearch={handleSearch} />
+        <ProductsFilter submit={fetching} />
       </ProductsFunc>
       {!isLoading && products !== null ? (
         <>
-          <ProductsList
-            products={products.products}
-            onScroll={getPageNumber}
-            listInnerRef={innerRef}
+          <ProductsList products={products.products} />
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel="next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={0}
+            pageCount={totalPage}
+            previousLabel="< prev"
+            renderOnZeroPageCount={null}
+            forcePage={page}
+            containerClassName={'react-paginate'}
           />
         </>
       ) : (
