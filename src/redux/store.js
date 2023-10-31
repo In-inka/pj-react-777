@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
- import {
+import {
   persistStore,
   FLUSH,
   REHYDRATE,
@@ -16,6 +16,7 @@ import { productsReducer } from './products/sliceProducts';
 import { diarySliceReducer } from './diary/diarySlice';
 import msgpack from 'msgpack-lite';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import { statisticsSliceReducer } from './statistics/statisticsSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -44,8 +45,9 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice),
     exercises: exercisesSliceReducer,
-    products: persistReducer(productsPersistConfig, productsReducer) ,
+    products: persistReducer(productsPersistConfig, productsReducer),
     diary: diarySliceReducer,
+    statistics: statisticsSliceReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

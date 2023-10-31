@@ -7,7 +7,7 @@ export const Container = styled.nav`
   ${ContainerStyled}
   display: flex;
   position: absolute;
-  z-index: 999;
+  z-index: 10;
   align-items: center;
   top: 0;
   left: 50%;
@@ -71,12 +71,16 @@ export const SettingsIcon = styled.svg`
 
 export const SettingsIconContainer = styled(NavLink)``;
 
-export const UserIcon = styled.div`
+export const UserAvatarContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 14px;
   width: 37px;
   height: 37px;
-  border: 3px solid ${glodalColor.acceptColor};
+  border: 1px solid ${glodalColor.acceptColor};
   border-radius: 50%;
+  overflow: hidden;
   @media screen and (min-width: 768px) {
     margin-left: 16px;
     width: 46px;
@@ -84,16 +88,47 @@ export const UserIcon = styled.div`
   }
 `;
 
-export const MenuIcon = styled.button`
+export const UserIcon = styled.svg`
+  width: 21px;
+  height: 21px;
+  @media screen and (min-width: 768px) {
+    &.setUser {
+      width: 24px;
+      height: 24px;
+    }
+  }
+`;
+
+export const UserAvatar = styled.img`
+  background-size: cover;
+`;
+
+export const MenuIconButton = styled.button`
+  background-color: ${glodalColor.background};
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 14px;
-  width: 24px;
-  height: 24px;
-  border: 3px solid ${glodalColor.acceptColor};
   @media screen and (min-width: 768px) {
     margin-left: 16px;
   }
   @media screen and (min-width: 1440px) {
     display: none;
+  }
+`;
+
+export const MenuIcon = styled.svg`
+  fill: ${glodalColor.acceptColor};
+  background-color: ${glodalColor.background};
+  stroke-width: 2px;
+  width: 24px;
+  height: 24px;
+  @media screen and (min-width: 768px) {
+    &.setMenu {
+      width: 32px;
+      height: 32px;
+    }
   }
 `;
 
@@ -127,7 +162,7 @@ export const LogoutIcon = styled.svg`
   stroke: ${glodalColor.acceptColor};
 `;
 
-export const Button = styled(Link)`
+export const Button = styled(NavLink)`
   display: none;
   @media screen and (min-width: 1440px) {
     display: inline-block;
@@ -149,7 +184,7 @@ export const Button = styled(Link)`
     &:not(:first-of-type) {
       margin-left: 16px;
     }
-    &:active {
+    &.active {
       background-color: ${glodalColor.secondaryOrange};
     }
   }

@@ -1,3 +1,4 @@
+import 'modern-normalize';
 import { createGlobalStyle } from 'styled-components';
 import RobotoWoff from './fonts/roboto-v30-latin-regular.woff2';
 import RobotoWoff2 from './fonts/roboto-v30-latin-500.woff2';

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { messageNotification } from '../../components/alertMessages/alertMessages';
 
 axios.defaults.baseURL = 'https://power-pulse-rh13.onrender.com/api';
 
@@ -20,27 +21,25 @@ const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
 );
 
-const logIn = createAsyncThunk('/users/logIn', async (credentials) => {
-  try {
-    const { data } = await axios.post('/users/login', credentials);
-    
-    token.set(data.token);
-    return data;
-  } catch (error) {
-    console.log(error.message);
-  }
-});
-
-/* const config = {
-  headers: {
-    'Content-Type': 'multipart/form-data',
+const logIn = createAsyncThunk(
+  '/users/logIn',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post('/users/login', credentials);
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      messageNotification(error.response.status);
+      return thunkAPI.rejectWithValue(error.message);
+    }
   },
-}; */
+);
 
 const config = {
   headers: {
@@ -59,33 +58,24 @@ const updateUserAvatar = createAsyncThunk(
       );
       return data;
     } catch (error) {
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
 );
 
-/* то файк відправляється з ключем "avatar"
-
-const updateUserAvatar = createAsyncThunk(
-  '/users/changeData',
+const logOut = createAsyncThunk(
+  '/users/logOut',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.patch('/users/changedata', credentials);
-      return data;
+      await axios.post('/users/logout', credentials);
+      token.unset();
     } catch (error) {
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
-); */
-
-const logOut = createAsyncThunk('/users/logOut', async (credentials) => {
-  try {
-    await axios.post('/users/logout', credentials);
-    token.unset();
-  } catch (error) {
-    console.log(error.message);
-  }
-});
+);
 
 const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
@@ -100,7 +90,8 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users');
       return data;
     } catch (error) {
-      console.log(error.message);
+      messageNotification(error.response.status);
+      return thunkAPI.rejectWithValue(error.message);
     }
   },
 );
@@ -112,6 +103,7 @@ const updateUserMetricsData = createAsyncThunk(
       const { data } = await axios.patch('/users/dailymetrics', credentials);
       return data;
     } catch (error) {
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },

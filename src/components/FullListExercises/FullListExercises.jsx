@@ -25,7 +25,7 @@ useEffect(()=>{
 
 
 
-const filterArry = data.filter((el)=>{ return el.bodyPart === filter || el.target === filter || el.equipment === filter})
+const filterArry = data.filter((el)=>{return el.bodyPart === filter || el.target === filter || el.equipment === filter})
 
 
   return (

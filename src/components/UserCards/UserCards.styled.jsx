@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { glodalColor } from '../../Styled/GlobalColor';
 
 export const ContainerCards = styled.div`
-  $ContainerStyled
+  $ContainerStyled;
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -29,11 +29,11 @@ export const PositionCards = styled.div`
 
 export const UserAvatar = styled.img`
   max-width: 100%;
-  width: 90px;
-  height: 90px;
+  min-width: 90px;
+  min-height: 90px;
   @media screen and (min-width: 768px) {
-    width: 150px;
-    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
   }
 `;
 
@@ -224,7 +224,9 @@ export const Icon = styled.svg`
       height: 32px;
     }
   }
-
+  &.stroke-withe {
+    stroke: ${glodalColor.withe};
+  }
   &.lightOrange {
     fill: ${glodalColor.secondaryOrange};
   }

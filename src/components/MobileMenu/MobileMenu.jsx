@@ -7,7 +7,7 @@ import {
   CrossButton,
   IconCross,
   IconLogout,
-} from './MobileMenu.styled';
+} from './MobileMenu.styled.jsx';
 import sprite from '../../sprite/sprite.svg';
 import { debounce } from 'lodash';
 import { useRef } from 'react';

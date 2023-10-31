@@ -9,29 +9,38 @@ import {
 } from './Products.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsList } from '../../redux/products/operationsProducts';
-import { selectIsLoadingProduct, selectProductsList } from '../../redux/products/selectorsProducts';
-import Loader from "../../components/Loader/Loader"
+import {
+  selectIsLoadingProduct,
+  selectProductsList,
+} from '../../redux/products/selectorsProducts';
+import Loading from '../../components/Loading/Loading';
+import { productSlice } from '../../redux/products/sliceProducts';
 
 const Products = () => {
   const isLoading = useSelector(selectIsLoadingProduct);
   const dispatch = useDispatch();
-  const products = useSelector(selectProductsList)
-  const fetching = useCallback( (filterParams) => {
-    try {
-      if (filterParams) {
-         dispatch(getProductsList(filterParams));
-      } else {
-         dispatch(getProductsList());
+  const products = useSelector(selectProductsList);
+  const fetching = useCallback(
+    (filterParams) => {
+      try {
+        if (filterParams) {
+          dispatch(getProductsList(filterParams));
+        } else {
+          dispatch(getProductsList());
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-  }, [dispatch])
+    },
+    [dispatch],
+  );
 
   useEffect(() => {
-    console.log(localStorage.getItem("persist:products"))
-    if (!localStorage.getItem("persist:products")) {
-      fetching()
+    if (
+      localStorage.getItem('persist:products').filter ===
+      productSlice.getInitialState().filter
+    ) {
+      fetching();
     }
   }, [fetching]);
 
@@ -42,9 +51,11 @@ const Products = () => {
         <ProductsTitle>Products</ProductsTitle>
         <ProductsFilter submit={fetching} />
       </ProductsFunc>
-      {!isLoading && products !== null ?
-        (<ProductsList products={products} />) :
-        (<Loader cls={'yellowBtn'} />)}
+      {!isLoading && products !== null ? (
+        <ProductsList products={products} />
+      ) : (
+        <Loading />
+      )}
     </Container>
   );
 };

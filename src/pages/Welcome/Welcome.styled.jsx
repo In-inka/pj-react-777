@@ -7,6 +7,32 @@ import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
+import { glodalColor } from '../../Styled/GlobalColor';
+
+export const TextIcon = styled.div`
+  &.text-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &.text-container::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 3px;
+
+    background-image: url('/src/img/background/line.svg');
+    background-size: cover;
+    width: 98px;
+    height: 36px;
+    @media screen and (min-width: 768px) {
+      left: -25px;
+      width: 187px;
+      height: 69px;
+    }
+  }
+`;
 
 export const Section = styled.section`
   padding-top: 127px;
@@ -164,7 +190,6 @@ export const ButtonBlack = styled(Link)`
 
 export const FlexContainer = styled.div`
   display: flex;
-  /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
   padding-top: 232px;
@@ -217,8 +242,24 @@ export const VideoTutorialTextB = styled.p`
   }
 `;
 
-export const PlayIcon = styled.div`
-  display: block;
+export const PlayIcon = styled.svg`
+  fill: ${glodalColor.withe};
+  padding-left: 3px;
+  width: 12px;
+  height: 12px;
+  @media screen and (min-width: 768px) {
+    &.setPlay {
+      padding-left: 5px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+`;
+
+export const PlayIconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
   border-radius: 50px;
@@ -288,8 +329,23 @@ export const CalorieTextB = styled.p`
   }
 `;
 
-export const RunIcon = styled.div`
-  display: block;
+export const RunIcon = styled.svg`
+  fill: ${glodalColor.withe};
+  width: 12px;
+  height: 12px;
+  @media screen and (min-width: 768px) {
+    &.setRun {
+      padding-left: 2px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+`;
+
+export const RunIconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
   height: 20px;
   border-radius: 50px;

@@ -27,32 +27,19 @@ const UserCards = () => {
   const userName = useSelector(authSelectors.getUserName);
   const avatar = useSelector(authSelectors.getUserAvatar);
   const dispatch = useDispatch();
-
-  //const [avatar, setAvatar] = useState();
+  const { dailyIntakeCalories, dailyNormOfSport } = useSelector(
+    authSelectors.getUserMetricData,
+  );
 
   const handleChangePhoto = async (event) => {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
       const formData = new FormData();
       formData.append('avatar', selectedFile);
-
-      console.log(formData);
       await dispatch(operations.updateUserAvatar(formData));
       dispatch(authOperations.fetchCurrentUser());
     }
   };
-
-  /*   const handleFileInput = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      const filesContent = [{ content: e.target.result }];
-      handleChangePhoto(filesContent);
-    };
-
-    reader.readAsDataURL(file);
-  }; */
 
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
@@ -98,7 +85,7 @@ const UserCards = () => {
             </Icon>
             <p>Daily calorie intake</p>
           </Title>
-          <DataStatistic>0</DataStatistic>
+          <DataStatistic>{dailyIntakeCalories}</DataStatistic>
         </Statistic>
         <Statistic>
           <Title>
@@ -108,7 +95,7 @@ const UserCards = () => {
             </Icon>
             <p>Daily norm of sports</p>
           </Title>
-          <DataStatistic>0 min</DataStatistic>
+          <DataStatistic>{dailyNormOfSport} min</DataStatistic>
         </Statistic>
       </Info>
       <Attention>
