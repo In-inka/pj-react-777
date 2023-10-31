@@ -32,6 +32,8 @@ import operations from '../../redux/auth/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 import { schema } from './schema/Schema';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProfileSettingsForm = () => {
   const dispatch = useDispatch();
@@ -68,13 +70,21 @@ const ProfileSettingsForm = () => {
       sex: sex || '',
       levelActivity: levelActivity,
     },
-    validationSchema: schema,
+
     onSubmit: async (values) => {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      dispatch(operations.updateUserMetricsData(values));
+      console.log('Form submitted', values);
+      try {
+        await schema.validate(values, { abortEarly: false });
+        await dispatch(operations.updateUserMetricsData(values));
+        toast.success('Дані успішно оновлено!');
+      } catch (error) {
+        const errorMessage = error.response
+          ? error.response.data
+          : error.message;
+        toast.error(errorMessage);
+      }
     },
   });
-
   return (
     <div>
       <FormProfile onSubmit={formik.handleSubmit}>
@@ -332,6 +342,7 @@ const ProfileSettingsForm = () => {
                 }}
                 value={5}
               />
+
               <RadioCheckmark></RadioCheckmark>
               <RadioLabelActive>
                 Extremely active (very strenuous exercises/sports and physical
@@ -340,7 +351,8 @@ const ProfileSettingsForm = () => {
             </RadioButton>
           </RadioWrapper>
         </ContainerRadioActive>
-        <Button tp={'submit'} text={'Save'} />
+        <button type="submit">hhh</button>
+        {/*    <Button tp={'submit'} text={'Save'} /> */}
       </FormProfile>
     </div>
   );
