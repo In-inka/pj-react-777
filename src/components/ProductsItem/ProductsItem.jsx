@@ -34,7 +34,13 @@ function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-const ProductsItem = ({ product }) => {
+const ProductsItem = ({ product, addProductDetails }) => {
+  const handleAddProduct = () => {
+    // openModal();
+    //const product = { ...product };
+    console.log(addProductDetails(product));
+  };
+
   const bloodGroup = useSelector(authSelectors.getUserMetricData).blood;
 
   return (
@@ -57,7 +63,7 @@ const ProductsItem = ({ product }) => {
               </>
             )}
           </ProductsItemRecommendedContainer>
-          <AddButton>
+          <AddButton onClick={handleAddProduct}>
             Add
             <svg width={16} height={16} style={{ stroke: '#E6533C' }}>
               <use href={`${sprite}#icon-start`}></use>
