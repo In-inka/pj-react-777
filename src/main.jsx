@@ -10,9 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
-import './index.css';
-// import 'modern-normalize'
-import '../node_modules/modern-normalize/modern-normalize.css';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -78,7 +78,7 @@ export const UserAvatarContainer = styled.div`
   margin-left: 14px;
   width: 37px;
   height: 37px;
-  border: 1px solid ${glodalColor.acceptColor};
+  border: 2px solid ${glodalColor.acceptColor};
   border-radius: 50%;
   overflow: hidden;
   @media screen and (min-width: 768px) {
@@ -100,7 +100,8 @@ export const UserIcon = styled.svg`
 `;
 
 export const UserAvatar = styled.img`
-  background-size: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export const MenuIconButton = styled.button`
