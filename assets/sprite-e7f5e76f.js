@@ -1,4 +1,4 @@
-import"./index-be770e99.js";const t=`
+import"./index-98b736a8.js";const d=`
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
@@ -18,4 +18,4 @@ import"./index-be770e99.js";const t=`
     padding-left: 96px;
     padding-right: 96px;
   }
-`,d="/pj-react-777/assets/sprite-3306e8c4.svg";export{t as C,d as s};
+`,t="/pj-react-777/assets/sprite-d7bc0677.svg";export{d as C,t as s};
