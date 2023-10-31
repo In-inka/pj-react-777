@@ -21,7 +21,6 @@ const loading = useSelector(exercisesSelectors.getIsLoading)
 const data  = useSelector(exercisesSelectors.getFilterBody)
 const error =  useSelector(exercisesSelectors.getIsError)
 
-// console.log('data', data)
 
 
 return (

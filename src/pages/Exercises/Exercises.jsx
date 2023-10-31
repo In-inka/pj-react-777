@@ -78,7 +78,6 @@ const Exercises = () => {
     }
   };
 
-  // console.log('modalOpen', modalOpen)
 
   return (
     <BoxBackgroundPhoto className={backgroundPhoto(path)}>
