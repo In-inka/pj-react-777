@@ -1,14 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import background_img_mob_x2 from '../../img/background/main_bg_mob_x2.jpg';
 import background_img_mob from '../../img/background/main_bg_mob.jpg';
 import background_img_tab_x2 from '../../img/background/main_bg_tab_x2.jpg';
 import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
-import { glodalColor } from "../../Styled/GlobalColor";
-import { ContainerStyled } from "../../Styled/ContainerStyled";
-import { Link } from "react-router-dom";
-
+import { glodalColor } from '../../Styled/GlobalColor';
+import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
