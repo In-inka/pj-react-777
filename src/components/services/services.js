@@ -108,7 +108,7 @@ export const handleFulfilledFilterExercisesBody = (state, { payload }) => {
 };
 
 export const handleFulfilledFilterExercisesEquipment = (state, { payload }) => {
-  state.filter.equipment.push(payload);
+  state.filter.equipment = payload;
   state.isLoading = false;
 };
 

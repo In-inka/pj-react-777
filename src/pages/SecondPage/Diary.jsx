@@ -6,8 +6,8 @@ import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
-import DatePicker from 'react-datepicker';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Container,
   PageTitleText,
@@ -23,7 +23,8 @@ import {
 } from './Diary.styled';
 import sprite from '../../sprite/sprite.svg';
 import { useEffect, useState } from 'react';
-import diarySelectors from "../../redux/diary/diarySelectors"
+import diarySelectors from '../../redux/diary/diarySelectors';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const Icon = styled.svg`
   &.orange {
@@ -38,22 +39,37 @@ function formatDate(date) {
   return `${day}/${month}/${year}`;
 }
 
-const Diary = () => {
-  const [date, setDate] = useState(new Date());
-  const dispatch = useDispatch();
-  const handlerDate = (date) => { setDate(date); };
+const notify = () => {
+  toast.warn('the date must be greater than your birthday', { theme: 'dark' });
+};
 
-const diary = useSelector(diarySelectors.getDiary);
-const { eatenProducts, doneExercises } = diary;
-  
+const Diary = () => {
+const storDate = localStorage.getItem('PowerPulsDate');
+const newDate = storDate ? new Date(storDate) : new Date();
+const [date, setDate] = useState(newDate);
+const dispatch = useDispatch();
+
+  const diary = useSelector(diarySelectors.getDiary);
+  const { eatenProducts, doneExercises } = diary;
+  const dayOfBirthday = new Date(
+    useSelector(authSelectors.getUserMetricData).birthday,
+  );
+
+  const handlerDate = (date) => {
+    if (date < dayOfBirthday) {
+      notify();
+      setDate(dayOfBirthday);
+    } else setDate(date);
+    localStorage.setItem('PowerPulsDate', date);
+  };
+
   useEffect(() => {
     dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
   }, [dispatch, date, eatenProducts.length, doneExercises.length]);
-  
-  // const minDate = new Date('15/10/2023');
-  // if (date < minDate) setDate(minDate);
+
   return (
     <Container>
+      <ToastContainer />
       <WrapTitle>
         <PageTitleText>Diary</PageTitleText>
         <WrapDaySwitcher>
@@ -61,6 +77,7 @@ const { eatenProducts, doneExercises } = diary;
             <DaySwitch
               currentDate={date}
               handlerDate={handlerDate}
+              birthdayDate={dayOfBirthday}
               textSize={18}
               textWeight={'bold'}
               textHeight={20}
@@ -81,7 +98,7 @@ const { eatenProducts, doneExercises } = diary;
           </NotMobileDaySwitch>
         </WrapDaySwitcher>
       </WrapTitle>
-      <WrapMainBlock>   
+      <WrapMainBlock>
         <WrapDashBoard>
           <DayDashboard />
           <WrapInfoText>

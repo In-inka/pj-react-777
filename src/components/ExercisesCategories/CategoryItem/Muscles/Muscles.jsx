@@ -17,7 +17,6 @@ const data = useSelector(exercisesSelectors.getFilterMuscles)
 const loading = useSelector(exercisesSelectors.getIsLoading)
 const error =  useSelector(exercisesSelectors.getIsError)
   
-// console.log('data', data)
 
   return (
     <BoxCategoryItem>

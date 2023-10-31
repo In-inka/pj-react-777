@@ -8,32 +8,7 @@ import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.j
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
 import { glodalColor } from '../../Styled/GlobalColor';
-
-export const TextIcon = styled.div`
-  &.text-container {
-    z-index: 10;
-    position: relative;
-    display: inline-block;
-  }
-
-  &.text-container::before {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 3px;
-
-    background-image: url('/src/img/background/line.svg');
-    background-size: cover;
-    width: 98px;
-    height: 36px;
-    @media screen and (min-width: 768px) {
-      left: -25px;
-      width: 187px;
-      height: 69px;
-    }
-  }
-`;
+import Line from '../../img/background/Line.svg';
 
 export const Section = styled.section`
   padding-top: 127px;
@@ -136,6 +111,31 @@ export const ButtonContainer = styled.div`
   margin-top: 40px;
   @media screen and (min-width: 768px) {
     margin-top: 64px;
+  }
+`;
+
+export const TextIcon = styled.div`
+  &.text-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &.text-container::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 3px;
+
+    background-image: url(${Line});
+    background-size: cover;
+    width: 98px;
+    height: 36px;
+    @media screen and (min-width: 768px) {
+      left: -25px;
+      width: 187px;
+      height: 69px;
+    }
   }
 `;
 
