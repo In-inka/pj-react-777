@@ -167,7 +167,6 @@ export const ButtonBlack = styled(Link)`
 
 export const FlexContainer = styled.div`
   display: flex;
-  /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
   padding-top: 232px;
