@@ -4,7 +4,6 @@ import App from './App.jsx';
 import { GlobalStyle } from './GlobalStyle.jsx';
 import { ThemeProvider } from 'styled-components';
 import { glodalColor } from './Styled/GlobalColor.jsx';
-import './index.css';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';

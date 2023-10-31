@@ -8,6 +8,7 @@ import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.j
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
 import { glodalColor } from '../../Styled/GlobalColor';
+import Line from '../../img/background/Line.svg';
 
 export const Section = styled.section`
   padding-top: 127px;
@@ -113,6 +114,31 @@ export const ButtonContainer = styled.div`
   }
 `;
 
+export const TextIcon = styled.div`
+  &.text-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &.text-container::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 3px;
+
+    background-image: url(${Line});
+    background-size: cover;
+    width: 98px;
+    height: 36px;
+    @media screen and (min-width: 768px) {
+      left: -25px;
+      width: 187px;
+      height: 69px;
+    }
+  }
+`;
+
 export const ButtonYellow = styled(Link)`
   display: inline-block;
   margin-right: 14px;
@@ -163,11 +189,8 @@ export const ButtonBlack = styled(Link)`
   }
 `;
 
-
-
 export const FlexContainer = styled.div`
   display: flex;
-  /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
   padding-top: 232px;
@@ -319,7 +342,6 @@ export const RunIcon = styled.svg`
     }
   }
 `;
-
 
 export const RunIconContainer = styled.div`
   display: flex;

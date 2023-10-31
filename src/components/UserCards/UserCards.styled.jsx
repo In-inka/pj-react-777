@@ -224,7 +224,9 @@ export const Icon = styled.svg`
       height: 32px;
     }
   }
-
+  &.stroke-withe {
+    stroke: ${glodalColor.withe};
+  }
   &.lightOrange {
     fill: ${glodalColor.secondaryOrange};
   }

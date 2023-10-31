@@ -41,7 +41,6 @@ export const BoxItemInputs = styled.div`
 
 export const BoxInputData = styled.label`
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
 
   color: #efede8;
