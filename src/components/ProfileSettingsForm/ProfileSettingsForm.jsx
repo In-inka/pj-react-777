@@ -33,6 +33,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 import { schema } from './schema/Schema';
 import { toast } from 'react-toastify';
+import { Icon } from '../UserCards/UserCards.styled';
+import sprite from '../../sprite/sprite.svg';
 
 const ProfileSettingsForm = () => {
   const dispatch = useDispatch();
@@ -147,10 +149,13 @@ const ProfileSettingsForm = () => {
                       formik.setFieldValue('birthday', formatDateString(date));
                     }}
                     customInput={<CustomDatePickerInput />}
-                    dateFormat={'yyyy-MM-dd'}
+                    dateFormat={'dd.MM.yyyy'}
                     calendarStartDay={1}
                     formatWeekDay={(day) => day.substr(0, 1)}
                   />
+                  <Icon width={18} height={18} className="stroke-withe">
+                    <use href={`${sprite}#icon-calendar`}></use>
+                  </Icon>
                 </BoxInputData>
               </StyledCalendarContainer>
             </BoxItemInputs>
