@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
@@ -15,17 +14,15 @@ import 'react-toastify/dist/ReactToastify.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <Provider store={store}>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/pj-react-777">
-          <ThemeProvider theme={glodalColor}>
-            <GlobalStyle />
-            <App />
-            <ToastContainer theme="colored" position="top-center" />
-          </ThemeProvider>
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter basename="/pj-react-777">
+        <ThemeProvider theme={glodalColor}>
+          <GlobalStyle />
+          <App />
+          <ToastContainer theme="colored" position="top-center" />
+        </ThemeProvider>
+      </BrowserRouter>
+    </PersistGate>
   </Provider>,
   /* </React.StrictMode>, */
 );
