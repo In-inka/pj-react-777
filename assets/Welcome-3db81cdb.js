@@ -1,4 +1,4 @@
-import{L as d,g as t,j as i}from"./index-c997061c.js";import{n}from"./emotion-styled.browser.esm-1196d20a.js";import{b as o,a,c as r,d as p}from"./main_bg_tab-c8ca51e2.js";import{b as c,a as x}from"./main_bg_desktop-12717d49.js";import{C as s,s as e}from"./sprite-576da4f2.js";const l=n.section`
+import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-styled.browser.esm-5948b808.js";import{b as o,a,c as r,d as p}from"./main_bg_tab-c8ca51e2.js";import{b as c,a as x}from"./main_bg_desktop-12717d49.js";import{C as s,s as e}from"./sprite-07ded79c.js";const l=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),

@@ -1,4 +1,4 @@
-import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js";import{n as i}from"./emotion-styled.browser.esm-1196d20a.js";import{b as S,a as T,c as _,d as B}from"./main_bg_tab-c8ca51e2.js";import{b as $,a as I}from"./main_bg_desktop-12717d49.js";import{C as L,s as g}from"./sprite-576da4f2.js";import{u as F,B as P}from"./Button-9bbf8387.js";import{L as R,s as E}from"./Loader-f533e767.js";import"./Hourglass-be6c8687.js";const N=i.section`
+import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-b5cd67ef.js";import{n as i}from"./emotion-styled.browser.esm-5948b808.js";import{b as S,a as I,c as _,d as $}from"./main_bg_tab-c8ca51e2.js";import{b as T,a as B}from"./main_bg_desktop-12717d49.js";import{C as L,s as d}from"./sprite-07ded79c.js";import{u as P,B as F}from"./Button-a99fbd24.js";import{L as R,a as E}from"./Loader-86d6e45c.js";import"./Hourglass-3c8ecb78.js";const V=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
@@ -12,7 +12,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     screen and (min-resolution: 2dppx) {
     background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${T});
+      url(${I});
     background-repeat: no-repeat;
     background-position: calc(50% + 38.5px) calc(50% + 120.5px);
     background-size: 298px;
@@ -22,11 +22,11 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
       url(${_});
-      padding-bottom: 48px;
-      padding-top: 189px;
     background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     background-repeat: no-repeat;
     background-size: 437px;
+    padding-top: 189px;
+    padding-bottom: 48px;
 
     @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
       screen and (min-width: 768px) and (min-resolution: 192dpi),
@@ -37,7 +37,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${B});
+        url(${$});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-repeat: no-repeat;
       background-size: 437px;
@@ -49,9 +49,9 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${$});
+        url(${T});
       padding-top: 200px;
-      padding-bottom: 114px;
+      padding-bottom: 210px;
       background-repeat: no-repeat;
       background-position: calc(50% + 385px) 50%;
       background-size: 670px;
@@ -65,16 +65,16 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${I});
+        url(${B});
       background-repeat: no-repeat;
       background-position: calc(50% + 335px) calc(50% + 65.5px);
       background-size: 670px;
     }
   }
-`,U=i.div`
+`,G=i.div`
   ${L}
   position: relative;
-`,V=i.h1`
+`,A=i.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
   line-height: 1.17;
@@ -82,7 +82,17 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     font-size: 32px;
     line-height: 1.38;
   }
-`,A=i.p`
+`;i.svg`
+  fill: ${p.acceptColor};
+  stroke-width: 2px;
+  width: 98px;
+  height: 35px;
+  @media screen and (min-width: 768px) {
+    &.setMenu {
+      width: 185px;
+      height: 67px;
+    }
+  }`;const N=i.p`
   font-size: 14px;
   line-height: 1.29;
   color: rgba(239, 237, 232, 0.3);
@@ -94,7 +104,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     line-height: 1.5;
     margin-top: 16px;
   }
-`,G=i.div`
+`,D=i.div`
   display: flex;
   font-size: 12px;
   line-height: 1.5;
@@ -102,20 +112,19 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
   @media screen and (min-width: 768px) {
     padding-left: 15px;
   }
-`,D=i.p`
+`,M=i.p`
   color: rgba(239, 237, 232, 0.3);
-`,M=i(m)`
+`,U=i(u)`
   margin-left: 4px;
   color: #efede8;
   text-decoration: underline;
-`,q=i.div`
+`,W=i.div`
   display: flex;
-  /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 117px;
   @media screen and (min-width: 768px) {
-    padding-top: 39px;
+    padding-top: 135px;
     justify-content: left;
     padding-left: 299px;
   }
@@ -125,7 +134,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     left: 770px;
     top: 184px;
   }
-`,H=i.div`
+`,q=i.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +144,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,J=i.div``,K=i.p`
+`,H=i.div``,J=i.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -143,7 +152,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     font-size: 24px;
     line-height: 1;
   }
-`,O=i.p`
+`,K=i.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -153,8 +162,8 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     font-size: 16px;
     line-height: 1.5;
   }
-`,Q=i.svg`
-  fill: ${u.withe};
+`,O=i.svg`
+  fill: ${p.withe};
   padding-left: 3px;
   width: 12px;
   height: 12px;
@@ -165,10 +174,10 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
       height: 20px;
     }
   }
-`,W=i.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+`,Q=i.div`
+display: flex;
+justify-content: center;
+align-items: center;
   width: 30px;
   height: 30px;
   border-radius: 50px;
@@ -227,7 +236,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     line-height: 1.5;
   }
 `,ne=i.svg`
-  fill: ${u.withe};
+  fill: ${p.withe};
   width: 12px;
   height: 12px;
   @media screen and (min-width: 768px) {
@@ -237,7 +246,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
       height: 16px;
     }
   }
-`,re=i.div`
+`,te=i.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -251,16 +260,16 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     height: 24px;
     margin-bottom: 12px;
   }
-`,te=i.form`
+`,oe=i.form`
   margin-top: 28px;
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
     width: 404px;
   }
-`,oe=i.div`
+`,re=i.div`
   padding-right: 40px;
-`,o=i.input`
+`,s=i.input`
   outline: 0;
   outline-offset: 0;
   color: #efede8;
@@ -268,7 +277,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
   background-color: inherit;
   border-width: 1px;
   border-style: solid;
-  border-color: ${a=>a.theme.main};
+  border-color: ${r=>r.theme.main};
   border-radius: 12px;
   padding: 13px;
   font-size: 14px;
@@ -287,7 +296,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
       margin-top: 20px;
     }
   }
-`;o.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const x=i.label`
+`;s.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const h=i.label`
   margin: -1px;
   padding: 0;
   position: absolute;
@@ -297,10 +306,18 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
   border: 0;
   clip: rect(0 0 0 0);
 `,ae=i.div`
+display: flex;
+  position: relative;
   padding-top: 28px;
-    @media screen and (min-width: 768px) {
-    padding-top: 64px;}
-`,de=i(m)`
+  @media screen and (min-width: 768px) {
+    padding-top: 64px;
+  }
+`,de=i.div`
+  
+`,m=i.div`
+  display: inline-flex;
+  margin-top: 4px;
+`,se=i(u)`
   margin-left: 14px;
   position: relative;
   display: inline-block;
@@ -324,7 +341,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
     font-size: 20px;
     line-height: 1.2;
   }
-`,se=i.svg`
+`,pe=i.svg`
   position: absolute;
   right: 19px;
   width: 20px;
@@ -336,27 +353,24 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-c997061c.js
       height: 28px;
     }
   }
-`,h=i.div`
-  display: inline-flex;
-  margin-top: 4px;
-`,pe=i.div`
-margin-right: 4px;
+`,ce=i.div`
+  margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(216, 0, 39, 1);
-`,ce=i.p`
+`,le=i.p`
   color: rgba(216, 0, 39, 1);
   font-size: 12px;
   line-height: 1.5;
-`,le=i.div`
+`,xe=i.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(60, 191, 97, 1);
-`,xe=i.p`
+`,ge=i.p`
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,ge=()=>{const a=y(),b=v(z.getIsLoading),f=(t,k)=>{a(C.register(t)),k.resetForm()},{values:d,errors:n,touched:r,isSubmitting:w,handleChange:s,handleBlur:p,handleSubmit:j}=F({initialValues:{name:"",email:"",password:""},validationSchema:E,onSubmit:f}),c=t=>e.jsxs(h,{children:[" ",e.jsx(pe,{}),e.jsx(ce,{children:t})]}),l=t=>e.jsxs(h,{children:[e.jsx(le,{}),e.jsxs(xe,{children:["Success ",t]})]});return e.jsxs(te,{onSubmit:j,children:[e.jsxs(oe,{children:[e.jsx(x,{htmlFor:"name",children:"Name"}),e.jsx(o,{value:d.name,onChange:s,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:p,theme:r.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),r.name&&(n.name?c(n.name):l("name"))," ",e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(o,{value:d.email,onChange:s,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:p,theme:r.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),r.email&&(n.email?c(n.email):l("email"))," ",e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(o,{value:d.password,onChange:s,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:p,theme:r.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),r.password&&(n.password?c(n.password):l("password"))," "]}),e.jsxs(ae,{children:[b?e.jsx(R,{cls:"yellowBtn"}):e.jsx(P,{disabled:w,type:"submit",text:"Sign Up"}),e.jsxs(de,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(se,{className:"setG",children:e.jsx("use",{href:`${g}#icon-google`})})]})]})]})},ye=()=>e.jsx(N,{children:e.jsxs(U,{children:[e.jsx(V,{children:"Sign Up"}),e.jsx(A,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ge,{}),e.jsxs(G,{children:[e.jsx(D,{children:"Already have account?"}),e.jsx(M,{to:"/signin",children:"Sign In"})]}),e.jsx(q,{children:e.jsxs(H,{children:[e.jsx(W,{children:e.jsx(Q,{className:"setPlay",children:e.jsx("use",{href:`${g}#icon-Polygon`})})}),e.jsxs(J,{children:[e.jsx(K,{children:"350+"}),e.jsx(O,{children:"Video tutorial"})]})]})}),e.jsx(X,{children:e.jsxs(Y,{children:[e.jsx(re,{children:e.jsx(ne,{className:"setRun",children:e.jsx("use",{href:`${g}#icon-running`})})}),e.jsxs(Z,{children:[e.jsx(ee,{children:"500"}),e.jsx(ie,{children:"cal"})]})]})})]})});export{ye as default};
+`,he=()=>{const r=v(),b=y(z.getIsLoading),f=async(o,k)=>{r(C.logIn(o)),k.resetForm()},{values:c,errors:n,touched:t,isSubmitting:w,handleChange:l,handleBlur:x,handleSubmit:j}=P({initialValues:{email:"",password:""},validationSchema:E,onSubmit:f}),a=o=>e.jsxs(m,{children:[e.jsx(ce,{}),e.jsx(le,{children:o})]}),g=o=>e.jsxs(m,{children:[e.jsx(xe,{}),e.jsxs(ge,{children:["Success ",o]})]});return e.jsxs(oe,{onSubmit:j,children:[e.jsxs(re,{children:[n.name&&t.name&&a(n.name),e.jsx(h,{htmlFor:"email",children:"Email"}),e.jsx(s,{value:c.email,onChange:l,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:x,theme:t.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.email&&(n.email?a(n.email):g("email")),e.jsx(h,{htmlFor:"password",children:"Password"}),e.jsx(s,{value:c.password,onChange:l,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:x,theme:t.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.password&&(n.password?a(n.password):g("password"))]}),e.jsxs(ae,{children:[b?e.jsx(R,{cls:"yellowBtn"}):e.jsx(F,{disabled:w,type:"submit",text:"Sign In"}),e.jsx(de,{children:e.jsxs(se,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(pe,{className:"setG",children:e.jsx("use",{href:`${d}#icon-google`})})]})})]})]})},ye=()=>e.jsxs(V,{children:[" ",e.jsxs(G,{children:[e.jsx(A,{children:"Sign In"}),e.jsx(N,{children:"Welcome! Please enter your credentials to login to the platform:"}),e.jsx(he,{}),e.jsxs(D,{children:[e.jsx(M,{children:"Don't have an account?"}),e.jsx(U,{to:"/signup",children:"Sign Up"})]}),e.jsx(W,{children:e.jsxs(q,{children:[e.jsx(Q,{children:e.jsx(O,{className:"setPlay",children:e.jsx("use",{href:`${d}#icon-Polygon`})})}),e.jsxs(H,{children:[e.jsx(J,{children:"350+"}),e.jsx(K,{children:"Video tutorial"})]})]})}),e.jsx(X,{children:e.jsxs(Y,{children:[e.jsx(te,{children:e.jsx(ne,{className:"setRun",children:e.jsx("use",{href:`${d}#icon-running`})})}),e.jsxs(Z,{children:[e.jsx(ee,{children:"500"}),e.jsx(ie,{children:"cal"})]})]})})]})]});export{ye as default};
