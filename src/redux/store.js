@@ -14,7 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { exercisesSliceReducer } from './exercises/exercisesSlice';
 import { productsReducer } from './products/sliceProducts';
 import { diarySliceReducer } from './diary/diarySlice';
-import msgpack from 'msgpack-lite';
+// import msgpack from 'msgpack-lite';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 const authPersistConfig = {
