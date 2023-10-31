@@ -1,9 +1,9 @@
-import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-styled.browser.esm-5948b808.js";import{b as o,a,c as r,d as p}from"./main_bg_tab-c8ca51e2.js";import{b as c,a as x}from"./main_bg_desktop-12717d49.js";import{C as s,s as e}from"./sprite-07ded79c.js";const l=n.section`
+import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}from"./emotion-styled.browser.esm-3d503bf4.js";import{b as c,a as s,c as x,d as l,e as g,f as h}from"./main_bg_desktop-e1ac3f6f.js";import{C as m,s as e}from"./sprite-d6aee3bd.js";const u=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
     linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-    url(${o});
+    url(${c});
   background-repeat: no-repeat;
   background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
@@ -12,7 +12,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     screen and (min-resolution: 2dppx) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${a});
+      url(${s});
     background-repeat: no-repeat;
     background-position: calc(50% + 38.5px) calc(50% + 120.5px);
     background-size: 298px;
@@ -21,7 +21,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
   @media screen and (min-width: 768px) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${r});
+      url(${x});
     background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     padding-top: 189px;
     padding-bottom: 48px;
@@ -37,7 +37,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${p});
+        url(${l});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       padding-top: 189px;
@@ -52,7 +52,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${c});
+        url(${g});
       padding-top: 200px;
       padding-bottom: 246px;
       background-repeat: no-repeat;
@@ -68,16 +68,16 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${x});
+        url(${h});
       background-repeat: no-repeat;
       background-position: calc(50% + 335px) calc(50% + 65.5px);
       background-size: 670px;
     }
   }
-`,g=n.div`
-  ${s}
+`,b=n.div`
+  ${m}
   position: relative;
-`,h=n.h1`
+`,f=n.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 38px;
   line-height: 1.05;
@@ -89,12 +89,12 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
   @media screen and (min-width: 1440px) {
     width: 598px;
   }
-`,m=n.div`
+`,k=n.div`
   margin-top: 40px;
   @media screen and (min-width: 768px) {
     margin-top: 64px;
   }
-`,b=n(d)`
+`,w=n(d)`
   display: inline-block;
   margin-right: 14px;
   font-size: 16px;
@@ -118,7 +118,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     font-size: 20px;
     line-height: 1.2;
   }
-`,u=n(d)`
+`,j=n(d)`
   display: inline-block;
   font-size: 16px;
   line-height: 1.17;
@@ -140,9 +140,8 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     font-size: 20px;
     line-height: 1.2;
   }
-`,f=n.div`
+`,y=n.div`
   display: flex;
-  /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
   padding-top: 232px;
@@ -157,7 +156,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     left: 770px;
     top: 184px;
   }
-`,w=n.div`
+`,z=n.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -167,7 +166,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,k=n.div``,j=n.p`
+`,C=n.div``,v=n.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -175,7 +174,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     font-size: 24px;
     line-height: 1;
   }
-`,y=n.p`
+`,_=n.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -185,7 +184,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     font-size: 16px;
     line-height: 1.5;
   }
-`,z=n.svg`
+`,T=n.svg`
   fill: ${t.withe};
   padding-left: 3px;
   width: 12px;
@@ -197,7 +196,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
       height: 20px;
     }
   }
-`,v=n.div`
+`,$=n.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +210,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     height: 40px;
     margin-right: 12px;
   }
-`,C=n.div`
+`,B=n.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -225,7 +224,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     top: 319px;
     left: 1228px;
   }
-`,_=n.div`
+`,P=n.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -234,11 +233,11 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
   @media screen and (min-width: 768px) {
     padding: 14px 38px 14px 28px;
   }
-`,T=n.div`
+`,S=n.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,$=n.p`
+`,I=n.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -249,7 +248,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     font-size: 48px;
     line-height: 1.04;
   }
-`,B=n.p`
+`,R=n.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -258,7 +257,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     font-size: 16px;
     line-height: 1.5;
   }
-`,P=n.svg`
+`,V=n.svg`
   fill: ${t.withe};
   width: 12px;
   height: 12px;
@@ -269,7 +268,7 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
       height: 16px;
     }
   }
-`,I=n.div`
+`,A=n.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -283,4 +282,4 @@ import{L as d,g as t,j as i}from"./index-b5cd67ef.js";import{n}from"./emotion-st
     height: 24px;
     margin-bottom: 12px;
   }
-`,L=()=>i.jsx(l,{children:i.jsxs(g,{children:[i.jsx(h,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(m,{children:[i.jsx(b,{to:"/signup",children:"Sign Up"}),i.jsx(u,{to:"/signin",children:"Sign In"})]}),i.jsx(f,{children:i.jsxs(w,{children:[i.jsx(v,{children:i.jsx(z,{className:"setPlay",children:i.jsx("use",{href:`${e}#icon-Polygon`})})}),i.jsxs(k,{children:[i.jsx(j,{children:"350+"}),i.jsx(y,{children:"Video tutorial"})]})]})}),i.jsx(C,{children:i.jsxs(_,{children:[i.jsx(I,{children:i.jsx(P,{className:"setRun",children:i.jsx("use",{href:`${e}#icon-running`})})}),i.jsxs(T,{children:[i.jsx($,{children:"500"}),i.jsx(B,{children:"cal"})]})]})})]})});export{L as default};
+`,E=()=>{const a=r(),o=()=>{a(p())};return i.jsx(u,{children:i.jsxs(b,{children:[i.jsx(f,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(k,{children:[i.jsx(w,{to:"/signup",children:"Sign Up"}),i.jsx(j,{to:"/signin",children:"Sign In"})]}),i.jsx(y,{children:i.jsxs(z,{children:[i.jsx($,{children:i.jsx(T,{className:"setPlay",children:i.jsx("use",{href:`${e}#icon-Polygon`})})}),i.jsxs(C,{children:[i.jsx(v,{children:"350+"}),i.jsx(_,{children:"Video tutorial"})]})]})}),i.jsx(B,{children:i.jsxs(P,{children:[i.jsx(A,{children:i.jsx(V,{className:"setRun",children:i.jsx("use",{href:`${e}#icon-running`})})}),i.jsxs(S,{children:[i.jsx(I,{children:"500"}),i.jsx(R,{children:"cal"})]})]})}),i.jsx("button",{type:"button",onClick:o,children:"Test"})]})})};export{E as default};
