@@ -5,18 +5,14 @@ import {
   BoxGif,
   BoxGifTimer,
   BoxTimer,
-  BurnedCalories,
   ButtonAddDiary,
   ButtonClose,
-  ButtonPause,
   GifExercises,
   IconClose,
-  IconPause,
   ItemContent,
   ItemContentExercises,
   ItemTitle,
   ModalContainer,
-  Number,
   TextTime,
 } from './ExercisesModal.styled';
 import { useState } from 'react';
@@ -29,7 +25,7 @@ const ExercisesModal = ({ data, onClose, duration }) => {
 
   // console.log('data', data)
   return (
-    <Backdrop onClick={onClose}>
+    <Backdrop>
       <ModalContainer>
         <ButtonClose type="button" onClick={onClose}>
           <IconClose>
@@ -48,14 +44,6 @@ const ExercisesModal = ({ data, onClose, duration }) => {
               dinamicBurnCal={dinamicBurnCal}
               duration={duration}
             />
-            {/* <ButtonPause type="button">
-              <IconPause>
-                <use href={`${sprite}#icon-pause`}></use>
-              </IconPause>
-            </ButtonPause>
-            <BurnedCalories>
-              Burned calories: <Number>{exercises.burnedCalories}</Number>
-            </BurnedCalories> */}
           </BoxTimer>
         </BoxGifTimer>
         <BoxContentExercises>
