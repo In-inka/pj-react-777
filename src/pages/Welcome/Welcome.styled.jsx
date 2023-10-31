@@ -11,6 +11,7 @@ import { glodalColor } from '../../Styled/GlobalColor';
 
 export const TextIcon = styled.div`
   &.text-container {
+    z-index: 10;
     position: relative;
     display: inline-block;
   }

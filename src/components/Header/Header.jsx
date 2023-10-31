@@ -56,6 +56,7 @@ const Header = () => {
 
   const onHandleClick = () => {
     dispatch(authOperations.logOut());
+    
   };
 
   const toggleClickMenu = () => {

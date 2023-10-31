@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getProductsList } from './operationsProducts';
+import { handleFulfilledProductList, handlePending, handleRejected } from '../../components/services/services';
+
+const STATUS = {
+  PENDING: 'pending',
+  REJECTED: 'rejected',
+  FULFILLED: 'fulfilled',
+};
 
 export const productSlice = createSlice({
   name: 'products',
@@ -20,23 +27,11 @@ export const productSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(getProductsList.pending, pending)
-      .addCase(getProductsList.fulfilled, ListFulfilled)
-      .addCase(getProductsList.rejected, rejected),
+      .addCase(getProductsList[STATUS.PENDING], handlePending)
+      .addCase(getProductsList[STATUS.FULFILLED], handleFulfilledProductList)
+      .addCase(getProductsList[STATUS.REJECTED], handleRejected),
 });
 
-function ListFulfilled(state, { payload }) {
-  state.list = payload;
-  state.isLoading = false;
-}
-
-function pending(state) {
-  state.isLoading = true;
-}
-
-function rejected(state) {
-  state.isLoading = false;
-}
 
 export const productsReducer = productSlice.reducer;
 export const filterReducer = productSlice.actions.setFilter;

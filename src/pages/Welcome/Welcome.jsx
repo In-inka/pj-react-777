@@ -27,6 +27,7 @@ import getStatistics from '../../redux/statistics/statisticsOperations';
 
 const Welcome = () => {
   const dispatch = useDispatch();
+  
   const onHandleClick = () => {
     dispatch(getStatistics());
   };

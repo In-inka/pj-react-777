@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -15,44 +15,50 @@ import {
 } from '../../redux/products/selectorsProducts';
 import Loading from '../../components/Loading/Loading';
 import { productSlice } from '../../redux/products/sliceProducts';
+import ReactPaginate from 'react-paginate';
 
 const Products = () => {
+  const [page, setPage] = useState(1);
+  const [filterParams, setFilterParams] = useState({})
   const isLoading = useSelector(selectIsLoadingProduct);
-  const dispatch = useDispatch();
   const products = useSelector(selectProductsList);
-  const fetching = useCallback(
-    (filterParams) => {
-      try {
-        if (filterParams) {
-          dispatch(getProductsList(filterParams));
-        } else {
-          dispatch(getProductsList());
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    [dispatch],
-  );
+  const limitPage = products.limit;
+  const totalPage = Math.ceil(products.total / limitPage);
+  
+  const dispatch = useDispatch();
+  
+  const innerRef = useRef();
+
+  
+  const getPageNumber = () => {
+   setPage(); 
+  }
+
+  const handleSearch = ({ search, category, recommended }) => {
+    setFilterParams({ search, category, recommended });
+    setPage(1);
+  };
 
   useEffect(() => {
-    if (
-      localStorage.getItem('persist:products').filter ===
-      productSlice.getInitialState().filter
-    ) {
-      fetching();
-    }
-  }, [fetching]);
+      dispatch(getProductsList({ filterParams, page}));
+
+  }, [dispatch, filterParams, page]);
 
   return (
     <Container>
       <ProductsFilterText>Filters</ProductsFilterText>
       <ProductsFunc>
         <ProductsTitle>Products</ProductsTitle>
-        <ProductsFilter submit={fetching} />
+        <ProductsFilter handleSearch={handleSearch} />
       </ProductsFunc>
       {!isLoading && products !== null ? (
-        <ProductsList products={products} />
+        <>
+          <ProductsList
+            products={products.products}
+            onScroll={getPageNumber}
+            listInnerRef={innerRef}
+          />
+        </>
       ) : (
         <Loading />
       )}

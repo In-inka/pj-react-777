@@ -124,3 +124,11 @@ export const handlePending = (state) => {
 export const handleRejected = (state) => {
   state.isLoading = false;
 };
+
+
+//--------------Products
+
+export function handleFulfilledProductList (state, { payload }) {
+  state.list = { ...state.list, ...payload };
+  state.isLoading = false;
+}
