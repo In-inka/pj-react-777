@@ -10,7 +10,6 @@ import {
   ItemName,
   ItemField,
   WrapMobile,
-  // IconWrapper,
   DeleteIconWrapper,
   StyledLink,
   WrapItemProducts,
@@ -27,6 +26,7 @@ import {
   Recommend,
 } from './DayProducts.styled';
 import sprite from '../../sprite/sprite.svg';
+import MyLoader from '../Loader/DiaryLoader';
 import { useDispatch, useSelector } from 'react-redux';
 import diarySelectors from '../../redux/diary/diarySelectors';
 import diaryOperations from '../../redux/diary/diaryOperations';
@@ -37,9 +37,13 @@ const Icon = styled.svg`
   }
 `;
 
+// function delay(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
 const DayProducts = () => {
   const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
-
+  
   return (
     <Container>
       <TitleMain>
@@ -54,28 +58,33 @@ const DayProducts = () => {
       {!visibleProducts.length ? (
         <EmptyScreen />
       ) : (
-        <ProductsTable products={visibleProducts}/>
-      )}
+        <ProductsTable products={visibleProducts} />
+      )       
+      }
     </Container>
   );
 };
 
 export const ProductsTable = ({ products }) => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const isLoading = useSelector(diarySelectors.getIsLoading);
   
   return (
     <>
       <TableTitle />
-      <TableList>
-        {products.map(
-          ({
-            _id,
-            calories,
-            amount,
-            recommend,
-            date,
-            productId: { category, title },
-          }) => {
+      {isLoading ? (
+        <MyLoader display={'flex'}/>
+      ) : (
+        <TableList>
+          {products.map(
+            ({
+              _id,
+              calories,
+              amount,
+              recommend,
+              date,
+              productId: { category, title },
+            }) => {
               return (
                 <ListItem key={_id}>
                   <ItemProduct value={title}>Title</ItemProduct>
@@ -88,8 +97,7 @@ const dispatch = useDispatch();
                     </WrapItemProducts>
                     <Button
                       onClick={() => {
-                        // console.log("Del Product : ",{productId: _id, date});
-                        dispatch(diaryOperations.deleteDiaryProduct({productId: _id, date}))
+                        dispatch(diaryOperations.deleteDiaryProduct({ productId: _id, date }))
                       }}
                     >
                       <DeleteIconWrapper>
@@ -102,8 +110,9 @@ const dispatch = useDispatch();
                 </ListItem>
               );
             },
-        )}
-      </TableList>
+          )}
+        </TableList>
+      )}
     </>
   );
 };

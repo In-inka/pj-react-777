@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { addDays, subDays } from 'date-fns';
@@ -21,6 +21,7 @@ const DaySwitch = ({
   textHeight,
   handlerDate,
   currentDate,
+  birthdayDate,
 }) => {
   const numericMonthFormat = 'dd/MM/yyyy';
   const datepickerRef = useRef(null);
@@ -28,7 +29,7 @@ const DaySwitch = ({
   const handler = (evt) => {
     handlerDate(evt);
   };
-  
+
   const toggleDatePicker = () => {
     if (datepickerRef.current) {
       datepickerRef.current.setOpen(true);
@@ -42,9 +43,9 @@ const DaySwitch = ({
           selected={currentDate}
           onChange={handler}
           dateFormat={numericMonthFormat}
-          customInput={
+          minDate={birthdayDate}
+        customInput={
             <CustomDatePickerInput
-              onChange={(ev) => console.log(ev)}
               $textSize={textSize}
               $textWeight={textWeight}
               $textHeight={textHeight}
