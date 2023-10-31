@@ -35,10 +35,22 @@ const DaySwitch = ({
     }
   };
 
+
+ const startDate = new Date('01/10/2023');
+ const endDate = new Date('15/10/2023');
+
   return (
     <DaySwitchContainer>
       <StyledCalendarContainer>
         <DatePicker
+          // selected={startDate}
+          minDate={new Date()}
+          maxDate={new Date().setMonth((new Date()).getMonth() + 5)}
+          startDate={startDate}
+          endDate={endDate}
+          selectsRange
+          inline
+          showDisabledMonthNavigation
           selected={currentDate}
           onChange={handler}
           dateFormat={numericMonthFormat}

@@ -6,7 +6,6 @@ import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 import { DayProducts } from '../../components/DayProducts/DayProducts';
 import { DayExercises } from '../../components/DayExercises/DayExercises';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
-import DatePicker from 'react-datepicker';
 
 import {
   Container,
@@ -50,8 +49,11 @@ const { eatenProducts, doneExercises } = diary;
     dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
   }, [dispatch, date, eatenProducts.length, doneExercises.length]);
   
-  // const minDate = new Date('15/10/2023');
-  // if (date < minDate) setDate(minDate);
+  const startDate = new Date('01/10/2023');
+  const endDate = new Date("15/10/2023");
+     
+  
+  
   return (
     <Container>
       <WrapTitle>
@@ -70,6 +72,15 @@ const { eatenProducts, doneExercises } = diary;
           </MobileDaySwitch>
           <NotMobileDaySwitch>
             <DaySwitch
+              selected={startDate}
+              minDate={new Date()}
+              maxDate={(new Date()).setMonth(date.getMonth() + 5)}
+              startDate={startDate}
+              endDate={endDate}
+              selectsRange
+              inline
+              showDisabledMonthNavigation
+
               currentDate={date}
               handlerDate={handlerDate}
               textSize={24}
@@ -81,7 +92,7 @@ const { eatenProducts, doneExercises } = diary;
           </NotMobileDaySwitch>
         </WrapDaySwitcher>
       </WrapTitle>
-      <WrapMainBlock>   
+      <WrapMainBlock>
         <WrapDashBoard>
           <DayDashboard />
           <WrapInfoText>
