@@ -43,7 +43,7 @@ const Icon = styled.svg`
 
 export const DayExercises = () => {
   const visibleExercises = useSelector(diarySelectors.getDiary).doneExercises;
-  
+
   return (
     <ContainerEx>
       <TitleMainEx>
@@ -55,11 +55,7 @@ export const DayExercises = () => {
           </Icon>
         </StyledLinkEx>
       </TitleMainEx>
-      {!visibleExercises.length ? (
-        <EmptyScreenEx />
-      ) : (
-        <ExercisesTable exercises={visibleExercises} />
-      )}
+      <ExercisesTable exercises={visibleExercises} />
     </ContainerEx>
   );
 };
@@ -70,74 +66,73 @@ export const ExercisesTable = ({ exercises }) => {
 
   return (
     <>
-      <TableTitleEx />
       {isLoading ? (
         <MyLoader display={'flex'} />
+      ) : !exercises.length ? (
+        <EmptyScreenEx />
       ) : (
-        <TableListEx>
-          {exercises.map(
-            ({
-              burnedCalories,
-              date,
-              exerciseId: {
-                bodyPart,
-                equipment,
-                name,
-                target,
-                // _id
-              },
-              //  owner,
-              time,
-              _id,
-            }) => (
-              <ListItemEx key={_id}>
-                <WrapMainBlockEx>
-                  <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
-                  <ItemProductEx value={equipment}>Equipment</ItemProductEx>
-                  <ItemProductEx value={name}>Name</ItemProductEx>
-                </WrapMainBlockEx>
+        <>
+          <TableTitleEx />
+          <TableListEx>
+            {exercises.map(
+              ({
+                burnedCalories,
+                date,
+                exerciseId: {
+                  bodyPart,
+                  equipment,
+                  name,
+                  target,
+                  // _id
+                },
+                //  owner,
+                time,
+                _id,
+              }) => (
+                <ListItemEx key={_id}>
+                  <WrapMainBlockEx>
+                    <ItemProductEx value={bodyPart}>Body Part</ItemProductEx>
+                    <ItemProductEx value={equipment}>Equipment</ItemProductEx>
+                    <ItemProductEx value={name}>Name</ItemProductEx>
+                  </WrapMainBlockEx>
 
-                <WrapMobileEx>
-                  <WrapItemProductsEx>
-                    <ItemProductEx value={target}>Target</ItemProductEx>
-                    <ItemProductEx value={burnedCalories}>
-                      Burned Calories
-                    </ItemProductEx>
-                    <ItemProductEx value={time}>Time</ItemProductEx>
-                  </WrapItemProductsEx>
+                  <WrapMobileEx>
+                    <WrapItemProductsEx>
+                      <ItemProductEx value={target}>Target</ItemProductEx>
+                      <ItemProductEx value={burnedCalories}>
+                        Burned Calories
+                      </ItemProductEx>
+                      <ItemProductEx value={time}>Time</ItemProductEx>
+                    </WrapItemProductsEx>
 
-                  <ButtonEx
-                    onClick={() => {
-                      // console.log(' Del Exercise : ', {
-                      //   exerciseId: _id,
-                      //   date,
-                      // });
-                      dispatch(
-                        diaryOperations.deleteDiaryExercise({
-                          exerciseId: _id,
-                          date,
-                        }),
-                      );
-                    }}
-                  >
-                    <DeleteIconWrapper>
-                      <Icon width={20} height={20} className="orange">
-                        <use href={`${sprite}#icon-trash`}></use>
-                      </Icon>
-                    </DeleteIconWrapper>
-                  </ButtonEx>
-                </WrapMobileEx>
-              </ListItemEx>
-            ),
-          )}
-        </TableListEx>
+                    <ButtonEx
+                      onClick={() => {
+                        dispatch(
+                          diaryOperations.deleteDiaryExercise({
+                            exerciseId: _id,
+                            date,
+                          }),
+                        );
+                      }}
+                    >
+                      <DeleteIconWrapper>
+                        <Icon width={20} height={20} className="orange">
+                          <use href={`${sprite}#icon-trash`}></use>
+                        </Icon>
+                      </DeleteIconWrapper>
+                    </ButtonEx>
+                  </WrapMobileEx>
+                </ListItemEx>
+              ),
+            )}
+          </TableListEx>
+        </>
       )}
     </>
   );
 };
 
 export const ItemProductEx = ({ width, value, children }) => {
-  // console.log(children, value, width);
   let displayValue = value;
   let sliceValue = displayValue;
   if (value.length > 10) {
