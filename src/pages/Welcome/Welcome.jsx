@@ -69,9 +69,6 @@ const Welcome = () => {
             </TextContainerC>
           </CalorieContainer>
         </FlexContainerB>
-        <button type="button" onClick={onHandleClick}>
-          Test
-        </button>
       </Container>
     </Section>
   );

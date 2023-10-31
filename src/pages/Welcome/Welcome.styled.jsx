@@ -25,11 +25,11 @@ export const TextIcon = styled.div`
     background-image: url('/src/img/background/line.svg');
     background-size: cover;
     width: 98px;
-    height: 35px;
+    height: 36px;
     @media screen and (min-width: 768px) {
-      left: -20px;
-      width: 185px;
-      height: 67px;
+      left: -25px;
+      width: 187px;
+      height: 69px;
     }
   }
 `;
