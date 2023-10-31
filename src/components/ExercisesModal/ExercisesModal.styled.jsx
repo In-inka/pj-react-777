@@ -103,6 +103,7 @@ export const GifExercises = styled.img`
 export const BoxTimer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 export const TextTime = styled.p`

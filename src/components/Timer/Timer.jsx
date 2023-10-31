@@ -1,16 +1,20 @@
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { useState, useEffect } from 'react';
+
+import sprite from '../../sprite/sprite.svg';
 import {
+  BoxTimer,
   BurnedCalories,
   ButtonPause,
+  CaloriesWrapper,
   IconPause,
   Number,
-} from '../ExercisesModal/ExercisesModal.styled';
-import sprite from '../../sprite/sprite.svg';
+  TextTime,
+} from './Timer.styled';
 
-const Timer = ({ setDinamicBurnCal, duration }) => {
+const Timer = ({ setDinamicBurnCal, burnedCalories }) => {
   const [timerIsRunning, setTimerIsRunning] = useState(false);
-  const [timeElapsed, setTimeElapsed] = useState(0);
+  const [remainingTime, setRemainingTime] = useState(180);
 
   const toggleTimer = () => {
     setTimerIsRunning((prev) => !prev);
@@ -19,7 +23,7 @@ const Timer = ({ setDinamicBurnCal, duration }) => {
   useEffect(() => {
     if (timerIsRunning) {
       const timerInterval = setInterval(() => {
-        setTimeElapsed((prevTime) => prevTime + 1);
+        setRemainingTime((prevTime) => prevTime - 1);
       }, 1000);
 
       return () => {
@@ -28,35 +32,38 @@ const Timer = ({ setDinamicBurnCal, duration }) => {
     }
   }, [timerIsRunning]);
 
-  const calculateBurnedCalories = (timeElapsed) => {
-    const caloriesBurnedPerMinute = 100; //тут треба підставляти калорії динамічно в залежності від обраної вправи і ділити на 180 сек (3 хвилини), щоб отримати кіл-ть калорій спалених за 1 хв.
-    const burnedCalories = Math.round(
-      (timeElapsed / 60) * caloriesBurnedPerMinute,
+  const calculateBurnedCalories = (remainingTime) => {
+    const currentBurnedCalories = Math.round(
+      (180 - remainingTime) * (burnedCalories / 180),
     );
-    setDinamicBurnCal(burnedCalories);
-    return burnedCalories;
+    setDinamicBurnCal(currentBurnedCalories);
+    return currentBurnedCalories;
   };
 
-  const minutes = Math.floor(timeElapsed / 60);
-  const seconds = timeElapsed % 60;
+  const formatTime = (time) => {
+    return time.toString().padStart(2, '0');
+  };
 
   return (
-    <div>
-      <CountdownCircleTimer
-        colors={['#EF8964']}
-        strokeWidth={2}
-        size={124}
-        isPlaying={timerIsRunning}
-        duration={duration}
-        initialRemainingTime={0}
-      >
-        {() => (
-          <div style={{ color: '#fff' }} role="timer" aria-live="assertive">
-            {`${minutes}:${seconds}`}
-          </div>
-        )}
-      </CountdownCircleTimer>
-      <div>
+    <>
+      <BoxTimer>
+        <TextTime>Time</TextTime>
+        <CountdownCircleTimer
+          colors={['#E6533C']}
+          strokeWidth={4}
+          size={124}
+          isPlaying={timerIsRunning}
+          duration={180}
+          onComplete={() => setTimerIsRunning(false)}
+        >
+          {({ remainingTime }) => (
+            <div style={{ color: '#fff' }} role="timer" aria-live="assertive">
+              {`${formatTime(Math.floor(remainingTime / 60))}:${formatTime(
+                remainingTime % 60,
+              )}`}
+            </div>
+          )}
+        </CountdownCircleTimer>
         <ButtonPause type="button" onClick={toggleTimer}>
           <IconPause>
             <use
@@ -66,12 +73,12 @@ const Timer = ({ setDinamicBurnCal, duration }) => {
             ></use>
           </IconPause>
         </ButtonPause>
-        <BurnedCalories>
-          Burned calories:{' '}
-          <Number>{calculateBurnedCalories(timeElapsed)}</Number>
-        </BurnedCalories>
-      </div>
-    </div>
+        <CaloriesWrapper>
+          <BurnedCalories>Burned calories:</BurnedCalories>
+          <Number>{calculateBurnedCalories(remainingTime)}</Number>
+        </CaloriesWrapper>
+      </BoxTimer>
+    </>
   );
 };
 
