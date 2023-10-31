@@ -33,16 +33,7 @@ const Timer = ({ setDinamicBurnCal, burnedCalories }) => {
     }
   }, [timerIsRunning]);
 
-  // const calculateBurnedCalories = (remainingTime) => {
-  //   const currentBurnedCalories = Math.round(
-  //     (180 - remainingTime) * (burnedCalories / 180),
-  //   );
-  //   setDinamicBurnCal(currentBurnedCalories);
-  //   return currentBurnedCalories;
-  // };
-
   useEffect(() => {
-    // Оновіть значення змінної стану
     const updatedBurnedCalories = Math.round(
       (180 - remainingTime) * (burnedCalories / 180),
     );
