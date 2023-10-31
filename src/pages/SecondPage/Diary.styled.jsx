@@ -51,6 +51,7 @@ export const NotMobileDaySwitch = styled.div`
 
 export const WrapTitle = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;

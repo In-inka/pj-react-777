@@ -49,6 +49,7 @@ const Diary = () => {
   const dayOfBirthday = new Date(
     useSelector(authSelectors.getUserMetricData).birthday
   );
+  
   // const dayOfBirthday = new Date(2023, 9, 28);
   // console.log(dayOfBirthday);
 
@@ -68,8 +69,8 @@ const Diary = () => {
 
   return (
     <Container>
+      <ToastContainer />
       <WrapTitle>
-        <ToastContainer />
         <PageTitleText>Diary</PageTitleText>
         <WrapDaySwitcher>
           <MobileDaySwitch>
