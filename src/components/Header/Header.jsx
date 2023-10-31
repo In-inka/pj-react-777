@@ -4,7 +4,6 @@ import {
   Container,
   PrivetRotesContainer,
   LogoContainer,
-  LogoText,
   LogoutButton,
   LogoutContainer,
   LogoutIcon,
@@ -15,10 +14,11 @@ import {
   UserAvatar,
   UserIcon,
   MenuIcon,
+  Logo,
 } from './Header.styled';
 import authSelectors from '../../redux/auth/auth-selectors';
 import authOperations from '../../redux/auth/operations';
-import { LogoIcon } from '../icons/LogoIcon';
+
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { useEffect, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
@@ -73,8 +73,12 @@ const Header = () => {
         }
       >
         <LogoContainer to="/">
-          <LogoIcon />
-          <LogoText>PowerPulse</LogoText>
+          <Logo className="logo-icon" width={36} height={13}>
+            <use href={`${sprite}#icon-dumbbell-logo`}></use>
+          </Logo>
+          <Logo className="logo-text" width={82} height={12}>
+            <use href={`${sprite}#icon-logoText`}></use>
+          </Logo>
         </LogoContainer>
         {isLoggedIn && (
           <PrivetRotesContainer>

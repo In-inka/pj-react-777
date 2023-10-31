@@ -22,6 +22,28 @@ Container.defaultProps = {
   },
 };
 
+export const Logo = styled.svg`
+  &.logo-icon {
+    fill: ${glodalColor.acceptColor};
+  }
+  @media screen and (min-width: 768px) {
+    &.logo-icon {
+      width: 44px;
+      height: 17px;
+    }
+  }
+  &.logo-text {
+    fill: ${glodalColor.withe};
+  }
+
+  @media screen and (min-width: 768px) {
+    &.logo-text {
+      width: 99.527px;
+      height: 15.26px;
+    }
+  }
+`;
+
 export const PrivetRotesContainer = styled.div`
   margin-left: auto;
   display: flex;
@@ -41,14 +63,6 @@ export const LogoContainer = styled(NavLink)`
     padding-top: 34px;
     padding-bottom: 33px;
   }
-`;
-
-export const LogoText = styled.p`
-  margin-left: 8px;
-  font-size: 12px;
-  line-height: 1;
-  font-weight: bold;
-  color: ${glodalColor.withe};
 `;
 
 export const FlexContainerB = styled.div`
