@@ -33,7 +33,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from '../../redux/auth/auth-selectors';
 import { schema } from './schema/Schema';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const ProfileSettingsForm = () => {
   const dispatch = useDispatch();
@@ -351,8 +350,7 @@ const ProfileSettingsForm = () => {
             </RadioButton>
           </RadioWrapper>
         </ContainerRadioActive>
-        <button type="submit">hhh</button>
-        {/*    <Button tp={'submit'} text={'Save'} /> */}
+        <Button tp={'submit'} text={'Save'} />
       </FormProfile>
     </div>
   );
