@@ -11,17 +11,24 @@ import { GoogleAuth } from './pages/GoogleAuth/GoogleAuth';
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
 const Diary = lazy(() => import('./pages/SecondPage/Diary'));
-const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage.jsx'));
 const Products = lazy(() => import('./pages/Products/Products'));
 const Exercises = lazy(() => import('./pages/Exercises/Exercises.jsx'));
 const SignUp = lazy(() => import('./pages/SignUp/SignUp'));
 const SignIn = lazy(() => import('./pages/SignIn/SignIn'));
 const Profile = lazy(() => import('./pages/Profile/Profile'));
-const BodyParts = lazy(() => import('./components/ExercisesCategories/CategoryItem/BodyParts/BodyParts.jsx'),
+const BodyParts = lazy(() =>
+  import(
+    './components/ExercisesCategories/CategoryItem/BodyParts/BodyParts.jsx'
+  ),
 );
-const Muscles = lazy(() => import('./components/ExercisesCategories/CategoryItem/Muscles/Muscles.jsx'),
+const Muscles = lazy(() =>
+  import('./components/ExercisesCategories/CategoryItem/Muscles/Muscles.jsx'),
 );
-const Equipment = lazy(() => import('./components/ExercisesCategories/CategoryItem/Equipment/Equipment.jsx'),
+const Equipment = lazy(() =>
+  import(
+    './components/ExercisesCategories/CategoryItem/Equipment/Equipment.jsx'
+  ),
 );
 
 function App() {
@@ -66,10 +73,9 @@ function App() {
               element={
                 <PublicRoute>
                   <GoogleAuth />
-                </PublicRoute>              
-            }>
-
-            </Route>
+                </PublicRoute>
+              }
+            ></Route>
             <Route
               path="profile"
               element={

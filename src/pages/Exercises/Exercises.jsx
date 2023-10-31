@@ -9,11 +9,12 @@ import {
 import BoxBtnBack from '../../components/BoxBtnBack/BoxBtnBack';
 import TitlePageExercises from '../../components/ExercisesCategories/TitlePageExercises/TitlePageExercises';
 import FullListExercises from '../../components/FullListExercises/FullListExercises';
-// import { ModalWindow } from '../../components/ModalWindow/ModalWindow';
+
+//import { ModalWindow } from '../../components/ModalWindow/ModalWindow';
 import ExercisesModal from '../../components/ExercisesModal/ExercisesModal';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import { useSelector } from 'react-redux';
-import { ErrorPage } from '../ErrorPage/ErrorPage';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const Exercises = () => {
   const location = useLocation();

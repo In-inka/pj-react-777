@@ -1,4 +1,3 @@
-
 import {
   Container,
   Title,
@@ -20,19 +19,29 @@ import {
   Section,
   PlayIconContainer,
   RunIconContainer,
+  TextIcon,
 } from './Welcome.styled';
 import sprite from '../../sprite/sprite.svg';
-
+import { useDispatch } from 'react-redux';
+import getStatistics from '../../redux/statistics/statisticsOperations';
 
 const Welcome = () => {
+  const dispatch = useDispatch();
+  const onHandleClick = () => {
+    dispatch(getStatistics());
+  };
+
   return (
     <Section>
       <Container>
-        <Title>Transforming your body shape with Power Pulse</Title>
+        <Title>
+          Transforming your{' '}
+          <TextIcon className="text-container">body&nbsp;</TextIcon>
+          shape with Power Pulse
+        </Title>
         <ButtonContainer>
           <ButtonYellow to="/signup">Sign Up</ButtonYellow>
           <ButtonBlack to="/signin">Sign In</ButtonBlack>
-
         </ButtonContainer>
         <FlexContainer>
           <VideoTutorialContainer>
