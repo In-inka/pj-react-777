@@ -1,4 +1,28 @@
-import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}from"./emotion-styled.browser.esm-3d503bf4.js";import{b as c,a as s,c as x,d as l,e as g,f as h}from"./main_bg_desktop-e1ac3f6f.js";import{C as m,s as e}from"./sprite-d6aee3bd.js";const u=n.section`
+import{L as d,g as t,d as r,j as i,e as p}from"./index-837f1c35.js";import{n}from"./emotion-styled.browser.esm-5c742298.js";import{b as c,a as s,c as x,d as l,e as g,f as h}from"./main_bg_desktop-e1ac3f6f.js";import{C as m,s as e}from"./sprite-3b9c37cd.js";const b=n.div`
+  &.text-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &.text-container::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 5px;
+
+    background-image: url('/src/img/background/line.svg');
+    background-size: cover;
+    width: 95px;
+    height: 35px;
+    @media screen and (min-width: 768px) {
+      left: -20px;
+      top: 7px;
+      width: 185px;
+      height: 67px;
+    }
+  }
+`,u=n.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
@@ -74,10 +98,10 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
       background-size: 670px;
     }
   }
-`,b=n.div`
+`,f=n.div`
   ${m}
   position: relative;
-`,f=n.h1`
+`,k=n.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 38px;
   line-height: 1.05;
@@ -89,12 +113,12 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
   @media screen and (min-width: 1440px) {
     width: 598px;
   }
-`,k=n.div`
+`,w=n.div`
   margin-top: 40px;
   @media screen and (min-width: 768px) {
     margin-top: 64px;
   }
-`,w=n(d)`
+`,j=n(d)`
   display: inline-block;
   margin-right: 14px;
   font-size: 16px;
@@ -118,7 +142,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     font-size: 20px;
     line-height: 1.2;
   }
-`,j=n(d)`
+`,y=n(d)`
   display: inline-block;
   font-size: 16px;
   line-height: 1.17;
@@ -140,7 +164,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     font-size: 20px;
     line-height: 1.2;
   }
-`,y=n.div`
+`,z=n.div`
   display: flex;
   padding-left: 101px;
   align-items: center;
@@ -156,7 +180,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     left: 770px;
     top: 184px;
   }
-`,z=n.div`
+`,v=n.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -166,7 +190,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,C=n.div``,v=n.p`
+`,C=n.div``,_=n.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -174,7 +198,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     font-size: 24px;
     line-height: 1;
   }
-`,_=n.p`
+`,T=n.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -184,7 +208,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     font-size: 16px;
     line-height: 1.5;
   }
-`,T=n.svg`
+`,$=n.svg`
   fill: ${t.withe};
   padding-left: 3px;
   width: 12px;
@@ -196,7 +220,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
       height: 20px;
     }
   }
-`,$=n.div`
+`,B=n.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,7 +234,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     height: 40px;
     margin-right: 12px;
   }
-`,B=n.div`
+`,P=n.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -224,7 +248,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     top: 319px;
     left: 1228px;
   }
-`,P=n.div`
+`,I=n.div`
   display: flex;
   flex-direction: column;
   padding: 14px 37px 14px 18px;
@@ -237,7 +261,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
   display: flex;
   flex-direction: row;
   align-items: end;
-`,I=n.p`
+`,R=n.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -248,7 +272,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     font-size: 48px;
     line-height: 1.04;
   }
-`,R=n.p`
+`,V=n.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -257,7 +281,7 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     font-size: 16px;
     line-height: 1.5;
   }
-`,V=n.svg`
+`,N=n.svg`
   fill: ${t.withe};
   width: 12px;
   height: 12px;
@@ -282,4 +306,4 @@ import{L as d,g as t,d as r,j as i,e as p}from"./index-d2ee3000.js";import{n}fro
     height: 24px;
     margin-bottom: 12px;
   }
-`,E=()=>{const a=r(),o=()=>{a(p())};return i.jsx(u,{children:i.jsxs(b,{children:[i.jsx(f,{children:"Transforming your body shape with Power Pulse"}),i.jsxs(k,{children:[i.jsx(w,{to:"/signup",children:"Sign Up"}),i.jsx(j,{to:"/signin",children:"Sign In"})]}),i.jsx(y,{children:i.jsxs(z,{children:[i.jsx($,{children:i.jsx(T,{className:"setPlay",children:i.jsx("use",{href:`${e}#icon-Polygon`})})}),i.jsxs(C,{children:[i.jsx(v,{children:"350+"}),i.jsx(_,{children:"Video tutorial"})]})]})}),i.jsx(B,{children:i.jsxs(P,{children:[i.jsx(A,{children:i.jsx(V,{className:"setRun",children:i.jsx("use",{href:`${e}#icon-running`})})}),i.jsxs(S,{children:[i.jsx(I,{children:"500"}),i.jsx(R,{children:"cal"})]})]})}),i.jsx("button",{type:"button",onClick:o,children:"Test"})]})})};export{E as default};
+`,H=()=>{const o=r(),a=()=>{o(p())};return i.jsx(u,{children:i.jsxs(f,{children:[i.jsxs(k,{children:["Transforming your"," ",i.jsx(b,{className:"text-container",children:"body "}),"shape with Power Pulse"]}),i.jsxs(w,{children:[i.jsx(j,{to:"/signup",children:"Sign Up"}),i.jsx(y,{to:"/signin",children:"Sign In"})]}),i.jsx(z,{children:i.jsxs(v,{children:[i.jsx(B,{children:i.jsx($,{className:"setPlay",children:i.jsx("use",{href:`${e}#icon-Polygon`})})}),i.jsxs(C,{children:[i.jsx(_,{children:"350+"}),i.jsx(T,{children:"Video tutorial"})]})]})}),i.jsx(P,{children:i.jsxs(I,{children:[i.jsx(A,{children:i.jsx(N,{className:"setRun",children:i.jsx("use",{href:`${e}#icon-running`})})}),i.jsxs(S,{children:[i.jsx(R,{children:"500"}),i.jsx(V,{children:"cal"})]})]})}),i.jsx("button",{type:"button",onClick:a,children:"Test"})]})})};export{H as default};
