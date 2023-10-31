@@ -35,17 +35,11 @@ const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-            messageNotification(error.response.status);
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
 );
-
-/* const config = {
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
-}; */
 
 const config = {
   headers: {
@@ -64,25 +58,11 @@ const updateUserAvatar = createAsyncThunk(
       );
       return data;
     } catch (error) {
-            messageNotification(error.response.status);
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
 );
-
-/* то файк відправляється з ключем "avatar"
-
-const updateUserAvatar = createAsyncThunk(
-  '/users/changeData',
-  async (credentials, thunkAPI) => {
-    try {
-      const { data } = await axios.patch('/users/changedata', credentials);
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  },
-); */
 
 const logOut = createAsyncThunk(
   '/users/logOut',
@@ -91,7 +71,7 @@ const logOut = createAsyncThunk(
       await axios.post('/users/logout', credentials);
       token.unset();
     } catch (error) {
-            messageNotification(error.response.status);
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
@@ -110,7 +90,7 @@ const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users');
       return data;
     } catch (error) {
-            messageNotification(error.response.status);
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
@@ -123,7 +103,7 @@ const updateUserMetricsData = createAsyncThunk(
       const { data } = await axios.patch('/users/dailymetrics', credentials);
       return data;
     } catch (error) {
-            messageNotification(error.response.status);
+      messageNotification(error.response.status);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
