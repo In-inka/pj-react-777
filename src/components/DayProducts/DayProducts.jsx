@@ -43,7 +43,7 @@ const Icon = styled.svg`
 
 const DayProducts = () => {
   const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
-  
+
   return (
     <Container>
       <TitleMain>
@@ -55,12 +55,7 @@ const DayProducts = () => {
           </Icon>
         </StyledLink>
       </TitleMain>
-      {!visibleProducts.length ? (
-        <EmptyScreen />
-      ) : (
-        <ProductsTable products={visibleProducts} />
-      )       
-      }
+      <ProductsTable products={visibleProducts} />
     </Container>
   );
 };
@@ -68,50 +63,59 @@ const DayProducts = () => {
 export const ProductsTable = ({ products }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(diarySelectors.getIsLoading);
-  
+
   return (
     <>
-      <TableTitle />
       {isLoading ? (
-        <MyLoader display={'flex'}/>
+        <MyLoader display={'flex'} />
+      ) : !products.length ? (
+        <EmptyScreen />
       ) : (
-        <TableList>
-          {products.map(
-            ({
-              _id,
-              calories,
-              amount,
-              recommend,
-              date,
-              productId: { category, title },
-            }) => {
-              return (
-                <ListItem key={_id}>
-                  <ItemProduct value={title}>Title</ItemProduct>
-                  <ItemProduct value={category}>Category</ItemProduct>
-                  <WrapMobile>
-                    <WrapItemProducts>
-                      <ItemProduct value={calories}>Calories</ItemProduct>
-                      <ItemProduct value={amount}>Weight</ItemProduct>
-                      <ItemProduct value={recommend}>Recommend</ItemProduct>
-                    </WrapItemProducts>
-                    <Button
-                      onClick={() => {
-                        dispatch(diaryOperations.deleteDiaryProduct({ productId: _id, date }))
-                      }}
-                    >
-                      <DeleteIconWrapper>
-                        <Icon width={20} height={20} className="orange">
-                          <use href={`${sprite}#icon-trash`}></use>
-                        </Icon>
-                      </DeleteIconWrapper>
-                    </Button>
-                  </WrapMobile>
-                </ListItem>
-              );
-            },
-          )}
-        </TableList>
+        <>
+          <TableTitle />
+          <TableList>
+            {products.map(
+              ({
+                _id,
+                calories,
+                amount,
+                recommend,
+                date,
+                productId: { category, title },
+              }) => {
+                return (
+                  <ListItem key={_id}>
+                    <ItemProduct value={title}>Title</ItemProduct>
+                    <ItemProduct value={category}>Category</ItemProduct>
+                    <WrapMobile>
+                      <WrapItemProducts>
+                        <ItemProduct value={calories}>Calories</ItemProduct>
+                        <ItemProduct value={amount}>Weight</ItemProduct>
+                        <ItemProduct value={recommend}>Recommend</ItemProduct>
+                      </WrapItemProducts>
+                      <Button
+                        onClick={() => {
+                          dispatch(
+                            diaryOperations.deleteDiaryProduct({
+                              productId: _id,
+                              date,
+                            }),
+                          );
+                        }}
+                      >
+                        <DeleteIconWrapper>
+                          <Icon width={20} height={20} className="orange">
+                            <use href={`${sprite}#icon-trash`}></use>
+                          </Icon>
+                        </DeleteIconWrapper>
+                      </Button>
+                    </WrapMobile>
+                  </ListItem>
+                );
+              },
+            )}
+          </TableList>
+        </>
       )}
     </>
   );
