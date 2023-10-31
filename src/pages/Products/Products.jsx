@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -15,18 +15,22 @@ import {
 } from '../../redux/products/selectorsProducts';
 import Loading from '../../components/Loading/Loading';
 import { productSlice } from '../../redux/products/sliceProducts';
+import ReactPaginate from 'react-paginate';
 
 const Products = () => {
+  const [page, setPage] = useState(1);
   const isLoading = useSelector(selectIsLoadingProduct);
   const dispatch = useDispatch();
   const products = useSelector(selectProductsList);
+  const limitPage = products.limit;
+  const totalPage = Math.ceil(products.total / limitPage);
   const fetching = useCallback(
-    (filterParams) => {
+    (filterParams, page, limit) => {
       try {
         if (filterParams) {
-          dispatch(getProductsList(filterParams));
+          dispatch(getProductsList({ filterParams, page, limit }));
         } else {
-          dispatch(getProductsList());
+          dispatch(getProductsList({ filterParams: {}, page, limit }));
         }
       } catch (error) {
         console.log(error);
@@ -44,6 +48,12 @@ const Products = () => {
     }
   }, [fetching]);
 
+  const handlePageClick = (event) => {
+    setPage(event.selected);
+    console.log(localStorage.getItem('persist:products').filter);
+    fetching({}, page, limitPage);
+  };
+
   return (
     <Container>
       <ProductsFilterText>Filters</ProductsFilterText>
@@ -52,7 +62,20 @@ const Products = () => {
         <ProductsFilter submit={fetching} />
       </ProductsFunc>
       {!isLoading && products !== null ? (
-        <ProductsList products={products} />
+        <>
+          <ProductsList products={products.products} />
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel="next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={0}
+            pageCount={totalPage}
+            previousLabel="< prev"
+            renderOnZeroPageCount={null}
+            forcePage={page}
+            containerClassName={'react-paginate'}
+          />
+        </>
       ) : (
         <Loading />
       )}
