@@ -4,12 +4,9 @@ import { RotatingLines } from 'react-loader-spinner';
 const MyLoader = ({ display }) => (
   <div
     style={{
-      display: display, 
-      alignItems: 'center',
+      display: display,
       justifyContent: 'center',
-            width: '100%',
-      
-   
+      width: '100%',          
     }}
   >
     <RotatingLines

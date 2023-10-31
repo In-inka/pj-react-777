@@ -40,21 +40,11 @@ const DaySwitch = ({
     <DaySwitchContainer>
       <StyledCalendarContainer>
         <DatePicker
-          // selected={startDate}
-          // minDate={new Date(2023,9,28)}
-          // maxDate={new Date()}
-          // // startDate={startDate}
-          // // endDate={endDate}
-          //  selectsRange
-          // inline
-          //  showDisabledMonthNavigation
-
           selected={currentDate}
           onChange={handler}
           dateFormat={numericMonthFormat}
           minDate={birthdayDate}
-          // showDisabledMonthNavigation
-          customInput={
+        customInput={
             <CustomDatePickerInput
               $textSize={textSize}
               $textWeight={textWeight}

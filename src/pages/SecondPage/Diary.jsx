@@ -44,24 +44,24 @@ const notify = () => {
 };
 
 const Diary = () => {
-  const [date, setDate] = useState(new Date());
-  const dispatch = useDispatch();
+const storDate = localStorage.getItem('PowerPulsDate');
+const newDate = storDate ? new Date(storDate) : new Date();
+const [date, setDate] = useState(newDate);
+const dispatch = useDispatch();
+
+  const diary = useSelector(diarySelectors.getDiary);
+  const { eatenProducts, doneExercises } = diary;
   const dayOfBirthday = new Date(
-    useSelector(authSelectors.getUserMetricData).birthday
+    useSelector(authSelectors.getUserMetricData).birthday,
   );
-  
-  // const dayOfBirthday = new Date(2023, 9, 28);
-  // console.log(dayOfBirthday);
 
   const handlerDate = (date) => {
     if (date < dayOfBirthday) {
       notify();
       setDate(dayOfBirthday);
     } else setDate(date);
+    localStorage.setItem('PowerPulsDate', date);
   };
-
-  const diary = useSelector(diarySelectors.getDiary);
-  const { eatenProducts, doneExercises } = diary;
 
   useEffect(() => {
     dispatch(diaryOperations.getDiary(`?date=` + formatDate(date)));
