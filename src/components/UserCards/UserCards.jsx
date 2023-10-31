@@ -21,6 +21,7 @@ import sprite from '../../sprite/sprite.svg';
 import authSelectors from '../../redux/auth/auth-selectors';
 import { useRef } from 'react';
 import operations from '../../redux/auth/operations';
+import { toast } from 'react-toastify';
 
 const UserCards = () => {
   const fileInputRef = useRef(null);
@@ -32,12 +33,20 @@ const UserCards = () => {
   );
 
   const handleChangePhoto = async (event) => {
-    const selectedFile = event.target.files[0];
-    if (selectedFile) {
-      const formData = new FormData();
-      formData.append('avatar', selectedFile);
-      await dispatch(operations.updateUserAvatar(formData));
-      dispatch(authOperations.fetchCurrentUser());
+    try {
+      const selectedFile = event.target.files[0];
+      if (selectedFile) {
+        const formData = new FormData();
+        formData.append('avatar', selectedFile);
+        await dispatch(operations.updateUserAvatar(formData));
+        await dispatch(authOperations.fetchCurrentUser());
+
+        toast.success('Photo updated successfully');
+      }
+    } catch (error) {
+      console.error('Error loading photo:', error);
+
+      toast.error('An error occurred while uploading the photo');
     }
   };
 

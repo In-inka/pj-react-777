@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import './ModalWindow.css';
+
+import { Close, Content, Modal } from './ModalWindow.styled';
 
 export const ModalWindow = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,6 @@ export const ModalWindow = (props) => {
   const handleClose = () => {
     setIsOpen(false);
   };
-// console.log('isOpen', isOpen)
   const handleEscape = useCallback((e) => {
     if (e.key === 'Escape') {
       handleClose();
@@ -47,14 +47,15 @@ export const ModalWindow = (props) => {
   };
 
   return (
-    <div className={`modal-backdrop ${isOpen ? 'centered-modal' : ''}`} style={modalStyles}>
-      <div className="modal-content" style={contentStyles}>
-        <span className="close" onClick={handleClose}>
-          &times;
-        </span>
+    <Modal
+      className={"modal-backdrop ${isOpen ? 'centered-modal' : '' }"}
+      style={modalStyles}
+    >
+      <Content style={contentStyles}>
+        <Close onClick={handleClose}>&times;</Close>
         {props.children}
-      </div>
-    </div>
+      </Content>
+    </Modal>
   );
 };
 
@@ -69,10 +70,9 @@ export const ModalWindow = (props) => {
 
 // <PrimaryButton text={"Open modal window"} onClick={openModal} />
 
-
 // {isModalOpen && (
 //     <ModalWindow isOpen={isModalOpen}>
 //       <div>Modal Content</div>
 //       <SecondaryButton onClick={() => setIsModalOpen(false)} text={"Close modal"} height={50} width={160}/>
 //     </ModalWindow>
-//  )} 
+//  )}
