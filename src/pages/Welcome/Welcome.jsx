@@ -22,9 +22,16 @@ import {
   RunIconContainer,
 } from './Welcome.styled';
 import sprite from '../../sprite/sprite.svg';
+import { useDispatch } from 'react-redux';
+import getStatistics from '../../redux/statistics/statisticsOperations';
 
 
 const Welcome = () => {
+  const dispatch = useDispatch();
+  const onHandleClick = () => {
+  dispatch(getStatistics())
+}
+
   return (
     <Section>
       <Container>
@@ -60,6 +67,7 @@ const Welcome = () => {
             </TextContainerC>
           </CalorieContainer>
         </FlexContainerB>
+        <button type='button' onClick={onHandleClick}>Test</button>
       </Container>
     </Section>
   );

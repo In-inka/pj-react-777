@@ -16,6 +16,7 @@ import { productsReducer } from './products/sliceProducts';
 import { diarySliceReducer } from './diary/diarySlice';
 import msgpack from 'msgpack-lite';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import { statisticsSliceReducer } from './statistics/statisticsSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -46,6 +47,7 @@ export const store = configureStore({
     exercises: exercisesSliceReducer,
     products: persistReducer(productsPersistConfig, productsReducer),
     diary: diarySliceReducer,
+    statistics: statisticsSliceReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
