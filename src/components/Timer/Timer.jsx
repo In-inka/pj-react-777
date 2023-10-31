@@ -15,6 +15,7 @@ import {
 const Timer = ({ setDinamicBurnCal, burnedCalories }) => {
   const [timerIsRunning, setTimerIsRunning] = useState(false);
   const [remainingTime, setRemainingTime] = useState(180);
+  const [currentBurnedCalories, setCurrentBurnedCalories] = useState(0);
 
   const toggleTimer = () => {
     setTimerIsRunning((prev) => !prev);
@@ -32,13 +33,22 @@ const Timer = ({ setDinamicBurnCal, burnedCalories }) => {
     }
   }, [timerIsRunning]);
 
-  const calculateBurnedCalories = (remainingTime) => {
-    const currentBurnedCalories = Math.round(
+  // const calculateBurnedCalories = (remainingTime) => {
+  //   const currentBurnedCalories = Math.round(
+  //     (180 - remainingTime) * (burnedCalories / 180),
+  //   );
+  //   setDinamicBurnCal(currentBurnedCalories);
+  //   return currentBurnedCalories;
+  // };
+
+  useEffect(() => {
+    // Оновіть значення змінної стану
+    const updatedBurnedCalories = Math.round(
       (180 - remainingTime) * (burnedCalories / 180),
     );
-    setDinamicBurnCal(currentBurnedCalories);
-    return currentBurnedCalories;
-  };
+    setCurrentBurnedCalories(updatedBurnedCalories);
+    setDinamicBurnCal(updatedBurnedCalories);
+  }, [remainingTime, burnedCalories, setDinamicBurnCal]);
 
   const formatTime = (time) => {
     return time.toString().padStart(2, '0');
@@ -75,7 +85,7 @@ const Timer = ({ setDinamicBurnCal, burnedCalories }) => {
         </ButtonPause>
         <CaloriesWrapper>
           <BurnedCalories>Burned calories:</BurnedCalories>
-          <Number>{calculateBurnedCalories(remainingTime)}</Number>
+          <Number>{currentBurnedCalories}</Number>
         </CaloriesWrapper>
       </BoxTimer>
     </>

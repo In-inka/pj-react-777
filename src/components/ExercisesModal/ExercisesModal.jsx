@@ -21,8 +21,7 @@ const ExercisesModal = ({ data, onClose }) => {
   const [dinamicBurnCal, setDinamicBurnCal] = useState(0);
   const exercises = data;
   const burnedCalories = exercises.burnedCalories;
-  console.log('burnedCalories', burnedCalories);
-  console.log('data', data);
+
   return (
     <Backdrop>
       <ModalContainer>
@@ -35,15 +34,11 @@ const ExercisesModal = ({ data, onClose }) => {
           <BoxGif>
             <GifExercises src={exercises.gifUrl} alt="Gif-Exercises" />
           </BoxGif>
-          {/* <BoxTimer> */}
-          {/* <TextTime>Time</TextTime> */}
-
           <Timer
             setDinamicBurnCal={setDinamicBurnCal}
             dinamicBurnCal={dinamicBurnCal}
             burnedCalories={burnedCalories}
           />
-          {/* </BoxTimer> */}
         </BoxGifTimer>
         <BoxContentExercises>
           <ItemContentExercises>
