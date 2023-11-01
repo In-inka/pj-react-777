@@ -1,4 +1,4 @@
-import{N as H,g as f,t as N,j as e,s as r,d as K,r as d,v as J,u as E,R as B,O as Q}from"./index-63d9b9c5.js";import{n as _}from"./emotion-styled.browser.esm-85ca1e9d.js";import{C as V,s as T}from"./sprite-e4d76c9e.js";import{e as X,f as Y}from"./main_bg_desktop-e1ac3f6f.js";import{e as $}from"./exercisesSelectors-80adadd9.js";import{L as Z}from"./Loading-5fdb2cd3.js";import{L as ee}from"./Loader-1ee06e02.js";import te from"./ErrorPage-91f46e0a.js";import"./Hourglass-d6393dc5.js";const ne=_.div`
+import{N as H,g as f,t as N,j as e,s as r,d as K,r as d,v as J,u as E,R as B,O as Q}from"./index-a3527f88.js";import{n as _}from"./emotion-styled.browser.esm-4909e5b7.js";import{C as V,s as T}from"./sprite-d667cdb0.js";import{e as X,f as Y}from"./main_bg_desktop-e1ac3f6f.js";import{e as $}from"./exercisesSelectors-80adadd9.js";import{L as Z}from"./Loading-e56d5658.js";import{L as ee}from"./Loader-8aca02fc.js";import te from"./ErrorPage-43298c1e.js";import"./Hourglass-d28a0be2.js";const ne=_.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
