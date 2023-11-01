@@ -1,4 +1,4 @@
-import{s as n,g as i,L as a,j as e}from"./index-bb33c23b.js";import{b as r,a as d,c as o,d as t,e as p,f as c}from"./main_bg_desktop-e1ac3f6f.js";const g=n.section`
+import{s as n,g as i,L as a,j as e}from"./index-ca95bce6.js";import{b as r,a as d,c as o,d as t,e as p,f as c}from"./main_bg_desktop-e1ac3f6f.js";const g=n.section`
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
     linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
     url(${r});
