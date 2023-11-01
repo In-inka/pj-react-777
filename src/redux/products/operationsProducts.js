@@ -5,7 +5,6 @@ import { messageNotification } from '../../components/alertMessages/alertMessage
 export const getProductsList = createAsyncThunk(
   '/products',
   async (credentials, thunkAPI) => {
-    console.log(credentials);
     const { limit = 50, page = 1, filterParams} = credentials;
     const { search = '', category = '', recommended = "" } = filterParams;
     try {
