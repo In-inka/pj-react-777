@@ -14,10 +14,9 @@ import {
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
 import { modalReducer, successModalReducer } from '../../redux/products/sliceProducts';
-import { toast } from 'react-toastify';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 
-const ProductsList = ({ products, fetching, totalPage }) => {
+const ProductsList = ({ products, fetching }) => {
   const [page, setPage] = useState(1);
   const [ref, inView] = useInView({ threshold: 0 });
 
