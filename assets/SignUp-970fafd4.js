@@ -1,9 +1,9 @@
-import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js";import{n as i}from"./emotion-styled.browser.esm-8b9568be.js";import{b as S,a as T,c as _,d as B,e as $,f as I}from"./main_bg_desktop-e1ac3f6f.js";import{C as L,s as g}from"./sprite-17566b7e.js";import{u as F}from"./formik.esm-586ffe9d.js";import{s as P}from"./schemas-6457c1d4.js";import{L as R}from"./Loader-f3a7883d.js";import{B as E}from"./Button-20cdd0a7.js";const N=i.section`
+import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./index-d54c3bc8.js";import{n as i}from"./emotion-styled.browser.esm-03dea45a.js";import{b as _,a as B,c as $,d as I,e as L,f as F}from"./main_bg_desktop-e1ac3f6f.js";import{C as P,s as m}from"./sprite-c176cf57.js";import{u as E,B as R}from"./Button-8ad0ba36.js";import{s as N}from"./schemas-1dc7d7d4.js";import{L as U}from"./Loader-f8f1dda7.js";import{g as V}from"./statisticsSelectors-5e443892.js";const A=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
     linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-    url(${S});
+    url(${_});
   background-repeat: no-repeat;
   background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
@@ -12,7 +12,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     screen and (min-resolution: 2dppx) {
     background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${T});
+      url(${B});
     background-repeat: no-repeat;
     background-position: calc(50% + 38.5px) calc(50% + 120.5px);
     background-size: 298px;
@@ -21,7 +21,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
   @media screen and (min-width: 768px) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${_});
+      url(${$});
       padding-bottom: 48px;
       padding-top: 189px;
     background-position: calc(50% + 165.5px) calc(50% + 65.5px);
@@ -37,7 +37,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${B});
+        url(${I});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-repeat: no-repeat;
       background-size: 437px;
@@ -49,7 +49,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${$});
+        url(${L});
       padding-top: 200px;
       padding-bottom: 114px;
       background-repeat: no-repeat;
@@ -65,16 +65,16 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${I});
+        url(${F});
       background-repeat: no-repeat;
       background-position: calc(50% + 335px) calc(50% + 65.5px);
       background-size: 670px;
     }
   }
-`,U=i.div`
-  ${L}
+`,G=i.div`
+  ${P}
   position: relative;
-`,V=i.h1`
+`,D=i.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
   line-height: 1.17;
@@ -82,7 +82,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 32px;
     line-height: 1.38;
   }
-`,A=i.p`
+`,M=i.p`
   font-size: 14px;
   line-height: 1.29;
   color: rgba(239, 237, 232, 0.3);
@@ -94,7 +94,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     line-height: 1.5;
     margin-top: 16px;
   }
-`,G=i.div`
+`,q=i.div`
   display: flex;
   font-size: 12px;
   line-height: 1.5;
@@ -102,13 +102,13 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
   @media screen and (min-width: 768px) {
     padding-left: 15px;
   }
-`,D=i.p`
+`,H=i.p`
   color: rgba(239, 237, 232, 0.3);
-`,M=i(m)`
+`,J=i(b)`
   margin-left: 4px;
   color: #efede8;
   text-decoration: underline;
-`,q=i.div`
+`,K=i.div`
   display: flex;
   /* justify-content: center; */
   padding-left: 101px;
@@ -125,7 +125,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     left: 770px;
     top: 184px;
   }
-`,H=i.div`
+`,O=i.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +135,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,J=i.div``,K=i.p`
+`,Q=i.div``,W=i.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -143,7 +143,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 24px;
     line-height: 1;
   }
-`,O=i.p`
+`,X=i.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -153,8 +153,8 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 16px;
     line-height: 1.5;
   }
-`,Q=i.svg`
-  fill: ${u.withe};
+`,Y=i.svg`
+  fill: ${f.withe};
   padding-left: 3px;
   width: 12px;
   height: 12px;
@@ -165,7 +165,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
       height: 20px;
     }
   }
-`,W=i.div`
+`,Z=i.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,7 +179,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     height: 40px;
     margin-right: 12px;
   }
-`,X=i.div`
+`,ee=i.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -193,20 +193,20 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     top: 319px;
     left: 1228px;
   }
-`,Y=i.div`
+`,ie=i.div`
   display: flex;
   flex-direction: column;
-  padding: 14px 37px 14px 18px;
+  padding: 14px 18px;
   background-color: #ef8964;
   border-radius: 12px;
   @media screen and (min-width: 768px) {
-    padding: 14px 38px 14px 28px;
+    padding: 14px 20px;
   }
-`,Z=i.div`
+`,ne=i.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,ee=i.p`
+`,te=i.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -217,7 +217,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 48px;
     line-height: 1.04;
   }
-`,ie=i.p`
+`,ae=i.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -226,8 +226,8 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 16px;
     line-height: 1.5;
   }
-`,ne=i.svg`
-  fill: ${u.withe};
+`,oe=i.svg`
+  fill: ${f.withe};
   width: 12px;
   height: 12px;
   @media screen and (min-width: 768px) {
@@ -251,16 +251,16 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     height: 24px;
     margin-bottom: 12px;
   }
-`,oe=i.form`
+`,de=i.form`
   margin-top: 28px;
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
     width: 404px;
   }
-`,te=i.div`
+`,se=i.div`
   padding-right: 40px;
-`,t=i.input`
+`,r=i.input`
   outline: 0;
   outline-offset: 0;
   color: #efede8;
@@ -268,7 +268,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
   background-color: inherit;
   border-width: 1px;
   border-style: solid;
-  border-color: ${a=>a.theme.main};
+  border-color: ${o=>o.theme.main};
   border-radius: 12px;
   padding: 13px;
   font-size: 14px;
@@ -287,7 +287,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
       margin-top: 20px;
     }
   }
-`;t.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const x=i.label`
+`;r.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const h=i.label`
   margin: -1px;
   padding: 0;
   position: absolute;
@@ -296,11 +296,11 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
-`,ae=i.div`
+`,pe=i.div`
   padding-top: 28px;
     @media screen and (min-width: 768px) {
     padding-top: 64px;}
-`,de=i(m)`
+`,ce=i(b)`
   margin-left: 14px;
   position: relative;
   display: inline-block;
@@ -324,7 +324,7 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 20px;
     line-height: 1.2;
   }
-`,se=i.svg`
+`,le=i.svg`
   position: absolute;
   right: 19px;
   width: 20px;
@@ -336,27 +336,27 @@ import{L as m,g as u,d as y,u as v,b as z,j as e,o as C}from"./index-967ab421.js
       height: 28px;
     }
   }
-`,h=i.div`
+`,u=i.div`
   display: inline-flex;
   margin-top: 4px;
-`,pe=i.div`
+`,xe=i.div`
 margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(216, 0, 39, 1);
-`,ce=i.p`
+`,ge=i.p`
   color: rgba(216, 0, 39, 1);
   font-size: 12px;
   line-height: 1.5;
-`,le=i.div`
+`,he=i.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(60, 191, 97, 1);
-`,xe=i.p`
+`,me=i.p`
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,ge=()=>{const a=y(),b=v(z.getIsLoading),f=(o,k)=>{a(C.register(o)),k.resetForm()},{values:d,errors:n,touched:r,isSubmitting:w,handleChange:s,handleBlur:p,handleSubmit:j}=F({initialValues:{name:"",email:"",password:""},validationSchema:P,onSubmit:f}),c=o=>e.jsxs(h,{children:[" ",e.jsx(pe,{}),e.jsx(ce,{children:o})]}),l=o=>e.jsxs(h,{children:[e.jsx(le,{}),e.jsxs(xe,{children:["Success ",o]})]});return e.jsxs(oe,{onSubmit:j,children:[e.jsxs(te,{children:[e.jsx(x,{htmlFor:"name",children:"Name"}),e.jsx(t,{value:d.name,onChange:s,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:p,theme:r.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),r.name&&(n.name?c(n.name):l("name"))," ",e.jsx(x,{htmlFor:"email",children:"Email"}),e.jsx(t,{value:d.email,onChange:s,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:p,theme:r.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),r.email&&(n.email?c(n.email):l("email"))," ",e.jsx(x,{htmlFor:"password",children:"Password"}),e.jsx(t,{value:d.password,onChange:s,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:p,theme:r.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),r.password&&(n.password?c(n.password):l("password"))," "]}),e.jsxs(ae,{children:[b?e.jsx(R,{cls:"yellowBtn"}):e.jsx(E,{disabled:w,type:"submit",text:"Sign Up"}),e.jsxs(de,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(se,{className:"setG",children:e.jsx("use",{href:`${g}#icon-google`})})]})]})]})},ye=()=>e.jsx(N,{children:e.jsxs(U,{children:[e.jsx(V,{children:"Sign Up"}),e.jsx(A,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ge,{}),e.jsxs(G,{children:[e.jsx(D,{children:"Already have account?"}),e.jsx(M,{to:"/signin",children:"Sign In"})]}),e.jsx(q,{children:e.jsxs(H,{children:[e.jsx(W,{children:e.jsx(Q,{className:"setPlay",children:e.jsx("use",{href:`${g}#icon-Polygon`})})}),e.jsxs(J,{children:[e.jsx(K,{children:"350+"}),e.jsx(O,{children:"Video tutorial"})]})]})}),e.jsx(X,{children:e.jsxs(Y,{children:[e.jsx(re,{children:e.jsx(ne,{className:"setRun",children:e.jsx("use",{href:`${g}#icon-running`})})}),e.jsxs(Z,{children:[e.jsx(ee,{children:"500"}),e.jsx(ie,{children:"cal"})]})]})})]})});export{ye as default};
+`,ue=()=>{const o=w(),d=j(z.getIsLoading),s=(a,v)=>{o(C.register(a)),v.resetForm()},{values:p,errors:n,touched:t,isSubmitting:k,handleChange:c,handleBlur:l,handleSubmit:y}=E({initialValues:{name:"",email:"",password:""},validationSchema:N,onSubmit:s}),x=a=>e.jsxs(u,{children:[" ",e.jsx(xe,{}),e.jsx(ge,{children:a})]}),g=a=>e.jsxs(u,{children:[e.jsx(he,{}),e.jsxs(me,{children:["Success ",a]})]});return e.jsxs(de,{onSubmit:y,children:[e.jsxs(se,{children:[e.jsx(h,{htmlFor:"name",children:"Name"}),e.jsx(r,{value:p.name,onChange:c,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:l,theme:t.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.name&&(n.name?x(n.name):g("name"))," ",e.jsx(h,{htmlFor:"email",children:"Email"}),e.jsx(r,{value:p.email,onChange:c,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:l,theme:t.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.email&&(n.email?x(n.email):g("email"))," ",e.jsx(h,{htmlFor:"password",children:"Password"}),e.jsx(r,{value:p.password,onChange:c,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:l,theme:t.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.password&&(n.password?x(n.password):g("password"))," "]}),e.jsxs(pe,{children:[d?e.jsx(U,{cls:"yellowBtn"}):e.jsx(R,{disabled:k,type:"submit",text:"Sign Up"}),e.jsxs(ce,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(le,{className:"setG",children:e.jsx("use",{href:`${m}#icon-google`})})]})]})]})},Ce=()=>{const d=j(V).totalBurnedCalories,s=w();return S.useEffect(()=>{s(T())},[]),e.jsx(A,{children:e.jsxs(G,{children:[e.jsx(D,{children:"Sign Up"}),e.jsx(M,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(ue,{}),e.jsxs(q,{children:[e.jsx(H,{children:"Already have account?"}),e.jsx(J,{to:"/signin",children:"Sign In"})]}),e.jsx(K,{children:e.jsxs(O,{children:[e.jsx(Z,{children:e.jsx(Y,{className:"setPlay",children:e.jsx("use",{href:`${m}#icon-Polygon`})})}),e.jsxs(Q,{children:[e.jsx(W,{children:"350+"}),e.jsx(X,{children:"Video tutorial"})]})]})}),e.jsx(ee,{children:e.jsxs(ie,{children:[e.jsx(re,{children:e.jsx(oe,{className:"setRun",children:e.jsx("use",{href:`${m}#icon-running`})})}),e.jsxs(ne,{children:[e.jsx(te,{children:d}),e.jsx(ae,{children:"cal"})]})]})})]})})};export{Ce as default};

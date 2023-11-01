@@ -1,9 +1,9 @@
-import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js";import{n as i}from"./emotion-styled.browser.esm-8b9568be.js";import{b as S,a as I,c as _,d as $,e as T,f as B}from"./main_bg_desktop-e1ac3f6f.js";import{C as L,s as d}from"./sprite-17566b7e.js";import{u as P}from"./formik.esm-586ffe9d.js";import{a as F}from"./schemas-6457c1d4.js";import{L as R}from"./Loader-f3a7883d.js";import{B as E}from"./Button-20cdd0a7.js";const V=i.section`
+import{g as l,L as f,d as w,u as j,b as z,j as e,o as C,r as S,e as I}from"./index-d54c3bc8.js";import{n as i}from"./emotion-styled.browser.esm-03dea45a.js";import{b as _,a as $,c as B,d as T,e as L,f as P}from"./main_bg_desktop-e1ac3f6f.js";import{C as F,s as p}from"./sprite-c176cf57.js";import{u as E,B as R}from"./Button-8ad0ba36.js";import{a as V}from"./schemas-1dc7d7d4.js";import{L as G}from"./Loader-f8f1dda7.js";import{g as A}from"./statisticsSelectors-5e443892.js";const D=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
     linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-    url(${S});
+    url(${_});
   background-repeat: no-repeat;
   background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
@@ -12,7 +12,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
     screen and (min-resolution: 2dppx) {
     background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${I});
+      url(${$});
     background-repeat: no-repeat;
     background-position: calc(50% + 38.5px) calc(50% + 120.5px);
     background-size: 298px;
@@ -21,7 +21,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
   @media screen and (min-width: 768px) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${_});
+      url(${B});
     background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     background-repeat: no-repeat;
     background-size: 437px;
@@ -37,7 +37,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${$});
+        url(${T});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-repeat: no-repeat;
       background-size: 437px;
@@ -49,7 +49,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${T});
+        url(${L});
       padding-top: 200px;
       padding-bottom: 210px;
       background-repeat: no-repeat;
@@ -65,16 +65,16 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${B});
+        url(${P});
       background-repeat: no-repeat;
       background-position: calc(50% + 335px) calc(50% + 65.5px);
       background-size: 670px;
     }
   }
-`,G=i.div`
-  ${L}
+`,N=i.div`
+  ${F}
   position: relative;
-`,A=i.h1`
+`,M=i.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
   line-height: 1.17;
@@ -83,7 +83,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
     line-height: 1.38;
   }
 `;i.svg`
-  fill: ${p.acceptColor};
+  fill: ${l.acceptColor};
   stroke-width: 2px;
   width: 98px;
   height: 35px;
@@ -92,7 +92,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
       width: 185px;
       height: 67px;
     }
-  }`;const N=i.p`
+  }`;const U=i.p`
   font-size: 14px;
   line-height: 1.29;
   color: rgba(239, 237, 232, 0.3);
@@ -104,7 +104,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
     line-height: 1.5;
     margin-top: 16px;
   }
-`,D=i.div`
+`,W=i.div`
   display: flex;
   font-size: 12px;
   line-height: 1.5;
@@ -112,13 +112,13 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
   @media screen and (min-width: 768px) {
     padding-left: 15px;
   }
-`,M=i.p`
+`,q=i.p`
   color: rgba(239, 237, 232, 0.3);
-`,U=i(u)`
+`,H=i(f)`
   margin-left: 4px;
   color: #efede8;
   text-decoration: underline;
-`,W=i.div`
+`,J=i.div`
   display: flex;
   padding-left: 101px;
   align-items: center;
@@ -134,7 +134,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
     left: 770px;
     top: 184px;
   }
-`,q=i.div`
+`,K=i.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +144,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,H=i.div``,J=i.p`
+`,O=i.div``,Q=i.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -152,7 +152,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 24px;
     line-height: 1;
   }
-`,K=i.p`
+`,X=i.p`
   margin-top: 4px;
   font-size: 12px;
   line-height: 1.33;
@@ -162,8 +162,8 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
     font-size: 16px;
     line-height: 1.5;
   }
-`,O=i.svg`
-  fill: ${p.withe};
+`,Y=i.svg`
+  fill: ${l.withe};
   padding-left: 3px;
   width: 12px;
   height: 12px;
@@ -174,7 +174,7 @@ import{g as p,L as u,d as v,u as y,b as z,j as e,o as C}from"./index-967ab421.js
       height: 20px;
     }
   }
-`,Q=i.div`
+`,Z=i.div`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -188,7 +188,7 @@ align-items: center;
     height: 40px;
     margin-right: 12px;
   }
-`,X=i.div`
+`,ee=i.div`
   display: flex;
   justify-content: end;
   align-items: center;
@@ -202,20 +202,20 @@ align-items: center;
     top: 319px;
     left: 1228px;
   }
-`,Y=i.div`
+`,ie=i.div`
   display: flex;
   flex-direction: column;
-  padding: 14px 37px 14px 18px;
+  padding: 14px 18px;
   background-color: #ef8964;
   border-radius: 12px;
   @media screen and (min-width: 768px) {
-    padding: 14px 38px 14px 28px;
+    padding: 14px 20px;
   }
-`,Z=i.div`
+`,ne=i.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,ee=i.p`
+`,te=i.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -226,7 +226,7 @@ align-items: center;
     font-size: 48px;
     line-height: 1.04;
   }
-`,ie=i.p`
+`,oe=i.p`
   font-size: 12px;
   line-height: 1.33;
   color: rgba(239, 237, 232, 0.65);
@@ -235,8 +235,8 @@ align-items: center;
     font-size: 16px;
     line-height: 1.5;
   }
-`,ne=i.svg`
-  fill: ${p.withe};
+`,ae=i.svg`
+  fill: ${l.withe};
   width: 12px;
   height: 12px;
   @media screen and (min-width: 768px) {
@@ -246,7 +246,7 @@ align-items: center;
       height: 16px;
     }
   }
-`,te=i.div`
+`,re=i.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,16 +260,16 @@ align-items: center;
     height: 24px;
     margin-bottom: 12px;
   }
-`,oe=i.form`
+`,de=i.form`
   margin-top: 28px;
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
     width: 404px;
   }
-`,re=i.div`
+`,se=i.div`
   padding-right: 40px;
-`,s=i.input`
+`,c=i.input`
   outline: 0;
   outline-offset: 0;
   color: #efede8;
@@ -277,7 +277,7 @@ align-items: center;
   background-color: inherit;
   border-width: 1px;
   border-style: solid;
-  border-color: ${r=>r.theme.main};
+  border-color: ${a=>a.theme.main};
   border-radius: 12px;
   padding: 13px;
   font-size: 14px;
@@ -296,7 +296,7 @@ align-items: center;
       margin-top: 20px;
     }
   }
-`;s.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const h=i.label`
+`;c.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const u=i.label`
   margin: -1px;
   padding: 0;
   position: absolute;
@@ -305,19 +305,19 @@ align-items: center;
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
-`,ae=i.div`
+`,pe=i.div`
 display: flex;
   position: relative;
   padding-top: 28px;
   @media screen and (min-width: 768px) {
     padding-top: 64px;
   }
-`,de=i.div`
+`,ce=i.div`
   
-`,m=i.div`
+`,b=i.div`
   display: inline-flex;
   margin-top: 4px;
-`,se=i(u)`
+`,le=i(f)`
   margin-left: 14px;
   position: relative;
   display: inline-block;
@@ -341,7 +341,7 @@ display: flex;
     font-size: 20px;
     line-height: 1.2;
   }
-`,pe=i.svg`
+`,xe=i.svg`
   position: absolute;
   right: 19px;
   width: 20px;
@@ -353,24 +353,24 @@ display: flex;
       height: 28px;
     }
   }
-`,ce=i.div`
+`,ge=i.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(216, 0, 39, 1);
-`,le=i.p`
+`,he=i.p`
   color: rgba(216, 0, 39, 1);
   font-size: 12px;
   line-height: 1.5;
-`,xe=i.div`
+`,me=i.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(60, 191, 97, 1);
-`,ge=i.p`
+`,ue=i.p`
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,he=()=>{const r=v(),b=y(z.getIsLoading),f=async(o,k)=>{r(C.logIn(o)),k.resetForm()},{values:c,errors:n,touched:t,isSubmitting:w,handleChange:l,handleBlur:x,handleSubmit:j}=P({initialValues:{email:"",password:""},validationSchema:F,onSubmit:f}),a=o=>e.jsxs(m,{children:[e.jsx(ce,{}),e.jsx(le,{children:o})]}),g=o=>e.jsxs(m,{children:[e.jsx(xe,{}),e.jsxs(ge,{children:["Success ",o]})]});return e.jsxs(oe,{onSubmit:j,children:[e.jsxs(re,{children:[n.name&&t.name&&a(n.name),e.jsx(h,{htmlFor:"email",children:"Email"}),e.jsx(s,{value:c.email,onChange:l,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:x,theme:t.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.email&&(n.email?a(n.email):g("email")),e.jsx(h,{htmlFor:"password",children:"Password"}),e.jsx(s,{value:c.password,onChange:l,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:x,theme:t.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.password&&(n.password?a(n.password):g("password"))]}),e.jsxs(ae,{children:[b?e.jsx(R,{cls:"yellowBtn"}):e.jsx(E,{disabled:w,type:"submit",text:"Sign In"}),e.jsx(de,{children:e.jsxs(se,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(pe,{className:"setG",children:e.jsx("use",{href:`${d}#icon-google`})})]})})]})]})},ye=()=>e.jsxs(V,{children:[" ",e.jsxs(G,{children:[e.jsx(A,{children:"Sign In"}),e.jsx(N,{children:"Welcome! Please enter your credentials to login to the platform:"}),e.jsx(he,{}),e.jsxs(D,{children:[e.jsx(M,{children:"Don't have an account?"}),e.jsx(U,{to:"/signup",children:"Sign Up"})]}),e.jsx(W,{children:e.jsxs(q,{children:[e.jsx(Q,{children:e.jsx(O,{className:"setPlay",children:e.jsx("use",{href:`${d}#icon-Polygon`})})}),e.jsxs(H,{children:[e.jsx(J,{children:"350+"}),e.jsx(K,{children:"Video tutorial"})]})]})}),e.jsx(X,{children:e.jsxs(Y,{children:[e.jsx(te,{children:e.jsx(ne,{className:"setRun",children:e.jsx("use",{href:`${d}#icon-running`})})}),e.jsxs(Z,{children:[e.jsx(ee,{children:"500"}),e.jsx(ie,{children:"cal"})]})]})})]})]});export{ye as default};
+`,be=()=>{const a=w(),r=j(z.getIsLoading),d=async(o,y)=>{a(C.logIn(o)),y.resetForm()},{values:x,errors:n,touched:t,isSubmitting:k,handleChange:g,handleBlur:h,handleSubmit:v}=E({initialValues:{email:"",password:""},validationSchema:V,onSubmit:d}),s=o=>e.jsxs(b,{children:[e.jsx(ge,{}),e.jsx(he,{children:o})]}),m=o=>e.jsxs(b,{children:[e.jsx(me,{}),e.jsxs(ue,{children:["Success ",o]})]});return e.jsxs(de,{onSubmit:v,children:[e.jsxs(se,{children:[n.name&&t.name&&s(n.name),e.jsx(u,{htmlFor:"email",children:"Email"}),e.jsx(c,{value:x.email,onChange:g,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:h,theme:t.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.email&&(n.email?s(n.email):m("email")),e.jsx(u,{htmlFor:"password",children:"Password"}),e.jsx(c,{value:x.password,onChange:g,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:h,theme:t.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),t.password&&(n.password?s(n.password):m("password"))]}),e.jsxs(pe,{children:[r?e.jsx(G,{cls:"yellowBtn"}):e.jsx(R,{disabled:k,type:"submit",text:"Sign In"}),e.jsx(ce,{children:e.jsxs(le,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(xe,{className:"setG",children:e.jsx("use",{href:`${p}#icon-google`})})]})})]})]})},Se=()=>{const r=j(A).totalBurnedCalories,d=w();return S.useEffect(()=>{d(I())},[]),e.jsxs(D,{children:[" ",e.jsxs(N,{children:[e.jsx(M,{children:"Sign In"}),e.jsx(U,{children:"Welcome! Please enter your credentials to login to the platform:"}),e.jsx(be,{}),e.jsxs(W,{children:[e.jsx(q,{children:"Don't have an account?"}),e.jsx(H,{to:"/signup",children:"Sign Up"})]}),e.jsx(J,{children:e.jsxs(K,{children:[e.jsx(Z,{children:e.jsx(Y,{className:"setPlay",children:e.jsx("use",{href:`${p}#icon-Polygon`})})}),e.jsxs(O,{children:[e.jsx(Q,{children:"350+"}),e.jsx(X,{children:"Video tutorial"})]})]})}),e.jsx(ee,{children:e.jsxs(ie,{children:[e.jsx(re,{children:e.jsx(ae,{className:"setRun",children:e.jsx("use",{href:`${p}#icon-running`})})}),e.jsxs(ne,{children:[e.jsx(te,{children:r}),e.jsx(oe,{children:"cal"})]})]})})]})]})};export{Se as default};
