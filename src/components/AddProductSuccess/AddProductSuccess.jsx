@@ -44,7 +44,7 @@ export const AddProductSuccess = ({ calories }) => {
           </Text>
         </ContainerImg>
         <Button onClick={onClose}>Next product</Button>
-        <Link to="/diary" onClick={onClose}>
+        <Link to="/diary">
           <Text>
             To the diary
             <ArrowIcon>

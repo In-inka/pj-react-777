@@ -13,7 +13,7 @@ import {
   selectSuccessModal,
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
-import { modalReducer } from '../../redux/products/sliceProducts';
+import { modalReducer, successModalReducer } from '../../redux/products/sliceProducts';
 import { toast } from 'react-toastify';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 
@@ -30,6 +30,9 @@ const ProductsList = ({ products, fetching, totalPage }) => {
   const [productForAdd, setProductForAdd] = useState();
   const [calories, setCalories] = useState();
 
+  useEffect(() => {
+    dispatch(successModalReducer.successcloseModal());
+  }, [])
 
   const addProductDetails = (product) => {
     setProductForAdd(product);
@@ -39,14 +42,6 @@ const ProductsList = ({ products, fetching, totalPage }) => {
   const getCalories = (e) => {
     return setCalories(e);
   }
-
-  const diary = useSelector(diarySelectors.getDiary);
-  const dataProductsArr = diary.eatenProducts;
-
-  // useEffect(() => {
-  //   if (dataProductsArr.length >= 1) {
-  //     toast.success('Success!');
-  // }},[dataProductsArr.length]);
 
   useEffect(() => {
     if (inView && !isLoading) {
