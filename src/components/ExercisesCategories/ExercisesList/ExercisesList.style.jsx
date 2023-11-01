@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { glodalColor } from '../../../Styled/GlobalColor';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { ContainerStyled } from '../../../Styled/ContainerStyled';
 
 export const ContainerExercises = styled.div`
-  ${ContainerStyled};
   position: relative;
+  display: flex;
   gap: 20px;
   padding-bottom: 80px;
   width: 100%;
@@ -84,23 +83,21 @@ export const StyleSwiper = styled(Swiper)`
     position: relative;
     height: 444px;
   }
-  .swiper-wrapper {
-    @media screen and (max-width: 768px) {
-      flex-direction: row !important;
-
-      row-gap: 20px;
-    }
-
-    @media screen and (min-width: 768px) {
-      column-gap: 13px;
-      row-gap: 32px;
-      align-items: center;
-      flex-direction: row !important;
-    }
-  }
 `;
 
-export const StyledList = styled.div``;
+export const StyledList = styled.ul`
+  gap: 20px;
+  @media screen and (max-width: 768px) {
+    flex-direction: row !important;
+    row-gap: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    column-gap: 13px;
+    row-gap: 32px;
+    align-items: center;
+    flex-direction: row !important;
+  }
+`;
 
 export const StyledListItem = styled(SwiperSlide)`
   @media screen and (min-width: 375px) {
@@ -118,7 +115,7 @@ export const StyledListItem = styled(SwiperSlide)`
 `;
 
 export const StyledPagination = styled.span`
-  .swiper-pagination-bullet {
+  &.swiper-pagination-bullet {
     position: relative;
     bottom: 25px;
     width: 14px;
@@ -126,7 +123,7 @@ export const StyledPagination = styled.span`
     z-index: 50;
     background-color: gray;
   }
-  .swiper-pagination-bullet-active {
+  &.swiper-pagination-bullet-active {
     position: relative;
     width: 14px;
     height: 14px;

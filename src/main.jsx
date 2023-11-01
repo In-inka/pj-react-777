@@ -15,6 +15,7 @@ import '../node_modules/swiper/modules'; // Імпорт стилів для с�
 import '../node_modules/swiper/modules/grid.css'; // Імпорт основних стилів Swiper
 import '../node_modules/swiper/modules/pagination.css'; // Імпорт стилів для пагінації
 import '../node_modules/swiper/swiper-bundle.css'; // Опціонально, імпорт стилів зі збірки
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
