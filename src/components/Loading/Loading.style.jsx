@@ -8,3 +8,12 @@ export const BoxLoading = styled.div`
     margin-right: auto;
 
 `
+
+
+export const BoxLoader = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+
+`

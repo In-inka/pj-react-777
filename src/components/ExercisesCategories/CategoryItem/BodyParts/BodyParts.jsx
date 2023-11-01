@@ -20,7 +20,7 @@ const BodyParts = () => {
     <BoxCategoryItem>
       {loading && <Loading />}
 
-      {!loading && data && <ExercisesList exercises={data[0]} />}
+      {!loading && data && <ExercisesList exercises={data} />}
     </BoxCategoryItem>
   );
 };

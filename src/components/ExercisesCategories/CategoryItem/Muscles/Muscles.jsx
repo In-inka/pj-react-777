@@ -15,13 +15,12 @@ const Muscles = () => {
 
 const data = useSelector(exercisesSelectors.getFilterMuscles)
 const loading = useSelector(exercisesSelectors.getIsLoading)
-const error =  useSelector(exercisesSelectors.getIsError)
   
 
   return (
     <BoxCategoryItem>
       {loading && <Loading/>}
-      { !loading && data && <ExercisesList exercises={data[0]}/>}
+      { !loading && data && <ExercisesList exercises={data}/>}
     </BoxCategoryItem>
 )
 };

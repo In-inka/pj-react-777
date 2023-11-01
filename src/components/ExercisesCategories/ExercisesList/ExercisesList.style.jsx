@@ -82,6 +82,9 @@ export const CategoryExercises = styled.p`
 // ===============SWIPER===============
 
 export const StyleSwiper = styled(Swiper)`
+@media screen and (max-width: 767px){
+    
+}
 @media screen and (min-width: 1440px){
     position: relative;
         height: 444px;
@@ -89,13 +92,19 @@ export const StyleSwiper = styled(Swiper)`
     }
 .swiper-wrapper{
 
-
-    row-gap: 20px;
     
-@media screen and (min-width: 768px){
+    @media screen and (max-width: 768px){
+
+        flex-direction: row !important;
+        
+        row-gap: 20px;
+    }
+    
+    @media screen and (min-width: 768px){
     column-gap: 13px;
     row-gap: 32px;
     align-items: center;
+    flex-direction: row !important;
 }
 
      
@@ -130,9 +139,10 @@ export const StyledListItem = styled(SwiperSlide)`
 export const StyledPagination = styled.span`
    .swiper-pagination-bullet{
        position: relative;
-       bottom: 10px;
+       bottom: 25px;
        width: 14px;
        height: 14px;
+       z-index: 50;
        background-color: gray;
     }
     .swiper-pagination-bullet-active {
