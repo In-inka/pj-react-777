@@ -129,6 +129,6 @@ export const handleRejected = (state) => {
 //--------------Products
 
 export function handleFulfilledProductList (state, { payload }) {
-  state.list = { ...state.list, ...payload };
+  state.list.push(...payload.products);
   state.isLoading = false;
 }

@@ -24,6 +24,9 @@ export const productSlice = createSlice({
     setFilter: (state, { payload }) => {
       state.filter = payload;
     },
+    reset: (state) => {
+      state.list = [];
+    }
   },
   extraReducers: (builder) =>
     builder
@@ -35,3 +38,4 @@ export const productSlice = createSlice({
 
 export const productsReducer = productSlice.reducer;
 export const filterReducer = productSlice.actions.setFilter;
+export const resetListReducer = productSlice.actions.reset;

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { ProductsFilter } from '../../components/ProductsFilter/ProductsFilter';
 import { ProductsList } from '../../components/ProductsList/ProductsList';
 import {
@@ -14,16 +14,25 @@ import {
   selectProductsList,
 } from '../../redux/products/selectorsProducts';
 import Loading from '../../components/Loading/Loading';
-import { productSlice } from '../../redux/products/sliceProducts';
-import ReactPaginate from 'react-paginate';
+import { productSlice, resetListReducer } from '../../redux/products/sliceProducts';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const Products = () => {
-  const [page, setPage] = useState(1);
   const isLoading = useSelector(selectIsLoadingProduct);
   const dispatch = useDispatch();
   const products = useSelector(selectProductsList);
+    const isFetchCurrentUser = useSelector(
+      authSelectors.getIsFetchingCurrentUser,
+    );
+
+  const page = products.page;
   const limitPage = products.limit;
   const totalPage = Math.ceil(products.total / limitPage);
+
+   useEffect(() => {
+     dispatch(resetListReducer());
+   }, []);
+
   const fetching = useCallback(
     (filterParams, page, limit) => {
       try {
@@ -48,12 +57,6 @@ const Products = () => {
     }
   }, [fetching]);
 
-  const handlePageClick = (event) => {
-    setPage(event.selected);
-    console.log(localStorage.getItem('persist:products').filter);
-    fetching({}, page, limitPage);
-  };
-
   return (
     <Container>
       <ProductsFilterText>Filters</ProductsFilterText>
@@ -61,9 +64,9 @@ const Products = () => {
         <ProductsTitle>Products</ProductsTitle>
         <ProductsFilter submit={fetching} />
       </ProductsFunc>
-      {(!isLoading && products !== null) ? (
-      <ProductsList products={products.products} />) : (<Loading />
-      )}
+      {
+        <ProductsList products={products} fetching={fetching} />
+      }
     </Container>
   );
 };

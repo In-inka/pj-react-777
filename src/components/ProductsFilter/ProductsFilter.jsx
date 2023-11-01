@@ -12,10 +12,11 @@ import {
   ProductsFilterList,
 } from './ProductsFilter.styled';
 import { useSearchParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterReducer } from '../../redux/products/sliceProducts';
+import { filterReducer, resetListReducer } from '../../redux/products/sliceProducts';
 import { selectFilter } from '../../redux/products/selectorsProducts';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const optionsRec = [
   { value: '', label: 'All' },
@@ -81,8 +82,8 @@ export const ProductsFilter = ({ submit }) => {
       backgroundColor: isSelected
         ? 'rgba(28, 28, 28, 1)'
         : isFocused
-          ? 'rgba(28, 28, 28, 1)'
-          : 'rgba(28, 28, 28, 1)', //active option and hover background
+        ? 'rgba(28, 28, 28, 1)'
+        : 'rgba(28, 28, 28, 1)', //active option and hover background
       color: isSelected ? '#E6533C' : '#EFEDE8', //text color of the active option in the list
       marginBottom: '8px',
 
@@ -133,92 +134,104 @@ export const ProductsFilter = ({ submit }) => {
   };
 
   const [searchParams, setSearchParams] = useSearchParams({});
-  const filter = useSelector(selectFilter)
-  const [search, setSearch] = useState(filter.search)
-  const [category, setCategory] = useState(filter.category)
-  const [recommended, setRecommended] = useState(filter.recommended)
-  const dispatch = useDispatch()
+  const filter = useSelector(selectFilter);
+  const [search, setSearch] = useState(filter.search);
+  const [category, setCategory] = useState(filter.category);
+  const [recommended, setRecommended] = useState(filter.recommended);
+  const dispatch = useDispatch();
 
-  const onChangeSearch =  (event) => {
+ 
+
+  const onChangeSearch = (event) => {
     const text = event.target.value;
-    setSearch(text)
-     dispatch(filterReducer({
-      search: text,
-      category,
-      recommended
-    }))
+    setSearch(text);
+    dispatch(
+      filterReducer({
+        search: text,
+        category,
+        recommended,
+      }),
+    );
     setSearchParams({
       search: text,
-      category: category || "all",
-      recommended: recommended || 'all'
-    })
+      category: category || 'all',
+      recommended: recommended || 'all',
+    });
   };
 
-  const onCategoriesChange =  (event) => {
-    setCategory(event.value)
-     setSearchParams({
+  const onCategoriesChange = (event) => {
+    dispatch(resetListReducer());
+    setCategory(event.value);
+    setSearchParams({
       search,
       category: event.value || 'all',
-      recommended: recommended || "all"
-    })
-     dispatch(filterReducer({
-      search,
-      category: event.value,
-      recommended
-    }))
+      recommended: recommended || 'all',
+    });
+    dispatch(
+      filterReducer({
+        search,
+        category: event.value,
+        recommended,
+      }),
+    );
     submit({
       search,
       category: event.value,
-      recommended
-    })
+      recommended,
+    });
   };
 
-  const onRecomendedChange =  (event) => {
+  const onRecomendedChange = (event) => {
+    dispatch(resetListReducer());
     setSearchParams({
       search,
       category: category || 'all',
-      recommended: event.value || 'all'
-    })
-    setRecommended(event.value)
-     dispatch(filterReducer({
-      search,
-      category,
-      recommended: event.value
-    }))
+      recommended: event.value || 'all',
+    });
+    setRecommended(event.value);
+    dispatch(
+      filterReducer({
+        search,
+        category,
+        recommended: event.value,
+      }),
+    );
     submit({
       search,
       category,
-      recommended: event.value
-    })
+      recommended: event.value,
+    });
   };
 
-  const delTextInput =  () => {
-    setSearch('')
-     dispatch(filterReducer({
-      search: '',
-      category,
-      recommended
-    }))
+  const delTextInput = () => {
+    setSearch('');
+    dispatch(
+      filterReducer({
+        search: '',
+        category,
+        recommended,
+      }),
+    );
     setSearchParams({
       search: '',
       category: category || 'all',
-      recommended: recommended || "all"
-    })
+      recommended: recommended || 'all',
+    });
   };
 
   const onSubmit = () => {
     submit({
       search,
       category: category,
-      recommended: recommended
-    })
-  }
+      recommended: recommended,
+    });
+  };
 
   const onEnter = (event) => {
-    if (event.key === "Enter") {
-      onSubmit()
+    if (event.key === 'Enter') {
+      onSubmit();
     }
-  }
+  };
 
   return (
     <ProductsFilterList>
@@ -232,12 +245,13 @@ export const ProductsFilter = ({ submit }) => {
             type="text"
             placeholder="Search"
           />
-          {search && <ProductsBtnClose onClick={delTextInput} type="button">
-            <ProductsSvgClose>
-              <use href={`${sprite}#icon-x`}></use>
-            </ProductsSvgClose>
-          </ProductsBtnClose>
-          }
+          {search && (
+            <ProductsBtnClose onClick={delTextInput} type="button">
+              <ProductsSvgClose>
+                <use href={`${sprite}#icon-x`}></use>
+              </ProductsSvgClose>
+            </ProductsBtnClose>
+          )}
           <ProductsBtnSearch onClick={onSubmit} type="button">
             <ProductsSvgSearch>
               <use href={`${sprite}#icon-search`}></use>
