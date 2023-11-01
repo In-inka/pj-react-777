@@ -8,6 +8,7 @@ export const BoxTimer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 50;
 
   & > :first-child {
     margin-bottom: 4px;
@@ -49,6 +50,7 @@ export const ButtonPause = styled.button`
   background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
+  z-index: 50;
   width: 32px;
   height: 32px;
 `;

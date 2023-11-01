@@ -15,14 +15,19 @@ import ExercisesModal from '../../components/ExercisesModal/ExercisesModal';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import { useSelector } from 'react-redux';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import AddExercisesSuccess from '../../components/AddExercisesSuccess/AddExercisesSuccess';
 
 const Exercises = () => {
+  const [nameCurrentTarget, setNameCurrentTarget] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+ 
+  
   const location = useLocation();
+  
   const path = location.pathname;
+  
   const categoryExercises = localStorage.getItem('CategoryName');
 
-  const [modalOpen, setModalOpen] = useState(false);
-  const [nameCurrentTarget, setNameCurrentTarget] = useState('');
 
   const data = useSelector(exercisesSelectors.getExercisesData);
   const error = useSelector(exercisesSelectors.getIsError);
@@ -79,6 +84,7 @@ const Exercises = () => {
     }
   };
 
+  console.log('nameCurrentTarget', nameCurrentTarget)
 
   return (
     <BoxBackgroundPhoto className={backgroundPhoto(path)}>
@@ -93,6 +99,7 @@ const Exercises = () => {
           <ExercisesModal
             data={nameCurrentTarget[0]}
             onClose={handleCloseWindow}
+            
           />
         )}
         {path === '/exercises' && (

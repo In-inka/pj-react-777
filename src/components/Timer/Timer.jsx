@@ -12,26 +12,23 @@ import {
   TextTime,
 } from './Timer.styled';
 
-const Timer = ({ setDinamicBurnCal, burnedCalories }) => {
-  const [timerIsRunning, setTimerIsRunning] = useState(false);
-  const [remainingTime, setRemainingTime] = useState(180);
+const Timer = ({ setDinamicBurnCal, burnedCalories, toggleTimer, timerIsRunning, setRemainingTime, remainingTime, }) => {
   const [currentBurnedCalories, setCurrentBurnedCalories] = useState(0);
 
-  const toggleTimer = () => {
-    setTimerIsRunning((prev) => !prev);
-  };
 
   useEffect(() => {
     if (timerIsRunning) {
       const timerInterval = setInterval(() => {
         setRemainingTime((prevTime) => prevTime - 1);
       }, 1000);
-
       return () => {
+      
         clearInterval(timerInterval);
       };
     }
   }, [timerIsRunning]);
+  
+
 
   useEffect(() => {
     const updatedBurnedCalories = Math.round(

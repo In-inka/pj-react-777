@@ -9,7 +9,7 @@ export const Backdrop = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 4, 0.4);
-  z-index: 10;
+  z-index: 1;
 `;
 
 // ============BOXES=============
@@ -31,7 +31,7 @@ export const ModalContainer = styled.form`
   border: 1px solid rgba(239, 237, 232, 0.2);
   border-radius: 12px;
   background-color: rgba(16, 16, 15, 1);
-  z-index: 11;
+
 
   @media screen and (min-width: 375px) {
     width: 335px;
@@ -140,6 +140,7 @@ export const ItemTitle = styled.p`
 `;
 
 export const ItemContent = styled.p`
+  text-transform: capitalize;
   font-size: 14px;
   line-height: 1.2;
   font-weight: 700;
