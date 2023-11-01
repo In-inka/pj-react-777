@@ -17,11 +17,17 @@ import sprite from '../../sprite/sprite.svg';
 import { toast } from 'react-toastify';
 import diaryOperations from '../../redux/diary/diaryOperations';
 import { useDispatch } from 'react-redux';
+import { modalReducer, successModalReducer } from '../../redux/products/sliceProducts';
 
-const AddProductForm = ({ product, closeModal }) => {
+const AddProductForm = ({ product, getCalories }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = async (values) => {
+    if (!values.weight) {
+      toast.error('Please add weight!');
+      return;
+    }
+
     const counter = Math.round(
       (product.calories / 100) * Number(values.weight),
     );
@@ -30,13 +36,21 @@ const AddProductForm = ({ product, closeModal }) => {
       calories: counter,
       amount: Number(values.weight),
     };
-
     try {
       await dispatch(diaryOperations.postDiaryProduct(productData));
-      toast.success('Success!');
     } catch (error) {
       toast.error(error.message);
     }
+    getCalories(productData.calories);
+    dispatch(successModalReducer.successOpenModal());
+    dispatch(dispatch(modalReducer.closeModal()));
+  };
+
+  const closeModal = (e) => {
+    if (e.target !== e.currentTarget) {
+      return;
+    }
+    dispatch(modalReducer.closeModal());
   };
 
   return (

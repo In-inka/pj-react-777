@@ -84,8 +84,6 @@ const Exercises = () => {
     }
   };
 
-  console.log('nameCurrentTarget', nameCurrentTarget)
-
   return (
     <BoxBackgroundPhoto className={backgroundPhoto(path)}>
       {error && <ErrorPage />}

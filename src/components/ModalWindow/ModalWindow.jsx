@@ -48,7 +48,7 @@ export const ModalWindow = (props) => {
 
   return (
     <Modal
-      className={"modal-backdrop ${isOpen ? 'centered-modal' : '' }"}
+      className={`modal-backdrop ${isOpen ? 'centered-modal' : '' }`}
       style={modalStyles}
     >
       <Content style={contentStyles}>

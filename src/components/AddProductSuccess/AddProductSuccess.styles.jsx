@@ -1,27 +1,34 @@
 import styled from 'styled-components';
 
 export const ModalWindow = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 4, 4, 0.4);
+  z-index: 10;
 `;
 
 export const Container = styled.div`
-position: relative;
-width:335px;
-height:362px;
-padding: 14px 14px;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #10100F;
-border: 1px solid rgba(239, 237, 232, 0.3);
-border-radius: 12px;
-@media screen and (min-width: 768px) {
-width:430px;
-height:428px;
-padding: 16px 16px;
-    }   
+  position: absolute;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  padding: 48px 89px;
+  background-color: #10100f;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  border-radius: 12px;
+  @media screen and (min-width: 768px) {
+    width: 430px;
+    height: 428px;
+    padding: 16px 16px;
+  }
 `;
 
 export const IconClose = styled.svg`
@@ -98,7 +105,7 @@ export const Button = styled.button`
     color: #efede8;
     font-size: 16px;
     font-weight: 500;
-    line-height: 24px;
+    line-height: 1.5;
     border: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     @media screen and (min-width: 768px) {
@@ -110,6 +117,7 @@ export const Button = styled.button`
     color: #efede8;
   }
 `;
+
 
 export const ArrowIcon = styled.svg`
     width: 16px;

@@ -13,26 +13,38 @@ import {
   Button,
   ArrowIcon,
 } from './AddProductSuccess.styles';
+import { useDispatch } from 'react-redux';
+import { successModalReducer } from '../../redux/products/sliceProducts';
 
-export const AddProductSuccess = ({ calories, closeModal }) => {
+export const AddProductSuccess = ({ calories }) => {
+
+  const dispatch = useDispatch();
+
+  const onClose = (e) => {
+        if (e.target !== e.currentTarget) {
+          return;
+        }
+          dispatch(successModalReducer.successcloseModal());
+
+  }
+  
+
+
   return (
-    <ModalWindow>
+    <ModalWindow onClick={onClose}>
       <Container>
-      <IconClose>
-    <use href={sprite + '#icon-close'}></use>
-    </IconClose>
+        <IconClose onClick={onClose}>
+          <use href={sprite + '#icon-close'}></use>
+        </IconClose>
         <ContainerImg>
           <Image src={product} alt="product" />
           <Title>Well done</Title>
           <Text>
-            Calories:{' '}
-            <Span>{calories}</Span>
+            Calories: <Span>{calories}</Span>
           </Text>
         </ContainerImg>
-        <Link to="/products" onClick={closeModal}>
-          <Button>Next product</Button>
-        </Link>
-        <Link to="/diary" onClick={closeModal}>
+        <Button onClick={onClose}>Next product</Button>
+        <Link to="/diary" onClick={onClose}>
           <Text>
             To the diary
             <ArrowIcon>
