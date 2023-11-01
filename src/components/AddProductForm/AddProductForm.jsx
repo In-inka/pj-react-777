@@ -4,9 +4,14 @@ import {
   ButtonAddDiary,
   ButtonCancel,
   ButtonClose,
+  ContainerInput,
+  FirstInput,
   IconClose,
   Input,
   ModalContainer,
+  SecondInput,
+  Text,
+  TextSecondary,
 } from './AddProductForm.styled';
 import sprite from '../../sprite/sprite.svg';
 import { toast } from 'react-toastify';
@@ -49,24 +54,28 @@ const AddProductForm = ({ product, closeModal }) => {
           onSubmit={handleSubmit}
         >
           <Form>
-            <label htmlFor="title">
-              <Field
-                as={Input}
-                type="text"
-                name="product"
-                placeholder={product.title}
-                readOnly={true}
-              />
-            </label>
-            <label htmlFor="weight">
-              <Field
-                as={Input}
-                type="number"
-                name="weight"
-                placeholder="Weight, grams"
-              />
-            </label>
-            <p>Calories: {product.calories}</p>
+            <ContainerInput>
+              <FirstInput htmlFor="title">
+                <Field
+                  as={Input}
+                  type="text"
+                  name="product"
+                  placeholder={product.title}
+                  readOnly={true}
+                />
+              </FirstInput>
+              <SecondInput htmlFor="weight">
+                <Field
+                  as={Input}
+                  type="number"
+                  name="weight"
+                  placeholder="Weight, grams"
+                />
+              </SecondInput>
+            </ContainerInput>
+            <TextSecondary>
+              Calories: <Text>{product.calories}</Text>
+            </TextSecondary>
             <ButtonAddDiary type="submit">Add to diary</ButtonAddDiary>
             <ButtonCancel type="button" onClick={closeModal}>
               Cancel
