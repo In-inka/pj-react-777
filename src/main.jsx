@@ -11,9 +11,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 import './index.css';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/grid';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
