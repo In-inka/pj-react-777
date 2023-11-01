@@ -1,3 +1,4 @@
+import { Formik, Form, Field } from 'formik';
 import {
   Backdrop,
   ButtonAddDiary,
@@ -8,25 +9,32 @@ import {
   ModalContainer,
 } from './AddProductForm.styled';
 import sprite from '../../sprite/sprite.svg';
-import { useState } from 'react';
+import { toast } from 'react-toastify';
+import diaryOperations from '../../redux/diary/diaryOperations';
+import { useDispatch } from 'react-redux';
 
 const AddProductForm = ({ product, onClose }) => {
-  const [productTitle, setProductTitile] = useState('');
-  const [weight, setWeight] = useState();
-  //   const [amount, setAmount] = useState();
+  const dispatch = useDispatch();
 
-  const addProductTitle = (e) => {
-    setProductTitile(e.target.value);
-    console.log(productTitle);
-  };
-
-  const handleWeight = (e) => {
-    setWeight(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (values) => {
     console.log(product);
+
+    const counter = Math.round(
+      (product.calories / 100) * Number(values.weight),
+    );
+    console.log(counter);
+    const productData = {
+      productId: product._id,
+      calories: counter,
+      amount: Number(values.weight),
+    };
+
+    try {
+      await dispatch(diaryOperations.postDiaryProduct(productData));
+      toast.success('Success!');
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
@@ -37,30 +45,37 @@ const AddProductForm = ({ product, onClose }) => {
             <use href={`${sprite}#icon-x`}></use>
           </IconClose>
         </ButtonClose>
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="product">
-            <Input
-              type="text"
-              name="product"
-              value={product.title}
-              placeholder="Product name"
-              onChange={addProductTitle}
-              readOnly={true}
-            />
-          </label>
-          <label htmlFor="weight">
-            <Input
-              type="number"
-              name="weight"
-              value={weight}
-              placeholder="Weight, grams"
-              onChange={handleWeight}
-            />
-          </label>
-          <p>Calories: {product.calories}</p>
-          <ButtonAddDiary type="submit">Add to diary</ButtonAddDiary>
-          <ButtonCancel>Cancel</ButtonCancel>
-        </form>
+        <Formik
+          initialValues={{
+            weight: '',
+          }}
+          onSubmit={handleSubmit}
+        >
+          <Form>
+            <label htmlFor="title">
+              <Field
+                as={Input}
+                type="text"
+                name="product"
+                placeholder={product.title}
+                readOnly={true}
+              />
+            </label>
+            <label htmlFor="weight">
+              <Field
+                as={Input}
+                type="number"
+                name="weight"
+                placeholder="Weight, grams"
+              />
+            </label>
+            <p>Calories: {product.calories}</p>
+            <ButtonAddDiary type="submit">Add to diary</ButtonAddDiary>
+            <ButtonCancel type="button" onClick={onClose}>
+              Cancel
+            </ButtonCancel>
+          </Form>
+        </Formik>
       </ModalContainer>
     </Backdrop>
   );
