@@ -61,12 +61,12 @@ const handleSubmit = async(even)=>{
     setTimerIsRunning(false)
   }
   
-  // const timesecond = (exercises.time * 60) - remainingTime
+  const timesecond = (exercises.time * 60) - remainingTime
   // const formattedTime = formatTime(timesecond);
   const data = {
     exerciseId: exercises._id,
     burnedCalories: dinamicBurnCal, 
-    time: remainingTime,
+    time: timesecond,
   }
 
   try {
