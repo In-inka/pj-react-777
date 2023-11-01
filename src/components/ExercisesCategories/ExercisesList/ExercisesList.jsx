@@ -15,10 +15,6 @@ import { useLocation } from 'react-router-dom';
 
 import { Pagination, Grid } from 'swiper/modules';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/grid';
-
 const ExercisesList = ({ exercises }) => {
   const location = useLocation();
 
