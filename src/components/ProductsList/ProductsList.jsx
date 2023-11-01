@@ -1,15 +1,15 @@
 import { ProductsContainer } from './ProductsList.styled';
-import diarySelectors from '../../redux/diary/diarySelectors'
 import { ProductsItem } from '../ProductsItem/ProductsItem';
 import { SearchNotResult } from '../SearchNotResult/SearchNotResult';
 import { useInView } from 'react-intersection-observer';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectFilter,
   selectIsLoadingProduct,
   selectModalOpen,
+  selectPage,
   selectSuccessModal,
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
@@ -18,11 +18,15 @@ import { toast } from 'react-toastify';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 
 const ProductsList = ({ products, fetching, totalPage }) => {
+  const [page, setPage] = useState(1);
   const [ref, inView] = useInView({ threshold: 0 });
-  const [page, setPage] = useState(2);
+
   const filterParams = useSelector(selectFilter);
   const isModalOpen = useSelector(selectModalOpen);
   const isLoading = useSelector(selectIsLoadingProduct);
+  const refScroll = useRef();
+    const pageStr = Number(useSelector(selectPage));
+
   const isSucessModalOpen = useSelector(selectSuccessModal);
 
   const dispatch = useDispatch();
@@ -39,19 +43,25 @@ const ProductsList = ({ products, fetching, totalPage }) => {
     dispatch(modalReducer.openModal());
   };
 
+    const scrollToBack = () => {
+      const scrollHeight = refScroll.current.scrollHeight;
+      refScroll.current.scrollTop = scrollHeight - scrollHeight * 0.2;
+    };
+
   const getCalories = (e) => {
     return setCalories(e);
   }
 
   useEffect(() => {
-    if (inView && !isLoading) {
-      setPage(page + 1);
-      fetching(filterParams, page, 10);
+    if (inView) {
+      setPage(pageStr + 1);
+      scrollToBack();
     }
-  }, [fetching, inView, isLoading]);
-  // product._id
+    if (!isLoading && page !== pageStr) fetching(filterParams, page, 10);
+  }, [inView]);
+
   return (
-    <ProductsContainer>
+    <ProductsContainer ref={refScroll}>
       {isModalOpen && (
         <AddProductForm product={productForAdd} getCalories={getCalories} />
       )}

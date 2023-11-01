@@ -5,3 +5,5 @@ export const selectFilter = (state) => state.products.filter;
 export const selectIsLoadingProduct = (state) => state.products.isLoading;
 export const selectSuccessModal = (state) => state.products.successModalOpen;
 
+export const selectPage = (state) => state.products.page;
+export const selectTotal = (state) => state.products.total;
