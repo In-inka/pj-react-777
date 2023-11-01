@@ -15,7 +15,6 @@ const Muscles = () => {
 
 const data = useSelector(exercisesSelectors.getFilterMuscles)
 const loading = useSelector(exercisesSelectors.getIsLoading)
-const error =  useSelector(exercisesSelectors.getIsError)
   
 
   return (
