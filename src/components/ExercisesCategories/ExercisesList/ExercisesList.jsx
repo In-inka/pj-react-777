@@ -5,15 +5,14 @@ import {
   Img,
   ItemExercises,
   LinkItem,
-  StyleSwiper,
   StyledList,
-  StyledListItem,
   StyledPagination,
   TitleExercises,
 } from './ExercisesList.style';
 import { useLocation } from 'react-router-dom';
 
 import { Pagination, Grid } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ExercisesList = ({ exercises }) => {
   const location = useLocation();
@@ -40,7 +39,7 @@ const ExercisesList = ({ exercises }) => {
   return (
     <ContainerExercises className="ContainerExercises">
       {dataBase && (
-        <StyleSwiper
+        <Swiper
           slidesPerView={1}
           slidesPerGroup={1}
           pagination={{
@@ -75,7 +74,7 @@ const ExercisesList = ({ exercises }) => {
         >
           <StyledList className="swiper-wrapper swiper-container">
             {dataBase.map((item) => (
-              <StyledListItem className="swiper-slide" key={item._id}>
+              <SwiperSlide className="swiper-slide" key={item._id}>
                 <ItemExercises id={item._id}>
                   <LinkItem to={'/exercises'} state={{ from: location }}>
                     <ItemExercises id={item._id} onClick={handleTarget}>
@@ -87,10 +86,10 @@ const ExercisesList = ({ exercises }) => {
                     </ItemExercises>
                   </LinkItem>
                 </ItemExercises>
-              </StyledListItem>
+              </SwiperSlide>
             ))}
           </StyledList>
-        </StyleSwiper>
+        </Swiper>
       )}
       <StyledPagination className="swiper-pagination"></StyledPagination>
     </ContainerExercises>

@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import { glodalColor } from '../../../Styled/GlobalColor';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { ContainerStyled } from '../../../Styled/ContainerStyled';
 
 export const ContainerExercises = styled.div`
+  ${ContainerStyled};
   position: relative;
   gap: 20px;
   padding-bottom: 80px;
