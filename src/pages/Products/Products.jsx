@@ -61,23 +61,8 @@ const Products = () => {
         <ProductsTitle>Products</ProductsTitle>
         <ProductsFilter submit={fetching} />
       </ProductsFunc>
-      {!isLoading && products !== null ? (
-        <>
-          <ProductsList products={products.products} />
-          <ReactPaginate
-            breakLabel="..."
-            nextLabel="next >"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={0}
-            pageCount={totalPage}
-            previousLabel="< prev"
-            renderOnZeroPageCount={null}
-            forcePage={page}
-            containerClassName={'react-paginate'}
-          />
-        </>
-      ) : (
-        <Loading />
+      {(!isLoading && products !== null) ? (
+      <ProductsList products={products.products} />) : (<Loading />
       )}
     </Container>
   );
