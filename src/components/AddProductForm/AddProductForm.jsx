@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Field, Form, Formik } from 'formik';
 import {
   Backdrop,
   ButtonAddDiary,
@@ -13,16 +13,13 @@ import { toast } from 'react-toastify';
 import diaryOperations from '../../redux/diary/diaryOperations';
 import { useDispatch } from 'react-redux';
 
-const AddProductForm = ({ product, onClose }) => {
+const AddProductForm = ({ product, closeModal }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = async (values) => {
-    console.log(product);
-
     const counter = Math.round(
       (product.calories / 100) * Number(values.weight),
     );
-    console.log(counter);
     const productData = {
       productId: product._id,
       calories: counter,
@@ -38,9 +35,9 @@ const AddProductForm = ({ product, onClose }) => {
   };
 
   return (
-    <Backdrop onClick={onClose}>
+    <Backdrop onClick={closeModal}>
       <ModalContainer>
-        <ButtonClose type="button" onClick={onClose}>
+        <ButtonClose type="button" onClick={closeModal}>
           <IconClose>
             <use href={`${sprite}#icon-x`}></use>
           </IconClose>
@@ -71,7 +68,7 @@ const AddProductForm = ({ product, onClose }) => {
             </label>
             <p>Calories: {product.calories}</p>
             <ButtonAddDiary type="submit">Add to diary</ButtonAddDiary>
-            <ButtonCancel type="button" onClick={onClose}>
+            <ButtonCancel type="button" onClick={closeModal}>
               Cancel
             </ButtonCancel>
           </Form>
