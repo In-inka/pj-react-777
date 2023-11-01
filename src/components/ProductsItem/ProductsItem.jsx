@@ -16,6 +16,7 @@ import {
 } from './ProductsItem.styled';
 import sprite from '../../sprite/sprite.svg';
 import authSelectors from '../../redux/auth/auth-selectors';
+import { useState } from 'react';
 
 const cutStringLength = (str, maxLength = 24) => {
   if (str.length > maxLength) {
@@ -35,9 +36,17 @@ function capitalizeFirstLetter(str) {
 }
 
 const ProductsItem = ({ product, addProductDetails }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const handleAddProduct = () => {
-    // openModal();
-    //const product = { ...product };
+    openModal();
     addProductDetails(product);
   };
 
@@ -63,7 +72,7 @@ const ProductsItem = ({ product, addProductDetails }) => {
               </>
             )}
           </ProductsItemRecommendedContainer>
-          <AddButton onClick={handleAddProduct} data={product}>
+          <AddButton onClick={handleAddProduct}>
             Add
             <svg width={16} height={16} style={{ stroke: '#E6533C' }}>
               <use href={`${sprite}#icon-start`}></use>
