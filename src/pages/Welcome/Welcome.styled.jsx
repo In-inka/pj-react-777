@@ -115,6 +115,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const TextIcon = styled.div`
+z-index: 10;
   &.text-container {
     position: relative;
     display: inline-block;
