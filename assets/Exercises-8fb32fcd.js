@@ -1,4 +1,4 @@
-import{N as Z,g as f,w as H,j as e,s as t,d as K,r as l,x as ee,u as $,y as te,R as S,L as F,h as ne,Q as N,O as ie}from"./index-906ce3e4.js";import{n as Q}from"./emotion-styled.browser.esm-d4bdd764.js";import{C as re,s as E}from"./sprite-87e874e9.js";import{e as oe,f as se}from"./main_bg_desktop-e1ac3f6f.js";import{e as B}from"./exercisesSelectors-80adadd9.js";import{L as ae}from"./Loader-c0ac0fe3.js";import ce from"./ErrorPage-c2c54bdc.js";const le=Q.div`
+import{N as Z,g as f,w as H,j as e,s as t,d as K,r as l,x as ee,u as $,y as te,R as S,L as F,h as ne,Q as N,O as ie}from"./index-c32647ec.js";import{n as Q}from"./emotion-styled.browser.esm-ac599357.js";import{C as re,s as E}from"./sprite-cdaaccf6.js";import{e as oe,f as se}from"./main_bg_desktop-e1ac3f6f.js";import{e as B}from"./exercisesSelectors-80adadd9.js";import{L as ae}from"./Loader-c6e0ec71.js";import ce from"./ErrorPage-6c807986.js";const le=Q.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
