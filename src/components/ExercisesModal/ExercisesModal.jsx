@@ -16,15 +16,30 @@ import {
 import { useState } from 'react';
 import sprite from '../../sprite/sprite.svg';
 import Timer from '../Timer/Timer';
+import Loader from '../Loader/Loader';
+import { useSelector } from 'react-redux';
+import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 
 const ExercisesModal = ({ data, onClose }) => {
   const [dinamicBurnCal, setDinamicBurnCal] = useState(0);
   const exercises = data;
   const burnedCalories = exercises.burnedCalories;
+  console.log('burnedCalories', burnedCalories)
+  console.log('burnedCalories', dinamicBurnCal)
+const loading = useSelector(exercisesSelectors.getIsLoading)
+
+const handleSubmit = (ev)=>{
+  ev.preventDefault()
+  console.log('submit')
+}
+
 
   return (
     <Backdrop>
-      <ModalContainer>
+      <ModalContainer onSubmit={handleSubmit}>
+        {loading && <Loader/>}
+   
+
         <ButtonClose type="button" onClick={onClose}>
           <IconClose>
             <use href={`${sprite}#icon-x`}></use>
@@ -58,7 +73,8 @@ const ExercisesModal = ({ data, onClose }) => {
             <ItemContent>{exercises.bodyPart}</ItemContent>
           </ItemContentExercises>
         </BoxContentExercises>
-        <ButtonAddDiary type="button">Add to diary</ButtonAddDiary>
+        <ButtonAddDiary type="submit" >Add to diary</ButtonAddDiary>
+ 
       </ModalContainer>
     </Backdrop>
   );

@@ -38,7 +38,7 @@ const ProductsItem = ({ product, addProductDetails }) => {
   const handleAddProduct = () => {
     // openModal();
     //const product = { ...product };
-    console.log(addProductDetails(product));
+    addProductDetails(product);
   };
 
   const bloodGroup = useSelector(authSelectors.getUserMetricData).blood;
@@ -63,7 +63,7 @@ const ProductsItem = ({ product, addProductDetails }) => {
               </>
             )}
           </ProductsItemRecommendedContainer>
-          <AddButton onClick={handleAddProduct}>
+          <AddButton onClick={handleAddProduct} data={product}>
             Add
             <svg width={16} height={16} style={{ stroke: '#E6533C' }}>
               <use href={`${sprite}#icon-start`}></use>
