@@ -1,8 +1,19 @@
 import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorialContainer, PlayIcon, TextContainerB, VideoTutorialTextA, VideoTutorialTextB, FlexContainer, FlexContainerB, CalorieContainer, RunIcon, TextContainerC, CalorieTextA, CalorieTextB, Section, PlayIconContainer, RunIconContainer, } from './SignUp.styled';
 import { SignUpForm } from '../../components/SignUpForm.jsx/SignUpForm';
 import sprite from '../../sprite/sprite.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import getStatisticsData from '../../redux/statistics/statisticsSelectors';
+import { useEffect } from 'react';
+import getStatistics from '../../redux/statistics/statisticsOperations';
 
 const SignUp = () => {
+      const statistic = useSelector(getStatisticsData);
+      const cal = statistic.totalBurnedCalories;
+      const dispatch = useDispatch();
+
+      useEffect(() => {
+        dispatch(getStatistics());
+      }, []);
   return (
     <Section>
       <Container>
@@ -38,7 +49,7 @@ const SignUp = () => {
               </RunIcon>
             </RunIconContainer>
             <TextContainerC>
-              <CalorieTextA>500</CalorieTextA>
+              <CalorieTextA>{cal}</CalorieTextA>
               <CalorieTextB>cal</CalorieTextB>
             </TextContainerC>
           </CalorieContainer>

@@ -22,15 +22,20 @@ import {
   TextIcon,
 } from './Welcome.styled';
 import sprite from '../../sprite/sprite.svg';
-/* import { useDispatch } from 'react-redux';
-import getStatistics from '../../redux/statistics/statisticsOperations'; */
+import { useDispatch, useSelector } from 'react-redux';
+import getStatistics from '../../redux/statistics/statisticsOperations';
+import { useEffect } from 'react';
+import getStatisticsData from '../../redux/statistics/statisticsSelectors';
 
 const Welcome = () => {
-  /*   const dispatch = useDispatch();
-  const onHandleClick = () => {
-    dispatch(getStatistics());
-  }; */
+  const statistic = useSelector(getStatisticsData);
+  const cal = statistic.totalBurnedCalories;
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+        dispatch(getStatistics());
+  }, [])
+  
   return (
     <Section>
       <Container>
@@ -64,7 +69,7 @@ const Welcome = () => {
               </RunIcon>
             </RunIconContainer>
             <TextContainerC>
-              <CalorieTextA>500</CalorieTextA>
+              <CalorieTextA>{cal}</CalorieTextA>
               <CalorieTextB>cal</CalorieTextB>
             </TextContainerC>
           </CalorieContainer>

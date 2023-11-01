@@ -293,11 +293,11 @@ export const FlexContainerB = styled.div`
 export const CalorieContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 14px 37px 14px 18px;
+  padding: 14px 18px;
   background-color: #ef8964;
   border-radius: 12px;
   @media screen and (min-width: 768px) {
-    padding: 14px 38px 14px 28px;
+    padding: 14px 20px;
   }
 `;
 

@@ -23,9 +23,20 @@ import {
 } from './SignIn.styled';
 import { SignInForm } from '../../components/SignInForm/SignInForm';
 import sprite from '../../sprite/sprite.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import getStatisticsData from '../../redux/statistics/statisticsSelectors';
+import getStatistics from '../../redux/statistics/statisticsOperations';
+import { useEffect } from 'react';
 
 
 const SignIn = () => {
+    const statistic = useSelector(getStatisticsData);
+    const cal = statistic.totalBurnedCalories;
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(getStatistics());
+    }, []);
   return (
     <Section>
       {' '}
@@ -60,7 +71,7 @@ const SignIn = () => {
               </RunIcon>
             </RunIconContainer>
             <TextContainerC>
-              <CalorieTextA>500</CalorieTextA>
+              <CalorieTextA>{cal}</CalorieTextA>
               <CalorieTextB>cal</CalorieTextB>
             </TextContainerC>
           </CalorieContainer>
