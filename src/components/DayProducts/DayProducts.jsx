@@ -129,6 +129,9 @@ export const ItemProduct = ({ width, value, children }) => {
     displayValue = value ? 'Yes' : 'No';
   }
   let sliceValue = displayValue;
+  if (!value) {
+    return
+  }
   if (value.length > 18) {
     sliceValue = value.slice(0, 18) + '...';
   }

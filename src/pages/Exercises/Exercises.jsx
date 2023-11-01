@@ -15,7 +15,6 @@ import ExercisesModal from '../../components/ExercisesModal/ExercisesModal';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import { useSelector } from 'react-redux';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import AddExercisesSuccess from '../../components/AddExercisesSuccess/AddExercisesSuccess';
 
 const Exercises = () => {
   const [nameCurrentTarget, setNameCurrentTarget] = useState('');
@@ -83,8 +82,6 @@ const Exercises = () => {
       return '';
     }
   };
-
-  console.log('nameCurrentTarget', nameCurrentTarget)
 
   return (
     <BoxBackgroundPhoto className={backgroundPhoto(path)}>
