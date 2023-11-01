@@ -1,4 +1,4 @@
-import{L as t,g as d,u as r,d as p,r as s,e as c,j as i}from"./index-696a9030.js";import{n as e}from"./emotion-styled.browser.esm-d3a6e826.js";import{b as x,a as l,c as g,d as h,e as m,f as u}from"./main_bg_desktop-e1ac3f6f.js";import{C as b,s as n}from"./sprite-6ac13d8e.js";import{g as f}from"./statisticsSelectors-5e443892.js";const w="/pj-react-777/assets/Line-95619545.svg",k=e.section`
+import{L as t,g as d,u as r,d as p,r as s,e as c,j as i}from"./index-262b052b.js";import{n as e}from"./emotion-styled.browser.esm-dbec4302.js";import{b as x,a as l,c as g,d as h,e as m,f as u}from"./main_bg_desktop-e1ac3f6f.js";import{C as b,s as n}from"./sprite-4380467e.js";import{g as f}from"./statisticsSelectors-5e443892.js";const w="/pj-react-777/assets/Line-95619545.svg",k=e.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
