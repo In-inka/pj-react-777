@@ -95,8 +95,8 @@ const ExercisesList = ({ exercises }) => {
                 
               </StyledList>
 
-              <StyledPagination className="swiper-pagination"></StyledPagination>
           </StyleSwiper>}
+              <StyledPagination className="swiper-pagination"></StyledPagination>
                    
         </ContainerExercises>
     
