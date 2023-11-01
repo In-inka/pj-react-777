@@ -3,11 +3,20 @@ import { ProductsItem } from '../ProductsItem/ProductsItem';
 import { SearchNotResult } from '../SearchNotResult/SearchNotResult';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
+import { nanoid } from 'nanoid';
+import { useSelector } from 'react-redux';
+import {
+  selectFilter,
+  selectIsLoadingProduct,
+} from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
 
-const ProductsList = ({ products, fetching }) => {
+const ProductsList = ({ products, fetching, totalPage }) => {
   const [ref, inView] = useInView({ threshold: 0 });
   const [page, setPage] = useState(2);
+  const filterParams = useSelector(selectFilter);
+  const isLoading = useSelector(selectIsLoadingProduct);
+
   const [productForAdd, setProductForAdd] = useState();
 
   const addProductDetails = (product) => {
@@ -15,12 +24,12 @@ const ProductsList = ({ products, fetching }) => {
   };
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !isLoading) {
       setPage(page + 1);
-      fetching({}, page, 50);
+      fetching(filterParams, page, 10);
     }
-  }, [fetching, inView]);
-
+  }, [fetching, inView, isLoading]);
+  // product._id
   return (
     <ProductsContainer>
       {productForAdd && (
@@ -30,16 +39,16 @@ const ProductsList = ({ products, fetching }) => {
         products.map((product) => {
           return (
             <ProductsItem
-              addProductDetails={addProductDetails}
-              key={product._id}
+              key={nanoid()}
               product={product}
+              addProductDetails={addProductDetails}
             />
           );
         })
       ) : (
         <SearchNotResult />
       )}
-      <div ref={ref} style={{ width: '300px', height: '20px' }}>
+      <div ref={ref} style={{ width: '300px', height: '15px' }}>
         {}
       </div>
     </ProductsContainer>

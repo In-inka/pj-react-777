@@ -25,21 +25,17 @@ const Products = () => {
       authSelectors.getIsFetchingCurrentUser,
     );
 
-  const page = products.page;
-  const limitPage = products.limit;
-  const totalPage = Math.ceil(products.total / limitPage);
-
-   useEffect(() => {
+  useEffect(() => {
      dispatch(resetListReducer());
-   }, []);
+  }, []);
 
   const fetching = useCallback(
     (filterParams, page, limit) => {
       try {
         if (filterParams) {
-          dispatch(getProductsList({ filterParams, page, limit }));
+          dispatch(getProductsList({filterParams, page, limit }));
         } else {
-          dispatch(getProductsList({ filterParams: {}, page, limit }));
+          dispatch(getProductsList({filterParams, page, limit }));
         }
       } catch (error) {
         console.log(error);
