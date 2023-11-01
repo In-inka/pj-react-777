@@ -1,19 +1,8 @@
-import {
-  BoxContentExercises,
-  CategoryExercises,
-  ContainerExercises,
-  Img,
-  ItemExercises,
-  LinkItem,
-  StyledList,
-  StyledPagination,
-  TitleExercises,
-} from './ExercisesList.style';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { Pagination, Grid } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import './swiper.css';
 const ExercisesList = ({ exercises }) => {
   const location = useLocation();
 
@@ -37,7 +26,7 @@ const ExercisesList = ({ exercises }) => {
   };
 
   return (
-    <ContainerExercises className="ContainerExercises">
+    <div className="container-exercises">
       {dataBase && (
         <Swiper
           slidesPerView={1}
@@ -69,30 +58,42 @@ const ExercisesList = ({ exercises }) => {
               },
             },
           }}
+          className="swiper-my"
           modules={[Grid, Pagination]}
-          className="mySwiper"
         >
-          <StyledList className="swiper-wrapper swiper-container">
+          <ul className="swiper-wrapper swiper-container ">
             {dataBase.map((item) => (
               <SwiperSlide className="swiper-slide" key={item._id}>
-                <ItemExercises id={item._id}>
-                  <LinkItem to={'/exercises'} state={{ from: location }}>
-                    <ItemExercises id={item._id} onClick={handleTarget}>
-                      <Img src={item.imgURL} alt={item.name} />
-                      <BoxContentExercises>
-                        <TitleExercises>{item.name}</TitleExercises>
-                        <CategoryExercises>{item.filter}</CategoryExercises>
-                      </BoxContentExercises>
-                    </ItemExercises>
-                  </LinkItem>
-                </ItemExercises>
+                <div className="item-exercises" id={item._id}>
+                  <NavLink
+                    className="link"
+                    to={'/exercises'}
+                    state={{ from: location }}
+                  >
+                    <li
+                      className="styled-list styled-list-item"
+                      id={item._id}
+                      onClick={handleTarget}
+                    >
+                      <img
+                        className="cards"
+                        src={item.imgURL}
+                        alt={item.name}
+                      />
+                      <div className="box">
+                        <h3 className="title">{item.name}</h3>
+                        <p className="category">{item.filter}</p>
+                      </div>
+                    </li>
+                  </NavLink>
+                </div>
               </SwiperSlide>
             ))}
-          </StyledList>
+          </ul>
         </Swiper>
       )}
-      <StyledPagination className="swiper-pagination"></StyledPagination>
-    </ContainerExercises>
+      <span className="swiper-pagination pagination"></span>
+    </div>
   );
 };
 
