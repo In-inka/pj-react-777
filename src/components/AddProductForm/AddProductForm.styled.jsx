@@ -181,7 +181,7 @@ export const TextSecondary = styled.p`
   }
 `;
 
-export const Text = styled.p`
+export const Text = styled.span`
   color: rgba(239, 237, 232);
   font-size: 12px;
   font-weight: 400;
