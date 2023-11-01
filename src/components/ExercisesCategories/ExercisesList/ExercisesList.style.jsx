@@ -104,7 +104,7 @@ export const StyleSwiper = styled(Swiper)`
 `
 
 
-export const StyledList = styled.ul`
+export const StyledList = styled.div`
 
 `
         
@@ -143,7 +143,3 @@ export const StyledPagination = styled.span`
         
     }
 `
-
-
-
-// ===============/SWIPER===============

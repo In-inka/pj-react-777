@@ -14,7 +14,7 @@ export const Backdrop = styled.div`
 
 // ============BOXES=============
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled.form`
   position: absolute;
   overflow-y: scroll;
   display: flex;
