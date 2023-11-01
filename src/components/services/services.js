@@ -103,7 +103,7 @@ export const handleFulfilledDeleteExercise = (state, { payload }) => {
 };
 
 export const handleFulfilledFilterExercisesBody = (state, { payload }) => {
-  state.filter.body.push(payload);
+  state.filter.body = payload;
   state.isLoading = false;
 };
 
@@ -113,7 +113,7 @@ export const handleFulfilledFilterExercisesEquipment = (state, { payload }) => {
 };
 
 export const handleFulfilledFilterExercisesMuscles = (state, { payload }) => {
-  state.filter.muscles.push(payload);
+  state.filter.muscles = payload;
   state.isLoading = false;
 };
 
