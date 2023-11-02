@@ -1,4 +1,4 @@
-import{s as i,g as n,d as M,u,b as f,j as e,o as q,Q as I,r as Y}from"./index-00270856.js";import{u as _}from"./formik.esm-46acfeac.js";import{S as G,t as Q,C as J}from"./DaySwitch.styled-13b0432b.js";import{c as K,a as B,b as j,d as X,B as Z}from"./Button-42a54627.js";import{C as O,s as h}from"./sprite-24982438.js";import"./createClass-a5e2755a.js";const ee=i.form`
+import{s as i,g as n,d as M,u,b as f,j as e,o as q,Q as I,r as Y}from"./index-78905c5d.js";import{u as _}from"./formik.esm-38f99e12.js";import{S as G,t as Q,C as J}from"./DaySwitch.styled-9cb393fe.js";import{c as K,a as B,b as j,d as X,B as Z}from"./Button-cf9bfa0e.js";import{C as O,s as h}from"./sprite-bea3ec5c.js";import"./createClass-723d00f4.js";const ee=i.form`
   padding-top: 18px;
 
   @media screen and (min-width: 768px) {
@@ -277,6 +277,7 @@ import{s as i,g as n,d as M,u,b as f,j as e,o as q,Q as I,r as Y}from"./index-00
   @media screen and (min-width: 1440px) {
     border-left: 1px solid ${n.bgCards};
     padding-left: 49px;
+    padding-right: 0;
   }
 `,he=i.div`
   margin: 0 auto;
