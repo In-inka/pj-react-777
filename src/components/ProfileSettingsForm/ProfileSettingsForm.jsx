@@ -87,6 +87,7 @@ const ProfileSettingsForm = () => {
       }
     },
   });
+
   return (
     <div>
       <FormProfile onSubmit={formik.handleSubmit}>
@@ -150,6 +151,8 @@ const ProfileSettingsForm = () => {
                       formik.setFieldValue('birthday', formatDateString(date));
                     }}
                     customInput={<CustomDatePickerInput />}
+                    showYearDropdown
+                    yearDropdownItemNumber={1}
                     dateFormat={'dd.MM.yyyy'}
                     calendarStartDay={1}
                     formatWeekDay={(day) => day.substr(0, 1)}
