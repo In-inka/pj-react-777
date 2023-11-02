@@ -1,4 +1,4 @@
-import"./index-c14b35a9.js";const d=`
+import"./index-da12991c.js";const d=`
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;

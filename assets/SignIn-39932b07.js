@@ -1,9 +1,9 @@
-import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./index-c14b35a9.js";import{n as i}from"./emotion-styled.browser.esm-91be7a76.js";import{b as B,a as _,c as $,d as I,e as F,f as L}from"./main_bg_desktop-e1ac3f6f.js";import{C as P,s as m}from"./sprite-1fbabb91.js";import{u as E}from"./formik.esm-cea3bbc0.js";import{s as R}from"./schemas-d39d0cbf.js";import{L as N}from"./Loader-d9827080.js";import{B as U}from"./Button-af6a1212.js";import{g as V}from"./statisticsSelectors-5e443892.js";const A=i.section`
+import{g as x,L as f,d as w,u as j,b as z,j as e,o as C,r as S,e as I}from"./index-da12991c.js";import{n as i}from"./emotion-styled.browser.esm-9d6c9c7f.js";import{b as _,a as B,c as T,d as $,e as L,f as F}from"./main_bg_desktop-e1ac3f6f.js";import{C as P,s as c}from"./sprite-c31133ca.js";import{u as E}from"./formik.esm-ab165cec.js";import{a as R}from"./schemas-e97ffebf.js";import{L as V}from"./Loader-8f7a7dea.js";import{B as G}from"./Button-8ebae502.js";import{g as A}from"./statisticsSelectors-5e443892.js";const D=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
     linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-    url(${B});
+    url(${_});
   background-repeat: no-repeat;
   background-position: calc(50% + 38.5px) calc(50% + 120.5px);
   background-size: 298px;
@@ -12,7 +12,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     screen and (min-resolution: 2dppx) {
     background: linear-gradient(168deg, #040404 14.75%, rgba(4, 4, 4, 0) 52.97%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${_});
+      url(${B});
     background-repeat: no-repeat;
     background-position: calc(50% + 38.5px) calc(50% + 120.5px);
     background-size: 298px;
@@ -21,12 +21,12 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
   @media screen and (min-width: 768px) {
     background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${$});
-      padding-bottom: 48px;
-      padding-top: 189px;
+      url(${T});
     background-position: calc(50% + 165.5px) calc(50% + 65.5px);
     background-repeat: no-repeat;
     background-size: 437px;
+    padding-top: 189px;
+    padding-bottom: 48px;
 
     @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
       screen and (min-width: 768px) and (min-resolution: 192dpi),
@@ -37,7 +37,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
           rgba(4, 4, 4, 0) 19.15%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${I});
+        url(${$});
       background-position: calc(50% + 165.5px) calc(50% + 65.5px);
       background-repeat: no-repeat;
       background-size: 437px;
@@ -49,9 +49,9 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${F});
+        url(${L});
       padding-top: 200px;
-      padding-bottom: 114px;
+      padding-bottom: 210px;
       background-repeat: no-repeat;
       background-position: calc(50% + 385px) 50%;
       background-size: 670px;
@@ -65,16 +65,16 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${L});
+        url(${F});
       background-repeat: no-repeat;
       background-position: calc(50% + 335px) calc(50% + 65.5px);
       background-size: 670px;
     }
   }
-`,G=i.div`
+`,N=i.div`
   ${P}
   position: relative;
-`,D=i.h1`
+`,M=i.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 24px;
   line-height: 1.17;
@@ -82,7 +82,17 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     font-size: 32px;
     line-height: 1.38;
   }
-`,M=i.p`
+`;i.svg`
+  fill: ${x.acceptColor};
+  stroke-width: 2px;
+  width: 98px;
+  height: 35px;
+  @media screen and (min-width: 768px) {
+    &.setMenu {
+      width: 185px;
+      height: 67px;
+    }
+  }`;const U=i.p`
   font-size: 14px;
   line-height: 1.29;
   color: rgba(239, 237, 232, 0.3);
@@ -94,7 +104,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     line-height: 1.5;
     margin-top: 16px;
   }
-`,q=i.div`
+`,W=i.div`
   display: flex;
   font-size: 12px;
   line-height: 1.5;
@@ -102,20 +112,19 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
   @media screen and (min-width: 768px) {
     padding-left: 15px;
   }
-`,H=i.p`
+`,q=i.p`
   color: rgba(239, 237, 232, 0.3);
-`,J=i(b)`
+`,H=i(f)`
   margin-left: 4px;
   color: #efede8;
   text-decoration: underline;
-`,K=i.div`
+`,J=i.div`
   display: flex;
-  /* justify-content: center; */
   padding-left: 101px;
   align-items: center;
-  padding-top: 35px;
+  padding-top: 117px;
   @media screen and (min-width: 768px) {
-    padding-top: 39px;
+    padding-top: 135px;
     justify-content: left;
     padding-left: 299px;
   }
@@ -125,7 +134,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     left: 770px;
     top: 184px;
   }
-`,O=i.div`
+`,K=i.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +144,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
   @media screen and (min-width: 768px) {
     padding: 20px 38px 20px 23px;
   }
-`,Q=i.div``,W=i.p`
+`,O=i.div``,Q=i.p`
   font-size: 16px;
   line-height: 1.13;
   font-weight: bold;
@@ -154,7 +163,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     line-height: 1.5;
   }
 `,Y=i.svg`
-  fill: ${f.withe};
+  fill: ${x.withe};
   padding-left: 3px;
   width: 12px;
   height: 12px;
@@ -166,9 +175,9 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     }
   }
 `,Z=i.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
   width: 30px;
   height: 30px;
   border-radius: 50px;
@@ -202,18 +211,11 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
   @media screen and (min-width: 768px) {
     padding: 14px 20px;
   }
-`,ne=i.span`
-  font-size: 20px;
-  line-height: 1.33;
-  @media screen and (min-width: 768px) {
-    font-size: 36px;
-    line-height: 1.33;
-  }
-`,te=i.div`
+`,ne=i.div`
   display: flex;
   flex-direction: row;
   align-items: end;
-`,oe=i.p`
+`,te=i.p`
   font-size: 24px;
   line-height: 1;
   font-weight: 700;
@@ -223,6 +225,13 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     margin-right: 11px;
     font-size: 48px;
     line-height: 1.04;
+  }
+`,oe=i.span`
+  font-size: 20px;
+  line-height: 1.33;
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    line-height: 1.33;
   }
 `,re=i.p`
   font-size: 12px;
@@ -234,7 +243,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     line-height: 1.5;
   }
 `,ae=i.svg`
-  fill: ${f.withe};
+  fill: ${x.withe};
   width: 12px;
   height: 12px;
   @media screen and (min-width: 768px) {
@@ -267,7 +276,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
   }
 `,pe=i.div`
   padding-right: 40px;
-`,s=i.input`
+`,l=i.input`
   outline: 0;
   outline-offset: 0;
   color: #efede8;
@@ -294,7 +303,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
       margin-top: 20px;
     }
   }
-`;s.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const h=i.label`
+`;l.defaultProps={theme:{main:"rgba(239, 237, 232, 0.3)"}};const u=i.label`
   margin: -1px;
   padding: 0;
   position: absolute;
@@ -304,10 +313,18 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
   border: 0;
   clip: rect(0 0 0 0);
 `,ce=i.div`
+display: flex;
+  position: relative;
   padding-top: 28px;
-    @media screen and (min-width: 768px) {
-    padding-top: 64px;}
-`,le=i(b)`
+  @media screen and (min-width: 768px) {
+    padding-top: 64px;
+  }
+`,le=i.div`
+  
+`,b=i.div`
+  display: inline-flex;
+  margin-top: 4px;
+`,xe=i(f)`
   margin-left: 14px;
   position: relative;
   display: inline-block;
@@ -331,7 +348,7 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
     font-size: 20px;
     line-height: 1.2;
   }
-`,xe=i.svg`
+`,ge=i.svg`
   position: absolute;
   right: 19px;
   width: 20px;
@@ -343,27 +360,24 @@ import{L as b,g as f,d as w,u as j,b as z,j as e,o as C,r as S,e as T}from"./ind
       height: 28px;
     }
   }
-`,u=i.div`
-  display: inline-flex;
-  margin-top: 4px;
-`,ge=i.div`
-margin-right: 4px;
+`,he=i.div`
+  margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(216, 0, 39, 1);
-`,he=i.p`
+`,me=i.p`
   color: rgba(216, 0, 39, 1);
   font-size: 12px;
   line-height: 1.5;
-`,me=i.div`
+`,ue=i.div`
   margin-right: 4px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: rgba(60, 191, 97, 1);
-`,ue=i.p`
+`,be=i.p`
   color: rgba(60, 191, 97, 1);
   font-size: 12px;
   line-height: 1.5;
-`,be=()=>{const t=w(),d=j(z.getIsLoading),p=(a,v)=>{t(C.register(a)),v.resetForm()},{values:r,errors:n,touched:o,isSubmitting:k,handleChange:c,handleBlur:l,handleSubmit:y}=E({initialValues:{name:"",email:"",password:""},validationSchema:R,onSubmit:p}),x=a=>e.jsxs(u,{children:[" ",e.jsx(ge,{}),e.jsx(he,{children:a})]}),g=a=>e.jsxs(u,{children:[e.jsx(me,{}),e.jsxs(ue,{children:["Success ",a]})]});return e.jsxs(se,{onSubmit:y,children:[e.jsxs(pe,{children:[e.jsx(h,{htmlFor:"name",children:"Name"}),e.jsx(s,{value:r.name,onChange:c,type:"text",id:"name",name:"name",placeholder:"Name",onBlur:l,theme:o.name&&(n.name?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.name&&(n.name?x(n.name):g("name"))," ",e.jsx(h,{htmlFor:"email",children:"Email"}),e.jsx(s,{value:r.email,onChange:c,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:l,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?x(n.email):g("email"))," ",e.jsx(h,{htmlFor:"password",children:"Password"}),e.jsx(s,{value:r.password,onChange:c,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:l,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?x(n.password):g("password"))," "]}),e.jsxs(ce,{children:[d?e.jsx(N,{cls:"yellowBtn"}):e.jsx(U,{disabled:k,type:"submit",text:"Sign Up"}),e.jsxs(le,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(xe,{className:"setG",children:e.jsx("use",{href:`${m}#icon-google`})})]})]})]})},Te=()=>{const t=j(V),d=t.totalBurnedCalories.toString().slice(0,2),p=t.totalBurnedCalories.toString().slice(2,6),r=w();return S.useEffect(()=>{r(T())},[]),e.jsx(A,{children:e.jsxs(G,{children:[e.jsx(D,{children:"Sign Up"}),e.jsx(M,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsx(be,{}),e.jsxs(q,{children:[e.jsx(H,{children:"Already have account?"}),e.jsx(J,{to:"/signin",children:"Sign In"})]}),e.jsx(K,{children:e.jsxs(O,{children:[e.jsx(Z,{children:e.jsx(Y,{className:"setPlay",children:e.jsx("use",{href:`${m}#icon-Polygon`})})}),e.jsxs(Q,{children:[e.jsx(W,{children:"350+"}),e.jsx(X,{children:"Video tutorial"})]})]})}),e.jsx(ee,{children:e.jsxs(ie,{children:[e.jsx(de,{children:e.jsx(ae,{className:"setRun",children:e.jsx("use",{href:`${m}#icon-running`})})}),e.jsxs(te,{children:[e.jsx(oe,{children:d?e.jsxs(e.Fragment,{children:[d,e.jsx(ne,{children:p})]}):"500"}),e.jsx(re,{children:"cal"})]})]})})]})})};export{Te as default};
+`,fe=()=>{const t=w(),a=j(z.getIsLoading),s=async(r,y)=>{t(C.logIn(r)),y.resetForm()},{values:d,errors:n,touched:o,isSubmitting:k,handleChange:g,handleBlur:h,handleSubmit:v}=E({initialValues:{email:"",password:""},validationSchema:R,onSubmit:s}),p=r=>e.jsxs(b,{children:[e.jsx(he,{}),e.jsx(me,{children:r})]}),m=r=>e.jsxs(b,{children:[e.jsx(ue,{}),e.jsxs(be,{children:["Success ",r]})]});return e.jsxs(se,{onSubmit:v,children:[e.jsxs(pe,{children:[n.name&&o.name&&p(n.name),e.jsx(u,{htmlFor:"email",children:"Email"}),e.jsx(l,{value:d.email,onChange:g,type:"email",id:"email",name:"email",placeholder:"Email",onBlur:h,theme:o.email&&(n.email?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.email&&(n.email?p(n.email):m("email")),e.jsx(u,{htmlFor:"password",children:"Password"}),e.jsx(l,{value:d.password,onChange:g,type:"password",id:"password",name:"password",placeholder:"Password",onBlur:h,theme:o.password&&(n.password?{main:"rgba(216, 0, 39, 1)"}:{main:"rgba(60, 191, 97, 1)"})}),o.password&&(n.password?p(n.password):m("password"))]}),e.jsxs(ce,{children:[a?e.jsx(V,{cls:"yellowBtn"}):e.jsx(G,{disabled:k,type:"submit",text:"Sign In"}),e.jsx(le,{children:e.jsxs(xe,{to:"https://power-pulse-rh13.onrender.com/api/users/googleAuth",children:["Login",e.jsx(ge,{className:"setG",children:e.jsx("use",{href:`${c}#icon-google`})})]})})]})]})},_e=()=>{const t=j(A),a=t.totalBurnedCalories.toString().slice(0,2),s=t.totalBurnedCalories.toString().slice(2,6),d=w();return S.useEffect(()=>{d(I())},[]),e.jsxs(D,{children:[" ",e.jsxs(N,{children:[e.jsx(M,{children:"Sign In"}),e.jsx(U,{children:"Welcome! Please enter your credentials to login to the platform:"}),e.jsx(fe,{}),e.jsxs(W,{children:[e.jsx(q,{children:"Don't have an account?"}),e.jsx(H,{to:"/signup",children:"Sign Up"})]}),e.jsx(J,{children:e.jsxs(K,{children:[e.jsx(Z,{children:e.jsx(Y,{className:"setPlay",children:e.jsx("use",{href:`${c}#icon-Polygon`})})}),e.jsxs(O,{children:[e.jsx(Q,{children:"350+"}),e.jsx(X,{children:"Video tutorial"})]})]})}),e.jsx(ee,{children:e.jsxs(ie,{children:[e.jsx(de,{children:e.jsx(ae,{className:"setRun",children:e.jsx("use",{href:`${c}#icon-running`})})}),e.jsxs(ne,{children:[e.jsx(te,{children:a?e.jsxs(e.Fragment,{children:[a,e.jsx(oe,{children:s})]}):"500"}),e.jsx(re,{children:"cal"})]})]})})]})]})};export{_e as default};
