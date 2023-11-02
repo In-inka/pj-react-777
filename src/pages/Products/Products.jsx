@@ -25,15 +25,7 @@ const Products = () => {
 
   const fetching = useCallback(
     (filterParams, page, limit) => {
-      try {
-        if (filterParams) {
-          dispatch(getProductsList({filterParams, page, limit }));
-        } else {
-          dispatch(getProductsList({filterParams, page, limit }));
-        }
-      } catch (error) {
-        console.log(error);
-      }
+    dispatch(getProductsList({ filterParams, page, limit }));
     },
     [dispatch],
   );
