@@ -12,9 +12,17 @@ import {
   TextTime,
 } from './Timer.styled';
 
-const Timer = ({ setDinamicBurnCal, burnedCalories, toggleTimer, timerIsRunning, setRemainingTime, remainingTime, }) => {
+const Timer = ({
+  setDinamicBurnCal,
+  burnedCalories,
+  toggleTimer,
+  timerIsRunning,
+  setTimerIsRunning,
+  setRemainingTime,
+  remainingTime,
+  exerciseComplete
+}) => {
   const [currentBurnedCalories, setCurrentBurnedCalories] = useState(0);
-
 
   useEffect(() => {
     if (timerIsRunning) {
@@ -22,13 +30,10 @@ const Timer = ({ setDinamicBurnCal, burnedCalories, toggleTimer, timerIsRunning,
         setRemainingTime((prevTime) => prevTime - 1);
       }, 1000);
       return () => {
-      
         clearInterval(timerInterval);
       };
     }
   }, [timerIsRunning]);
-  
-
 
   useEffect(() => {
     const updatedBurnedCalories = Math.round(
@@ -52,7 +57,10 @@ const Timer = ({ setDinamicBurnCal, burnedCalories, toggleTimer, timerIsRunning,
           size={124}
           isPlaying={timerIsRunning}
           duration={180}
-          onComplete={() => setTimerIsRunning(false)}
+          onComplete={() => {
+            setTimerIsRunning(false);
+            exerciseComplete();
+          }}
         >
           {({ remainingTime }) => (
             <div style={{ color: '#fff' }} role="timer" aria-live="assertive">
