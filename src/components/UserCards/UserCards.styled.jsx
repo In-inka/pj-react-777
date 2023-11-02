@@ -11,6 +11,7 @@ export const ContainerCards = styled.div`
   @media screen and (min-width: 1440px) {
     border-left: 1px solid ${glodalColor.bgCards};
     padding-left: 49px;
+    padding-right: 0;
   }
 `;
 
