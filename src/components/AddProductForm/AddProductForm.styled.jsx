@@ -12,15 +12,13 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  position: absolute;
+  position: relative;
   overflow-y: scroll;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 48px 24px;
   gap: 40px;
-  width: 95%;
-  height: 95%;
   top: 50%;
   left: 50%;
   z-index: 100;
@@ -29,14 +27,7 @@ export const ModalContainer = styled.div`
   border-radius: 12px;
   background-color: rgba(16, 16, 15, 1);
   z-index: 11;
-
-  @media screen and (min-width: 375px) {
-    width: 335px;
-    height: 280px;
-  }
   @media screen and (min-width: 768px) {
-    width: 479px;
-    height: 286px;
     padding: 48px 32px;
     flex-direction: row;
     &::-webkit-scrollbar {
@@ -106,9 +97,12 @@ export const Input = styled.input`
 
 export const ContainerInput = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   gap: 16px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 Input.defaultProps = {
