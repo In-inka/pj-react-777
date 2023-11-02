@@ -13,32 +13,30 @@ import {
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
 
-const ProductsList = ({ products, fetching, totalPage }) => {
-  const [page, setPage] = useState(1);
+const ProductsList = ({ products, fetching }) => {
+  const pageStr = Number(useSelector(selectPage));
+  const total = useSelector(selectTotal);
   const [ref, inView] = useInView({ threshold: 0 });
   
   const filterParams = useSelector(selectFilter);
   const isLoading = useSelector(selectIsLoadingProduct);
   const refScroll = useRef();
-  const flagScroll = useRef(true);
   const [productForAdd, setProductForAdd] = useState();
-  const pageStr = Number(useSelector(selectPage));
-  const total = useSelector(selectTotal);
-  
-  
+
   const addProductDetails = (product) => {
     setProductForAdd(product);
   };
 
   const scrollToBack = () => {
     const scrollHeight = refScroll.current.scrollHeight;
-    refScroll.current.scrollTop = scrollHeight - scrollHeight*0.2;
+    refScroll.current.scrollTop = scrollHeight - scrollHeight*0.15;
     };
     
   useEffect(() => {
-    if (inView) { setPage(pageStr + 1); scrollToBack();}
-    if (!isLoading && page!==pageStr) fetching(filterParams, page, 10);
-   
+     if (!isLoading && inView && total >= pageStr * 50) {
+      scrollToBack(); fetching(filterParams, pageStr + 1, 50);
+    }
+
   }, [inView]);
   
   return (

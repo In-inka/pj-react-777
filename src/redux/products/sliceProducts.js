@@ -14,6 +14,7 @@ export const productSlice = createSlice({
     categories: [],
     list: [],
     isLoading: false,
+    page: 1,
     filter: {
       search: '',
       category: '',
