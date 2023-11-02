@@ -40,6 +40,12 @@ const ExercisesModal = ({ data, onClose }) => {
     setTimerIsRunning((prev) => !prev);
   };
 
+  const exerciseComplete = () => {
+    setModalOne(false);
+    setModalOpenSecond(true);
+    setDataExercisesDone(data);
+  }
+
   const handleSubmit = async (even) => {
     even.preventDefault();
     if (timerIsRunning) {
@@ -60,9 +66,7 @@ const ExercisesModal = ({ data, onClose }) => {
       toast.error(error.message);
     }
 
-    setModalOne(false);
-    setModalOpenSecond(true);
-    setDataExercisesDone(data);
+  exerciseComplete();
   };
 
   return (
@@ -95,8 +99,10 @@ const ExercisesModal = ({ data, onClose }) => {
               toggleTimer={toggleTimer}
               timerIsRunning={timerIsRunning}
               setRemainingTime={setRemainingTime}
+              setTimerIsRunning={setTimerIsRunning}
               remainingTime={remainingTime}
               handleSubmit={handleSubmit}
+              exerciseComplete={exerciseComplete}
             />
           </BoxGifTimer>
           <BoxContentExercises>
