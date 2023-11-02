@@ -36,8 +36,9 @@ const DayDashboard = () => {
   const restOfCalories = caloriesIntake - caloriesConsumed;
 
   const restOfSports =
-    normOfSports - Math.round(useSelector(diarySelectors.getDiary).sportTime/60);
-  
+    normOfSports -
+    Math.ceil(useSelector(diarySelectors.getDiary).sportTime / 60);
+
   return (
     <Container>
       <Card value={caloriesIntake}>Daily calorie intake</Card>
