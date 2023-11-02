@@ -39,13 +39,8 @@ const UserCards = () => {
         const formData = new FormData();
         formData.append('avatar', selectedFile);
         await dispatch(operations.updateUserAvatar(formData));
-        await dispatch(authOperations.fetchCurrentUser());
-
-        toast.success('Photo updated successfully');
       }
     } catch (error) {
-      console.error('Error loading photo:', error);
-
       toast.error('An error occurred while uploading the photo');
     }
   };
