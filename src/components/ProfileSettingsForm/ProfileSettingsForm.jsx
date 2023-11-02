@@ -76,6 +76,7 @@ const ProfileSettingsForm = () => {
       try {
         await schema.validate(values, { abortEarly: false });
         await dispatch(operations.updateUserMetricsData(values));
+        toast.success('Successful!');
       } catch (error) {
         const errorMessage = error.response
           ? error.response.data
