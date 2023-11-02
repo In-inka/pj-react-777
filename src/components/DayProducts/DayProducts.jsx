@@ -64,6 +64,8 @@ export const ProductsTable = ({ products }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(diarySelectors.getIsLoading);
 
+  // console.log(products);
+
   return (
     <>
       {isLoading ? (
@@ -129,9 +131,7 @@ export const ItemProduct = ({ width, value, children }) => {
     displayValue = value ? 'Yes' : 'No';
   }
   let sliceValue = displayValue;
-  if (!value) {
-    return
-  }
+  if (typeof value === 'undefined') value = '';
   if (value.length > 18) {
     sliceValue = value.slice(0, 18) + '...';
   }

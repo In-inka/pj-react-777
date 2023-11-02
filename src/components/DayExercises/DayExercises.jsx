@@ -135,8 +135,8 @@ export const ExercisesTable = ({ exercises }) => {
 export const ItemProductEx = ({ width, value, children }) => {
   let displayValue = value;
   let sliceValue = displayValue;
-  if (value.length > 10) {
-    sliceValue = value.slice(0, 10) + '...';
+  if (value.length > 8) {
+    sliceValue = value.slice(0, 8) + '...';
   }
 
   let displayChild = children;
