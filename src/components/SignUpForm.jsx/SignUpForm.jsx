@@ -140,12 +140,12 @@ const SignUpForm = () => {
         ) : (
           <Button disabled={isSubmitting} type="submit" text={'Sign Up'} />
         )}
-        <GoogleSignLink to="https://power-pulse-rh13.onrender.com/api/users/googleAuth">
+        {isLoading ?<></> : <GoogleSignLink to="https://power-pulse-rh13.onrender.com/api/users/googleAuth">
           Login
           <GoogleIcon className="setG">
             <use href={`${sprite}#icon-google`}></use>
           </GoogleIcon>
-        </GoogleSignLink>
+        </GoogleSignLink>}
       </ButtonContainer>
     </Form>
   );
