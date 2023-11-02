@@ -20,7 +20,7 @@ const Timer = ({
   setTimerIsRunning,
   setRemainingTime,
   remainingTime,
-  exerciseComplete
+  handleSubmit
 }) => {
   const [currentBurnedCalories, setCurrentBurnedCalories] = useState(0);
 
@@ -56,10 +56,9 @@ const Timer = ({
           strokeWidth={4}
           size={124}
           isPlaying={timerIsRunning}
-          duration={180}
+          duration={10}
           onComplete={() => {
             setTimerIsRunning(false);
-            exerciseComplete();
           }}
         >
           {({ remainingTime }) => (
