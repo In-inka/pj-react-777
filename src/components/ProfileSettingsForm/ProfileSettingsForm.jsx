@@ -59,7 +59,6 @@ const ProfileSettingsForm = () => {
   }
 
   const formattedDate = formatDateString(birthday);
-  const dateNow = formatDateString(Date.now);
 
   const formik = useFormik({
     initialValues: {
@@ -74,7 +73,6 @@ const ProfileSettingsForm = () => {
     },
 
     onSubmit: async (values) => {
-      console.log('Form submitted', values);
       try {
         await schema.validate(values, { abortEarly: false });
         await dispatch(operations.updateUserMetricsData(values));
