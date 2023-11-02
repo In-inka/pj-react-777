@@ -8,82 +8,85 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectFilter,
   selectIsLoadingProduct,
-  selectModalOpen,
   selectPage,
+  selectTotal,
+  selectModalOpen,
   selectSuccessModal,
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
-import { modalReducer, successModalReducer } from '../../redux/products/sliceProducts';
+import {
+  modalReducer,
+  successModalReducer,
+} from '../../redux/products/sliceProducts';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
+import diarySelectors from '../../redux/diary/diarySelectors';
 
 const ProductsList = ({ products, fetching }) => {
-  const [page, setPage] = useState(1);
+  const pageStr = Number(useSelector(selectPage));
+  const total = useSelector(selectTotal);
   const [ref, inView] = useInView({ threshold: 0 });
 
   const filterParams = useSelector(selectFilter);
   const isModalOpen = useSelector(selectModalOpen);
   const isLoading = useSelector(selectIsLoadingProduct);
   const refScroll = useRef();
-    const pageStr = Number(useSelector(selectPage));
-
   const isSucessModalOpen = useSelector(selectSuccessModal);
-
   const dispatch = useDispatch();
-
   const [productForAdd, setProductForAdd] = useState();
   const [calories, setCalories] = useState();
 
   useEffect(() => {
     dispatch(successModalReducer.successcloseModal());
-  }, [])
+  }, []);
 
   const addProductDetails = (product) => {
     setProductForAdd(product);
     dispatch(modalReducer.openModal());
   };
 
-    const scrollToBack = () => {
-      const scrollHeight = refScroll.current.scrollHeight;
-      refScroll.current.scrollTop = scrollHeight - scrollHeight * 0.2;
-    };
+  const scrollToBack = () => {
+    const scrollHeight = refScroll.current.scrollHeight;
+    refScroll.current.scrollTop = scrollHeight - scrollHeight * 0.15;
+  };
 
   const getCalories = (e) => {
     return setCalories(e);
-  }
+  };
+
+  const diary = useSelector(diarySelectors.getDiary);
+  const dataProductsArr = diary.eatenProducts;
 
   useEffect(() => {
-    if (inView) {
-      setPage(pageStr + 1);
+    if (!isLoading && inView && total >= pageStr * 50) {
       scrollToBack();
+      fetching(filterParams, pageStr + 1, 50);
     }
-    if (!isLoading && page !== pageStr) fetching(filterParams, page, 10);
   }, [inView]);
 
   return (
-    <>
+    <ProductsContainer ref={refScroll}>
       {isModalOpen && (
         <AddProductForm product={productForAdd} getCalories={getCalories} />
       )}
       {isSucessModalOpen && <AddProductSuccess calories={calories} />}
-      <ProductsContainer ref={refScroll}>
-        {products?.length > 0 ? (
-          products.map((product) => {
-            return (
-              <ProductsItem
-                key={nanoid()}
-                product={product}
-                addProductDetails={addProductDetails}
-              />
-            );
-          })
-        ) : (
-          <SearchNotResult />
-        )}
-        <div ref={ref} style={{ width: '300px', height: '15px' }}>
-          {}
-        </div>
-      </ProductsContainer>
-    </>
+      {/* <AddProductSuccess calories={calories}/> */}
+      {products?.length > 0 ? (
+        products.map((product) => {
+          return (
+            <ProductsItem
+              key={nanoid()}
+              product={product}
+              addProductDetails={addProductDetails}
+            />
+          );
+        })
+      ) : (
+        <SearchNotResult />
+      )}
+      <div ref={ref} style={{ width: '300px', height: '15px' }}>
+        {}
+      </div>
+    </ProductsContainer>
   );
 };
 

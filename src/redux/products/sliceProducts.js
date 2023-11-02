@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getProductsList } from './operationsProducts';
-import { handleFulfilledProductList, handlePending, handleRejected } from '../../components/services/services';
+import {
+  handleFulfilledProductList,
+  handlePending,
+  handleRejected,
+} from '../../components/services/services';
 
 const STATUS = {
   PENDING: 'pending',
@@ -15,6 +19,7 @@ export const productSlice = createSlice({
     successModalOpen: false,
     categories: [],
     list: [],
+    page: 1,
     isLoading: false,
     filter: {
       search: '',
@@ -49,7 +54,6 @@ export const productSlice = createSlice({
       .addCase(getProductsList[STATUS.REJECTED], handleRejected),
 });
 
-
 export const productsReducer = productSlice.reducer;
 export const filterReducer = productSlice.actions.setFilter;
 export const resetListReducer = productSlice.actions.reset;
@@ -67,4 +71,4 @@ export const successModalReducer = {
 export const modalReducer = {
   openModal,
   closeModal,
-}
+};

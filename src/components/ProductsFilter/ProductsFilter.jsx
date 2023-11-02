@@ -12,11 +12,13 @@ import {
   ProductsFilterList,
 } from './ProductsFilter.styled';
 import { useSearchParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterReducer, resetListReducer } from '../../redux/products/sliceProducts';
+import {
+  filterReducer,
+  resetListReducer,
+} from '../../redux/products/sliceProducts';
 import { selectFilter } from '../../redux/products/selectorsProducts';
-import authSelectors from '../../redux/auth/auth-selectors';
 
 const optionsRec = [
   { value: '', label: 'All' },
@@ -140,8 +142,6 @@ export const ProductsFilter = ({ submit }) => {
   const [recommended, setRecommended] = useState(filter.recommended);
   const dispatch = useDispatch();
 
- 
-
   const onChangeSearch = (event) => {
     const text = event.target.value;
     setSearch(text);
@@ -202,7 +202,7 @@ export const ProductsFilter = ({ submit }) => {
       recommended: event.value,
     });
   };
-
+  console.log(recommended);
   const delTextInput = () => {
     setSearch('');
     dispatch(
