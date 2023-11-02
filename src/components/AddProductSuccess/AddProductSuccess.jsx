@@ -31,28 +31,28 @@ export const AddProductSuccess = ({ calories }) => {
 
 
   return (
-    <ModalWindow onClick={onClose}>
-      <Container>
-        <IconClose onClick={onClose}>
-          <use href={sprite + '#icon-close'}></use>
-        </IconClose>
-        <ContainerImg>
-          <Image src={product} alt="product" />
-          <Title>Well done</Title>
-          <Text>
-            Calories: <Span>{calories}</Span>
-          </Text>
-        </ContainerImg>
-        <Button onClick={onClose}>Next product</Button>
-        <Link to="/diary" onClick={onClose}>
-          <Text>
-            To the diary
-            <ArrowIcon>
-              <use href={sprite + '#icon-start'}></use>
-            </ArrowIcon>
-          </Text>
-        </Link>
-      </Container>
-    </ModalWindow>
+      <ModalWindow onClick={onClose}>
+        <Container>
+          <IconClose onClick={onClose}>
+            <use href={sprite + '#icon-close'}></use>
+          </IconClose>
+          <ContainerImg>
+            <Image src={product} alt="product" />
+            <Title>Well done</Title>
+            <Text>
+              Calories: <Span>{calories}</Span>
+            </Text>
+          </ContainerImg>
+          <Button onClick={onClose}>Next product</Button>
+          <Link to="/diary">
+            <Text>
+              To the diary
+              <ArrowIcon>
+                <use href={sprite + '#icon-start'}></use>
+              </ArrowIcon>
+            </Text>
+          </Link>
+        </Container>
+      </ModalWindow>
   );
 };

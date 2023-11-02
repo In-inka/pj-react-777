@@ -10,20 +10,14 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsList } from '../../redux/products/operationsProducts';
 import {
-  selectIsLoadingProduct,
   selectProductsList,
 } from '../../redux/products/selectorsProducts';
-import Loading from '../../components/Loading/Loading';
 import { productSlice, resetListReducer } from '../../redux/products/sliceProducts';
-import authSelectors from '../../redux/auth/auth-selectors';
 
 const Products = () => {
-  const isLoading = useSelector(selectIsLoadingProduct);
   const dispatch = useDispatch();
   const products = useSelector(selectProductsList);
-    const isFetchCurrentUser = useSelector(
-      authSelectors.getIsFetchingCurrentUser,
-    );
+
 
   useEffect(() => {
      dispatch(resetListReducer());

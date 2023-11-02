@@ -23,7 +23,7 @@ export const ModalContainer = styled.form`
   padding: 48px 32px;
   gap: 40px;
   width: 95%;
-  height: 95%;
+  height: 80%;
   top: 50%;
   left: 50%;
   z-index: 100;
