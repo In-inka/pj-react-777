@@ -21,21 +21,25 @@ import Loader from '../Loader/Loader';
 import { Button } from '../Buttons/Button';
 import sprite from '../../sprite/sprite.svg';
 
-
-
 const SignUpForm = () => {
   const dispatch = useDispatch();
 
-    const isLoading = useSelector(authSelectors.getIsLoading);
-
+  const isLoading = useSelector(authSelectors.getIsLoading);
 
   const onSubmit = (values, actions) => {
-    dispatch(operations.register(values));   
+    dispatch(operations.register(values));
     actions.resetForm();
   };
-  
-  
-  const { values, errors, touched, isSubmitting, handleChange, handleBlur, handleSubmit } = useFormik({
+
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useFormik({
     initialValues: {
       name: '',
       email: '',
@@ -46,20 +50,27 @@ const SignUpForm = () => {
   });
 
   const errorRender = (value) => {
-    return <MessageContainer> <ErrorIcon />
-      <Error>{value}</Error>
-    </MessageContainer>
+    return (
+      <MessageContainer>
+        {' '}
+        <ErrorIcon>
+          <use href={`${sprite}#icon-error`}></use>
+        </ErrorIcon>
+        <Error>{value}</Error>
+      </MessageContainer>
+    );
   };
 
-      const SuccessRender = (value) => {
-        return (
-          <MessageContainer>
-            <SuccessIcon />
-            <Success>Success {value}</Success>
-          </MessageContainer>
-        );
-      };
-
+  const SuccessRender = (value) => {
+    return (
+      <MessageContainer>
+        <SuccessIcon>
+          <use href={`${sprite}#icon-successes`}></use>
+        </SuccessIcon>
+        <Success>Success {value}</Success>
+      </MessageContainer>
+    );
+  };
 
   return (
     <Form onSubmit={handleSubmit}>

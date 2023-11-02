@@ -29,18 +29,17 @@ import getStatisticsData from '../../redux/statistics/statisticsSelectors';
 import getStatistics from '../../redux/statistics/statisticsOperations';
 import { useEffect } from 'react';
 
-
 const SignIn = () => {
-    const statistic = useSelector(getStatisticsData);
-  
+  const statistic = useSelector(getStatisticsData);
+
   const cal = statistic.totalBurnedCalories.toString().slice(0, 2);
   const cal2 = statistic.totalBurnedCalories.toString().slice(2, 6);
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-      dispatch(getStatistics());
-    }, []);
+  useEffect(() => {
+    dispatch(getStatistics());
+  }, []);
   return (
     <Section>
       {' '}

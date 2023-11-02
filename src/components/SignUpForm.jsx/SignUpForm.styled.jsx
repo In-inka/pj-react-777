@@ -62,8 +62,9 @@ export const Label = styled.label`
 
 export const ButtonContainer = styled.div`
   padding-top: 28px;
-    @media screen and (min-width: 768px) {
-    padding-top: 64px;}
+  @media screen and (min-width: 768px) {
+    padding-top: 64px;
+  }
 `;
 
 export const GoogleSignLink = styled(Link)`
@@ -110,12 +111,10 @@ export const MessageContainer = styled.div`
   margin-top: 4px;
 `;
 
-export const ErrorIcon = styled.div`
-margin-right: 4px;
+export const ErrorIcon = styled.svg`
+  margin-right: 4px;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
-  background-color: rgba(216, 0, 39, 1);
 `;
 
 export const Error = styled.p`
@@ -124,12 +123,10 @@ export const Error = styled.p`
   line-height: 1.5;
 `;
 
-export const SuccessIcon = styled.div`
+export const SuccessIcon = styled.svg`
   margin-right: 4px;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
-  background-color: rgba(60, 191, 97, 1);
 `;
 
 export const Success = styled.p`

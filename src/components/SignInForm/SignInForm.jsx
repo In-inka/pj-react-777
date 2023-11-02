@@ -22,7 +22,6 @@ import authSelectors from '../../redux/auth/auth-selectors';
 import { Button } from '../Buttons/Button';
 import sprite from '../../sprite/sprite.svg';
 
-
 const SignInForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(authSelectors.getIsLoading);
@@ -31,7 +30,7 @@ const SignInForm = () => {
     dispatch(operations.logIn(values));
     actions.resetForm();
   };
-  
+
   const {
     values,
     errors,
@@ -48,26 +47,30 @@ const SignInForm = () => {
     validationSchema: signInSchema,
     onSubmit,
   });
-    
 
   const errorRender = (value) => {
     return (
       <MessageContainer>
-        <ErrorIcon />
+        <ErrorIcon>
+          <use href={`${sprite}#icon-error`}></use>
+        </ErrorIcon>
+
         <Error>{value}</Error>
       </MessageContainer>
     );
   };
 
-      const SuccessRender = (value) => {
-        return (
-          <MessageContainer>
-            <SuccessIcon />
-            <Success>Success {value}</Success>
-          </MessageContainer>
-        );
-      };
-    
+  const SuccessRender = (value) => {
+    return (
+      <MessageContainer>
+        <SuccessIcon>
+          <use href={`${sprite}#icon-successes`}></use>
+        </SuccessIcon>
+        <Success>Success {value}</Success>
+      </MessageContainer>
+    );
+  };
+
   return (
     <Form onSubmit={handleSubmit}>
       <InputsContainer>
