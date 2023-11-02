@@ -37,10 +37,6 @@ const Icon = styled.svg`
   }
 `;
 
-// function delay(ms) {
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
-
 const DayProducts = () => {
   const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
 
@@ -122,16 +118,13 @@ export const ProductsTable = ({ products }) => {
 };
 
 export const ItemProduct = ({ width, value, children }) => {
-  // console.log(children, value, width);
   let displayValue = value;
   const valueIsBoolean = typeof value === 'boolean';
   if (valueIsBoolean) {
     displayValue = value ? 'Yes' : 'No';
   }
   let sliceValue = displayValue;
-  if (!value) {
-    return
-  }
+  if (typeof value === 'undefined') value = '';
   if (value.length > 18) {
     sliceValue = value.slice(0, 18) + '...';
   }
