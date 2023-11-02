@@ -9,21 +9,18 @@ export const Backdrop = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 4, 0.4);
-  z-index: 1;
+  z-index: 10;
 `;
 
 // ============BOXES=============
 
 export const ModalContainer = styled.form`
-  position: absolute;
+  position: relative;
   overflow-y: scroll;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 48px 32px;
-  gap: 40px;
-  width: 95%;
-  height: 80%;
+  align-items: center;
+  padding: 48px 17px;
   top: 50%;
   left: 50%;
   z-index: 100;
@@ -32,13 +29,9 @@ export const ModalContainer = styled.form`
   border-radius: 12px;
   background-color: rgba(16, 16, 15, 1);
 
-
   @media screen and (min-width: 375px) {
-    width: 335px;
   }
   @media screen and (min-width: 768px) {
-    width: 694px;
-    height: 550px;
     flex-direction: row;
     &::-webkit-scrollbar {
       display: none;
@@ -72,9 +65,10 @@ export const BoxGifTimer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 14px;
-  width: 100%;
+  /* width: 100%; */
   @media screen and (min-width: 768px) {
     width: 270px;
+    margin-right: 16px;
   }
 `;
 
@@ -85,9 +79,10 @@ export const BoxGif = styled.div`
   display: block;
   width: 100%;
   height: 226px;
+
 `;
 export const GifExercises = styled.img`
-  width: 100%;
+  width: 270px;
   height: 100%;
   border: 1px solid rgba(239, 237, 232, 0.2);
   border-radius: 12px;
@@ -102,7 +97,7 @@ export const GifExercises = styled.img`
 // ============CONTENT=============
 
 export const BoxContentExercises = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   row-gap: 8px;
   column-gap: 8px;
@@ -113,8 +108,19 @@ export const BoxContentExercises = styled.div`
   }
 `;
 
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 40px;
+  margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    margin-top: 0px;
+margin-bottom:254px;  }
+`;
+
 export const ItemContentExercises = styled.div`
-  width: calc((100% - 2 * 8px) / 2);
+  width: 147px;
   background-color: rgba(239, 237, 232, 0.2);
   border: 1px solid #efede833;
   border-radius: 12px;
@@ -157,6 +163,7 @@ export const ItemContent = styled.p`
 // ============BUTTONS=============
 
 export const ButtonAddDiary = styled.button`
+margin-right: auto;
   /* position: absolute; */
 
   padding: 14px 32px 14px 32px;
@@ -181,6 +188,7 @@ export const ButtonAddDiary = styled.button`
     color: #efede899;
   }
 `;
+
 export const ButtonClose = styled.button`
   border: none;
   z-index: 20;
