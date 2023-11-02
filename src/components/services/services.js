@@ -61,7 +61,8 @@ export const handleFulfilledMetricData = (state, { payload }) => {
   state.isLoading = false;
 };
 
-export const handleFulfilledAvatarUpdate = (state) => {
+export const handleFulfilledAvatarUpdate = (state, { payload }) => {
+  state.user.avatarUrl = payload.avatarUrl;
   state.isLoading = false;
 };
 

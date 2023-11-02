@@ -39,11 +39,12 @@ function App() {
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
-  // const fetchCurrentUser = null;
 
   return (
     !fetchCurrentUser && (
-      <Suspense fallback={<BoxLoader><Loading/></BoxLoader>}>
+      <Suspense fallback={<></>
+        // <BoxLoader><Loading /></BoxLoader>
+      }>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route

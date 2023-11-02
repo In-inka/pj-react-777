@@ -11,11 +11,12 @@ export const ModalWindow = styled.div`
 `;
 
 export const Container = styled.div`
-  position: absolute;
+  position: relative;
   overflow-y: scroll;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  outline: none;
   top: 50%;
   left: 50%;
   z-index: 100;
@@ -25,9 +26,7 @@ export const Container = styled.div`
   border: 1px solid rgba(239, 237, 232, 0.3);
   border-radius: 12px;
   @media screen and (min-width: 768px) {
-    width: 430px;
-    height: 428px;
-    padding: 16px 16px;
+    padding: 64px 136px;
   }
 `;
 
@@ -49,9 +48,7 @@ export const ContainerImg = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-top:12px;
 @media screen and (min-width: 768px) {
-margin-top:22px;
     }   
 `;
 
@@ -61,7 +58,6 @@ height:84px;
 margin-bottom: 16px;
 @media screen and (min-width: 768px) {
 height:97px;
-margin-top:32px;
 }   
 `;
 

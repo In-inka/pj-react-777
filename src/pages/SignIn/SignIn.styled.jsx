@@ -277,6 +277,16 @@ export const CalorieTextA = styled.p`
   }
 `;
 
+export const CalorieSpanText = styled.span`
+  font-size: 20px;
+  line-height: 1.33;
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    line-height: 1.33;
+  }
+`;
+
+
 export const CalorieTextB = styled.p`
   font-size: 12px;
   line-height: 1.33;

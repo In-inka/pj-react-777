@@ -20,6 +20,7 @@ import {
   Section,
   PlayIcon,
   RunIconContainer,
+  CalorieSpanText,
 } from './SignIn.styled';
 import { SignInForm } from '../../components/SignInForm/SignInForm';
 import sprite from '../../sprite/sprite.svg';
@@ -31,7 +32,10 @@ import { useEffect } from 'react';
 
 const SignIn = () => {
     const statistic = useSelector(getStatisticsData);
-    const cal = statistic.totalBurnedCalories;
+  
+  const cal = statistic.totalBurnedCalories.toString().slice(0, 2);
+  const cal2 = statistic.totalBurnedCalories.toString().slice(2, 6);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -71,7 +75,16 @@ const SignIn = () => {
               </RunIcon>
             </RunIconContainer>
             <TextContainerC>
-              <CalorieTextA>{cal}</CalorieTextA>
+              <CalorieTextA>
+                {cal ? (
+                  <>
+                    {cal}
+                    <CalorieSpanText>{cal2}</CalorieSpanText>
+                  </>
+                ) : (
+                  '500'
+                )}
+              </CalorieTextA>
               <CalorieTextB>cal</CalorieTextB>
             </TextContainerC>
           </CalorieContainer>

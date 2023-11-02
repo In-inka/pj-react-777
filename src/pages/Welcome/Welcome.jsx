@@ -20,6 +20,7 @@ import {
   PlayIconContainer,
   RunIconContainer,
   TextIcon,
+  CalorieSpanText,
 } from './Welcome.styled';
 import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,13 +30,13 @@ import getStatisticsData from '../../redux/statistics/statisticsSelectors';
 
 const Welcome = () => {
   const statistic = useSelector(getStatisticsData);
-  const cal = statistic.totalBurnedCalories;
+  const cal = statistic.totalBurnedCalories.toString().slice(0, 2);
+  const cal2 = statistic.totalBurnedCalories.toString().slice(2, 6);
   const dispatch = useDispatch();
-
   useEffect(() => {
-        dispatch(getStatistics());
-  }, [])
-  
+    dispatch(getStatistics());
+  }, []);
+
   return (
     <Section>
       <Container>
@@ -69,7 +70,15 @@ const Welcome = () => {
               </RunIcon>
             </RunIconContainer>
             <TextContainerC>
-              <CalorieTextA>{cal}</CalorieTextA>
+              <CalorieTextA>
+                {cal ? (
+                  <>
+                    {cal}<CalorieSpanText>{cal2}</CalorieSpanText>
+                  </>
+                ) : (
+                  '500'
+                )}
+              </CalorieTextA>
               <CalorieTextB>cal</CalorieTextB>
             </TextContainerC>
           </CalorieContainer>

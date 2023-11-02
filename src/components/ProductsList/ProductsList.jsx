@@ -1,9 +1,8 @@
 import { ProductsContainer } from './ProductsList.styled';
-import diarySelectors from '../../redux/diary/diarySelectors'
 import { ProductsItem } from '../ProductsItem/ProductsItem';
 import { SearchNotResult } from '../SearchNotResult/SearchNotResult';
 import { useInView } from 'react-intersection-observer';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useRef, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -12,12 +11,12 @@ import {
   selectPage,
   selectTotal,
   selectModalOpen,
+  selectPage,
   selectSuccessModal,
 
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
-import { modalReducer } from '../../redux/products/sliceProducts';
-import { toast } from 'react-toastify';
+import { modalReducer, successModalReducer } from '../../redux/products/sliceProducts';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 
 const ProductsList = ({ products, fetching }) => {
@@ -34,6 +33,9 @@ const ProductsList = ({ products, fetching }) => {
   const [productForAdd, setProductForAdd] = useState();
   const [calories, setCalories] = useState();
 
+  useEffect(() => {
+    dispatch(successModalReducer.successcloseModal());
+  }, [])
 
   const addProductDetails = (product) => {
     setProductForAdd(product);
