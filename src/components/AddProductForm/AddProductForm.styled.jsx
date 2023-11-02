@@ -5,7 +5,6 @@ export const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  /* position: absolute; */
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 4, 0.4);
@@ -18,7 +17,7 @@ export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 48px 32px;
+  padding: 48px 24px;
   gap: 40px;
   width: 95%;
   height: 95%;
@@ -38,6 +37,7 @@ export const ModalContainer = styled.div`
   @media screen and (min-width: 768px) {
     width: 479px;
     height: 286px;
+    padding: 48px 32px;
     flex-direction: row;
     &::-webkit-scrollbar {
       display: none;
@@ -53,15 +53,20 @@ export const ButtonClose = styled.button`
   border: none;
   z-index: 20;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 14px;
+  right: 14px;
   background-color: rgba(0, 0, 0, 0);
+  @media screen and (min-width: 768px) {
+    top: 16px;
+    right: 16px;
+  }
 `;
 
 export const IconClose = styled.svg`
+pointer-events: none;
   display: block;
-  width: 13px;
-  height: 13px;
+  width: 22px;
+  height: 22px;
   stroke: ${glodalColor.withe};
   @media screen and (min-width: 768px) {
     width: 26px;
@@ -80,6 +85,7 @@ export const Input = styled.input`
   border-color: ${(props) => props.theme.main};
   border-radius: 12px;
   padding: 13px;
+  margin-bottom: 16px;
   font-size: 14px;
   line-height: 1.29;
   &:not(:first-of-type) {
@@ -98,6 +104,13 @@ export const Input = styled.input`
   }
 `;
 
+export const ContainerInput = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px;
+`;
+
 Input.defaultProps = {
   theme: {
     main: 'rgba(239, 237, 232, 0.3)',
@@ -105,7 +118,6 @@ Input.defaultProps = {
 };
 
 export const ButtonAddDiary = styled.button`
-  /* position: absolute; */
   margin-right: 14px;
   padding: 14px 32px 14px 32px;
   border-radius: 12px;
@@ -115,9 +127,9 @@ export const ButtonAddDiary = styled.button`
   background-color: ${glodalColor.acceptColor};
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   @media screen and (min-width: 768px) {
-    /* position: absolute; */
     bottom: 48px;
     right: 32px;
+    margin-right: 16px;
   }
 
   &:hover,
@@ -155,68 +167,39 @@ export const ButtonCancel = styled.button`
   }
 `;
 
-export const ModalWindow = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Container = styled.div`
-  position: relative;
-  width: 335px;
-  height: 362px;
-  padding: 14px 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #10100f;
-  border: 1px solid rgba(239, 237, 232, 0.3);
-  border-radius: 12px;
-  @media screen and (min-width: 768px) {
-    width: 430px;
-    height: 428px;
-    padding: 16px 16px;
-  }
-`;
-
-export const ContainerImg = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 12px;
-  @media screen and (min-width: 768px) {
-    margin-top: 22px;
-  }
-`;
-
-export const Image = styled.img`
-  width: 123px;
-  height: 84px;
-  margin-bottom: 16px;
-  @media screen and (min-width: 768px) {
-    height: 97px;
-    margin-top: 32px;
-  }
-`;
-
-export const Title = styled.p`
-  color: #efede8;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
-  margin-bottom: 16px;
-`;
-
-export const Text = styled.p`
-  color: rgba(239, 237, 232, 0.3);
-  font-size: 14px;
+export const TextSecondary = styled.p`
+  color: rgba(239, 237, 232, 0.4);
+  font-size: 12px;
   font-weight: 400;
   line-height: 18px;
   display: flex;
   gap: 8px;
   align-items: center;
   margin-bottom: 24px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 64px;
+  }
 `;
+
+export const Text = styled.span`
+  color: rgba(239, 237, 232);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+`;
+
+export const FirstInput = styled.label`
+  @media screen and (min-width: 768px) {
+    width: 244px;
+  }
+`;
+export const SecondInput = styled.label`
+  @media screen and (min-width: 768px) {
+    width: 155px;
+  }
+`;
+
 export const Span = styled.span`
   color: #e6533c;
   font-size: 14px;
@@ -225,33 +208,4 @@ export const Span = styled.span`
   display: flex;
   gap: 8px;
   align-items: center;
-`;
-
-export const Button = styled.button`
-  border-radius: 12px;
-  background: #e6533c;
-  padding: 12px 32px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  color: #efede8;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  border: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (min-width: 768px) {
-    padding: 16px 32px;
-  }
-  &:hover,
-  &:focus {
-    background-color: #ef8964;
-    color: #efede8;
-  }
-`;
-
-export const ArrowIcon = styled.svg`
-  width: 16px;
-  height: 16px;
-  stroke: rgba(239, 237, 232, 0.3);
 `;

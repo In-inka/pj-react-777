@@ -1,1 +1,3 @@
-@import-normalize;
+@import url('swiper/css');
+@import url('swiper/css/pagination');
+@import url('swiper/css/grid');

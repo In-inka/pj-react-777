@@ -16,9 +16,9 @@ import {
 } from './ProductsItem.styled';
 import sprite from '../../sprite/sprite.svg';
 import authSelectors from '../../redux/auth/auth-selectors';
-import { useState } from 'react';
 
 const cutStringLength = (str, maxLength = 24) => {
+  
   if (str.length > maxLength) {
     const lastSpaceIndex = str.lastIndexOf(' ', maxLength);
 
@@ -36,17 +36,8 @@ function capitalizeFirstLetter(str) {
 }
 
 const ProductsItem = ({ product, addProductDetails }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   const handleAddProduct = () => {
-    openModal();
     addProductDetails(product);
   };
 

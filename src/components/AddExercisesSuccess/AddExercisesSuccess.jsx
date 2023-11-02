@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import welldone from '../../img/welldoneicon/thumb_up-2x.png';
 import sprite from '../../sprite/sprite.svg';
-// import { Container, ContainerImg, IconClose, Image, ModalWindow, Span, Text, Title } from './AddExercisesSuccess.styled';
 import {
   ModalWindow,
   Container,
@@ -13,12 +12,14 @@ import {
   Button,
   ArrowIcon,
 } from './AddExercisesSuccess.styled';
-import { ButtonClose, IconClose } from '../ExercisesModal/ExercisesModal.styled';
+import {
+  ButtonClose,
+  IconClose,
+} from '../ExercisesModal/ExercisesModal.styled';
 
-const AddExercisesSuccess = ({ data, onClose}) => {
-  
-  const exercisesData = data
-  
+const AddExercisesSuccess = ({ data, onClose }) => {
+  const exercisesData = data;
+
   return (
     <ModalWindow>
       <Container>
@@ -37,10 +38,9 @@ const AddExercisesSuccess = ({ data, onClose}) => {
             Burned calories: <Span>{exercisesData.burnedCalories}</Span>
           </Text>
         </ContainerImg>
-        <Link to="/exercises" >
-          <Button>Next exercis</Button>
-        </Link>
-        <Link to="/diary" >
+
+        <Button onClick={onClose}>Next exercise</Button>
+        <Link to="/diary">
           <Text>
             To the diary
             <ArrowIcon>
@@ -53,4 +53,4 @@ const AddExercisesSuccess = ({ data, onClose}) => {
   );
 };
 
-export default AddExercisesSuccess
+export default AddExercisesSuccess;
