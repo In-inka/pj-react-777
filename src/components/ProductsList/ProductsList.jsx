@@ -20,6 +20,7 @@ import {
 } from '../../redux/products/sliceProducts';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 import diarySelectors from '../../redux/diary/diarySelectors';
+import { getProductsList } from '../../redux/products/operationsProducts';
 
 const ProductsList = ({ products, fetching }) => {
   const pageStr = Number(useSelector(selectPage));
@@ -35,7 +36,14 @@ const ProductsList = ({ products, fetching }) => {
   const [productForAdd, setProductForAdd] = useState();
   const [calories, setCalories] = useState();
 
+  const data = {
+    limit: 50,
+    page: 1,
+    filterParams:[],
+  }
+
   useEffect(() => {
+    dispatch(getProductsList(data));
     dispatch(successModalReducer.successcloseModal());
   }, []);
 
