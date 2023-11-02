@@ -202,7 +202,6 @@ export const ProductsFilter = ({ submit }) => {
       recommended: event.value,
     });
   };
-  console.log(recommended);
   const delTextInput = () => {
     setSearch('');
     dispatch(
