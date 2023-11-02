@@ -6,12 +6,12 @@ export const Form = styled.form`
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
-    width: 404px;
+    width: 424px;
   }
 `;
 
 export const InputsContainer = styled.div`
-  padding-right: 40px;
+  padding-right: 60px;
 `;
 
 export const Input = styled.input`
