@@ -4,13 +4,13 @@ import { glodalColor } from '../../Styled/GlobalColor';
 
 export const Container = styled.div`
   ${ContainerStyled}
-  margin-top: 61px;
-  padding-top: 40px;
+  padding-top: 106px;
   padding-bottom: 80px;
 
   @media screen and (min-width: 375px) {
   }
   @media screen and (min-width: 768px) {
+    padding-top: 136px;
   }
   @media screen and (min-width: 1440px) {
   }

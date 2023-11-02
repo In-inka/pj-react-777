@@ -60,29 +60,30 @@ const ProductsList = ({ products, fetching }) => {
   }, [inView]);
 
   return (
-    <ProductsContainer ref={refScroll}>
+    <>
       {isModalOpen && (
         <AddProductForm product={productForAdd} getCalories={getCalories} />
       )}
       {isSucessModalOpen && <AddProductSuccess calories={calories} />}
-      {/* <AddProductSuccess calories={calories}/> */}
-      {products?.length > 0 ? (
-        products.map((product) => {
-          return (
-            <ProductsItem
-              key={nanoid()}
-              product={product}
-              addProductDetails={addProductDetails}
-            />
-          );
-        })
-      ) : (
-        <SearchNotResult />
-      )}
-      <div ref={ref} style={{ width: '300px', height: '15px' }}>
-        {}
-      </div>
-    </ProductsContainer>
+      <ProductsContainer ref={refScroll}>
+        {products?.length > 0 ? (
+          products.map((product) => {
+            return (
+              <ProductsItem
+                key={nanoid()}
+                product={product}
+                addProductDetails={addProductDetails}
+              />
+            );
+          })
+        ) : (
+          <SearchNotResult />
+        )}
+        <div ref={ref} style={{ width: '300px', height: '15px' }}>
+          {}
+        </div>
+      </ProductsContainer>
+    </>
   );
 };
 
