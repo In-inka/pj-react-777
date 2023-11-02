@@ -72,7 +72,7 @@ const ExercisesModal = ({ data, onClose }) => {
 
   const { name, target, bodyPart } = exercises;
   const sliceText = (val) => {
-    return val.slice(0, 15);
+    return val.slice(0, 10);
   }
 
   return (
