@@ -248,6 +248,15 @@ export const CalorieContainer = styled.div`
   }
 `;
 
+export const CalorieSpanText = styled.span`
+  font-size: 20px;
+  line-height: 1.33;
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    line-height: 1.33;
+  }
+`;
+
 export const TextContainerC = styled.div`
   display: flex;
   flex-direction: row;
