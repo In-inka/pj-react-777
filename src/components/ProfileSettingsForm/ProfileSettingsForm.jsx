@@ -67,7 +67,7 @@ const ProfileSettingsForm = () => {
       height: height || '',
       currentWeight: currentWeight || '',
       desiredWeight: desiredWeight || '',
-      birthday: formattedDate || dateNow,
+      birthday: formattedDate || '',
       blood: blood,
       sex: sex || '',
       levelActivity: levelActivity,
