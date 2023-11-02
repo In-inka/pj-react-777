@@ -222,6 +222,7 @@ export const Icon = styled.svg`
   }
   &.stroke-withe {
     stroke: ${glodalColor.withe};
+    cursor: pointer;
   }
   &.lightOrange {
     fill: ${glodalColor.secondaryOrange};
