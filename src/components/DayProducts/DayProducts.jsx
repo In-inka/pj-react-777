@@ -37,10 +37,6 @@ const Icon = styled.svg`
   }
 `;
 
-// function delay(ms) {
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
-
 const DayProducts = () => {
   const visibleProducts = useSelector(diarySelectors.getDiary).eatenProducts;
 
@@ -63,8 +59,6 @@ const DayProducts = () => {
 export const ProductsTable = ({ products }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(diarySelectors.getIsLoading);
-
-  // console.log(products);
 
   return (
     <>
@@ -124,7 +118,6 @@ export const ProductsTable = ({ products }) => {
 };
 
 export const ItemProduct = ({ width, value, children }) => {
-  // console.log(children, value, width);
   let displayValue = value;
   const valueIsBoolean = typeof value === 'boolean';
   if (valueIsBoolean) {

@@ -34,10 +34,8 @@ export const TitleMainEx = styled.div`
   justify-content: space-between;
   margin-bottom: 22px;
   padding-right: 8px;
-  
-  
+
   @media screen and (min-width: 768px) {
-        
   }
   @media screen and (min-width: 1440px) {
   }
@@ -104,7 +102,6 @@ export const WrapItemProductsEx = styled.div`
   @media screen and (min-width: 768px) {
     gap: 8px;
     flex: 1;
-    
   }
 `;
 
@@ -134,26 +131,24 @@ export const ItemWrapperEx = styled.div`
       }
     }};
     @media screen and (min-width: 1440px) {
-       flex: ${(props) => {
-         switch (props.name) {
-           case 'Body Part':
-             return 0.3;
-           case 'Equipment':
-             return 0.4;
-           case 'Name':
-             return 0.35;
+      flex: ${(props) => {
+        switch (props.name) {
+          case 'Body Part':
+            return 0.3;
+          case 'Equipment':
+            return 0.4;
+          case 'Name':
+            return 0.35;
 
-           case 'Target':
-             return 0.6;
-           case 'Burned Calories':
-             return 0.5;
-           case 'Time':
-             return 0.4;
-         }
-       }}
-
-
-    };
+          case 'Target':
+            return 0.6;
+          case 'Burned Calories':
+            return 0.5;
+          case 'Time':
+            return 0.4;
+        }
+      }};
+    }
   }
 `;
 
@@ -174,7 +169,7 @@ export const ItemFieldEx = styled.div`
   /* 320-375 */
 
   display: flex;
-  
+
   align-items: center;
   margin-bottom: 16px;
   padding: 8px 14px;
@@ -187,7 +182,7 @@ export const ItemFieldEx = styled.div`
   background-color: rgb(239, 237, 235, 0.05);
 
   @media screen and (min-width: 768px) {
-    flex:1;
+    flex: 1;
     margin-bottom: 0;
     padding: 8px 14px;
   }
@@ -205,8 +200,8 @@ export const NormalTextEx = styled.div`
   }
 `;
 export const SliceTextEx = styled.div`
-   display: none;
-   font-size: 16px;
+  display: none;
+  font-size: 16px;
   @media screen and (min-width: 768px) {
     display: flex;
     /* display: none;
@@ -247,11 +242,11 @@ export const DeleteIconWrapper = styled.div`
   }
 `;
 
- export const StyledLinkEx = styled(Link)`
-   display: flex;
-   align-items: center;
-   color: rgb(230, 83, 60);
- `;
+export const StyledLinkEx = styled(Link)`
+  display: flex;
+  align-items: center;
+  color: rgb(230, 83, 60);
+`;
 
 export const WrapButtonEx = styled.div`
   display: flex;
@@ -327,15 +322,15 @@ export const NotFoundEx = styled.div`
   padding-top: 125px;
   color: ${glodalColor.title};
   font-size: 14;
-  font-weight: normal; 
-  line-height: 18px; 
-  text-align: center;  
-  
+  font-weight: normal;
+  line-height: 18px;
+  text-align: center;
+
   @media screen and (min-width: 768px) {
-  height: auto;
-  padding-top: 55px;
-  font-size: 16;
-  line-height: 24px; 
+    height: auto;
+    padding-top: 55px;
+    font-size: 16;
+    line-height: 24px;
   }
 `;
 
@@ -350,7 +345,7 @@ export const WrapTitleTableEx = styled.div`
   @media screen and (min-width: 1440px) {
   }
 `;
-  
+
 export const BodyEx = styled.div``;
 
 export const EquipmentEx = styled.div`
@@ -407,4 +402,3 @@ export const TimeEx = styled.div`
     margin-left: 18px;
   }
 `;
-

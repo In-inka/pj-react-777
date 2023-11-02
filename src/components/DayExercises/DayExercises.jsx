@@ -59,7 +59,7 @@ export const DayExercises = () => {
     </ContainerEx>
   );
 };
-// exercises;
+
 export const ExercisesTable = ({ exercises }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(diarySelectors.getIsLoading);
@@ -78,14 +78,7 @@ export const ExercisesTable = ({ exercises }) => {
               ({
                 burnedCalories,
                 date,
-                exerciseId: {
-                  bodyPart,
-                  equipment,
-                  name,
-                  target,
-                  // _id
-                },
-                //  owner,
+                exerciseId: { bodyPart, equipment, name, target },
                 time,
                 _id,
               }) => (
