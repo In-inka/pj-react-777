@@ -9,7 +9,7 @@ const FlexContainer = styled.div`
   align-items: center;
   padding-top: 232px;
   @media screen and (min-width: 768px) {
-    padding-top: 170px;
+    padding-top: 171px;
     justify-content: left;
     padding-left: 299px;
   }
@@ -24,11 +24,17 @@ const FlexContainer = styled.div`
     @media screen and (min-width: 768px) {
       padding-top: 135px;
     }
+    @media screen and (min-width: 1440px) {
+      padding: 0px;
+    }
   }
   &.sign-up {
     padding-top: 35px;
     @media screen and (min-width: 768px) {
       padding-top: 39px;
+    }
+    @media screen and (min-width: 1440px) {
+      padding: 0px;
     }
   }
 `;
