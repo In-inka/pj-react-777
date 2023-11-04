@@ -1,15 +1,20 @@
-import { Container, Title, Text, TextB, StyledLink, TextContainer, VideoTutorialContainer, PlayIcon, TextContainerB, VideoTutorialTextA, VideoTutorialTextB, FlexContainer, FlexContainerB, CalorieContainer, RunIcon, TextContainerC, CalorieTextA, CalorieTextB, Section, PlayIconContainer, RunIconContainer, CalorieSpanText, } from './SignUp.styled';
+import { Container, Text, TextB, StyledLink, TextContainer, Section,  } from './SignUp.styled';
 import { SignUpForm } from '../../components/SignUpForm.jsx/SignUpForm';
 import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import getStatisticsData from '../../redux/statistics/statisticsSelectors';
 import { useEffect } from 'react';
 import getStatistics from '../../redux/statistics/statisticsOperations';
+import { Title } from '../../components/PageComponents/AuthPage/Title';
+import { VideoTutorialContainer } from '../../components/PageComponents/AuthPage/VideoTutorialContainer';
+import { CaloriesContainer } from '../../components/PageComponents/AuthPage/CaloriesContainer';
 
 const SignUp = () => {
       const statistic = useSelector(getStatisticsData);
-  const cal = statistic.totalBurnedCalories.toString().slice(0, 2);
-  const cal2 = statistic.totalBurnedCalories.toString().slice(2, 6);
+  const calorieValue = statistic.totalBurnedCalories.toString().slice(0, 2);
+  const calorieValue2 = statistic.totalBurnedCalories.toString().slice(2, 6);
+    const ExercisesQuantity = statistic.exercisesQuantity;
+
       const dispatch = useDispatch();
 
       useEffect(() => {
@@ -18,7 +23,7 @@ const SignUp = () => {
   return (
     <Section>
       <Container>
-        <Title>Sign Up</Title>
+        <Title text={'Sign Up'} cls={'sign-page'} />
         <Text>
           Thank you for your interest in our platform. To complete the
           registration process, please provide us with the following
@@ -29,41 +34,8 @@ const SignUp = () => {
           <TextB>Already have account?</TextB>
           <StyledLink to="/signin">Sign In</StyledLink>
         </TextContainer>
-        <FlexContainer>
-          <VideoTutorialContainer>
-            <PlayIconContainer>
-              <PlayIcon className="setPlay">
-                <use href={`${sprite}#icon-Polygon`}></use>
-              </PlayIcon>
-            </PlayIconContainer>
-            <TextContainerB>
-              <VideoTutorialTextA>350+</VideoTutorialTextA>
-              <VideoTutorialTextB>Video tutorial</VideoTutorialTextB>
-            </TextContainerB>
-          </VideoTutorialContainer>
-        </FlexContainer>
-        <FlexContainerB>
-          <CalorieContainer>
-            <RunIconContainer>
-              <RunIcon className="setRun">
-                <use href={`${sprite}#icon-running`}></use>
-              </RunIcon>
-            </RunIconContainer>
-            <TextContainerC>
-              <CalorieTextA>
-                {cal ? (
-                  <>
-                    {cal}
-                    <CalorieSpanText>{cal2}</CalorieSpanText>
-                  </>
-                ) : (
-                  '500'
-                )}
-              </CalorieTextA>
-              <CalorieTextB>cal</CalorieTextB>
-            </TextContainerC>
-          </CalorieContainer>
-        </FlexContainerB>
+        <VideoTutorialContainer cls={'sign-up'} video={ExercisesQuantity} />
+        <CaloriesContainer val1={calorieValue} val2={calorieValue2} />
       </Container>
     </Section>
   );
