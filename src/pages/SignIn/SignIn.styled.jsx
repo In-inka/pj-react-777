@@ -7,7 +7,6 @@ import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
-import { glodalColor } from '../../Styled/GlobalColor';
 
 export const Section = styled.section`
   padding-top: 127px;
@@ -89,17 +88,6 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const TitleLine = styled.svg`
-  fill: ${glodalColor.acceptColor};
-  stroke-width: 2px;
-  width: 98px;
-  height: 35px;
-  @media screen and (min-width: 768px) {
-    &.setMenu {
-      width: 185px;
-      height: 67px;
-    }
-  }`;
 
 export const Text = styled.p`
   font-size: 14px;

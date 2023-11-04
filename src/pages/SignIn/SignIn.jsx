@@ -7,7 +7,6 @@ import {
   Section,
 } from './SignIn.styled';
 import { SignInForm } from '../../components/SignInForm/SignInForm';
-import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import getStatisticsData from '../../redux/statistics/statisticsSelectors';
 import getStatistics from '../../redux/statistics/statisticsOperations';

@@ -2,6 +2,7 @@ import {
   Container,
   ButtonContainer,
   Section,
+  TextIcon,
 } from './Welcome.styled';
 import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,9 +11,9 @@ import { useEffect } from 'react';
 import { Title } from '../../components/PageComponents/AuthPage/Title';
 import { ButtonLink } from '../../components/PageComponents/AuthPage/ButtonLink';
 import getStatisticsData from '../../redux/statistics/statisticsSelectors';
-import Line from '../../img/background/Line.svg';
 import { VideoTutorialContainer } from '../../components/PageComponents/AuthPage/VideoTutorialContainer';
 import { CaloriesContainer } from '../../components/PageComponents/AuthPage/CaloriesContainer';
+
 
 const Welcome = () => {
   const statistic = useSelector(getStatisticsData);
@@ -29,8 +30,14 @@ const Welcome = () => {
     <Section>
       <Container>
         {/* Lice for the title field */}
-        {/* <TextIcon/> */}
-        <Title text={'Transforming your body shape with Power Pulse'} />
+        <Title
+          text={'Transforming your body shape with Power Pulse'}
+          cls={'welcome'}
+        />
+
+        <TextIcon width={'98px'} height={'36px'}>
+          <use href={`${sprite}#icon-Line`}></use>
+        </TextIcon>
         <ButtonContainer>
           <ButtonLink text={'Sign Up'} path={'/signup'} />
           <ButtonLink text={'Sign In'} path={'/signin'} cls={'black'} />

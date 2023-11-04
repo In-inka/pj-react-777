@@ -9,6 +9,10 @@ const StyledTitle = styled.h1`
     font-size: 70px;
     line-height: 1.11;
   }
+  &.welcome{
+    position: relative;
+    z-index: 2;
+  }
   &.sign-page {
     font-size: 24px;
     line-height: 1.17;
@@ -20,8 +24,8 @@ const StyledTitle = styled.h1`
   }
 `;
 
-export const Title = ({ text, cls }) => {
+export const Title = ({ text, cls, children }) => {
   return <StyledTitle className={`${cls}`}>
-        {text} 
+    {children}{text} 
     </StyledTitle>
 }

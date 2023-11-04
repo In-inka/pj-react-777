@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import background_img_mob_x2 from '../../img/background/main_bg_mob_x2.jpg';
 import background_img_mob from '../../img/background/main_bg_mob.jpg';
@@ -7,8 +6,6 @@ import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 import { ContainerStyled } from '../../Styled/ContainerStyled';
-import { glodalColor } from '../../Styled/GlobalColor';
-import Line from '../../img/background/Line.svg';
 
 export const Section = styled.section`
   padding-top: 127px;
@@ -91,6 +88,9 @@ export const Section = styled.section`
 export const Container = styled.div`
   ${ContainerStyled}
   position: relative;
+    @media screen and (min-width: 1440px) {
+    padding-right: 746px;
+    }
 `;
 
 export const ButtonContainer = styled.div`
@@ -100,28 +100,24 @@ export const ButtonContainer = styled.div`
   }
 `;
 
-export const TextIcon = styled.div`
-z-index: 10;
-  &.text-container {
-    position: relative;
-    display: inline-block;
+export const TextIcon = styled.svg`
+  position: absolute;
+  left: 11px;
+  top: 43px;
+  display: inline-block;
+  width: 98px;
+  height: 36px;
+  stroke-width: 2;
+  stroke: currentColor;
+  fill: currentColor;
+
+  @media screen and (min-width: 768px) {
+    top: 84px;
+    left: 16px;
+    width: 187px;
+    height: 69px;
   }
-
-  &.text-container::before {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 3px;
-
-    background-image: url(${Line});
-    background-size: cover;
-    width: 98px;
-    height: 36px;
-    @media screen and (min-width: 768px) {
-      left: -25px;
-      width: 187px;
-      height: 69px;
-    }
+  @media screen and (min-width: 1440px) {
+    left: 80px;
   }
 `;

@@ -1,6 +1,5 @@
 import { Container, Text, TextB, StyledLink, TextContainer, Section,  } from './SignUp.styled';
 import { SignUpForm } from '../../components/SignUpForm.jsx/SignUpForm';
-import sprite from '../../sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import getStatisticsData from '../../redux/statistics/statisticsSelectors';
 import { useEffect } from 'react';
