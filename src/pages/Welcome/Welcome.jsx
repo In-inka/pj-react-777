@@ -39,7 +39,7 @@ const Welcome = () => {
           <use href={`${sprite}#icon-Line`}></use>
         </TextIcon>
         <ButtonContainer>
-          <ButtonLink text={'Sign Up'} path={'/signup'} />
+          <ButtonLink text={'Sign Up'} path={'/signup'} cls={"welcome"}/>
           <ButtonLink text={'Sign In'} path={'/signin'} cls={'black'} />
         </ButtonContainer>
         <VideoTutorialContainer video={ExercisesQuantity} />

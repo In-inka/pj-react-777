@@ -22,28 +22,6 @@ Container.defaultProps = {
   },
 };
 
-export const Logo = styled.svg`
-  &.logo-icon {
-    fill: ${glodalColor.acceptColor};
-  }
-  @media screen and (min-width: 768px) {
-    &.logo-icon {
-      width: 44px;
-      height: 17px;
-    }
-  }
-  &.logo-text {
-    fill: ${glodalColor.withe};
-  }
-
-  @media screen and (min-width: 768px) {
-    &.logo-text {
-      width: 99.527px;
-      height: 15.26px;
-    }
-  }
-`;
-
 export const PrivetRotesContainer = styled.div`
   margin-left: auto;
   display: flex;
@@ -51,17 +29,6 @@ export const PrivetRotesContainer = styled.div`
   justify-content: flex-end;
   @media screen and (min-width: 1440px) {
     margin-left: auto;
-  }
-`;
-
-export const LogoContainer = styled(NavLink)`
-  display: flex;
-  align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  @media screen and (min-width: 768px) {
-    padding-top: 34px;
-    padding-bottom: 33px;
   }
 `;
 
@@ -177,33 +144,6 @@ export const LogoutIcon = styled.svg`
   stroke: ${glodalColor.acceptColor};
 `;
 
-export const Button = styled(NavLink)`
-  display: none;
-  @media screen and (min-width: 1440px) {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: inherit;
-    color: ${glodalColor.withe};
-    border-radius: 12px;
-    border: 1px solid ${glodalColor.title};
-    padding: 10px 27px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
-    &:focus {
-      border-color: rgba(230, 83, 60, 1);
-    }
-    &:disabled {
-      border-color: rgba(230, 83, 60, 1);
-    }
-    &:not(:first-of-type) {
-      margin-left: 16px;
-    }
-    &.active {
-      background-color: ${glodalColor.secondaryOrange};
-    }
-  }
-`;
 
 export const ButtonActive = styled(Link)`
   display: none;
