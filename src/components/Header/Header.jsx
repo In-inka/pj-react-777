@@ -114,7 +114,7 @@ const Header = () => {
                   <use href={`${sprite}#icon-logout`}></use>
                 </LogoutIcon>
               </LogoutContainer>
-            </PrivetRotesContainer>,
+            </PrivetRotesContainer>
           )}
       </Container>
       {isLoggedIn && isMenuOpen && (
