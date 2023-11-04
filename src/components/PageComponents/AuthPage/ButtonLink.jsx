@@ -70,6 +70,7 @@ const ButtonLinkStyled = styled(NavLink)`
       }
       &.active {
         background-color: ${glodalColor.acceptColor};
+        border: none;
       }
     }
   }
