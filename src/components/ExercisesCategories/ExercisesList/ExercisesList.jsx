@@ -3,11 +3,13 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { Pagination, Grid } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './swiper.css';
+import { useState } from 'react';
 
 const ExercisesList = ({ exercises }) => {
   const location = useLocation();
-
+  const [pathId, setPathId] = useState("");
   const dataBase = exercises;
+  console.log(pathId);
 
   const handleTarget = async (el) => {
     const idElement = el.currentTarget;
@@ -22,9 +24,13 @@ const ExercisesList = ({ exercises }) => {
           return el.name;
         })
         .join();
-      localStorage.setItem('CategoryName', element);
-    }
+      setPathId(`${location.pathname}${element}`);
+      localStorage.setItem('CategoryName', element);      
+    } 
   };
+
+  console.log(pathId);
+
 
   return (
     <div className="container-exercises">
@@ -68,7 +74,7 @@ const ExercisesList = ({ exercises }) => {
                 <div className="item-exercises" id={item._id}>
                   <NavLink
                     className="link"
-                    to={'/exercises'}
+                    to={pathId}
                     state={{ from: location }}
                   >
                     <li
