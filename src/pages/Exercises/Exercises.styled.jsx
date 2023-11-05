@@ -15,7 +15,35 @@ export const ContainerExercisesPage = styled.div`
 export const BoxBackgroundPhoto = styled.div`
 @media screen and (min-width: 1440px) {
     display: block;
+    &.backgroundPhoto{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+
+
+                background: linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                    url(${background_img_desktop});
+                background-repeat: no-repeat;
+                background-position: top 185px left 963px;
+                background-size: 670px 902px ;
+                
+                
+                @media screen and (min-device-pixel-ratio: 2),
+                screen and (min-resolution: 192dpi),
+                screen and (min-resolution: 2dppx) {
+                    background: linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                    url(${background_img_desktop_x2});
+                    
+                    background-repeat: no-repeat;
+                    background-position: top 185px left 963px;
+                    background-size: 670px 902px ;
+                    
+            }
+
+        }  
     }
+
+
 `
 
 

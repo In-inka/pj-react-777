@@ -13,9 +13,9 @@ import FullListExercises from '../../components/FullListExercises/FullListExerci
 import ExercisesModal from '../../components/ExercisesModal/ExercisesModal';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import { useSelector } from 'react-redux';
-import ErrorPage from '../ErrorPage/ErrorPage';
 
 const Exercises = () => {
+  // nameCurrentTarget - object which always changed on bodyPart: 'back', equipment: 'cable'
   const [nameCurrentTarget, setNameCurrentTarget] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -23,10 +23,10 @@ const Exercises = () => {
 
   const path = location.pathname;
 
+  // subcategoryes came from localstorag after clic from full list element
   const categoryExercises = localStorage.getItem('CategoryName');
 
   const data = useSelector(exercisesSelectors.getExercisesData);
-  const error = useSelector(exercisesSelectors.getIsError);
 
   const handleOpenWindow = (even) => {
     const targetId = even.currentTarget.id;
@@ -65,10 +65,7 @@ const Exercises = () => {
   };
 
   const handleTitle = (value) => {
-    if (value === '/exercises') {
-      return `${categoryExercises}`;
-    }
-    if (value === '/exercises/bodyParts') {
+    if (value === '/exercises/bodyparts') {
       return 'Body Parts';
     } else if (value === '/exercises/muscles') {
       return 'Muscles';
@@ -87,18 +84,18 @@ const Exercises = () => {
           <TitlePageExercises text={handleTitle(path)} />
           <ExercisesCategories />
         </BoxTitlePage>
-        {/* {modalOpen && (
+        {modalOpen && (
           <ExercisesModal
             data={nameCurrentTarget[0]}
             onClose={handleCloseWindow}
           />
-        )} */}
-        {/* {path === '/exercises' && (
+        )}
+        {path === '/exercises' && (
           <FullListExercises
             filter={categoryExercises}
             openWindow={handleOpenWindow}
           />
-        )} */}
+        )}
         <Suspense>
           <Outlet />
         </Suspense>

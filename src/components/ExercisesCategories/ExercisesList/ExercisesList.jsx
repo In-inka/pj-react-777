@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { Pagination, Grid } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './swiper.css';
+
 const ExercisesList = ({ exercises }) => {
   const location = useLocation();
 

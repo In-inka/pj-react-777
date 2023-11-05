@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import PublicRoute from './components/Route/PublicRoute';
 import PrivateRoute from './components/Route/PrivateRoute';
@@ -16,6 +16,7 @@ const Diary = lazy(() => import('./pages/SecondPage/Diary'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage.jsx'));
 const Products = lazy(() => import('./pages/Products/Products'));
 const Exercises = lazy(() => import('./pages/Exercises/Exercises.jsx'));
+const FullListExercises = lazy(() => import('./components/FullListExercises/FullListExercises.jsx'));
 const SignUp = lazy(() => import('./pages/SignUp/SignUp'));
 const SignIn = lazy(() => import('./pages/SignIn/SignIn'));
 const Profile = lazy(() => import('./pages/Profile/Profile'));
@@ -107,18 +108,27 @@ function App() {
               }
             />
             <Route
-              path="exercises"
+              path="exercises/"
               element={
                 <PrivateRoute>
                   <Exercises />
                 </PrivateRoute>
               }
             >
+              <Route index element={<Navigate to="bodyparts" />} />
               <Route
-                index
+                path="bodyparts"
                 element={
                   <PrivateRoute>
                     <BodyParts />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="bodyparts/:category"
+                element={
+                  <PrivateRoute>
+                    <FullListExercises />
                   </PrivateRoute>
                 }
               />
@@ -131,10 +141,26 @@ function App() {
                 }
               />
               <Route
+                path="muscles/:category"
+                element={
+                  <PrivateRoute>
+                    <FullListExercises />
+                  </PrivateRoute>
+                }
+              />
+              <Route
                 path="equipment"
                 element={
                   <PrivateRoute>
                     <Equipment />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="equipment/:category"
+                element={
+                  <PrivateRoute>
+                    <FullListExercises />
                   </PrivateRoute>
                 }
               />

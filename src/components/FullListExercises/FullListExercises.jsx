@@ -38,6 +38,7 @@ const FullListExercises = ({ filter, openWindow }) => {
     );
   });
 
+
   return (
     <ContainerFullExercises>
       {loading && <Loading />}
