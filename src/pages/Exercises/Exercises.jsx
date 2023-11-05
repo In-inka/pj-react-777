@@ -81,25 +81,24 @@ const Exercises = () => {
 
   return (
     <BoxBackgroundPhoto className={backgroundPhoto(path)}>
-      {error && <ErrorPage />}
       <ContainerExercisesPage>
         {path === '/exercises' && <BoxBtnBack />}
         <BoxTitlePage>
           <TitlePageExercises text={handleTitle(path)} />
           <ExercisesCategories />
         </BoxTitlePage>
-        {modalOpen && (
+        {/* {modalOpen && (
           <ExercisesModal
             data={nameCurrentTarget[0]}
             onClose={handleCloseWindow}
           />
-        )}
-        {path === '/exercises' && (
+        )} */}
+        {/* {path === '/exercises' && (
           <FullListExercises
             filter={categoryExercises}
             openWindow={handleOpenWindow}
           />
-        )}
+        )} */}
         <Suspense>
           <Outlet />
         </Suspense>

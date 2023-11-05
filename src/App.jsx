@@ -42,9 +42,12 @@ function App() {
 
   return (
     !fetchCurrentUser && (
-      <Suspense fallback={<></>
-        // <BoxLoader><Loading /></BoxLoader>
-      }>
+      <Suspense
+        fallback={
+          <></>
+          // <BoxLoader><Loading /></BoxLoader>
+        }
+      >
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route
@@ -112,7 +115,7 @@ function App() {
               }
             >
               <Route
-                path="bodyParts"
+                index
                 element={
                   <PrivateRoute>
                     <BodyParts />
