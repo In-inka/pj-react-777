@@ -1,22 +1,20 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate} from 'react-router-dom';
 
 import { Pagination, Grid } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './swiper.css';
-import { useState } from 'react';
 
 const ExercisesList = ({ exercises }) => {
+  const navigate = useNavigate();
   const location = useLocation();
-  const [pathId, setPathId] = useState("");
   const dataBase = exercises;
-  console.log(pathId);
 
-  const handleTarget = async (el) => {
+  const onHandleNavigate = async (el) => {
     const idElement = el.currentTarget;
     if (idElement) {
       const idExercises = idElement.id;
 
-      const element = dataBase
+      const element = await dataBase
         .filter((el) => {
           return el._id === idExercises;
         })
@@ -24,12 +22,11 @@ const ExercisesList = ({ exercises }) => {
           return el.name;
         })
         .join();
-      setPathId(`${location.pathname}${element}`);
-      localStorage.setItem('CategoryName', element);      
-    } 
-  };
+      navigate(`${location.pathname}/${element}`);
 
-  console.log(pathId);
+      localStorage.setItem('CategoryName', element);
+    }
+  };
 
 
   return (
@@ -71,16 +68,12 @@ const ExercisesList = ({ exercises }) => {
           <ul className="swiper-wrapper swiper-container ">
             {dataBase.map((item) => (
               <SwiperSlide className="swiper-slide" key={item._id}>
-                <div className="item-exercises" id={item._id}>
-                  <NavLink
-                    className="link"
-                    to={pathId}
-                    state={{ from: location }}
-                  >
+                <div className="item-exercises" id={item._id}
+                >
                     <li
                       className="styled-list styled-list-item"
                       id={item._id}
-                      onClick={handleTarget}
+                      onClick={onHandleNavigate}
                     >
                       <img
                         className="cards"
@@ -92,7 +85,6 @@ const ExercisesList = ({ exercises }) => {
                         <p className="category">{item.filter}</p>
                       </div>
                     </li>
-                  </NavLink>
                 </div>
               </SwiperSlide>
             ))}

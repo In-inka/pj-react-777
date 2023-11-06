@@ -21,9 +21,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 
 import Loading from '../Loading/Loading';
+import { useParams } from 'react-router-dom';
 
 const FullListExercises = ({ filter, openWindow }) => {
+  const { category } = useParams();
   const dispatch = useDispatch();
+  console.log(category);
 
   useEffect(() => {
     dispatch(exercisesOperations.getExercises());
@@ -34,7 +37,9 @@ const FullListExercises = ({ filter, openWindow }) => {
 
   const filterArry = data.filter((el) => {
     return (
-      el.bodyPart === filter || el.target === filter || el.equipment === filter
+      el.bodyPart === category ||
+      el.target === category ||
+      el.equipment === category
     );
   });
 
