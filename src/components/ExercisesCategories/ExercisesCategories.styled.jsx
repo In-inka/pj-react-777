@@ -38,7 +38,6 @@ export const Links = styled(NavLink)`
   }
   &.active {
     color: rgba(239, 237, 232, 1);
-    pointer-events: none;
     &::before {
       position: absolute;
       width: 100%;
