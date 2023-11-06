@@ -1,4 +1,3 @@
-import React from 'react'
 import { TitleExercises } from './TitlePageExercises.style'
 
 const TitlePageExercises = ({text}) => {

@@ -41,12 +41,7 @@ export const BoxBackgroundPhoto = styled.div`
 
         }  
     }
-
-
 `
-
-
-
 
 export const BoxTitlePage = styled.div`
 display: flex;

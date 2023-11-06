@@ -1,4 +1,4 @@
-import { Suspense} from 'react';
+import { Suspense, useState} from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import ExercisesCategories from '../../components/ExercisesCategories/ExercisesCategories';
 import {
@@ -11,19 +11,10 @@ import TitlePageExercises from '../../components/ExercisesCategories/TitlePageEx
 
 const Exercises = () => {
   const { category } = useParams();
-
   const location = useLocation();
   const path = category ? category : location.pathname;
 
-  const backgroundPhoto = (value) => {
-    if (value === '/exercises') {
-      return 'backgroundPhoto';
-    }
-    return;
-  };
-
   const handleTitle = (value) => {
-    console.log(value);
     switch (value) {
       case '/exercises/bodyparts':
         return 'Body Parts';
@@ -36,7 +27,7 @@ const Exercises = () => {
     }
   };
   return (
-    <BoxBackgroundPhoto className={backgroundPhoto(path)}>
+    <BoxBackgroundPhoto className={category !== undefined && 'backgroundPhoto'}>
       <ContainerExercisesPage>
         {path === '/exercises' && <BoxBtnBack />}
         <BoxTitlePage>
