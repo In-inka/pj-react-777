@@ -5,7 +5,6 @@ export const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  /* position: absolute; */
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 4, 0.4);
@@ -28,10 +27,12 @@ export const ModalContainer = styled.form`
   border: 1px solid rgba(239, 237, 232, 0.2);
   border-radius: 12px;
   background-color: rgba(16, 16, 15, 1);
+  height: 90%;
 
   @media screen and (min-width: 375px) {
   }
   @media screen and (min-width: 768px) {
+    height:initial;
     flex-direction: row;
     &::-webkit-scrollbar {
       display: none;

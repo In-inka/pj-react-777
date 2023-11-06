@@ -106,7 +106,7 @@ function App() {
               }
             />
             <Route
-              path="exercises/"
+              path="exercises"
               element={
                 <PrivateRoute>
                   <Exercises />
