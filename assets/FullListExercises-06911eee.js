@@ -1,4 +1,4 @@
-import{s as i,g as b,R as I,r as p,j as e,L as te,e as Q,b as M,h as ie,Q as N,y as ne,z as re}from"./index-ae5b7c09.js";import{s as T}from"./sprite-2d5e4fd9.js";import{e as O,L as oe}from"./Loading-b15dfad3.js";import{L as se}from"./Loader-814b2187.js";import"./Hourglass-c29bdb68.js";const ae=i.div`
+import{s as i,g as b,R as I,r as p,j as e,L as te,e as Q,b as M,h as ie,Q as N,y as ne,z as re}from"./index-6341e263.js";import{s as T}from"./sprite-04614228.js";import{e as O,L as oe}from"./Loading-7055531a.js";import{L as se}from"./Loader-2e1f923b.js";import"./Hourglass-d729a5e6.js";const ae=i.div`
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -146,7 +146,6 @@ import{s as i,g as b,R as I,r as p,j as e,L as te,e as Q,b as M,h as ie,Q as N,y
   position: fixed;
   top: 0;
   left: 0;
-  /* position: absolute; */
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 4, 0.4);
@@ -165,10 +164,12 @@ import{s as i,g as b,R as I,r as p,j as e,L as te,e as Q,b as M,h as ie,Q as N,y
   border: 1px solid rgba(239, 237, 232, 0.2);
   border-radius: 12px;
   background-color: rgba(16, 16, 15, 1);
+  height: 90%;
 
   @media screen and (min-width: 375px) {
   }
   @media screen and (min-width: 768px) {
+    height:initial;
     flex-direction: row;
     &::-webkit-scrollbar {
       display: none;

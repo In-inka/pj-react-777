@@ -1,10 +1,10 @@
-import{N as x,g as r,u as s,j as e,s as n,y as l,r as g,O as m}from"./index-ae5b7c09.js";import{n as a}from"./emotion-styled.browser.esm-454f8955.js";import{C as u}from"./ContainerStyled-bb0b3bf9.js";import{b as h,a as b}from"./main_bg_desktop-12717d49.js";import{s as f}from"./sprite-2d5e4fd9.js";const k=a.div`
+import{N as p,g as r,u as s,j as e,s as n,y as l,r as x,O as g}from"./index-6341e263.js";import{n as a}from"./emotion-styled.browser.esm-708a4b82.js";import{C as m}from"./ContainerStyled-bb0b3bf9.js";import{b as u,a as h}from"./main_bg_desktop-12717d49.js";import{s as b}from"./sprite-04614228.js";const f=a.div`
     display: flex;
     gap: 28px;
     @media screen and (min-width: 768px){
         gap: 32px;
     }
-`,o=a(x)`
+`,o=a(p)`
   position: relative;
 
   font-size: 14px;
@@ -47,13 +47,13 @@ import{N as x,g as r,u as s,j as e,s as n,y as l,r as g,O as m}from"./index-ae5b
     font-size: 16px;
     line-height: 1.5;
   }
-`,j=()=>{const t=s();return e.jsxs(k,{children:[e.jsx(o,{to:"bodyparts",state:{from:t},children:"Body parts"}),e.jsx(o,{to:"muscles",state:{from:t},children:"Muscles"}),e.jsx(o,{to:"equipment",state:{from:t},children:"Equipment"})]})},y=n.div`
-    ${u}
+`,k=()=>{const t=s();return e.jsxs(f,{children:[e.jsx(o,{to:"bodyparts",state:{from:t},children:"Body parts"}),e.jsx(o,{to:"muscles",state:{from:t},children:"Muscles"}),e.jsx(o,{to:"equipment",state:{from:t},children:"Equipment"})]})},j=n.div`
+    ${m}
     height: 100%;
     padding-top: 101px;
     padding-bottom: 80px;
     
-    `,w=n.div`
+    `,y=n.div`
 @media screen and (min-width: 1440px) {
     display: block;
     &.backgroundPhoto{
@@ -63,7 +63,7 @@ import{N as x,g as r,u as s,j as e,s as n,y as l,r as g,O as m}from"./index-ae5b
 
 
                 background: linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-                    url(${h});
+                    url(${u});
                 background-repeat: no-repeat;
                 background-position: top 185px left 963px;
                 background-size: 670px 902px ;
@@ -73,7 +73,7 @@ import{N as x,g as r,u as s,j as e,s as n,y as l,r as g,O as m}from"./index-ae5b
                 screen and (min-resolution: 192dpi),
                 screen and (min-resolution: 2dppx) {
                     background: linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-                    url(${b});
+                    url(${h});
                     
                     background-repeat: no-repeat;
                     background-position: top 185px left 963px;
@@ -83,7 +83,7 @@ import{N as x,g as r,u as s,j as e,s as n,y as l,r as g,O as m}from"./index-ae5b
 
         }  
     }
-`,B=n.div`
+`,w=n.div`
 display: flex;
 justify-content: center;
 flex-direction: column;
@@ -111,26 +111,26 @@ margin-bottom: 40px;
         background: linear-gradient(79.56deg, #040404 -2.45%, rgba(4, 4, 4, 0) 68.17%);
 
     }
-`;const v=n.div`
+`;const B=n.div`
     height: 20px;
     position: absolute;
     top: 71px;
     @media screen and (min-width: 768px){
         top: 116px;
     } 
-`,z=n.button`
+`,v=n.button`
     height: 100%;
     border: none;
     outline: none;
     background-color: rgba(0,0,0,0);
     color: rgba(239, 237, 232, 0.4);
     
-`,E=n.svg`    
+`,z=n.svg`    
     width: 16px;
     height: 16px;
     stroke:  rgba(239, 237, 232, 0.4);
     transform: rotate(180deg);
-`,P=n.div`
+`,E=n.div`
     display: flex;
     align-items: center;
     gap: 8px;
@@ -143,7 +143,7 @@ margin-bottom: 40px;
     line-height: 1.2;
     letter-spacing: 0px;
     text-align: center;
-`,$=()=>{const t=()=>{window.history.back()};return e.jsx(v,{children:e.jsx(z,{type:"button",onClick:t,children:e.jsxs(P,{children:[e.jsx(E,{children:e.jsx("use",{href:`${f}#icon-start`})}),e.jsx(C,{children:"Back"})]})})})},T=n.h2`
+`,P=()=>{const t=()=>{window.history.back()};return e.jsx(B,{children:e.jsx(v,{type:"button",onClick:t,children:e.jsxs(E,{children:[e.jsx(z,{children:e.jsx("use",{href:`${b}#icon-start`})}),e.jsx(C,{children:"Back"})]})})})},T=n.h2`
     text-transform: capitalize;
     font-size: 24px;
     font-weight: 700;
@@ -151,4 +151,4 @@ margin-bottom: 40px;
     letter-spacing: 0em;
     text-align: left;
 
-`,_=({text:t})=>e.jsx(T,{children:t}),X=()=>{const{category:t}=l(),c=s(),d=t||c.pathname,p=i=>{switch(i){case"/exercises/bodyparts":return"Body Parts";case"/exercises/muscles":return"Muscles";case"/exercises/equipment":return"Equipment";default:return i}};return e.jsx(w,{className:t!==void 0&&"backgroundPhoto",children:e.jsxs(y,{children:[t!==void 0&&e.jsx($,{}),e.jsxs(B,{children:[e.jsx(_,{text:p(d)}),e.jsx(j,{})]}),e.jsx(g.Suspense,{children:e.jsx(m,{})})]})})};export{X as default};
+`,$=({text:t})=>e.jsx(T,{children:t}),X=()=>{const{category:t}=l(),c=s(),i=t||c.pathname,d=(()=>{switch(i){case"/exercises/bodyparts":return"body parts";case"/exercises/muscles":return"Muscles";case"/exercises/equipment":return"Equipment";default:return i}})();return e.jsx(y,{className:t!==void 0&&"backgroundPhoto",children:e.jsxs(j,{children:[t!==void 0&&e.jsx(P,{}),e.jsxs(w,{children:[e.jsx($,{text:d}),e.jsx(k,{})]}),e.jsx(x.Suspense,{children:e.jsx(g,{})})]})})};export{X as default};
