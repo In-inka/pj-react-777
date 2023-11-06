@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense} from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import ExercisesCategories from '../../components/ExercisesCategories/ExercisesCategories';
 import {
@@ -8,54 +8,10 @@ import {
 } from './Exercises.styled';
 import BoxBtnBack from '../../components/BoxBtnBack/BoxBtnBack';
 import TitlePageExercises from '../../components/ExercisesCategories/TitlePageExercises/TitlePageExercises';
-import FullListExercises from '../../components/FullListExercises/FullListExercises';
-
-import ExercisesModal from '../../components/ExercisesModal/ExercisesModal';
-import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
-import { useSelector } from 'react-redux';
 
 const Exercises = () => {
-  // nameCurrentTarget - object which always changed on bodyPart: 'back', equipment: 'cable'
-  const [nameCurrentTarget, setNameCurrentTarget] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
-
   const location = useLocation();
-
   const path = location.pathname;
-
-  // subcategoryes came from localstorag after clic from full list element
-  const categoryExercises = localStorage.getItem('CategoryName');
-
-  const data = useSelector(exercisesSelectors.getExercisesData);
-
-  const handleOpenWindow = (even) => {
-    const targetId = even.currentTarget.id;
-
-    const targetName = data.filter((el) => {
-      return el._id === targetId;
-    });
-    setNameCurrentTarget(targetName);
-    setModalOpen(true);
-  };
-  const handleCloseWindow = () => {
-    setModalOpen(false);
-  };
-
-  useEffect(() => {
-    function handleEscKey(event) {
-      if (event.key === 'Escape') {
-        handleCloseWindow();
-      }
-    }
-
-    if (modalOpen) {
-      window.addEventListener('keydown', handleEscKey);
-    }
-
-    return () => {
-      window.removeEventListener('keydown', handleEscKey);
-    };
-  }, [modalOpen]);
 
   const backgroundPhoto = (value) => {
     if (value === '/exercises') {
@@ -84,18 +40,6 @@ const Exercises = () => {
           <TitlePageExercises text={handleTitle(path)} />
           <ExercisesCategories />
         </BoxTitlePage>
-        {modalOpen && (
-          <ExercisesModal
-            data={nameCurrentTarget[0]}
-            onClose={handleCloseWindow}
-          />
-        )}
-        {path === '/exercises' && (
-          <FullListExercises
-            filter={categoryExercises}
-            openWindow={handleOpenWindow}
-          />
-        )}
         <Suspense>
           <Outlet />
         </Suspense>
