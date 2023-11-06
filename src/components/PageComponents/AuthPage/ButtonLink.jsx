@@ -4,7 +4,6 @@ import { glodalColor } from "../../../Styled/GlobalColor";
 
 const ButtonLinkStyled = styled(NavLink)`
   display: inline-block;
-  /* margin-right: 14px; */
   font-size: 16px;
   line-height: 1.17;
   background-color: ${glodalColor.acceptColor};
@@ -71,6 +70,7 @@ const ButtonLinkStyled = styled(NavLink)`
       &.active {
         background-color: ${glodalColor.acceptColor};
         border: none;
+        pointer-events: none;
       }
     }
   }

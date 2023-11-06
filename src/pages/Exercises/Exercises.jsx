@@ -1,4 +1,4 @@
-import { Suspense, useState} from 'react';
+import { Suspense} from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import ExercisesCategories from '../../components/ExercisesCategories/ExercisesCategories';
 import {
@@ -29,7 +29,7 @@ const Exercises = () => {
   return (
     <BoxBackgroundPhoto className={category !== undefined && 'backgroundPhoto'}>
       <ContainerExercisesPage>
-        {path === '/exercises' && <BoxBtnBack />}
+        {category !== undefined && <BoxBtnBack />}
         <BoxTitlePage>
           <TitlePageExercises text={handleTitle(path)} />
           <ExercisesCategories />
