@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 
 import { Pagination, Grid } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -23,8 +23,6 @@ const ExercisesList = ({ exercises }) => {
         })
         .join();
       navigate(`${location.pathname}/${element}`);
-
-      localStorage.setItem('CategoryName', element);
     }
   };
 

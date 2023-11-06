@@ -7,8 +7,6 @@ import { useEffect } from 'react';
 import authSelectors from './redux/auth/auth-selectors';
 import authOperations from './redux/auth/operations';
 import { GoogleAuth } from './pages/GoogleAuth/GoogleAuth';
-import Loading from './components/Loading/Loading';
-import { BoxLoader } from './components/Loading/Loading.style';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
