@@ -14,24 +14,27 @@ const Exercises = () => {
   const location = useLocation();
   const path = category ? category : location.pathname;
 
-  const handleTitle = (value) => {
-    switch (value) {
-      case '/exercises/bodyparts':
-        return 'Body Parts';
+  const handleTitle = () => {
+    switch (path) {
+      case ('/exercises/bodyparts'):
+        return 'body parts';
       case '/exercises/muscles':
         return 'Muscles';
       case '/exercises/equipment':
         return 'Equipment';
       default:
-        return value;
+        return path;
     }
   };
+
+  const titleText = handleTitle();
+
   return (
     <BoxBackgroundPhoto className={category !== undefined && 'backgroundPhoto'}>
       <ContainerExercisesPage>
         {category !== undefined && <BoxBtnBack />}
         <BoxTitlePage>
-          <TitlePageExercises text={handleTitle(path)} />
+          <TitlePageExercises text={titleText} />
           <ExercisesCategories />
         </BoxTitlePage>
         <Suspense>
