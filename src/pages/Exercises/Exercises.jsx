@@ -1,5 +1,5 @@
 import { Suspense} from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import ExercisesCategories from '../../components/ExercisesCategories/ExercisesCategories';
 import {
   BoxBackgroundPhoto,
@@ -10,8 +10,10 @@ import BoxBtnBack from '../../components/BoxBtnBack/BoxBtnBack';
 import TitlePageExercises from '../../components/ExercisesCategories/TitlePageExercises/TitlePageExercises';
 
 const Exercises = () => {
+  const { category } = useParams();
+
   const location = useLocation();
-  const path = location.pathname;
+  const path = category ? category : location.pathname;
 
   const backgroundPhoto = (value) => {
     if (value === '/exercises') {
@@ -21,17 +23,18 @@ const Exercises = () => {
   };
 
   const handleTitle = (value) => {
-    if (value === '/exercises/bodyparts') {
-      return 'Body Parts';
-    } else if (value === '/exercises/muscles') {
-      return 'Muscles';
-    } else if (value === '/exercises/equipment') {
-      return 'Equipment';
-    } else {
-      return '';
+    console.log(value);
+    switch (value) {
+      case '/exercises/bodyparts':
+        return 'Body Parts';
+      case '/exercises/muscles':
+        return 'Muscles';
+      case '/exercises/equipment':
+        return 'Equipment';
+      default:
+        return value;
     }
   };
-
   return (
     <BoxBackgroundPhoto className={backgroundPhoto(path)}>
       <ContainerExercisesPage>
