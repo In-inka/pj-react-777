@@ -1,4 +1,4 @@
-import"./index-75654b9b.js";const d=`
+const d=`
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
@@ -18,4 +18,4 @@ import"./index-75654b9b.js";const d=`
     padding-left: 96px;
     padding-right: 96px;
   }
-`,t="/pj-react-777/assets/sprite-d7bc0677.svg";export{d as C,t as s};
+`;export{d as C};

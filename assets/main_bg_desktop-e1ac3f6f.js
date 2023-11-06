@@ -1,1 +1,0 @@
-const a="/pj-react-777/assets/main_bg_mob_x2-dd403410.jpg",s="/pj-react-777/assets/main_bg_mob-8f07bae4.jpg",_="/pj-react-777/assets/main_bg_tab_x2-54594741.jpg",t="/pj-react-777/assets/main_bg_tab-d37027fc.jpg",g="/pj-react-777/assets/main_bg_desktop_x2-3a51d1c4.jpg",b="/pj-react-777/assets/main_bg_desktop-5a2ed8f8.jpg";export{a,s as b,t as c,_ as d,b as e,g as f};
