@@ -90,17 +90,6 @@ export const Container = styled.div`
   position: relative;
 `;
 
-
-export const Title = styled.h1`
-  color: rgba(239, 237, 232, 1);
-  font-size: 24px;
-  line-height: 1.17;
-  @media screen and (min-width: 768px) {
-    font-size: 32px;
-    line-height: 1.38;
-  }
-`;
-
 export const Text = styled.p`
   font-size: 14px;
   line-height: 1.29;
@@ -134,92 +123,6 @@ export const StyledLink = styled(Link)`
   color: #efede8;
   text-decoration: underline;
 `;
-
-export const FlexContainer = styled.div`
-  display: flex;
-  /* justify-content: center; */
-  padding-left: 101px;
-  align-items: center;
-  padding-top: 35px;
-  @media screen and (min-width: 768px) {
-    padding-top: 39px;
-    justify-content: left;
-    padding-left: 299px;
-  }
-  @media screen and (min-width: 1440px) {
-    padding: 0px;
-    position: absolute;
-    left: 770px;
-    top: 184px;
-  }
-`;
-
-export const VideoTutorialContainer = styled.div`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 18px;
-  background-color: #303030;
-  border-radius: 12px;
-  @media screen and (min-width: 768px) {
-    padding: 20px 38px 20px 23px;
-  }
-`;
-
-export const TextContainerB = styled.div``;
-
-export const VideoTutorialTextA = styled.p`
-  font-size: 16px;
-  line-height: 1.13;
-  font-weight: bold;
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-    line-height: 1;
-  }
-`;
-
-export const VideoTutorialTextB = styled.p`
-  margin-top: 4px;
-  font-size: 12px;
-  line-height: 1.33;
-  color: rgba(239, 237, 232, 0.65);
-  @media screen and (min-width: 768px) {
-    margin-top: 8px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-`;
-
-export const PlayIcon = styled.svg`
-  fill: ${glodalColor.withe};
-  padding-left: 3px;
-  width: 12px;
-  height: 12px;
-  @media screen and (min-width: 768px) {
-    &.setPlay {
-      padding-left: 5px;
-      width: 20px;
-      height: 20px;
-    }
-  }
-`;
-
-export const PlayIconContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
-  background-color: #ef8964;
-  margin-right: 8px;
-  @media screen and (min-width: 768px) {
-    width: 40px;
-    height: 40px;
-    margin-right: 12px;
-  }
-`;
-
 
 export const FlexContainerB = styled.div`
   display: flex;

@@ -7,7 +7,6 @@ import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 export const ContainerExercisesPage = styled.div`
     ${ContainerStyled}
     height: 100%;
-    /* height: 709px; */
     padding-top: 101px;
     padding-bottom: 80px;
     
@@ -42,12 +41,7 @@ export const BoxBackgroundPhoto = styled.div`
 
         }  
     }
-
-
 `
-
-
-
 
 export const BoxTitlePage = styled.div`
 display: flex;

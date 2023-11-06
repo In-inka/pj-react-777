@@ -61,7 +61,7 @@ const ExercisesModal = ({ data, onClose }) => {
     };
 
     try {
-      await dispatch(diaryOperations.postDiaryExercise(data));
+      dispatch(diaryOperations.postDiaryExercise(data));
       toast.success('Success!');
     } catch (error) {
       toast.error(error.message);
