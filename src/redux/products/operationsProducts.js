@@ -7,6 +7,7 @@ export const getProductsList = createAsyncThunk(
   async (credentials, thunkAPI) => {
     const { limit = 50, page = 1, filterParams } = credentials;
     const { search = '', category = '', recommended = '' } = filterParams;
+    console.log(credentials);
     try {
       const res = await axios.get(
         `/products?page=${page}&limit=${limit}&search=${search}&category=${category}&recommended=${recommended}`,

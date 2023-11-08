@@ -4,7 +4,7 @@ export const ProductsFilterLabel = styled.label`
   position: relative;
 `;
 
-export const ProductsFilterSearch = styled.input`
+export const inputSearchStyles = styled.input`
   width: 320px;
   background-color: transparent;
   color: #efede8;

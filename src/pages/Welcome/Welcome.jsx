@@ -20,10 +20,9 @@ const Welcome = () => {
   const calorieValue = statistic.totalBurnedCalories.toString().slice(0, 2);
   const calorieValue2 = statistic.totalBurnedCalories.toString().slice(2, 6);
   const ExercisesQuantity = statistic.exercisesQuantity;
-
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getStatistics());
+    !statistic.totalBurnedCalories && dispatch(getStatistics());
   }, []);
 
   return (

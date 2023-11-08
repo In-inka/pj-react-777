@@ -12,6 +12,7 @@ import {
   selectTotal,
   selectModalOpen,
   selectSuccessModal,
+  selectProductsList,
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
 import {
@@ -22,16 +23,18 @@ import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 import diarySelectors from '../../redux/diary/diarySelectors';
 import { getProductsList } from '../../redux/products/operationsProducts';
 
-const ProductsList = ({ products, fetching }) => {
+const ProductsList = () => {
   const pageStr = Number(useSelector(selectPage));
   const total = useSelector(selectTotal);
   const [ref, inView] = useInView({ threshold: 0 });
 
-  const filterParams = useSelector(selectFilter);
   const isModalOpen = useSelector(selectModalOpen);
   const isLoading = useSelector(selectIsLoadingProduct);
+  const products = useSelector(selectProductsList);
+
   const refScroll = useRef();
   const isSucessModalOpen = useSelector(selectSuccessModal);
+  
   const dispatch = useDispatch();
   const [productForAdd, setProductForAdd] = useState();
   const [calories, setCalories] = useState();
@@ -43,8 +46,11 @@ const ProductsList = ({ products, fetching }) => {
   }
 
   useEffect(() => {
-    dispatch(getProductsList(data));
     dispatch(successModalReducer.successcloseModal());
+    if (products.length > 0) {
+      return
+    }
+    dispatch(getProductsList(data));
   }, []);
 
   const addProductDetails = (product) => {
@@ -67,7 +73,7 @@ const ProductsList = ({ products, fetching }) => {
   useEffect(() => {
     if (!isLoading && inView && total >= pageStr * 50) {
       scrollToBack();
-      fetching(filterParams, pageStr + 1, 50);
+      // fetching(filterParams, pageStr + 1, 50);
     }
   }, [inView]);
 

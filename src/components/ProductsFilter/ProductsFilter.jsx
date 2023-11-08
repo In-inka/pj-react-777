@@ -1,9 +1,10 @@
 import Select from 'react-select';
+import { DebounceInput } from 'react-debounce-input';
+
 import { useMediaQuery } from 'react-responsive';
 import sprite from '../../sprite/sprite.svg';
 import {
   ProductsFilterLabel,
-  ProductsFilterSearch,
   ProductsBtnClose,
   ProductsSvgClose,
   ProductsBtnSearch,
@@ -11,14 +12,13 @@ import {
   SelectWrapper,
   ProductsFilterList,
 } from './ProductsFilter.styled';
-import { useSearchParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  filterReducer,
-  resetListReducer,
+import {resetListReducer,
 } from '../../redux/products/sliceProducts';
-import { selectFilter } from '../../redux/products/selectorsProducts';
+import { categories } from './ProductCategories/ProductCategories';
+import { getProductsList } from '../../redux/products/operationsProducts';
+import { selectProductsList } from '../../redux/products/selectorsProducts';
 
 const optionsRec = [
   { value: '', label: 'All' },
@@ -26,30 +26,17 @@ const optionsRec = [
   { value: 'false', label: 'Not recommended' },
 ];
 
-const categories = [
-  '',
-  'alcoholic drinks',
-  'berries',
-  'cereals',
-  'dairy',
-  'dried fruits',
-  'eggs',
-  'fish',
-  'flour',
-  'fruits',
-  'meat',
-  'mushrooms',
-  'nuts',
-  'oils and fats',
-  'poppy',
-  'sausage',
-  'seeds',
-  'sesame',
-  'soft drinks',
-  'vegetables and herbs',
-];
 
-export const ProductsFilter = ({ submit }) => {
+const inputSearchStyles =
+  {width: "320px",
+  backgroundColor: "transparent",
+  color: "#efede8",
+  borderRadius: "12px",
+  border: "1px solid rgba(239, 237, 232, 0.3)",
+  fontSize: "14px",}
+
+export const ProductsFilter = () => {
+
   const capitalizeFirstLeter = (string) => {
     const newString = string.slice(0, 1).toUpperCase() + string.slice(1);
     return newString;
@@ -135,114 +122,61 @@ export const ProductsFilter = ({ submit }) => {
     }),
   };
 
-  const [searchParams, setSearchParams] = useSearchParams({});
-  const filter = useSelector(selectFilter);
-  const [search, setSearch] = useState(filter.search);
-  const [category, setCategory] = useState(filter.category);
-  const [recommended, setRecommended] = useState(filter.recommended);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+  const [recommended, setRecommended] = useState("");
+
+  const products = useSelector(selectProductsList);
   const dispatch = useDispatch();
 
-  const onChangeSearch = (event) => {
-    const text = event.target.value;
-    setSearch(text);
-    dispatch(
-      filterReducer({
-        search: text,
-        category,
-        recommended,
-      }),
-    );
-    setSearchParams({
-      search: text,
-      category: category || 'all',
-      recommended: recommended || 'all',
-    });
+  useEffect(() => {
+    if (products.length > 0) {
+      dispatch(resetListReducer());
+    }
+  }, []);
+
+
+  const recommendedSet = (e) => {
+      setRecommended(e.value);
   };
 
-  const onCategoriesChange = (event) => {
-    dispatch(resetListReducer());
-    setCategory(event.value);
-    setSearchParams({
-      search,
-      category: event.value || 'all',
-      recommended: recommended || 'all',
-    });
-    dispatch(
-      filterReducer({
-        search,
-        category: event.value,
-        recommended,
-      }),
-    );
-    submit({
-      search,
-      category: event.value,
-      recommended,
-    });
-  };
+  const categoriesSet = (e) => {
+    setCategory(e.value);
+  }
 
-  const onRecomendedChange = (event) => {
-    dispatch(resetListReducer());
-    setSearchParams({
-      search,
-      category: category || 'all',
-      recommended: event.value || 'all',
-    });
-    setRecommended(event.value);
-    dispatch(
-      filterReducer({
+    const searchSet = (e) => {
+      setSearch(e.target.value);
+    };
+
+
+  useEffect(() => {
+      const filterParams = {
         search,
         category,
-        recommended: event.value,
-      }),
-    );
-    submit({
-      search,
-      category,
-      recommended: event.value,
-    });
-  };
+        recommended,
+      };
+    console.log("test");
+    dispatch(resetListReducer());
+    dispatch(getProductsList({filterParams} ));
+  }, [category, dispatch, recommended, search])
+  
   const delTextInput = () => {
     setSearch('');
-    dispatch(
-      filterReducer({
-        search: '',
-        category,
-        recommended,
-      }),
-    );
-    setSearchParams({
-      search: '',
-      category: category || 'all',
-      recommended: recommended || 'all',
-    });
   };
 
-  const onSubmit = () => {
-    submit({
-      search,
-      category: category,
-      recommended: recommended,
-    });
-  };
-
-  const onEnter = (event) => {
-    if (event.key === 'Enter') {
-      onSubmit();
-    }
-  };
 
   return (
     <ProductsFilterList>
       <li>
         <ProductsFilterLabel>
-          <ProductsFilterSearch
+          <DebounceInput
             value={search}
-            onChange={onChangeSearch}
-            onKeyUp={onEnter}
+            debounceTimeout={500}
+            onChange={searchSet}
             name="productSearch"
             type="text"
             placeholder="Search"
+            style={inputSearchStyles}
           />
           {search && (
             <ProductsBtnClose onClick={delTextInput} type="button">
@@ -251,7 +185,7 @@ export const ProductsFilter = ({ submit }) => {
               </ProductsSvgClose>
             </ProductsBtnClose>
           )}
-          <ProductsBtnSearch onClick={onSubmit} type="button">
+          <ProductsBtnSearch>
             <ProductsSvgSearch>
               <use href={`${sprite}#icon-search`}></use>
             </ProductsSvgSearch>
@@ -263,7 +197,7 @@ export const ProductsFilter = ({ submit }) => {
           <Select
             styles={customStyles}
             isSearchable={false}
-            onChange={onCategoriesChange}
+            onChange={categoriesSet}
             value={categoriesList.find((item) => item.value === category)}
             placeholder="Categories"
             options={categoriesList || []}
@@ -290,7 +224,7 @@ export const ProductsFilter = ({ submit }) => {
             styles={customStyles}
             isSearchable={false}
             value={optionsRec.find((item) => item.value === recommended)}
-            onChange={onRecomendedChange}
+            onChange={recommendedSet}
             theme={(theme) => ({
               ...theme,
 
