@@ -73,7 +73,6 @@ const ProductsList = () => {
   useEffect(() => {
     if (!isLoading && inView && total >= pageStr * 50) {
       scrollToBack();
-      // fetching(filterParams, pageStr + 1, 50);
     }
   }, [inView]);
 
@@ -83,7 +82,6 @@ const ProductsList = () => {
         <AddProductForm product={productForAdd} getCalories={getCalories} />
       )}
       {isSucessModalOpen && <AddProductSuccess calories={calories} />}
-      {/* <AddProductSuccess calories={calories}/> */}
       {products?.length > 0 ? (
         products.map((product) => {
           return (

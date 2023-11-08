@@ -11,6 +11,8 @@ import {
   ProductsSvgSearch,
   SelectWrapper,
   ProductsFilterList,
+  InputSearchStyles,
+  FlexContainer,
 } from './ProductsFilter.styled';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -27,13 +29,6 @@ const optionsRec = [
 ];
 
 
-const inputSearchStyles =
-  {width: "320px",
-  backgroundColor: "transparent",
-  color: "#efede8",
-  borderRadius: "12px",
-  border: "1px solid rgba(239, 237, 232, 0.3)",
-  fontSize: "14px",}
 
 export const ProductsFilter = () => {
 
@@ -167,32 +162,28 @@ export const ProductsFilter = () => {
 
   return (
     <ProductsFilterList>
-      <li>
-        <ProductsFilterLabel>
-          <DebounceInput
-            value={search}
-            debounceTimeout={500}
-            onChange={searchSet}
-            name="productSearch"
-            type="text"
-            placeholder="Search"
-            style={inputSearchStyles}
-          />
-          {search && (
-            <ProductsBtnClose onClick={delTextInput} type="button">
-              <ProductsSvgClose>
-                <use href={`${sprite}#icon-x`}></use>
-              </ProductsSvgClose>
-            </ProductsBtnClose>
-          )}
-          <ProductsBtnSearch>
-            <ProductsSvgSearch>
-              <use href={`${sprite}#icon-search`}></use>
-            </ProductsSvgSearch>
-          </ProductsBtnSearch>
-        </ProductsFilterLabel>
-      </li>
-      <li>
+      <ProductsFilterLabel>
+        <DebounceInput
+          element={InputSearchStyles}
+          value={search}
+          debounceTimeout={500}
+          onChange={searchSet}
+          name="productSearch"
+          type="text"
+          placeholder="Search"
+        />
+        {search && (
+          <ProductsBtnClose onClick={delTextInput} type="button">
+            <ProductsSvgClose>
+              <use href={`${sprite}#icon-x`}></use>
+            </ProductsSvgClose>
+          </ProductsBtnClose>
+        )}
+          <ProductsSvgSearch>
+            <use href={`${sprite}#icon-search`}></use>
+          </ProductsSvgSearch>
+      </ProductsFilterLabel>
+      <FlexContainer>
         <SelectWrapper>
           <Select
             styles={customStyles}
@@ -217,8 +208,6 @@ export const ProductsFilter = () => {
             })}
           />
         </SelectWrapper>
-      </li>
-      <li>
         <SelectWrapper>
           <Select
             styles={customStyles}
@@ -242,7 +231,7 @@ export const ProductsFilter = () => {
             options={optionsRec}
           />
         </SelectWrapper>
-      </li>
+      </FlexContainer>
     </ProductsFilterList>
   );
 };
