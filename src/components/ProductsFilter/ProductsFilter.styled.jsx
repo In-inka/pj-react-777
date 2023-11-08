@@ -10,35 +10,24 @@ display: block;
   }
 `;
 
-export const InputSearchStyles = styled.input`
-display: block;
-width: 100%;
+export const InputSearch = styled.input`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  padding-right: 68px;
   background-color: transparent;
   color: #efede8;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 12px;
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.3);
-  font-size: 14px;
-
-  @media screen and (min-width: 375px) {
-    box-sizing: border-box;
-    height: 46px;
-    padding: 14px;
-    padding-right: 68px;
-    background-color: transparent;
-    color: #efede8;
-    font-size: 14px;
-    line-height: 18px;
-    border-radius: 12px;
-    border: 1px solid rgba(239, 237, 232, 0.3);
-  }
-
   @media screen and (min-width: 768px) {
     width: 236px;
   }
-
   @media screen and (min-width: 1440px) {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
   }
 
   &:hover,
@@ -68,9 +57,7 @@ export const ProductsBtnSearch = styled.button`
   background: transparent;
   position: absolute;
   top: 17px;
-  right: 17px;
-  /* top: calc(50% - 17px / 2); */
-  /* right: 14px; */
+  right: 17px;  
   border: none;
 `;
 
@@ -90,13 +77,8 @@ export const ProductsSvgSearch = styled.svg`
 `;
 
 export const ProductsFilterList = styled.div`
-  display: inline-block;
   @media screen and (min-width: 768px) {
     display: flex;
-  }
-
-  @media screen and (min-width: 375px) {
-    align-items: center;
   }
 
   @media screen and (min-width: 1440px) {
@@ -105,17 +87,13 @@ export const ProductsFilterList = styled.div`
 `;
 
 export const SelectWrapper = styled.div`
-  @media screen and (min-width: 375px) {
     width: 158px;
-  }
 
   @media screen and (min-width: 768px) {
     width: 192px;
   }
   &:last-of-type{
-  @media screen and (min-width: 375px) {
     width: 173px;
-  }
 
   @media screen and (min-width: 768px) {
     width: 204px;

@@ -21,3 +21,9 @@ export const categories = [
   'soft drinks',
   'vegetables and herbs',
 ];
+
+export const optionsRec = [
+  { value: '', label: 'All' },
+  { value: 'true', label: 'Recommended ' },
+  { value: 'false', label: 'Not recommended' },
+];
