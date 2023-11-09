@@ -18,7 +18,7 @@ import {resetListReducer,
 } from '../../redux/products/sliceProducts';
 import { optionsRec, categories } from './ProductOptions/ProductOptions';
 import { getProductsList } from '../../redux/products/operationsProducts';
-import { selectProductsList } from '../../redux/products/selectorsProducts';
+import { selectPage, selectProductsList } from '../../redux/products/selectorsProducts';
 import { useCustomStyles } from '../../Styled/ProductStyles';
 
 
@@ -29,6 +29,7 @@ export const ProductsFilter = () => {
 
   const customStyles = useCustomStyles();
 
+  let page = Number(useSelector(selectPage));
   const products = useSelector(selectProductsList);
   
   const dispatch = useDispatch();
@@ -59,7 +60,12 @@ export const ProductsFilter = () => {
 
     const searchSet = (e) => {
       setSearch(e.target.value);
-    };
+  };
+  
+    useEffect(() => {
+      search, category, recommended,
+        dispatch(resetListReducer());
+    }, [category, dispatch, recommended, search]);
 
 
   useEffect(() => {
@@ -68,9 +74,8 @@ export const ProductsFilter = () => {
         category,
         recommended,
       };
-    dispatch(resetListReducer());
-    dispatch(getProductsList({filterParams} ));
-  }, [category, dispatch, recommended, search])
+    dispatch(getProductsList({filterParams, page} ));
+  }, [category, dispatch, page, recommended, search])
   
   const delTextInput = () => {
     setSearch('');

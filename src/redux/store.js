@@ -27,7 +27,7 @@ const authPersistConfig = {
 const productsPersistConfig = {
   key: 'products',
   storage,
-  whitelist: ['filter', 'list'],
+  whitelist: ['list'],
   transforms: [
     {
       in: (state) => {
