@@ -1,4 +1,4 @@
-import{s as n,j as s}from"./index-6341e263.js";const g="/pj-react-777/assets/main_bg_mob_x2-dd403410.jpg",p="/pj-react-777/assets/main_bg_mob-8f07bae4.jpg",r="/pj-react-777/assets/main_bg_tab_x2-54594741.jpg",c="/pj-react-777/assets/main_bg_tab-d37027fc.jpg",a=n.h1`
+import{s as n,j as s}from"./index-4906b3c3.js";const g="/pj-react-777/assets/main_bg_mob_x2-dd403410.jpg",p="/pj-react-777/assets/main_bg_mob-8f07bae4.jpg",r="/pj-react-777/assets/main_bg_tab_x2-54594741.jpg",c="/pj-react-777/assets/main_bg_tab-d37027fc.jpg",a=n.h1`
   color: rgba(239, 237, 232, 1);
   font-size: 38px;
   line-height: 1.05;
