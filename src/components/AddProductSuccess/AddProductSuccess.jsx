@@ -13,18 +13,15 @@ import {
   Button,
   ArrowIcon,
 } from './AddProductSuccess.styles';
-import { useDispatch } from 'react-redux';
-import { successModalReducer } from '../../redux/products/sliceProducts';
 
-export const AddProductSuccess = ({ calories }) => {
+export const AddProductSuccess = ({ calories, onModal }) => {
 
-  const dispatch = useDispatch();
 
   const onClose = (e) => {
         if (e.target !== e.currentTarget) {
           return;
         }
-          dispatch(successModalReducer.successcloseModal());
+        onModal();
 
   }
   

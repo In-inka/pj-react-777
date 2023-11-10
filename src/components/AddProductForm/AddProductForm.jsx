@@ -17,13 +17,9 @@ import sprite from '../../sprite/sprite.svg';
 import { toast } from 'react-toastify';
 import diaryOperations from '../../redux/diary/diaryOperations';
 import { useDispatch } from 'react-redux';
-import {
-  modalReducer,
-  successModalReducer,
-} from '../../redux/products/sliceProducts';
 import { useState } from 'react';
 
-const AddProductForm = ({ product, getCalories }) => {
+const AddProductForm = ({ product, getCalories, onModal, onSecondModal }) => {
   const dispatch = useDispatch();
   const [gram, setGram] = useState(100);
 
@@ -44,21 +40,17 @@ const AddProductForm = ({ product, getCalories }) => {
       amount: Number(gram),
     };
 
-    try {
-      await dispatch(diaryOperations.postDiaryProduct(productData));
-    } catch (error) {
-      toast.error(error.message);
-    }
+    dispatch(diaryOperations.postDiaryProduct(productData));
     getCalories(productData.calories);
-    dispatch(successModalReducer.successOpenModal());
-    dispatch(dispatch(modalReducer.closeModal()));
+    onSecondModal();
+    onModal();
   };
 
   const closeModal = (e) => {
     if (e.target !== e.currentTarget) {
       return;
     }
-    dispatch(modalReducer.closeModal());
+    onModal();
   };
 
   return (

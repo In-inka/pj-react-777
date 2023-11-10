@@ -16,9 +16,10 @@ const SignUp = () => {
 
       const dispatch = useDispatch();
 
-      useEffect(() => {
-        dispatch(getStatistics());
-      }, []);
+  useEffect(() => {
+    !statistic.totalBurnedCalories && dispatch(getStatistics());
+  }, []);
+  
   return (
     <Section>
       <Container>

@@ -24,8 +24,9 @@ const SignIn = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getStatistics());
+    !statistic.totalBurnedCalories && dispatch(getStatistics());
   }, []);
+  
   return (
     <Section>
       <Container>

@@ -15,36 +15,21 @@ const STATUS = {
 export const productSlice = createSlice({
   name: 'products',
   initialState: {
-    modalIsOpen: false,
-    successModalOpen: false,
     categories: [],
     list: [],
     page: 1,
     isLoading: false,
-    filter: {
-      search: '',
-      category: '',
-      recommended: '',
-    },
   },
   reducers: {
     setFilter: (state, { payload }) => {
       state.filter = payload;
     },
+    nextPage: (state, { payload }) => {
+      state.page = payload;
+    },
     reset: (state) => {
       state.list = [];
-    },
-    modalIsOpnen: (state) => {
-      state.modalIsOpen = true;
-    },
-    modalIsClose: (state) => {
-      state.modalIsOpen = false;
-    },
-    successModalIsOpnen: (state) => {
-      state.successModalOpen = true;
-    },
-    successModalIsClose: (state) => {
-      state.successModalOpen = false;
+      state.page = 1;
     },
   },
   extraReducers: (builder) =>
@@ -55,18 +40,10 @@ export const productSlice = createSlice({
 });
 
 export const productsReducer = productSlice.reducer;
-export const filterReducer = productSlice.actions.setFilter;
 export const resetListReducer = productSlice.actions.reset;
+export const nextPageReducer = productSlice.actions.nextPage;
 const openModal = productSlice.actions.modalIsOpnen;
 const closeModal = productSlice.actions.modalIsClose;
-
-const successOpenModal = productSlice.actions.successModalIsOpnen;
-const successcloseModal = productSlice.actions.successModalIsClose;
-
-export const successModalReducer = {
-  successOpenModal,
-  successcloseModal,
-};
 
 export const modalReducer = {
   openModal,
