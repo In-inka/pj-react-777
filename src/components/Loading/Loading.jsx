@@ -1,4 +1,3 @@
-import React from 'react'
 import { BoxLoading } from './Loading.style'
 import { TailSpin } from  'react-loader-spinner'
 

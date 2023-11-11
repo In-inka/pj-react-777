@@ -17,7 +17,7 @@ const Products = () => {
         <ProductsTitle>Products</ProductsTitle>
         <ProductsFilter />
       </ProductsFunc>
-      {<ProductsList />}
+      <ProductsList />
     </Container>
   );
 };

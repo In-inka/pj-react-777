@@ -2,17 +2,17 @@ import styled from '@emotion/styled';
 import { glodalColor } from '../../Styled/GlobalColor';
 
 export const ProductsItemContainer = styled.div`
+  margin-bottom: 20px;
   width: 100%;
   padding: 16px;
   border-radius: 12px;
   border: 1px solid ${glodalColor.bgCards};
   background: rgba(239, 237, 232, 0.05);
-
   @media screen and (min-width: 768px) {
+    margin-bottom: 0;
     width: 335px;
     height: 135px;
   }
-
   @media screen and (min-width: 1440px) {
     width: 405px;
     height: 143px;
@@ -76,9 +76,9 @@ export const ProductsItemDietPar = styled.p`
 `;
 
 export const ProductsItemRecommendedContainer = styled.div`
+margin-left: auto;
   margin-right: 16px;
   display: flex;
-  gap: 8px;
   align-items: center;
 `;
 
@@ -89,6 +89,7 @@ export const Circle = styled.div`
 `;
 
 export const RecommendedText = styled.p`
+margin-left: 8px;
   color: #efede8;
   font-size: 12px;
   font-style: normal;
