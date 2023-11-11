@@ -87,12 +87,12 @@ const ProductsList = () => {
         products.map((product, index) => {
           if (products.length === index + 1) {
             return (
-                <ProductsItem
-                  rf={lastProductElement}
-                  key={nanoid()}
-                  product={product}
-                  addProductDetails={addProductDetails}
-                />
+              <ProductsItem
+                rf={lastProductElement}
+                key={nanoid()}
+                product={product}
+                addProductDetails={addProductDetails}
+              />
             );
           }
           return (
@@ -105,10 +105,11 @@ const ProductsList = () => {
             </div>
           );
         })
-      ) : (!isLoading ? (
+      ) : !isLoading ? (
         <SearchNotResult />
-      ) : ( <Loading />
-      ))}
+      ) : (
+          <Loading />
+      )}
     </ProductsContainer>
   );
 };

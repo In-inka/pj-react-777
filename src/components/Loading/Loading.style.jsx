@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 
 export const BoxLoading = styled.div`
-    display: block;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-
+    padding-top: 50px;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
 `
 
 
