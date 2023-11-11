@@ -25,10 +25,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <ThemeProvider theme={glodalColor}>
             <GlobalStyle />
             <App />
-            <ToastContainer theme="colored" position="top-center" />
+            <ToastContainer
+              theme="colored"
+              hideProgressBar
+              position="top-center"
+            />
           </ThemeProvider>
         </BrowserRouter>
       </PersistGate>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

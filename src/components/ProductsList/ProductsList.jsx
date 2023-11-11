@@ -15,6 +15,8 @@ import {
   nextPageReducer,
 } from '../../redux/products/sliceProducts';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
+import Loading from '../Loading/Loading';
+
 
 const ProductsList = () => {
   let page = Number(useSelector(selectPage));
@@ -85,13 +87,12 @@ const ProductsList = () => {
         products.map((product, index) => {
           if (products.length === index + 1) {
             return (
-              <div ref={lastProductElement} key={nanoid()}>
                 <ProductsItem
+                  rf={lastProductElement}
                   key={nanoid()}
                   product={product}
                   addProductDetails={addProductDetails}
                 />
-              </div>
             );
           }
           return (
@@ -104,9 +105,10 @@ const ProductsList = () => {
             </div>
           );
         })
-      ) : (
+      ) : (!isLoading ? (
         <SearchNotResult />
-      )}
+      ) : ( <Loading />
+      ))}
     </ProductsContainer>
   );
 };

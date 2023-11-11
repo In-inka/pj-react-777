@@ -111,55 +111,15 @@ Input.defaultProps = {
   },
 };
 
-export const ButtonAddDiary = styled.button`
+export const ButtonContainer = styled.div`
+  display: inline-block;
   margin-right: 14px;
-  padding: 14px 32px 14px 32px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  color: ${glodalColor.withe};
-  background-color: ${glodalColor.acceptColor};
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   @media screen and (min-width: 768px) {
-    bottom: 48px;
-    right: 32px;
     margin-right: 16px;
   }
-
-  &:hover,
-  &:focus {
-    background-color: ${glodalColor.secondaryOrange};
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
 `;
 
-export const ButtonCancel = styled.button`
-  padding: 14px 32px 14px 32px;
-  border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
 
-  outline: none;
-  color: ${glodalColor.withe};
-  background-color: transparent;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (min-width: 768px) {
-    /* position: absolute; */
-    bottom: 48px;
-    right: 32px;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: ${glodalColor.secondaryOrange};
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
-`;
 
 export const TextSecondary = styled.p`
   color: rgba(239, 237, 232, 0.4);

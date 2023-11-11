@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 
 export const ProductsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px 16px;
-
   &::-webkit-scrollbar {
     width: 8px;
     background-color: rgba(239, 237, 232, 0.1);
@@ -17,6 +13,9 @@ export const ProductsContainer = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 16px;
     height: 636px;
     overflow-y: auto;
   }

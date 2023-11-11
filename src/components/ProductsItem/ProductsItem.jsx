@@ -35,8 +35,7 @@ function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-const ProductsItem = ({ product, addProductDetails }) => {
-
+const ProductsItem = ({ product, addProductDetails, rf }) => {
   const handleAddProduct = () => {
     addProductDetails(product);
   };
@@ -44,7 +43,7 @@ const ProductsItem = ({ product, addProductDetails }) => {
   const bloodGroup = useSelector(authSelectors.getUserMetricData).blood;
 
   return (
-    <ProductsItemContainer>
+    <ProductsItemContainer ref={rf}>
       <ProductsItemFunctional>
         <ProductsItemDiet>
           <ProductsItemDietPar>Diet</ProductsItemDietPar>
