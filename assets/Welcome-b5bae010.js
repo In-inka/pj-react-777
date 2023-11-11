@@ -1,4 +1,4 @@
-import{b as p,e as s,r as c,f as g,j as e}from"./index-4906b3c3.js";import{n as i}from"./emotion-styled.browser.esm-b06d689a.js";import{b as l,a as x,c as u,d as m,T as b}from"./Title-79816b46.js";import{b as k,a as h}from"./main_bg_desktop-12717d49.js";import{C as w}from"./ContainerStyled-bb0b3bf9.js";import{s as f}from"./sprite-e3e89063.js";import{B as a}from"./ButtonLink-2032e36f.js";import{g as _,V as C,C as j}from"./CaloriesContainer-b95a4e9b.js";const v=i.section`
+import{b as p,e as s,r as c,f as g,j as e}from"./index-5ad4c2f9.js";import{n as i}from"./emotion-styled.browser.esm-93ee9748.js";import{b as l,a as x,c as u,d as m,T as b}from"./Title-676bdaff.js";import{b as k,a as h}from"./main_bg_desktop-12717d49.js";import{C as w}from"./ContainerStyled-bb0b3bf9.js";import{s as f}from"./sprite-ca60d0ce.js";import{B as a}from"./ButtonLink-f51f5fda.js";import{g as _,V as C,C as j}from"./CaloriesContainer-cb56645d.js";const v=i.section`
   padding-top: 127px;
   padding-bottom: 40px;
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
