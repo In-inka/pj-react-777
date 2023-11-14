@@ -10,7 +10,7 @@ import { GoogleAuth } from './pages/GoogleAuth/GoogleAuth';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 const Welcome = lazy(() => import('./pages/Welcome/Welcome'));
-const Diary = lazy(() => import('./pages/SecondPage/Diary'));
+const Diary = lazy(() => import('./pages/Diary/Diary'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage.jsx'));
 const Products = lazy(() => import('./pages/Products/Products'));
 const Exercises = lazy(() => import('./pages/Exercises/Exercises.jsx'));
@@ -44,7 +44,6 @@ function App() {
       <Suspense
         fallback={
           <></>
-          // <BoxLoader><Loading /></BoxLoader>
         }
       >
         <Routes>

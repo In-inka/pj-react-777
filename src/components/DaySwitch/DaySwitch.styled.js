@@ -7,18 +7,30 @@ export const DaySwitchContainer = styled.div`
 `;
 
 export const CustomDatePickerInput = styled.input`
+  display: flex;
+  align-items: center;
   background: transparent;
-  width: 100px;
-  border: none;
+  width: 100%;
+  border: 1px solid ${glodalColor.title};
+  border-radius: 12px;
+  padding: 14px;
+  background-color: inherit;
   color: ${glodalColor.withe};
-  font-weight: ${(props) => (props.$textWeight ? props.$textWeight : 'normal')};
-  font-size: ${(props) => (props.$textSize ? props.$textSize + `px` : '16px')};
-  line-height: ${(props) =>
-    props.$textHeight ? props.$textHeight + `px` : '24px'};
+  font-size: 16px;
+  line-height: 1.5;
   outline: none;
   cursor: pointer;
   @media screen and (min-width: 768px) {
-    width: 120px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  &:hover,
+  &:focus {
+    border-color: rgba(230, 83, 60, 1);
+  }
+  &.diary{
+    width: 135px;
+    border: none;
   }
 `;
 
@@ -90,8 +102,8 @@ export const StyledIcon = styled.svg`
   stroke: ${(props) => props.stroke || 'white'};
   cursor: pointer;
   position: absolute;
-  top: 0;
-  left: 100px;
+  top: 16px;
+  right: 10px;
   &:hover {
     use {
       fill: #ef8964;
@@ -100,15 +112,14 @@ export const StyledIcon = styled.svg`
   @media screen and (min-width: 768px) {
     width: 24px;
     height: 24px;
-    top: 4px;
-    left: 130px;
+    top: 14px;
   }
 `;
 
 export const StyledArrow = styled.div`
   display: flex;
-  margin-left: 48px;
+  margin-left: 10px;
   @media screen and (min-width: 768px) {
-    margin-left: 72px;
+    margin-left: 26px;
   }
 `;
