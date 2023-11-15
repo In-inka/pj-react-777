@@ -21,7 +21,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import AddExercisesSuccess from '../AddExercisesSuccess/AddExercisesSuccess';
 import diaryOperations from '../../redux/diary/diaryOperations';
-import { toast } from 'react-toastify';
 
 const ExercisesModal = ({ data, onClose }) => {
   const exercises = data;
@@ -60,12 +59,7 @@ const ExercisesModal = ({ data, onClose }) => {
       time: timesecond,
     };
 
-    try {
-      dispatch(diaryOperations.postDiaryExercise(data));
-      toast.success('Success!');
-    } catch (error) {
-      toast.error(error.message);
-    }
+    dispatch(diaryOperations.postDiaryExercise(data));
     setModalOne(false);
     setModalOpenSecond(true);
     setDataExercisesDone(data);

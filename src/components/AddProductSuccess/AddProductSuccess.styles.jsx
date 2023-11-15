@@ -12,7 +12,6 @@ export const ModalWindow = styled.div`
 
 export const Container = styled.div`
   position: relative;
-  overflow-y: scroll;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
