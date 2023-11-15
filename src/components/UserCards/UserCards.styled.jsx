@@ -197,13 +197,13 @@ export const LogoutButton = styled.button`
 `;
 
 export const Icon = styled.svg`
-  margin-right: 7px;
   position: absolute;
   top: 14px;
   right: 14px;
   pointer-events: none;
   &.orange {
     fill: ${glodalColor.secondaryOrange};
+    margin-right: 7px;
     position: static;
   }
   @media screen and (min-width: 768px) {
@@ -218,7 +218,8 @@ export const Icon = styled.svg`
       height: 32px;
     }
   }
-  &.stroke-withe {
+  &.stroke-white {
+    top: 16px;
     stroke: ${glodalColor.withe};
     cursor: pointer;
   }

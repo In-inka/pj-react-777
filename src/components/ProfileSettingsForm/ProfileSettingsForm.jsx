@@ -150,7 +150,7 @@ const ProfileSettingsForm = () => {
                     }
                     onChange={onHandleDate}
                   />
-                  <Icon width={18} height={18} className="stroke-withe">
+                  <Icon width={18} height={18} className="stroke-white">
                     <use href={`${sprite}#icon-calendar`}></use>
                   </Icon>
                 </DatePickerContainer>
