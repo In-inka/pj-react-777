@@ -29,6 +29,7 @@
     "react-content-loader": "^6.2.1",
     "react-countdown-circle-timer": "^3.2.1",
     "react-datepicker": "^4.21.0",
+    "react-debounce-input": "^3.3.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",

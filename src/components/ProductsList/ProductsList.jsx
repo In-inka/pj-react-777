@@ -1,91 +1,115 @@
 import { ProductsContainer } from './ProductsList.styled';
 import { ProductsItem } from '../ProductsItem/ProductsItem';
 import { SearchNotResult } from '../SearchNotResult/SearchNotResult';
-import { useInView } from 'react-intersection-observer';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  selectFilter,
   selectIsLoadingProduct,
   selectPage,
   selectTotal,
-  selectModalOpen,
-  selectSuccessModal,
+  selectProductsList,
 } from '../../redux/products/selectorsProducts';
 import AddProductForm from '../AddProductForm/AddProductForm';
 import {
-  modalReducer,
-  successModalReducer,
+  nextPageReducer,
 } from '../../redux/products/sliceProducts';
 import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
-import diarySelectors from '../../redux/diary/diarySelectors';
+import Loading from '../Loading/Loading';
 
-const ProductsList = ({ products, fetching }) => {
-  const pageStr = Number(useSelector(selectPage));
+
+const ProductsList = () => {
+  let page = Number(useSelector(selectPage));
   const total = useSelector(selectTotal);
-  const [ref, inView] = useInView({ threshold: 0 });
-
-  const filterParams = useSelector(selectFilter);
-  const isModalOpen = useSelector(selectModalOpen);
   const isLoading = useSelector(selectIsLoadingProduct);
-  const refScroll = useRef();
-  const isSucessModalOpen = useSelector(selectSuccessModal);
-  const dispatch = useDispatch();
+  const products = useSelector(selectProductsList);
+
+  const [modalMainIsOpen, setModalMainIsOpen] = useState(false);
+  const [modalSecondIsOpen, setModalSecondIsOpen] = useState(false);
+
+
+    const dispatch = useDispatch();
+
+    const hasMore = total >= page * 50;
+
   const [productForAdd, setProductForAdd] = useState();
   const [calories, setCalories] = useState();
 
-  useEffect(() => {
-    dispatch(successModalReducer.successcloseModal());
-  }, []);
+
+  const toggleModalMain = () => {
+    setModalMainIsOpen(!modalMainIsOpen);
+  }
+
+    const toggleModalSecond = () => {
+      setModalSecondIsOpen(!modalSecondIsOpen);
+    };
+
+  const observer = useRef();
+  
+  const lastProductElement = useCallback(
+    (node) => {
+      if (!hasMore) return
+      if (isLoading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          dispatch(nextPageReducer(page + 1));
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [dispatch, hasMore, isLoading, page],
+  );
 
   const addProductDetails = (product) => {
     setProductForAdd(product);
-    dispatch(modalReducer.openModal());
-  };
-
-  const scrollToBack = () => {
-    const scrollHeight = refScroll.current.scrollHeight;
-    refScroll.current.scrollTop = scrollHeight - scrollHeight * 0.15;
+    setModalMainIsOpen(true);
   };
 
   const getCalories = (e) => {
     return setCalories(e);
   };
 
-  const diary = useSelector(diarySelectors.getDiary);
-  const dataProductsArr = diary.eatenProducts;
-
-  useEffect(() => {
-    if (!isLoading && inView && total >= pageStr * 50) {
-      scrollToBack();
-      fetching(filterParams, pageStr + 1, 50);
-    }
-  }, [inView]);
-
   return (
-    <ProductsContainer ref={refScroll}>
-      {isModalOpen && (
-        <AddProductForm product={productForAdd} getCalories={getCalories} />
+    <ProductsContainer>
+      {modalMainIsOpen && (
+        <AddProductForm
+          product={productForAdd}
+          getCalories={getCalories}
+          onModal={toggleModalMain}
+          onSecondModal={toggleModalSecond}
+        />
       )}
-      {isSucessModalOpen && <AddProductSuccess calories={calories} />}
-      {/* <AddProductSuccess calories={calories}/> */}
+      {modalSecondIsOpen && (
+        <AddProductSuccess calories={calories} onModal={toggleModalSecond} />
+      )}
       {products?.length > 0 ? (
-        products.map((product) => {
+        products.map((product, index) => {
+          if (products.length === index + 1) {
+            return (
+              <ProductsItem
+                rf={lastProductElement}
+                key={nanoid()}
+                product={product}
+                addProductDetails={addProductDetails}
+              />
+            );
+          }
           return (
-            <ProductsItem
-              key={nanoid()}
-              product={product}
-              addProductDetails={addProductDetails}
-            />
+            <div key={nanoid()}>
+              <ProductsItem
+                key={nanoid()}
+                product={product}
+                addProductDetails={addProductDetails}
+              />
+            </div>
           );
         })
-      ) : (
+      ) : !isLoading ? (
         <SearchNotResult />
+      ) : (
+          <Loading />
       )}
-      <div ref={ref} style={{ width: '300px', height: '15px' }}>
-        {}
-      </div>
     </ProductsContainer>
   );
 };

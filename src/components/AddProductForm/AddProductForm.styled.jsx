@@ -12,15 +12,13 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  position: absolute;
+  position: relative;
   overflow-y: scroll;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 48px 24px;
   gap: 40px;
-  width: 95%;
-  height: 95%;
   top: 50%;
   left: 50%;
   z-index: 100;
@@ -29,14 +27,7 @@ export const ModalContainer = styled.div`
   border-radius: 12px;
   background-color: rgba(16, 16, 15, 1);
   z-index: 11;
-
-  @media screen and (min-width: 375px) {
-    width: 335px;
-    height: 280px;
-  }
   @media screen and (min-width: 768px) {
-    width: 479px;
-    height: 286px;
     padding: 48px 32px;
     flex-direction: row;
     &::-webkit-scrollbar {
@@ -106,9 +97,12 @@ export const Input = styled.input`
 
 export const ContainerInput = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   gap: 16px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 Input.defaultProps = {
@@ -117,55 +111,15 @@ Input.defaultProps = {
   },
 };
 
-export const ButtonAddDiary = styled.button`
+export const ButtonContainer = styled.div`
+  display: inline-block;
   margin-right: 14px;
-  padding: 14px 32px 14px 32px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  color: ${glodalColor.withe};
-  background-color: ${glodalColor.acceptColor};
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   @media screen and (min-width: 768px) {
-    bottom: 48px;
-    right: 32px;
     margin-right: 16px;
   }
-
-  &:hover,
-  &:focus {
-    background-color: ${glodalColor.secondaryOrange};
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
 `;
 
-export const ButtonCancel = styled.button`
-  padding: 14px 32px 14px 32px;
-  border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
 
-  outline: none;
-  color: ${glodalColor.withe};
-  background-color: transparent;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (min-width: 768px) {
-    /* position: absolute; */
-    bottom: 48px;
-    right: 32px;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: ${glodalColor.secondaryOrange};
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
-`;
 
 export const TextSecondary = styled.p`
   color: rgba(239, 237, 232, 0.4);

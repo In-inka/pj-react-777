@@ -6,7 +6,6 @@ import background_img_tab from '../../img/background/main_bg_tab.jpg';
 import background_img_desktop_x2 from '../../img/background/main_bg_desktop_x2.jpg';
 import background_img_desktop from '../../img/background/main_bg_desktop.jpg';
 import { glodalColor } from '../../Styled/GlobalColor';
-import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
   background: linear-gradient(170deg, #040404 3.66%, rgba(4, 4, 4, 0) 19.15%),
@@ -108,49 +107,11 @@ export const LeftContainer = styled.div`
   }
 `;
 
-export const Title = styled.h1`
-  font-size: 66px;
-  line-height: 1;
-  margin-bottom: 14px;
-  letter-spacing: 0.66px;
-  font-weight: 500;
-  @media screen and (min-width: 768px) {
-    font-size: 160px;
-    line-height: 93.75%;
-    letter-spacing: 1.6px;
-  }
-`;
-
 export const Text = styled.p`
   font-size: 14px;
   line-height: 1.29;
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.5;
-  }
-`;
-
-export const LinkButton = styled(Link)`
-  display: inline-block;
-  margin-top: 28px;
-  padding: 12px 40px;
-  border: 1px solid ${glodalColor.withe};
-  border-radius: 12px;
-  font-size: 16px;
-  line-height: 1.125;
-  color: ${glodalColor.withe};
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    background-color: #ef8964;
-  }
-  &:disabled {
-    background-color: #e6533c;
-    color: #efede899;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 16px 60px;
-    font-size: 20px;
-    line-height: 1.2;
   }
 `;

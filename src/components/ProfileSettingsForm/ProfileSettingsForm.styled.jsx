@@ -39,39 +39,15 @@ export const BoxItemInputs = styled.div`
   width: 100%;
 `;
 
-export const BoxInputData = styled.label`
-  display: flex;
-  align-items: center;
-
-  color: #efede8;
-  width: 100%;
-  height: 100%;
-  background-color: inherit;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${glodalColor.title};
-  border-radius: 12px;
-  padding: 13px;
-  font-size: 14px;
-  line-height: 1.29;
-  &:hover,
-  &:focus {
-    border-color: rgba(230, 83, 60, 1);
-  }
-
-  &:active {
-    /* background-color: inherit; */
-  }
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-`;
 
 export const BoxIconCalendar = styled.span`
   display: flex;
   align-items: center;
 `;
+
+export const DatePickerContainer = styled.div`
+position: relative;
+`
 
 export const ContainerItemInputs = styled.div`
   display: flex;
@@ -110,7 +86,18 @@ export const ContainerRadioActive = styled.div`
 export const LabelProfile = styled.label`
   font-size: 12px;
   line-height: 1.5;
-  letter-spacing: 0px;
+  letter-spacing: 0.5px;
+  color: ${glodalColor.titleCards};
+  margin-bottom: 4px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8px;
+  }
+`;
+
+export const LabelBirthdate = styled.span`
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
   color: ${glodalColor.titleCards};
   margin-bottom: 4px;
   @media screen and (min-width: 768px) {
@@ -129,8 +116,8 @@ export const InputProfile = styled.input`
   border-color: ${glodalColor.title};
   border-radius: 12px;
   padding: 14px;
-  font-size: 14px;
-  line-height: 1.29;
+  font-size: 16px;
+  line-height: 1.5;
   &:hover,
   &:focus {
     border-color: rgba(230, 83, 60, 1);
@@ -156,8 +143,8 @@ export const EmailProfile = styled.span`
   border-color: ${(props) => props.theme.main};
   border-radius: 12px;
   padding: 14px;
-  font-size: 14px;
-  line-height: 1.29;
+  font-size: 16px;
+  line-height: 1.5;
 `;
 
 export const BloodRadio = styled.span`
@@ -209,7 +196,7 @@ export const ContainerBloodSex = styled.div`
 
 export const RadioContainer = styled.div`
   display: flex;
-  gap: 8px;
+  gap:8px;
   margin: 0;
 
   /* max-width: 300px; */
@@ -222,12 +209,10 @@ export const BoxRadioSex = styled.div`
 `;
 
 export const RadioWrapper = styled.div`
-  /* margin-bottom: 20px; */
 `;
 
 export const RadioButton = styled.label`
   position: relative;
-  /* margin-left: 32px; */
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -270,9 +255,6 @@ export const RadioCheckmark = styled.span`
 export const InputSex = styled.input`
   display: none;
   &:checked + ${RadioCheckmark} {
-    /* display: flex;
-        justify-content: center;
-        align-items: center; */
     border-color: ${glodalColor.bgSecondary};
     &::before {
       background-color: ${glodalColor.bgSecondary};
@@ -283,13 +265,14 @@ export const InputSex = styled.input`
 
 export const RadioLabel = styled.span`
   position: relative;
-  margin-left: 32px;
+  padding-left: 20px;
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: 0em;
   text-align: left;
   color: ${glodalColor.withe};
   @media screen and (min-width: 768px) {
+    padding-left: 24px;
     font-size: 16px;
     line-height: 1.5;
   }

@@ -44,7 +44,7 @@ const MobileMenu = ({ onHandleClick, toggleClickMenu }) => {
           <StyledLink onClick={toggleClickMenu} to="/products">
             Products
           </StyledLink>
-          <StyledLink onClick={toggleClickMenu} to="/exercises/bodyParts">
+          <StyledLink onClick={toggleClickMenu} to="/exercises/bodyparts">
             Exercises
           </StyledLink>
         </MobileMenuLinks>

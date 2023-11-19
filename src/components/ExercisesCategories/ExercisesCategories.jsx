@@ -5,15 +5,14 @@ const ExercisesCategories = () => {
   const location = useLocation();
   return (
     <BoxLinksCategories>
-    
-      <Links  to={`bodyParts`} state={{from: location}}>
+      <Links to={`bodyparts`} state={{ from: location }}>
         Body parts
       </Links>
-     
-      <Links  to={`muscles`} state={{from: location}}>
+
+      <Links to={`muscles`} state={{ from: location }}>
         Muscles
       </Links>
-      <Links to={`equipment`} state={{from: location}}>
+      <Links to={`equipment`} state={{ from: location }}>
         Equipment
       </Links>
     </BoxLinksCategories>

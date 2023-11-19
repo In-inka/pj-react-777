@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BoxIconStart,
   BoxIconTitle,
@@ -19,24 +19,60 @@ import sprite from '../../sprite/sprite.svg';
 import exercisesOperations from '../../redux/exercises/exercisesOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
-
+import ExercisesModal from '../../components/ExercisesModal/ExercisesModal';
 import Loading from '../Loading/Loading';
+import { useParams } from 'react-router-dom';
 
-const FullListExercises = ({ filter, openWindow }) => {
+const FullListExercises = () => {
+  const { category } = useParams();
   const dispatch = useDispatch();
+  const data = useSelector(exercisesSelectors.getExercisesData);
+  const loading = useSelector(exercisesSelectors.getIsLoading);
+    const [nameCurrentTarget, setNameCurrentTarget] = useState('');
+    const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     dispatch(exercisesOperations.getExercises());
   }, [dispatch]);
 
-  const data = useSelector(exercisesSelectors.getExercisesData);
-  const loading = useSelector(exercisesSelectors.getIsLoading);
 
   const filterArry = data.filter((el) => {
     return (
-      el.bodyPart === filter || el.target === filter || el.equipment === filter
+      el.bodyPart === category ||
+      el.target === category ||
+      el.equipment === category
     );
   });
+
+    const handleOpenWindow = (even) => {
+      const targetId = even.currentTarget.id;
+
+      const targetName = data.filter((el) => {
+        return el._id === targetId;
+      });
+      setNameCurrentTarget(targetName);
+      setModalOpen(true);
+    };
+    const handleCloseWindow = () => {
+      setModalOpen(false);
+    };
+
+    useEffect(() => {
+      function handleEscKey(event) {
+        if (event.key === 'Escape') {
+          handleCloseWindow();
+        }
+      }
+
+      if (modalOpen) {
+        window.addEventListener('keydown', handleEscKey);
+      }
+
+      return () => {
+        window.removeEventListener('keydown', handleEscKey);
+      };
+    }, [modalOpen]);
+
 
   return (
     <ContainerFullExercises>
@@ -47,7 +83,7 @@ const FullListExercises = ({ filter, openWindow }) => {
           return (
             <ListFullExercises key={item._id}>
               <BoxWorkout>WORKOUT</BoxWorkout>
-              <BtnStart id={item._id} type="button" onClick={openWindow}>
+              <BtnStart id={item._id} type="button" onClick={handleOpenWindow}>
                 <BoxIconStart>
                   <TextStart>Start</TextStart>
                   <IconStart>
@@ -90,6 +126,12 @@ const FullListExercises = ({ filter, openWindow }) => {
             </ListFullExercises>
           );
         })}
+      {modalOpen && (
+        <ExercisesModal
+          data={nameCurrentTarget[0]}
+          onClose={handleCloseWindow}
+        />
+      )}
     </ContainerFullExercises>
   );
 };

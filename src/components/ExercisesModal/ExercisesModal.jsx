@@ -5,6 +5,7 @@ import {
   BoxGifTimer,
   ButtonAddDiary,
   ButtonClose,
+  FlexContainer,
   GifExercises,
   IconClose,
   ItemContent,
@@ -20,7 +21,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import exercisesSelectors from '../../redux/exercises/exercisesSelectors';
 import AddExercisesSuccess from '../AddExercisesSuccess/AddExercisesSuccess';
 import diaryOperations from '../../redux/diary/diaryOperations';
-import { toast } from 'react-toastify';
 
 const ExercisesModal = ({ data, onClose }) => {
   const exercises = data;
@@ -44,7 +44,7 @@ const ExercisesModal = ({ data, onClose }) => {
     setModalOne(false);
     setModalOpenSecond(true);
     setDataExercisesDone(data);
-  }
+  };
 
   const handleSubmit = async (even) => {
     even.preventDefault();
@@ -52,22 +52,23 @@ const ExercisesModal = ({ data, onClose }) => {
       setTimerIsRunning(false);
     }
 
-    const timesecond = exercises.time * 60 - remainingTime;
+    const timesecond = exercises.time * 60 - remainingTime+1;
     const data = {
       exerciseId: exercises._id,
       burnedCalories: dinamicBurnCal,
       time: timesecond,
     };
 
-    try {
-      await dispatch(diaryOperations.postDiaryExercise(data));
-      toast.success('Success!');
-    } catch (error) {
-      toast.error(error.message);
-    }
-
-  exerciseComplete();
+    dispatch(diaryOperations.postDiaryExercise(data));
+    setModalOne(false);
+    setModalOpenSecond(true);
+    setDataExercisesDone(data);
   };
+
+  const { name, target, bodyPart } = exercises;
+  const sliceText = (val) => {
+    return val.slice(0, 10);
+  }
 
   return (
     <Backdrop>
@@ -106,26 +107,31 @@ const ExercisesModal = ({ data, onClose }) => {
             />
           </BoxGifTimer>
           <BoxContentExercises>
-            <ItemContentExercises>
-              <ItemTitle>Name</ItemTitle>
-              <ItemContent>{exercises.name}</ItemContent>
-            </ItemContentExercises>
-            <ItemContentExercises>
-              <ItemTitle>Target</ItemTitle>
-              <ItemContent>{exercises.target}</ItemContent>
-            </ItemContentExercises>
-            <ItemContentExercises>
-              <ItemTitle>Target</ItemTitle>
-              <ItemContent>{exercises.target}</ItemContent>
-            </ItemContentExercises>
-            <ItemContentExercises>
-              <ItemTitle>Body Parts</ItemTitle>
-              <ItemContent>{exercises.bodyPart}</ItemContent>
-            </ItemContentExercises>
+            <FlexContainer>
+              {' '}
+              <ItemContentExercises>
+                <ItemTitle>Name</ItemTitle>
+                <ItemContent>{sliceText(name)}</ItemContent>
+              </ItemContentExercises>
+              <ItemContentExercises>
+                <ItemTitle>Target</ItemTitle>
+                <ItemContent>{sliceText(target)}</ItemContent>
+              </ItemContentExercises>
+            </FlexContainer>
+            <FlexContainer>
+              <ItemContentExercises>
+                <ItemTitle>Target</ItemTitle>
+                <ItemContent>{sliceText(target)}</ItemContent>
+              </ItemContentExercises>
+              <ItemContentExercises>
+                <ItemTitle>Body Parts</ItemTitle>
+                <ItemContent>{sliceText(bodyPart)}</ItemContent>
+              </ItemContentExercises>
+            </FlexContainer>
           </BoxContentExercises>
-          <ButtonAddDiary type="submit" disabled={!dinamicBurnCal}>
-            Add to diary
-          </ButtonAddDiary>
+            <ButtonAddDiary type="submit" disabled={!dinamicBurnCal}>
+              Add to diary
+            </ButtonAddDiary>
         </ModalContainer>
       )}
     </Backdrop>

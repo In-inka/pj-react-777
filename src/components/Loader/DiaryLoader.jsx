@@ -1,16 +1,17 @@
 
 import { RotatingLines } from 'react-loader-spinner';
+import { glodalColor } from '../../Styled/GlobalColor';
 
 const MyLoader = ({ display }) => (
   <div
     style={{
       display: display,
       justifyContent: 'center',
-      width: '100%',          
+      width: '100%',
     }}
   >
     <RotatingLines
-      strokeColor="grey"
+      strokeColor={glodalColor.title}
       strokeWidth="5"
       animationDuration="0.75"
       width="20%"

@@ -3,13 +3,13 @@ import { toast } from 'react-toastify';
 export const messageNotification = (code) => {
     switch (code) {
       case 409:
-        toast.error('Already exist!');
+        toast.error('This user already exists!');
         break;
       case 400:
         toast.error('Bad Request!');
         break;
       case 401:
-        toast.error('Unauthorized!');
+        toast.error('Failed Login! Please try again!');
         break;
 
       case 403:

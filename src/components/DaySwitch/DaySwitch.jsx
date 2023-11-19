@@ -44,8 +44,9 @@ const DaySwitch = ({
           onChange={handler}
           dateFormat={numericMonthFormat}
           minDate={birthdayDate}
-        customInput={
+          customInput={
             <CustomDatePickerInput
+              className="diary"
               $textSize={textSize}
               $textWeight={textWeight}
               $textHeight={textHeight}

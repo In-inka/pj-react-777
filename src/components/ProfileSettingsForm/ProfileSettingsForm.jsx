@@ -1,11 +1,9 @@
 import { useFormik } from 'formik';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import {
   BloodRadio,
   BoxBasicInfo,
   BoxHeightWeightBirthday,
-  BoxInputData,
   BoxItemInputs,
   BoxRadioSex,
   ContainerBloodSex,
@@ -22,9 +20,10 @@ import {
   RadioLabel,
   RadioLabelActive,
   RadioWrapper,
+  LabelBirthdate,
+  DatePickerContainer,
 } from './ProfileSettingsForm.styled';
 import {
-  CustomDatePickerInput,
   StyledCalendarContainer,
 } from '../DaySwitch/DaySwitch.styled';
 import { Button } from '../Buttons/Button';
@@ -35,6 +34,8 @@ import { schema } from './schema/Schema';
 import { toast } from 'react-toastify';
 import { Icon } from '../UserCards/UserCards.styled';
 import sprite from '../../sprite/sprite.svg';
+import { CustomDatePicker } from '../CustomDatePicker/CustomDatePicker';
+import { parseISO } from 'date-fns';
 
 const ProfileSettingsForm = () => {
   const dispatch = useDispatch();
@@ -50,12 +51,13 @@ const ProfileSettingsForm = () => {
     birthday,
   } = useSelector(authSelectors.getUserMetricData);
 
+  const onHandleDate = (date) => {
+    const isoDate = date.toISOString();
+    formik.setFieldValue('birthday', formatDateString(isoDate));
+  }
+
   function formatDateString(dateString) {
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    return dateString.slice(0, 10); 
   }
 
   const formattedDate = formatDateString(birthday);
@@ -75,7 +77,7 @@ const ProfileSettingsForm = () => {
     onSubmit: async (values) => {
       try {
         await schema.validate(values, { abortEarly: false });
-        await dispatch(operations.updateUserMetricsData(values));
+        dispatch(operations.updateUserMetricsData(values));
         toast.success('Successful!');
       } catch (error) {
         const errorMessage = error.response
@@ -85,13 +87,13 @@ const ProfileSettingsForm = () => {
       }
     },
   });
-
   return (
     <div>
       <FormProfile onSubmit={formik.handleSubmit}>
         <LabelProfile htmlFor="name">Basic info</LabelProfile>
         <BoxBasicInfo>
           <InputProfile
+            className='name'
             name="name"
             type="text"
             id="name"
@@ -103,7 +105,7 @@ const ProfileSettingsForm = () => {
         <BoxHeightWeightBirthday>
           <ContainerItemInputs>
             <BoxItemInputs>
-              <LabelProfile htmlFor="Height">Height</LabelProfile>
+              <LabelProfile htmlFor="Height">Height &#40;cm&#41;</LabelProfile>
               <InputProfile
                 name="height"
                 type="number"
@@ -114,7 +116,7 @@ const ProfileSettingsForm = () => {
             </BoxItemInputs>
             <BoxItemInputs>
               <LabelProfile htmlFor="currentWeight">
-                Current Weight
+                Current Weight &#40;kg&#41;
               </LabelProfile>
               <InputProfile
                 name="currentWeight"
@@ -128,7 +130,7 @@ const ProfileSettingsForm = () => {
           <ContainerItemInputs>
             <BoxItemInputs>
               <LabelProfile htmlFor="desiredWeight">
-                Desired Weight
+                Desired Weight &#40;kg&#41;
               </LabelProfile>
               <InputProfile
                 name="desiredWeight"
@@ -140,30 +142,23 @@ const ProfileSettingsForm = () => {
             </BoxItemInputs>
             <BoxItemInputs>
               <StyledCalendarContainer>
-                <BoxInputData>
-                  <DatePicker
+                <LabelBirthdate>Birthdate</LabelBirthdate>
+                <DatePickerContainer>
+                  <CustomDatePicker
                     selected={
-                      birthday ? new Date(formik.values.birthday) : Date.now()
+                      birthday ? parseISO(formik.values.birthday) : Date.now()
                     }
-                    onChange={(date) => {
-                      formik.setFieldValue('birthday', formatDateString(date));
-                    }}
-                    customInput={<CustomDatePickerInput />}
-                    showYearDropdown
-                    yearDropdownItemNumber={1}
-                    dateFormat={'dd.MM.yyyy'}
-                    calendarStartDay={1}
-                    formatWeekDay={(day) => day.substr(0, 1)}
+                    onChange={onHandleDate}
                   />
-                  <Icon width={18} height={18} className="stroke-withe">
+                  <Icon width={18} height={18} className="stroke-white">
                     <use href={`${sprite}#icon-calendar`}></use>
                   </Icon>
-                </BoxInputData>
+                </DatePickerContainer>
               </StyledCalendarContainer>
             </BoxItemInputs>
           </ContainerItemInputs>
         </BoxHeightWeightBirthday>
-        <BloodRadio>Blood</BloodRadio>
+        <BloodRadio>Blood group</BloodRadio>
         <ContainerBloodSex>
           <RadioContainer>
             <RadioWrapper>

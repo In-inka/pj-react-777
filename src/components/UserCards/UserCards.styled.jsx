@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { glodalColor } from '../../Styled/GlobalColor';
-import { ContainerStyled } from '../../Styled/ContainerStyled';
 
 export const ContainerCards = styled.div`
-  ${ContainerStyled};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,38 +102,32 @@ export const User = styled.p`
 
 export const Info = styled.div`
   margin-bottom: 40px;
-
   display: flex;
   gap: 14px;
-
   justify-content: center;
-
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
     gap: 16px;
   }
 `;
-export const Statistic = styled.div`
-  width: 168px;
-  min-height: 96px;
-  padding: 14px;
 
+export const Statistic = styled.div`
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-
   border-radius: 12px;
   border: 1px solid ${glodalColor.bgCards};
-
   background-color: ${glodalColor.acceptColor};
   font-size: 12px;
   line-height: 1.33;
   color: ${glodalColor.dashboardTextAccept};
+  gap: 28px;
 
   @media screen and (min-width: 768px) {
-    width: 214px;
-    min-height: 108px;
-    padding: 14px 18px;
+    padding-right: 49px;
+    &:first-of-type {
+      padding-right: 67px;
+    }
   }
 `;
 
@@ -152,11 +144,11 @@ export const DataStatistic = styled.p`
 `;
 
 export const Title = styled.div`
+  position: relative;
   display: flex;
-  gap: 6px;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
-    gap: 8px;
   }
 `;
 
@@ -205,8 +197,14 @@ export const LogoutButton = styled.button`
 `;
 
 export const Icon = styled.svg`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  pointer-events: none;
   &.orange {
     fill: ${glodalColor.secondaryOrange};
+    margin-right: 7px;
+    position: static;
   }
   @media screen and (min-width: 768px) {
     &.user {
@@ -220,7 +218,8 @@ export const Icon = styled.svg`
       height: 32px;
     }
   }
-  &.stroke-withe {
+  &.stroke-white {
+    top: 16px;
     stroke: ${glodalColor.withe};
     cursor: pointer;
   }
@@ -229,5 +228,6 @@ export const Icon = styled.svg`
   }
   &.stroke {
     stroke: ${glodalColor.secondaryOrange};
+    position: static;
   }
 `;
