@@ -17,6 +17,14 @@
     <meta name="author" content="WebCoders" />
   </head>
   <body>
+    <form name="feedback" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="registeredName" />
+      <input type="email" name="registeredEmail" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
