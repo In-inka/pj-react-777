@@ -4,6 +4,7 @@ import {
   ContainerCards,
   DataStatistic,
   Icon,
+  IconPost,
   Info,
   LogoutButton,
   Name,
@@ -19,12 +20,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import authOperations from '../../redux/auth/operations';
 import sprite from '../../sprite/sprite.svg';
 import authSelectors from '../../redux/auth/auth-selectors';
-import { useRef } from 'react';
+
 import operations from '../../redux/auth/operations';
 import { toast } from 'react-toastify';
 
 const UserCards = () => {
-  const fileInputRef = useRef(null);
   const userName = useSelector(authSelectors.getUserName);
   const avatar = useSelector(authSelectors.getUserAvatar);
   const dispatch = useDispatch();
@@ -61,21 +61,18 @@ const UserCards = () => {
             </Icon>
           )}
         </Cards>
-        <div>
+        <Post htmlFor="avatarUrls">
           <input
             type="file"
+            name="avatar"
+            id="avatarUrls"
             accept="image/*"
-            style={{ display: 'none' }}
-            ref={fileInputRef}
             onChange={handleChangePhoto}
-          />
-          <Post onClick={() => fileInputRef.current.click()}>
-            {' '}
-            <Icon width={24} height={24} className="lightOrange mark">
-              <use href={`${sprite}#icon-check_mark`}></use>
-            </Icon>
-          </Post>
-        </div>
+          />{' '}
+          <IconPost>
+            <use href={`${sprite}#icon-check_mark`}></use>
+          </IconPost>
+        </Post>
       </PositionCards>
       <UserName>
         <Name>{userName}</Name>

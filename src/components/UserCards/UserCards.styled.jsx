@@ -14,9 +14,11 @@ export const ContainerCards = styled.div`
 `;
 
 export const PositionCards = styled.div`
-  margin: 0 auto;
-
   position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   width: 90px;
   height: 90px;
@@ -49,18 +51,32 @@ export const Cards = styled.div`
   }
 `;
 
-export const Post = styled.button`
+export const Post = styled.label`
   position: absolute;
-  bottom: -12px;
-  left: 34px;
 
-  @media screen and (min-width: 768px) {
-    bottom: -18px;
-    left: 60px;
+  bottom: -11px;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  cursor: pointer;
+
+  svg {
+    width: 100%;
+    height: 100%;
   }
 
-  background-color: transparent;
-  border: none;
+  input {
+    display: none;
+    visibility: hidden;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+    bottom: -14px;
+  }
 `;
 
 export const UserName = styled.div`
@@ -174,13 +190,6 @@ export const Attention = styled.div`
 `;
 
 export const LogoutButton = styled.button`
-  margin-bottom: 18px;
-  margin-left: auto;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
   color: ${glodalColor.withe};
 
   background-color: transparent;
@@ -223,11 +232,13 @@ export const Icon = styled.svg`
     stroke: ${glodalColor.withe};
     cursor: pointer;
   }
-  &.lightOrange {
-    fill: ${glodalColor.secondaryOrange};
-  }
+
   &.stroke {
     stroke: ${glodalColor.secondaryOrange};
     position: static;
   }
+`;
+
+export const IconPost = styled.svg`
+  fill: ${glodalColor.secondaryOrange};
 `;
