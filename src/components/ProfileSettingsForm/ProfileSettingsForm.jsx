@@ -23,9 +23,7 @@ import {
   LabelBirthdate,
   DatePickerContainer,
 } from './ProfileSettingsForm.styled';
-import {
-  StyledCalendarContainer,
-} from '../DaySwitch/DaySwitch.styled';
+import { StyledCalendarContainer } from '../DaySwitch/DaySwitch.styled';
 import { Button } from '../Buttons/Button';
 import operations from '../../redux/auth/operations';
 import { useDispatch, useSelector } from 'react-redux';
@@ -54,10 +52,10 @@ const ProfileSettingsForm = () => {
   const onHandleDate = (date) => {
     const isoDate = date.toISOString();
     formik.setFieldValue('birthday', formatDateString(isoDate));
-  }
+  };
 
   function formatDateString(dateString) {
-    return dateString.slice(0, 10); 
+    return dateString.slice(0, 10);
   }
 
   const formattedDate = formatDateString(birthday);
@@ -93,7 +91,7 @@ const ProfileSettingsForm = () => {
         <LabelProfile htmlFor="name">Basic info</LabelProfile>
         <BoxBasicInfo>
           <InputProfile
-            className='name'
+            className="name"
             name="name"
             type="text"
             id="name"
@@ -352,7 +350,7 @@ const ProfileSettingsForm = () => {
             </RadioButton>
           </RadioWrapper>
         </ContainerRadioActive>
-        <Button tp={'submit'} text={'Save'} />
+        <Button tp={'button'} text={'Save'} />
       </FormProfile>
     </div>
   );
